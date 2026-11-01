@@ -18,9 +18,11 @@ When Brian approves this plan, the first build step writes these files to the re
 4. **The saturated pun "Sorry I'm late" comes later.** "I lick rocks" made the launch set only with original lick-mark art. The launch set should be designs nobody else has, which means Great Lakes details and accurate charts.
 5. **"Bands will make her dance" is close to a Juicy J song title.** A reworded version is fine, and "Agate bands make her dance" reads clearly as a rock joke. Check the trademark for apparel (Class 25) and music (Class 9 and Class 41) before printing.
 
-## The concept: "Wet Stone"
+## The brand: Heavy Pockets Co. (concept: "Wet Stone")
 
-Every rockhound wets a stone to see its true color. That is the brand idea, the interaction on the site, and the voice. Working names to check: **Wet Stone Supply Co.**, **Third Coast Rockhound**, and **Lake Effect Rock Co.** Brian picks one in Step 3 after domain and trademark checks.
+**Name (decided Nov 1, 2026): Heavy Pockets Co.** Tagline: "Head down. Pockets full." Secondary line: "Dry rocks lie." Domain: heavypocketsco.com. Handles: @heavypocketsco. Email: hello@heavypocketsco.com. Fallback: Wet Thumb Co. (wetthumbco.com, @wetthumbco).
+
+The concept underneath stays "Wet Stone": every rockhound wets a stone to see its true color. That is the idea, the interaction on the site, and the voice, and "Dry rocks lie" says it out loud. The name also sets up the future rock-pocket liner.
 
 What makes it something new:
 - **The "wet" effect.** Product photos and stone photos show dry and dull. Hovering or tapping "wets" them: the color deepens and a gloss sweeps across, the way it does on the beach. This is the site's signature, and it is light CSS and JavaScript added to a Shopify theme.
@@ -70,8 +72,8 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 
 **Phase 0: Foundation**
 1. (Done) Create `PLAN.md` and `CLAUDE.md`, and add the profit model to `models/`. *Test:* Brian reads PLAN.md.
-2. **Store name.** Claude proposes 8 to 12 names built on the "Wet Stone" idea and the Great Lakes, then checks each one for an open .com domain, a matching Gmail username, TikTok and Instagram handles, and a USPTO search for conflicts in apparel (Class 25). Brian picks one. *Test:* the domain, Gmail username, and both handles are all open for the chosen name.
-3. **Accounts, in this order:** (a) buy the domain from Cloudflare or Namecheap, not through Shopify, (b) create the store Gmail (such as `storename@gmail.com`), (c) claim the TikTok and Instagram handles with that Gmail even though posting starts later, (d) create the free Printify account with that Gmail and save the token as an environment secret named `PRINTIFY_API_TOKEN`, never in the repo, and (e) set up free email forwarding from `hello@` the domain to the Gmail. Every account is registered to the store Gmail, and customers see the `hello@` address. *Test:* an email sent to `hello@` the domain arrives in the Gmail, and Claude can read the Printify catalog with the token.
+2. **(Done Nov 1, 2026: Heavy Pockets Co.) Store name.** Claude proposes 8 to 12 names built on the "Wet Stone" idea and the Great Lakes, then checks each one for an open .com domain, a matching Gmail username, TikTok and Instagram handles, and a USPTO search for conflicts in apparel (Class 25). Brian picks one. *Test:* the domain, Gmail username, and both handles are all open for the chosen name.
+3. **Accounts, in this order** (checklist: `brand/Step3_Accounts_Checklist.md`): (a) create the store Gmail and turn on 2-step verification, (b) create a Cloudflare account with that Gmail and buy heavypocketsco.com through Cloudflare Registrar, not Shopify, (c) claim @heavypocketsco on Instagram and TikTok (plus @wetthumbco as a placeholder), (d) create the free Printify account with the Gmail and save the token as an environment secret named `PRINTIFY_API_TOKEN`, never in the repo, and (e) set up free email forwarding from hello@heavypocketsco.com to the Gmail, plus Gmail "Send mail as" so replies come from the domain. The Gmail comes first because the Cloudflare account that owns the domain should belong to it. *Test:* an email sent to hello@ arrives in the Gmail, and Claude can read the Printify account with the token.
 
 **Phase 1: Brand**
 4. Brand kit: colors (the lake palette: Superior slate, agate red, Petoskey gray, and sand), fonts, a simple wordmark, and a one-page brand guide (.docx). *Test:* Brian approves it.

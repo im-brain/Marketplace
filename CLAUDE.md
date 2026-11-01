@@ -10,14 +10,15 @@ The full step-by-step plan is in `PLAN.md`.
 
 ## Current status
 
-- **Current step:** Step 1 done. **Step 2: choose the store name.** Finalists from the naming session: **Heavy Pockets Co.** and **Wet Thumb Co.** Brian makes the final call in the naming session (Claude does research only, no pick). Then Step 3 creates the domain, the store Gmail, the social handles, and Printify, in that order. Shopify waits until Step 12.
-- **Finalist checks (Nov 1, 2026):**
-  - **Heavy Pockets Co.:** heavypocketsco.com open (heavypockets.com taken since 2005). @heavypocketsco free on Instagram and TikTok (Brian checked; @heavypockets is taken). USPTO: the HEAVY POCKETS clothing filing (serial 85912472) was abandoned in 2014, with no live marks in clothing, retail, or jewelry. An old streetwear brand used the name; Brian judged it dead. Tagline "Head down. Pockets full." is clear.
-  - **Wet Thumb Co.:** wetthumbco.com open (wetthumb.com taken since 2002 but the site is down). @wetthumbco free on Instagram and TikTok (@wetthumb is taken). USPTO: no live marks. Nothing found on social or Etsy. Tagline "True when wet" is clear.
-  - **Gmail is not a deciding factor:** customers only see `hello@` the domain. The Gmail is the private login and inbox, so a close variant is fine if the exact username is taken.
-  - Earlier shortlist (Lake Found Goods, Agate Hour, and others) is kept in `brand/Store_Name_Shortlist.xlsx` as backups. Lick Test was a third finalist, but Brian dropped it.
+- **Store name (decided Nov 1, 2026): Heavy Pockets Co.** Domain heavypocketsco.com, handles @heavypocketsco, email hello@heavypocketsco.com (forwarded to a private Gmail). Tagline "Head down. Pockets full." Secondary line "Dry rocks lie." Fallback: Wet Thumb Co. (wetthumbco.com, @wetthumbco), used only if Heavy Pockets runs into trouble. Checks were a first screen, not legal clearance. Background: heavypockets.com and @heavypockets belong to an old, apparently dead streetwear brand; the 2013 HEAVY POCKETS clothing filing (serial 85912472) was abandoned in 2014.
+- **Current step:** Steps 1 and 2 done. **Step 3: accounts**, following `brand/Step3_Accounts_Checklist.md`:
+  - [ ] (a) Store Gmail, with 2-step verification
+  - [ ] (b) Cloudflare account (with the Gmail) and heavypocketsco.com bought through Cloudflare Registrar, auto-renew on
+  - [ ] (c) @heavypocketsco on Instagram and TikTok, plus @wetthumbco placeholders
+  - [ ] (d) Printify account and `PRINTIFY_API_TOKEN` secret (Claude then tests `GET https://api.printify.com/v1/shops.json`)
+  - [ ] (e) Cloudflare Email Routing from hello@ to the Gmail, plus Gmail "Send mail as" (app password and an SPF record). Claude walks Brian through this step by step.
+- **Waiting on Brian:** work through the Step 3 checklist and report back after each item.
 - **USPTO rate limit:** the search API returns 403 or 429 after many quick queries. Space searches out, and don't loop retries.
-- **Wet Rock Club watch:** BIG WET ROCK (serial 98744595) is a pending clothing application. Its proof-of-use deadline is about Dec 3, 2026, extendable to about Jun 3, 2028. Re-check after Dec 3, 2026 with `scripts/tm_search.py` or TSDR, only if Brian still wants Wet Rock Club.
 - **Network access:** all needed hosts are allowed as of Nov 1, 2026: rdap.verisign.com, api.printify.com, images-api.printify.com, tmsearch.uspto.gov, tsdr.uspto.gov, api.cloudflare.com, fonts.googleapis.com, fonts.gstatic.com, accounts.google.com, and pypi.org. Shopify's `<store>.myshopify.com` gets added at Step 12.
 - **Tools Claude can run:** .com availability via `https://rdap.verisign.com/com/v1/domain/<name>.com` (200 means taken, 404 means open). Trademark knockout search via `python3 scripts/tm_search.py '"phrase"'` (POSTs to `tmsearch.uspto.gov/prod-stage-v1-0-0/tmsearch`; classes look like "IC 025"). Filing history via `tmsearch.uspto.gov/tsdr-api-v1-0-0/tsdr-api?serialNumber=<n>`. Social and Etsy conflicts via web search limited to those domains. Handle availability can't be confirmed automatically; Brian checks by hand.
 - **Accounts:** Store Gmail: not created. Domain: not bought. TikTok and Instagram: not claimed. Printify: not created. Shopify: not created (Step 12).
@@ -32,10 +33,10 @@ The full step-by-step plan is in `PLAN.md`.
 5. Marketing: organic TikTok and Instagram only, **product-only video** (no face). Suggested upgrade: film the real stone next to the shirt drawn from it.
 6. Budget: AI bill about $20/month; tools under $75/month (planned total about $45).
 7. Art sources: Brian's own photos, his edits of AI art, code-generated patterns, and images whose license explicitly allows commercial use. Public photos are only for checking accuracy and are never printed or traced.
-8. Brand concept (working): **"Wet Stone."** Rockhounds wet a stone to see its true color. Candidate names to check: Wet Stone Supply Co., Third Coast Rockhound, and Lake Effect Rock Co.
+8. Brand: **Heavy Pockets Co.** (name decided Nov 1, 2026). Concept underneath: **"Wet Stone."** Rockhounds wet a stone to see its true color; "Dry rocks lie" is the secondary line.
 9. Signature site features: the "wet" hover and tap effect, a field note on each design, a free field guide that links to the chart shirts, and code-drawn sock patterns.
 10. Launch with 5 designs: the Great Lakes beach stone chart, "Agate Expectations," "Will brake for agates," Petoskey hexagon socks, and **"I lick rocks"** (or "Will lick rocks"), Brian's idea from Nov 1, 2026. The phrase alone is common on Etsy, so the art carries it: a dull, dry stone with one glossy lick-shaped streak where the true color shows through. It's the brand idea in one picture. Nov 1, 2026: no USPTO filings for "I lick rocks," "Will lick rocks," or "lick rocks." Re-check before printing.
-11. Accounts: a dedicated **store Gmail** owns every store account (domain, Printify, Shopify, TikTok, and Instagram). Customers see `hello@` the domain, forwarded free to the Gmail by Cloudflare Email Routing. The name is picked first so the Gmail can match it.
+11. Accounts: a dedicated **store Gmail** (created first in Step 3) owns every store account (domain, Printify, Shopify, TikTok, and Instagram). Customers see `hello@` the domain, forwarded free to the Gmail by Cloudflare Email Routing. The name is picked first so the Gmail can match it.
 
 ## Future product ideas
 
@@ -99,7 +100,8 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - `PLAN.md`: the plan.
 - `CLAUDE.md`: this handoff.
 - `models/POD_Profit_Model.xlsx`: the profit model.
-- `brand/Store_Name_Shortlist.xlsx`: 10 candidate names with checks.
+- `brand/Store_Name_Shortlist.xlsx`: candidate names with checks (Heavy Pockets Co. marked CHOSEN).
+- `brand/Step3_Accounts_Checklist.md`: Step 3 account setup checklist.
 - `scripts/tm_search.py`: USPTO trademark knockout search.
 - `brand/Naming_Brainstorm_Prompt.md`: the prompt for the separate naming session.
 - Planned: `designs/` (art files), `tracker/Design_Tracker.xlsx`, `scripts/` (Python automation), `theme/` (Shopify custom sections).
@@ -116,3 +118,4 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - **2026-11-01 (later):** All requested hosts now allowed. Ran USPTO and social searches on all 10 names. New top 2: Lake Found Goods and Agate Hour. Found YOOPERLITES registration cancelled. Explained BIG WET ROCK priority (an intent-to-use filing dates back to Sep 11, 2024, nationwide). Added scripts/tm_search.py.
 - **2026-11-01 (later):** Wrote the naming brainstorm prompt (acronyms allowed if they spell something, and the full domain can forward to the acronym domain). Added "I lick rocks" with lick-mark art as launch design 5. Brian confirmed .md files are fine.
 - **2026-11-01 (later):** Naming session returned Heavy Pockets, Lick Test, and Wet Thumb. Checked them: both chosen names are clear with "Co." handles and domains. Added them to the top of the shortlist. Waiting on Brian's final pick.
+- **2026-11-01 (later):** Brian chose **Heavy Pockets Co.** (fallback Wet Thumb Co.); both .coms re-checked open. Reordered Step 3 so the Gmail comes first (Cloudflare needs an account email). Wrote the Step 3 checklist.

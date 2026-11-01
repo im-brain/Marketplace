@@ -10,9 +10,9 @@ The full step-by-step plan is in `PLAN.md` (Word copy: `PLAN.docx`).
 
 ## Current status
 
-- **Current step:** Step 1 done. **Step 2: waiting on Brian for the accounts and the token.**
+- **Current step:** Step 1 done. **Step 2: Printify account and API token (Shopify waits until Step 12).**
 - **Waiting on Brian:**
-  - Create the Shopify trial and Printify accounts.
+  - Create a free Printify account.
   - Generate a Printify API token and save it as an environment secret named `PRINTIFY_API_TOKEN` (never paste it into a file in this repo).
 - **Accounts:** Shopify: not created. Printify: not created. Domain: not bought.
 - **Secrets:** none yet. Rule: all tokens live in the Claude Code environment's secrets, never in the repo.
@@ -20,7 +20,7 @@ The full step-by-step plan is in `PLAN.md` (Word copy: `PLAN.docx`).
 ## Decisions made
 
 1. Business model: tees and socks, print on demand, no inventory.
-2. Platform: **Shopify Basic + Printify** (decided Nov 1, 2026). Etsy may come later (Step 20).
+2. Platform: **Shopify Basic + Printify** (decided Nov 1, 2026). Etsy may come later (Step 20). **Shopify opens at Step 12**, after samples are approved and the store preview is signed off, because the free trial is only 3 days. Buy the domain from a regular registrar, not Shopify.
 3. Sourcing: **domestic only for now** (US print on demand). Overseas was modeled and rejected for launch, and that spreadsheet is not in this repo. Future option: bulk-order steady sock sellers from Pakistan or India.
 4. Niche: Great Lakes rockhounding.
 5. Marketing: organic TikTok and Instagram only, **product-only video** (no face). Suggested upgrade: film the real stone next to the shirt drawn from it.
@@ -29,6 +29,10 @@ The full step-by-step plan is in `PLAN.md` (Word copy: `PLAN.docx`).
 8. Brand concept (working): **"Wet Stone."** Rockhounds wet a stone to see its true color. Candidate names to check: Wet Stone Supply Co., Third Coast Rockhound, and Lake Effect Rock Co.
 9. Signature site features: the "wet" hover and tap effect, a field note on each design, a free field guide that links to the chart shirts, and code-drawn sock patterns.
 10. Launch with 4 designs: the Great Lakes beach stone chart, "Agate Expectations," "Will brake for agates," and Petoskey hexagon socks.
+
+## Future product ideas
+
+- **Rockhounding pants** with a reinforced, wipe-clean, possibly removable rock pocket. This needs cut-and-sew manufacturing, not print on demand. Test demand first by selling the removable pocket liner alone. Revisit after Step 20. Details are in PLAN.md under "Future products."
 
 ## Unit economics (US POD, from models/POD_Profit_Model.xlsx)
 
@@ -94,3 +98,4 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 
 - **2026-11-01:** Planning session. Chose Shopify + Printify, product-only content, a $20 AI bill, and tools under $75. Wrote PLAN.md, PLAN.docx, and CLAUDE.md. Next: Step 2.
 - **2026-11-01 (later):** Brian accepted the pushback, chose domestic only, and uploaded the profit model (now in `models/`). Standing by for Step 2.
+- **2026-11-01 (later):** Shopify's trial is only 3 days, so Shopify moved to Step 12. Steps 2 to 11 run on Printify (free) and a preview page in the repo. Next: Step 2, Printify only. Also recorded the rockhounding pants idea under Future products.

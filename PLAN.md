@@ -33,7 +33,7 @@ What makes it something new:
 
 | Tool | Job | Cost |
 |---|---|---|
-| Shopify Basic | The store: checkout, taxes, payments, and pages. No servers to run. | $39/mo, or about $29 billed yearly |
+| Shopify Basic | The store: checkout, taxes, payments, and pages. No servers to run. Opened at Step 12, not before, because the trial is only 3 days. | $39/mo, or about $29 billed yearly |
 | Printify (free plan) | Prints and ships each order. Connects to Shopify, so orders flow automatically. | $0 |
 | Domain | The store's web address. | About $1-2/mo |
 | GitHub (this repo) | The project's memory: designs, tracker, scripts, and CLAUDE.md. | $0 |
@@ -41,7 +41,7 @@ What makes it something new:
 | Python scripts | Small programs that call the Printify and Shopify APIs. Claude writes and runs them, so Brian never has to type code. | $0 |
 | Meta Business Suite and TikTok's desktop scheduler | Post the week's videos in one batch. | $0 |
 
-Total is about $45/mo, under the $75 cap.
+Total is about $45/mo, under the $75 cap. Until Step 12 it is about $1-2/mo, because only the domain costs money.
 
 ## How it runs itself
 
@@ -68,11 +68,11 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 ## Steps (each one testable on its own)
 
 **Phase 0: Foundation**
-1. Create `PLAN.md`, `CLAUDE.md`, and `PLAN.docx`, and commit them. Add the profit model to `models/`. *Test:* Brian opens PLAN.docx.
-2. Create the accounts: Shopify (free trial), Printify, and a Printify API token stored as an environment secret, never in the repo. *Test:* Brian can log in to both, and Claude can read the Printify catalog with the token.
+1. (Done) Create `PLAN.md`, `CLAUDE.md`, and `PLAN.docx`, and add the profit model to `models/`. *Test:* Brian opens PLAN.docx.
+2. **Printify account and API token only.** Printify is free, and we can design products, preview mockups, and order samples there with no store connected. Store the token as an environment secret, never in the repo. *Test:* Claude can read the Printify catalog with the token.
 
 **Phase 1: Brand**
-3. Shortlist names, then check domains and the USPTO for each. Brian picks one and buys the domain. *Test:* the domain is owned.
+3. Shortlist names, then check domains and the USPTO for each. Brian picks one and buys the domain from a regular registrar (such as Cloudflare or Namecheap), not through Shopify, so it isn't tied to a Shopify bill. *Test:* the domain is owned.
 4. Brand kit: colors (the lake palette: Superior slate, agate red, Petoskey gray, and sand), fonts, a simple wordmark, and a one-page brand guide (.docx). *Test:* Brian approves it.
 
 **Phase 2: Designs**
@@ -81,25 +81,32 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 7. The code-drawn Petoskey sock pattern, made to Printify's exact sock template size. *Test:* Brian views the PNG and it passes Printify's upload preview.
 8. The other three designs at print size, all from Brian's photos, his edits, or properly licensed sources. *Test:* Brian approves each one, and the accuracy and trademark boxes are checked.
 
-**Phase 3: First product by hand (to learn the flow)**
-9. Brian and Claude create one product in Printify together through the website and publish it to Shopify. *Test:* the product appears in the Shopify admin.
-10. Order samples of the launch 4. *Test:* samples arrive and Brian approves print quality and color.
+**Phase 3: Products and samples in Printify (no store yet)**
+9. Brian and Claude create the launch 4 in Printify by hand, saving them as products that aren't published. *Test:* the mockups look right in Printify.
+10. Order samples of the launch 4 straight from Printify. *Test:* samples arrive and Brian approves print quality and color.
 
-**Phase 4: The beautiful store**
-11. Install a free Shopify theme and apply the brand kit. *Test:* the store preview looks on-brand on phone and desktop.
-12. Add the "wet stone" effect as a custom section. *Test:* hovering or tapping a product makes the color bloom, on phone and desktop, in light and dark mode.
-13. Field notes on product pages (Shopify metafields). *Test:* each product shows its stone, beach, and story.
-14. Field guide pages (agates and beach stones), linking to the shirts. *Test:* Brian checks every label for accuracy.
-15. About, shipping, and returns pages, plus policies. *Test:* Shopify's launch checklist has no missing items.
+**Phase 4: Build the store look for free, then open Shopify**
+11. Build the theme pieces as a **preview page in the repo** (the wet-stone effect, product page layout, field notes, and field guide pages) that Brian can open in a browser. All the design work happens here at no cost. *Test:* Brian approves the preview on phone and desktop, in light and dark mode.
+12. **Open Shopify now.** Choose a plan and start the trial only once the samples are approved and the preview is signed off. If Shopify offers a low intro price for the first months, this is when it pays off. Connect Printify, connect the domain, and publish the launch 4 from Printify. *Test:* the 4 products appear in the Shopify admin.
+13. Install a free Shopify theme and paste in the approved pieces from Step 11, including field notes (Shopify metafields). *Test:* the live store preview matches the approved preview.
+14. Field guide pages, plus the About, shipping, and returns pages and policies. *Test:* Brian checks every label, and Shopify's launch checklist has no missing items.
+15. The store password stays on until launch. *Test:* only Brian can see the store.
 
 **Phase 5: Automation**
-16. Script `publish_design.py`: takes a tracker row, creates the Printify product, and publishes it to Shopify as a draft. *Test:* run it on one design, then check the draft in Shopify.
+16. Script `publish_design.py`: takes a tracker row and creates the Printify product. This part can be built and tested before Shopify exists. After Step 12, it also publishes to Shopify as a draft. *Test:* run it on one design, then check the product in Printify (and later the draft in Shopify).
 17. Listing writer plus a checker that blocks em dashes, missing Oxford commas, and flagged claims. *Test:* a draft listing passes the checker, and Brian reads it.
 18. Weekly scheduled task: an orders and profit summary, 3 product-only video ideas and captions, and reminders, such as samples to order and trademarks to re-check. *Test:* the first report arrives on schedule.
 
 **Phase 6: Launch**
 19. Remove the store password and publish the launch 4. Post the first video batch. *Test:* place a real order and watch it reach Printify.
 20. After 30 days: review the numbers, decide on designs 5 to 8, and decide whether to add Etsy.
+
+## Future products (not in the launch plan)
+
+**Rockhounding pants (Brian's idea, Nov 1, 2026).** Cargo-style pants with a reinforced, extra-thick rock pocket, lined with material that wipes clean of rock dust, and possibly removable.
+- **Reality check:** print on demand can't make this. It needs a cut-and-sew factory, a sample run, and usually a minimum order of 100 to 300 pairs in several sizes. That means thousands of dollars up front, which conflicts with the no-inventory model.
+- **Better first step:** sell the **removable pocket liner by itself** as an accessory. It would be a washable, coated-nylon pouch that clips or tucks into any pants pocket and pulls out to shake or rinse clean. It's one size, cheap to sample, and tests demand before anyone sizes pants. If liners sell, the pants become the premium version, built around the same liner.
+- **When to revisit:** after Step 20, once the store has steady orders and a customer list to ask.
 
 ## Verification
 

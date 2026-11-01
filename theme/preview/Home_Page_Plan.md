@@ -1,52 +1,54 @@
-# Home Page Plan (Step 5)
+# Home Page Brief (Step 5)
 
-Draft, Nov 1, 2026. Nothing is built until Brian approves this.
+Shaped Nov 1, 2026 with the Impeccable `shape` command. Brian's answers are in. **Waiting on Brian's OK, then build `theme/preview/index.html`.** No code yet.
 
-## The page's one job
+## 1. Job and audience
 
-A rockhound arrives from a TikTok or Instagram video. Within 5 seconds they should understand "shirts drawn from real Great Lakes stones, by a rockhound," and tap a product.
+A rockhound taps through from a TikTok or Instagram product video, almost always **on a phone**, having just seen one shirt. Mode: **Persuade**. Within 5 seconds they should get "shirts drawn from real Great Lakes stones, by a rockhound," and tap a product.
 
-## Who arrives, and on what
+## 2. Outcome and proof
 
-- Almost everyone comes **on a phone**, from a product video. So it's designed for phones first, and the desktop version is the phone layout widened.
-- They've usually just seen one shirt. The products have to be on the first or second screen, not buried.
+- **Main action:** tap a launch-5 product. The second action is "Shop the shirts" in the hero.
+- **Proof:** the real stone next to the shirt drawn from it (section 4). It stays an honest, labeled empty frame until Brian's photos exist.
+- **Never:** fake reviews, "as seen in" logos, trust badges, or countdown timers.
 
-## Sections, in order (phone)
+## 3. Direction: "The wave line"
 
-1. **Header.** The wordmark, a menu, and the cart. Nothing else.
-2. **Hero: wet the stone.** One big stone photo, shown dry. Drag a finger across it and it turns wet, showing the true color, then slowly dries. Headline "Dry rocks lie." and one button: "Shop the shirts." This is the only animated thing on the page.
-3. **The launch 5.** Two columns on a phone. Each item shows the shirt art, its name, and its price ($27.99 for tees, $18.99 for socks). The art looks dry until you touch it.
-4. **From the beach to the shirt.** Your photo of a real stone next to the shirt drawn from it, plus one line about where it was found. This is the proof a stranger can't fake, and it matches the product-only video plan.
-5. **Free field guide.** "Is it an agate? Three checks." It's a short teaser that links to the full guide and to the chart shirts.
-6. **Footer.** Email signup, hello@heavypocketsco.com, @heavypocketsco, and the shipping, returns, and privacy links.
+The brand kit stays as it is (palette, Fraunces, Work Sans, IBM Plex Mono, and the wordmark). The new idea is in the hero.
 
-## Things I'd cut (pushback)
+- **Hero scene:** Brian's choice is an "epic, beautiful rock scene," not a single stone. The best fit for the wet effect is a **cobble beach at the waterline**. In real life it already has both states: dark, glossy stones where the wave just reached, and pale, dusty stones above it.
+- **On load:** one wave of "wet" washes up the scene (fast, 0.45 seconds), then dries slowly (1.4 seconds), using the brand kit's timing. The stones show their true colors for a moment, then go dull. Headline: "Dry rocks lie." Button: "Shop the shirts."
+- **Then:** press and hold anywhere on the scene to wet that spot. Normal swipes still scroll (Brian approved this fix). On desktop, moving the mouse wets the stones.
+- **How it works:** the page uses **one wet image** and makes the dry look in code (paler, flatter, with less shine). So every photo or generated scene only has to be made once, wet.
+- This is the page's **only** animation. Nothing fades in on scroll.
 
-With only 5 products, a long home page is filler. These belong somewhere else:
-- **Bundle offer:** on the product page, as "add socks for $12."
-- **Field notes:** on each product page, where they explain that shirt.
-- **About story:** its own page, linked from the footer.
-- **Reviews, "as seen in," and trust badges:** none exist yet, so leave them out. Fake ones would break "Dry rocks lie."
+## 4. Scope
 
-## Rules to avoid the "AI slop" look
+- The home page only, at preview quality, in `theme/preview/index.html`, using `theme/brand-tokens.css`.
+- **Sections, in order:** (1) header (wordmark, menu, and cart), (2) the wave-line hero, (3) the launch 5 (two columns on a phone, with name and price), (4) beach to shirt, (5) the free field guide teaser ("Is it an agate? Three checks."), and (6) the footer (email signup, hello@, @heavypocketsco, and the shipping, returns, and privacy links).
+- **Cut from the home page (Brian, Nov 1, 2026):** the bundle offer (goes on product pages as "add socks for $12"), field notes (go on product pages), the About story (its own page), and reviews (wait until real ones exist).
+- **Rules to avoid the "AI slop" look:** no grid of rounded cards with shadows, left-aligned text, no decorative icons or emoji, and short, specific copy with real place names.
 
-- Real photos carry the page. No code-drawn stones on the live site.
-- No grid of rounded cards with drop shadows. Products sit on the page like stones laid out on a towel.
-- Text is left-aligned, not everything centered.
-- One interactive moment (the hero). Nothing fades in as you scroll.
-- No icons or emoji used as decoration.
-- Writing is short, specific, and uses real place names. Field note text uses the mono font, like a notebook.
+## 5. States and ranges
 
-## Built so it moves to Shopify (Step 13)
+- **Products:** always exactly 5 at launch (4 tees and 1 pair of socks), at $27.99 and $18.99. Long names like "Great Lakes beach stone chart" must wrap cleanly on a 360-pixel-wide phone.
+- **Placeholders:** each is labeled "placeholder" on the page itself.
+- **Reduced motion:** for people who turn animation off in their phone settings, skip the wave and show the scene half wet and still. Press and hold still works.
+- **No JavaScript or a slow load:** the wet image shows as a normal photo, and the button works.
+- **Dark mode:** follows the phone's setting. The hero scene looks the same in both modes; only the page around it changes.
 
-Every section except the hero matches a standard section in Shopify's free Dawn theme (header, product grid, image with text, rich text, and footer). Only the wet-stone hero is custom code. Keeping the custom part small makes Step 13 a copy-and-paste job, not a rebuild.
+## 6. Layout and interaction
 
-## Placeholders until real material exists
+- **Phone:** the hero fills most of the first screen, with the headline and button at the bottom, close to the thumb. The first product row peeks up from the bottom edge so people know to scroll.
+- **Desktop:** the same order, just wider. The hero is a wide panorama, and the products sit in one row of 5.
+- **Product art:** the dry look until it's touched or hovered, then wet. The product name and price are always fully readable, wet or dry.
 
-- **Hero stone:** a code-drawn agate, labeled "placeholder." The page creates the dry look from one **wet** photo, so Brian only needs to photograph each stone once, wet. A "Try your own photo" button tests that on his phone.
-- **Product art:** the brand kit sketches, labeled "placeholder art."
-- **Beach to shirt:** an empty frame labeled "Brian's stone photo + shirt photo."
-- **Field guide checks:** draft text. Brian confirms every line before it goes live.
+## 7. Constraints and open decisions
+
+- **Moving to Shopify (Step 13):** sections 1 and 3 to 6 are standard Dawn sections. Only the hero is custom.
+- **Open: the hero image.** Brian writes the image prompt, and Claude refines it before anything is generated (Brian's request). The scene must be generated **wet**, landscape (about 16:9) with room to crop to a tall phone view, and with no text, people, or logos in it.
+- **Pushback on the hero image:** an AI scene on a brand whose line is "Dry rocks lie" is a risk if it passes as a real beach. It's fine as a mood scene, but don't caption it as a real place, and replace it with Brian's own beach photo when he has a good one. A real photo is the strongest version of this page.
+- **Placeholders until then:** a code-drawn cobble beach for the hero, the brand kit sketches for product art, and an empty frame for beach to shirt.
 
 ## Test
 

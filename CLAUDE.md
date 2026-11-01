@@ -11,7 +11,7 @@ The full step-by-step plan is in `PLAN.md`.
 ## Current status
 
 - **Current step:** Step 1 done. **Step 2: choose the store name.** Then Step 3 creates the domain, the store Gmail, the social handles, and Printify, in that order. Shopify waits until Step 12.
-- **Waiting on Brian:** nothing until Claude presents the name shortlist (`brand/Store_Name_Shortlist.xlsx`).
+- **Waiting on Brian:** check the yellow columns in `brand/Store_Name_Shortlist.xlsx` (domain, Gmail, Instagram, TikTok, and USPTO) for the top names, then pick one. Claude's top 3: Waterline Rock Co., Wet Rock Club, and Lake Found Goods. Claude can't check domains here because RDAP and DNS lookup hosts are blocked by the session's network settings.
 - **Accounts:** Store Gmail: not created. Domain: not bought. TikTok and Instagram: not claimed. Printify: not created. Shopify: not created (Step 12).
 - **Secrets:** none yet. Rule: all tokens live in the Claude Code environment's secrets, never in the repo.
 
@@ -91,6 +91,7 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - `PLAN.md`: the plan.
 - `CLAUDE.md`: this handoff.
 - `models/POD_Profit_Model.xlsx`: the profit model.
+- `brand/Store_Name_Shortlist.xlsx`: 10 candidate names with checks.
 - Planned: `designs/` (art files), `tracker/Design_Tracker.xlsx`, `scripts/` (Python automation), `theme/` (Shopify custom sections).
 
 ## Session log
@@ -100,3 +101,4 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - **2026-11-01 (later):** Shopify's trial is only 3 days, so Shopify moved to Step 12. Steps 2 to 11 run on Printify (free) and a preview page in the repo. Next: Step 2, Printify only. Also recorded the rockhounding pants idea under Future products.
 - **2026-11-01 (later):** Brian asked to stop making PLAN.docx. Removed it; PLAN.md is the only copy of the plan.
 - **2026-11-01 (later):** Brian wants a store Gmail named after the store. Reordered: Step 2 is now the store name, and Step 3 is accounts (domain, Gmail, handles, Printify, and email forwarding).
+- **2026-11-01 (later):** Built the name shortlist (10 names, web-searched for existing businesses). Waiting on Brian's hand checks and pick.

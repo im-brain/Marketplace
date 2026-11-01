@@ -1,0 +1,355 @@
+<title>Heavy Pockets Brand Kit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..900,0..100&family=Work+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a field notebook. One narrow reading column, swatches that get wet when touched. */
+:root {
+  --slate-dry: #6B7780; --slate-wet: #22394A;
+  --agate-dry: #B87358; --agate-wet: #9A2B1C;
+  --petoskey-dry: #A39E94; --petoskey-wet: #6E4F35;
+  --sand-dry: #DCCFB6; --sand-wet: #A8875A;
+  --fog: #EEEDE8; --ink: #1C1E1F; --night: #14181B; --night-text: #ECE6DA;
+
+  --bg: var(--fog);
+  --fg: var(--ink);
+  --muted: #4E5A62;
+  --rule: #C9C6BC;
+  --panel: #E3E1D9;
+  --head: var(--slate-wet);
+  --accent: var(--agate-wet);
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-note: "IBM Plex Mono", "Courier New", monospace;
+  --wet-in: 450ms cubic-bezier(.2,.7,.2,1);
+  --dry-out: 1400ms ease-out;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: var(--night); --fg: var(--night-text); --muted: #A39E94; --rule: #333A3F;
+    --panel: #1C2226; --head: var(--sand-dry); --accent: var(--agate-dry); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: var(--night); --fg: var(--night-text); --muted: #A39E94; --rule: #333A3F;
+  --panel: #1C2226; --head: var(--sand-dry); --accent: var(--agate-dry); color-scheme: dark;
+}
+.show-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .show-dark { display: block; }
+  :root:not([data-theme="light"]) .show-light { display: none; }
+}
+:root[data-theme="dark"] .show-dark { display: block; }
+:root[data-theme="dark"] .show-light { display: none; }
+
+body {
+  background: var(--bg); color: var(--fg);
+  font: 400 1rem/1.6 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 4rem;
+}
+.wrap { max-width: 60rem; margin: 0 auto; display: grid; gap: 4rem; }
+h1, h2, h3 { font-family: var(--font-display); color: var(--head); text-wrap: balance; margin: 0; line-height: 1.1; }
+h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; font-variation-settings: "SOFT" 0, "opsz" 72; }
+h3 { font-size: 1.15rem; font-weight: 700; }
+p { margin: 0; max-width: 65ch; }
+.note { font-family: var(--font-note); font-size: .8rem; color: var(--muted); letter-spacing: .02em; }
+.label { font-family: var(--font-note); font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
+section { display: grid; gap: 1.25rem; }
+.section-head { display: grid; gap: .5rem; border-top: 1px solid var(--rule); padding-top: 1.25rem; }
+
+/* Hero */
+header { padding-top: 3rem; display: grid; gap: 1.25rem; }
+header img { width: min(100%, 44rem); height: auto; }
+.tag { font-family: var(--font-display); font-size: clamp(1.3rem, 3.5vw, 1.9rem); font-weight: 400; font-style: italic; color: var(--fg); }
+.tag small { display: block; font-style: normal; font-family: var(--font-note); font-size: .8rem; color: var(--muted); margin-top: .35rem; }
+
+/* Swatches: dry by default, wet on hover, focus, or tap */
+.swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1rem; }
+.swatch {
+  all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-rows: 9rem auto;
+  border-radius: 6px; overflow: hidden; background: var(--panel); outline-offset: 3px;
+}
+.swatch:focus-visible { outline: 2px solid var(--accent); }
+.chip { position: relative; background: var(--dry); transition: background var(--dry-out); }
+.chip::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.38) 42%, transparent 52%);
+  opacity: 0; transition: opacity var(--dry-out);
+}
+.swatch:hover .chip, .swatch.wet .chip, .swatch:focus-visible .chip, .all-wet .chip { background: var(--wet); transition: background var(--wet-in); }
+.swatch:hover .chip::after, .swatch.wet .chip::after, .swatch:focus-visible .chip::after, .all-wet .chip::after { opacity: 1; transition: opacity var(--wet-in); }
+.swatch-body { padding: .9rem 1rem 1rem; display: grid; gap: .3rem; }
+.swatch-body h3 { color: var(--fg); }
+.hex { font-family: var(--font-note); font-size: .8rem; font-variant-numeric: tabular-nums; display: grid; grid-template-columns: auto 1fr; gap: 0 .75rem; }
+.hex span:nth-child(odd) { color: var(--muted); }
+.toolbar { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
+button.toggle {
+  font: 600 .9rem var(--font-body); color: var(--bg); background: var(--head); border: 0;
+  border-radius: 4px; padding: .55rem 1rem; cursor: pointer;
+}
+button.toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Wordmark tiles */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; }
+.tile { border-radius: 6px; padding: 1.5rem; display: grid; gap: 1rem; align-content: space-between; min-height: 11rem; }
+.tile img { width: 100%; height: auto; }
+.tile.light { background: #EEEDE8; outline: 1px solid var(--rule); }
+.tile.dark { background: #14181B; outline: 1px solid var(--rule); }
+.tile.light .note { color: #4E5A62; }
+.tile.dark .note { color: #A39E94; }
+.sizes { display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-end; background: #EEEDE8; outline: 1px solid var(--rule); border-radius: 6px; padding: 1.5rem; }
+.sizes figure { margin: 0; display: grid; gap: .5rem; justify-items: start; }
+.sizes figcaption { font-family: var(--font-note); font-size: .75rem; color: #4E5A62; }
+
+/* Type specimens */
+.specimens { display: grid; gap: 1.5rem; }
+.spec { display: grid; gap: .4rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule); }
+.soft-demo {
+  font-family: var(--font-display); font-size: clamp(2.4rem, 8vw, 4.5rem); font-weight: 800; line-height: 1;
+  color: var(--head); font-variation-settings: "SOFT" 0, "opsz" 144; transition: font-variation-settings var(--dry-out), color var(--dry-out);
+  cursor: pointer; overflow-wrap: anywhere;
+}
+.soft-demo:hover, .soft-demo.wet { font-variation-settings: "SOFT" 100, "opsz" 144; color: var(--accent); transition: font-variation-settings var(--wet-in), color var(--wet-in); }
+.body-demo { font-size: 1.05rem; }
+.note-demo { font-family: var(--font-note); font-size: .95rem; background: var(--panel); padding: 1rem 1.1rem; border-radius: 4px; line-height: 1.7; overflow-wrap: anywhere; }
+
+/* Launch design sketches */
+.designs { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; }
+.design { display: grid; gap: .6rem; }
+.design svg { width: 100%; height: auto; display: block; border-radius: 6px; }
+.design p { font-size: .9rem; }
+
+/* Voice */
+.voice { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem; }
+.voice ul { margin: 0; padding-left: 1.1rem; display: grid; gap: .45rem; }
+.voice li { max-width: 60ch; }
+.say { font-family: var(--font-display); font-style: italic; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="label">Step 4 brand kit, draft for Brian's approval, Nov 1, 2026</span>
+    <img class="show-light" src="wordmark/hp-primary-agate-on-light.svg" alt="Heavy Pockets Co. wordmark">
+    <img class="show-dark" src="wordmark/hp-primary-sand-on-dark.svg" alt="Heavy Pockets Co. wordmark">
+    <p class="tag">Head down. Pockets full.<small>Secondary line: Dry rocks lie.</small></p>
+    <p>The whole brand comes from one rockhound habit: you wet a stone to see its true color. Everything here has a dry state and a wet state. Tap or hover on the swatches and the big type to see it.</p>
+  </header>
+
+  <section aria-labelledby="pal">
+    <div class="section-head">
+      <h2 id="pal">The lake palette</h2>
+      <p>Four colors from the beach, each with a dry and a wet value. Wet is deeper and richer, never brighter, because that is what water really does to stone. It also dries slower than it wets, like a real stone in the sun.</p>
+    </div>
+    <div class="toolbar">
+      <button class="toggle" id="wetAll" type="button" aria-pressed="false">Wet all four</button>
+      <span class="note">Tap a swatch on a phone to wet it.</span>
+    </div>
+    <div class="swatches" id="swatches">
+      <button class="swatch" type="button" style="--dry:#6B7780;--wet:#22394A">
+        <div class="chip"></div>
+        <div class="swatch-body"><h3>Superior slate</h3>
+          <div class="hex"><span>Dry</span><span>#6B7780</span><span>Wet</span><span>#22394A</span></div>
+          <span class="note">Main color. Headings, buttons, and the logo. Wet slate prints well on light tees.</span></div>
+      </button>
+      <button class="swatch" type="button" style="--dry:#B87358;--wet:#9A2B1C">
+        <div class="chip"></div>
+        <div class="swatch-body"><h3>Agate red</h3>
+          <div class="hex"><span>Dry</span><span>#B87358</span><span>Wet</span><span>#9A2B1C</span></div>
+          <span class="note">Accent only: the logo streak, sale tags, and agate bands. Use it sparingly.</span></div>
+      </button>
+      <button class="swatch" type="button" style="--dry:#A39E94;--wet:#6E4F35">
+        <div class="chip"></div>
+        <div class="swatch-body"><h3>Petoskey gray / brown</h3>
+          <div class="hex"><span>Dry</span><span>#A39E94</span><span>Wet</span><span>#6E4F35</span></div>
+          <span class="note">Dry Petoskey is flat gray. Wet, the hexagon eyes turn brown. The socks use both.</span></div>
+      </button>
+      <button class="swatch" type="button" style="--dry:#DCCFB6;--wet:#A8875A">
+        <div class="chip"></div>
+        <div class="swatch-body"><h3>Sand</h3>
+          <div class="hex"><span>Dry</span><span>#DCCFB6</span><span>Wet</span><span>#A8875A</span></div>
+          <span class="note">Panels and the logo on dark tees. Dry sand reads clearly on charcoal and black.</span></div>
+      </button>
+    </div>
+    <p class="note">Neutrals: Beach fog #EEEDE8 (light background), Ink #1C1E1F (text), Night #14181B (dark background). Every text pairing passes the WCAG contrast check; run python3 scripts/check_contrast.py to see the numbers.</p>
+  </section>
+
+  <section aria-labelledby="wm">
+    <div class="section-head">
+      <h2 id="wm">The wordmark</h2>
+      <p>Type only, no pebble or pickaxe icon. Those are everywhere. The one idea is the lick: a single glossy streak across "oc" where the letters turn from dry to wet. It is the "I lick rocks" design shrunk into the logo.</p>
+    </div>
+    <div class="tiles">
+      <div class="tile light"><img src="wordmark/hp-primary-agate-on-light.svg" alt="Primary wordmark, slate with agate red streak"><span class="note">Primary. Slate letters, agate red lick. Light tees, the site, and packaging.</span></div>
+      <div class="tile dark"><img src="wordmark/hp-primary-sand-on-dark.svg" alt="Primary wordmark, sand on dark"><span class="note">On dark. Sand letters, wet sand lick. Charcoal, navy, and black tees.</span></div>
+      <div class="tile light"><img src="wordmark/hp-stacked-agate-on-light.svg" alt="Stacked wordmark"><span class="note">Stacked. Hat fronts, square posts, and the profile picture.</span></div>
+      <div class="tile light"><img src="wordmark/hp-mark-agate-on-light.svg" alt="HP small mark" style="max-width:9rem"><span class="note">Small mark. Sleeve tags, sock cuffs, the hat side, and the favicon.</span></div>
+      <div class="tile light"><img src="wordmark/hp-primary-ink.svg" alt="One color ink wordmark"><span class="note">One color, no lick. For one-ink printing, embroidery, and stamps.</span></div>
+      <div class="tile dark"><img src="wordmark/hp-primary-white.svg" alt="One color white wordmark"><span class="note">One color white. Over photos and on dark one-ink prints.</span></div>
+    </div>
+    <h3>At real sizes</h3>
+    <div class="sizes">
+      <figure><img src="wordmark/hp-mark-agate-on-light.svg" alt="" style="width:1in"><figcaption>Sleeve tag, 1 in</figcaption></figure>
+      <figure><img src="wordmark/hp-stacked-agate-on-light.svg" alt="" style="width:1.5in"><figcaption>Hat side, 1.5 in</figcaption></figure>
+      <figure><img src="wordmark/hp-primary-agate-on-light.svg" alt="" style="width:3.5in;max-width:100%"><figcaption>Left chest, 3.5 in</figcaption></figure>
+    </div>
+    <p class="note">On screens, "1 in" is approximate. The real test is the printed sample at Step 11.</p>
+  </section>
+
+  <section aria-labelledby="type">
+    <div class="section-head">
+      <h2 id="type">Type</h2>
+      <p>Three free Google Fonts, all under the SIL Open Font License, which allows commercial use, printing on products, and use in a logo.</p>
+    </div>
+    <div class="specimens">
+      <div class="spec">
+        <span class="label">Display: Fraunces ExtraBold</span>
+        <div class="soft-demo" id="softDemo" tabindex="0">Dry rocks lie.</div>
+        <span class="note">Fraunces has a "soft" setting. Hover or tap: the crisp letters soften like a wave-worn stone. Shirts and headlines only.</span>
+      </div>
+      <div class="spec">
+        <span class="label">Body: Work Sans</span>
+        <p class="body-demo">Every shirt starts with a real stone from a Great Lakes beach. We print in the US, ship free, and tell you exactly what you are looking at, down to which "blue rock" is actually furnace slag.</p>
+        <span class="note">Product pages, captions, and email.</span>
+      </div>
+      <div class="spec">
+        <span class="label">Field notes and chart labels: IBM Plex Mono</span>
+        <div class="note-demo">FIELD NOTE 002. Lake Superior agate. Look for: waxy luster, iron-red color, and bands that wrap around the stone. Wet it first. Found: Whitefish Point, low waves, after a north wind.</div>
+        <span class="note">The field note on each design, the ID chart labels, and prices.</span>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="launch">
+    <div class="section-head">
+      <h2 id="launch">How the launch 5 use the kit</h2>
+      <p>Rough direction sketches to show the kit working. They are not final art. Brian confirms every stone label before anything prints.</p>
+    </div>
+    <div class="designs">
+      <div class="design">
+        <svg viewBox="0 0 300 300" role="img" aria-label="Beach stone chart sketch">
+          <rect width="300" height="300" fill="#22394A"/>
+          <text x="150" y="38" text-anchor="middle" fill="#DCCFB6" font-family="Fraunces, Georgia, serif" font-weight="800" font-size="20">Great Lakes Beach Stones</text>
+          <g font-family="IBM Plex Mono, monospace" font-size="9" fill="#DCCFB6" text-anchor="middle">
+            <ellipse cx="65" cy="95" rx="30" ry="24" fill="#9A2B1C"/><text x="65" y="135">AGATE</text>
+            <ellipse cx="150" cy="95" rx="30" ry="24" fill="#6E4F35"/><text x="150" y="135">PETOSKEY</text>
+            <ellipse cx="235" cy="95" rx="30" ry="24" fill="#4C6C8C"/><text x="235" y="135">LELAND BLUE*</text>
+            <ellipse cx="65" cy="185" rx="30" ry="24" fill="#A39E94"/><text x="65" y="225">CHERT</text>
+            <ellipse cx="150" cy="185" rx="30" ry="24" fill="#B87358"/><text x="150" y="225">JASPER</text>
+            <ellipse cx="235" cy="185" rx="30" ry="24" fill="#6B7780"/><text x="235" y="225">BASALT</text>
+            <text x="150" y="270" font-size="8">*NOT A STONE: 1800s FURNACE SLAG</text>
+          </g>
+        </svg>
+        <h3>Beach stone chart</h3>
+        <p>Wet slate ground, sand type, and stones in their wet colors. Labels in Plex Mono. Sketch labels only; the real list comes later.</p>
+      </div>
+      <div class="design">
+        <svg viewBox="0 0 300 300" role="img" aria-label="Agate Expectations sketch">
+          <rect width="300" height="300" fill="#DCCFB6"/>
+          <g fill="none" stroke-width="7">
+            <ellipse cx="150" cy="120" rx="80" ry="58" stroke="#9A2B1C"/>
+            <ellipse cx="150" cy="120" rx="60" ry="42" stroke="#B87358"/>
+            <ellipse cx="150" cy="120" rx="40" ry="27" stroke="#9A2B1C"/>
+            <ellipse cx="150" cy="120" rx="20" ry="13" stroke="#EEEDE8"/>
+          </g>
+          <text x="150" y="232" text-anchor="middle" fill="#22394A" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="700" font-size="34">Agate</text>
+          <text x="150" y="266" text-anchor="middle" fill="#22394A" font-family="Fraunces, Georgia, serif" font-weight="800" font-size="28">Expectations</text>
+        </svg>
+        <h3>Agate Expectations</h3>
+        <p>Agate red bands, Fraunces italic and ExtraBold, on a sand tee.</p>
+      </div>
+      <div class="design">
+        <svg viewBox="0 0 300 300" role="img" aria-label="Will brake for agates sketch">
+          <rect width="300" height="300" fill="#14181B"/>
+          <rect x="30" y="105" width="240" height="90" rx="6" fill="none" stroke="#DCCFB6" stroke-width="3"/>
+          <text x="150" y="142" text-anchor="middle" fill="#DCCFB6" font-family="Work Sans, Arial, sans-serif" font-weight="600" font-size="22" letter-spacing="3">WILL BRAKE</text>
+          <text x="150" y="178" text-anchor="middle" fill="#B87358" font-family="Fraunces, Georgia, serif" font-weight="800" font-size="30">for agates</text>
+        </svg>
+        <h3>Will brake for agates</h3>
+        <p>Bumper-sticker layout on a dark tee. Sand and dry agate red: the dry values print brighter on dark fabric.</p>
+      </div>
+      <div class="design">
+        <svg viewBox="0 0 300 300" role="img" aria-label="Petoskey hexagon sock pattern sketch">
+          <defs>
+            <pattern id="hex" width="29.44" height="51" patternUnits="userSpaceOnUse">
+              <rect width="29.44" height="51" fill="#A39E94"/>
+              <g fill="#6E4F35"><polygon points="14.7,2.4 27.4,9.7 27.4,24.3 14.7,31.6 2.1,24.3 2.1,9.7"/><polygon points="0.0,27.9 12.7,35.2 12.7,49.8 0.0,57.1 -12.7,49.8 -12.7,35.2"/><polygon points="29.4,27.9 42.1,35.2 42.1,49.8 29.4,57.1 16.8,49.8 16.8,35.2"/><polygon points="14.7,53.4 27.4,60.7 27.4,75.3 14.7,82.6 2.1,75.3 2.1,60.7"/><polygon points="0.0,-23.1 12.7,-15.8 12.7,-1.2 0.0,6.1 -12.7,-1.2 -12.7,-15.8"/><polygon points="29.4,-23.1 42.1,-15.8 42.1,-1.2 29.4,6.1 16.8,-1.2 16.8,-15.8"/></g>
+              <g fill="#3E2C1E"><circle cx="14.7" cy="17.0" r="2.6"/><circle cx="0.0" cy="42.5" r="2.6"/><circle cx="29.4" cy="42.5" r="2.6"/><circle cx="14.7" cy="68.0" r="2.6"/><circle cx="0.0" cy="-8.5" r="2.6"/><circle cx="29.4" cy="-8.5" r="2.6"/></g>
+            </pattern>
+          </defs>
+          <rect width="300" height="300" fill="url(#hex)"/>
+          <rect x="0" y="0" width="300" height="46" fill="#22394A"/>
+          <text x="150" y="30" text-anchor="middle" fill="#DCCFB6" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="2">HP · CUFF</text>
+        </svg>
+        <h3>Petoskey hexagon socks</h3>
+        <p>Dry gray grout, wet brown cells, and a dark eye in each. The real pattern is code-drawn at Step 8.</p>
+      </div>
+      <div class="design">
+        <svg viewBox="0 0 300 300" role="img" aria-label="I lick rocks sketch">
+          <defs>
+            <clipPath id="stone"><path d="M70,150 C70,95 115,70 160,72 C215,74 240,110 236,150 C232,196 196,222 150,222 C100,222 70,195 70,150Z"/></clipPath>
+          </defs>
+          <rect width="300" height="300" fill="#EEEDE8"/>
+          <path d="M70,150 C70,95 115,70 160,72 C215,74 240,110 236,150 C232,196 196,222 150,222 C100,222 70,195 70,150Z" fill="#B9B2A6"/>
+          <g clip-path="url(#stone)">
+            <path d="M118,205 C122,160 150,120 196,92 L214,112 C176,138 152,170 148,210Z" fill="#9A2B1C"/>
+            <path d="M126,190 C135,160 156,132 188,108" fill="none" stroke="#C4553E" stroke-width="5"/>
+            <path d="M160,128 C170,116 182,106 196,98" fill="none" stroke="#FFFFFF" stroke-opacity=".6" stroke-width="4" stroke-linecap="round"/>
+          </g>
+          <text x="150" y="268" text-anchor="middle" fill="#22394A" font-family="Fraunces, Georgia, serif" font-weight="800" font-size="30">I lick rocks</text>
+        </svg>
+        <h3>I lick rocks</h3>
+        <p>A dull, dry stone with one glossy lick where the true agate red shows through. The same streak as the logo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="voice">
+    <div class="section-head">
+      <h2 id="voice">Voice</h2>
+      <p>A rockhound talking to another rockhound on the beach: head down, dry humor, and always accurate.</p>
+    </div>
+    <div class="voice">
+      <div>
+        <h3>We sound like</h3>
+        <ul>
+          <li class="say">"Wet it first. Dry rocks lie."</li>
+          <li class="say">"Found at Whitefish Point after a north wind."</li>
+          <li class="say">"Leland Blue is furnace slag. We still love it."</li>
+          <li>Short sentences. Real place names. Real stone names.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>We never</h3>
+        <ul>
+          <li>Claim healing powers or magic properties for stones.</li>
+          <li>Guess at a stone ID. If Brian has not confirmed it, it does not print.</li>
+          <li>Use hype words like "epic," "insane," or "must-have."</li>
+          <li>Use em dashes. We always use the Oxford comma.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  const swatches = document.querySelectorAll('.swatch');
+  swatches.forEach(s => s.addEventListener('click', () => s.classList.toggle('wet')));
+  const all = document.getElementById('wetAll');
+  const grid = document.getElementById('swatches');
+  all.addEventListener('click', () => {
+    const on = grid.classList.toggle('all-wet');
+    all.setAttribute('aria-pressed', String(on));
+    all.textContent = on ? 'Let them dry' : 'Wet all four';
+    if (!on) swatches.forEach(s => s.classList.remove('wet'));
+  });
+  const soft = document.getElementById('softDemo');
+  const flip = () => soft.classList.toggle('wet');
+  soft.addEventListener('click', flip);
+  soft.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); } });
+</script>

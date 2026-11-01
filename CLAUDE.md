@@ -11,9 +11,12 @@ The full step-by-step plan is in `PLAN.md`.
 ## Current status
 
 - **Store name (decided Nov 1, 2026): Heavy Pockets Co.** Domain heavypocketsco.com, handles @heavypocketsco, email hello@heavypocketsco.com (forwarded to a private Gmail). Tagline "Head down. Pockets full." Secondary line "Dry rocks lie." Fallback: Wet Thumb Co. (wetthumbco.com, @wetthumbco), used only if Heavy Pockets runs into trouble. Checks were a first screen, not legal clearance. Background: heavypockets.com and @heavypockets belong to an old, apparently dead streetwear brand; the 2013 HEAVY POCKETS clothing filing (serial 85912472) was abandoned in 2014.
-- **Current step:** Steps 1, 2, and 3 done (Nov 1, 2026). **Next: Step 4, the brand kit** (colors, fonts, simple wordmark, and a one-page brand guide).
-- **Waiting on Brian:** nothing. Claude starts Step 4.
-- **Branch:** all work so far was merged into `main` on Nov 1, 2026. Start new work from `main`.
+- **Current step:** Steps 1 to 4 done. Brian approved the Step 4 brand kit on Nov 1, 2026, but said it feels like "AI slop" and chose to move on. **Plan reordered Nov 1, 2026:** the website preview (old Step 11) is now **Step 5**; the design tracker and designs became Steps 6 to 9, and Printify products and samples became Steps 10 and 11. Shopify still opens at Step 12. **Next: Step 5, the website preview page.**
+- **Brand kit follow-up:** the kit reads generic to Brian. Fix it through the website build in Step 5: use Brian's own stone photos, hand-made touches, and real field notes in place of code-drawn sketches.
+- **Step 5 status:** nothing built yet. Brian asked to plan the home page first. The draft plan is `theme/preview/Home_Page_Plan.md` (phone first; six sections: header, wet-stone hero, launch 5, beach to shirt, field guide teaser, and footer; only the hero is custom code so it ports to Shopify's Dawn theme). No photos yet; Brian chose to start with marked placeholders.
+- **Waiting on Brian:** two answers before building: (1) whether to cut the bundle offer, field notes, About story, and reviews from the home page (Claude recommends cutting them), and (2) whether the hero should be the wet-the-stone interaction (Claude recommends yes). Then build `theme/preview/index.html`, the home page only.
+- **Brand kit summary:** lake palette with dry and wet values (wet is deeper, never brighter): Superior slate #6B7780 / #22394A, agate red #B87358 / #9A2B1C, Petoskey gray / brown #A39E94 / #6E4F35, and sand #DCCFB6 / #A8875A; neutrals Beach fog #EEEDE8, Ink #1C1E1F, and Night #14181B. Fonts (all SIL Open Font License): Fraunces ExtraBold (display and logo), Work Sans (body), and IBM Plex Mono (field notes and chart labels). Wordmark: type only, with one glossy "lick" streak across "oc" in Pockets; versions primary, stacked, and HP mark.
+- **Branch:** Steps 1 to 3 were merged into `main` on Nov 1, 2026. Step 4 work is on `claude/heavy-pockets-brand-kit-j7cg49` (not merged yet). Merge it into `main` before starting Step 5, or start Step 5 from this branch.
 - **USPTO rate limit:** the search API returns 403 or 429 after many quick queries. Space searches out, and don't loop retries.
 - **Network access:** all needed hosts are allowed as of Nov 1, 2026: rdap.verisign.com, api.printify.com, images-api.printify.com, tmsearch.uspto.gov, tsdr.uspto.gov, api.cloudflare.com, fonts.googleapis.com, fonts.gstatic.com, accounts.google.com, and pypi.org. Shopify's `<store>.myshopify.com` gets added at Step 12.
 - **Impeccable skill:** its setup step runs `scripts/impeccable`, which downloads a helper program from GitHub releases (checksum-verified). GitHub release downloads aren't on the allowed host list yet, so that step may fail. The design guides in `reference/` work without it. To enable the helper, allow github.com and its release download host. Brian plans to use it mainly once the website gets built.
@@ -107,9 +110,17 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - `brand/Store_Name_Shortlist.xlsx`: candidate names with checks (Heavy Pockets Co. marked CHOSEN).
 - `brand/Step3_Accounts_Checklist.md`: Step 3 account setup checklist.
 - `scripts/tm_search.py`: USPTO trademark knockout search.
+- `brand/Brand_Guide.md`: the one-page brand guide (Step 4).
+- `brand/brand_preview.html`: interactive brand preview, light and dark mode.
+- `brand/wordmark/`: logo SVGs, plus 300 dpi PNGs in `png/`.
+- `brand/fonts/`: font files and their OFL licenses.
+- `theme/brand-tokens.css`: brand colors and fonts as CSS variables.
+- `scripts/build_wordmark.py`: rebuilds the logo files (needs fonttools, uharfbuzz, and cairosvg from pip).
+- `scripts/check_contrast.py`: WCAG contrast check for the palette.
 - `brand/Naming_Brainstorm_Prompt.md`: the prompt for the separate naming session.
 - `.claude/skills/impeccable/`: the Impeccable design skill (v4.8.0, Apache 2.0, from github.com/pbakaus/impeccable), installed Nov 1, 2026. It loads in every session (`/impeccable`). License in `.claude/skills/LICENSE-impeccable`.
-- Planned: `designs/` (art files), `tracker/Design_Tracker.xlsx`, `scripts/` (Python automation), `theme/` (Shopify custom sections).
+- `theme/preview/Home_Page_Plan.md`: Step 5 home page plan (draft, waiting on Brian).
+- Planned: `theme/preview/index.html` (home page preview), `designs/` (art files), `tracker/Design_Tracker.xlsx`, and more of `theme/` (Shopify custom sections).
 
 ## Session log
 
@@ -126,3 +137,7 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - **2026-11-01 (later):** Brian chose **Heavy Pockets Co.** (fallback Wet Thumb Co.); both .coms re-checked open. Reordered Step 3 so the Gmail comes first (Cloudflare needs an account email). Wrote the Step 3 checklist.
 - **2026-11-01 (later):** Step 3 done. Gmail heavypocketsco@gmail.com, domain heavypocketsco.com (Cloudflare), handles claimed, Printify connected (network secret, shop 29566047), and hello@ forwarding plus send-as working with SPF. Next: Step 4, brand kit.
 - **2026-11-01 (later):** Installed the Impeccable design skill into `.claude/skills/` (Claude Code copy only; the other copies in that repo are the same skill for other tools). Its launcher downloads a helper binary; flagged. Best fit is the web pieces (brand guide page, store preview), not shirt art. Next: Step 4, brand kit.
+- **2026-11-01 (later):** Step 4 drafted. Built the lake palette with dry and wet values (all text pairings pass WCAG), picked Fraunces, Work Sans, and IBM Plex Mono, and made the wordmark (type only, with a glossy "lick" streak that ties the logo to the "I lick rocks" design) in primary, stacked, and HP mark versions. Wrote the brand guide and an interactive preview. Changed the PLAN.md Step 4 guide format from .docx to .md. Waiting on Brian's approval.
+- **2026-11-01 (later):** Brian approved Step 4 and said it feels like "AI slop." He chose to move on, so the fix is deferred to Step 11 (see Brand kit follow-up). Next: Step 5, design tracker.
+- **2026-11-01 (later):** Brian asked to start the website design now. Moved the preview page (old Step 11) to Step 5 and renumbered Steps 6 to 11 in PLAN.md. Shopify stays at Step 12. Next: Step 5, built with Brian's own photos where possible.
+- **2026-11-01 (later):** Brian chose to start Step 5 without photos and with the home page first, then asked to plan before building. Wrote `theme/preview/Home_Page_Plan.md`. Session ended before Brian answered the plan questions (cuts and hero). Idea to keep: the page makes the dry look from one wet photo, so Brian only photographs each stone once, wet.

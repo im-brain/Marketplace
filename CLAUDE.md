@@ -6,7 +6,7 @@ Read this first in every new conversation. Update the "Current status" and "Sess
 
 A print-on-demand store for Great Lakes rockhounds (Michigan, Wisconsin, and Minnesota collectors), selling tees and socks. Owner: Brian, a rockhound in Grand Rapids, Michigan. It is a personal side project with no connection to his day job. The goal is profit greater than his monthly AI bill (about $20).
 
-The full step-by-step plan is in `PLAN.md` (Word copy: `PLAN.docx`).
+The full step-by-step plan is in `PLAN.md`.
 
 ## Current status
 
@@ -85,11 +85,11 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - Spreadsheets: Arial, cells middle-aligned vertically, blue text for inputs, black for formulas, and yellow fill for assumptions to verify.
 - HTML must be readable in dark mode.
 - When condensing his drafts, ask before removing anything.
-- Keep this file and PLAN.docx in sync with PLAN.md when the plan changes.
+- Keep this file in sync with PLAN.md when the plan changes. Do not make a Word copy of the plan.
 
 ## Repo layout (grows over time)
 
-- `PLAN.md` and `PLAN.docx`: the plan.
+- `PLAN.md`: the plan.
 - `CLAUDE.md`: this handoff.
 - `models/POD_Profit_Model.xlsx`: the profit model.
 - Planned: `designs/` (art files), `tracker/Design_Tracker.xlsx`, `scripts/` (Python automation), `theme/` (Shopify custom sections).
@@ -99,3 +99,4 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - **2026-11-01:** Planning session. Chose Shopify + Printify, product-only content, a $20 AI bill, and tools under $75. Wrote PLAN.md, PLAN.docx, and CLAUDE.md. Next: Step 2.
 - **2026-11-01 (later):** Brian accepted the pushback, chose domestic only, and uploaded the profit model (now in `models/`). Standing by for Step 2.
 - **2026-11-01 (later):** Shopify's trial is only 3 days, so Shopify moved to Step 12. Steps 2 to 11 run on Printify (free) and a preview page in the repo. Next: Step 2, Printify only. Also recorded the rockhounding pants idea under Future products.
+- **2026-11-01 (later):** Brian asked to stop making PLAN.docx. Removed it; PLAN.md is the only copy of the plan.

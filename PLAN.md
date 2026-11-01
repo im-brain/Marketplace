@@ -9,7 +9,6 @@ Decisions from this conversation: **Shopify + Printify**. **Product-only social 
 When Brian approves this plan, the first build step writes these files to the repo:
 - `PLAN.md`: this plan, in plain language.
 - `CLAUDE.md`: the handoff file. It records the current step, decisions, account status, where the secrets live, and his preferences (no em dashes, Oxford comma, .xlsx and .docx for anything he edits, dark-mode HTML). It is updated at the end of every work session.
-- `PLAN.docx`: a Word copy, because he cannot open .md files on his work computer.
 
 ## Pushback (built into the plan)
 
@@ -68,7 +67,7 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 ## Steps (each one testable on its own)
 
 **Phase 0: Foundation**
-1. (Done) Create `PLAN.md`, `CLAUDE.md`, and `PLAN.docx`, and add the profit model to `models/`. *Test:* Brian opens PLAN.docx.
+1. (Done) Create `PLAN.md` and `CLAUDE.md`, and add the profit model to `models/`. *Test:* Brian reads PLAN.md.
 2. **Printify account and API token only.** Printify is free, and we can design products, preview mockups, and order samples there with no store connected. Store the token as an environment secret, never in the repo. *Test:* Claude can read the Printify catalog with the token.
 
 **Phase 1: Brand**

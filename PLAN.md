@@ -78,29 +78,31 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 **Phase 1: Brand**
 4. Brand kit: colors (the lake palette: Superior slate, agate red, Petoskey gray, and sand), fonts, a simple wordmark, and a one-page brand guide (.md, with an HTML preview). *Test:* Brian approves it.
 
-**Phase 2: Designs**
-5. Design tracker `.xlsx` with all 13 designs, plus columns for art source and license, accuracy check, trademark check, and launch priority. It follows his spreadsheet formatting rules. *Test:* it opens in Excel and Brian marks the launch 5.
-6. Launch 5: the Great Lakes beach stone chart, "Agate Expectations," "Will brake for agates," Petoskey hexagon socks, and "I lick rocks" (a dull stone with one glossy lick mark where the true color shows).
-7. The code-drawn Petoskey sock pattern, made to Printify's exact sock template size. *Test:* Brian views the PNG and it passes Printify's upload preview.
-8. The other three designs at print size, all from Brian's photos, his edits, or properly licensed sources. *Test:* Brian approves each one, and the accuracy and trademark boxes are checked.
+**Phase 2: Website design (preview page, free)**
+5. Build the store look as a **preview page in the repo** (moved up from old Step 11 on Nov 1, 2026, at Brian's request): home page, product page layout, the wet-stone effect, field notes, and field guide pages. It uses the brand kit and Brian's own stone photos where possible, with placeholder product art clearly marked until the real designs exist. All the design work happens here at no cost. *Test:* Brian approves the preview on phone and desktop, in light and dark mode. Real product art drops in after Step 9.
 
-**Phase 3: Products and samples in Printify (no store yet)**
-9. Brian and Claude create the launch 5 in Printify by hand, saving them as products that aren't published. *Test:* the mockups look right in Printify.
-10. Order samples of the launch 5 straight from Printify. *Test:* samples arrive and Brian approves print quality and color.
+**Phase 3: Designs**
+6. Design tracker `.xlsx` with all 13 designs, plus columns for art source and license, accuracy check, trademark check, and launch priority. It follows his spreadsheet formatting rules. *Test:* it opens in Excel and Brian marks the launch 5.
+7. Launch 5: the Great Lakes beach stone chart, "Agate Expectations," "Will brake for agates," Petoskey hexagon socks, and "I lick rocks" (a dull stone with one glossy lick mark where the true color shows).
+8. The code-drawn Petoskey sock pattern, made to Printify's exact sock template size. *Test:* Brian views the PNG and it passes Printify's upload preview.
+9. The other three designs at print size, all from Brian's photos, his edits, or properly licensed sources. *Test:* Brian approves each one, and the accuracy and trademark boxes are checked.
 
-**Phase 4: Build the store look for free, then open Shopify**
-11. Build the theme pieces as a **preview page in the repo** (the wet-stone effect, product page layout, field notes, and field guide pages) that Brian can open in a browser. All the design work happens here at no cost. *Test:* Brian approves the preview on phone and desktop, in light and dark mode.
+**Phase 4: Products and samples in Printify (no store yet)**
+10. Brian and Claude create the launch 5 in Printify by hand, saving them as products that aren't published. *Test:* the mockups look right in Printify.
+11. Order samples of the launch 5 straight from Printify. *Test:* samples arrive and Brian approves print quality and color. Then swap the real product photos and art into the Step 5 preview.
+
+**Phase 5: Open Shopify**
 12. **Open Shopify now**, signed up with the store Gmail. Choose a plan and start the trial only once the samples are approved and the preview is signed off. If Shopify offers a low intro price for the first months, this is when it pays off. Connect Printify, connect the domain, and publish the launch 5 from Printify. *Test:* the 5 products appear in the Shopify admin.
-13. Install a free Shopify theme and paste in the approved pieces from Step 11, including field notes (Shopify metafields). *Test:* the live store preview matches the approved preview.
+13. Install a free Shopify theme and paste in the approved pieces from the Step 5 preview, including field notes (Shopify metafields). *Test:* the live store preview matches the approved preview.
 14. Field guide pages, plus the About, shipping, and returns pages and policies. *Test:* Brian checks every label, and Shopify's launch checklist has no missing items.
 15. The store password stays on until launch. *Test:* only Brian can see the store.
 
-**Phase 5: Automation**
+**Phase 6: Automation**
 16. Script `publish_design.py`: takes a tracker row and creates the Printify product. This part can be built and tested before Shopify exists. After Step 12, it also publishes to Shopify as a draft. *Test:* run it on one design, then check the product in Printify (and later the draft in Shopify).
 17. Listing writer plus a checker that blocks em dashes, missing Oxford commas, and flagged claims. *Test:* a draft listing passes the checker, and Brian reads it.
 18. Weekly scheduled task: an orders and profit summary, 3 product-only video ideas and captions, and reminders, such as samples to order and trademarks to re-check. *Test:* the first report arrives on schedule.
 
-**Phase 6: Launch**
+**Phase 7: Launch**
 19. Remove the store password and publish the launch 5. Post the first video batch. *Test:* place a real order and watch it reach Printify.
 20. After 30 days: review the numbers, decide on designs 5 to 8, and decide whether to add Etsy.
 

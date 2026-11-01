@@ -1,6 +1,6 @@
 # Heavy Pockets Co. Brand Guide
 
-v1, approved by Brian on Nov 1, 2026 (Step 4). To revisit at Step 11 with real photos and hand-made details.
+v1, approved by Brian on Nov 1, 2026 (Step 4). To revisit during the Step 5 website build with real photos and hand-made details.
 See it live: open `brand/brand_preview.html` in a browser.
 
 ## The idea
@@ -28,7 +28,7 @@ Rules:
 - **Light tees** (white, natural, sand): use the wet colors.
 - **Dark tees** (charcoal, navy, black): use sand and the dry colors. Printers lay white ink under the color on dark fabric, and the dry values hold up better there.
 - Every text pairing passes the WCAG contrast check (`python3 scripts/check_contrast.py`).
-- Colors on fabric will not match the screen. Judge them on the Step 6 samples.
+- Colors on fabric will not match the screen. Judge them on the Step 11 samples.
 
 ## Fonts
 
@@ -91,6 +91,6 @@ We never:
 ## Files
 
 - `brand/brand_preview.html`: the interactive preview (light and dark mode).
-- `theme/brand-tokens.css`: colors and fonts as CSS variables for the Step 11 preview and the Shopify theme.
+- `theme/brand-tokens.css`: colors and fonts as CSS variables for the Step 5 preview and the Shopify theme.
 - `scripts/build_wordmark.py`: rebuilds the logo files.
 - `scripts/check_contrast.py`: checks text contrast for every color pairing.

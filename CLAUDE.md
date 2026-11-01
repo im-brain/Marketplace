@@ -11,8 +11,10 @@ The full step-by-step plan is in `PLAN.md`.
 ## Current status
 
 - **Current step:** Step 1 done. **Step 2: choose the store name.** Then Step 3 creates the domain, the store Gmail, the social handles, and Printify, in that order. Shopify waits until Step 12.
-- **Waiting on Brian:** in `brand/Store_Name_Shortlist.xlsx`, check the Gmail, Instagram, TikTok, and USPTO columns for the top names, then pick one. All 10 main .com domains were confirmed open on Nov 1, 2026. Claude's top 3: Waterline Rock Co., Wet Rock Club, and Lake Found Goods. Also add the "Now" hosts from the Network Access tab.
-- **Network access:** allowed: rdap.verisign.com, accounts.google.com, pypi.org, and fonts.googleapis.com. Blocked or untested, with requests out to Brian: api.printify.com, images-api.printify.com, tmsearch.uspto.gov, tsdr.uspto.gov, api.cloudflare.com (optional), and fonts.gstatic.com (optional). The full list is in the Network Access tab of the shortlist file.
+- **Waiting on Brian:** in `brand/Store_Name_Shortlist.xlsx`, check Gmail, Instagram, and TikTok for the top names (yellow columns), then pick one. Claude already checked .com (all 10 open) and USPTO. **Claude's top 2: Lake Found Goods and Agate Hour** (clean on every check). Husk & Band is third (may read as a music band). Waterline is risky (WATERLINE registered for clothing). Third Coast and Lake Effect are blocked.
+- **Wet Rock Club watch:** BIG WET ROCK (serial 98744595) is a pending clothing application. Its proof-of-use deadline is about Dec 3, 2026, extendable to about Jun 3, 2028. Re-check after Dec 3, 2026 with `scripts/tm_search.py` or TSDR, only if Brian still wants Wet Rock Club.
+- **Network access:** all needed hosts are allowed as of Nov 1, 2026: rdap.verisign.com, api.printify.com, images-api.printify.com, tmsearch.uspto.gov, tsdr.uspto.gov, api.cloudflare.com, fonts.googleapis.com, fonts.gstatic.com, accounts.google.com, and pypi.org. Shopify's `<store>.myshopify.com` gets added at Step 12.
+- **Tools Claude can run:** .com availability via `https://rdap.verisign.com/com/v1/domain/<name>.com` (200 means taken, 404 means open). Trademark knockout search via `python3 scripts/tm_search.py '"phrase"'` (POSTs to `tmsearch.uspto.gov/prod-stage-v1-0-0/tmsearch`; classes look like "IC 025"). Filing history via `tmsearch.uspto.gov/tsdr-api-v1-0-0/tsdr-api?serialNumber=<n>`. Social and Etsy conflicts via web search limited to those domains. Handle availability can't be confirmed automatically; Brian checks by hand.
 - **Accounts:** Store Gmail: not created. Domain: not bought. TikTok and Instagram: not claimed. Printify: not created. Shopify: not created (Step 12).
 - **Secrets:** none yet. Rule: all tokens live in the Claude Code environment's secrets, never in the repo.
 
@@ -70,8 +72,8 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - **Original art only:** no tracing field guides, books, or Facebook group charts.
 - **No protected IP:** no logos, sports teams, characters, song lyrics, or band art.
 - **Trademarks:** check every slogan on tmsearch.uspto.gov before printing.
-  - "YOOPERLITES" is registered (Serial 88117414). Use "UV-glowing sodalite" instead.
-  - "Bands will make her dance": the only filing found was Class 41 (dance instruction). It is also close to the Juicy J song "Bandz A Make Her Dance." Brian may use a reworded version. Suggested: "Agate bands make her dance," which reads clearly as a rock joke. Re-check Classes 25, 9, and 41 before printing.
+  - "YOOPERLITES": registration 5750169 (serial 88117414) was **cancelled Nov 28, 2025** (no Section 8 filed), and there are no live marks as of Nov 1, 2026. The original owner still uses the name and may have unregistered rights, especially in Michigan, and could refile. Default to "UV-glowing sodalite" and re-check before using the word.
+  - "Bands will make her dance": the only filing found was Class 41 (dance instruction). It is also close to the Juicy J song "Bandz A Make Her Dance." Brian may use a reworded version. Suggested: "Agate bands make her dance," which reads clearly as a rock joke. Re-check Classes 25, 9, and 41 before printing. Nov 1, 2026: "bands make her dance," "Agate Expectations," and "Will brake for agates" had no USPTO filings.
 - **AI art** can't be copyrighted on its own. Brian's edits and photos help.
 - **Saturated puns** (7 and 8) are filler, not the launch set.
 
@@ -93,6 +95,7 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - `CLAUDE.md`: this handoff.
 - `models/POD_Profit_Model.xlsx`: the profit model.
 - `brand/Store_Name_Shortlist.xlsx`: 10 candidate names with checks.
+- `scripts/tm_search.py`: USPTO trademark knockout search.
 - Planned: `designs/` (art files), `tracker/Design_Tracker.xlsx`, `scripts/` (Python automation), `theme/` (Shopify custom sections).
 
 ## Session log
@@ -104,3 +107,4 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - **2026-11-01 (later):** Brian wants a store Gmail named after the store. Reordered: Step 2 is now the store name, and Step 3 is accounts (domain, Gmail, handles, Printify, and email forwarding).
 - **2026-11-01 (later):** Built the name shortlist (10 names, web-searched for existing businesses). Waiting on Brian's hand checks and pick.
 - **2026-11-01 (later):** Brian opened .com registry access. Confirmed all 10 shortlist .coms are open, and added a Network Access tab listing the hosts to allow.
+- **2026-11-01 (later):** All requested hosts now allowed. Ran USPTO and social searches on all 10 names. New top 2: Lake Found Goods and Agate Hour. Found YOOPERLITES registration cancelled. Explained BIG WET ROCK priority (an intent-to-use filing dates back to Sep 11, 2024, nationwide). Added scripts/tm_search.py.

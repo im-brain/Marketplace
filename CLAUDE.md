@@ -16,6 +16,7 @@ The full step-by-step plan is in `PLAN.md`.
 - **Branch:** all work so far was merged into `main` on Nov 1, 2026. Start new work from `main`.
 - **USPTO rate limit:** the search API returns 403 or 429 after many quick queries. Space searches out, and don't loop retries.
 - **Network access:** all needed hosts are allowed as of Nov 1, 2026: rdap.verisign.com, api.printify.com, images-api.printify.com, tmsearch.uspto.gov, tsdr.uspto.gov, api.cloudflare.com, fonts.googleapis.com, fonts.gstatic.com, accounts.google.com, and pypi.org. Shopify's `<store>.myshopify.com` gets added at Step 12.
+- **Impeccable skill:** its setup step runs `scripts/impeccable`, which downloads a helper program from GitHub releases (checksum-verified). GitHub release downloads aren't on the allowed host list yet, so that step may fail. The design guides in `reference/` work without it. To enable the helper, allow github.com and its release download host. Brian plans to use it mainly once the website gets built.
 - **Tools Claude can run:** .com availability via `https://rdap.verisign.com/com/v1/domain/<name>.com` (200 means taken, 404 means open). Trademark knockout search via `python3 scripts/tm_search.py '"phrase"'` (POSTs to `tmsearch.uspto.gov/prod-stage-v1-0-0/tmsearch`; classes look like "IC 025"). Filing history via `tmsearch.uspto.gov/tsdr-api-v1-0-0/tsdr-api?serialNumber=<n>`. Social and Etsy conflicts via web search limited to those domains. Handle availability can't be confirmed automatically; Brian checks by hand.
 - **Accounts (all created Nov 1, 2026):**
   - Store Gmail: **heavypocketsco@gmail.com**, with 2-step verification on. It owns every store account.
@@ -96,6 +97,7 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - HTML must be readable in dark mode.
 - When condensing his drafts, ask before removing anything.
 - Keep this file in sync with PLAN.md when the plan changes. Do not make a Word copy of the plan.
+- When using the Impeccable skill, Brian's rules here take priority: no em dashes, Oxford comma, HTML readable in dark mode, and brand colors and fonts from the Step 4 brand kit once it exists.
 
 ## Repo layout (grows over time)
 
@@ -106,6 +108,7 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - `brand/Step3_Accounts_Checklist.md`: Step 3 account setup checklist.
 - `scripts/tm_search.py`: USPTO trademark knockout search.
 - `brand/Naming_Brainstorm_Prompt.md`: the prompt for the separate naming session.
+- `.claude/skills/impeccable/`: the Impeccable design skill (v4.8.0, Apache 2.0, from github.com/pbakaus/impeccable), installed Nov 1, 2026. It loads in every session (`/impeccable`). License in `.claude/skills/LICENSE-impeccable`.
 - Planned: `designs/` (art files), `tracker/Design_Tracker.xlsx`, `scripts/` (Python automation), `theme/` (Shopify custom sections).
 
 ## Session log
@@ -122,3 +125,4 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - **2026-11-01 (later):** Naming session returned Heavy Pockets, Lick Test, and Wet Thumb. Checked them: both chosen names are clear with "Co." handles and domains. Added them to the top of the shortlist. Waiting on Brian's final pick.
 - **2026-11-01 (later):** Brian chose **Heavy Pockets Co.** (fallback Wet Thumb Co.); both .coms re-checked open. Reordered Step 3 so the Gmail comes first (Cloudflare needs an account email). Wrote the Step 3 checklist.
 - **2026-11-01 (later):** Step 3 done. Gmail heavypocketsco@gmail.com, domain heavypocketsco.com (Cloudflare), handles claimed, Printify connected (network secret, shop 29566047), and hello@ forwarding plus send-as working with SPF. Next: Step 4, brand kit.
+- **2026-11-01 (later):** Installed the Impeccable design skill into `.claude/skills/` (Claude Code copy only; the other copies in that repo are the same skill for other tools). Its launcher downloads a helper binary; flagged. Best fit is the web pieces (brand guide page, store preview), not shirt art. Next: Step 4, brand kit.

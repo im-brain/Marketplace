@@ -121,6 +121,7 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - `.claude/skills/impeccable/`: the Impeccable design skill (v4.8.0, Apache 2.0, from github.com/pbakaus/impeccable), installed Nov 1, 2026. It loads in every session (`/impeccable`). License in `.claude/skills/LICENSE-impeccable`.
 - `PRODUCT.md`: product record the Impeccable skill reads (users, purpose, and constraints).
 - `theme/preview/Home_Page_Plan.md`: Step 5 home page brief (shaped, waiting on Brian's OK).
+- `brand/Hero_Image_Prompt.md`: draft image prompt for the home page hero scene (Draft 1, waiting on Brian).
 - Planned: `theme/preview/index.html` (home page preview), `designs/` (art files), `tracker/Design_Tracker.xlsx`, and more of `theme/` (Shopify custom sections).
 
 ## Session log

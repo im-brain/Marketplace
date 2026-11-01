@@ -1,6 +1,6 @@
 # Heavy Pockets Co. Brand Guide
 
-Draft v1, Nov 1, 2026. Status: waiting on Brian's approval (Step 4).
+v1, approved by Brian on Nov 1, 2026 (Step 4). To revisit at Step 11 with real photos and hand-made details.
 See it live: open `brand/brand_preview.html` in a browser.
 
 ## The idea

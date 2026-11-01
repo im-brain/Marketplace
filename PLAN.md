@@ -14,8 +14,8 @@ When Brian approves this plan, the first build step writes these files to the re
 
 1. **"Publicly gathered photos" can't go on products.** A photo found online belongs to whoever took it. We only print his own photos, his own edits, art made with code, or images whose license clearly allows commercial use (logged in the tracker). Public photos are fine as references for checking accuracy, but they are never traced or printed. AI art is allowed, but each piece needs his own edits so it can be protected.
 2. **Product-only video reaches the fewest people.** One cheap upgrade without showing his face: film his real stone held next to the shirt that was drawn from it. The point of the brand is that every design starts with a real find.
-3. **Launch 4 designs, not 13.** The tracker holds all 13, and only 4 go live first.
-4. **The saturated puns ("I lick rocks" and "Sorry I'm late") come later.** The launch set should be designs nobody else has, which means Great Lakes details and accurate charts.
+3. **Launch 5 designs, not 13.** The tracker holds all 13, and only 5 go live first.
+4. **The saturated pun "Sorry I'm late" comes later.** "I lick rocks" made the launch set only with original lick-mark art. The launch set should be designs nobody else has, which means Great Lakes details and accurate charts.
 5. **"Bands will make her dance" is close to a Juicy J song title.** A reworded version is fine, and "Agate bands make her dance" reads clearly as a rock joke. Check the trademark for apparel (Class 25) and music (Class 9 and Class 41) before printing.
 
 ## The concept: "Wet Stone"
@@ -77,18 +77,18 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 4. Brand kit: colors (the lake palette: Superior slate, agate red, Petoskey gray, and sand), fonts, a simple wordmark, and a one-page brand guide (.docx). *Test:* Brian approves it.
 
 **Phase 2: Designs**
-5. Design tracker `.xlsx` with all 13 designs, plus columns for art source and license, accuracy check, trademark check, and launch priority. It follows his spreadsheet formatting rules. *Test:* it opens in Excel and Brian marks the launch 4.
-6. Proposed launch 4: the Great Lakes beach stone chart, "Agate Expectations," "Will brake for agates," and Petoskey hexagon socks.
+5. Design tracker `.xlsx` with all 13 designs, plus columns for art source and license, accuracy check, trademark check, and launch priority. It follows his spreadsheet formatting rules. *Test:* it opens in Excel and Brian marks the launch 5.
+6. Launch 5: the Great Lakes beach stone chart, "Agate Expectations," "Will brake for agates," Petoskey hexagon socks, and "I lick rocks" (a dull stone with one glossy lick mark where the true color shows).
 7. The code-drawn Petoskey sock pattern, made to Printify's exact sock template size. *Test:* Brian views the PNG and it passes Printify's upload preview.
 8. The other three designs at print size, all from Brian's photos, his edits, or properly licensed sources. *Test:* Brian approves each one, and the accuracy and trademark boxes are checked.
 
 **Phase 3: Products and samples in Printify (no store yet)**
-9. Brian and Claude create the launch 4 in Printify by hand, saving them as products that aren't published. *Test:* the mockups look right in Printify.
-10. Order samples of the launch 4 straight from Printify. *Test:* samples arrive and Brian approves print quality and color.
+9. Brian and Claude create the launch 5 in Printify by hand, saving them as products that aren't published. *Test:* the mockups look right in Printify.
+10. Order samples of the launch 5 straight from Printify. *Test:* samples arrive and Brian approves print quality and color.
 
 **Phase 4: Build the store look for free, then open Shopify**
 11. Build the theme pieces as a **preview page in the repo** (the wet-stone effect, product page layout, field notes, and field guide pages) that Brian can open in a browser. All the design work happens here at no cost. *Test:* Brian approves the preview on phone and desktop, in light and dark mode.
-12. **Open Shopify now**, signed up with the store Gmail. Choose a plan and start the trial only once the samples are approved and the preview is signed off. If Shopify offers a low intro price for the first months, this is when it pays off. Connect Printify, connect the domain, and publish the launch 4 from Printify. *Test:* the 4 products appear in the Shopify admin.
+12. **Open Shopify now**, signed up with the store Gmail. Choose a plan and start the trial only once the samples are approved and the preview is signed off. If Shopify offers a low intro price for the first months, this is when it pays off. Connect Printify, connect the domain, and publish the launch 5 from Printify. *Test:* the 5 products appear in the Shopify admin.
 13. Install a free Shopify theme and paste in the approved pieces from Step 11, including field notes (Shopify metafields). *Test:* the live store preview matches the approved preview.
 14. Field guide pages, plus the About, shipping, and returns pages and policies. *Test:* Brian checks every label, and Shopify's launch checklist has no missing items.
 15. The store password stays on until launch. *Test:* only Brian can see the store.
@@ -99,7 +99,7 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 18. Weekly scheduled task: an orders and profit summary, 3 product-only video ideas and captions, and reminders, such as samples to order and trademarks to re-check. *Test:* the first report arrives on schedule.
 
 **Phase 6: Launch**
-19. Remove the store password and publish the launch 4. Post the first video batch. *Test:* place a real order and watch it reach Printify.
+19. Remove the store password and publish the launch 5. Post the first video batch. *Test:* place a real order and watch it reach Printify.
 20. After 30 days: review the numbers, decide on designs 5 to 8, and decide whether to add Etsy.
 
 ## Future products (not in the launch plan)

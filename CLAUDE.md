@@ -10,7 +10,7 @@ The full step-by-step plan is in `PLAN.md`.
 
 ## Current status
 
-- **Current step:** Step 1 done. **Step 2: choose the store name.** Then Step 3 creates the domain, the store Gmail, the social handles, and Printify, in that order. Shopify waits until Step 12.
+- **Current step:** Step 1 done. **Step 2: choose the store name.** Brian is brainstorming names in another session using `brand/Naming_Brainstorm_Prompt.md`. When he returns with finalists, run RDAP and `scripts/tm_search.py` on them, plus a social and Etsy web search, and add them to the shortlist. Then Step 3 creates the domain, the store Gmail, the social handles, and Printify, in that order. Shopify waits until Step 12.
 - **Waiting on Brian:** in `brand/Store_Name_Shortlist.xlsx`, check Gmail, Instagram, and TikTok for the top names (yellow columns), then pick one. Claude already checked .com (all 10 open) and USPTO. **Claude's top 2: Lake Found Goods and Agate Hour** (clean on every check). Husk & Band is third (may read as a music band). Waterline is risky (WATERLINE registered for clothing). Third Coast and Lake Effect are blocked.
 - **Wet Rock Club watch:** BIG WET ROCK (serial 98744595) is a pending clothing application. Its proof-of-use deadline is about Dec 3, 2026, extendable to about Jun 3, 2028. Re-check after Dec 3, 2026 with `scripts/tm_search.py` or TSDR, only if Brian still wants Wet Rock Club.
 - **Network access:** all needed hosts are allowed as of Nov 1, 2026: rdap.verisign.com, api.printify.com, images-api.printify.com, tmsearch.uspto.gov, tsdr.uspto.gov, api.cloudflare.com, fonts.googleapis.com, fonts.gstatic.com, accounts.google.com, and pypi.org. Shopify's `<store>.myshopify.com` gets added at Step 12.
@@ -29,7 +29,7 @@ The full step-by-step plan is in `PLAN.md`.
 7. Art sources: Brian's own photos, his edits of AI art, code-generated patterns, and images whose license explicitly allows commercial use. Public photos are only for checking accuracy and are never printed or traced.
 8. Brand concept (working): **"Wet Stone."** Rockhounds wet a stone to see its true color. Candidate names to check: Wet Stone Supply Co., Third Coast Rockhound, and Lake Effect Rock Co.
 9. Signature site features: the "wet" hover and tap effect, a field note on each design, a free field guide that links to the chart shirts, and code-drawn sock patterns.
-10. Launch with 4 designs: the Great Lakes beach stone chart, "Agate Expectations," "Will brake for agates," and Petoskey hexagon socks.
+10. Launch with 5 designs: the Great Lakes beach stone chart, "Agate Expectations," "Will brake for agates," Petoskey hexagon socks, and **"I lick rocks"** (or "Will lick rocks"), Brian's idea from Nov 1, 2026. The phrase alone is common on Etsy, so the art carries it: a dull, dry stone with one glossy lick-shaped streak where the true color shows through. It's the brand idea in one picture. Nov 1, 2026: no USPTO filings for "I lick rocks," "Will lick rocks," or "lick rocks." Re-check before printing.
 11. Accounts: a dedicated **store Gmail** owns every store account (domain, Printify, Shopify, TikTok, and Instagram). Customers see `hello@` the domain, forwarded free to the Gmail by Cloudflare Email Routing. The name is picked first so the Gmail can match it.
 
 ## Future product ideas
@@ -62,7 +62,7 @@ The full step-by-step plan is in `PLAN.md`.
 ## Full design list (13)
 
 Charts: (1) Lake Superior agate ID chart, (2) Great Lakes beach stone chart, (3) anatomy of an agate, and (4) Mohs hardness scale.
-Puns: (5) "Bands will make her dance," (6) "Agate Expectations," (7) "I lick rocks," (8) "Sorry I'm late, I saw a rock," (9) "Will brake for agates," and (10) "My other hobby is also looking down."
+Puns: (5) "Bands will make her dance," (6) "Agate Expectations," (7) "I lick rocks" (promoted to the launch set with lick-mark art), (8) "Sorry I'm late, I saw a rock," (9) "Will brake for agates," and (10) "My other hobby is also looking down."
 Socks: (11) Petoskey hexagon all-over, (12) agate bands all-over, and (13) soles: "If you can read this, I found a rock."
 Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michigan, not a natural stone.
 
@@ -75,7 +75,7 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
   - "YOOPERLITES": registration 5750169 (serial 88117414) was **cancelled Nov 28, 2025** (no Section 8 filed), and there are no live marks as of Nov 1, 2026. The original owner still uses the name and may have unregistered rights, especially in Michigan, and could refile. Default to "UV-glowing sodalite" and re-check before using the word.
   - "Bands will make her dance": the only filing found was Class 41 (dance instruction). It is also close to the Juicy J song "Bandz A Make Her Dance." Brian may use a reworded version. Suggested: "Agate bands make her dance," which reads clearly as a rock joke. Re-check Classes 25, 9, and 41 before printing. Nov 1, 2026: "bands make her dance," "Agate Expectations," and "Will brake for agates" had no USPTO filings.
 - **AI art** can't be copyrighted on its own. Brian's edits and photos help.
-- **Saturated puns** (7 and 8) are filler, not the launch set.
+- **Saturated puns** (8) are filler, not the launch set. Design 7 is in the launch set only because the lick-mark art makes it original.
 
 ## Brian's working preferences (always follow)
 
@@ -83,7 +83,7 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - Challenge ideas, don't just agree. Aim for something beautiful and new.
 - Be concise, precise, and defensible. Flag accuracy concerns in anything customer-facing.
 - **Never use em dashes. Always use the Oxford comma.**
-- He cannot open .md files on his work computer. Deliver anything he edits as **.xlsx or .docx**.
+- .md is fine for documents. Use .xlsx for spreadsheets.
 - Spreadsheets: Arial, cells middle-aligned vertically, blue text for inputs, black for formulas, and yellow fill for assumptions to verify.
 - HTML must be readable in dark mode.
 - When condensing his drafts, ask before removing anything.
@@ -96,6 +96,7 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - `models/POD_Profit_Model.xlsx`: the profit model.
 - `brand/Store_Name_Shortlist.xlsx`: 10 candidate names with checks.
 - `scripts/tm_search.py`: USPTO trademark knockout search.
+- `brand/Naming_Brainstorm_Prompt.md`: the prompt for the separate naming session.
 - Planned: `designs/` (art files), `tracker/Design_Tracker.xlsx`, `scripts/` (Python automation), `theme/` (Shopify custom sections).
 
 ## Session log
@@ -108,3 +109,4 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - **2026-11-01 (later):** Built the name shortlist (10 names, web-searched for existing businesses). Waiting on Brian's hand checks and pick.
 - **2026-11-01 (later):** Brian opened .com registry access. Confirmed all 10 shortlist .coms are open, and added a Network Access tab listing the hosts to allow.
 - **2026-11-01 (later):** All requested hosts now allowed. Ran USPTO and social searches on all 10 names. New top 2: Lake Found Goods and Agate Hour. Found YOOPERLITES registration cancelled. Explained BIG WET ROCK priority (an intent-to-use filing dates back to Sep 11, 2024, nationwide). Added scripts/tm_search.py.
+- **2026-11-01 (later):** Wrote the naming brainstorm prompt (acronyms allowed if they spell something, and the full domain can forward to the acronym domain). Added "I lick rocks" with lick-mark art as launch design 5. Brian confirmed .md files are fine.

@@ -11,7 +11,8 @@ The full step-by-step plan is in `PLAN.md`.
 ## Current status
 
 - **Current step:** Step 1 done. **Step 2: choose the store name.** Then Step 3 creates the domain, the store Gmail, the social handles, and Printify, in that order. Shopify waits until Step 12.
-- **Waiting on Brian:** check the yellow columns in `brand/Store_Name_Shortlist.xlsx` (domain, Gmail, Instagram, TikTok, and USPTO) for the top names, then pick one. Claude's top 3: Waterline Rock Co., Wet Rock Club, and Lake Found Goods. Claude can't check domains here because RDAP and DNS lookup hosts are blocked by the session's network settings.
+- **Waiting on Brian:** in `brand/Store_Name_Shortlist.xlsx`, check the Gmail, Instagram, TikTok, and USPTO columns for the top names, then pick one. All 10 main .com domains were confirmed open on Nov 1, 2026. Claude's top 3: Waterline Rock Co., Wet Rock Club, and Lake Found Goods. Also add the "Now" hosts from the Network Access tab.
+- **Network access:** allowed: rdap.verisign.com, accounts.google.com, pypi.org, and fonts.googleapis.com. Blocked or untested, with requests out to Brian: api.printify.com, images-api.printify.com, tmsearch.uspto.gov, tsdr.uspto.gov, api.cloudflare.com (optional), and fonts.gstatic.com (optional). The full list is in the Network Access tab of the shortlist file.
 - **Accounts:** Store Gmail: not created. Domain: not bought. TikTok and Instagram: not claimed. Printify: not created. Shopify: not created (Step 12).
 - **Secrets:** none yet. Rule: all tokens live in the Claude Code environment's secrets, never in the repo.
 
@@ -102,3 +103,4 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - **2026-11-01 (later):** Brian asked to stop making PLAN.docx. Removed it; PLAN.md is the only copy of the plan.
 - **2026-11-01 (later):** Brian wants a store Gmail named after the store. Reordered: Step 2 is now the store name, and Step 3 is accounts (domain, Gmail, handles, Printify, and email forwarding).
 - **2026-11-01 (later):** Built the name shortlist (10 names, web-searched for existing businesses). Waiting on Brian's hand checks and pick.
+- **2026-11-01 (later):** Brian opened .com registry access. Confirmed all 10 shortlist .coms are open, and added a Network Access tab listing the hosts to allow.

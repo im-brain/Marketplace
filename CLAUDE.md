@@ -14,7 +14,7 @@ The full step-by-step plan is in `PLAN.md`.
 - **Finalist checks (Nov 1, 2026):**
   - **Heavy Pockets Co.:** heavypocketsco.com open (heavypockets.com taken since 2005). @heavypocketsco free on Instagram and TikTok (Brian checked; @heavypockets is taken). USPTO: the HEAVY POCKETS clothing filing (serial 85912472) was abandoned in 2014, with no live marks in clothing, retail, or jewelry. An old streetwear brand used the name; Brian judged it dead. Tagline "Head down. Pockets full." is clear.
   - **Wet Thumb Co.:** wetthumbco.com open (wetthumb.com taken since 2002 but the site is down). @wetthumbco free on Instagram and TikTok (@wetthumb is taken). USPTO: no live marks. Nothing found on social or Etsy. Tagline "True when wet" is clear.
-  - **Still unchecked:** Gmail usernames heavypocketsco and wetthumbco.
+  - **Gmail is not a deciding factor:** customers only see `hello@` the domain. The Gmail is the private login and inbox, so a close variant is fine if the exact username is taken.
   - Earlier shortlist (Lake Found Goods, Agate Hour, and others) is kept in `brand/Store_Name_Shortlist.xlsx` as backups. Lick Test was a third finalist, but Brian dropped it.
 - **USPTO rate limit:** the search API returns 403 or 429 after many quick queries. Space searches out, and don't loop retries.
 - **Wet Rock Club watch:** BIG WET ROCK (serial 98744595) is a pending clothing application. Its proof-of-use deadline is about Dec 3, 2026, extendable to about Jun 3, 2028. Re-check after Dec 3, 2026 with `scripts/tm_search.py` or TSDR, only if Brian still wants Wet Rock Club.

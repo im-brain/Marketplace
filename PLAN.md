@@ -35,6 +35,8 @@ What makes it something new:
 | Shopify Basic | The store: checkout, taxes, payments, and pages. No servers to run. Opened at Step 12, not before, because the trial is only 3 days. | $39/mo, or about $29 billed yearly |
 | Printify (free plan) | Prints and ships each order. Connects to Shopify, so orders flow automatically. | $0 |
 | Domain | The store's web address. | About $1-2/mo |
+| Store Gmail | The private login and inbox that owns every store account. | $0 |
+| Cloudflare Email Routing | Forwards `hello@` the domain to the Gmail, so customers see a professional address. | $0 |
 | GitHub (this repo) | The project's memory: designs, tracker, scripts, and CLAUDE.md. | $0 |
 | Claude Code sessions and scheduled tasks | The "agents." They run scripts, write listings, and send weekly reports, all covered by the existing AI plan, so no extra API bill. | Included |
 | Python scripts | Small programs that call the Printify and Shopify APIs. Claude writes and runs them, so Brian never has to type code. | $0 |
@@ -68,10 +70,10 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 
 **Phase 0: Foundation**
 1. (Done) Create `PLAN.md` and `CLAUDE.md`, and add the profit model to `models/`. *Test:* Brian reads PLAN.md.
-2. **Printify account and API token only.** Printify is free, and we can design products, preview mockups, and order samples there with no store connected. Store the token as an environment secret, never in the repo. *Test:* Claude can read the Printify catalog with the token.
+2. **Store name.** Claude proposes 8 to 12 names built on the "Wet Stone" idea and the Great Lakes, then checks each one for an open .com domain, a matching Gmail username, TikTok and Instagram handles, and a USPTO search for conflicts in apparel (Class 25). Brian picks one. *Test:* the domain, Gmail username, and both handles are all open for the chosen name.
+3. **Accounts, in this order:** (a) buy the domain from Cloudflare or Namecheap, not through Shopify, (b) create the store Gmail (such as `storename@gmail.com`), (c) claim the TikTok and Instagram handles with that Gmail even though posting starts later, (d) create the free Printify account with that Gmail and save the token as an environment secret named `PRINTIFY_API_TOKEN`, never in the repo, and (e) set up free email forwarding from `hello@` the domain to the Gmail. Every account is registered to the store Gmail, and customers see the `hello@` address. *Test:* an email sent to `hello@` the domain arrives in the Gmail, and Claude can read the Printify catalog with the token.
 
 **Phase 1: Brand**
-3. Shortlist names, then check domains and the USPTO for each. Brian picks one and buys the domain from a regular registrar (such as Cloudflare or Namecheap), not through Shopify, so it isn't tied to a Shopify bill. *Test:* the domain is owned.
 4. Brand kit: colors (the lake palette: Superior slate, agate red, Petoskey gray, and sand), fonts, a simple wordmark, and a one-page brand guide (.docx). *Test:* Brian approves it.
 
 **Phase 2: Designs**
@@ -86,7 +88,7 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 
 **Phase 4: Build the store look for free, then open Shopify**
 11. Build the theme pieces as a **preview page in the repo** (the wet-stone effect, product page layout, field notes, and field guide pages) that Brian can open in a browser. All the design work happens here at no cost. *Test:* Brian approves the preview on phone and desktop, in light and dark mode.
-12. **Open Shopify now.** Choose a plan and start the trial only once the samples are approved and the preview is signed off. If Shopify offers a low intro price for the first months, this is when it pays off. Connect Printify, connect the domain, and publish the launch 4 from Printify. *Test:* the 4 products appear in the Shopify admin.
+12. **Open Shopify now**, signed up with the store Gmail. Choose a plan and start the trial only once the samples are approved and the preview is signed off. If Shopify offers a low intro price for the first months, this is when it pays off. Connect Printify, connect the domain, and publish the launch 4 from Printify. *Test:* the 4 products appear in the Shopify admin.
 13. Install a free Shopify theme and paste in the approved pieces from Step 11, including field notes (Shopify metafields). *Test:* the live store preview matches the approved preview.
 14. Field guide pages, plus the About, shipping, and returns pages and policies. *Test:* Brian checks every label, and Shopify's launch checklist has no missing items.
 15. The store password stays on until launch. *Test:* only Brian can see the store.

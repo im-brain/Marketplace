@@ -10,11 +10,9 @@ The full step-by-step plan is in `PLAN.md`.
 
 ## Current status
 
-- **Current step:** Step 1 done. **Step 2: Printify account and API token (Shopify waits until Step 12).**
-- **Waiting on Brian:**
-  - Create a free Printify account.
-  - Generate a Printify API token and save it as an environment secret named `PRINTIFY_API_TOKEN` (never paste it into a file in this repo).
-- **Accounts:** Shopify: not created. Printify: not created. Domain: not bought.
+- **Current step:** Step 1 done. **Step 2: choose the store name.** Then Step 3 creates the domain, the store Gmail, the social handles, and Printify, in that order. Shopify waits until Step 12.
+- **Waiting on Brian:** nothing until Claude presents the name shortlist (`brand/Store_Name_Shortlist.xlsx`).
+- **Accounts:** Store Gmail: not created. Domain: not bought. TikTok and Instagram: not claimed. Printify: not created. Shopify: not created (Step 12).
 - **Secrets:** none yet. Rule: all tokens live in the Claude Code environment's secrets, never in the repo.
 
 ## Decisions made
@@ -29,6 +27,7 @@ The full step-by-step plan is in `PLAN.md`.
 8. Brand concept (working): **"Wet Stone."** Rockhounds wet a stone to see its true color. Candidate names to check: Wet Stone Supply Co., Third Coast Rockhound, and Lake Effect Rock Co.
 9. Signature site features: the "wet" hover and tap effect, a field note on each design, a free field guide that links to the chart shirts, and code-drawn sock patterns.
 10. Launch with 4 designs: the Great Lakes beach stone chart, "Agate Expectations," "Will brake for agates," and Petoskey hexagon socks.
+11. Accounts: a dedicated **store Gmail** owns every store account (domain, Printify, Shopify, TikTok, and Instagram). Customers see `hello@` the domain, forwarded free to the Gmail by Cloudflare Email Routing. The name is picked first so the Gmail can match it.
 
 ## Future product ideas
 
@@ -100,3 +99,4 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - **2026-11-01 (later):** Brian accepted the pushback, chose domestic only, and uploaded the profit model (now in `models/`). Standing by for Step 2.
 - **2026-11-01 (later):** Shopify's trial is only 3 days, so Shopify moved to Step 12. Steps 2 to 11 run on Printify (free) and a preview page in the repo. Next: Step 2, Printify only. Also recorded the rockhounding pants idea under Future products.
 - **2026-11-01 (later):** Brian asked to stop making PLAN.docx. Removed it; PLAN.md is the only copy of the plan.
+- **2026-11-01 (later):** Brian wants a store Gmail named after the store. Reordered: Step 2 is now the store name, and Step 3 is accounts (domain, Gmail, handles, Printify, and email forwarding).

@@ -11,9 +11,10 @@ The full step-by-step plan is in `PLAN.md`.
 ## Current status
 
 - **Store name (decided Nov 1, 2026): Heavy Pockets Co.** Domain heavypocketsco.com, handles @heavypocketsco, email hello@heavypocketsco.com (forwarded to a private Gmail). Tagline "Head down. Pockets full." Secondary line "Dry rocks lie." Fallback: Wet Thumb Co. (wetthumbco.com, @wetthumbco), used only if Heavy Pockets runs into trouble. Checks were a first screen, not legal clearance. Background: heavypockets.com and @heavypockets belong to an old, apparently dead streetwear brand; the 2013 HEAVY POCKETS clothing filing (serial 85912472) was abandoned in 2014.
-- **Current step:** Steps 1, 2, and 3 done (Nov 1, 2026). **Next: Step 4, the brand kit** (colors, fonts, simple wordmark, and a one-page brand guide).
-- **Waiting on Brian:** nothing. Claude starts Step 4.
-- **Branch:** all work so far was merged into `main` on Nov 1, 2026. Start new work from `main`.
+- **Current step:** Steps 1, 2, and 3 done (Nov 1, 2026). Step 4, the brand kit, is drafted (Nov 1, 2026) on branch `claude/heavy-pockets-brand-kit-j7cg49`: `brand/Brand_Guide.md`, `brand/brand_preview.html`, wordmark files in `brand/wordmark/`, fonts in `brand/fonts/`, and `theme/brand-tokens.css`. **Next: Brian reviews and approves Step 4, then Step 5.**
+- **Waiting on Brian:** approval of the brand kit (palette, fonts, wordmark with the "lick" streak, and the guide). Changes are easy: edit the colors or positions in `scripts/build_wordmark.py` and rerun it.
+- **Brand kit summary:** lake palette with dry and wet values (wet is deeper, never brighter): Superior slate #6B7780 / #22394A, agate red #B87358 / #9A2B1C, Petoskey gray / brown #A39E94 / #6E4F35, and sand #DCCFB6 / #A8875A; neutrals Beach fog #EEEDE8, Ink #1C1E1F, and Night #14181B. Fonts (all SIL Open Font License): Fraunces ExtraBold (display and logo), Work Sans (body), and IBM Plex Mono (field notes and chart labels). Wordmark: type only, with one glossy "lick" streak across "oc" in Pockets; versions primary, stacked, and HP mark.
+- **Branch:** Steps 1 to 3 were merged into `main` on Nov 1, 2026. Step 4 work is on `claude/heavy-pockets-brand-kit-j7cg49`.
 - **USPTO rate limit:** the search API returns 403 or 429 after many quick queries. Space searches out, and don't loop retries.
 - **Network access:** all needed hosts are allowed as of Nov 1, 2026: rdap.verisign.com, api.printify.com, images-api.printify.com, tmsearch.uspto.gov, tsdr.uspto.gov, api.cloudflare.com, fonts.googleapis.com, fonts.gstatic.com, accounts.google.com, and pypi.org. Shopify's `<store>.myshopify.com` gets added at Step 12.
 - **Tools Claude can run:** .com availability via `https://rdap.verisign.com/com/v1/domain/<name>.com` (200 means taken, 404 means open). Trademark knockout search via `python3 scripts/tm_search.py '"phrase"'` (POSTs to `tmsearch.uspto.gov/prod-stage-v1-0-0/tmsearch`; classes look like "IC 025"). Filing history via `tmsearch.uspto.gov/tsdr-api-v1-0-0/tsdr-api?serialNumber=<n>`. Social and Etsy conflicts via web search limited to those domains. Handle availability can't be confirmed automatically; Brian checks by hand.
@@ -105,8 +106,15 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - `brand/Store_Name_Shortlist.xlsx`: candidate names with checks (Heavy Pockets Co. marked CHOSEN).
 - `brand/Step3_Accounts_Checklist.md`: Step 3 account setup checklist.
 - `scripts/tm_search.py`: USPTO trademark knockout search.
+- `brand/Brand_Guide.md`: the one-page brand guide (Step 4).
+- `brand/brand_preview.html`: interactive brand preview, light and dark mode.
+- `brand/wordmark/`: logo SVGs, plus 300 dpi PNGs in `png/`.
+- `brand/fonts/`: font files and their OFL licenses.
+- `theme/brand-tokens.css`: brand colors and fonts as CSS variables.
+- `scripts/build_wordmark.py`: rebuilds the logo files (needs fonttools, uharfbuzz, and cairosvg from pip).
+- `scripts/check_contrast.py`: WCAG contrast check for the palette.
 - `brand/Naming_Brainstorm_Prompt.md`: the prompt for the separate naming session.
-- Planned: `designs/` (art files), `tracker/Design_Tracker.xlsx`, `scripts/` (Python automation), `theme/` (Shopify custom sections).
+- Planned: `designs/` (art files), `tracker/Design_Tracker.xlsx`, and more of `theme/` (Shopify custom sections).
 
 ## Session log
 
@@ -122,3 +130,4 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - **2026-11-01 (later):** Naming session returned Heavy Pockets, Lick Test, and Wet Thumb. Checked them: both chosen names are clear with "Co." handles and domains. Added them to the top of the shortlist. Waiting on Brian's final pick.
 - **2026-11-01 (later):** Brian chose **Heavy Pockets Co.** (fallback Wet Thumb Co.); both .coms re-checked open. Reordered Step 3 so the Gmail comes first (Cloudflare needs an account email). Wrote the Step 3 checklist.
 - **2026-11-01 (later):** Step 3 done. Gmail heavypocketsco@gmail.com, domain heavypocketsco.com (Cloudflare), handles claimed, Printify connected (network secret, shop 29566047), and hello@ forwarding plus send-as working with SPF. Next: Step 4, brand kit.
+- **2026-11-01 (later):** Step 4 drafted. Built the lake palette with dry and wet values (all text pairings pass WCAG), picked Fraunces, Work Sans, and IBM Plex Mono, and made the wordmark (type only, with a glossy "lick" streak that ties the logo to the "I lick rocks" design) in primary, stacked, and HP mark versions. Wrote the brand guide and an interactive preview. Changed the PLAN.md Step 4 guide format from .docx to .md. Waiting on Brian's approval.

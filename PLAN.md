@@ -76,7 +76,7 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 3. **(Done Nov 1, 2026: all accounts created and tested.) Accounts, in this order** (checklist: `brand/Step3_Accounts_Checklist.md`): (a) create the store Gmail and turn on 2-step verification, (b) create a Cloudflare account with that Gmail and buy heavypocketsco.com through Cloudflare Registrar, not Shopify, (c) claim @heavypocketsco on Instagram and TikTok (plus @wetthumbco as a placeholder), (d) create the free Printify account with the Gmail and save the token as an environment secret named `PRINTIFY_API_TOKEN`, never in the repo, and (e) set up free email forwarding from hello@heavypocketsco.com to the Gmail, plus Gmail "Send mail as" so replies come from the domain. The Gmail comes first because the Cloudflare account that owns the domain should belong to it. *Test:* an email sent to hello@ arrives in the Gmail, and Claude can read the Printify account with the token.
 
 **Phase 1: Brand**
-4. Brand kit: colors (the lake palette: Superior slate, agate red, Petoskey gray, and sand), fonts, a simple wordmark, and a one-page brand guide (.docx). *Test:* Brian approves it.
+4. Brand kit: colors (the lake palette: Superior slate, agate red, Petoskey gray, and sand), fonts, a simple wordmark, and a one-page brand guide (.md, with an HTML preview). *Test:* Brian approves it.
 
 **Phase 2: Designs**
 5. Design tracker `.xlsx` with all 13 designs, plus columns for art source and license, accuracy check, trademark check, and launch priority. It follows his spreadsheet formatting rules. *Test:* it opens in Excel and Brian marks the launch 5.

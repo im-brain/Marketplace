@@ -1,0 +1,35 @@
+/* Heavy Pockets Co. brand tokens. Source of truth: brand/Brand_Guide.md.
+   Every color has a dry (matte) and a wet (true color) value.
+   Wet is always deeper and richer, never brighter. That is how real wet stone looks. */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..900,0..100&family=Work+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600&display=swap");
+
+:root {
+  /* Lake palette */
+  --slate-dry: #6B7780;    /* Superior slate, dry */
+  --slate-wet: #22394A;    /* Superior slate, wet: deep lake */
+  --agate-dry: #B87358;    /* Agate red, dry: dusty rust */
+  --agate-wet: #9A2B1C;    /* Agate red, wet: banded carnelian */
+  --petoskey-dry: #A39E94; /* Petoskey gray, dry */
+  --petoskey-wet: #6E4F35; /* Petoskey brown, wet: hexagon eyes */
+  --sand-dry: #DCCFB6;     /* Sand, dry */
+  --sand-wet: #A8875A;     /* Sand, wet */
+
+  /* Neutrals */
+  --fog: #EEEDE8;          /* Beach fog: light background */
+  --ink: #1C1E1F;          /* Ink: light mode text */
+  --night: #14181B;        /* Night: dark background */
+  --night-text: #ECE6DA;   /* Dark mode text */
+  --gloss: rgba(255, 255, 255, 0.55); /* the highlight on wet stone */
+
+  /* Type */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-note: "IBM Plex Mono", "Courier New", monospace;
+  --soft-dry: 0;   /* Fraunces SOFT axis: crisp edges */
+  --soft-wet: 100; /* Fraunces SOFT axis: rounded, worn edges */
+
+  /* The wet effect timing */
+  --wet-in: 450ms cubic-bezier(.2, .7, .2, 1);
+  --dry-out: 1400ms ease-out; /* drying is slower than wetting, like real stone */
+}

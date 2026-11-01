@@ -2,7 +2,7 @@
 
 ## Context
 
-Brian wants a print-on-demand store for Great Lakes rockhounds (tees and socks, made in the US by Printify) that earns more than his roughly $20/month AI bill. Tools must stay under $75/month. He is new to coding, so the store should run itself except for the steps where his judgment matters. The repo (`/home/user/Marketplace`) is empty except for a README. The two spreadsheets from the handoff (`POD_Profit_Model.xlsx` and `Overseas_Sourcing_Model.xlsx`) are not in it yet.
+Brian wants a print-on-demand store for Great Lakes rockhounds (tees and socks, made in the US by Printify) that earns more than his roughly $20/month AI bill. Tools must stay under $75/month. He is new to coding, so the store should run itself except for the steps where his judgment matters. The profit model lives at `models/POD_Profit_Model.xlsx`. Sourcing is domestic only for now, so the overseas model is out of scope.
 
 Decisions from this conversation: **Shopify + Printify**. **Product-only social content**, with no face on camera. **Art will mix his own photos, public photos, and AI art**, with guardrails below. **Budget: AI about $20, tools under $75.**
 
@@ -17,7 +17,7 @@ When Brian approves this plan, the first build step writes these files to the re
 2. **Product-only video reaches the fewest people.** One cheap upgrade without showing his face: film his real stone held next to the shirt that was drawn from it. The point of the brand is that every design starts with a real find.
 3. **Launch 4 designs, not 13.** The tracker holds all 13, and only 4 go live first.
 4. **The saturated puns ("I lick rocks" and "Sorry I'm late") come later.** The launch set should be designs nobody else has, which means Great Lakes details and accurate charts.
-5. **"Bands will make her dance" is close to a Juicy J song title.** Check the trademark for apparel (Class 25) and music (Class 9 and Class 41) before printing.
+5. **"Bands will make her dance" is close to a Juicy J song title.** A reworded version is fine, and "Agate bands make her dance" reads clearly as a rock joke. Check the trademark for apparel (Class 25) and music (Class 9 and Class 41) before printing.
 
 ## The concept: "Wet Stone"
 
@@ -68,7 +68,7 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 ## Steps (each one testable on its own)
 
 **Phase 0: Foundation**
-1. Create `PLAN.md`, `CLAUDE.md`, and `PLAN.docx`, and commit them. Brian uploads the two spreadsheets to the repo. *Test:* Brian opens PLAN.docx.
+1. Create `PLAN.md`, `CLAUDE.md`, and `PLAN.docx`, and commit them. Add the profit model to `models/`. *Test:* Brian opens PLAN.docx.
 2. Create the accounts: Shopify (free trial), Printify, and a Printify API token stored as an environment secret, never in the repo. *Test:* Brian can log in to both, and Claude can read the Printify catalog with the token.
 
 **Phase 1: Brand**
@@ -108,6 +108,5 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 - CLAUDE.md is updated at the end of every session with the current step number and what comes next.
 
 ## Open items (not blocking)
-- Brian uploads the two spreadsheets.
 - Final store name (Step 3).
 - Real Printify sample costs to replace the yellow assumption cells.

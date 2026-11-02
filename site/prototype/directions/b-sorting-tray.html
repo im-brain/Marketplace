@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heavy Pockets Co. | Direction B sketch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Hanken+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* PROVISIONAL tokens. Not the brand kit yet. */
+:root{
+  --tray:#2443c9;     /* tackle-box cobalt plastic */
+  --well:#1a33a3;     /* recessed compartment */
+  --latch:#ff6a1a;    /* safety-orange latch */
+  --on:#ffffff;
+  --on-soft:#d9e1ff;
+  --display:"Bagel Fat One",sans-serif;
+  --body:"Hanken Grotesk",sans-serif;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){:root{--tray:#14256e;--well:#0c1748;--on-soft:#c3cdf5}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--tray);color:var(--on);font-family:var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--latch);color:#000}
+:focus-visible{outline:3px solid var(--latch);outline-offset:3px}
+.lid{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px clamp(16px,2.4vw,32px);background:linear-gradient(#2d4fe0,var(--tray));border-bottom:4px solid rgba(0,0,0,.25)}
+@media (prefers-color-scheme:dark){.lid{background:var(--tray)}}
+.word{font:400 clamp(1.3rem,2vw,1.7rem) var(--display);letter-spacing:.01em;text-decoration:none;color:var(--on)}
+.lid nav{display:flex;gap:8px}
+.pill{font:800 15px var(--body);color:var(--on);background:rgba(255,255,255,.12);border:0;border-radius:999px;padding:0 18px;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;cursor:pointer}
+.pill:hover{background:rgba(255,255,255,.22)}
+.pill.cart{background:var(--latch);color:#1b0d00}
+
+.tray{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:minmax(250px,1fr) minmax(250px,1fr) 200px;gap:14px;padding:14px clamp(16px,2.4vw,32px) 18px;min-height:calc(100svh - 76px)}
+.cell{background:var(--well);border-radius:22px;box-shadow:inset 0 10px 18px rgba(0,0,0,.38),inset 0 -2px 0 rgba(255,255,255,.08);padding:clamp(16px,2vw,28px);position:relative;overflow:hidden;display:flex;flex-direction:column}
+.hero{grid-column:1 / span 6;grid-row:1 / span 2;justify-content:flex-end}
+.hero h1{font:400 clamp(3.2rem,6.4vw,6rem) var(--display);line-height:.9;margin:0;letter-spacing:-.01em;text-wrap:balance}
+.hero p{font-size:clamp(1.05rem,1.3vw,1.2rem);line-height:1.45;color:var(--on-soft);max-width:36ch;margin:18px 0 0}
+.go{margin-top:22px;align-self:flex-start;font:800 1.1rem var(--body);background:var(--latch);color:#1b0d00;text-decoration:none;border-radius:999px;padding:0 26px;min-height:56px;display:inline-flex;align-items:center;gap:10px;box-shadow:0 6px 14px rgba(0,0,0,.35)}
+.go:hover{background:#ff8640}
+.go svg{width:18px;height:18px}
+.big{grid-column:7 / span 4;grid-row:1 / span 2;padding:0}
+.s1{grid-column:11 / span 2;grid-row:1}
+.s2{grid-column:11 / span 2;grid-row:2}
+.r1{grid-column:1 / span 3;grid-row:3}
+.r2{grid-column:4 / span 4;grid-row:3}
+.r3{grid-column:8 / span 3;grid-row:3}
+.r4{grid-column:11 / span 2;grid-row:3}
+.small svg{width:100%;height:100%}
+.tag{font:800 13px var(--body);text-transform:uppercase;letter-spacing:.08em;color:var(--on-soft)}
+.cell h2{font:400 clamp(1.5rem,2.1vw,2rem) var(--display);margin:6px 0 0;line-height:1}
+.cell a.more{color:var(--on);font-weight:800;margin-top:auto;text-underline-offset:4px}
+.concept{position:absolute;top:14px;right:14px;font:800 11px var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--on);color:var(--well);padding:3px 8px;border-radius:999px}
+.hex{position:absolute;inset:auto 0 0 0;height:55%;opacity:.9}
+
+.wet-stone{all:unset;position:absolute;inset:0;cursor:pointer;display:block}
+.wet-stone svg{position:absolute;inset:6% 4%;width:92%;height:88%;overflow:visible}
+.wet-stone .wet{--p:-30%;-webkit-mask-image:linear-gradient(100deg,#000 calc(var(--p) - 18%),transparent var(--p));mask-image:linear-gradient(100deg,#000 calc(var(--p) - 18%),transparent var(--p));transition:--p 1100ms cubic-bezier(.16,1,.3,1)}
+.wet-stone[aria-pressed="true"] .wet,.wet-stone.hover .wet{--p:140%}
+.wet-stone .gloss{transition:transform 1300ms cubic-bezier(.16,1,.3,1) 120ms}
+.wet-stone[aria-pressed="true"] .gloss,.wet-stone.hover .gloss{transform:skewX(-18deg) translateX(820px)}
+@property --p{syntax:"<percentage>";inherits:false;initial-value:-30%}
+.wet-stone:focus-visible{outline-offset:-8px;border-radius:22px}
+.big .cap{position:absolute;left:20px;right:20px;bottom:16px;display:flex;justify-content:space-between;gap:10px;font:600 14px var(--body);color:var(--on-soft);pointer-events:none}
+.big .cap b{color:var(--on)}
+@media (prefers-reduced-motion:reduce){.wet-stone .wet,.wet-stone .gloss{transition:none}}
+.label{position:fixed;left:12px;bottom:12px;z-index:9;font:800 12px var(--body);background:#000;color:#fff;padding:6px 9px}
+
+@media (max-width:820px){
+  .lid nav .pill:not(.cart):not(.menu){display:none}
+  .tray{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;min-height:0}
+  .hero{grid-column:1 / span 2;grid-row:auto;min-height:0;order:1}
+  .big{grid-column:1 / span 2;grid-row:auto;aspect-ratio:1/0.9;order:0}
+  .s1,.s2{grid-column:span 1;grid-row:auto;aspect-ratio:1;order:2}
+  .r1,.r2,.r3,.r4{grid-column:span 2;grid-row:auto;min-height:150px;order:3}
+  .r1,.r4{grid-column:span 1}
+}
+</style>
+</head>
+<body>
+<header class="lid">
+  <a class="word" href="#">Heavy Pockets Co.</a>
+  <nav aria-label="Primary">
+    <a class="pill" href="#shop">Shop</a>
+    <a class="pill" href="#guide">Field Guide</a>
+    <button class="pill menu" type="button" aria-expanded="false">Menu</button>
+    <a class="pill cart" href="#cart" aria-label="Cart, 0 items">Cart 0</a>
+  </nav>
+</header>
+<main class="tray">
+  <section class="cell hero">
+    <h1>Head down. Pockets full.</h1>
+    <p>Tees and socks for Great Lakes rockhounds. Empty your pockets here.</p>
+    <a class="go" href="#shop">Shop tees and socks <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h12M10 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6"/></svg></a>
+  </section>
+  <section class="cell big" aria-label="Wet Stone">
+    <button class="wet-stone" type="button" aria-pressed="false" aria-label="Wet this stone to see its true color">
+      <svg class="dry" aria-hidden="true" data-seed="11" data-dry="1"></svg>
+      <svg class="wet" aria-hidden="true" data-seed="11"></svg>
+    </button>
+    <div class="cap"><span>SAMPLE stone, drawn in code</span><b data-hint>Tap to wet it</b></div>
+  </section>
+  <div class="cell small s1" aria-hidden="true"><svg data-seed="4" data-kind="lake"></svg></div>
+  <div class="cell small s2" aria-hidden="true"><svg data-seed="9" data-kind="jasper"></svg></div>
+  <section class="cell r1" id="guide"><span class="tag">Free</span><h2>Field Guide</h2><a class="more" href="#guide">Browse stones</a></section>
+  <section class="cell r2"><span class="concept">Concept</span><span class="tag">Tee</span><h2>I lick rocks</h2><a class="more" href="#shop">See the design</a></section>
+  <section class="cell r3"><span class="concept">Concept</span><span class="tag">Socks</span><h2>Petoskey hexagons</h2>
+    <svg class="hex" viewBox="0 0 200 80" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><pattern id="hx" width="20" height="34.64" patternUnits="userSpaceOnUse"><path d="M10 0l10 5.77v11.55L10 23.09 0 17.32V5.77zM0 23.09v11.55M20 23.09v11.55" fill="none" stroke="#ff6a1a" stroke-width="1.6"/></pattern></defs><rect width="200" height="80" fill="url(#hx)"/></svg>
+  </section>
+  <section class="cell r4"><span class="tag">Notes</span><h2>Field Notes</h2><a class="more" href="#notes">Read</a></section>
+</main>
+<div class="label">Direction B sketch &middot; provisional</div>
+<script>
+/* SAMPLE placeholder stone, drawn in code. Not a real specimen, not a product.
+   Replace with Brian's dry and wet photo pairs. */
+(function () {
+  function rand(seed) {
+    let s = seed >>> 0;
+    return function () { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; };
+  }
+  function blob(r, cx, cy, rad, wobble, pts) {
+    const out = [];
+    const phase = r() * 6.28;
+    for (let i = 0; i < pts; i++) {
+      const a = (i / pts) * Math.PI * 2;
+      const k = 1 + wobble * (Math.sin(a * 2 + phase) * 0.55 + Math.sin(a * 3 + phase * 1.7) * 0.3 + (r() - 0.5) * 0.25);
+      out.push([cx + Math.cos(a) * rad * k * 1.12, cy + Math.sin(a) * rad * k * 0.9]);
+    }
+    let d = 'M' + out[0].join(',');
+    for (let i = 0; i < pts; i++) {
+      const p0 = out[(i - 1 + pts) % pts], p1 = out[i], p2 = out[(i + 1) % pts], p3 = out[(i + 2) % pts];
+      const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+      const c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+      d += 'C' + c1.join(',') + ' ' + c2.join(',') + ' ' + p2.join(',');
+    }
+    return d + 'Z';
+  }
+  const palettes = {
+    agate: ['#6b1a0b', '#a8351a', '#d06a2e', '#efc9a4', '#8c2a12', '#f6ece0', '#c4552a', '#7d2410', '#e39a63', '#fbf3ea'],
+    lake: ['#2c2a33', '#4d4a57', '#8b8794', '#c9c5cf', '#3b3843', '#a7a3b0'],
+    jasper: ['#6e2219', '#8e3524', '#b4553a', '#7a2a1e', '#c87457']
+  };
+  window.drawStone = function (svg, opts) {
+    const o = Object.assign({ seed: 7, kind: 'agate', bands: 38 }, opts || {});
+    const r = rand(o.seed);
+    const id = 's' + o.seed + Math.floor(r() * 1e6);
+    const pal = palettes[o.kind];
+    const ns = 'http://www.w3.org/2000/svg';
+    svg.setAttribute('viewBox', '0 0 400 320');
+    let defs = '<defs>' +
+      '<filter id="w' + id + '"><feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="4" seed="' + o.seed + '"/><feDisplacementMap in="SourceGraphic" scale="' + (o.kind === 'agate' ? 38 : 10) + '"/></filter>' +
+      '<filter id="g' + id + '"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="' + (o.seed + 3) + '"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.35 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>' +
+      '<radialGradient id="sh' + id + '" cx="38%" cy="30%" r="75%"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></radialGradient>' +
+      '<linearGradient id="gl' + id + '" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>' +
+      '<pattern id="ht' + id + '" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="none"/><circle cx="2.5" cy="2.5" r="1.25" fill="' + (o.paper || '#f2b705') + '"/></pattern>' +
+      '<filter id="d' + id + '"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="linear" slope="1.9" intercept="-.32"/><feFuncG type="linear" slope="1.9" intercept="-.32"/><feFuncB type="linear" slope="1.9" intercept="-.32"/></feComponentTransfer></filter>' +
+      '<clipPath id="c' + id + '"><path d="' + blob(rand(o.seed), 200, 165, 140, 0.16, 9) + '"/></clipPath></defs>';
+    let g = '<g clip-path="url(#c' + id + ')"><g' + (o.dry ? ' filter="url(#d' + id + ')"' : '') + '><rect width="400" height="320" fill="' + pal[0] + '"/><g filter="url(#w' + id + ')">';
+    const n = o.kind === 'agate' ? o.bands : 9;
+    for (let i = 0; i < n; i++) {
+      // fortification banding: tight near the rim, wider toward a quartz core
+      const t = o.kind === 'agate' ? Math.pow(1 - i / n, 0.62) * (i > n * 0.82 ? 0.9 : 1) : 1 - i / n;
+      const col = pal[(i + Math.floor(r() * 2)) % pal.length];
+      g += '<path d="' + blob(rand(o.seed + 11), 206 + (r() - 0.5) * 6, 170 + (r() - 0.5) * 6, 150 * t + 4, 0.18, 9) + '" fill="' + col + '"/>';
+    }
+    g += '</g><rect width="400" height="320" fill="#000" filter="url(#g' + id + ')"/><rect width="400" height="320" fill="url(#sh' + id + ')"/></g>' +
+      (o.dry ? '<rect width="400" height="320" fill="url(#ht' + id + ')" opacity=".55"/>' : '<rect class="gloss" x="-320" y="-40" width="220" height="400" transform="skewX(-18)" fill="url(#gl' + id + ')"/>') + '</g>';
+    svg.innerHTML = defs + g;
+    svg.setAttribute('xmlns', ns);
+  };
+})();
+</script>
+<script>
+document.querySelectorAll('svg[data-seed]').forEach(s => drawStone(s,{seed:+s.dataset.seed,kind:s.dataset.kind||'agate',dry:!!s.dataset.dry,paper:'#1a33a3'}));
+document.querySelectorAll('.wet-stone').forEach(b => {
+  const hint = b.parentElement.querySelector('[data-hint]');
+  const set = v => { b.setAttribute('aria-pressed', v); hint.textContent = v ? 'Now it tells the truth' : 'Tap to wet it'; };
+  b.addEventListener('click', () => set(b.getAttribute('aria-pressed') !== 'true'));
+  b.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') b.classList.add('hover'); });
+  b.addEventListener('pointerleave', () => b.classList.remove('hover'));
+});
+</script>
+</body>
+</html>

@@ -77,6 +77,25 @@ All tokens live in `site/prototype/tokens.css`. They are provisional until Brian
 - **Commit messages:** plain English, saying what changed and why.
 - **When you finish a task,** add an entry to the Handoff log (section 9): what you did, what's left, and anything Claude should check.
 
+### If you can't push to the repo (fallback deliverable)
+
+If you can read the repo but can't create a branch or push, don't stop and don't paste half-finished code into chat. Give Brian **one downloadable zip per task**, named `gpt-<task>-<YYYY-MM-DD>.zip` (for example `gpt-logo-2026-11-03.zip`), that Claude can unpack straight into the repo:
+
+1. **Repo paths:** every file goes in the folder it lives in inside the repo, starting at the repo root. For example, `site/prototype/assets/logo/hp-wordmark.svg`, `site/prototype/motion.css`, and `ChatGPT_Review.md`.
+2. **New files:** included whole and finished.
+3. **Changes to existing files** (`index.html` and `IMAGE_CREDITS.md`): include a **unified diff** in `patches/<file>.diff`, made against the latest `claude/compassionate-fermi-lndrfd`. If you can't make a clean diff, include the **whole updated file** at its repo path and say so in the manifest. Never send fragments like "add this somewhere near the header."
+4. **`HANDOFF.md` at the top of the zip,** with:
+   - A table of every file: its repo path, whether it's new, changed, or a patch, and a one-line purpose.
+   - The commit hash or date of the repo version you worked from.
+   - The `IMAGE_CREDITS.md` rows you're adding (also in the patch).
+   - Your Handoff log entry text, ready for Claude to paste into section 9.
+   - What you checked (sizes, light and dark mode, and reduced motion), and anything you couldn't check.
+   - Open questions for Brian.
+5. **Image masters:** for images, include both the web file (WebP or SVG) and the master (PNG or SVG) in `assets/.../src/`, as the task specs say.
+6. **Not included:** `preview-single-file.html`. Claude rebuilds it.
+
+If you can't make a zip either, give each file as its own download with the repo path in the file name (for example `site__prototype__motion.css`), plus `HANDOFF.md`. Brian brings everything to Claude, who unpacks it, applies the patches on a `gpt/<task>` branch, runs the checks in section 7, and merges what passes.
+
 ---
 
 ## 6. Your tasks, in priority order
@@ -231,4 +250,5 @@ The product cards use rough code-drawn concept art. Better concept art is welcom
 
 ## 9. Handoff log (newest first; ChatGPT and Claude both add entries)
 
+- **2026-11-02, Claude:** Added the "If you can't push" fallback (one zip per task with repo paths, patches, and HANDOFF.md) to section 5.
 - **2026-11-02, Claude:** Wrote this brief and `prompt.md`. Added `scripts/build_preview.py`. The prototype includes the critique fixes Brian picked. Ready for ChatGPT, starting with Task 0.

@@ -14,6 +14,7 @@ The repo is im-brain/Marketplace. Work from the branch claude/compassionate-ferm
 3. Don't just agree with Claude. If something could be better, say so and say why.
 4. Do your work on your own branch (gpt/<task>), never on main. Check it at phone and desktop sizes in light and dark mode, then rebuild the phone preview with: python3 scripts/build_preview.py
 5. When you finish a task, add an entry to the Handoff log at the bottom of ChatGPT.md so Claude knows what to review.
+6. If you can't push to the repo, follow "If you can't push to the repo (fallback deliverable)" in ChatGPT.md section 5: give me one zip per task with files at their repo paths, patches for changed files, and a HANDOFF.md. I'll bring it to Claude.
 
 Start with Task 0: write ChatGPT_Review.md with your top 3 improvements, any disagreements, and 2 or 3 directions each for the stone images, the logo, and the animation. Show me those directions before building anything big.
 ```
@@ -23,6 +24,6 @@ Start with Task 0: write ChatGPT_Review.md with your top 3 improvements, any dis
 ## Tips for Brian
 
 - **One task per chat** keeps ChatGPT focused: Task 0 (review), then 1 (stones), 2 (logo), and 3 (animation).
-- **If ChatGPT can't push to the repo,** have it give you the files. Then bring them here, and Claude will put them in the right place.
+- **If ChatGPT can't push to the repo,** it gives you a zip (for example `gpt-logo-2026-11-03.zip`) with a `HANDOFF.md` inside. Upload the zip here and say "Unpack ChatGPT's zip." Claude puts every file in place, checks it, and merges it.
 - **Stone images:** if you shoot your own dry and wet pairs, give them to ChatGPT with "clean these up to the Task 1 specs" in place of generating new ones. Real stones beat AI stones.
 - **When ChatGPT is done,** come back to Claude and say "Review ChatGPT's branch." Claude checks it, fixes what's needed, and merges.

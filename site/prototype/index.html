@@ -221,6 +221,7 @@ img,svg{display:block}
   .pill{padding:0 13px}
 }
 </style>
+<link rel="stylesheet" href="motion.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -269,10 +270,10 @@ img,svg{display:block}
     </section>
     <section class="well big settle" aria-label="Wet Stone">
       <button class="wet-stone" type="button" aria-pressed="false" aria-label="Wet this stone to see its true color">
-        <svg class="dry" aria-hidden="true" data-seed="11" data-dry="1"></svg>
-        <svg class="wet" aria-hidden="true" data-seed="11"></svg>
+        <img class="dry" src="assets/stones/agate-hero-dry.webp" alt="" width="1280" height="1024" decoding="async">
+        <img class="wet" src="assets/stones/agate-hero-wet.webp" alt="" width="1280" height="1024" decoding="async">
       </button>
-      <div class="cap"><span>Dry rocks lie.<br><small>SAMPLE stone, drawn in code</small></span><b data-hint data-on="That's the real color" data-off="Tap to wet it">Tap to wet it</b></div>
+      <div class="cap"><span>Dry rocks lie.<br><small>SAMPLE stone, AI image</small></span><b data-hint data-on="That's the real color" data-off="Tap to wet it">Tap to wet it</b></div>
     </section>
     <a class="well mini m1 settle" href="#guide"><div><b>Field Guide</b><span>Free. Wet a stone or ten.</span></div><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h12M10 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
     <a class="well mini m2 settle" href="#shop"><div><b>Socks, too</b><span>Petoskey hexagons</span></div><svg viewBox="0 0 34 34" aria-hidden="true"><defs><pattern id="mh" width="11" height="19" patternUnits="userSpaceOnUse"><path d="M5.5 0l5.5 3.2v6.3L5.5 12.7 0 9.5V3.2zM0 9.5V19M11 9.5V19" fill="none" stroke="#ff6a1a" stroke-width="1.4"/></pattern></defs><rect width="34" height="34" rx="8" fill="url(#mh)"/></svg></a>
@@ -427,7 +428,7 @@ img,svg{display:block}
       <small>Heavy Pockets Co. &middot; Head down. Pockets full.</small>
     </footer>
   </div>
-  <span class="proto">Prototype: stones are code-drawn samples, products are concepts, and colors and fonts are provisional.</span>
+  <span class="proto">Prototype: stones are AI and code-drawn samples, products are concepts, and colors and fonts are provisional.</span>
 </main>
 
 <script src="stone.js"></script>

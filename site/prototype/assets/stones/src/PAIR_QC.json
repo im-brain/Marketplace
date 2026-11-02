@@ -1,0 +1,59 @@
+{
+  "status": "AI SAMPLE, pending Brian accuracy review",
+  "source_commit": "db0a1e13e30ab10991a3f89af2376f539d703384",
+  "method": "Image-generated dry source and surface-only wet edit, followed by mechanical registration, a shared original cutout and shadow, and identical crop and export transforms.",
+  "raw_size": [
+    1536,
+    1024
+  ],
+  "export_size": [
+    1280,
+    1024
+  ],
+  "center_crop": [
+    128,
+    0,
+    1408,
+    1024
+  ],
+  "shared_scale_after_crop": 0.8648648648648649,
+  "target_stone_width_pixels": 960,
+  "affine_wet_to_dry": [
+    [
+      1.0011719570398376,
+      -4.049516812957483e-05,
+      -1.889853359928529
+    ],
+    [
+      4.049516812957483e-05,
+      1.0011719570398376,
+      -0.9590280665360876
+    ]
+  ],
+  "feature_matches": 565,
+  "registration_inliers": 527,
+  "feature_residual_export_pixels": {
+    "median": 0.5048669773717658,
+    "p95": 1.2186451040076602
+  },
+  "alpha_identical": true,
+  "opaque_alpha_normalization": "Alpha values of 240 and above are normalized to 255 inside the solid stone, with the original soft edge retained.",
+  "different_alpha_pixels": 0,
+  "geometry_limit": "The silhouette, framing, and shadow match exactly. Generated internal features still have small measured residual drift; do not claim every internal feature is pixel-perfect.",
+  "outputs": {
+    "dry": {
+      "path": "agate-hero-dry.webp",
+      "bytes": 158050,
+      "quality": 82
+    },
+    "wet": {
+      "path": "agate-hero-wet.webp",
+      "bytes": 159504,
+      "quality": 82
+    }
+  },
+  "raw_sha256": {
+    "dry": "b332cf0f470a4e175e9afacf6bbdbeaa448f9bb3ff41d4e2b700acab5c13497a",
+    "wet": "cf851a6d87f6ed59357b5d61805a8e270b27a52f045683479636efe86dfce80d"
+  }
+}

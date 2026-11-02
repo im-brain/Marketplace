@@ -1,9 +1,9 @@
 {
   "status": "AI SAMPLE, pending Brian accuracy review",
   "source_commit": "db0a1e13e30ab10991a3f89af2376f539d703384",
-  "revision_parent_commit": "a8a9f4b11c2f53d5ad03c7b06acdf8d2f2ec2ccf",
-  "revision": 2,
-  "reference_use": "User photos informed morphology and band structure only. Source photos are not copied, traced, or published.",
+  "revision_parent_commit": "8fbdbbaa11c8d25bbe87e01756a10ed9dfb78939",
+  "revision": 3,
+  "reference_use": "The latest dry reference photos informed visible color, fine bands, and varied wear. Source photos are not copied, traced, or published.",
   "method": "Image-generated dry source and surface-only wet edit, followed by mechanical registration, a shared original cutout and shadow, and identical crop and export transforms.",
   "raw_size": [
     1536,
@@ -19,25 +19,25 @@
     1408,
     1024
   ],
-  "shared_scale_after_crop": 0.8184143222506394,
+  "shared_scale_after_crop": 0.9248554913294798,
   "target_stone_width_pixels": 960,
   "affine_wet_to_dry": [
     [
-      1.0000283892496291,
-      8.287260407900438e-05,
-      -0.22001896331908588
+      0.9995882459351213,
+      -0.00022027867463839064,
+      0.520279812013996
     ],
     [
-      -8.287260407900438e-05,
-      1.0000283892496291,
-      -0.7062515306217152
+      0.00022027867463839064,
+      0.9995882459351213,
+      -0.4770880049012377
     ]
   ],
-  "feature_matches": 419,
-  "registration_inliers": 381,
+  "feature_matches": 326,
+  "registration_inliers": 286,
   "feature_residual_export_pixels": {
-    "median": 0.49216596609047836,
-    "p95": 1.2780756915957672
+    "median": 0.5683861192541968,
+    "p95": 1.4137076723694326
   },
   "alpha_identical": true,
   "opaque_alpha_normalization": "Alpha values of 240 and above are normalized to 255 inside the solid stone, with the original soft edge retained.",
@@ -46,17 +46,17 @@
   "outputs": {
     "dry": {
       "path": "agate-hero-dry.webp",
-      "bytes": 121596,
+      "bytes": 119840,
       "quality": 82
     },
     "wet": {
       "path": "agate-hero-wet.webp",
-      "bytes": 108180,
+      "bytes": 114524,
       "quality": 82
     }
   },
   "raw_sha256": {
-    "dry": "a678a28a3834cad0fb54b938a039bb25c555200dbccb2a962bfd1d9373b8808c",
-    "wet": "7953f5a298319137f15eb241b02844feb34cf13419893ae916768fb63986be29"
+    "dry": "a22b6e34bddbedc9722271e61e865f590fcab4f6b10b6d28a353204ee7370b4f",
+    "wet": "17fce492e47a498ad2a5620ef2646e6b41dcde95aa2257de473c67223358c911"
   }
 }

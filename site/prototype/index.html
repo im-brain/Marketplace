@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Heavy Pockets Co. | Tees and socks for Great Lakes rockhounds</title>
+<meta name="description" content="Graphic tees and socks for Great Lakes rockhounds. Head down. Pockets full.">
+<meta name="theme-color" content="#2443c9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Hanken+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<style>
+*{box-sizing:border-box}
+html{scrollbar-color:var(--latch) var(--well-deep)}
+html,body{margin:0}
+body{background:var(--tray);color:var(--on);font:400 1rem/1.5 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.locked{overflow:hidden}
+::selection{background:var(--latch);color:var(--on-latch)}
+:focus-visible{outline:3px solid var(--latch);outline-offset:3px}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:2px}
+img,svg{display:block}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;z-index:50;background:var(--latch);color:var(--on-latch);padding:10px 14px;border-radius:var(--r-pill);font-weight:800}
+.skip:focus{top:12px}
+
+/* ---------- lid strip (everyday header) ---------- */
+.lid{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px var(--gutter);background:linear-gradient(var(--tray-hi),var(--tray));box-shadow:0 6px 14px var(--shade)}
+.word{font:400 clamp(1.25rem,2vw,1.65rem)/1 var(--display);text-decoration:none;white-space:nowrap}
+.lid nav{display:flex;gap:8px;align-items:center}
+.pill{font:800 15px/1 var(--body);color:var(--on);background:var(--lip);border:0;border-radius:var(--r-pill);padding:0 18px;min-height:44px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;cursor:pointer;transition:background .2s}
+.pill:hover{background:rgba(255,255,255,.2)}
+.pill.cart{background:var(--latch);color:var(--on-latch)}
+.pill.cart:hover{background:var(--latch-hi)}
+.pill svg{width:18px;height:18px}
+
+/* ---------- the tray and its wells ---------- */
+.tray{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap);padding:var(--gap) var(--gutter)}
+.well{position:relative;background:var(--well);border-radius:var(--r-well);box-shadow:inset 0 12px 20px var(--shade),inset 0 -2px 0 var(--lip);padding:clamp(18px,2vw,30px);overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.meta{font:700 14px/1.3 var(--body);color:var(--on-soft);margin:8px 0 0}
+.well h2,.well h3{font-family:var(--display);font-weight:400;line-height:.95;margin:0;letter-spacing:-.005em}
+.more{font-weight:800;margin-top:auto;padding-top:14px;align-self:flex-start;min-height:44px;display:inline-flex;align-items:flex-end}
+
+/* first tray: uneven compartments */
+.t1{grid-template-rows:repeat(4,minmax(0,1fr));min-height:calc(100svh - 68px - 120px);max-height:820px}
+.hero{grid-column:1 / span 6;grid-row:1 / span 3;justify-content:flex-end}
+.m1{grid-column:1 / span 3;grid-row:4}
+.m2{grid-column:4 / span 3;grid-row:4}
+.mini{flex-direction:row;align-items:center;justify-content:space-between;gap:12px;text-decoration:none;padding:16px 20px}
+.mini:hover{background:var(--well-deep)}
+.mini b{font:400 clamp(1.25rem,1.7vw,1.6rem)/1 var(--display)}
+.mini span{display:block;font:700 14px/1.3 var(--body);color:var(--on-soft);margin-top:4px}
+.mini svg{flex:none;width:clamp(44px,4vw,64px);height:clamp(44px,4vw,64px)}
+.hero h1{font:400 clamp(3.1rem,6.3vw,6rem)/.9 var(--display);margin:0;letter-spacing:-.01em;text-wrap:balance}
+.hero p{font-size:clamp(1.06rem,1.3vw,1.22rem);color:var(--on-soft);max-width:36ch;margin:18px 0 0}
+.go{margin-top:24px;align-self:flex-start;font:800 1.1rem/1 var(--body);background:var(--latch);color:var(--on-latch);text-decoration:none;border-radius:var(--r-pill);padding:0 28px;min-height:58px;display:inline-flex;align-items:center;gap:10px;box-shadow:0 8px 16px var(--shade);transition:background .2s,transform .2s var(--ease-out)}
+.go:hover{background:var(--latch-hi);transform:translateY(-2px)}
+.go svg{width:18px;height:18px}
+.big{grid-column:7 / span 4;grid-row:1 / span 4;padding:0}
+.s1{grid-column:11 / span 2;grid-row:1 / span 3;padding:10px}
+.s2{grid-column:11 / span 2;grid-row:4;justify-content:center;align-items:center;text-align:center;padding:12px}
+.s2 p{margin:0;font:700 14px/1.25 var(--body);color:var(--on-soft)}
+.s1 svg{width:100%;height:100%}
+
+/* Wet Stone */
+.wet-stone{all:unset;position:absolute;inset:0;cursor:pointer;display:block;-webkit-tap-highlight-color:transparent}
+.wet-stone svg{position:absolute;inset:7% 5% 12%;width:90%;height:81%;overflow:visible}
+.wet-stone .wet{--p:-30%;-webkit-mask-image:linear-gradient(100deg,#000 calc(var(--p) - 18%),transparent var(--p));mask-image:linear-gradient(100deg,#000 calc(var(--p) - 18%),transparent var(--p));transition:--p 1100ms var(--ease-out)}
+.wet-stone[aria-pressed="true"] .wet,.wet-stone.hover .wet{--p:140%}
+.wet-stone .gloss{transition:transform 1300ms var(--ease-out) 120ms}
+.wet-stone[aria-pressed="true"] .gloss,.wet-stone.hover .gloss{transform:skewX(-18deg) translateX(820px)}
+@property --p{syntax:"<percentage>";inherits:false;initial-value:-30%}
+.wet-stone:focus-visible{outline-offset:-8px;border-radius:var(--r-well)}
+.cap{position:absolute;left:20px;right:20px;bottom:16px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px;font:500 14px/1.3 var(--body);color:var(--on-soft);pointer-events:none}
+.cap b{color:var(--on);font-weight:800;white-space:nowrap}
+
+/* second tray: this season's designs */
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding:clamp(40px,6vw,84px) var(--gutter) 6px}
+.section-head h2{font:400 clamp(2.2rem,4.4vw,4rem)/.95 var(--display);margin:0;max-width:16ch}
+.section-head p{margin:0;color:var(--on-soft);max-width:34ch}
+.t2{grid-auto-rows:minmax(150px,auto)}
+.prod{min-height:340px}
+.prod .art{flex:1;display:grid;place-items:center;margin:-6px -6px 14px;min-height:190px;position:relative}
+.prod h3{font-size:clamp(1.6rem,2.2vw,2.15rem)}
+.badge{position:absolute;top:14px;right:14px;z-index:2;font:800 11px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--on);color:var(--well-deep);padding:6px 9px;border-radius:var(--r-pill)}
+.p-chart{grid-column:1 / span 7;grid-row:span 2}
+.p-lick{grid-column:8 / span 5;grid-row:span 2}
+.p-exp{grid-column:1 / span 4}
+.p-brake{grid-column:5 / span 5}
+.p-sock{grid-column:10 / span 3}
+.chart{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:min(100%,520px)}
+.chart figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px}
+.chart svg{width:100%;aspect-ratio:400/320}
+.chart i{display:block;height:6px;width:60%;border-radius:3px;background:var(--on-soft);opacity:.55}
+.lick{position:relative;width:min(100%,380px);aspect-ratio:400/320}
+.lick svg{position:absolute;inset:0;width:100%;height:100%}
+.lick .wet{-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 320'%3E%3Cpath d='M150 40c40-8 92-6 118 18 18 18 6 52-6 84-14 40-10 96-36 120-24 22-64 6-74-24-12-36 4-84-2-122-4-28-26-68 0-76z' fill='%23000'/%3E%3C/svg%3E") center/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 320'%3E%3Cpath d='M150 40c40-8 92-6 118 18 18 18 6 52-6 84-14 40-10 96-36 120-24 22-64 6-74-24-12-36 4-84-2-122-4-28-26-68 0-76z' fill='%23000'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.lick-type{position:absolute;left:0;right:0;bottom:-4px;text-align:center;font:400 clamp(1.8rem,3.4vw,3rem)/1 var(--display);color:var(--on);text-shadow:0 3px 0 var(--well-deep)}
+.exp svg{width:min(100%,330px)}
+.sticker{background:#fff;color:#11163a;border-radius:14px;padding:16px 22px;font:400 clamp(1.4rem,2.4vw,2.1rem)/1 var(--display);transform:rotate(-4deg);box-shadow:0 8px 14px var(--shade);text-align:center;max-width:92%}
+.sticker small{display:block;font:800 12px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;margin-top:8px;color:#3a4170}
+.sock svg{height:200px;width:auto}
+
+/* open lid: editorial spread */
+.lidspread{background:var(--lid);color:var(--lid-ink);margin-top:clamp(48px,7vw,96px);padding:clamp(48px,7vw,110px) var(--gutter);border-radius:28px 28px 0 0;position:relative}
+.lidspread::before{content:"";position:absolute;left:50%;top:14px;width:120px;height:8px;margin-left:-60px;border-radius:4px;background:var(--lid-ink);opacity:.18}
+.spread{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,80px);align-items:center;max-width:1400px;margin:0 auto}
+.spread h2{font:400 clamp(2.6rem,6vw,5.6rem)/.92 var(--display);margin:0;letter-spacing:-.01em;text-wrap:balance}
+.spread p{font-size:clamp(1.06rem,1.3vw,1.2rem);color:var(--lid-ink-soft);max-width:44ch}
+.label{background:var(--label);color:var(--label-ink);border-radius:6px;padding:22px 24px;transform:rotate(1.4deg);box-shadow:0 14px 26px rgba(0,0,0,.2);font:500 15px/1.5 var(--body);max-width:440px;justify-self:center}
+.label dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0 0 12px}
+.label dt{font-weight:800;text-transform:uppercase;font-size:12px;letter-spacing:.1em;padding-top:3px}
+.label dd{margin:0}
+.label p{margin:0;color:inherit;font-size:15px}
+.sample{display:inline-block;font:800 11px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;border:2px solid currentColor;border-radius:var(--r-pill);padding:4px 8px;margin-bottom:12px}
+
+.guide{max-width:1400px;margin:clamp(70px,9vw,130px) auto 0}
+.guide-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.guide-head h2{font:400 clamp(2.2rem,4.4vw,4rem)/.95 var(--display);margin:0}
+.guide-head a{font-weight:800;min-height:44px;display:inline-flex;align-items:center}
+.stones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,32px);margin-top:28px;padding:0;list-style:none}
+.stone-card{position:relative}
+.stone-card .frame{position:relative;aspect-ratio:5/4;border-radius:var(--r-well);background:var(--tray);box-shadow:inset 0 10px 18px var(--shade)}
+.stone-card .wet-stone svg{inset:10% 8%;width:84%;height:80%}
+.stone-card h3{font:400 1.7rem/1 var(--display);margin:16px 0 4px}
+.stone-card p{margin:0;color:var(--lid-ink-soft);font-size:1rem;max-width:40ch}
+.stone-card .hint{font-weight:800;font-size:14px;color:var(--lid-ink);margin-top:8px;display:block}
+
+/* playful moment */
+.pockets{max-width:1400px;margin:clamp(70px,9vw,130px) auto 0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:start}
+.pockets h2{font:400 clamp(2rem,3.6vw,3.2rem)/.95 var(--display);margin:0}
+.pockets ol{margin:0;padding:0;list-style:none;font:700 clamp(1.15rem,1.7vw,1.5rem)/1.3 var(--body);counter-reset:p}
+.pockets li{display:flex;gap:16px;padding:14px 0;border-top:2px solid color-mix(in oklab,var(--lid-ink) 18%,transparent)}
+.pockets li span{font-variant-numeric:tabular-nums;color:var(--lid-ink-soft);min-width:2ch}
+
+/* closing tray: signup and footer */
+.t3{padding-top:var(--gap)}
+.signup{grid-column:1 / span 7}
+.signup h2{font-size:clamp(1.9rem,3vw,2.8rem)}
+.signup p{color:var(--on-soft);margin:10px 0 18px;max-width:46ch}
+.signup form{display:flex;gap:10px;flex-wrap:wrap}
+.signup label{flex:1 1 240px}
+.signup input{width:100%;min-height:54px;border-radius:var(--r-pill);border:2px solid rgba(255,255,255,.28);background:var(--well-deep);color:var(--on);padding:0 20px;font:500 1rem var(--body)}
+.signup input::placeholder{color:var(--on-soft);opacity:.85}
+.signup button{min-height:54px;border:0;border-radius:var(--r-pill);background:var(--latch);color:var(--on-latch);font:800 1rem var(--body);padding:0 24px;cursor:pointer}
+.signup button:hover{background:var(--latch-hi)}
+.signup .status{min-height:1.5em;margin:12px 0 0;font-weight:700}
+.foot{grid-column:8 / span 5}
+.foot nav{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px}
+.foot a{font-weight:700;min-height:40px;display:inline-flex;align-items:center}
+.foot small{color:var(--on-soft);margin-top:auto;padding-top:18px;display:block}
+.proto{display:block;text-align:center;font:700 13px/1.4 var(--body);color:var(--on-soft);padding:14px var(--gutter) 28px}
+
+/* ---------- the menu: the smoked lid closes over the tray ---------- */
+.menu{position:fixed;inset:0;z-index:40;background:var(--smoke);-webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);transform:translateY(-102%);transition:transform 520ms var(--ease-out),visibility 0s linear 520ms;visibility:hidden;display:flex;flex-direction:column;padding:12px var(--gutter) var(--gutter);overflow:auto}
+.menu.open{transform:none;visibility:visible;transition:transform 520ms var(--ease-out)}
+.menu::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:linear-gradient(rgba(255,255,255,.18),transparent)}
+.menu-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.menu-body{flex:1;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(20px,4vw,60px);align-items:center;padding:clamp(20px,4vw,48px) 0}
+.menu ul{list-style:none;margin:0;padding:0}
+.menu li a{display:flex;align-items:baseline;gap:18px;font:400 clamp(2.6rem,7.2vw,6.4rem)/1.02 var(--display);text-decoration:none;padding:4px 0}
+.menu li a span{font:700 clamp(.9rem,1.2vw,1.05rem)/1.2 var(--body);color:var(--on-soft);max-width:22ch}
+.menu li a:hover,.menu li a:focus-visible{color:var(--latch)}
+.menu-tray{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.menu-tray .well{aspect-ratio:1;padding:12px}
+.menu-tray svg{width:100%;height:100%}
+
+/* settle-in motion: content is visible by default; JS adds a gentle settle */
+.settle{transition:transform 700ms var(--ease-settle)}
+.settle.pre{transform:translateY(-14px)}
+@media (prefers-reduced-motion:reduce){
+  .wet-stone .wet,.wet-stone .gloss,.menu,.menu.open,.settle,.go{transition:none!important}
+  .settle.pre{transform:none}
+}
+
+/* ---------- phones ---------- */
+@media (max-width:860px){
+  .lid nav .pill.hide-sm{display:none}
+  .tray{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .t1{grid-template-rows:none;min-height:0;max-height:none}
+  .big{grid-column:1 / span 2;grid-row:auto;aspect-ratio:1/.86;order:0}
+  .hero{grid-column:1 / span 2;grid-row:auto;order:1}
+  .hero h1{font-size:clamp(2.7rem,12vw,4rem)}
+  .s1{grid-column:span 1;grid-row:auto;aspect-ratio:1;order:2}
+  .s2{grid-column:span 1;grid-row:auto;order:2}
+  .m1,.m2{grid-column:1 / span 2;grid-row:auto;order:3}
+  .section-head{flex-direction:column;align-items:flex-start}
+  .p-chart,.p-lick,.p-exp,.p-brake{grid-column:1 / span 2;grid-row:auto}
+  .p-exp,.p-sock{grid-column:span 1}
+  .p-brake{order:5}
+  .prod{min-height:0}
+  .p-exp .art,.p-sock .art{min-height:140px}
+  .sock svg{height:140px}
+  .spread,.pockets{grid-template-columns:1fr}
+  .stones{grid-template-columns:1fr;gap:34px}
+  .signup,.foot{grid-column:1 / span 2}
+  .menu-body{grid-template-columns:1fr;align-content:start}
+  .menu-tray{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="lid">
+  <a class="word" href="#top" aria-label="Heavy Pockets Co. home">Heavy Pockets Co.</a>
+  <nav aria-label="Primary">
+    <a class="pill hide-sm" href="#shop">Shop</a>
+    <a class="pill hide-sm" href="#guide">Field Guide</a>
+    <button class="pill" type="button" id="menu-open" aria-expanded="false" aria-controls="menu">Menu</button>
+    <a class="pill cart" href="#cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.3 11.2a2 2 0 0 1-2 1.8H8.3a2 2 0 0 1-2-1.8z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>Cart<span class="vh">,</span> 0<span class="vh"> items</span></a>
+  </nav>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu">
+  <div class="menu-top">
+    <span class="word">Heavy Pockets Co.</span>
+    <button class="pill" type="button" id="menu-close">Close <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2.6" fill="none"/></svg></button>
+  </div>
+  <div class="menu-body">
+    <nav aria-label="Site">
+      <ul>
+        <li><a href="#shop">Shop <span>Tees and socks</span></a></li>
+        <li><a href="#guide">Field Guide <span>Free, and checked by a rockhound</span></a></li>
+        <li><a href="#notes">Field Notes <span>Where the designs come from</span></a></li>
+        <li><a href="#story">Our Story <span>One rockhound, Grand Rapids</span></a></li>
+        <li><a href="#cart">Cart <span>0 items</span></a></li>
+      </ul>
+    </nav>
+    <div class="menu-tray" aria-hidden="true">
+      <div class="well"><svg data-seed="21" data-kind="agate"></svg></div>
+      <div class="well"><svg data-seed="5" data-kind="petoskey"></svg></div>
+      <div class="well"><svg data-seed="8" data-kind="leland"></svg></div>
+      <div class="well"><svg data-seed="9" data-kind="jasper"></svg></div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+  <!-- first tray -->
+  <div class="tray t1" id="top">
+    <section class="well hero settle">
+      <h1>Head down. Pockets full.</h1>
+      <p>Graphic tees and socks for Great Lakes rockhounds. Made by one, in Grand Rapids.</p>
+      <a class="go" href="#shop">Shop tees and socks <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h12M10 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6"/></svg></a>
+    </section>
+    <section class="well big settle" aria-label="Wet Stone">
+      <button class="wet-stone" type="button" aria-pressed="false" aria-label="Wet this stone to see its true color">
+        <svg class="dry" aria-hidden="true" data-seed="11" data-dry="1"></svg>
+        <svg class="wet" aria-hidden="true" data-seed="11"></svg>
+      </button>
+      <div class="cap"><span>Dry rocks lie.<br><small>SAMPLE stone, drawn in code</small></span><b data-hint data-on="That's the real color" data-off="Tap to wet it">Tap to wet it</b></div>
+    </section>
+    <a class="well mini m1 settle" href="#guide"><div><b>Field Guide</b><span>Free. Wet a stone or ten.</span></div><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h12M10 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+    <a class="well mini m2 settle" href="#shop"><div><b>Socks, too</b><span>Petoskey hexagons</span></div><svg viewBox="0 0 34 34" aria-hidden="true"><defs><pattern id="mh" width="11" height="19" patternUnits="userSpaceOnUse"><path d="M5.5 0l5.5 3.2v6.3L5.5 12.7 0 9.5V3.2zM0 9.5V19M11 9.5V19" fill="none" stroke="#ff6a1a" stroke-width="1.4"/></pattern></defs><rect width="34" height="34" rx="8" fill="url(#mh)"/></svg></a>
+    <div class="well s1 settle" aria-hidden="true"><svg data-seed="5" data-kind="petoskey"></svg></div>
+    <div class="well s2 settle"><p>Contents may include sand.</p></div>
+  </div>
+
+  <!-- second tray: launch designs -->
+  <div class="section-head" id="shop">
+    <h2>The first five finds</h2>
+    <p>Our launch designs. Concepts for now: real photos, prices, and sizes come once samples are approved.</p>
+  </div>
+  <div class="tray t2">
+    <article class="well prod p-chart settle">
+      <span class="badge">Concept</span>
+      <div class="art"><div class="chart" aria-hidden="true">
+        <figure><svg data-seed="11"></svg><i></i></figure>
+        <figure><svg data-seed="5" data-kind="petoskey"></svg><i></i></figure>
+        <figure><svg data-seed="8" data-kind="leland"></svg><i></i></figure>
+        <figure><svg data-seed="9" data-kind="jasper"></svg><i></i></figure>
+        <figure><svg data-seed="4" data-kind="lake"></svg><i></i></figure>
+        <figure><svg data-seed="31"></svg><i></i></figure>
+        <figure><svg data-seed="14" data-kind="jasper"></svg><i></i></figure>
+        <figure><svg data-seed="17" data-kind="lake"></svg><i></i></figure>
+      </div></div>
+      <h3>Great Lakes beach stone chart</h3>
+      <p class="meta">Tee &middot; Price TBD &middot; Concept art, not a product photo</p>
+      <a class="more" href="#shop">See the design</a>
+    </article>
+    <article class="well prod p-lick settle">
+      <span class="badge">Concept</span>
+      <div class="art"><div class="lick" aria-hidden="true">
+        <svg class="dry" data-seed="27" data-dry="1"></svg>
+        <svg class="wet" data-seed="27"></svg>
+        <span class="lick-type">I lick rocks</span>
+      </div></div>
+      <h3>I lick rocks</h3>
+      <p class="meta">Tee &middot; Price TBD &middot; One lick, and the true color shows</p>
+      <a class="more" href="#shop">See the design</a>
+    </article>
+    <article class="well prod p-exp settle">
+      <span class="badge">Concept</span>
+      <div class="art exp" aria-hidden="true">
+        <svg viewBox="0 0 330 140"><g font-family="Bagel Fat One" font-size="56" text-anchor="middle" fill="none" stroke-linejoin="round">
+          <text x="165" y="62" stroke="#7a2410" stroke-width="16">Agate</text><text x="165" y="62" stroke="#efc9a4" stroke-width="11">Agate</text><text x="165" y="62" stroke="#b5401a" stroke-width="6">Agate</text><text x="165" y="62" fill="#fbf3ea" stroke="none">Agate</text>
+          <text x="165" y="122" font-size="38" fill="#ffffff" stroke="none">Expectations</text></g></svg>
+      </div>
+      <h3>Agate Expectations</h3>
+      <p class="meta">Tee &middot; Price TBD</p>
+      <a class="more" href="#shop">See the design</a>
+    </article>
+    <article class="well prod p-brake settle">
+      <span class="badge">Concept</span>
+      <div class="art" aria-hidden="true"><div class="sticker">Will brake for agates<small>Lake Superior shoreline traffic</small></div></div>
+      <h3>Will brake for agates</h3>
+      <p class="meta">Tee &middot; Price TBD</p>
+      <a class="more" href="#shop">See the design</a>
+    </article>
+    <article class="well prod p-sock settle">
+      <span class="badge">Concept</span>
+      <div class="art sock" aria-hidden="true">
+        <svg viewBox="0 0 120 200"><defs><pattern id="sx" width="16" height="27.7" patternUnits="userSpaceOnUse"><rect width="16" height="27.7" fill="#5b5650"/><path d="M8 0l8 4.6v9.2L8 18.5 0 13.8V4.6zM0 13.8v13.9M16 13.8v13.9" fill="none" stroke="#2e2a26" stroke-width="1.6"/><circle cx="8" cy="9.2" r="2" fill="#2e2a26"/></pattern><clipPath id="sk"><path d="M34 6h52v108c0 10 4 16 12 24l10 10c14 14 6 44-20 44H46c-20 0-30-14-30-32 0-12 6-20 12-26 4-4 6-10 6-18z"/></clipPath></defs><rect width="120" height="200" fill="url(#sx)" clip-path="url(#sk)"/><rect x="34" y="6" width="52" height="14" fill="#ff6a1a" clip-path="url(#sk)"/></svg>
+      </div>
+      <h3>Petoskey hexagons</h3>
+      <p class="meta">Socks &middot; Price TBD</p>
+      <a class="more" href="#shop">See the design</a>
+    </article>
+  </div>
+
+  <!-- the lid opens: editorial -->
+  <div class="lidspread">
+    <section class="spread" id="notes">
+      <div>
+        <h2>Every design starts with a stone.</h2>
+        <p>Each shirt comes with a field note: the stone it was drawn from, the beach it came off, and a line about the day. Rockhounds trust where a thing came from more than how shiny it is.</p>
+        <a href="#notes" style="font-weight:800">Read the Field Notes</a>
+      </div>
+      <aside class="label" aria-label="Sample field note">
+        <span class="sample">Sample field note</span>
+        <dl>
+          <dt>Stone</dt><dd>Banded agate, fist-size</dd>
+          <dt>Beach</dt><dd>[Beach name, to be filled in by Brian]</dd>
+          <dt>Found</dt><dd>[Date]</dd>
+          <dt>Design</dt><dd>I lick rocks</dd>
+        </dl>
+        <p>It looked like a gray potato until the wave hit it.</p>
+      </aside>
+    </section>
+
+    <section class="guide" id="guide" aria-labelledby="guide-h">
+      <div class="guide-head">
+        <h2 id="guide-h">The Field Guide</h2>
+        <a href="#guide">Browse all stones</a>
+      </div>
+      <ul class="stones">
+        <li class="stone-card">
+          <div class="frame"><button class="wet-stone" type="button" aria-pressed="false" aria-label="Wet the Lake Superior agate">
+            <svg class="dry" aria-hidden="true" data-seed="31" data-dry="1"></svg><svg class="wet" aria-hidden="true" data-seed="31"></svg></button></div>
+          <h3>Lake Superior agate</h3>
+          <p><span class="sample">Sample text</span><br>Profile text pending Brian's review.</p>
+          <span class="hint" data-hint data-on="Wet" data-off="Tap to wet">Tap to wet</span>
+        </li>
+        <li class="stone-card">
+          <div class="frame"><button class="wet-stone" type="button" aria-pressed="false" aria-label="Wet the Petoskey stone">
+            <svg class="dry" aria-hidden="true" data-seed="5" data-kind="petoskey" data-dry="1"></svg><svg class="wet" aria-hidden="true" data-seed="5" data-kind="petoskey"></svg></button></div>
+          <h3>Petoskey stone</h3>
+          <p><span class="sample">Sample text</span><br>Profile text pending Brian's review.</p>
+          <span class="hint" data-hint data-on="Wet" data-off="Tap to wet">Tap to wet</span>
+        </li>
+        <li class="stone-card">
+          <div class="frame"><button class="wet-stone" type="button" aria-pressed="false" aria-label="Wet the Leland Blue">
+            <svg class="dry" aria-hidden="true" data-seed="8" data-kind="leland" data-dry="1"></svg><svg class="wet" aria-hidden="true" data-seed="8" data-kind="leland"></svg></button></div>
+          <h3>Leland Blue</h3>
+          <p>Not a natural stone at all. It's slag from a 19th-century iron smelter in Leland, Michigan.</p>
+          <span class="hint" data-hint data-on="Wet" data-off="Tap to wet">Tap to wet</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="pockets" id="story" aria-labelledby="pk-h">
+      <h2 id="pk-h">Found in our pockets after one Saturday</h2>
+      <ol>
+        <li><span>1</span>Eleven stones that looked great wet</li>
+        <li><span>2</span>Nine stones that looked terrible dry</li>
+        <li><span>3</span>A receipt for gas, also wet</li>
+        <li><span>4</span>Sand, a structural amount</li>
+      </ol>
+    </section>
+  </div>
+
+  <!-- closing tray -->
+  <div class="tray t3" id="cart">
+    <section class="well signup">
+      <h2>Get a note when new designs drop</h2>
+      <p>About once a month, when there's something worth saying. Unsubscribe anytime.</p>
+      <form id="signup" novalidate>
+        <label><span class="vh">Email address</span><input type="email" name="email" placeholder="you@example.com" autocomplete="email" required></label>
+        <button type="submit">Sign me up</button>
+      </form>
+      <p class="status" role="status" aria-live="polite"></p>
+    </section>
+    <footer class="well foot">
+      <nav aria-label="Footer">
+        <a href="#shop">Shop</a><a href="#guide">Field Guide</a>
+        <a href="#notes">Field Notes</a><a href="#story">Our Story</a>
+        <a href="#cart">Shipping and returns</a><a href="mailto:hello@heavypocketsco.com">hello@heavypocketsco.com</a>
+      </nav>
+      <small>Heavy Pockets Co. &middot; Head down. Pockets full.</small>
+    </footer>
+  </div>
+  <span class="proto">Prototype: stones are code-drawn samples, products are concepts, and colors and fonts are provisional.</span>
+</main>
+
+<script src="stone.js"></script>
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cs = getComputedStyle(document.documentElement);
+
+  // draw the SAMPLE stones; dry halftone dots take the color of the surface they sit on
+  document.querySelectorAll('svg[data-seed]').forEach(s => {
+    const onLid = s.closest('.lidspread .frame');
+    drawStone(s, { seed: +s.dataset.seed, kind: s.dataset.kind || 'agate', dry: !!s.dataset.dry,
+      paper: (onLid ? cs.getPropertyValue('--tray') : cs.getPropertyValue('--well')).trim() });
+  });
+
+  // Wet Stone: hover previews on mouse; tap, click, Enter, or Space toggles and stays
+  document.querySelectorAll('.wet-stone').forEach(b => {
+    const scope = b.closest('.well, .stone-card');
+    const hint = scope && scope.querySelector('[data-hint]');
+    const set = v => { b.setAttribute('aria-pressed', v); if (hint) hint.textContent = v ? hint.dataset.on : hint.dataset.off; };
+    b.addEventListener('click', () => set(b.getAttribute('aria-pressed') !== 'true'));
+    b.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') b.classList.add('hover'); });
+    b.addEventListener('pointerleave', () => b.classList.remove('hover'));
+  });
+
+  // menu: the smoked lid
+  const menu = document.getElementById('menu'), openB = document.getElementById('menu-open'), closeB = document.getElementById('menu-close');
+  const main = document.getElementById('main');
+  const focusables = () => [...menu.querySelectorAll('a, button')];
+  const open = () => { menu.classList.add('open'); openB.setAttribute('aria-expanded', 'true'); document.body.classList.add('locked'); main.inert = true; setTimeout(() => closeB.focus(), reduce ? 0 : 60); };
+  const close = () => { menu.classList.remove('open'); openB.setAttribute('aria-expanded', 'false'); document.body.classList.remove('locked'); main.inert = false; openB.focus(); };
+  openB.addEventListener('click', open);
+  closeB.addEventListener('click', close);
+  menu.querySelectorAll('nav a').forEach(a => a.addEventListener('click', close));
+  menu.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { e.preventDefault(); close(); }
+    if (e.key === 'Tab') {
+      const f = focusables(), first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  // signup: the prototype is not connected to an email service yet
+  const form = document.getElementById('signup'), status = form.parentElement.querySelector('.status');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const email = form.email.value.trim();
+    status.textContent = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)
+      ? "Prototype only: signup isn't connected yet, so nothing was saved."
+      : 'That email address looks incomplete. Check it and try again.';
+  });
+
+  // settle: compartments drop gently into place as they arrive (content stays visible)
+  if (!reduce && 'IntersectionObserver' in window) {
+    const els = [...document.querySelectorAll('.settle')].filter(el => el.getBoundingClientRect().top > innerHeight);
+    els.forEach(el => el.classList.add('pre'));
+    const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.remove('pre'); io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(el => io.observe(el));
+  }
+})();
+</script>
+</body>
+</html>

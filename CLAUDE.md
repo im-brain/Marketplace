@@ -11,10 +11,11 @@ The full step-by-step plan is in `PLAN.md`.
 ## Current status
 
 - **Store name (decided Nov 1, 2026): Heavy Pockets Co.** Domain heavypocketsco.com, handles @heavypocketsco, email hello@heavypocketsco.com (forwarded to a private Gmail). Tagline "Head down. Pockets full." Secondary line "Dry rocks lie." Fallback: Wet Thumb Co. (wetthumbco.com, @wetthumbco), used only if Heavy Pockets runs into trouble. Checks were a first screen, not legal clearance. Background: heavypockets.com and @heavypockets belong to an old, apparently dead streetwear brand; the 2013 HEAVY POCKETS clothing filing (serial 85912472) was abandoned in 2014.
-- **Current step:** Steps 1, 2, and 3 done (Nov 1, 2026). **Next: Step 4, the brand kit** (colors, fonts, simple wordmark, and a one-page brand guide).
-- **Waiting on Brian:** nothing. Claude starts Step 4.
-- **Branch:** all work so far was merged into `main` on Nov 1, 2026. Start new work from `main`.
+- **Current step:** Step 4, merged with Brian's website creative brief (Nov 2, 2026). Phase 1 (direction) is done: Brian picked **Direction B, "Sorting tray"** over the rock club bulletin. The homepage prototype is at `site/prototype/index.html`. **Next:** Brian reviews the prototype (Phase 2 gate). On approval, Phase 3 refines it and the provisional tokens (`site/prototype/tokens.css`) become the brand kit.
+- **Waiting on Brian:** (1) prototype feedback; (2) optional: a free Unsplash developer access key saved as a network secret for api.unsplash.com, for placeholder photos; (3) optional: allow impeccable.style so Impeccable can deal challenger directions; (4) dry and wet photo pairs of real stones for Wet Stone.
+- **Branch:** Nov 2 work is on `claude/wizardly-archimedes-5kc9fl` (not merged yet).
 - **USPTO rate limit:** the search API returns 403 or 429 after many quick queries. Space searches out, and don't loop retries.
+- **Stock photos:** unsplash.com and www.pexels.com block scripts with a bot check, and getting around it isn't allowed. Use the official Unsplash API with a key instead. images.unsplash.com, cdn.shopify.com, and shopify.dev are reachable. impeccable.style and api.openai.com are blocked.
 - **Network access:** all needed hosts are allowed as of Nov 1, 2026: rdap.verisign.com, api.printify.com, images-api.printify.com, tmsearch.uspto.gov, tsdr.uspto.gov, api.cloudflare.com, fonts.googleapis.com, fonts.gstatic.com, accounts.google.com, and pypi.org. Shopify's `<store>.myshopify.com` gets added at Step 12.
 - **Impeccable skill:** its setup step runs `scripts/impeccable`, which downloads a helper program from GitHub releases (checksum-verified). GitHub release downloads aren't on the allowed host list yet, so that step may fail. The design guides in `reference/` work without it. To enable the helper, allow github.com and its release download host. Brian plans to use it mainly once the website gets built.
 - **Tools Claude can run:** .com availability via `https://rdap.verisign.com/com/v1/domain/<name>.com` (200 means taken, 404 means open). Trademark knockout search via `python3 scripts/tm_search.py '"phrase"'` (POSTs to `tmsearch.uspto.gov/prod-stage-v1-0-0/tmsearch`; classes look like "IC 025"). Filing history via `tmsearch.uspto.gov/tsdr-api-v1-0-0/tsdr-api?serialNumber=<n>`. Social and Etsy conflicts via web search limited to those domains. Handle availability can't be confirmed automatically; Brian checks by hand.
@@ -108,8 +109,11 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - `brand/Step3_Accounts_Checklist.md`: Step 3 account setup checklist.
 - `scripts/tm_search.py`: USPTO trademark knockout search.
 - `brand/Naming_Brainstorm_Prompt.md`: the prompt for the separate naming session.
+- `PRODUCT.md`: product truth for the Impeccable skill (audience, voice, constraints, and principles).
+- `site/prototype/`: the homepage prototype (`index.html`, `preview-single-file.html` (a generated one-file copy for phone viewing), `tokens.css` with provisional tokens, `stone.js` code-drawn SAMPLE stones, and `IMAGE_CREDITS.md`). `directions/` holds the two Phase 1 direction sketches.
+- `.impeccable/surfaces/`: Impeccable's homepage surface brief with the direction contract. Screenshots go in `.impeccable/review/` (gitignored).
 - `.claude/skills/impeccable/`: the Impeccable design skill (v4.8.0, Apache 2.0, from github.com/pbakaus/impeccable), installed Nov 1, 2026. It loads in every session (`/impeccable`). License in `.claude/skills/LICENSE-impeccable`.
-- Planned: `designs/` (art files), `tracker/Design_Tracker.xlsx`, `scripts/` (Python automation), `theme/` (Shopify custom sections).
+- Planned: `designs/` (art files), `tracker/Design_Tracker.xlsx`, `scripts/` (Python automation), `theme/` (the custom Shopify Liquid theme).
 
 ## Session log
 
@@ -126,3 +130,4 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - **2026-11-01 (later):** Brian chose **Heavy Pockets Co.** (fallback Wet Thumb Co.); both .coms re-checked open. Reordered Step 3 so the Gmail comes first (Cloudflare needs an account email). Wrote the Step 3 checklist.
 - **2026-11-01 (later):** Step 3 done. Gmail heavypocketsco@gmail.com, domain heavypocketsco.com (Cloudflare), handles claimed, Printify connected (network secret, shop 29566047), and hello@ forwarding plus send-as working with SPF. Next: Step 4, brand kit.
 - **2026-11-01 (later):** Installed the Impeccable design skill into `.claude/skills/` (Claude Code copy only; the other copies in that repo are the same skill for other tools). Its launcher downloads a helper binary; flagged. Best fit is the web pieces (brand guide page, store preview), not shirt art. Next: Step 4, brand kit.
+- **2026-11-02:** Brian's creative brief arrived (5 phases with approval gates). Step 4 is merged with it. Wrote PRODUCT.md. Chose a custom Shopify Liquid theme over Hydrogen. Impeccable's roll (degraded: impeccable.style blocked, no image generation, so code-first) assigned the rock club bulletin; Brian picked the sorting tray. Built the homepage prototype with a menu, Wet Stone (chalky dry to rich wet, by hover, tap, or keyboard), 5 concept products, a field note, a Field Guide strip, and signup. Checked at 390 and 1440 wide in light and dark. Next: Brian's prototype review.

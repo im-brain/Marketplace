@@ -25,12 +25,14 @@
   const palettes = {
     agate: ['#6b1a0b', '#a8351a', '#d06a2e', '#efc9a4', '#8c2a12', '#f6ece0', '#c4552a', '#7d2410', '#e39a63', '#fbf3ea'],
     lake: ['#2c2a33', '#4d4a57', '#8b8794', '#c9c5cf', '#3b3843', '#a7a3b0'],
-    jasper: ['#6e2219', '#8e3524', '#b4553a', '#7a2a1e', '#c87457']
+    jasper: ['#6e2219', '#8e3524', '#b4553a', '#7a2a1e', '#c87457'],
+    petoskey: ['#5b5650', '#6e6862', '#625d57', '#77716a'],
+    leland: ['#123a5c', '#1d5a86', '#2f7fb0', '#164a72', '#5fa8cf']
   };
   window.drawStone = function (svg, opts) {
     const o = Object.assign({ seed: 7, kind: 'agate', bands: 38 }, opts || {});
     const r = rand(o.seed);
-    const id = 's' + o.seed + Math.floor(r() * 1e6);
+    r(); const id = 's' + o.seed + '_' + (window.__stoneN = (window.__stoneN || 0) + 1);
     const pal = palettes[o.kind];
     const ns = 'http://www.w3.org/2000/svg';
     svg.setAttribute('viewBox', '0 0 400 320');
@@ -40,18 +42,25 @@
       '<radialGradient id="sh' + id + '" cx="38%" cy="30%" r="75%"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></radialGradient>' +
       '<linearGradient id="gl' + id + '" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>' +
       '<pattern id="ht' + id + '" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="none"/><circle cx="2.5" cy="2.5" r="1.25" fill="' + (o.paper || '#f2b705') + '"/></pattern>' +
-      '<filter id="d' + id + '"><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="linear" slope="1.9" intercept="-.32"/><feFuncG type="linear" slope="1.9" intercept="-.32"/><feFuncB type="linear" slope="1.9" intercept="-.32"/></feComponentTransfer></filter>' +
+      '<filter id="d' + id + '"><feColorMatrix type="saturate" values=".14"/><feComponentTransfer><feFuncR type="linear" slope=".62" intercept=".3"/><feFuncG type="linear" slope=".62" intercept=".29"/><feFuncB type="linear" slope=".62" intercept=".28"/></feComponentTransfer></filter>' +
       '<clipPath id="c' + id + '"><path d="' + blob(rand(o.seed), 200, 165, 140, 0.16, 9) + '"/></clipPath></defs>';
     let g = '<g clip-path="url(#c' + id + ')"><g' + (o.dry ? ' filter="url(#d' + id + ')"' : '') + '><rect width="400" height="320" fill="' + pal[0] + '"/><g filter="url(#w' + id + ')">';
-    const n = o.kind === 'agate' ? o.bands : 9;
+    const n = o.kind === 'agate' ? o.bands : (o.kind === 'petoskey' ? 4 : 9);
     for (let i = 0; i < n; i++) {
       // fortification banding: tight near the rim, wider toward a quartz core
       const t = o.kind === 'agate' ? Math.pow(1 - i / n, 0.62) * (i > n * 0.82 ? 0.9 : 1) : 1 - i / n;
       const col = pal[(i + Math.floor(r() * 2)) % pal.length];
       g += '<path d="' + blob(rand(o.seed + 11), 206 + (r() - 0.5) * 6, 170 + (r() - 0.5) * 6, 150 * t + 4, 0.18, 9) + '" fill="' + col + '"/>';
     }
+    if (o.kind === 'petoskey') {
+      defs = defs.replace('</defs>', '<pattern id="hx' + id + '" width="34" height="58.9" patternUnits="userSpaceOnUse" patternTransform="rotate(8)"><path d="M17 0l17 9.8v19.6L17 39.3 0 29.4V9.8zM0 29.4v29.5M34 29.4v29.5" fill="none" stroke="#2e2a26" stroke-width="3"/><circle cx="17" cy="19.6" r="4" fill="#3a3530"/><circle cx="0" cy="49" r="4" fill="#3a3530"/><circle cx="34" cy="49" r="4" fill="#3a3530"/></pattern></defs>');
+      g += '<rect width="400" height="320" fill="url(#hx' + id + ')" opacity=".85"/>';
+    }
+    if (o.kind === 'leland') {
+      for (let i = 0; i < 26; i++) g += '<ellipse cx="' + (60 + r() * 280) + '" cy="' + (50 + r() * 220) + '" rx="' + (3 + r() * 9) + '" ry="' + (2 + r() * 6) + '" fill="#081c2e" opacity=".75"/>';
+    }
     g += '</g><rect width="400" height="320" fill="#000" filter="url(#g' + id + ')"/><rect width="400" height="320" fill="url(#sh' + id + ')"/></g>' +
-      (o.dry ? '<rect width="400" height="320" fill="url(#ht' + id + ')" opacity=".55"/>' : '<rect class="gloss" x="-320" y="-40" width="220" height="400" transform="skewX(-18)" fill="url(#gl' + id + ')"/>') + '</g>';
+      (o.dry ? '<rect width="400" height="320" fill="url(#ht' + id + ')" opacity=".22"/>' : '<rect class="gloss" x="-320" y="-40" width="220" height="400" transform="skewX(-18)" fill="url(#gl' + id + ')"/>') + '</g>';
     svg.innerHTML = defs + g;
     svg.setAttribute('xmlns', ns);
   };

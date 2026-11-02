@@ -125,9 +125,9 @@ Brian reads this, so plain language and no hype. Under 600 words.
 | Menu tray | `.menu-tray .well` (4) | agate, Petoskey, Leland Blue, and jasper | wet only (or dry and wet if you animate them) |
 
 **Image specs:**
-- **Size:** 1600 x 1280 pixels (5:4, matching the SVG viewBox `0 0 400 320`).
+- **Size:** generate at **1536 x 1024** (ChatGPT's landscape size), then crop the center to **1280 x 1024** (5:4, matching the SVG viewBox `0 0 400 320`). The prompts leave margin so the crop never cuts the stone. If you can't crop, deliver the 1536 x 1024 file and say so; Claude will crop it.
 - **Background:** transparent. Deliver WebP (quality around 82) and keep the PNG master in `assets/stones/src/`.
-- **Framing:** the stone centered, filling about 85% of the width. Top-down at a slight three-quarter angle. Soft overcast light from the **upper left**. A soft contact shadow baked in, at low opacity, so it sits in the well.
+- **Framing:** after the crop, the stone is centered and fills about 75% of the width. Top-down at a slight three-quarter angle. Soft overcast light from the **upper left**. A soft contact shadow baked in, at low opacity, so it sits in the well.
 - **Matched pairs:** the dry and wet versions of each stone must line up **pixel for pixel**: same outline, position, and lighting. Only the surface changes. The site fades and sweeps from one to the other, so any shift makes the stone jump. Generate the dry image, then edit it into the wet one; never generate the two separately.
 - **Dry:** matte and chalky, with muted colors and a faint dusty bloom. No highlights.
 - **Wet:** deeper and more saturated, never brighter or neon. A thin film of water, a few sharp specular glints from the upper left, and two or three small beads.
@@ -135,7 +135,7 @@ Brian reads this, so plain language and no hype. Under 600 words.
   - **Lake Superior agate:** a pitted, wave-worn rind, with fortification banding showing on one broken or worn face, in rust, oxblood, orange, cream, and white. Not a geode, polished slab, or dyed agate.
   - **Petoskey:** a gray-tan pebble. When wet, it shows packed, slightly uneven hexagon cells, each with a dark eye and radiating lines. Not a honeycomb.
   - **Leland Blue:** wave-worn glassy blue to blue-green slag, with gas bubbles, flow lines, and gray streaks. Not a gem or sea glass.
-  - The full prompts are in `site/prototype/Image_Prompts.md`. Improve them if you can.
+  - **Use the ready-made prompts** in `site/prototype/Image_Prompts.md`: Prompts 1 to 3 for the dry and wet pairs, "Prompt 1, again" for the second agate, and Prompt 4 for the six small stones. Improve them if you can, and note what you changed in the Handoff log.
 - **File names:** `site/prototype/assets/stones/agate-hero-dry.webp`, `agate-hero-wet.webp`, `agate-dry.webp`, `agate-wet.webp`, `petoskey-dry.webp`, `petoskey-wet.webp`, `leland-dry.webp`, `leland-wet.webp`, and `small-<stone>-dry.webp` for the six small stones. Keep each file under 180 KB.
 
 **Code changes (do exactly this):**
@@ -146,8 +146,8 @@ Brian reads this, so plain language and no hype. Under 600 words.
    ```
    with
    ```html
-   <img class="dry" src="assets/stones/agate-hero-dry.webp" alt="" width="1600" height="1280" decoding="async">
-   <img class="wet" src="assets/stones/agate-hero-wet.webp" alt="" width="1600" height="1280" decoding="async">
+   <img class="dry" src="assets/stones/agate-hero-dry.webp" alt="" width="1280" height="1024" decoding="async">
+   <img class="wet" src="assets/stones/agate-hero-wet.webp" alt="" width="1280" height="1024" decoding="async">
    ```
    Keep `alt=""` because the button's `aria-label` already names the stone.
 2. In `motion.css`, give `.wet-stone img` the same box as `.wet-stone svg` (look at the `.wet-stone svg` and `.stone-card .wet-stone svg` rules in `index.html`), with `object-fit: contain`. The existing mask on `.wet-stone .wet` then works on the image unchanged.
@@ -160,7 +160,7 @@ Brian reads this, so plain language and no hype. Under 600 words.
 
 **Why:** the header wordmark is just the words "Heavy Pockets Co." set in Bagel Fat One (`.word` in `index.html`). The brand needs a real, ownable mark that works on the site, sleeve tags, sock cuffs, hats, the favicon, and in one-color embroidery.
 
-**Direction (Brian picks; show 3 options in `ChatGPT_Review.md` or `assets/logo/options/` before you finish one):**
+**Direction (Brian picks; show 3 options in `ChatGPT_Review.md` or `assets/logo/options/` before you finish one).** Concept prompts for all three directions are in `site/prototype/Image_Prompts.md`, Prompt 5. Use image generation for concepts only, then draw the final mark as clean SVG paths by hand or in code, because image models garble letters.
 - Molded, fat, rounded letterforms that feel pressed into the cobalt plastic. Start from Bagel Fat One (logo use is allowed), but customize the letters so the mark is ours, not just the font.
 - One idea Claude explored earlier: **the lick.** A single glossy streak crosses the letters where they turn from dry to wet. It's the "I lick rocks" design shrunk into the logo. Push it, or beat it.
 - Another idea: **a pocket.** The jeans-pocket shape already used as the Pocket icon (the path in the `.pill.cart` SVG in `index.html`), heavy with a stone.
@@ -175,7 +175,7 @@ Brian reads this, so plain language and no hype. Under 600 words.
 | `assets/logo/hp-stacked.svg` | Square posts, hats, and profile pictures | |
 | `assets/logo/hp-mark.svg` | Sleeve tag, sock cuff, and favicon source | Must read at 16px. |
 | `assets/logo/favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` (180x180) | Browser tab and home screen | Cobalt background with a white or orange mark. |
-| `assets/logo/og-card.png` (1200x630) | Link previews on social | The logo on the tray, plus "Head down. Pockets full." No product shots. |
+| `assets/logo/og-card.png` (1200x630) | Link previews on social | The logo on the tray, plus "Head down. Pockets full." No product shots. Prompt 6 in `Image_Prompts.md`. Composite the real SVG logo on top so the letters are exact. |
 
 **Colors:** two-color versions use white (`#ffffff`) and latch orange (`#ff6a1a`) on cobalt. Check that each version works on cobalt, on light lid (`#e3e8ff`), and on black and charcoal tees.
 
@@ -250,5 +250,6 @@ The product cards use rough code-drawn concept art. Better concept art is welcom
 
 ## 9. Handoff log (newest first; ChatGPT and Claude both add entries)
 
+- **2026-11-02, Claude:** Image_Prompts.md now has paste-ready prompts for every image slot (stone pairs, a second agate, six small stones, three logo concepts, and the social card), all at 1536 x 1024 with transparent backgrounds. Task 1 specs now crop to 1280 x 1024.
 - **2026-11-02, Claude:** Added the "If you can't push" fallback (one zip per task with repo paths, patches, and HANDOFF.md) to section 5.
 - **2026-11-02, Claude:** Wrote this brief and `prompt.md`. Added `scripts/build_preview.py`. The prototype includes the critique fixes Brian picked. Ready for ChatGPT, starting with Task 0.

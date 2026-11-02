@@ -26,12 +26,13 @@ img,svg{display:block}
 
 /* ---------- lid strip (everyday header) ---------- */
 .lid{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px var(--gutter);background:linear-gradient(var(--tray-hi),var(--tray));box-shadow:0 6px 14px var(--shade)}
-.word{font:400 clamp(1.25rem,2vw,1.65rem)/1 var(--display);text-decoration:none;white-space:nowrap}
+.word{font:400 clamp(1.25rem,2vw,1.65rem)/1 var(--display);text-decoration:none;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
 .lid nav{display:flex;gap:8px;align-items:center}
 .pill{font:800 15px/1 var(--body);color:var(--on);background:var(--lip);border:0;border-radius:var(--r-pill);padding:0 18px;min-height:44px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;cursor:pointer;transition:background .2s}
 .pill:hover{background:rgba(255,255,255,.2)}
 .pill.cart{background:var(--latch);color:var(--on-latch)}
 .pill.cart:hover{background:var(--latch-hi)}
+.pill.cart b{font-variant-numeric:tabular-nums;min-width:1ch}
 .pill svg{width:18px;height:18px}
 
 /* ---------- the tray and its wells ---------- */
@@ -42,7 +43,7 @@ img,svg{display:block}
 .more{font-weight:800;margin-top:auto;padding-top:14px;align-self:flex-start;min-height:44px;display:inline-flex;align-items:flex-end}
 
 /* first tray: uneven compartments */
-.t1{grid-template-rows:repeat(4,minmax(0,1fr));min-height:calc(100svh - 68px - 120px);max-height:820px}
+.t1{grid-template-rows:repeat(4,minmax(0,1fr));min-height:calc(100svh - 68px - 190px);max-height:760px}
 .hero{grid-column:1 / span 6;grid-row:1 / span 3;justify-content:flex-end}
 .m1{grid-column:1 / span 3;grid-row:4}
 .m2{grid-column:4 / span 3;grid-row:4}
@@ -56,11 +57,13 @@ img,svg{display:block}
 .go{margin-top:24px;align-self:flex-start;font:800 1.1rem/1 var(--body);background:var(--latch);color:var(--on-latch);text-decoration:none;border-radius:var(--r-pill);padding:0 28px;min-height:58px;display:inline-flex;align-items:center;gap:10px;box-shadow:0 8px 16px var(--shade);transition:background .2s,transform .2s var(--ease-out)}
 .go:hover{background:var(--latch-hi);transform:translateY(-2px)}
 .go svg{width:18px;height:18px}
-.big{grid-column:7 / span 4;grid-row:1 / span 4;padding:0}
-.s1{grid-column:11 / span 2;grid-row:1 / span 3;padding:10px}
+.big{grid-column:7 / span 6;grid-row:1 / span 3;padding:0}
+.s1{grid-column:7 / span 4;grid-row:4;padding:8px 12px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:center;gap:4px}
 .s2{grid-column:11 / span 2;grid-row:4;justify-content:center;align-items:center;text-align:center;padding:12px}
 .s2 p{margin:0;font:700 14px/1.25 var(--body);color:var(--on-soft)}
-.s1 svg{width:100%;height:100%}
+.s1 svg{width:100%;height:auto;aspect-ratio:400/320}
+.s1 svg:nth-child(odd){transform:rotate(-9deg) translateY(4px)}
+.s1 svg:nth-child(even){transform:rotate(7deg) translateY(-3px)}
 
 /* Wet Stone */
 .wet-stone{all:unset;position:absolute;inset:0;cursor:pointer;display:block;-webkit-tap-highlight-color:transparent}
@@ -75,13 +78,32 @@ img,svg{display:block}
 .cap b{color:var(--on);font-weight:800;white-space:nowrap}
 
 /* second tray: this season's designs */
-.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding:clamp(40px,6vw,84px) var(--gutter) 6px}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding:clamp(32px,3.4vw,48px) var(--gutter) 6px}
 .section-head h2{font:400 clamp(2.2rem,4.4vw,4rem)/.95 var(--display);margin:0;max-width:16ch}
 .section-head p{margin:0;color:var(--on-soft);max-width:34ch}
 .t2{grid-auto-rows:minmax(150px,auto)}
 .prod{min-height:340px}
 .prod .art{flex:1;display:grid;place-items:center;margin:-6px -6px 14px;min-height:190px;position:relative}
 .prod h3{font-size:clamp(1.6rem,2.2vw,2.15rem)}
+.pocket{margin-top:auto;align-self:flex-start;font:800 15px/1 var(--body);color:var(--on);background:var(--lip);border:2px solid rgba(255,255,255,.22);border-radius:var(--r-pill);padding:0 18px;min-height:46px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.prod .meta{margin-bottom:14px}
+.pocket:hover{background:rgba(255,255,255,.18)}
+.pocket svg{width:18px;height:18px}
+.pocket .chk{display:none}
+.pocket[aria-pressed="true"]{background:var(--on);color:var(--well-deep);border-color:var(--on)}
+.pocket[aria-pressed="true"] .chk{display:block}
+.pocket[aria-pressed="true"] .pk{display:none}
+.dibs{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(18px,3vw,48px);align-items:center;padding:clamp(22px,3vw,40px)}
+.dibs h2{font-size:clamp(2.2rem,4vw,3.6rem)}
+.dibs p{color:var(--on-soft);margin:10px 0 0;max-width:46ch}
+.dibs .picked{color:var(--on);font-weight:700;margin-top:16px}
+.dibs form{display:flex;gap:10px;flex-wrap:wrap}
+.dibs label{flex:1 1 220px}
+.dibs input{width:100%;min-height:58px;border-radius:var(--r-pill);border:2px solid rgba(255,255,255,.28);background:var(--well-deep);color:var(--on);padding:0 20px;font:500 1rem var(--body)}
+.dibs input::placeholder{color:var(--on-soft);opacity:.85}
+.dibs button{min-height:58px;border:0;border-radius:var(--r-pill);background:var(--latch);color:var(--on-latch);font:800 1.05rem var(--body);padding:0 26px;cursor:pointer;box-shadow:0 8px 16px var(--shade)}
+.dibs button:hover{background:var(--latch-hi)}
+.dibs .status{min-height:1.5em;margin:12px 0 0;font-weight:700;color:var(--on)}
 .badge{position:absolute;top:14px;right:14px;z-index:2;font:800 11px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--on);color:var(--well-deep);padding:6px 9px;border-radius:var(--r-pill)}
 .p-chart{grid-column:1 / span 7;grid-row:span 2}
 .p-lick{grid-column:8 / span 5;grid-row:span 2}
@@ -103,7 +125,8 @@ img,svg{display:block}
 
 /* open lid: editorial spread */
 .lidspread{background:var(--lid);color:var(--lid-ink);margin-top:clamp(48px,7vw,96px);padding:clamp(48px,7vw,110px) var(--gutter);border-radius:28px 28px 0 0;position:relative}
-.lidspread::before{content:"";position:absolute;left:50%;top:14px;width:120px;height:8px;margin-left:-60px;border-radius:4px;background:var(--lid-ink);opacity:.18}
+.lidspread{box-shadow:inset 0 3px 0 var(--lid-lip),0 -10px 24px var(--shade)}
+.lidspread::before{content:"";position:absolute;left:50%;top:14px;width:120px;height:8px;margin-left:-60px;border-radius:4px;background:var(--lid-ink);opacity:var(--lid-handle)}
 .spread{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,80px);align-items:center;max-width:1400px;margin:0 auto}
 .spread h2{font:400 clamp(2.6rem,6vw,5.6rem)/.92 var(--display);margin:0;letter-spacing:-.01em;text-wrap:balance}
 .spread p{font-size:clamp(1.06rem,1.3vw,1.2rem);color:var(--lid-ink-soft);max-width:44ch}
@@ -117,7 +140,7 @@ img,svg{display:block}
 .guide{max-width:1400px;margin:clamp(70px,9vw,130px) auto 0}
 .guide-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
 .guide-head h2{font:400 clamp(2.2rem,4.4vw,4rem)/.95 var(--display);margin:0}
-.guide-head a{font-weight:800;min-height:44px;display:inline-flex;align-items:center}
+.guide-head .soon{font-weight:800;color:var(--lid-ink-soft)}
 .stones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,32px);margin-top:28px;padding:0;list-style:none}
 .stone-card{position:relative}
 .stone-card .frame{position:relative;aspect-ratio:5/4;border-radius:var(--r-well);background:var(--tray);box-shadow:inset 0 10px 18px var(--shade)}
@@ -134,21 +157,11 @@ img,svg{display:block}
 .pockets li span{font-variant-numeric:tabular-nums;color:var(--lid-ink-soft);min-width:2ch}
 
 /* closing tray: signup and footer */
-.t3{padding-top:var(--gap)}
-.signup{grid-column:1 / span 7}
-.signup h2{font-size:clamp(1.9rem,3vw,2.8rem)}
-.signup p{color:var(--on-soft);margin:10px 0 18px;max-width:46ch}
-.signup form{display:flex;gap:10px;flex-wrap:wrap}
-.signup label{flex:1 1 240px}
-.signup input{width:100%;min-height:54px;border-radius:var(--r-pill);border:2px solid rgba(255,255,255,.28);background:var(--well-deep);color:var(--on);padding:0 20px;font:500 1rem var(--body)}
-.signup input::placeholder{color:var(--on-soft);opacity:.85}
-.signup button{min-height:54px;border:0;border-radius:var(--r-pill);background:var(--latch);color:var(--on-latch);font:800 1rem var(--body);padding:0 24px;cursor:pointer}
-.signup button:hover{background:var(--latch-hi)}
-.signup .status{min-height:1.5em;margin:12px 0 0;font-weight:700}
-.foot{grid-column:8 / span 5}
-.foot nav{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px}
-.foot a{font-weight:700;min-height:40px;display:inline-flex;align-items:center}
-.foot small{color:var(--on-soft);margin-top:auto;padding-top:18px;display:block}
+.t3{padding-top:clamp(48px,6vw,84px)}
+.foot{grid-column:1 / -1;flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 28px}
+.foot nav{display:flex;flex-wrap:wrap;gap:0 22px}
+.foot a{font-weight:700;min-height:44px;display:inline-flex;align-items:center}
+.foot small{color:var(--on-soft);display:block}
 .proto{display:block;text-align:center;font:700 13px/1.4 var(--body);color:var(--on-soft);padding:14px var(--gutter) 28px}
 
 /* ---------- the menu: the smoked lid closes over the tray ---------- */
@@ -181,21 +194,31 @@ img,svg{display:block}
   .big{grid-column:1 / span 2;grid-row:auto;aspect-ratio:1/.86;order:0}
   .hero{grid-column:1 / span 2;grid-row:auto;order:1}
   .hero h1{font-size:clamp(2.7rem,12vw,4rem)}
-  .s1{grid-column:span 1;grid-row:auto;aspect-ratio:1;order:2}
-  .s2{grid-column:span 1;grid-row:auto;order:2}
+  .s1{grid-column:1 / span 2;grid-row:auto;order:2;grid-template-columns:repeat(6,minmax(0,1fr));padding:10px 12px}
+  .s2{grid-column:1 / span 2;grid-row:auto;order:2;padding:14px}
   .m1,.m2{grid-column:1 / span 2;grid-row:auto;order:3}
   .section-head{flex-direction:column;align-items:flex-start}
   .p-chart,.p-lick,.p-exp,.p-brake{grid-column:1 / span 2;grid-row:auto}
-  .p-exp,.p-sock{grid-column:span 1}
+  .p-exp,.p-sock{grid-column:1 / span 2}
+  .dibs{grid-template-columns:1fr;order:6}
   .p-brake{order:5}
   .prod{min-height:0}
   .p-exp .art,.p-sock .art{min-height:140px}
   .sock svg{height:140px}
   .spread,.pockets{grid-template-columns:1fr}
   .stones{grid-template-columns:1fr;gap:34px}
-  .signup,.foot{grid-column:1 / span 2}
+  .foot{grid-column:1 / span 2;flex-direction:column;align-items:flex-start}
+  .menu li a{flex-direction:column;align-items:flex-start;gap:4px;padding:8px 0}
   .menu-body{grid-template-columns:1fr;align-content:start}
   .menu-tray{display:none}
+}
+@media (max-width:480px){
+  .pill.cart .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+}
+@media (max-width:360px){
+  .word{font-size:1.05rem}
+  .lid nav{gap:6px}
+  .pill{padding:0 13px}
 }
 </style>
 </head>
@@ -208,7 +231,7 @@ img,svg{display:block}
     <a class="pill hide-sm" href="#shop">Shop</a>
     <a class="pill hide-sm" href="#guide">Field Guide</a>
     <button class="pill" type="button" id="menu-open" aria-expanded="false" aria-controls="menu">Menu</button>
-    <a class="pill cart" href="#cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.3 11.2a2 2 0 0 1-2 1.8H8.3a2 2 0 0 1-2-1.8z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>Cart<span class="vh">,</span> 0<span class="vh"> items</span></a>
+    <a class="pill cart" href="#dibs" data-pocket-pill><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 4h15v8.5c0 4.3-3.6 7.2-7.5 8.5-3.9-1.3-7.5-4.2-7.5-8.5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M4.5 8.5h15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2 2.4"/></svg><span class="lbl">Pocket</span><b data-pocket-count>0</b><span class="vh" data-pocket-vh> designs pocketed</span></a>
   </nav>
 </header>
 
@@ -221,10 +244,10 @@ img,svg{display:block}
     <nav aria-label="Site">
       <ul>
         <li><a href="#shop">Shop <span>Tees and socks</span></a></li>
-        <li><a href="#guide">Field Guide <span>Free, and checked by a rockhound</span></a></li>
+        <li><a href="#guide">Field Guide <span>Free. Being checked by a rockhound</span></a></li>
         <li><a href="#notes">Field Notes <span>Where the designs come from</span></a></li>
         <li><a href="#story">Our Story <span>One rockhound, Grand Rapids</span></a></li>
-        <li><a href="#cart">Cart <span>0 items</span></a></li>
+        <li><a href="#dibs">Your pocket <span data-pocket-menu>Empty for now</span></a></li>
       </ul>
     </nav>
     <div class="menu-tray" aria-hidden="true">
@@ -241,8 +264,8 @@ img,svg{display:block}
   <div class="tray t1" id="top">
     <section class="well hero settle">
       <h1>Head down. Pockets full.</h1>
-      <p>Graphic tees and socks for Great Lakes rockhounds. Made by one, in Grand Rapids.</p>
-      <a class="go" href="#shop">Shop tees and socks <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h12M10 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6"/></svg></a>
+      <p>Graphic tees and socks for Great Lakes rockhounds, made by one in Grand Rapids. Not on sale yet.</p>
+      <a class="go" href="#dibs">Get first dibs <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v12M4 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6"/></svg></a>
     </section>
     <section class="well big settle" aria-label="Wet Stone">
       <button class="wet-stone" type="button" aria-pressed="false" aria-label="Wet this stone to see its true color">
@@ -253,14 +276,14 @@ img,svg{display:block}
     </section>
     <a class="well mini m1 settle" href="#guide"><div><b>Field Guide</b><span>Free. Wet a stone or ten.</span></div><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h12M10 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
     <a class="well mini m2 settle" href="#shop"><div><b>Socks, too</b><span>Petoskey hexagons</span></div><svg viewBox="0 0 34 34" aria-hidden="true"><defs><pattern id="mh" width="11" height="19" patternUnits="userSpaceOnUse"><path d="M5.5 0l5.5 3.2v6.3L5.5 12.7 0 9.5V3.2zM0 9.5V19M11 9.5V19" fill="none" stroke="#ff6a1a" stroke-width="1.4"/></pattern></defs><rect width="34" height="34" rx="8" fill="url(#mh)"/></svg></a>
-    <div class="well s1 settle" aria-hidden="true"><svg data-seed="5" data-kind="petoskey"></svg></div>
+    <div class="well s1 settle" aria-hidden="true"><svg data-seed="5" data-kind="petoskey" data-dry="1"></svg><svg data-seed="21" data-dry="1"></svg><svg data-seed="8" data-kind="leland" data-dry="1"></svg><svg data-seed="9" data-kind="jasper" data-dry="1"></svg><svg data-seed="4" data-kind="lake" data-dry="1"></svg><svg data-seed="33" data-dry="1"></svg></div>
     <div class="well s2 settle"><p>Contents may include sand.</p></div>
   </div>
 
   <!-- second tray: launch designs -->
   <div class="section-head" id="shop">
     <h2>The first five finds</h2>
-    <p>Our launch designs. Concepts for now: real photos, prices, and sizes come once samples are approved.</p>
+    <p>Our launch designs. Concepts for now: real photos, prices, and sizes come once samples are approved. Pocket the ones you want.</p>
   </div>
   <div class="tray t2">
     <article class="well prod p-chart settle">
@@ -277,7 +300,7 @@ img,svg{display:block}
       </div></div>
       <h3>Great Lakes beach stone chart</h3>
       <p class="meta">Tee &middot; Price TBD &middot; Concept art, not a product photo</p>
-      <a class="more" href="#shop">See the design</a>
+      <button class="pocket" type="button" aria-pressed="false" data-design="Great Lakes beach stone chart"><svg class="pk" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 4h15v8.5c0 4.3-3.6 7.2-7.5 8.5-3.9-1.3-7.5-4.2-7.5-8.5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M4.5 8.5h15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2 2.4"/></svg><svg class="chk" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6"/></svg><span>Pocket it</span><span class="vh"> Great Lakes beach stone chart</span></button>
     </article>
     <article class="well prod p-lick settle">
       <span class="badge">Concept</span>
@@ -288,7 +311,7 @@ img,svg{display:block}
       </div></div>
       <h3>I lick rocks</h3>
       <p class="meta">Tee &middot; Price TBD &middot; One lick, and the true color shows</p>
-      <a class="more" href="#shop">See the design</a>
+      <button class="pocket" type="button" aria-pressed="false" data-design="I lick rocks"><svg class="pk" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 4h15v8.5c0 4.3-3.6 7.2-7.5 8.5-3.9-1.3-7.5-4.2-7.5-8.5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M4.5 8.5h15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2 2.4"/></svg><svg class="chk" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6"/></svg><span>Pocket it</span><span class="vh"> I lick rocks</span></button>
     </article>
     <article class="well prod p-exp settle">
       <span class="badge">Concept</span>
@@ -299,14 +322,14 @@ img,svg{display:block}
       </div>
       <h3>Agate Expectations</h3>
       <p class="meta">Tee &middot; Price TBD</p>
-      <a class="more" href="#shop">See the design</a>
+      <button class="pocket" type="button" aria-pressed="false" data-design="Agate Expectations"><svg class="pk" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 4h15v8.5c0 4.3-3.6 7.2-7.5 8.5-3.9-1.3-7.5-4.2-7.5-8.5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M4.5 8.5h15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2 2.4"/></svg><svg class="chk" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6"/></svg><span>Pocket it</span><span class="vh"> Agate Expectations</span></button>
     </article>
     <article class="well prod p-brake settle">
       <span class="badge">Concept</span>
       <div class="art" aria-hidden="true"><div class="sticker">Will brake for agates<small>Lake Superior shoreline traffic</small></div></div>
       <h3>Will brake for agates</h3>
       <p class="meta">Tee &middot; Price TBD</p>
-      <a class="more" href="#shop">See the design</a>
+      <button class="pocket" type="button" aria-pressed="false" data-design="Will brake for agates"><svg class="pk" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 4h15v8.5c0 4.3-3.6 7.2-7.5 8.5-3.9-1.3-7.5-4.2-7.5-8.5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M4.5 8.5h15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2 2.4"/></svg><svg class="chk" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6"/></svg><span>Pocket it</span><span class="vh"> Will brake for agates</span></button>
     </article>
     <article class="well prod p-sock settle">
       <span class="badge">Concept</span>
@@ -315,8 +338,22 @@ img,svg{display:block}
       </div>
       <h3>Petoskey hexagons</h3>
       <p class="meta">Socks &middot; Price TBD</p>
-      <a class="more" href="#shop">See the design</a>
+      <button class="pocket" type="button" aria-pressed="false" data-design="Petoskey hexagon socks"><svg class="pk" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 4h15v8.5c0 4.3-3.6 7.2-7.5 8.5-3.9-1.3-7.5-4.2-7.5-8.5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M4.5 8.5h15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2 2.4"/></svg><svg class="chk" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6"/></svg><span>Pocket it</span><span class="vh"> Petoskey hexagon socks</span></button>
     </article>
+    <section class="well dibs settle" id="dibs" aria-labelledby="dibs-h">
+      <div>
+        <h2 id="dibs-h">Get first dibs</h2>
+        <p>Leave your email and you hear first when these go on sale. That's the only email you get unless you ask for more.</p>
+        <p class="picked" data-pocket-list aria-live="polite">Nothing pocketed, so we'll tell you about all five.</p>
+      </div>
+      <div>
+        <form id="signup" novalidate>
+          <label><span class="vh">Email address</span><input type="email" name="email" placeholder="you@example.com" autocomplete="email" required></label>
+          <button type="submit">Get first dibs</button>
+        </form>
+        <p class="status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
   </div>
 
   <!-- the lid opens: editorial -->
@@ -325,7 +362,6 @@ img,svg{display:block}
       <div>
         <h2>Every design starts with a stone.</h2>
         <p>Each shirt comes with a field note: the stone it was drawn from, the beach it came off, and a line about the day. Rockhounds trust where a thing came from more than how shiny it is.</p>
-        <a href="#notes" style="font-weight:800">Read the Field Notes</a>
       </div>
       <aside class="label" aria-label="Sample field note">
         <span class="sample">Sample field note</span>
@@ -342,7 +378,7 @@ img,svg{display:block}
     <section class="guide" id="guide" aria-labelledby="guide-h">
       <div class="guide-head">
         <h2 id="guide-h">The Field Guide</h2>
-        <a href="#guide">Browse all stones</a>
+        <span class="soon">6 to 10 stones at launch</span>
       </div>
       <ul class="stones">
         <li class="stone-card">
@@ -381,21 +417,12 @@ img,svg{display:block}
   </div>
 
   <!-- closing tray -->
-  <div class="tray t3" id="cart">
-    <section class="well signup">
-      <h2>Get a note when new designs drop</h2>
-      <p>About once a month, when there's something worth saying. Unsubscribe anytime.</p>
-      <form id="signup" novalidate>
-        <label><span class="vh">Email address</span><input type="email" name="email" placeholder="you@example.com" autocomplete="email" required></label>
-        <button type="submit">Sign me up</button>
-      </form>
-      <p class="status" role="status" aria-live="polite"></p>
-    </section>
+  <div class="tray t3">
     <footer class="well foot">
       <nav aria-label="Footer">
         <a href="#shop">Shop</a><a href="#guide">Field Guide</a>
         <a href="#notes">Field Notes</a><a href="#story">Our Story</a>
-        <a href="#cart">Shipping and returns</a><a href="mailto:hello@heavypocketsco.com">hello@heavypocketsco.com</a>
+        <a href="#dibs">First dibs</a><a href="mailto:hello@heavypocketsco.com">hello@heavypocketsco.com</a>
       </nav>
       <small>Heavy Pockets Co. &middot; Head down. Pockets full.</small>
     </footer>
@@ -416,14 +443,17 @@ img,svg{display:block}
       paper: (onLid ? cs.getPropertyValue('--tray') : cs.getPropertyValue('--well')).trim() });
   });
 
+  const hoverable = matchMedia('(hover: hover)').matches;
   // Wet Stone: hover previews on mouse; tap, click, Enter, or Space toggles and stays
   document.querySelectorAll('.wet-stone').forEach(b => {
     const scope = b.closest('.well, .stone-card');
     const hint = scope && scope.querySelector('[data-hint]');
-    const set = v => { b.setAttribute('aria-pressed', v); if (hint) hint.textContent = v ? hint.dataset.on : hint.dataset.off; };
-    b.addEventListener('click', () => set(b.getAttribute('aria-pressed') !== 'true'));
-    b.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') b.classList.add('hover'); });
-    b.addEventListener('pointerleave', () => b.classList.remove('hover'));
+    if (hint && hoverable) hint.dataset.off = hint.dataset.off.replace('Tap', 'Point at it or click');
+    const show = () => { if (hint) hint.textContent = (b.getAttribute('aria-pressed') === 'true' || b.classList.contains('hover')) ? hint.dataset.on : hint.dataset.off; };
+    show();
+    b.addEventListener('click', () => { b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') !== 'true'); b.classList.remove('hover'); show(); });
+    b.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse' && b.getAttribute('aria-pressed') !== 'true') { b.classList.add('hover'); show(); } });
+    b.addEventListener('pointerleave', () => { b.classList.remove('hover'); show(); });
   });
 
   // menu: the smoked lid
@@ -434,7 +464,11 @@ img,svg{display:block}
   const close = () => { menu.classList.remove('open'); openB.setAttribute('aria-expanded', 'false'); document.body.classList.remove('locked'); main.inert = false; openB.focus(); };
   openB.addEventListener('click', open);
   closeB.addEventListener('click', close);
-  menu.querySelectorAll('nav a').forEach(a => a.addEventListener('click', close));
+  menu.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => {
+    close();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { if (!t.hasAttribute('tabindex')) t.setAttribute('tabindex', '-1'); setTimeout(() => t.focus({ preventScroll: true }), 0); }
+  }));
   menu.addEventListener('keydown', e => {
     if (e.key === 'Escape') { e.preventDefault(); close(); }
     if (e.key === 'Tab') {
@@ -444,13 +478,33 @@ img,svg{display:block}
     }
   });
 
+  // pocket: pick the designs you want first dibs on (no store yet, so this is a wish list, not a cart)
+  const pocketed = [];
+  const list = n => n.length < 3 ? n.join(' and ') : n.slice(0, -1).join(', ') + ', and ' + n[n.length - 1];
+  const countEl = document.querySelector('[data-pocket-count]'), vhEl = document.querySelector('[data-pocket-vh]');
+  const menuEl = document.querySelector('[data-pocket-menu]'), listEl = document.querySelector('[data-pocket-list]');
+  const sync = () => {
+    const n = pocketed.length;
+    countEl.textContent = n;
+    vhEl.textContent = n === 1 ? ' design pocketed' : ' designs pocketed';
+    menuEl.textContent = n ? n + (n === 1 ? ' design' : ' designs') : 'Empty for now';
+    listEl.textContent = n ? 'In your pocket: ' + list(pocketed) + '.' : "Nothing pocketed, so we'll tell you about all five.";
+  };
+  document.querySelectorAll('.pocket').forEach(b => b.addEventListener('click', () => {
+    const on = b.getAttribute('aria-pressed') !== 'true', name = b.dataset.design;
+    b.setAttribute('aria-pressed', on);
+    b.querySelector('span').textContent = on ? 'In your pocket' : 'Pocket it';
+    if (on) pocketed.push(name); else pocketed.splice(pocketed.indexOf(name), 1);
+    sync();
+  }));
+
   // signup: the prototype is not connected to an email service yet
   const form = document.getElementById('signup'), status = form.parentElement.querySelector('.status');
   form.addEventListener('submit', e => {
     e.preventDefault();
     const email = form.email.value.trim();
     status.textContent = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)
-      ? "Prototype only: signup isn't connected yet, so nothing was saved."
+      ? "Prototype only: signup isn't connected yet, so nothing was saved. At launch, this saves your email and your pocket."
       : 'That email address looks incomplete. Check it and try again.';
   });
 

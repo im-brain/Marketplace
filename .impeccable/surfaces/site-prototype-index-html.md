@@ -22,3 +22,7 @@ STORY: In one line, they get what's sold and who it's for. They wet a stone and 
 FIRST VIEWPORT: Lid strip with the wordmark on the left and Shop, Field Guide, Menu, and an orange Cart on the right. Below it, an uneven tray: a wide left well holds "Head down. Pockets full.", the offer line, and an orange Shop button; a tall well holds the Wet Stone; two narrow wells hold small stones; product wells peek at the bottom edge. On mobile: the stone well, then the headline well, with Shop inside 844px.
 FORM: Impeccable's pick (my #1 of 7), chosen by Brian over the roll's assigned #6 (rock club bulletin). seed:cd0bde1d843a47dc. Signature interaction: Wet Stone. Motion grammar: objects settle into wells and the lid slides.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+
+## Revisions
+
+- Nov 2, 2026 (after the first critique, Brian's picks): until Shopify opens at Step 12, the primary action is "Get first dibs" (not Shop), and the orange Cart is a "Pocket" counter of designs the visitor pocketed with "Pocket it" buttons. A dibs well sits right after the five finds. Orange still marks only the primary action and the Pocket. At Step 12, Pocket becomes the real cart and the primary action returns to Shop.

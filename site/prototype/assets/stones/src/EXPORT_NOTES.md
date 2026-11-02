@@ -1,15 +1,19 @@
-# Hero agate export notes
+# Hero agate revision 2
 
-This is a first AI SAMPLE pair, pending Brian's rockhound accuracy review. It is not a photograph of one of his finds, a verified Field Guide specimen, or a print file. No garment images were made.
+Brian rejected the first hero as too neatly cut and supplied three reference images. This revision makes a new, distinct rounded pebble with an uneven convex surface, cloudy patches, interrupted banding, and patchy rind. Reference 1 informed fine band structure; references 2 and 3 informed the rounded form and natural exposure. The source photos are not copied, traced, or published in the repo.
 
-Source branch: claude/compassionate-fermi-lndrfd, commit db0a1e13e30ab10991a3f89af2376f539d703384.
+This remains an AI SAMPLE, pending Brian's accuracy review. It is not a photograph of his find, a verified Field Guide specimen, or a print file. No garment images were made.
 
-The dry image came first. The wet image is an edit of that same source. A cleanup edit introduced unwanted shine, and the first wet edit changed the size, so neither is used. The final wet redo is the raw generated master kept in generated/.
+The dry image came first. The wet state is a surface edit of that exact new source. Its glints are restrained to avoid turning the curved face into a polished display surface. Original 1536 x 1024 files are in generated/. The previous draft remains in Git history at a8a9f4b11c2f53d5ad03c7b06acdf8d2f2ec2ccf.
 
-Mechanical export uses the dry cutout for both layers, makes alpha values of 240 and above fully opaque inside the solid stone, preserves the soft edge and contact shadow, registers the wet colors to the dry geometry, and applies the same center crop and uniform scale to both. The extra shared scale corrects the generator's framing so the stone fills about 75 percent of the 1280 x 1024 export width. Image generation supplied all creative surface changes; registration and export restore the requested geometry and file format.
+Mechanical export registers the wet colors to the dry geometry, retains the dry cutout and contact shadow for both, makes alpha values of 240 and above fully opaque inside the solid stone, and applies the same center crop and uniform scale to both. The final stone fills about 75 percent of the 1280 x 1024 export width. Image generation supplies the creative surface changes; registration restores the requested geometry and format.
 
-PAIR_QC.json records the transform, original hashes, feature-match results, dimensions, and WebP settings. The files use quality 82 and are each below 180,000 bytes. Their alpha channels are identical. Internal detail alignment is close, with a median residual of 0.505px and a 95th percentile of 1.219px. Do not describe every internal feature as pixel-perfect. Review the toggle for texture swim before approval.
+PAIR_QC.json records transforms, raw hashes, match statistics, and WebP settings. Both files use quality 82 and are under 180,000 bytes. Their alpha channels match exactly. Internal feature residual is median 0.492px and p95 1.278px. Do not claim every internal feature is pixel-perfect. Check the toggle for texture swim before approval.
 
-The field guide, six small stones, and menu stones remain code-drawn. Make those only after Brian reviews this first pair. Keep the AI SAMPLE label. His real matched photos still take priority.
+Visual review: the distinct flat window is gone. The upper-left hollow is pronounced, lower-front patches look somewhat flaky, and the broad S-shaped band flow remains stylized. Brian should review those details before the rest of the stone set is made.
 
-This task adds only two photo-sizing rules to motion.css. The independent gpt/motion branch already starts with those same rules, so keep that fuller motion.css when combining the branches. Rebuild the one-file preview after combining gpt/logo, gpt/motion, and gpt/stones.
+The Field Guide, small stones, and menu remain code-drawn. Keep the AI SAMPLE label. Brian's real matched photos still take priority.
+
+This branch motion.css contains only the two image-sizing rules. The independent gpt/motion branch starts with those same rules, so keep its fuller file when combining. Rebuild the one-file preview after combining gpt/logo, gpt/motion, and gpt/stones.
+
+Project source: db0a1e13e30ab10991a3f89af2376f539d703384. Revision parent: a8a9f4b11c2f53d5ad03c7b06acdf8d2f2ec2ccf.

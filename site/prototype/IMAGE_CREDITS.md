@@ -32,3 +32,16 @@ Unsplash's and Pexels' websites block automated scripts with a bot check, and ge
 | `assets/stones/src/generated/agate-hero-wet.png` | Original ChatGPT image-edit output | 2026-11-02 | Unmodified 1536 x 1024 wet redo. Its returned alpha did not preserve transparency, so the final export restores the original dry cutout. Kept for provenance, not loaded by the page. | Keep as the raw edit record. |
 
 The exported alpha channels are identical, with zero differing pixels. Internal generated features still have small residual drift: median 0.505px and 95th percentile 1.219px at export size. This is not a claim of exact alignment for every internal feature. The proof page is for review, and the full stone set is not made yet.
+
+## Hero agate revision 2 (Nov 2, 2026)
+
+This revision replaces the first hero draft, which Brian rejected as too neatly cut. The earlier images remain in Git history at commit `a8a9f4b11c2f53d5ad03c7b06acdf8d2f2ec2ccf`; the current files at the same paths are the new rounded specimen. Brian's three reference photos informed appearance only. They are not copied, traced, or published in this repo.
+
+| File | Tool and source | Date | Prompt summary | Replace with |
+|---|---|---|---|---|
+| `assets/stones/agate-hero-dry.webp` and `assets/stones/src/agate-hero-dry.png` | ChatGPT image generation using Brian's reference photos for visual guidance, followed by mechanical crop/export | 2026-11-02 | A distinct rounded, uneven, dry beach pebble with cloudy material, patchy rind, natural hollows, and interrupted fine bands across a convex surface. No planar slice, neat display window, or polished face. | Brian's approved matched dry photograph. AI SAMPLE pending his review. |
+| `assets/stones/agate-hero-wet.webp` and `assets/stones/src/agate-hero-wet.png` | ChatGPT image edit of the new dry source, followed by mechanical registration and a shared original cutout/shadow | 2026-11-02 | Same continuous rounded surface, with slightly deeper color, clearer existing bands, restrained glints, and two tiny beads. No new cut plane or broad polish. | Brian's approved matched wet photograph of that same find. AI SAMPLE pending his review. |
+| `assets/stones/src/generated/agate-hero-dry.png` | Original ChatGPT generation for revision 2 | 2026-11-02 | Unmodified 1536 x 1024 source. Uses reference 1 for band structure, and references 2 and 3 for rounded form and uneven exposure. | Keep as provenance; not loaded by the page. |
+| `assets/stones/src/generated/agate-hero-wet.png` | Original ChatGPT surface edit for revision 2 | 2026-11-02 | Unmodified 1536 x 1024 wet source. The export retains the dry outline, shadow, and framing. | Keep as provenance; not loaded by the page. |
+
+Both WebPs are 1280 x 1024 at quality 82: dry 121,596 bytes, wet 108,180 bytes. Their alpha channels are identical. Measured internal feature residual is median 0.492px and p95 1.278px at export size, so every internal detail is not guaranteed to match pixel for pixel. This is still an AI SAMPLE review draft. The upper-left hollow and flaky lower patches need Brian's eye before approval.

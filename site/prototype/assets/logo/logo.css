@@ -1,4 +1,7 @@
+
 /* Loaded letters keeps the header tap target and the approved site colors. */
-.word svg{display:block;width:clamp(130px,16vw,224px);height:auto;overflow:visible;flex:none}
+/* Sizes: about 24px tall from 380px wide up, and 20px tall on the smallest phones (measured to fit beside Menu and Pocket). */
+.word svg{display:block;width:clamp(171px,16vw,224px);height:auto;overflow:visible;flex:none}
 .lid .word{flex:none}
-@media(max-width:360px){.word svg{width:130px}}
+@media(max-width:480px){.word svg{width:clamp(142px,calc(100vw - 210px),171px)}}
+@media(max-width:360px){.word svg{width:142px}}

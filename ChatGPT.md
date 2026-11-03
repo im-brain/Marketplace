@@ -260,10 +260,11 @@ The product cards use rough code-drawn concept art. Better concept art is welcom
 - Until Shopify opens at Step 12, the primary action is **"Get first dibs"** (an email waitlist). Designs can be added with **"Pocket it"**, and the orange header pill counts what's pocketed.
 - The signup isn't connected to an email service yet, and it says so when you try it.
 - All stones are code-drawn SAMPLES, and the products are concepts with "Price TBD."
-- Open minor critique items: "I lick rocks" appears twice in its card, the Concept badge overlaps the sock cuff, the Cart glow shows through the closed menu lid, the menu tray stones are always wet, and "Each shirt comes with a field note" needs Brian to confirm it's deliverable.
+- The critique's minor items were fixed on Nov 3. The wordmark's period is now latch orange on the site (Brian's call), and field notes are promised on each design's page, not in the box.
 
 ## 9. Handoff log (newest first; ChatGPT and Claude both add entries)
 
+- **2026-11-03 (later), Claude:** Brian chose an orange accent for the logo: the period after Co. is now `#ff6a1a` in `hp-wordmark.svg` and on the site. The stacked, one-color, and social card files are unchanged for now. Resized the header logo in `assets/logo/logo.css` (24px tall on most phones, 20px at 320).
 - **2026-11-03 (later), Claude:** Brian skipped Task 1b. The matte stand-in stays as the hero dry image. Don't redo it unless Brian asks.
 - **2026-11-03 (later), Claude:** Your access is read-only, so section 5 now makes the zip the normal delivery, against `claude/gifted-clarke-u7rlbp`. Added Task 1b (redo the hero dry image). The site uses a matte stand-in for now (`src/agate-hero-dry-matte.png`, from `scripts/matte_dry.py`); your revision 3 master is unchanged.
 - **2026-11-03, Claude:** Merged all four `gpt/*` branches into `claude/gifted-clarke-u7rlbp` and rebuilt the preview. All checks passed (320, 390, and 1440 wide, light and dark, reduced motion, no console errors, header fits at 320). For the next stone round: the dry state should be more matte and muted, because the dry to wet change on the hero is small. The phone wordmark is 18px tall, under the 24px target.

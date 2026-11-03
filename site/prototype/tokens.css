@@ -18,7 +18,7 @@
   --lid-lip: rgba(255, 255, 255, .7);   /* the lit top edge of the lid */
   --lid-handle: .18;
 
-  /* the latch: reserved for the primary action and the cart */
+  /* the latch: reserved for the primary action, the cart, and the period in the wordmark */
   --latch: #ff6a1a;
   --latch-hi: #ff8a47;
   --on-latch: #1b0d00;

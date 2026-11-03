@@ -79,7 +79,7 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 4. Brand kit: colors (the lake palette: Superior slate, agate red, Petoskey gray, and sand), fonts, a simple wordmark, and a one-page brand guide (.docx). *Test:* Brian approves it.
 
 **Phase 2: Designs**
-5. Design tracker `.xlsx` with all 13 designs, plus columns for art source and license, accuracy check, trademark check, and launch priority. It follows his spreadsheet formatting rules. *Test:* it opens in Excel and Brian marks the launch 5.
+5. **(Built Nov 2, 2026: `tracker/Design_Tracker.xlsx`; waiting on Brian.)** Design tracker `.xlsx` with all 13 designs, plus columns for art source and license, accuracy check, trademark check, and launch priority. It follows his spreadsheet formatting rules. *Test:* it opens in Excel and Brian marks the launch 5.
 6. Launch 5: the Great Lakes beach stone chart, "Agate Expectations," "Will brake for agates," Petoskey hexagon socks, and "I lick rocks" (a dull stone with one glossy lick mark where the true color shows).
 7. The code-drawn Petoskey sock pattern, made to Printify's exact sock template size. *Test:* Brian views the PNG and it passes Printify's upload preview.
 8. The other three designs at print size, all from Brian's photos, his edits, or properly licensed sources. *Test:* Brian approves each one, and the accuracy and trademark boxes are checked.

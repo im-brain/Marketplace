@@ -11,8 +11,8 @@ The full step-by-step plan is in `PLAN.md`.
 ## Current status
 
 - **Store name (decided Nov 1, 2026): Heavy Pockets Co.** Domain heavypocketsco.com, handles @heavypocketsco, email hello@heavypocketsco.com (forwarded to a private Gmail). Tagline "Head down. Pockets full." Secondary line "Dry rocks lie." Fallback: Wet Thumb Co. (wetthumbco.com, @wetthumbco), used only if Heavy Pockets runs into trouble. Checks were a first screen, not legal clearance. Background: heavypockets.com and @heavypockets belong to an old, apparently dead streetwear brand; the 2013 HEAVY POCKETS clothing filing (serial 85912472) was abandoned in 2014.
-- **Current step:** Steps 1, 2, and 3 done (Nov 1, 2026). **Next: Step 4, the brand kit** (colors, fonts, simple wordmark, and a one-page brand guide).
-- **Waiting on Brian:** nothing. Claude starts Step 4.
+- **Current step:** Steps 1, 2, and 3 done (Nov 1, 2026). Step 5 tracker built Nov 2, 2026 (waiting on Brian's review). Real Printify quotes pulled Nov 2, 2026. **Next: Step 4, the brand kit** (colors, fonts, simple wordmark, and a one-page brand guide), while Brian makes images in GPT.
+- **Waiting on Brian:** (1) review `tracker/Design_Tracker.xlsx` and confirm the launch 5 and their order, (2) decide whether the bundle price goes up (see Unit economics), and (3) say whether the brand guide should be an HTML page instead of a .docx.
 - **Branch:** all work so far was merged into `main` on Nov 1, 2026. Start new work from `main`.
 - **USPTO rate limit:** the search API returns 403 or 429 after many quick queries. Space searches out, and don't loop retries.
 - **Network access:** all needed hosts are allowed as of Nov 1, 2026: rdap.verisign.com, api.printify.com, images-api.printify.com, tmsearch.uspto.gov, tsdr.uspto.gov, api.cloudflare.com, fonts.googleapis.com, fonts.gstatic.com, accounts.google.com, and pypi.org. Shopify's `<store>.myshopify.com` gets added at Step 12.
@@ -47,16 +47,21 @@ The full step-by-step plan is in `PLAN.md`.
 
 ## Unit economics (US POD, from models/POD_Profit_Model.xlsx)
 
-| Profit per order, middle price | Printify |
-|---|---|
-| Tee at $27.99 | $12.43 |
-| Socks at $18.99 | $5.02 |
-| Bundle at $39.99 | $11.17 |
+Real Printify quotes, Nov 2, 2026 (Printify Quotes tab). Picks: tee is Bella+Canvas 3001 at Monster Digital (Columbus, OH), $11.77 for size M (2XL is $14.38) plus $4.49 shipping. Socks are Sublimation Socks (blueprint 376) at SPOKE (Norcross, GA), $7.39 plus $4.59 shipping. Printify Choice is about $0.50 cheaper per tee but picks the printer per order. Upgrade option: Comfort Colors 1717 at Monster Digital, $13.04.
+
+| Profit per order, middle price | Printify (real quotes) | Old estimate |
+|---|---|---|
+| Tee at $27.99 | $9.78 | $12.43 |
+| Socks at $18.99 | $5.59 | $5.02 |
+| Bundle at $39.99 | $9.09 | $11.17 |
+
+- **Bundle problem:** at $39.99 a bundle earns less than a tee alone, because the socks ship separately from a different printer ($4.59 more). At $42.99 it earns $11.91. Decide before Step 12.
+- 2XL and up cost about $2.60 more, so consider a $2 to $3 upcharge for those sizes.
 
 - Free shipping is built into the price. Shopify Payments is 2.9% + $0.30, with a 3% returns reserve and no ads.
 - Tees drive profit. Socks are add-ons and go in bundles.
 - Fixed costs are about $60/month in the old model (Shopify $39, domain, and a $20 AI placeholder). The AI bill is confirmed at about $20 (yellow fill removed from Inputs!B26).
-- 2 to 4 orders a month cover the AI bill, and about 6 cover all fixed costs.
+- With real quotes, 2 to 3 tee orders a month cover the AI bill, and about 7 cover all fixed costs.
 - Biggest risk: paid ads at $5 to $15 per customer would wipe out sock profit.
 - Yellow cells in the spreadsheets are assumptions. Replace them with real sample quotes.
 
@@ -109,7 +114,9 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - `scripts/tm_search.py`: USPTO trademark knockout search.
 - `brand/Naming_Brainstorm_Prompt.md`: the prompt for the separate naming session.
 - `.claude/skills/impeccable/`: the Impeccable design skill (v4.8.0, Apache 2.0, from github.com/pbakaus/impeccable), installed Nov 1, 2026. It loads in every session (`/impeccable`). License in `.claude/skills/LICENSE-impeccable`.
-- Planned: `designs/` (art files), `tracker/Design_Tracker.xlsx`, `scripts/` (Python automation), `theme/` (Shopify custom sections).
+- `tracker/Design_Tracker.xlsx`: all 13 designs with art source, license, accuracy, and trademark checks, plus a Ready formula and print file sizes (Key tab).
+- Planned: `designs/` (art files), `scripts/` (Python automation), `theme/` (Shopify custom sections).
+- Printify pricing method: the catalog API gives shipping and print areas but not base cost. To read cost, create an unpublished draft (100 variants max), read `variants[].cost`, then delete it. Python requests need a User-Agent header or Printify returns 403.
 
 ## Session log
 
@@ -126,3 +133,4 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - **2026-11-01 (later):** Brian chose **Heavy Pockets Co.** (fallback Wet Thumb Co.); both .coms re-checked open. Reordered Step 3 so the Gmail comes first (Cloudflare needs an account email). Wrote the Step 3 checklist.
 - **2026-11-01 (later):** Step 3 done. Gmail heavypocketsco@gmail.com, domain heavypocketsco.com (Cloudflare), handles claimed, Printify connected (network secret, shop 29566047), and hello@ forwarding plus send-as working with SPF. Next: Step 4, brand kit.
 - **2026-11-01 (later):** Installed the Impeccable design skill into `.claude/skills/` (Claude Code copy only; the other copies in that repo are the same skill for other tools). Its launcher downloads a helper binary; flagged. Best fit is the web pieces (brand guide page, store preview), not shirt art. Next: Step 4, brand kit.
+- **2026-11-02:** While Brian makes images in GPT: pulled real Printify quotes (38 tee and 11 sock printer options, all test drafts deleted), updated the profit model (tee profit falls to $9.78, and the bundle at $39.99 now earns less than a tee), and built the Step 5 design tracker. Flagged that no US Printify sock prints soles (design 13). Next: Step 4, brand kit.

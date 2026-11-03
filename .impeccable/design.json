@@ -1,0 +1,1004 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-03T14:07:25+00:00",
+  "title": "Design System: Heavy Pockets Co.",
+  "extensions": {
+    "colorMeta": {
+      "page-teal": {
+        "role": "neutral",
+        "displayName": "Old Desktop Teal",
+        "canonical": "#0b7a78",
+        "tonalRamp": [
+          "#000e0e",
+          "#062d2c",
+          "#08504e",
+          "#1d7472",
+          "#3b9a97",
+          "#64c0bd",
+          "#acdcda",
+          "#e2f2f2"
+        ]
+      },
+      "on-page": {
+        "role": "neutral",
+        "displayName": "Page White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "window-gray": {
+        "role": "neutral",
+        "displayName": "Window Gray",
+        "canonical": "#c4c4c4",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#111111",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#3b3b3b",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "bevel-light": {
+        "role": "neutral",
+        "displayName": "Bevel Light",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "bevel-light-inner": {
+        "role": "neutral",
+        "displayName": "Bevel Light Inner",
+        "canonical": "#e2e2e2",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "bevel-shade": {
+        "role": "neutral",
+        "displayName": "Bevel Shade",
+        "canonical": "#7d7d7d",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "bevel-dark": {
+        "role": "neutral",
+        "displayName": "Bevel Dark",
+        "canonical": "#0b0b0b",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "field-gray": {
+        "role": "neutral",
+        "displayName": "Field Gray",
+        "canonical": "#e2e2e2",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "title-navy": {
+        "role": "secondary",
+        "displayName": "Title Bar Navy",
+        "canonical": "#0d2668",
+        "tonalRamp": [
+          "#010729",
+          "#071e60",
+          "#234084",
+          "#4363aa",
+          "#6487d2",
+          "#88acfa",
+          "#bbd1fe",
+          "#e7effe"
+        ]
+      },
+      "title-blue": {
+        "role": "secondary",
+        "displayName": "Title Bar Blue",
+        "canonical": "#3c6fb0",
+        "tonalRamp": [
+          "#000a20",
+          "#03264e",
+          "#0f4481",
+          "#3467a7",
+          "#578bce",
+          "#7bb1f7",
+          "#b5d4fc",
+          "#e4f0fe"
+        ]
+      },
+      "link-blue": {
+        "role": "secondary",
+        "displayName": "Hyperlink Blue",
+        "canonical": "#0000d6",
+        "tonalRamp": [
+          "#000233",
+          "#001173",
+          "#0129b9",
+          "#0946ff",
+          "#5082f5",
+          "#88adf9",
+          "#bbd1fd",
+          "#e6efff"
+        ]
+      },
+      "visited-purple": {
+        "role": "secondary",
+        "displayName": "Visited Purple",
+        "canonical": "#5a1a8f",
+        "tonalRamp": [
+          "#130025",
+          "#350858",
+          "#5a1b8f",
+          "#7c43b7",
+          "#a068df",
+          "#c196f7",
+          "#dcc5fd",
+          "#f2eaff"
+        ]
+      },
+      "agate-red": {
+        "role": "primary",
+        "displayName": "Lake Superior Agate Red",
+        "canonical": "#b3261e",
+        "tonalRamp": [
+          "#1e0101",
+          "#4e0403",
+          "#81130f",
+          "#b62921",
+          "#e05446",
+          "#fc8778",
+          "#fdc0b6",
+          "#fee9e6"
+        ]
+      },
+      "agate-red-light": {
+        "role": "primary",
+        "displayName": "Agate Red Light",
+        "canonical": "#e0665c",
+        "tonalRamp": [
+          "#1f0001",
+          "#4d0607",
+          "#84060e",
+          "#ad3732",
+          "#d75d54",
+          "#fa897d",
+          "#fcc0b9",
+          "#fde9e6"
+        ]
+      },
+      "agate-red-deep": {
+        "role": "primary",
+        "displayName": "Agate Red Deep",
+        "canonical": "#5e0f0a",
+        "tonalRamp": [
+          "#1f0000",
+          "#4d0704",
+          "#76271f",
+          "#9c4a3f",
+          "#c46d61",
+          "#ec9285",
+          "#f8c2ba",
+          "#fde9e6"
+        ]
+      },
+      "on-agate": {
+        "role": "primary",
+        "displayName": "On Agate White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "tape-yellow": {
+        "role": "tertiary",
+        "displayName": "Caution Tape Yellow",
+        "canonical": "#ffd60a",
+        "tonalRamp": [
+          "#0f0b00",
+          "#2e2604",
+          "#524404",
+          "#786516",
+          "#a08821",
+          "#cbac21",
+          "#e6d182",
+          "#f6efd4"
+        ]
+      },
+      "tape-ink": {
+        "role": "tertiary",
+        "displayName": "Tape Ink",
+        "canonical": "#141414",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "viewer-screen": {
+        "role": "neutral",
+        "displayName": "Viewer Screen",
+        "canonical": "#0c1220",
+        "tonalRamp": [
+          "#080b13",
+          "#1f2636",
+          "#3d4556",
+          "#5e6678",
+          "#80899c",
+          "#a5aec2",
+          "#ccd1dd",
+          "#eceef3"
+        ]
+      },
+      "odometer-black": {
+        "role": "tertiary",
+        "displayName": "Odometer Black",
+        "canonical": "#000000",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "odometer-yellow": {
+        "role": "tertiary",
+        "displayName": "Odometer Yellow",
+        "canonical": "#ffe14d",
+        "tonalRamp": [
+          "#0f0b00",
+          "#2d2604",
+          "#514505",
+          "#756617",
+          "#9d8922",
+          "#c8ad22",
+          "#e1d28c",
+          "#f4efd7"
+        ]
+      },
+      "lake-navy": {
+        "role": "tertiary",
+        "displayName": "Lake Navy",
+        "canonical": "#16336b",
+        "tonalRamp": [
+          "#010825",
+          "#062258",
+          "#24437c",
+          "#4465a1",
+          "#6689c8",
+          "#8aaef0",
+          "#bcd2f8",
+          "#e7effd"
+        ]
+      },
+      "wordmark-orange": {
+        "role": "tertiary",
+        "displayName": "Wordmark Orange",
+        "canonical": "#ff6a1a",
+        "tonalRamp": [
+          "#1a0400",
+          "#441602",
+          "#712d0c",
+          "#a7420c",
+          "#dd5b14",
+          "#f98d5f",
+          "#fbc2ab",
+          "#ffe9e1"
+        ]
+      },
+      "badge-water-blue": {
+        "role": "tertiary",
+        "displayName": "Badge Water Blue",
+        "canonical": "#1f5fbf",
+        "tonalRamp": [
+          "#000923",
+          "#032354",
+          "#033f92",
+          "#2262c2",
+          "#4787eb",
+          "#7faff9",
+          "#b7d3fe",
+          "#e6effd"
+        ]
+      },
+      "badge-sand": {
+        "role": "tertiary",
+        "displayName": "Badge Sand",
+        "canonical": "#e6d6b2",
+        "tonalRamp": [
+          "#110a00",
+          "#312404",
+          "#514324",
+          "#736444",
+          "#968866",
+          "#bcac8a",
+          "#d9d0bc",
+          "#f1eee7"
+        ]
+      },
+      "badge-sand-ink": {
+        "role": "tertiary",
+        "displayName": "Badge Sand Ink",
+        "canonical": "#3a2a10",
+        "tonalRamp": [
+          "#120901",
+          "#332309",
+          "#534228",
+          "#756348",
+          "#99866a",
+          "#bfab8e",
+          "#dbcfbf",
+          "#f2eee8"
+        ]
+      },
+      "badge-terminal-green": {
+        "role": "tertiary",
+        "displayName": "Badge Terminal Green",
+        "canonical": "#3cff6a",
+        "tonalRamp": [
+          "#001002",
+          "#03300d",
+          "#005519",
+          "#147b2e",
+          "#1fa440",
+          "#17d14e",
+          "#92e99b",
+          "#daf8dc"
+        ]
+      },
+      "badge-purple": {
+        "role": "tertiary",
+        "displayName": "Badge Purple",
+        "canonical": "#7b2fb5",
+        "tonalRamp": [
+          "#140024",
+          "#370557",
+          "#600297",
+          "#8339be",
+          "#a860e7",
+          "#c790fe",
+          "#dec4fc",
+          "#f3eaff"
+        ]
+      },
+      "night-page-teal": {
+        "role": "neutral",
+        "displayName": "Night Old Desktop Teal",
+        "canonical": "#0b3438",
+        "tonalRamp": [
+          "#010e10",
+          "#022d30",
+          "#254c50",
+          "#476e72",
+          "#699196",
+          "#8eb7bb",
+          "#bfd6d9",
+          "#e8f0f1"
+        ],
+        "theme": "night",
+        "dayPartner": "page-teal"
+      },
+      "night-on-page": {
+        "role": "neutral",
+        "displayName": "Night Page White",
+        "canonical": "#e9f4f3",
+        "tonalRamp": [
+          "#080c0c",
+          "#202828",
+          "#3e4746",
+          "#5f6867",
+          "#828c8b",
+          "#a6b0af",
+          "#ccd2d2",
+          "#edefef"
+        ],
+        "theme": "night",
+        "dayPartner": "on-page"
+      },
+      "night-window-gray": {
+        "role": "neutral",
+        "displayName": "Night Window Gray",
+        "canonical": "#2b2d35",
+        "tonalRamp": [
+          "#0a0b0f",
+          "#24262e",
+          "#42454d",
+          "#63666f",
+          "#868992",
+          "#abadb8",
+          "#cfd1d6",
+          "#eeeef0"
+        ],
+        "theme": "night",
+        "dayPartner": "window-gray"
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "#ececf1",
+        "tonalRamp": [
+          "#0b0b0d",
+          "#26262a",
+          "#454448",
+          "#66666a",
+          "#89898d",
+          "#adadb2",
+          "#d1d1d3",
+          "#eeeeef"
+        ],
+        "theme": "night",
+        "dayPartner": "ink"
+      },
+      "night-ink-soft": {
+        "role": "neutral",
+        "displayName": "Night Soft Ink",
+        "canonical": "#b9bcc8",
+        "tonalRamp": [
+          "#0a0b10",
+          "#24262f",
+          "#42444e",
+          "#636670",
+          "#868994",
+          "#aaadb9",
+          "#cfd1d7",
+          "#eeeef1"
+        ],
+        "theme": "night",
+        "dayPartner": "ink-soft"
+      },
+      "night-bevel-light": {
+        "role": "neutral",
+        "displayName": "Night Bevel Light",
+        "canonical": "#5c606e",
+        "tonalRamp": [
+          "#090b11",
+          "#232632",
+          "#414452",
+          "#616574",
+          "#848997",
+          "#a9adbd",
+          "#ced1da",
+          "#edeef2"
+        ],
+        "theme": "night",
+        "dayPartner": "bevel-light"
+      },
+      "night-bevel-light-inner": {
+        "role": "neutral",
+        "displayName": "Night Bevel Light Inner",
+        "canonical": "#3e414c",
+        "tonalRamp": [
+          "#090b10",
+          "#232630",
+          "#414550",
+          "#626671",
+          "#858995",
+          "#aaadba",
+          "#ced1d8",
+          "#edeef1"
+        ],
+        "theme": "night",
+        "dayPartner": "bevel-light-inner"
+      },
+      "night-bevel-shade": {
+        "role": "neutral",
+        "displayName": "Night Bevel Shade",
+        "canonical": "#15161b",
+        "tonalRamp": [
+          "#0a0b0e",
+          "#25262b",
+          "#43454b",
+          "#64666c",
+          "#87898f",
+          "#acadb4",
+          "#d0d1d5",
+          "#eeeef0"
+        ],
+        "theme": "night",
+        "dayPartner": "bevel-shade"
+      },
+      "night-bevel-dark": {
+        "role": "neutral",
+        "displayName": "Night Bevel Dark",
+        "canonical": "#000000",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ],
+        "theme": "night",
+        "dayPartner": "bevel-dark"
+      },
+      "night-field": {
+        "role": "neutral",
+        "displayName": "Night field",
+        "canonical": "#16171c",
+        "tonalRamp": [
+          "#0a0b0e",
+          "#25262b",
+          "#43454b",
+          "#64666c",
+          "#87898f",
+          "#acadb4",
+          "#d0d1d5",
+          "#eeeef0"
+        ],
+        "theme": "night",
+        "dayPartner": "field"
+      },
+      "night-title-navy": {
+        "role": "secondary",
+        "displayName": "Night Title Bar Navy",
+        "canonical": "#0a1b4d",
+        "tonalRamp": [
+          "#020823",
+          "#0f2254",
+          "#2c4278",
+          "#4c649d",
+          "#6d88c3",
+          "#91adeb",
+          "#c0d1f5",
+          "#e8effc"
+        ],
+        "theme": "night",
+        "dayPartner": "title-navy"
+      },
+      "night-title-blue": {
+        "role": "secondary",
+        "displayName": "Night Title Bar Blue",
+        "canonical": "#2b5592",
+        "tonalRamp": [
+          "#000a21",
+          "#002356",
+          "#1a437f",
+          "#3b66a5",
+          "#5e8acb",
+          "#81b0f4",
+          "#b8d3fa",
+          "#e6effe"
+        ],
+        "theme": "night",
+        "dayPartner": "title-blue"
+      },
+      "night-link-blue": {
+        "role": "secondary",
+        "displayName": "Night Hyperlink Blue",
+        "canonical": "#9cc2ff",
+        "tonalRamp": [
+          "#000923",
+          "#052354",
+          "#244478",
+          "#44669d",
+          "#668ac3",
+          "#8aafeb",
+          "#bdd2f5",
+          "#e7effc"
+        ],
+        "theme": "night",
+        "dayPartner": "link-blue"
+      },
+      "night-visited-purple": {
+        "role": "secondary",
+        "displayName": "Night Visited Purple",
+        "canonical": "#d0a6ff",
+        "tonalRamp": [
+          "#130024",
+          "#360657",
+          "#562d7b",
+          "#784fa1",
+          "#9c73c8",
+          "#c198f0",
+          "#dcc5f8",
+          "#f2eafd"
+        ],
+        "theme": "night",
+        "dayPartner": "visited-purple"
+      },
+      "night-viewer-screen": {
+        "role": "neutral",
+        "displayName": "Night Viewer Screen",
+        "canonical": "#05080f",
+        "tonalRamp": [
+          "#090b10",
+          "#22272f",
+          "#40454f",
+          "#616670",
+          "#848994",
+          "#a8aeb9",
+          "#cdd1d7",
+          "#edeef1"
+        ],
+        "theme": "night",
+        "dayPartner": "viewer-screen"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Window headings."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Banner tagline, odometer yellow with a hard pixel drop."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Product names in the five finds."
+      },
+      "title-small": {
+        "displayName": "Title Small",
+        "purpose": "Field Guide stone names."
+      },
+      "window-title": {
+        "displayName": "Window Title",
+        "purpose": "Title bar text, written like file names."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, menu items, and footer links."
+      },
+      "label-small": {
+        "displayName": "Label Small",
+        "purpose": "Meta lines, hints, status cells, and small notes."
+      },
+      "tag": {
+        "displayName": "Tag",
+        "purpose": "Caution tags and badge top lines."
+      },
+      "odometer": {
+        "displayName": "Odometer",
+        "purpose": "Counter digits (22px in the sidebar counters)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraphs, about 62ch wide."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Footer text, lists, and the field note."
+      }
+    },
+    "shadows": [
+      {
+        "name": "bevel-raised",
+        "value": "inset -1px -1px var(--dk),inset 1px 1px var(--hi),inset -2px -2px var(--lo),inset 2px 2px var(--hi2)",
+        "purpose": "Windows, buttons, footer, and title bar controls."
+      },
+      {
+        "name": "bevel-sunken",
+        "value": "inset 1px 1px var(--lo),inset -1px -1px var(--hi),inset 2px 2px var(--dk),inset -2px -2px var(--hi2)",
+        "purpose": "Viewer screens, status cells, product cards, the field note, fields, the address bar, and the ticker."
+      },
+      {
+        "name": "bevel-pressed",
+        "value": "inset 1px 1px var(--dk),inset -1px -1px var(--hi),inset 2px 2px var(--lo),inset -2px -2px var(--hi2)",
+        "purpose": "A button while held, or a toggle that is on. Pair with a 2px label shift."
+      },
+      {
+        "name": "bevel-agate",
+        "value": "inset -1px -1px #000,inset 1px 1px var(--agate-hi),inset -2px -2px var(--agate-lo),inset 2px 2px #d4473d",
+        "purpose": "The primary agate red button at rest."
+      },
+      {
+        "name": "bevel-agate-pressed",
+        "value": "inset 1px 1px #000,inset -1px -1px var(--agate-hi),inset 2px 2px var(--agate-lo)",
+        "purpose": "The primary button while held."
+      },
+      {
+        "name": "browser-drop",
+        "value": "inset -1px -1px var(--dk),inset 1px 1px var(--hi),inset -2px -2px var(--lo),inset 2px 2px var(--hi2),6px 10px 24px rgba(0,0,0,.35)",
+        "purpose": "Only the outer browser window, lifting it off the pebble beach."
+      },
+      {
+        "name": "badge-88",
+        "value": "inset 1px 1px rgba(255,255,255,.6),inset -2px -2px rgba(0,0,0,.35)",
+        "purpose": "The 88x31-style badges."
+      },
+      {
+        "name": "pixel-text-drop",
+        "value": "text-shadow: 2px 2px 0 #000",
+        "purpose": "Banner tagline and the I lick rocks type. Native to 1990s pixel type."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "The water spreading across a stone when it is wetted."
+      },
+      {
+        "name": "wet-in",
+        "value": "1100ms",
+        "purpose": "Wet Stone bloom from the touch point (1000ms for the front layer)."
+      },
+      {
+        "name": "dry-back",
+        "value": "1600ms ease-in-out",
+        "purpose": "The stone drying back toward the touch point (1450ms for the front layer)."
+      },
+      {
+        "name": "ticker",
+        "value": "34s linear infinite",
+        "purpose": "Ticker loop; pauses on hover and focus."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Wet Stone switches instantly, the ticker becomes a static line, and the flying pocket pebble is hidden."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "browser-max",
+        "value": "1180px"
+      },
+      {
+        "name": "sidebar-max",
+        "value": "340px"
+      },
+      {
+        "name": "one-column",
+        "value": "860px"
+      },
+      {
+        "name": "notes-guide-stack",
+        "value": "640px"
+      },
+      {
+        "name": "phone",
+        "value": "480px"
+      }
+    ],
+    "themes": {
+      "night": {
+        "trigger": "prefers-color-scheme: dark",
+        "wallpaper": "assets/retro/pebbles-night.svg",
+        "dayWallpaper": "assets/retro/pebbles-day.svg",
+        "note": "Automatic only; the page has no manual theme switch yet."
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Gray Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Every pressable thing except the one primary action. Presses in when held or on.",
+      "html": "<button class=\"ds-btn\" type=\"button\">Pocket it</button> <button class=\"ds-btn\" type=\"button\" aria-pressed=\"true\">In your pocket</button>",
+      "css": ":host{--px:\"Pixelify Sans\",system-ui,sans-serif;--serif:\"Tinos\",\"Times New Roman\",serif;--face:#c4c4c4;--ink:#111111;--ink-soft:#3b3b3b;--hi:#ffffff;--hi2:#e2e2e2;--lo:#7d7d7d;--dk:#0b0b0b;--title-a:#0d2668;--title-b:#3c6fb0;--agate:#b3261e;--agate-hi:#e0665c;--agate-lo:#5e0f0a;--tape:#ffd60a;--tape-ink:#141414;--odo:#000;--odo-ink:#ffe14d}@media (prefers-color-scheme:dark){:host{--face:#2b2d35;--ink:#ececf1;--ink-soft:#b9bcc8;--hi:#5c606e;--hi2:#3e414c;--lo:#15161b;--dk:#000;--title-a:#0a1b4d;--title-b:#2b5592}}.ds-btn{font:500 17px/1 var(--px);letter-spacing:.012em;color:var(--ink);background:var(--face);border:0;border-radius:0;min-height:44px;padding:0 18px;cursor:pointer;box-shadow:inset -1px -1px var(--dk),inset 1px 1px var(--hi),inset -2px -2px var(--lo),inset 2px 2px var(--hi2)}.ds-btn:active,.ds-btn[aria-pressed=\"true\"]{box-shadow:inset 1px 1px var(--dk),inset -1px -1px var(--hi),inset 2px 2px var(--lo),inset -2px -2px var(--hi2);padding:2px 16px 0 20px}.ds-btn:focus-visible{outline:2px dotted var(--ink);outline-offset:2px}"
+    },
+    {
+      "name": "Primary Button (Agate Red)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one primary action per page: Get first dibs now, add to cart later.",
+      "html": "<button class=\"ds-btn-go\" type=\"button\">Get first dibs</button>",
+      "css": ":host{--px:\"Pixelify Sans\",system-ui,sans-serif;--serif:\"Tinos\",\"Times New Roman\",serif;--face:#c4c4c4;--ink:#111111;--ink-soft:#3b3b3b;--hi:#ffffff;--hi2:#e2e2e2;--lo:#7d7d7d;--dk:#0b0b0b;--title-a:#0d2668;--title-b:#3c6fb0;--agate:#b3261e;--agate-hi:#e0665c;--agate-lo:#5e0f0a;--tape:#ffd60a;--tape-ink:#141414;--odo:#000;--odo-ink:#ffe14d}@media (prefers-color-scheme:dark){:host{--face:#2b2d35;--ink:#ececf1;--ink-soft:#b9bcc8;--hi:#5c606e;--hi2:#3e414c;--lo:#15161b;--dk:#000;--title-a:#0a1b4d;--title-b:#2b5592}}.ds-btn-go{font:700 17px/1 var(--px);letter-spacing:.012em;color:#fff;background:var(--agate);border:0;border-radius:0;min-height:44px;padding:0 18px;cursor:pointer;box-shadow:inset -1px -1px #000,inset 1px 1px var(--agate-hi),inset -2px -2px var(--agate-lo),inset 2px 2px #d4473d}.ds-btn-go:active{box-shadow:inset 1px 1px #000,inset -1px -1px var(--agate-hi),inset 2px 2px var(--agate-lo);padding:2px 16px 0 20px}.ds-btn-go:focus-visible{outline:2px dotted var(--ink);outline-offset:2px}"
+    },
+    {
+      "name": "Sunken Email Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Text field for the first dibs signup.",
+      "html": "<label class=\"ds-field\"><span>Email address</span><input type=\"email\" placeholder=\"you@example.com\"></label>",
+      "css": ":host{--px:\"Pixelify Sans\",system-ui,sans-serif;--serif:\"Tinos\",\"Times New Roman\",serif;--face:#c4c4c4;--ink:#111111;--ink-soft:#3b3b3b;--hi:#ffffff;--hi2:#e2e2e2;--lo:#7d7d7d;--dk:#0b0b0b;--title-a:#0d2668;--title-b:#3c6fb0;--agate:#b3261e;--agate-hi:#e0665c;--agate-lo:#5e0f0a;--tape:#ffd60a;--tape-ink:#141414;--odo:#000;--odo-ink:#ffe14d}@media (prefers-color-scheme:dark){:host{--face:#2b2d35;--ink:#ececf1;--ink-soft:#b9bcc8;--hi:#5c606e;--hi2:#3e414c;--lo:#15161b;--dk:#000;--title-a:#0a1b4d;--title-b:#2b5592}}.ds-field{display:grid;gap:6px;font:700 14px var(--px);color:var(--ink)}.ds-field input{width:100%;min-height:46px;border:0;border-radius:0;background:var(--hi2);color:var(--ink);padding:0 12px;font:400 18px var(--serif);box-shadow:inset 1px 1px var(--lo),inset -1px -1px var(--hi),inset 2px 2px var(--dk),inset -2px -2px var(--hi2)}@media (prefers-color-scheme:dark){.ds-field input{background:#16171c}}.ds-field input::placeholder{color:var(--ink-soft);opacity:1}.ds-field input:focus-visible{outline:2px dotted var(--ink);outline-offset:2px}"
+    },
+    {
+      "name": "Window with Title Bar",
+      "kind": "card",
+      "refersTo": "window",
+      "description": "The container for every section: raised gray window, gradient title bar named like a file.",
+      "html": "<section class=\"ds-win\"><div class=\"ds-tb\">fieldnotes.txt</div><div class=\"ds-body\"><h2>Every design starts with a stone</h2><p>Each design gets a field note on its page.</p></div></section>",
+      "css": ":host{--px:\"Pixelify Sans\",system-ui,sans-serif;--serif:\"Tinos\",\"Times New Roman\",serif;--face:#c4c4c4;--ink:#111111;--ink-soft:#3b3b3b;--hi:#ffffff;--hi2:#e2e2e2;--lo:#7d7d7d;--dk:#0b0b0b;--title-a:#0d2668;--title-b:#3c6fb0;--agate:#b3261e;--agate-hi:#e0665c;--agate-lo:#5e0f0a;--tape:#ffd60a;--tape-ink:#141414;--odo:#000;--odo-ink:#ffe14d}@media (prefers-color-scheme:dark){:host{--face:#2b2d35;--ink:#ececf1;--ink-soft:#b9bcc8;--hi:#5c606e;--hi2:#3e414c;--lo:#15161b;--dk:#000;--title-a:#0a1b4d;--title-b:#2b5592}}.ds-win{background:var(--face);color:var(--ink);padding:3px;max-width:420px;box-shadow:inset -1px -1px var(--dk),inset 1px 1px var(--hi),inset -2px -2px var(--lo),inset 2px 2px var(--hi2)}.ds-tb{min-height:30px;display:flex;align-items:center;padding:3px 8px;background:linear-gradient(90deg,var(--title-a),var(--title-b));color:#fff;font:700 15px/1.1 var(--px);letter-spacing:.02em}.ds-body{padding:16px}.ds-body h2{font:700 28px/1.05 var(--px);margin:0 0 10px}.ds-body p{font:400 18px/1.5 var(--serif);margin:0}"
+    },
+    {
+      "name": "Menu Bar",
+      "kind": "nav",
+      "refersTo": "menubar-link",
+      "description": "Primary navigation with the Pocket odometer at the right.",
+      "html": "<nav class=\"ds-menu\"><a href=\"#\">Shop</a><a href=\"#\">Field Guide</a><a href=\"#\">First dibs</a><a class=\"ds-pocket\" href=\"#\">Pocket <span class=\"ds-odo\"><b>0</b><b>0</b><b>2</b></span></a></nav>",
+      "css": ":host{--px:\"Pixelify Sans\",system-ui,sans-serif;--serif:\"Tinos\",\"Times New Roman\",serif;--face:#c4c4c4;--ink:#111111;--ink-soft:#3b3b3b;--hi:#ffffff;--hi2:#e2e2e2;--lo:#7d7d7d;--dk:#0b0b0b;--title-a:#0d2668;--title-b:#3c6fb0;--agate:#b3261e;--agate-hi:#e0665c;--agate-lo:#5e0f0a;--tape:#ffd60a;--tape-ink:#141414;--odo:#000;--odo-ink:#ffe14d}@media (prefers-color-scheme:dark){:host{--face:#2b2d35;--ink:#ececf1;--ink-soft:#b9bcc8;--hi:#5c606e;--hi2:#3e414c;--lo:#15161b;--dk:#000;--title-a:#0a1b4d;--title-b:#2b5592}}.ds-menu{display:flex;flex-wrap:wrap;gap:2px;background:var(--face);padding:2px}.ds-menu a{font:500 17px/1 var(--px);letter-spacing:.012em;color:var(--ink);text-decoration:none;padding:0 12px;min-height:44px;display:inline-flex;align-items:center;gap:8px}.ds-menu a:hover{background:var(--title-a);color:#fff}.ds-menu a:focus-visible{outline:2px dotted var(--ink);outline-offset:2px}.ds-pocket{margin-left:auto}.ds-odo{display:inline-flex;gap:2px}.ds-odo b{font:700 16px/1 var(--px);background:var(--odo);color:var(--odo-ink);min-width:16px;padding:4px 2px;text-align:center;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Caution Tags",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Honesty labels: Concept, SAMPLE, and Prints matte, not shiny.",
+      "html": "<span class=\"ds-tag\">Concept</span> <span class=\"ds-tag\">SAMPLE</span> <span class=\"ds-tag ds-matte\">Prints matte, not shiny</span>",
+      "css": ".ds-tag{display:inline-block;font:700 12px/1 \"Pixelify Sans\",system-ui,sans-serif;letter-spacing:.06em;background:#ffd60a;color:#141414;padding:5px 7px;border-radius:0}.ds-matte{background:#000;color:#fff;letter-spacing:.02em}"
+    },
+    {
+      "name": "Odometer Counter",
+      "kind": "custom",
+      "refersTo": "odometer-digit",
+      "description": "Counts only real actions on the page, padded to three digits.",
+      "html": "<div class=\"ds-counter\"><span>Stones you wetted</span><span class=\"ds-odo\"><b>0</b><b>0</b><b>3</b></span></div>",
+      "css": ":host{--px:\"Pixelify Sans\",system-ui,sans-serif;--serif:\"Tinos\",\"Times New Roman\",serif;--face:#c4c4c4;--ink:#111111;--ink-soft:#3b3b3b;--hi:#ffffff;--hi2:#e2e2e2;--lo:#7d7d7d;--dk:#0b0b0b;--title-a:#0d2668;--title-b:#3c6fb0;--agate:#b3261e;--agate-hi:#e0665c;--agate-lo:#5e0f0a;--tape:#ffd60a;--tape-ink:#141414;--odo:#000;--odo-ink:#ffe14d}@media (prefers-color-scheme:dark){:host{--face:#2b2d35;--ink:#ececf1;--ink-soft:#b9bcc8;--hi:#5c606e;--hi2:#3e414c;--lo:#15161b;--dk:#000;--title-a:#0a1b4d;--title-b:#2b5592}}.ds-counter{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--face);color:var(--ink);padding:14px;font:700 20px var(--px);box-shadow:inset -1px -1px var(--dk),inset 1px 1px var(--hi),inset -2px -2px var(--lo),inset 2px 2px var(--hi2)}.ds-odo{display:inline-flex;gap:2px}.ds-odo b{font:700 22px/1 var(--px);background:var(--odo);color:var(--odo-ink);min-width:24px;padding:6px 3px;text-align:center;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "88x31 Badge Wall",
+      "kind": "custom",
+      "refersTo": "badge-88",
+      "description": "Fixed-color period badges with true statements only.",
+      "html": "<div class=\"ds-badges\"><span class=\"ds-b\" style=\"background:#1f5fbf;color:#fff\">BEST VIEWED<i>WET</i></span><span class=\"ds-b\" style=\"background:#ffd60a;color:#141414\">MADE IN<i>MICHIGAN</i></span><span class=\"ds-b\" style=\"background:#b3261e;color:#fff\">DRY ROCKS<i>LIE</i></span><span class=\"ds-b\" style=\"background:#000;color:#3cff6a\">NO<i>POP-UPS</i></span></div>",
+      "css": ".ds-badges{display:grid;grid-template-columns:repeat(2,132px);gap:8px}.ds-b{width:132px;height:46px;display:flex;flex-direction:column;justify-content:center;align-items:center;font:700 13px/1 \"Pixelify Sans\",system-ui,sans-serif;letter-spacing:.04em;border:2px solid #000;box-shadow:inset 1px 1px rgba(255,255,255,.6),inset -2px -2px rgba(0,0,0,.35)}.ds-b i{font-style:normal;font-size:17px;margin-top:3px}"
+    },
+    {
+      "name": "Under Construction Band",
+      "kind": "custom",
+      "refersTo": "window",
+      "description": "Caution-tape band that says plainly nothing is on sale yet.",
+      "html": "<section class=\"ds-uc\"><h2>This store is under construction</h2><p>Shirts and socks go on sale after the printed samples are approved.</p></section>",
+      "css": ":host{--px:\"Pixelify Sans\",system-ui,sans-serif;--serif:\"Tinos\",\"Times New Roman\",serif;--face:#c4c4c4;--ink:#111111;--ink-soft:#3b3b3b;--hi:#ffffff;--hi2:#e2e2e2;--lo:#7d7d7d;--dk:#0b0b0b;--title-a:#0d2668;--title-b:#3c6fb0;--agate:#b3261e;--agate-hi:#e0665c;--agate-lo:#5e0f0a;--tape:#ffd60a;--tape-ink:#141414;--odo:#000;--odo-ink:#ffe14d}@media (prefers-color-scheme:dark){:host{--face:#2b2d35;--ink:#ececf1;--ink-soft:#b9bcc8;--hi:#5c606e;--hi2:#3e414c;--lo:#15161b;--dk:#000;--title-a:#0a1b4d;--title-b:#2b5592}}.ds-uc{position:relative;background:var(--face);color:var(--ink);padding:30px 22px;border:2px solid #000}.ds-uc::before,.ds-uc::after{content:\"\";position:absolute;left:0;right:0;height:14px;background:repeating-linear-gradient(-45deg,var(--tape) 0 14px,var(--tape-ink) 14px 28px)}.ds-uc::before{top:0}.ds-uc::after{bottom:0}.ds-uc h2{font:700 28px/1.05 var(--px);margin:0 0 8px}.ds-uc p{font:400 18px/1.5 var(--serif);margin:0}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Webmaster's Beach",
+    "overview": "The site is Brian's own 1998-style home page: one beveled gray browser window resting on a tiled pixel beach of sand, slate, and rust pebbles. Inside the window, the page field is the old desktop teal, and every piece of content sits in its own small gray window with a navy title bar, as if Brian opened a few programs and arranged them by hand. It is honestly under construction, and the one thing that works perfectly is wetting a stone. The world refuses the rounded-card Shopify template and the tasteful modern AI site.\n\nDensity is that of a personal home page, not a storefront grid: windows stack in a main column with a sticky sidebar beside them, badges sit in a wall, and a ticker scrolls across the top. Everything is square, raised, or sunken. Depth comes only from two-pixel gray bevels, the way 1990s operating systems drew it. Color is loud only where the era was loud (title bars, caution tape, badges, odometers) and stays gray everywhere you read.\n\nThe humor carries the honesty. The page admits what it is not yet (\"This store is under construction,\" \"Price TBD,\" \"SAMPLE stone, AI image,\" \"This site belongs to zero webrings (so far)\"), and those admissions are part of the look, not fine print. Night mode is the same window on a dark pixel beach at a deeper teal, and it is a full theme, not an afterthought.",
+    "keyCharacteristics": [
+      "One beveled browser window on a tiled pixel pebble beach (light) or dark pebble beach (night).",
+      "Teal page field, gray content windows, navy-to-blue gradient title bars.",
+      "Pixelify Sans for every heading, label, button, and number; Tinos (a Times-style serif) for reading.",
+      "Square corners everywhere. Raised gray buttons that visibly press in.",
+      "Lake Superior agate red appears on exactly one action: \"Get first dibs.\"",
+      "1990s devices used straight: odometer digits, 88x31-style badges, caution tape, a ticker, hyperlink blue and visited purple.",
+      "Honest labels (Concept, SAMPLE, Prints matte, not shiny) styled as yellow caution tags."
+    ],
+    "rules": [
+      {
+        "name": "The One Red Button Rule",
+        "body": "Agate red marks one action per page: \"Get first dibs\" now, and the add-to-cart or checkout action later. Everything else that can be pressed is a gray button.",
+        "section": "colors"
+      },
+      {
+        "name": "The Gray Is For Reading Rule",
+        "body": "Body text always sits on window gray or field gray, never directly on the teal, the wallpaper, or the water. Only short white lines (the tagline, the offer line) sit on color.",
+        "section": "colors"
+      },
+      {
+        "name": "The Orange Period Rule",
+        "body": "Wordmark orange lives only in the wordmark's period. It is not a second accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Ligatures Rule",
+        "body": "Ligatures and contextual alternates are off on the whole page (font-feature-settings \"liga\" 0, \"clig\" 0, \"calt\" 0, \"dlig\" 0) so the pixel face stays one glyph per letter.",
+        "section": "typography"
+      },
+      {
+        "name": "The System Voice Rule",
+        "body": "If a 1990s operating system would have drawn it (a button, a title bar, a menu, a counter, a status bar), it is Pixelify Sans. If Brian would have typed it as a paragraph, it is Tinos.",
+        "section": "typography"
+      },
+      {
+        "name": "The Bevel Or Nothing Rule",
+        "body": "A surface is raised, sunken, or flat on color. Nothing floats, glows, or blurs. The single soft shadow is under the browser window itself.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Press Rule",
+        "body": "Every gray button visibly presses in: the bevel flips and the label shifts 2px. A toggle that is on (Pocket it, Wet it) stays pressed.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** label every stone SAMPLE (or \"Sample text\") until Brian approves its image and its facts.",
+      "**Do** keep product images no better looking than the real print, and say so where it matters (the sock concept carries \"Prints matte, not shiny\").",
+      "**Do** call concept art a concept (\"Concept art, not a product photo,\" \"AI concept image\") and keep \"Price TBD\" until real prices exist.",
+      "**Do** make every counter count something real on the page, starting at 000.",
+      "**Do** give every new section its own gray window with a title bar written like a file name.",
+      "**Do** design night mode at the same time as day mode, using the night- tokens, and check both.",
+      "**Do** keep every tappable item at least 44px tall and give a non-animated fallback for every motion.",
+      "**Do** render pixel art with crisp pixels and draw it in code from scripts/retro_pixels.py."
+    ],
+    "donts": [
+      "**Don't** use agate red for anything clickable except the one primary action.",
+      "**Don't** round corners, add soft drop shadows, glows, or blur to content.",
+      "**Don't** invent claims, reviews, sales, visitor counts, or fake urgency; no hit counter that does not count something real, and no pop-ups.",
+      "**Don't** put body text directly on the teal, the wallpaper, or the water.",
+      "**Don't** use wordmark orange anywhere but the wordmark's period.",
+      "**Don't** add a guestbook, a webring, or other 1990s furniture that pretends to work when it does not.",
+      "**Don't** trace or copy other sites' pixel art, badges, or GIFs; every pixel is original.",
+      "**Don't** use the pixel wordmark on merch or social. The Loaded letters vector logo in site/prototype/assets/logo/ stays the logo there; the pixel wordmark is the website banner.",
+      "**Don't** use em dashes in any copy, and always use the Oxford comma."
+    ]
+  }
+}

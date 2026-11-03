@@ -1,12 +1,12 @@
 # Coming-soon page (Cloudflare Worker)
 
-A simple coming-soon page for heavypocketsco.com. It gives a sneak peek (the Wet Stone viewer and the five concept designs) and collects first dibs emails. It stays up until the real Shopify store opens at Step 12.
+A simple coming-soon page for heavypocketsco.com: the Heavy Pockets Co. banner, a "Coming soon" note, and a first dibs signup. It stays up until the real Shopify store opens at Step 12.
 
 ## How it works, in plain terms
 
-- **The page:** `site/prototype/coming-soon.html` (plus `retro.css`, `coming-soon.js`, `stone.js`, and `motion.js`). It uses the same retro look as the homepage.
+- **The page:** `site/prototype/coming-soon.html` (plus `retro.css` and `coming-soon.js`). It uses the same retro look as the homepage.
 - **The Worker:** `worker/src/index.js` is a tiny program that Cloudflare runs for every visit. It hands back the page and its images, and saves each signup.
-- **The list:** signups go into a Cloudflare KV list named `heavypockets-first-dibs`, inside your own Cloudflare account. Each email is saved once, with the designs that person pocketed and when they signed up. No emails are ever saved in this repo.
+- **The list:** signups go into a Cloudflare KV list named `heavypockets-first-dibs`, inside your own Cloudflare account. Each email is saved once, with when they signed up. No emails are ever saved in this repo.
 - **Spam protection:** a hidden box that only bots fill in, and signups are accepted only from the page itself.
 - **Cost:** $0. The free Workers plan allows 100,000 visits and 1,000 new signups a day.
 
@@ -75,7 +75,7 @@ That prints a free test address (`heavypockets-coming-soon.<something>.workers.d
 python3 scripts/export_dibs.py --count
 ```
 
-That prints how many signed up and which designs they pocketed. Without `--count`, it also writes `private/first-dibs-<date>.csv`, set up for Shopify's customer import.
+That prints how many signed up. Without `--count`, it also writes `private/first-dibs-<date>.csv`, set up for Shopify's customer import.
 
 ## At Step 12 (Shopify opens)
 

@@ -1,0 +1,5 @@
+{
+  "private": true,
+  "type": "module",
+  "description": "Heavy Pockets Co. coming-soon page as a Cloudflare Worker. See worker/README.md."
+}

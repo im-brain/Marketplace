@@ -918,7 +918,7 @@
       "kind": "custom",
       "refersTo": "badge-88",
       "description": "Fixed-color period badges with true statements only.",
-      "html": "<div class=\"ds-badges\"><span class=\"ds-b\" style=\"background:#1f5fbf;color:#fff\">BEST VIEWED<i>WET</i></span><span class=\"ds-b\" style=\"background:#ffd60a;color:#141414\">MADE IN<i>MICHIGAN</i></span><span class=\"ds-b\" style=\"background:#b3261e;color:#fff\">DRY ROCKS<i>LIE</i></span><span class=\"ds-b\" style=\"background:#000;color:#3cff6a\">NO<i>POP-UPS</i></span></div>",
+      "html": "<div class=\"ds-badges\"><span class=\"ds-b\" style=\"background:#1f5fbf;color:#fff\">BEST VIEWED<i>WET</i></span><span class=\"ds-b\" style=\"background:#ffd60a;color:#141414\">DESIGNED IN<i>MICHIGAN</i></span><span class=\"ds-b\" style=\"background:#b3261e;color:#fff\">DRY ROCKS<i>LIE</i></span><span class=\"ds-b\" style=\"background:#000;color:#3cff6a\">NO<i>POP-UPS</i></span></div>",
       "css": ".ds-badges{display:grid;grid-template-columns:repeat(2,132px);gap:8px}.ds-b{width:132px;height:46px;display:flex;flex-direction:column;justify-content:center;align-items:center;font:700 13px/1 \"Pixelify Sans\",system-ui,sans-serif;letter-spacing:.04em;border:2px solid #000;box-shadow:inset 1px 1px rgba(255,255,255,.6),inset -2px -2px rgba(0,0,0,.35)}.ds-b i{font-style:normal;font-size:17px;margin-top:3px}"
     },
     {

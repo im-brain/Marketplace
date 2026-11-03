@@ -92,3 +92,4 @@ The 1280 x 1024 WebPs use quality 82: dry 119,840 bytes, wet 114,524 bytes. Alph
 | `assets/products/src/petoskey-sock-concept-matte.png` (the web file `petoskey-sock-concept.webp` is made from it) | Claude, `scripts/matte_band.py` on the ChatGPT original (rows 622 to 944) | 2026-11-03 | The same image with the glints and wet film pulled out of the Petoskey band only, so the web image can't look better than a matte print. The original stays unchanged in `src/`. | Same as above. |
 
 The retro pixel art now lives in `assets/retro/` (moved from `directions/retro/` when the retro direction became the homepage).
+| `assets/logo/og-retro.jpg` and `assets/logo/src/og-retro.html` | Share card for the coming-soon page, rendered with Playwright from the repo's own pixel art (wordmark, waves, pebble wallpaper) | 2026-11-03 | All code-drawn, no generated imagery. | Replaces the sorting-tray share card on the coming-soon page. |

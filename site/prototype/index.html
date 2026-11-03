@@ -13,6 +13,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Heavy Pockets Co. Head down. Pockets full.">
+<script>try{var t=localStorage.getItem("hp-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -33,11 +34,13 @@
   --tape:#ffd60a;--tape-ink:#141414;
   --screen:#0c1220;
   --odo:#000;--odo-ink:#ffe14d;
-  --on-soft:#b3261e;      /* the flying pocket pebble */
+  --pebble:#b3261e;       /* the flying pocket pebble */
+  --field:#e2e2e2;        /* text fields and the field note card */
   --ease-out:cubic-bezier(.16,1,.3,1);
   color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root{
+/* night: follows the phone's setting, unless the visitor picks Day or Night with the switch */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --wall:url(assets/retro/pebbles-night.svg);
   --page:#0b3438;--on-page:#e9f4f3;
   --face:#2b2d35;--ink:#ececf1;--ink-soft:#b9bcc8;
@@ -45,11 +48,24 @@
   --title-a:#0a1b4d;--title-b:#2b5592;
   --link:#9cc2ff;--visited:#d0a6ff;
   --screen:#05080f;
-  --on-soft:#e0665c;
+  --field:#16171c;
+  --pebble:#e0665c;
   color-scheme:dark;
 }}
+:root[data-theme="dark"]{
+  --wall:url(assets/retro/pebbles-night.svg);
+  --page:#0b3438;--on-page:#e9f4f3;
+  --face:#2b2d35;--ink:#ececf1;--ink-soft:#b9bcc8;
+  --hi:#5c606e;--hi2:#3e414c;--lo:#15161b;--dk:#000;
+  --title-a:#0a1b4d;--title-b:#2b5592;
+  --link:#9cc2ff;--visited:#d0a6ff;
+  --screen:#05080f;
+  --field:#16171c;
+  --pebble:#e0665c;
+  color-scheme:dark;
+}
 *{box-sizing:border-box}
-html{background:#0b7a78 var(--wall) repeat;scrollbar-color:var(--lo) var(--face)}
+html{background:var(--page) var(--wall) repeat;scrollbar-color:var(--lo) var(--face)}
 body{font-feature-settings:"liga" 0,"clig" 0,"calt" 0,"dlig" 0;margin:0;padding:clamp(8px,2.4vw,32px);font:400 18px/1.5 var(--serif);color:var(--ink);background:transparent}
 ::selection{background:var(--title-a);color:#fff}
 img,svg{display:block}
@@ -70,27 +86,33 @@ a:visited{color:var(--visited)}
 .tb{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:30px;padding:3px 4px 3px 8px;background:linear-gradient(90deg,var(--title-a),var(--title-b));color:#fff;font:700 15px/1.1 var(--px);letter-spacing:.02em}
 .tb span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ctl{display:flex;gap:2px;flex:none}
-.ctl i{width:22px;height:20px;display:grid;place-items:center}
+.ctl i{width:22px;height:20px;display:grid;place-items:center;color:var(--ink)}
 .ctl svg{width:10px;height:10px}
 .menubar{display:flex;align-items:center;gap:2px;padding:2px 2px 0;flex-wrap:wrap}
 .menubar a{font:500 17px/1 var(--px);color:var(--ink);text-decoration:none;padding:0 12px;min-height:44px;display:inline-flex;align-items:center;gap:8px}
 .menubar a:hover{background:var(--title-a);color:#fff}
 .menubar a:visited{color:var(--ink)}
 .menubar a:hover:visited{color:#fff}
-.menubar .pocket-link{margin-left:auto}
+.menubar .pocket-link{margin-left:0}
+.theme-btn{margin-left:auto;font:500 17px/1 var(--px);letter-spacing:.012em;color:var(--ink);background:transparent;border:0;min-height:44px;min-width:44px;padding:0 10px;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer}
+.theme-btn:hover{background:var(--title-a);color:#fff}
+.theme-btn svg{width:16px;height:16px;flex:none}
+.theme-btn .sun{display:none}
+:root[data-theme="dark"] .theme-btn .sun{display:inline}
+:root[data-theme="dark"] .theme-btn .moon{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .theme-btn .sun{display:inline}:root:not([data-theme="light"]) .theme-btn .moon{display:none}}
 .odo{display:inline-flex;gap:2px}
 .odo b{font:700 16px/1 var(--px);background:var(--odo);color:var(--odo-ink);min-width:16px;padding:4px 2px;text-align:center;font-variant-numeric:tabular-nums}
 .addr{display:flex;align-items:center;gap:8px;padding:4px 6px 8px;font:500 15px var(--px)}
-.addr span:last-child{flex:1;min-width:0;background:var(--hi2);color:var(--ink);padding:6px 8px;font:400 15px var(--serif);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-@media (prefers-color-scheme:dark){.addr span:last-child{background:#16171c}}
+.addr span:last-child{flex:1;min-width:0;background:var(--field);color:var(--ink);padding:6px 8px;font:400 15px var(--serif);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 
 /* ---------- the page inside the window ---------- */
 .page{background:var(--page);color:var(--on-page);padding:clamp(10px,2vw,24px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:clamp(12px,1.8vw,22px);align-items:start}
 .full{grid-column:1 / -1}
 .main,.side{display:grid;gap:clamp(12px,1.8vw,22px);min-width:0}
-.side{position:sticky;top:16px;background:url(assets/retro/pebbles-day.svg) repeat;padding:8px;border:2px solid #000;image-rendering:pixelated}
+.side{position:sticky;top:16px;background:var(--wall) repeat;padding:8px;border:2px solid #000;image-rendering:pixelated}
 .side > *{image-rendering:auto}
-@media (prefers-color-scheme:dark){.side{background-image:url(assets/retro/pebbles-night.svg)}}
+
 
 .banner{position:relative;background:#16336b url(assets/retro/waves.svg) repeat-x 0 100%;background-size:auto 84px;padding:clamp(14px,1.8vw,22px) 16px 86px;text-align:center;color:#fff;border:2px solid #000;image-rendering:pixelated}
 .banner .pixel-mark{width:min(620px,90%);height:auto;margin:0 auto;image-rendering:pixelated}
@@ -109,6 +131,8 @@ a:visited{color:var(--visited)}
 .win{padding:3px;color:var(--ink);min-width:0}
 .win .body{padding:clamp(14px,2vw,22px)}
 .win h2{font:700 clamp(26px,3.2vw,34px)/1.05 var(--px);margin:0 0 10px;letter-spacing:.01em}
+.win h2.h-mini{font-size:19px;margin:0}
+.win h2.h-small{font-size:22px}
 .win p{margin:0 0 12px;max-width:62ch}
 .win p:last-child{margin-bottom:0}
 
@@ -166,12 +190,12 @@ a:visited{color:var(--visited)}
 .dibs .body{padding-top:14px}
 .dibs h2{margin-bottom:6px}
 .dibs form{display:grid;gap:10px;margin-top:6px}
-.dibs input{width:100%;min-height:46px;border:0;background:var(--hi2);color:var(--ink);padding:0 12px;font:400 18px var(--serif);
+.dibs input{width:100%;min-height:46px;border:0;background:var(--field);color:var(--ink);padding:0 12px;font:400 18px var(--serif);
   box-shadow:inset 1px 1px var(--lo),inset -1px -1px var(--hi),inset 2px 2px var(--dk),inset -2px -2px var(--hi2)}
-@media (prefers-color-scheme:dark){.dibs input{background:#16171c}}
 .dibs input::placeholder{color:var(--ink-soft);opacity:1}
 .dibs .btn.go{justify-content:center}
 .dibs .picked{font-weight:700}
+.dibs .dibs-note{margin-top:10px}
 .dibs .status-line{min-height:1.4em;font-weight:700;margin:8px 0 0}
 .counter{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .counter .odo b{font-size:22px;min-width:24px;padding:6px 3px}
@@ -186,13 +210,12 @@ a:visited{color:var(--visited)}
 .b-wet{background:#1f5fbf;color:#fff}.b-mi{background:#ffd60a;color:#141414}.b-lie{background:#b3261e;color:#fff}
 .b-pop{background:#000;color:#3cff6a}.b-head{background:#e6d6b2;color:#3a2a10}.b-samp{background:#7b2fb5;color:#fff}
 .notes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:18px;align-items:start}
-.notes .card{background:var(--hi2);color:var(--ink);padding:16px;position:relative}
+.notes .card{background:var(--field);color:var(--ink);padding:16px;position:relative}
 .notes .card .tag{position:static;display:inline-block;margin-bottom:10px}
 .notes dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0 0 10px;font-size:16px}
 .notes dt{font:700 14px/1.6 var(--px)}
 .notes dd{margin:0}
 .notes .card p{font-style:italic;margin:0}
-@media (prefers-color-scheme:dark){.notes .card{background:#16171c}}
 .guide{list-style:none;margin:12px 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .g-card{display:flex;flex-direction:column;gap:6px}
 .screen.small{margin:0;aspect-ratio:5/4}
@@ -218,11 +241,14 @@ a:visited{color:var(--visited)}
   .main{display:contents}
   .banner,.ticker{order:-1}.viewer{order:0}.construction{order:1}.finds-win{order:2}.dibs{order:3}#notes{order:4}#guide{order:5}.side > :not(.dibs){order:6}.foot{order:7}
   .menubar .hide-sm{display:none}
+  .theme-btn .theme-lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .menubar a,.theme-btn{padding:0 9px}
 }
 @media (max-width:640px){
   .notes,.guide{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:480px){
+  .pocket-link > span:first-child{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   .screen{aspect-ratio:5/4}
   .viewer .toolbar small{font-size:14px;line-height:1.35}
   .finds{grid-template-columns:minmax(0,1fr)}
@@ -236,7 +262,11 @@ a:visited{color:var(--visited)}
   .ticker{white-space:normal}
   .ticker .track{animation:none;display:block;padding:0 12px;text-align:center;text-wrap:balance}
   .ticker .track span{padding-right:0}
+  .ticker i{white-space:normal}
   .ticker .track span[aria-hidden]{display:none}
+}
+@media (prefers-reduced-motion:reduce) and (min-width:700px){
+  .ticker i{white-space:nowrap}
 }
 </style>
 <link rel="stylesheet" href="motion.css">
@@ -245,13 +275,14 @@ a:visited{color:var(--visited)}
 <a class="skip" href="#page">Skip to content</a>
 
 <div class="browser raised">
-  <div class="tb"><span>Heavy Pockets Co. - Home Page</span><span class="ctl" aria-hidden="true"><i class="raised"><svg viewBox="0 0 10 10"><path d="M1 8h6" stroke="currentColor" stroke-width="2" fill="none" style="color:#111"/></svg></i><i class="raised"><svg viewBox="0 0 10 10"><path d="M1 1h8v8H1z M1 2h8" stroke="#111" stroke-width="1.5" fill="none"/></svg></i><i class="raised"><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7" stroke="#111" stroke-width="1.8" fill="none"/></svg></i></span></div>
+  <div class="tb"><span>Heavy Pockets Co. - Home Page</span><span class="ctl" aria-hidden="true"><i class="raised"><svg viewBox="0 0 10 10"><path d="M1 8h6" stroke="currentColor" stroke-width="2" fill="none"/></svg></i><i class="raised"><svg viewBox="0 0 10 10"><path d="M1 1h8v8H1z M1 2h8" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></i><i class="raised"><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7" stroke="currentColor" stroke-width="1.8" fill="none"/></svg></i></span></div>
   <nav class="menubar" aria-label="Primary">
     <a href="#shop">Shop</a>
     <a class="hide-sm" href="#guide">Field Guide</a>
     <a class="hide-sm" href="#notes">Field Notes</a>
     <a class="hide-sm" href="#story">Our Story</a>
     <a href="#dibs">First dibs</a>
+    <button class="theme-btn" type="button" data-theme-toggle aria-label="Switch to night mode"><svg viewBox="0 0 10 10" aria-hidden="true" shape-rendering="crispEdges"><path class="moon" d="M4 1h3v1H5v1H4v4h1v1h2v1H4V8H3V7H2V3h1V2h1z" fill="currentColor"/><path class="sun" d="M4 0h2v2H4zM4 8h2v2H4zM0 4h2v2H0zM8 4h2v2H8zM3 3h4v4H3z" fill="currentColor"/></svg><span class="theme-lbl">Night</span></button>
     <a class="pocket-link" href="#dibs" data-pocket-pill><span>Pocket</span><span class="odo" aria-hidden="true"><b>0</b><b>0</b><b data-pocket-count>0</b></span><span class="vh" data-pocket-vh>0 designs pocketed</span></a>
   </nav>
   <div class="addr" aria-hidden="true"><span>Address</span><span class="sunken">http://www.heavypocketsco.com/~brian/index.html</span></div>
@@ -270,7 +301,7 @@ a:visited{color:var(--visited)}
 
     <div class="main">
       <section class="win raised viewer" aria-labelledby="viewer-t">
-        <div class="tb"><span id="viewer-t">Wet Stone Viewer 1.0</span><span class="ctl" aria-hidden="true"><i class="raised"><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7" stroke="#111" stroke-width="1.8" fill="none"/></svg></i></span></div>
+        <div class="tb"><span id="viewer-t">Wet Stone Viewer 1.0</span><span class="ctl" aria-hidden="true"><i class="raised"><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7" stroke="currentColor" stroke-width="1.8" fill="none"/></svg></i></span></div>
         <div class="toolbar">
           <button class="btn" type="button" data-wet-toggle aria-controls="stone"><svg viewBox="0 0 8 10" aria-hidden="true" shape-rendering="crispEdges"><path d="M3 0h2v2h1v2h1v4H6v1H5v1H3V9H2V8H1V4h1V2h1z" fill="#2b6fd6"/><path d="M2 5h1v2H2z" fill="#cfe2ff"/></svg><span>Wet it</span></button>
           <small>Rockhounds lick stones. We made a button for it.</small>
@@ -413,14 +444,14 @@ a:visited{color:var(--visited)}
             <label><span class="vh">Email address</span><input type="email" name="email" placeholder="you@example.com" autocomplete="email" required></label>
             <button class="btn go" type="submit">Get first dibs</button>
           </form>
-          <p class="note-small" style="margin-top:10px">Prototype: signup isn't connected yet, so nothing you enter is saved.</p>
+          <p class="note-small dibs-note">Prototype: signup isn't connected yet, so nothing you enter is saved.</p>
           <p class="status-line" role="status" aria-live="polite"></p>
         </div>
       </section>
 
       <section class="win raised" aria-labelledby="count-t">
         <div class="body counter">
-          <h2 id="count-t" style="font-size:20px;margin:0">Designs in your pocket</h2>
+          <h2 id="count-t" class="h-mini">Designs in your pocket</h2>
           <span class="odo" aria-hidden="true"><b>0</b><b>0</b><b data-pocket-odo>0</b></span>
         </div>
       </section>
@@ -436,14 +467,14 @@ a:visited{color:var(--visited)}
 
       <section class="win raised" aria-labelledby="wets-t">
         <div class="body counter">
-          <h2 id="wets-t" style="font-size:20px;margin:0">Stones you wetted</h2>
+          <h2 id="wets-t" class="h-mini">Stones you wetted</h2>
           <span class="odo" aria-hidden="true"><b>0</b><b>0</b><b data-wet-odo>0</b></span>
         </div>
       </section>
 
       <section class="win raised" id="story" aria-labelledby="about-t">
         <div class="body">
-          <h2 id="about-t" style="font-size:24px">About the webmaster</h2>
+          <h2 id="about-t" class="h-small">About the webmaster</h2>
           <p>Brian is a rockhound in Grand Rapids, Michigan. He makes these shirts and socks for people who walk the shoreline head down.</p>
           <h3 class="list-h">Found in our pockets after one Saturday</h3>
           <ol class="pockets">
@@ -495,6 +526,14 @@ a:visited{color:var(--visited)}
   });
   tool.addEventListener('click', () => stone.click());
 
+  // day and night switch: the choice is remembered on this device
+  const themeBtn = document.querySelector('[data-theme-toggle]'), root = document.documentElement;
+  const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  const label = () => { const d = isDark(); themeBtn.setAttribute('aria-label', d ? 'Switch to day mode' : 'Switch to night mode'); themeBtn.querySelector('.theme-lbl').textContent = d ? 'Day' : 'Night'; };
+  label();
+  themeBtn.addEventListener('click', () => { root.dataset.theme = isDark() ? 'light' : 'dark'; try { localStorage.setItem('hp-theme', root.dataset.theme); } catch (e) {} label(); });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', label);
+
   // pocket: a wish list, not a cart
   const pocketed = [];
   const list = n => n.length < 3 ? n.join(' and ') : n.slice(0, -1).join(', ') + ', and ' + n[n.length - 1];
@@ -504,13 +543,21 @@ a:visited{color:var(--visited)}
     document.querySelector('[data-pocket-vh]').textContent = n + (n === 1 ? ' design pocketed' : ' designs pocketed');
     document.querySelector('[data-pocket-list]').textContent = n ? 'In your pocket: ' + list(pocketed) + '.' : "Nothing pocketed, so we'll tell you about all five.";
   };
-  document.querySelectorAll('.pocket').forEach(b => b.addEventListener('click', () => {
-    const on = b.getAttribute('aria-pressed') !== 'true', name = b.dataset.design;
-    b.setAttribute('aria-pressed', on);
-    b.querySelector('span').textContent = on ? 'In your pocket' : 'Pocket it';
-    if (on) pocketed.push(name); else pocketed.splice(pocketed.indexOf(name), 1);
-    sync();
-  }));
+  const mark = (b, on) => { b.setAttribute('aria-pressed', on); b.querySelector('span').textContent = on ? 'In your pocket' : 'Pocket it'; };
+  const save = () => { try { localStorage.setItem('hp-pocket', JSON.stringify(pocketed)); } catch (e) {} };
+  // your pocket survives a refresh on this device (only designs that still exist come back)
+  let saved = [];
+  try { saved = JSON.parse(localStorage.getItem('hp-pocket') || '[]'); } catch (e) {}
+  document.querySelectorAll('.pocket').forEach(b => {
+    if (Array.isArray(saved) && saved.includes(b.dataset.design)) { mark(b, true); pocketed.push(b.dataset.design); }
+    b.addEventListener('click', () => {
+      const on = b.getAttribute('aria-pressed') !== 'true', name = b.dataset.design;
+      mark(b, on);
+      if (on) pocketed.push(name); else pocketed.splice(pocketed.indexOf(name), 1);
+      sync(); save();
+    });
+  });
+  sync();
 
   const form = document.getElementById('signup'), status = form.parentElement.querySelector('.status-line');
   form.addEventListener('submit', e => {

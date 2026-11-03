@@ -2,6 +2,9 @@
 name: Heavy Pockets Co.
 description: Tees and socks for Great Lakes rockhounds, sold from a 1990s personal home page that is honestly under construction. Head down. Pockets full.
 colors:
+  sticker-ink: "#11163a"
+  sticker-shade: "#9aa0b5"
+  sticker-small: "#3a4170"
   page-teal: "#0b7a78"
   on-page: "#ffffff"
   window-gray: "#c4c4c4"
@@ -111,6 +114,11 @@ typography:
     fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.5
+  caption:
+    fontFamily: "Pixelify Sans, system-ui, sans-serif"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: 1.35
 rounded:
   none: "0px"
 spacing:
@@ -244,11 +252,12 @@ A gray operating-system palette on a teal desktop, with period-correct primaries
 - **Window Gray** (window-gray): every window, button, card, and the footer.
 - **Ink** (ink) and **Soft Ink** (ink-soft): reading text and secondary text (meta lines, hints, small notes) on gray.
 - **Bevel set** (bevel-light, bevel-light-inner, bevel-shade, bevel-dark): the four one-pixel lines that make a surface look raised or sunken.
-- **Field Gray** (field-gray): sunken text fields, the address bar, and the field note card.
+- **Field Gray** (field-gray): sunken text fields, the address bar, and the field note card. In code it is the --field token, and the flying pocket pebble is --pebble.
+- **Concept art colors** (sticker-ink #11163a, sticker-shade #9aa0b5, sticker-small #3a4170): used only inside the "Will brake for agates" bumper sticker concept. They belong to that artwork, not the interface, and should not appear in chrome or text.
 - **Viewer Screen** (viewer-screen): the near-black screen behind every stone and every product concept, so stones read as lit specimens.
 
 ### Night theme
-Night mode switches automatically with the visitor's system setting (prefers-color-scheme: dark). It swaps the wallpaper to the dark pebble beach and replaces each light token with its night- partner: deep teal page (night-page-teal), charcoal windows (night-window-gray), light ink (night-ink, night-ink-soft), a darker bevel set, darker title bar navy and blue, lighter link blue and visited purple, a near-black field (night-field), and a deeper viewer screen. Agate red, tape yellow, odometers, lake navy, badges, and the wordmark stay the same in both themes. Every text pair in both themes measures at least 5:1 contrast.
+Night mode follows the visitor's system setting (prefers-color-scheme: dark) until they press the Day or Night switch in the menu bar; the switch sets data-theme on the page and is remembered on that device. It swaps the wallpaper to the dark pebble beach and replaces each light token with its night- partner: deep teal page (night-page-teal), charcoal windows (night-window-gray), light ink (night-ink, night-ink-soft), a darker bevel set, darker title bar navy and blue, lighter link blue and visited purple, a near-black field (night-field), and a deeper viewer screen. Agate red, tape yellow, odometers, lake navy, badges, and the wordmark stay the same in both themes. Every text pair in both themes measures at least 5:1 contrast.
 
 ### Named Rules
 **The One Red Button Rule.** Agate red marks one action per page: "Get first dibs" now, and the add-to-cart or checkout action later. Everything else that can be pressed is a gray button.
@@ -273,6 +282,7 @@ Night mode switches automatically with the visitor's system setting (prefers-col
 - **Label small** (400, 15px, 1.4): meta lines, the viewer hint, status cells, and small notes.
 - **Tag** (700, 12px, 1, 0.06em): caution tags and badge top lines.
 - **Odometer** (700, 16px, tabular figures): counter digits, 22px in the sidebar counters.
+- **Caption** (400 or 700, 14px, 1.35): the Wet Stone status bar, Field Guide hints, and field note labels.
 - **Body** (400, 18px, 1.5): paragraphs, capped at about 62ch. **Body small** (400, 16px) for footer text, lists, and the field note.
 
 ### Named Rules

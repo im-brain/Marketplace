@@ -1,6 +1,6 @@
-/* Thumb bloom: water spreads from the touch, and dries back toward it. */
+/* Thumb bloom: water spreads from the touch, and dries back toward it.
+   Shared by index.html and sorting-tray.html. Sorting-tray-only rules live in motion-tray.css. */
 .wet-stone img{position:absolute;inset:7% 5% 12%;width:90%;height:81%;object-fit:contain}
-.stone-card .wet-stone img{inset:10% 8%;width:84%;height:80%}
 .wet-stone .wet{opacity:0;mask-image:none;-webkit-mask-image:none;transition:opacity 1600ms ease-in-out}
 .wet-stone[aria-pressed="true"] .wet,.wet-stone.hover .wet{opacity:1;transition-duration:1100ms}
 .wet-stone.motion-ready :is(.wet,.wet-front){
@@ -24,17 +24,9 @@
 .wet-stone .gloss{opacity:0;transition:none!important}
 .p-lick.lick-ready .lick .wet{clip-path:inset(0 0 100% 0)}
 .p-lick.lick-drawn .lick .wet{clip-path:inset(0 0 0 0)}
-.pocket-flight{position:fixed;left:0;top:0;width:17px;height:14px;z-index:30;pointer-events:none;background:var(--on-soft);border-radius:47% 52% 41% 46%;box-shadow:inset 0 -3px 0 rgba(0,0,0,.22)}
-.pill.cart b{display:inline-block;transform-origin:50% 65%}
-.menu{transform-origin:50% 0;transform:perspective(1100px) rotateX(-9deg) translateY(-102%)}
-.menu.open{transform:perspective(1100px) rotateX(0) translateY(0)}
-.menu.open::after{animation:hp-latch 580ms ease-out}
-@keyframes hp-latch{0%,85%{transform:translateY(3px);opacity:0}93%{transform:translateY(-1px);opacity:.65}100%{transform:none;opacity:1}}
-/* The hero earns its motion. The other compartments stay still on scroll. */
-.settle,.settle.pre{transform:none;transition:none}
+.pocket-flight{position:fixed;left:0;top:0;width:17px;height:14px;z-index:30;pointer-events:none;background:var(--pebble,var(--on-soft));border-radius:47% 52% 41% 46%;box-shadow:inset 0 -3px 0 rgba(0,0,0,.22)}
 @media(prefers-reduced-motion:reduce){
-  .wet-stone .wet,.wet-stone.motion-ready :is(.wet,.wet-front),.menu,.menu.open{transition:none!important}
+  .wet-stone .wet,.wet-stone.motion-ready :is(.wet,.wet-front){transition:none!important}
   .wet-stone .gloss,.pocket-flight{display:none}
   .p-lick.lick-ready .lick .wet{clip-path:none}
-  .menu.open::after{animation:none}
 }

@@ -849,7 +849,7 @@
     ],
     "themes": {
       "night": {
-        "trigger": "prefers-color-scheme: dark",
+        "trigger": "prefers-color-scheme: dark, unless the visitor picks Day or Night with the menu bar switch (sets data-theme on <html>, remembered on the device)",
         "wallpaper": "assets/retro/pebbles-night.svg",
         "dayWallpaper": "assets/retro/pebbles-day.svg",
         "note": "Automatic only; the page has no manual theme switch yet."

@@ -1,0 +1,13 @@
+/* Motion rules used only by the retired sorting tray page (sorting-tray.html): the menu lid, the cart pill, and the settle effect. */
+.stone-card .wet-stone img{inset:10% 8%;width:84%;height:80%}
+.pill.cart b{display:inline-block;transform-origin:50% 65%}
+.menu{transform-origin:50% 0;transform:perspective(1100px) rotateX(-9deg) translateY(-102%)}
+.menu.open{transform:perspective(1100px) rotateX(0) translateY(0)}
+.menu.open::after{animation:hp-latch 580ms ease-out}
+@keyframes hp-latch{0%,85%{transform:translateY(3px);opacity:0}93%{transform:translateY(-1px);opacity:.65}100%{transform:none;opacity:1}}
+/* The hero earns its motion. The other compartments stay still on scroll. */
+.settle,.settle.pre{transform:none;transition:none}
+@media(prefers-reduced-motion:reduce){
+  .menu,.menu.open{transition:none!important}
+  .menu.open::after{animation:none}
+}

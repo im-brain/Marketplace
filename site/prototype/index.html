@@ -100,6 +100,7 @@ a:visited{color:var(--visited)}
 .ticker{background:#000;color:var(--odo-ink);font:500 18px/1 var(--px);overflow:hidden;white-space:nowrap;padding:9px 0;border:2px solid #000}
 .ticker .track{display:inline-flex;gap:0;animation:tick 34s linear infinite}
 .ticker .track span{padding-right:3em}
+.ticker i{font-style:normal;white-space:nowrap}
 .ticker .sep{display:inline-block;vertical-align:middle;margin:0 .6em;image-rendering:pixelated}
 .ticker:hover .track,.ticker:focus-within .track{animation-play-state:paused}
 @keyframes tick{to{transform:translateX(-50%)}}
@@ -264,7 +265,7 @@ a:visited{color:var(--visited)}
     </header>
 
     <div class="ticker full sunken" role="marquee" aria-label="News ticker">
-      <div class="track"><span>Dry rocks lie <img class="sep" src="assets/retro/pebble-glyph.svg" alt="" width="16" height="12"> Wet the stone below <img class="sep" src="assets/retro/pebble-glyph.svg" alt="" width="16" height="12"> Shirts go on sale after the samples pass <img class="sep" src="assets/retro/pebble-glyph.svg" alt="" width="16" height="12"> Made in Grand Rapids, Michigan <img class="sep" src="assets/retro/pebble-glyph.svg" alt="" width="16" height="12"> Best viewed wet</span><span aria-hidden="true">Dry rocks lie <img class="sep" src="assets/retro/pebble-glyph.svg" alt="" width="16" height="12"> Wet the stone below <img class="sep" src="assets/retro/pebble-glyph.svg" alt="" width="16" height="12"> Shirts go on sale after the samples pass <img class="sep" src="assets/retro/pebble-glyph.svg" alt="" width="16" height="12"> Made in Grand Rapids, Michigan <img class="sep" src="assets/retro/pebble-glyph.svg" alt="" width="16" height="12"> Best viewed wet</span></div>
+      <div class="track"><span><i>Dry rocks lie</i><img class="sep" src="assets/retro/pebble-glyph.svg" alt="" width="16" height="12"><i>Wet the stone below</i><img class="sep" src="assets/retro/pebble-glyph.svg" alt="" width="16" height="12"><i>Shirts go on sale after the samples pass</i><img class="sep" src="assets/retro/pebble-glyph.svg" alt="" width="16" height="12"><i>Made in Grand Rapids, Michigan</i><img class="sep" src="assets/retro/pebble-glyph.svg" alt="" width="16" height="12"><i>Best viewed wet</i></span><span aria-hidden="true"><i>Dry rocks lie</i><img class="sep" src="assets/retro/pebble-glyph.svg" alt="" width="16" height="12"><i>Wet the stone below</i><img class="sep" src="assets/retro/pebble-glyph.svg" alt="" width="16" height="12"><i>Shirts go on sale after the samples pass</i><img class="sep" src="assets/retro/pebble-glyph.svg" alt="" width="16" height="12"><i>Made in Grand Rapids, Michigan</i><img class="sep" src="assets/retro/pebble-glyph.svg" alt="" width="16" height="12"><i>Best viewed wet</i></span></div>
     </div>
 
     <div class="main">

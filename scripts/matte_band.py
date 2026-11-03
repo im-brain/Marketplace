@@ -5,8 +5,8 @@ Usage:
 
 Inside the band (rows top to bottom), any pixel brighter than its neighborhood
 (a specular glint or wet film) is pulled most of the way back to the local
-average, and the band is muted slightly. Everything outside the band is
-untouched. The source file is never changed.
+average, and the band is muted slightly. Only dark stone-pattern pixels change;
+the light background and knit, inside or outside the band, are untouched. The source file is never changed.
 """
 import sys
 
@@ -30,7 +30,10 @@ def main(src, out_png, out_webp, top, bottom):
     # feather the band edges over 10 rows so no seam shows
     h = bottom - top
     ramp = np.clip(np.minimum(np.arange(h), np.arange(h)[::-1]) / 10, 0, 1)[:, None, None]
-    a[top:bottom] = a[top:bottom] * (1 - ramp) + band * ramp
+    # only touch the stone pattern itself: the light background and cream knit stay as they were
+    stone = np.clip((0.74 - loc_lum) / 0.12, 0, 1)
+    w = ramp * stone
+    a[top:bottom] = a[top:bottom] * (1 - w) + band * w
     out = Image.fromarray((np.clip(a, 0, 1) * 255 + 0.5).astype(np.uint8))
     out.save(out_png, optimize=True)
     out.save(out_webp, "WEBP", quality=82, method=6)

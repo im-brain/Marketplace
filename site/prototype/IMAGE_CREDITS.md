@@ -83,3 +83,11 @@ The 1280 x 1024 WebPs use quality 82: dry 119,840 bytes, wet 114,524 bytes. Alph
 | File | Tool and source | Date | Summary | Replace with |
 |---|---|---|---|---|
 | `directions/retro/pebbles-day.svg`, `pebbles-night.svg`, `waves.svg`, `rockhound.svg`, `wordmark.svg`, and `pebble-glyph.svg` | Claude, original pixel art placed pixel by pixel in code by `scripts/retro_pixels.py` | 2026-11-03 | Beach pebble wallpaper (day and night), Lake Superior waves, a two-frame rockhound, a hand-drawn pixel "Heavy Pockets Co." wordmark, and a pebble separator. Inspired by 1990s home pages in general; nothing traced, copied, or taken from GeoCities, Windows, Netscape, or Twitter. | Keep, or redraw if Brian picks this direction. |
+
+## Petoskey socks concept (Nov 3, 2026)
+
+| File | Tool and source | Date | Summary | Replace with |
+|---|---|---|---|---|
+| `assets/products/petoskey-sock-concept.webp` and `assets/products/src/petoskey-sock-concept.png` | ChatGPT image generation, supplied by Brian (exact prompt not recorded) | 2026-11-03 | Cream ribbed tube sock with two olive stripes and a band of Petoskey pattern. Concept only: the band looks wet and glossy, but a printed sock is matte, and print-on-demand stripes are printed, not knitted. Shown with a "Concept" tag and that note. | A Printify sample photo at Step 10. Best band art: a photo of one of Brian's own wet Petoskeys. |
+
+The retro pixel art now lives in `assets/retro/` (moved from `directions/retro/` when the retro direction became the homepage).

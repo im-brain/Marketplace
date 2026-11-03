@@ -13,7 +13,7 @@
 :root{
   --px:'Pixelify Sans',system-ui,sans-serif;
   --serif:'Tinos','Times New Roman',serif;
-  --wall:url(retro/pebbles-day.svg);
+  --wall:url(../assets/retro/pebbles-day.svg);
   --page:#0b7a78;         /* the old desktop teal, inside the window */
   --on-page:#ffffff;
   --face:#c4c4c4;         /* window gray */
@@ -31,7 +31,7 @@
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){:root{
-  --wall:url(retro/pebbles-night.svg);
+  --wall:url(../assets/retro/pebbles-night.svg);
   --page:#0b3438;--on-page:#e9f4f3;
   --face:#2b2d35;--ink:#ececf1;--ink-soft:#b9bcc8;
   --hi:#5c606e;--hi2:#3e414c;--lo:#15161b;--dk:#000;
@@ -81,11 +81,11 @@ a:visited{color:var(--visited)}
 .page{background:var(--page);color:var(--on-page);padding:clamp(10px,2vw,24px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:clamp(12px,1.8vw,22px);align-items:start}
 .full{grid-column:1 / -1}
 .main,.side{display:grid;gap:clamp(12px,1.8vw,22px);min-width:0}
-.side{position:sticky;top:16px;background:url(retro/pebbles-day.svg) repeat;padding:12px;border:2px solid #000;image-rendering:pixelated}
+.side{position:sticky;top:16px;background:url(../assets/retro/pebbles-day.svg) repeat;padding:12px;border:2px solid #000;image-rendering:pixelated}
 .side > *{image-rendering:auto}
-@media (prefers-color-scheme:dark){.side{background-image:url(retro/pebbles-night.svg)}}
+@media (prefers-color-scheme:dark){.side{background-image:url(../assets/retro/pebbles-night.svg)}}
 
-.banner{position:relative;background:#16336b url(retro/waves.svg) repeat-x 0 100%;background-size:auto 84px;padding:clamp(16px,2vw,24px) 16px 92px;text-align:center;color:#fff;border:2px solid #000;image-rendering:pixelated}
+.banner{position:relative;background:#16336b url(../assets/retro/waves.svg) repeat-x 0 100%;background-size:auto 84px;padding:clamp(16px,2vw,24px) 16px 92px;text-align:center;color:#fff;border:2px solid #000;image-rendering:pixelated}
 .banner .pixel-mark{width:min(620px,90%);height:auto;margin:0 auto;image-rendering:pixelated}
 .banner .offer{margin-top:8px;font:500 clamp(16px,1.8vw,19px)/1.35 var(--px);color:#fff}
 .banner p{margin:10px 0 0;font:700 clamp(18px,2.6vw,26px)/1.1 var(--px);color:var(--odo-ink);text-shadow:2px 2px 0 #000}
@@ -166,9 +166,9 @@ a:visited{color:var(--visited)}
 .counter .odo b{font-size:22px;min-width:24px;padding:6px 3px}
 
 /* footer */
-.band-water{background:#16336b url(retro/waves.svg) repeat;background-size:auto 84px;padding:clamp(10px,1.6vw,18px);border:2px solid #000;image-rendering:pixelated}
+.band-water{background:#16336b url(../assets/retro/waves.svg) repeat;background-size:auto 84px;padding:clamp(10px,1.6vw,18px);border:2px solid #000;image-rendering:pixelated}
 .band-water > .win{image-rendering:auto}
-.hr-pebbles{height:12px;background:url(retro/pebble-glyph.svg) repeat-x center;background-size:16px 12px;image-rendering:pixelated;border:0;margin:0}
+.hr-pebbles{height:12px;background:url(../assets/retro/pebble-glyph.svg) repeat-x center;background-size:16px 12px;image-rendering:pixelated;border:0;margin:0}
 .badges{display:grid;grid-template-columns:repeat(2,132px);gap:8px;justify-content:center}
 .b88{width:132px;height:46px;display:flex;flex-direction:column;justify-content:center;align-items:center;font:700 13px/1 var(--px);letter-spacing:.04em;border:2px solid #000;box-shadow:inset 1px 1px rgba(255,255,255,.6),inset -2px -2px rgba(0,0,0,.35)}
 .b88 i{font-style:normal;font-size:17px;margin-top:3px}
@@ -223,13 +223,13 @@ a:visited{color:var(--visited)}
   <main class="page" id="page">
     <header class="banner full">
       <h1 class="vh">Heavy Pockets Co.</h1>
-      <img class="pixel-mark" src="retro/wordmark.svg" alt="" width="1072" height="88">
+      <img class="pixel-mark" src="../assets/retro/wordmark.svg" alt="" width="1072" height="88">
       <p>Head down. Pockets full.</p>
       <p class="offer">Tees and socks for Great Lakes rockhounds. Not on sale yet.</p>
     </header>
 
     <div class="ticker full sunken" role="marquee" aria-label="News ticker">
-      <div class="track"><span>Dry rocks lie <img class="sep" src="retro/pebble-glyph.svg" alt="" width="16" height="12"> Wet the stone below <img class="sep" src="retro/pebble-glyph.svg" alt="" width="16" height="12"> Shirts go on sale after the samples pass <img class="sep" src="retro/pebble-glyph.svg" alt="" width="16" height="12"> Made in Grand Rapids, Michigan <img class="sep" src="retro/pebble-glyph.svg" alt="" width="16" height="12"> Best viewed wet</span><span aria-hidden="true">Dry rocks lie <img class="sep" src="retro/pebble-glyph.svg" alt="" width="16" height="12"> Wet the stone below <img class="sep" src="retro/pebble-glyph.svg" alt="" width="16" height="12"> Shirts go on sale after the samples pass <img class="sep" src="retro/pebble-glyph.svg" alt="" width="16" height="12"> Made in Grand Rapids, Michigan <img class="sep" src="retro/pebble-glyph.svg" alt="" width="16" height="12"> Best viewed wet</span></div>
+      <div class="track"><span>Dry rocks lie <img class="sep" src="../assets/retro/pebble-glyph.svg" alt="" width="16" height="12"> Wet the stone below <img class="sep" src="../assets/retro/pebble-glyph.svg" alt="" width="16" height="12"> Shirts go on sale after the samples pass <img class="sep" src="../assets/retro/pebble-glyph.svg" alt="" width="16" height="12"> Made in Grand Rapids, Michigan <img class="sep" src="../assets/retro/pebble-glyph.svg" alt="" width="16" height="12"> Best viewed wet</span><span aria-hidden="true">Dry rocks lie <img class="sep" src="../assets/retro/pebble-glyph.svg" alt="" width="16" height="12"> Wet the stone below <img class="sep" src="../assets/retro/pebble-glyph.svg" alt="" width="16" height="12"> Shirts go on sale after the samples pass <img class="sep" src="../assets/retro/pebble-glyph.svg" alt="" width="16" height="12"> Made in Grand Rapids, Michigan <img class="sep" src="../assets/retro/pebble-glyph.svg" alt="" width="16" height="12"> Best viewed wet</span></div>
     </div>
 
     <div class="main">
@@ -249,7 +249,7 @@ a:visited{color:var(--visited)}
       </section>
 
       <section class="construction full-row" aria-labelledby="uc-t">
-        <img src="retro/rockhound.svg" alt="" width="96" height="102">
+        <img src="../assets/retro/rockhound.svg" alt="" width="96" height="102">
         <div>
           <h2 id="uc-t">This store is under construction</h2>
           <p>Shirts and socks go on sale after Brian approves the printed samples. Until then, pocket the designs you like and get first dibs.</p>

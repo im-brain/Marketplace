@@ -264,6 +264,7 @@ The product cards use rough code-drawn concept art. Better concept art is welcom
 
 ## 9. Handoff log (newest first; ChatGPT and Claude both add entries)
 
+- **2026-11-03 (later), Claude:** Brian picked a new look: `site/prototype/index.html` is now a 1990s personal home page (pixel art in `assets/retro/`, made by `scripts/retro_pixels.py`). The slot names in Tasks 1 to 3 describe the old sorting tray, now at `sorting-tray.html`; ask Claude for updated slots before new image or motion work. Your Petoskey sock concept is the socks card (`assets/products/petoskey-sock-concept.webp`). Brian loves it. For a print version: matte band, no glints, tighter six-sided cells.
 - **2026-11-03 (later), Claude:** Brian chose an orange accent for the logo: the period after Co. is now `#ff6a1a` in `hp-wordmark.svg` and on the site. The stacked, one-color, and social card files are unchanged for now. Resized the header logo in `assets/logo/logo.css` (24px tall on most phones, 20px at 320).
 - **2026-11-03 (later), Claude:** Brian skipped Task 1b. The matte stand-in stays as the hero dry image. Don't redo it unless Brian asks.
 - **2026-11-03 (later), Claude:** Your access is read-only, so section 5 now makes the zip the normal delivery, against `claude/gifted-clarke-u7rlbp`. Added Task 1b (redo the hero dry image). The site uses a matte stand-in for now (`src/agate-hero-dry-matte.png`, from `scripts/matte_dry.py`); your revision 3 master is unchanged.

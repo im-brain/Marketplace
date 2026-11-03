@@ -1,7 +1,7 @@
 """Draw the retro direction's pixel art as SVG files, all in code.
 
 Run from the repo root:  python3 scripts/retro_pixels.py
-Writes into site/prototype/directions/retro/:
+Writes into site/prototype/assets/retro/:
   pebbles-day.svg    tiled beach wallpaper (sand with pebbles)
   pebbles-night.svg  the same beach at night
   waves.svg          Lake Superior waves for the banner (tiles sideways)
@@ -13,7 +13,7 @@ Nothing here is traced or copied; every pixel is placed by this script.
 import pathlib
 import random
 
-OUT = pathlib.Path(__file__).resolve().parent.parent / "site" / "prototype" / "directions" / "retro"
+OUT = pathlib.Path(__file__).resolve().parent.parent / "site" / "prototype" / "assets" / "retro"
 OUT.mkdir(parents=True, exist_ok=True)
 
 

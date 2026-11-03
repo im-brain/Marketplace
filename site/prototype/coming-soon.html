@@ -28,11 +28,24 @@
 .browser{max-width:960px}
 .page{grid-template-columns:minmax(0,1fr) minmax(0,380px)}
 .construction{height:100%;align-content:center}
+.cs-say h2{grid-column:1 / -1;margin:0}
+.bubble{position:relative;margin:0;background:#fff;color:#111;border:2px solid #000;padding:14px 16px;font:500 20px/1.35 var(--px);letter-spacing:.012em;box-shadow:4px 4px 0 rgba(0,0,0,.35)}
+.bubble b{display:block;font-size:26px;margin-top:6px;color:#0d2668}
+/* a pixel speech tail pointing at the rockhound (drawn in code) */
+.bubble::before{content:"";position:absolute;left:-16px;top:50%;width:18px;height:14px;margin-top:-7px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 6' shape-rendering='crispEdges'%3E%3Crect x='6' y='0' width='1' height='1' fill='%23000'/%3E%3Crect x='7' y='0' width='1' height='1' fill='%23000'/%3E%3Crect x='4' y='1' width='1' height='1' fill='%23000'/%3E%3Crect x='5' y='1' width='1' height='1' fill='%23000'/%3E%3Crect x='6' y='1' width='1' height='1' fill='%23fff'/%3E%3Crect x='7' y='1' width='1' height='1' fill='%23fff'/%3E%3Crect x='2' y='2' width='1' height='1' fill='%23000'/%3E%3Crect x='3' y='2' width='1' height='1' fill='%23000'/%3E%3Crect x='4' y='2' width='1' height='1' fill='%23fff'/%3E%3Crect x='5' y='2' width='1' height='1' fill='%23fff'/%3E%3Crect x='6' y='2' width='1' height='1' fill='%23fff'/%3E%3Crect x='7' y='2' width='1' height='1' fill='%23fff'/%3E%3Crect x='0' y='3' width='1' height='1' fill='%23000'/%3E%3Crect x='1' y='3' width='1' height='1' fill='%23000'/%3E%3Crect x='2' y='3' width='1' height='1' fill='%23fff'/%3E%3Crect x='3' y='3' width='1' height='1' fill='%23fff'/%3E%3Crect x='4' y='3' width='1' height='1' fill='%23fff'/%3E%3Crect x='5' y='3' width='1' height='1' fill='%23fff'/%3E%3Crect x='6' y='3' width='1' height='1' fill='%23fff'/%3E%3Crect x='7' y='3' width='1' height='1' fill='%23fff'/%3E%3Crect x='2' y='4' width='1' height='1' fill='%23000'/%3E%3Crect x='3' y='4' width='1' height='1' fill='%23000'/%3E%3Crect x='4' y='4' width='1' height='1' fill='%23000'/%3E%3Crect x='5' y='4' width='1' height='1' fill='%23000'/%3E%3Crect x='6' y='4' width='1' height='1' fill='%23fff'/%3E%3Crect x='7' y='4' width='1' height='1' fill='%23fff'/%3E%3Crect x='6' y='5' width='1' height='1' fill='%23000'/%3E%3Crect x='7' y='5' width='1' height='1' fill='%23000'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat;image-rendering:pixelated}
+.statusbar{display:flex;padding:3px 3px 0}
+.statusbar span{flex:1;padding:4px 8px;font:400 13px/1.3 var(--px);letter-spacing:.012em;color:var(--ink-soft)}
 .trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 .dibs .status-line[data-state="ok"]{color:var(--ink)}
 .dibs form[aria-busy="true"] .btn.go{opacity:.75;cursor:progress}
 .dibs .fine{margin:12px 0 0}
 @media (max-width:760px){ .page{grid-template-columns:minmax(0,1fr)} }
+@media (max-width:480px){
+  .cs-say{grid-template-columns:auto minmax(0,1fr);align-items:center;gap:14px 20px}
+  .cs-say img{width:60px}
+  .bubble{font-size:17px;padding:10px 12px}
+  .bubble b{font-size:22px}
+}
 </style>
 </head>
 <body>
@@ -53,12 +66,10 @@
       <p class="offer">Tees and socks for Great Lakes rockhounds.</p>
     </header>
 
-    <section class="construction" aria-labelledby="uc-t">
-      <img src="assets/retro/rockhound.svg" alt="" width="96" height="102">
-      <div>
-        <h2 id="uc-t">Coming soon</h2>
-        <p>We're printing samples first. Nothing goes on sale until Brian has the printed shirts and socks in hand and likes them.</p>
-      </div>
+    <section class="construction cs-say" aria-labelledby="uc-t">
+      <h2 id="uc-t">Coming soon</h2>
+      <img src="assets/retro/rockhound.svg" alt="A pixel rockhound, head down, picking up a stone" width="96" height="102">
+      <p class="bubble">Something magnifico is in the tumbler. <b>It'll rock.</b></p>
     </section>
 
     <section class="win raised dibs" id="dibs" aria-labelledby="dibs-t">
@@ -72,10 +83,11 @@
           <button class="btn go" type="submit">Get first dibs</button>
         </form>
         <p class="status-line" role="status" aria-live="polite"></p>
-        <p class="note-small fine">We keep only your email and the date you signed up, never sell or share it, and every email has an unsubscribe link. Want off the list? Email <a href="mailto:hello@heavypocketsco.com">hello@heavypocketsco.com</a>. Hosted by Cloudflare; fonts load from Google Fonts.</p>
+        <p class="note-small fine">We keep only your email and the date you signed up, never sell or share it, and every email has an unsubscribe link. Want off the list? Email <a href="mailto:hello@heavypocketsco.com">hello@heavypocketsco.com</a>.</p>
       </div>
     </section>
   </main>
+  <div class="statusbar"><span class="sunken">Hosted by Cloudflare. Fonts by Google Fonts.</span></div>
 </div>
 
 <script src="coming-soon.js"></script>

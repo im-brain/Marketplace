@@ -1,6 +1,6 @@
 # prompt.md: Paste this into ChatGPT
 
-Brian: for a **new ChatGPT chat**, copy everything inside the first box into ChatGPT (with repo access turned on). To run one task at a time, change the last line, for example "Start with Task 2, the logo." For the **dry agate redo**, use the second box.
+Brian: for a **new ChatGPT chat**, copy everything inside the first box into ChatGPT (with repo access turned on). To run one task at a time, change the last line, for example "Start with Task 2, the logo."
 
 ---
 
@@ -16,20 +16,6 @@ The repo is im-brain/Marketplace. Read from the branch claude/gifted-clarke-u7rl
 5. Deliver each task the way "How to deliver a task (a zip)" in ChatGPT.md section 5 says: one zip per task with files at their repo paths, patches for changed files, and a HANDOFF.md that includes your Handoff log entry. I'll bring it to Claude.
 
 Start with Task 0: write ChatGPT_Review.md with your top 3 improvements, any disagreements, and 2 or 3 directions each for the stone images, the logo, and the animation. Show me those directions before building anything big.
-```
-
----
-
-## Dry agate redo (paste this into ChatGPT)
-
-```
-Next job: Task 1b in ChatGPT.md, the hero agate's dry image. Read it from the branch claude/gifted-clarke-u7rlbp.
-
-Short version: the dry and wet hero images look too alike, so "Dry rocks lie" doesn't land. Edit the revision 3 dry master (site/prototype/assets/stones/src/agate-hero-dry.png). Don't generate a new stone: the outline, bands, cutout, and shadow must not move. Make it matte with no shine, slightly lighter, a little muted, and with a faint dusty film that sits more in the pits and rind than on the open face. Keep the rust color and readable bands, as your revision 3 notes said. Leave the wet image alone.
-
-Claude made a code stand-in for comparison (src/agate-hero-dry-matte.png, made by scripts/matte_dry.py). Beat it. Include a side-by-side PNG: revision 3 dry, Claude's stand-in, your new dry, and the wet.
-
-Deliver one zip as ChatGPT.md section 5 describes. Same rules as always: no em dashes, the Oxford comma, and plain language.
 ```
 
 ---

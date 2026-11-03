@@ -156,7 +156,7 @@ Brian reads this, so plain language and no hype. Under 600 words.
 5. Change the caption `SAMPLE stone, drawn in code` to `SAMPLE stone, AI image`. Keep the SAMPLE labels.
 6. Log every file in `IMAGE_CREDITS.md`.
 
-### Task 1b: Redo the hero agate's dry image (do this next)
+### Task 1b: Redo the hero agate's dry image (skipped by Brian, Nov 3; kept for reference)
 
 **Why:** in revision 3, the dry and wet hero images look too alike, so the "Dry rocks lie" moment is weak. On Nov 3, Claude made a code stand-in (`scripts/matte_dry.py`: color muted to 84%, flatter contrast, softened highlights, and a 6% dusty bloom). It's on the site now. Your edit should beat it.
 
@@ -264,6 +264,7 @@ The product cards use rough code-drawn concept art. Better concept art is welcom
 
 ## 9. Handoff log (newest first; ChatGPT and Claude both add entries)
 
+- **2026-11-03 (later), Claude:** Brian skipped Task 1b. The matte stand-in stays as the hero dry image. Don't redo it unless Brian asks.
 - **2026-11-03 (later), Claude:** Your access is read-only, so section 5 now makes the zip the normal delivery, against `claude/gifted-clarke-u7rlbp`. Added Task 1b (redo the hero dry image). The site uses a matte stand-in for now (`src/agate-hero-dry-matte.png`, from `scripts/matte_dry.py`); your revision 3 master is unchanged.
 - **2026-11-03, Claude:** Merged all four `gpt/*` branches into `claude/gifted-clarke-u7rlbp` and rebuilt the preview. All checks passed (320, 390, and 1440 wide, light and dark, reduced motion, no console errors, header fits at 320). For the next stone round: the dry state should be more matte and muted, because the dry to wet change on the hero is small. The phone wordmark is 18px tall, under the 24px target.
 - **2026-11-02, ChatGPT, Task 1 hero revision 3, `gpt/stones`:** Brian supplied two dry references. Recalibrated the dry state to keep visible rust/red color and fine bands, with varied local wear instead of a uniform chalky coating, large hollows, or flaky crust. Natural chipped fracture areas are allowed; avoid a neat polished display window. Made a new compact dry specimen, then edited that exact source wet with modest color depth, restrained glints, and two tiny beads. Reference photos are not copied, traced, or published. Both WebPs are 1280 x 1024 at quality 82: dry 119,840 bytes, wet 114,524 bytes. Shared cutout/shadow and framing match; alpha channels are identical. Internal feature residual remains median 0.568px and p95 1.414px, so not every internal feature is guaranteed pixel-perfect. Updated PNG masters, raw generated sources, QC, export notes, proof page, and appended credits. Prior revision remains in parent commit 8fbdbbaa11c8d25bbe87e01756a10ed9dfb78939. Index.html, motion.css, scripts, and protected files are unchanged. Rebuilt phone preview: 361,608 bytes. All 12 Chromium homepage cases at 320/390/1440, light/dark, normal/reduced motion passed, plus four proof-page cases. Only the known favicon 404 appeared; no JavaScript exceptions. **Claude:** carry the revised dry-surface guidance into future prompts and keep the fuller gpt/motion CSS when combining. **Next:** Brian checks the still rather regular upper angular band path and lightly frosted red surface. Keep AI SAMPLE labels and accuracy review open before making the remaining stones. Physical iPhone Safari and full WCAG review remain open.

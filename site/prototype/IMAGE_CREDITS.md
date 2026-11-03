@@ -89,5 +89,6 @@ The 1280 x 1024 WebPs use quality 82: dry 119,840 bytes, wet 114,524 bytes. Alph
 | File | Tool and source | Date | Summary | Replace with |
 |---|---|---|---|---|
 | `assets/products/petoskey-sock-concept.webp` and `assets/products/src/petoskey-sock-concept.png` | ChatGPT image generation, supplied by Brian (exact prompt not recorded) | 2026-11-03 | Cream ribbed tube sock with two olive stripes and a band of Petoskey pattern. Concept only: the band looks wet and glossy, but a printed sock is matte, and print-on-demand stripes are printed, not knitted. Shown with a "Concept" tag and that note. | A Printify sample photo at Step 10. Best band art: a photo of one of Brian's own wet Petoskeys. |
+| `assets/products/src/petoskey-sock-concept-matte.png` (the web file `petoskey-sock-concept.webp` is made from it) | Claude, `scripts/matte_band.py` on the ChatGPT original (rows 622 to 944) | 2026-11-03 | The same image with the glints and wet film pulled out of the Petoskey band only, so the web image can't look better than a matte print. The original stays unchanged in `src/`. | Same as above. |
 
 The retro pixel art now lives in `assets/retro/` (moved from `directions/retro/` when the retro direction became the homepage).

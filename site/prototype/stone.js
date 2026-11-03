@@ -42,7 +42,7 @@
       '<radialGradient id="sh' + id + '" cx="38%" cy="30%" r="75%"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></radialGradient>' +
       '<linearGradient id="gl' + id + '" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>' +
       '<pattern id="ht' + id + '" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="none"/><circle cx="2.5" cy="2.5" r="1.25" fill="' + (o.paper || '#f2b705') + '"/></pattern>' +
-      '<filter id="d' + id + '"><feColorMatrix type="saturate" values=".14"/><feComponentTransfer><feFuncR type="linear" slope=".62" intercept=".3"/><feFuncG type="linear" slope=".62" intercept=".29"/><feFuncB type="linear" slope=".62" intercept=".28"/></feComponentTransfer></filter>' +
+      '<filter id="d' + id + '"><feColorMatrix type="saturate" values=".5"/><feComponentTransfer><feFuncR type="linear" slope=".78" intercept=".17"/><feFuncG type="linear" slope=".78" intercept=".16"/><feFuncB type="linear" slope=".78" intercept=".15"/></feComponentTransfer></filter>' +
       '<clipPath id="c' + id + '"><path d="' + blob(rand(o.seed), 200, 165, 140, 0.16, 9) + '"/></clipPath></defs>';
     let g = '<g clip-path="url(#c' + id + ')"><g' + (o.dry ? ' filter="url(#d' + id + ')"' : '') + '><rect width="400" height="320" fill="' + pal[0] + '"/><g filter="url(#w' + id + ')">';
     if (o.kind === 'agate') {
@@ -91,7 +91,7 @@
       }
     }
     g += '</g><rect width="400" height="320" fill="#000" filter="url(#g' + id + ')"/><rect width="400" height="320" fill="url(#sh' + id + ')"/></g>' +
-      (o.dry ? '<rect width="400" height="320" fill="url(#ht' + id + ')" opacity=".22"/>' : '<rect class="gloss" x="-320" y="-40" width="220" height="400" transform="skewX(-18)" fill="url(#gl' + id + ')"/>') + '</g>';
+      (o.dry ? '<rect width="400" height="320" fill="url(#ht' + id + ')" opacity=".14"/>' : '<rect class="gloss" x="-320" y="-40" width="220" height="400" transform="skewX(-18)" fill="url(#gl' + id + ')"/>') + '</g>';
     svg.innerHTML = defs + g;
     svg.setAttribute('xmlns', ns);
   };

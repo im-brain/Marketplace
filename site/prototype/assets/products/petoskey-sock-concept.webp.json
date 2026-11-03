@@ -1,4 +1,4 @@
 {
-  "prompt": "Origin: ChatGPT image generation, supplied by Brian (store owner) on 2026-11-03 as the Petoskey socks concept. Exact prompt not recorded. Concept art only, not a product photo; the printed sock is matte. Logged in site/prototype/IMAGE_CREDITS.md.",
-  "createdAt": "2026-11-03T13:54:36.180Z"
+  "prompt": "Origin: ChatGPT image generation, supplied by Brian (store owner) on 2026-11-03 as the Petoskey socks concept; exact prompt not recorded. This web copy was made by scripts/matte_band.py (rows 622 to 944) from src/petoskey-sock-concept.png, removing glints so it cannot look better than a matte print. Concept art only, not a product photo.",
+  "createdAt": "2026-11-03T14:00:17.146Z"
 }

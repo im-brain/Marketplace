@@ -1,0 +1,4 @@
+/* Loaded letters keeps the header tap target and the approved site colors. */
+.word svg{display:block;width:clamp(130px,16vw,224px);height:auto;overflow:visible;flex:none}
+.lid .word{flex:none}
+@media(max-width:360px){.word svg{width:130px}}

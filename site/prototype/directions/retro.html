@@ -81,6 +81,9 @@ a:visited{color:var(--visited)}
 .page{background:var(--page);color:var(--on-page);padding:clamp(10px,2vw,24px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:clamp(12px,1.8vw,22px);align-items:start}
 .full{grid-column:1 / -1}
 .main,.side{display:grid;gap:clamp(12px,1.8vw,22px);min-width:0}
+.side{position:sticky;top:16px;background:url(retro/pebbles-day.svg) repeat;padding:12px;border:2px solid #000;image-rendering:pixelated}
+.side > *{image-rendering:auto}
+@media (prefers-color-scheme:dark){.side{background-image:url(retro/pebbles-night.svg)}}
 
 .banner{position:relative;background:#16336b url(retro/waves.svg) repeat-x 0 100%;background-size:auto 84px;padding:clamp(16px,2vw,24px) 16px 92px;text-align:center;color:#fff;border:2px solid #000;image-rendering:pixelated}
 .banner .pixel-mark{width:min(620px,90%);height:auto;margin:0 auto;image-rendering:pixelated}
@@ -180,7 +183,7 @@ a:visited{color:var(--visited)}
 @media (max-width:860px){
   .screen{aspect-ratio:5/4}
   .page{grid-template-columns:minmax(0,1fr)}
-  .side{order:2}
+  .side{order:2;position:static}
   .main{display:contents}
   .banner,.ticker{order:-1}.viewer{order:0}.construction{order:1}.finds-win{order:2}.side{order:3}.foot{order:4}
   .menubar .hide-sm{display:none}
@@ -340,7 +343,7 @@ a:visited{color:var(--visited)}
         <span class="b88 b-lie"><b>DRY ROCKS</b><i>LIE</i></span>
         <span class="b88 b-pop"><b>NO</b><i>POP-UPS</i></span>
         <span class="b88 b-head"><b>HEAD</b><i>DOWN</i></span>
-        <span class="b88 b-samp"><b>100%</b><i>SAMPLES</i></span>
+        <span class="b88 b-samp"><b>CONCEPT</b><i>ART</i></span>
       </section>
 
       <section class="win raised" aria-labelledby="wets-t">

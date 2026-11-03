@@ -77,3 +77,9 @@ The 1280 x 1024 WebPs use quality 82: dry 119,840 bytes, wet 114,524 bytes. Alph
 | File | Tool and source | Date | Prompt or process summary | Replace with |
 |---|---|---|---|---|
 | `assets/stones/agate-hero-dry.webp` and `assets/stones/src/agate-hero-dry-matte.png` | Claude, code adjustment with `scripts/matte_dry.py` of ChatGPT's revision 3 dry master (`src/agate-hero-dry.png`, unchanged) | 2026-11-03 | Color muted to 84%, flatter contrast, softened highlights, and a 6% warm gray dusty film, on the stone only. Alpha and geometry are identical to revision 3, so the pair still lines up. | ChatGPT's Task 1b dry edit, or Brian's own photo pair. |
+
+## Retro direction sketch pixel art (Nov 3, 2026)
+
+| File | Tool and source | Date | Summary | Replace with |
+|---|---|---|---|---|
+| `directions/retro/pebbles-day.svg`, `pebbles-night.svg`, `waves.svg`, `rockhound.svg`, `wordmark.svg`, and `pebble-glyph.svg` | Claude, original pixel art placed pixel by pixel in code by `scripts/retro_pixels.py` | 2026-11-03 | Beach pebble wallpaper (day and night), Lake Superior waves, a two-frame rockhound, a hand-drawn pixel "Heavy Pockets Co." wordmark, and a pebble separator. Inspired by 1990s home pages in general; nothing traced, copied, or taken from GeoCities, Windows, Netscape, or Twitter. | Keep, or redraw if Brian picks this direction. |

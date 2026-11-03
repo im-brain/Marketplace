@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heavy Pockets Co. | Home Page (retro sketch)</title>
+<meta name="description" content="Direction sketch: Heavy Pockets Co. as a 1990s personal home page.">
+<link rel="icon" href="../assets/logo/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --px:'Pixelify Sans',system-ui,sans-serif;
+  --serif:'Tinos','Times New Roman',serif;
+  --wall:url(retro/pebbles-day.svg);
+  --page:#0b7a78;         /* the old desktop teal, inside the window */
+  --on-page:#ffffff;
+  --face:#c4c4c4;         /* window gray */
+  --ink:#111111;
+  --ink-soft:#3b3b3b;
+  --hi:#ffffff;--hi2:#e2e2e2;--lo:#7d7d7d;--dk:#0b0b0b;
+  --title-a:#0d2668;--title-b:#3c6fb0;
+  --link:#0000d6;--visited:#5a1a8f;
+  --agate:#b3261e;--agate-hi:#e0665c;--agate-lo:#5e0f0a;--on-agate:#ffffff;
+  --tape:#ffd60a;--tape-ink:#141414;
+  --screen:#0c1220;
+  --odo:#000;--odo-ink:#ffe14d;
+  --on-soft:#b3261e;      /* the flying pocket pebble */
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{
+  --wall:url(retro/pebbles-night.svg);
+  --page:#0b3438;--on-page:#e9f4f3;
+  --face:#2b2d35;--ink:#ececf1;--ink-soft:#b9bcc8;
+  --hi:#5c606e;--hi2:#3e414c;--lo:#15161b;--dk:#000;
+  --title-a:#0a1b4d;--title-b:#2b5592;
+  --link:#9cc2ff;--visited:#d0a6ff;
+  --screen:#05080f;
+  --on-soft:#e0665c;
+  color-scheme:dark;
+}}
+*{box-sizing:border-box}
+html{background:#0b7a78 var(--wall) repeat;scrollbar-color:var(--lo) var(--face)}
+body{font-feature-settings:"liga" 0,"clig" 0,"calt" 0,"dlig" 0;margin:0;padding:clamp(8px,2.4vw,32px);font:400 18px/1.5 var(--serif);color:var(--ink);background:transparent}
+::selection{background:var(--title-a);color:#fff}
+img,svg{display:block}
+.tb,.menubar a,.addr,.ticker,.win h2,.btn,.status,.find h3,.find .meta,.tag,.lick-type,.note-small,.foot nav,.foot .ring,.construction h2,.banner p,.odo b,.viewer .toolbar small{letter-spacing:.012em}
+a{color:var(--link);text-underline-offset:2px}
+a:visited{color:var(--visited)}
+:focus-visible{outline:2px dotted var(--ink);outline-offset:2px}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;z-index:50;background:var(--face);color:var(--ink);padding:10px 14px;font:700 16px var(--px)}
+.skip:focus{top:12px}
+
+/* bevels: the whole world is raised or sunken gray */
+.raised{background:var(--face);box-shadow:inset -1px -1px var(--dk),inset 1px 1px var(--hi),inset -2px -2px var(--lo),inset 2px 2px var(--hi2)}
+.sunken{box-shadow:inset 1px 1px var(--lo),inset -1px -1px var(--hi),inset 2px 2px var(--dk),inset -2px -2px var(--hi2)}
+
+/* ---------- the browser window ---------- */
+.browser{max-width:1180px;margin:0 auto;padding:4px;box-shadow:inset -1px -1px var(--dk),inset 1px 1px var(--hi),inset -2px -2px var(--lo),inset 2px 2px var(--hi2),6px 10px 24px rgba(0,0,0,.35)}
+.tb{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:30px;padding:3px 4px 3px 8px;background:linear-gradient(90deg,var(--title-a),var(--title-b));color:#fff;font:700 15px/1.1 var(--px);letter-spacing:.02em}
+.tb span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ctl{display:flex;gap:2px;flex:none}
+.ctl i{width:22px;height:20px;display:grid;place-items:center}
+.ctl svg{width:10px;height:10px}
+.menubar{display:flex;align-items:center;gap:2px;padding:2px 2px 0;flex-wrap:wrap}
+.menubar a{font:500 17px/1 var(--px);color:var(--ink);text-decoration:none;padding:0 12px;min-height:44px;display:inline-flex;align-items:center;gap:8px}
+.menubar a:hover{background:var(--title-a);color:#fff}
+.menubar a:visited{color:var(--ink)}
+.menubar a:hover:visited{color:#fff}
+.menubar .pocket-link{margin-left:auto}
+.odo{display:inline-flex;gap:2px}
+.odo b{font:700 16px/1 var(--px);background:var(--odo);color:var(--odo-ink);min-width:16px;padding:4px 2px;text-align:center;font-variant-numeric:tabular-nums}
+.addr{display:flex;align-items:center;gap:8px;padding:4px 6px 8px;font:500 15px var(--px)}
+.addr span:last-child{flex:1;min-width:0;background:var(--hi2);color:var(--ink);padding:6px 8px;font:400 15px var(--serif);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+@media (prefers-color-scheme:dark){.addr span:last-child{background:#16171c}}
+
+/* ---------- the page inside the window ---------- */
+.page{background:var(--page);color:var(--on-page);padding:clamp(10px,2vw,24px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:clamp(12px,1.8vw,22px);align-items:start}
+.full{grid-column:1 / -1}
+.main,.side{display:grid;gap:clamp(12px,1.8vw,22px);min-width:0}
+
+.banner{position:relative;background:#16336b url(retro/waves.svg) repeat-x 0 100%;background-size:auto 84px;padding:clamp(16px,2vw,24px) 16px 92px;text-align:center;color:#fff;border:2px solid #000;image-rendering:pixelated}
+.banner .pixel-mark{width:min(620px,90%);height:auto;margin:0 auto;image-rendering:pixelated}
+.banner .offer{margin-top:8px;font:500 clamp(16px,1.8vw,19px)/1.35 var(--px);color:#fff}
+.banner p{margin:10px 0 0;font:700 clamp(18px,2.6vw,26px)/1.1 var(--px);color:var(--odo-ink);text-shadow:2px 2px 0 #000}
+
+.ticker{background:#000;color:var(--odo-ink);font:500 18px/1 var(--px);overflow:hidden;white-space:nowrap;padding:9px 0;border:2px solid #000}
+.ticker .track{display:inline-flex;gap:0;animation:tick 34s linear infinite}
+.ticker .track span{padding-right:3em}
+.ticker .sep{display:inline-block;vertical-align:middle;margin:0 .6em;image-rendering:pixelated}
+.ticker:hover .track,.ticker:focus-within .track{animation-play-state:paused}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* windows inside the page */
+.win{padding:3px;color:var(--ink);min-width:0}
+.win .body{padding:clamp(14px,2vw,22px)}
+.win h2{font:700 clamp(26px,3.2vw,34px)/1.05 var(--px);margin:0 0 10px;letter-spacing:.01em}
+.win p{margin:0 0 12px;max-width:62ch}
+.win p:last-child{margin-bottom:0}
+
+.btn{white-space:nowrap;font:500 17px/1 var(--px);color:var(--ink);background:var(--face);border:0;min-height:44px;padding:0 18px;display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+  box-shadow:inset -1px -1px var(--dk),inset 1px 1px var(--hi),inset -2px -2px var(--lo),inset 2px 2px var(--hi2)}
+.btn:active,.btn[aria-pressed="true"]{box-shadow:inset 1px 1px var(--dk),inset -1px -1px var(--hi),inset 2px 2px var(--lo),inset -2px -2px var(--hi2);padding-top:2px;padding-left:20px;padding-right:16px}
+.btn svg{width:16px;height:16px;flex:none}
+.btn.go{background:var(--agate);color:var(--on-agate);font-weight:700;box-shadow:inset -1px -1px #000,inset 1px 1px var(--agate-hi),inset -2px -2px var(--agate-lo),inset 2px 2px #d4473d}
+.btn.go:active{box-shadow:inset 1px 1px #000,inset -1px -1px var(--agate-hi),inset 2px 2px var(--agate-lo)}
+
+/* Wet Stone Viewer */
+.viewer .toolbar{display:flex;align-items:center;gap:8px;padding:6px;border-bottom:1px solid var(--lo)}
+.viewer .toolbar small{font:400 15px/1.35 var(--px);color:var(--ink-soft)}
+.screen{margin:6px;background:var(--screen);aspect-ratio:2/1;position:relative;overflow:hidden}
+.wet-stone{all:unset;position:absolute;inset:0;cursor:pointer;display:block;-webkit-tap-highlight-color:transparent}
+.wet-stone:focus-visible{outline:2px dotted #fff;outline-offset:-6px}
+.status{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:3px;padding:0 3px 3px;font:400 14px/1.35 var(--px)}
+.status span{padding:6px 8px;min-width:0}
+.status [data-hint]{font-weight:700;text-align:right}
+
+/* under construction */
+.construction{background:var(--face);color:var(--ink);display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px 22px;align-items:center;padding:30px clamp(16px,3vw,32px);position:relative;border:2px solid #000}
+.construction::before,.construction::after{content:"";position:absolute;left:0;right:0;height:14px;background:repeating-linear-gradient(-45deg,var(--tape) 0 14px,var(--tape-ink) 14px 28px)}
+.construction::before{top:0}.construction::after{bottom:0}
+.construction img{width:96px;height:auto;image-rendering:pixelated}
+.construction h2{font:700 clamp(24px,3vw,32px)/1.05 var(--px);margin:0 0 8px}
+.construction p{margin:0;max-width:60ch}
+
+/* the shop, as an old table of finds */
+.finds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.find{background:var(--face);padding:10px;display:flex;flex-direction:column;gap:8px}
+.find .art{background:var(--screen);aspect-ratio:4/3;display:grid;place-items:center;position:relative;overflow:hidden}
+.find h3{font:700 22px/1.1 var(--px);margin:4px 0 0}
+.find .meta{font:400 15px/1.4 var(--px);color:var(--ink-soft);margin:0}
+.find .btn{align-self:flex-start}
+.tag{position:absolute;top:8px;left:8px;font:700 12px/1 var(--px);letter-spacing:.06em;background:var(--tape);color:var(--tape-ink);padding:5px 7px;z-index:2}
+.lick{position:relative;width:min(88%,320px);aspect-ratio:400/320}
+.lick svg{position:absolute;inset:0;width:100%;height:100%}
+.lick .wet{-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 320'%3E%3Cpath d='M150 40c40-8 92-6 118 18 18 18 6 52-6 84-14 40-10 96-36 120-24 22-64 6-74-24-12-36 4-84-2-122-4-28-26-68 0-76z' fill='%23000'/%3E%3C/svg%3E") center/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 320'%3E%3Cpath d='M150 40c40-8 92-6 118 18 18 18 6 52-6 84-14 40-10 96-36 120-24 22-64 6-74-24-12-36 4-84-2-122-4-28-26-68 0-76z' fill='%23000'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.lick-type{position:absolute;left:0;right:0;bottom:-2px;text-align:center;font:700 clamp(22px,3vw,30px)/1 var(--px);color:#fff;text-shadow:2px 2px 0 #000}
+.sock svg{height:78%;width:auto}
+.find.wide{grid-column:1 / -1}
+.find.wide .art{aspect-ratio:auto;padding:18px}
+.chart{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:min(100%,520px)}
+.chart figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px}
+.chart svg{width:100%;aspect-ratio:400/320}
+.chart i{display:block;height:6px;width:60%;background:#8a8f99;opacity:.6}
+.exp svg{width:min(88%,330px)}
+.sticker{background:#fff;color:#11163a;padding:14px 18px;font:700 clamp(20px,2.4vw,26px)/1.05 var(--px);transform:rotate(-4deg);text-align:center;max-width:88%;box-shadow:inset -2px -2px #9aa0b5,3px 4px 0 rgba(0,0,0,.45)}
+.sticker small{display:block;font:500 12px/1.2 var(--px);letter-spacing:.06em;text-transform:uppercase;margin-top:8px;color:#3a4170}
+.note-small{font:400 15px var(--px);color:var(--ink-soft)}
+
+/* first dibs */
+.dibs form{display:grid;gap:10px;margin-top:6px}
+.dibs input{width:100%;min-height:46px;border:0;background:var(--hi2);color:var(--ink);padding:0 12px;font:400 18px var(--serif);
+  box-shadow:inset 1px 1px var(--lo),inset -1px -1px var(--hi),inset 2px 2px var(--dk),inset -2px -2px var(--hi2)}
+@media (prefers-color-scheme:dark){.dibs input{background:#16171c}}
+.dibs input::placeholder{color:var(--ink-soft);opacity:1}
+.dibs .btn.go{justify-content:center}
+.dibs .picked{font-weight:700}
+.dibs .status-line{min-height:1.4em;font-weight:700;margin:8px 0 0}
+.counter{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.counter .odo b{font-size:22px;min-width:24px;padding:6px 3px}
+
+/* footer */
+.band-water{background:#16336b url(retro/waves.svg) repeat;background-size:auto 84px;padding:clamp(10px,1.6vw,18px);border:2px solid #000;image-rendering:pixelated}
+.band-water > .win{image-rendering:auto}
+.hr-pebbles{height:12px;background:url(retro/pebble-glyph.svg) repeat-x center;background-size:16px 12px;image-rendering:pixelated;border:0;margin:0}
+.badges{display:grid;grid-template-columns:repeat(2,132px);gap:8px;justify-content:center}
+.b88{width:132px;height:46px;display:flex;flex-direction:column;justify-content:center;align-items:center;font:700 13px/1 var(--px);letter-spacing:.04em;border:2px solid #000;box-shadow:inset 1px 1px rgba(255,255,255,.6),inset -2px -2px rgba(0,0,0,.35)}
+.b88 i{font-style:normal;font-size:17px;margin-top:3px}
+.b-wet{background:#1f5fbf;color:#fff}.b-mi{background:#ffd60a;color:#141414}.b-lie{background:#b3261e;color:#fff}
+.b-pop{background:#000;color:#3cff6a}.b-head{background:#e6d6b2;color:#3a2a10}.b-samp{background:#7b2fb5;color:#fff}
+.foot{background:var(--face);color:var(--ink);padding:16px clamp(14px,2vw,22px);display:grid;gap:10px;font-size:16px}
+.foot nav{display:flex;flex-wrap:wrap;gap:0 4px;font:500 17px var(--px)}
+.foot nav a{min-height:44px;display:inline-flex;align-items:center;padding:0 8px}
+.foot p{margin:0}
+.foot .ring{font:500 16px var(--px)}
+
+@media (max-width:860px){
+  .screen{aspect-ratio:5/4}
+  .page{grid-template-columns:minmax(0,1fr)}
+  .side{order:2}
+  .main{display:contents}
+  .banner,.ticker{order:-1}.viewer{order:0}.construction{order:1}.finds-win{order:2}.side{order:3}.foot{order:4}
+  .menubar .hide-sm{display:none}
+}
+@media (max-width:480px){
+  .screen{aspect-ratio:5/4}
+  .viewer .toolbar small{font-size:14px;line-height:1.35}
+  .finds{grid-template-columns:minmax(0,1fr)}
+  .construction{grid-template-columns:minmax(0,1fr);justify-items:start}
+  .construction img{width:72px}
+  .status{grid-template-columns:minmax(0,1fr) auto}
+  .status .s-sample{grid-column:1 / -1;order:3}
+  .addr{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .ticker{white-space:normal}
+  .ticker .track{animation:none;display:block;padding:0 12px}
+  .ticker .track span[aria-hidden]{display:none}
+}
+</style>
+<link rel="stylesheet" href="../motion.css">
+</head>
+<body>
+<a class="skip" href="#page">Skip to content</a>
+
+<div class="browser raised">
+  <div class="tb"><span>Heavy Pockets Co. - Home Page</span><span class="ctl" aria-hidden="true"><i class="raised"><svg viewBox="0 0 10 10"><path d="M1 8h6" stroke="currentColor" stroke-width="2" fill="none" style="color:#111"/></svg></i><i class="raised"><svg viewBox="0 0 10 10"><path d="M1 1h8v8H1z M1 2h8" stroke="#111" stroke-width="1.5" fill="none"/></svg></i><i class="raised"><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7" stroke="#111" stroke-width="1.8" fill="none"/></svg></i></span></div>
+  <nav class="menubar" aria-label="Primary">
+    <a href="#shop">Shop</a>
+    <a class="hide-sm" href="#guide">Field Guide</a>
+    <a class="hide-sm" href="#about">Our Story</a>
+    <a href="#dibs">First dibs</a>
+    <a class="pocket-link" href="#dibs" data-pocket-pill><span>Pocket</span><span class="odo" aria-hidden="true"><b>0</b><b>0</b><b data-pocket-count>0</b></span><span class="vh" data-pocket-vh>0 designs pocketed</span></a>
+  </nav>
+  <div class="addr" aria-hidden="true"><span>Address</span><span class="sunken">http://www.heavypocketsco.com/~brian/index.html</span></div>
+
+  <main class="page" id="page">
+    <header class="banner full">
+      <h1 class="vh">Heavy Pockets Co.</h1>
+      <img class="pixel-mark" src="retro/wordmark.svg" alt="" width="1072" height="88">
+      <p>Head down. Pockets full.</p>
+      <p class="offer">Tees and socks for Great Lakes rockhounds. Not on sale yet.</p>
+    </header>
+
+    <div class="ticker full sunken" role="marquee" aria-label="News ticker">
+      <div class="track"><span>Dry rocks lie <img class="sep" src="retro/pebble-glyph.svg" alt="" width="16" height="12"> Wet the stone below <img class="sep" src="retro/pebble-glyph.svg" alt="" width="16" height="12"> Shirts go on sale after the samples pass <img class="sep" src="retro/pebble-glyph.svg" alt="" width="16" height="12"> Made in Grand Rapids, Michigan <img class="sep" src="retro/pebble-glyph.svg" alt="" width="16" height="12"> Best viewed wet</span><span aria-hidden="true">Dry rocks lie <img class="sep" src="retro/pebble-glyph.svg" alt="" width="16" height="12"> Wet the stone below <img class="sep" src="retro/pebble-glyph.svg" alt="" width="16" height="12"> Shirts go on sale after the samples pass <img class="sep" src="retro/pebble-glyph.svg" alt="" width="16" height="12"> Made in Grand Rapids, Michigan <img class="sep" src="retro/pebble-glyph.svg" alt="" width="16" height="12"> Best viewed wet</span></div>
+    </div>
+
+    <div class="main">
+      <section class="win raised viewer" aria-labelledby="viewer-t">
+        <div class="tb"><span id="viewer-t">Wet Stone Viewer 1.0</span><span class="ctl" aria-hidden="true"><i class="raised"><svg viewBox="0 0 10 10"><path d="M1.5 1.5l7 7M8.5 1.5l-7 7" stroke="#111" stroke-width="1.8" fill="none"/></svg></i></span></div>
+        <div class="toolbar">
+          <button class="btn" type="button" data-wet-toggle aria-controls="stone"><svg viewBox="0 0 8 10" aria-hidden="true" shape-rendering="crispEdges"><path d="M3 0h2v2h1v2h1v4H6v1H5v1H3V9H2V8H1V4h1V2h1z" fill="#2b6fd6"/><path d="M2 5h1v2H2z" fill="#cfe2ff"/></svg><span>Wet it</span></button>
+          <small>Rockhounds lick stones. We made a button for it.</small>
+        </div>
+        <div class="screen sunken">
+          <button class="wet-stone" id="stone" type="button" aria-pressed="false" aria-label="Wet this stone to see its true color">
+            <img class="dry" src="../assets/stones/agate-hero-dry.webp" alt="" width="1280" height="1024" decoding="async">
+            <img class="wet" src="../assets/stones/agate-hero-wet.webp" alt="" width="1280" height="1024" decoding="async">
+          </button>
+        </div>
+        <div class="status"><span class="sunken">Dry rocks lie.</span><span class="sunken s-sample">SAMPLE stone, AI image</span><span class="sunken" data-hint data-on="Wet. Now you see the color" data-off="Tap the stone">Tap the stone</span></div>
+      </section>
+
+      <section class="construction full-row" aria-labelledby="uc-t">
+        <img src="retro/rockhound.svg" alt="" width="96" height="102">
+        <div>
+          <h2 id="uc-t">This store is under construction</h2>
+          <p>Shirts and socks go on sale after Brian approves the printed samples. Until then, pocket the designs you like and get first dibs.</p>
+        </div>
+      </section>
+
+      <div class="band-water finds-win"><section class="win raised" id="shop" aria-labelledby="shop-t">
+        <div class="tb"><span>shop.html</span></div>
+        <div class="body">
+          <h2 id="shop-t">The first five finds</h2>
+          <p>Concepts for now. Real photos, prices, and sizes come once samples are approved.</p>
+          <div class="finds">
+            <article class="find sunken wide">
+              <div class="art"><span class="tag">Concept</span><div class="chart" aria-hidden="true">
+        <figure><svg data-seed="11"></svg><i></i></figure>
+        <figure><svg data-seed="5" data-kind="petoskey"></svg><i></i></figure>
+        <figure><svg data-seed="8" data-kind="leland"></svg><i></i></figure>
+        <figure><svg data-seed="9" data-kind="jasper"></svg><i></i></figure>
+        <figure><svg data-seed="4" data-kind="lake"></svg><i></i></figure>
+        <figure><svg data-seed="31"></svg><i></i></figure>
+        <figure><svg data-seed="14" data-kind="jasper"></svg><i></i></figure>
+        <figure><svg data-seed="17" data-kind="lake"></svg><i></i></figure>
+      </div></div>
+              <h3>Great Lakes beach stone chart</h3>
+              <p class="meta">Tee &middot; Price TBD &middot; Concept art, not a product photo</p>
+              <button class="btn pocket" type="button" aria-pressed="false" data-design="Great Lakes beach stone chart"><span>Pocket it</span></button>
+            </article>
+            <article class="find sunken p-lick">
+              <div class="art"><span class="tag">Concept</span><div class="lick" aria-hidden="true">
+                <svg class="dry" data-seed="27" data-dry="1"></svg>
+                <svg class="wet" data-seed="27"></svg>
+                <span class="lick-type">I lick rocks</span>
+              </div></div>
+              <h3 class="vh">I lick rocks</h3>
+              <p class="meta">Tee &middot; Price TBD &middot; One lick, and the true color shows</p>
+              <button class="btn pocket" type="button" aria-pressed="false" data-design="I lick rocks"><span>Pocket it</span></button>
+            </article>
+            <article class="find sunken">
+              <div class="art sock"><span class="tag">Concept</span><svg viewBox="0 0 120 200"><defs><pattern id="sx" width="16" height="27.7" patternUnits="userSpaceOnUse"><rect width="16" height="27.7" fill="#5b5650"/><path d="M8 0l8 4.6v9.2L8 18.5 0 13.8V4.6zM0 13.8v13.9M16 13.8v13.9" fill="none" stroke="#2e2a26" stroke-width="1.6"/><circle cx="8" cy="9.2" r="2" fill="#2e2a26"/></pattern><clipPath id="sk"><path d="M34 6h52v108c0 10 4 16 12 24l10 10c14 14 6 44-20 44H46c-20 0-30-14-30-32 0-12 6-20 12-26 4-4 6-10 6-18z"/></clipPath></defs><rect width="120" height="200" fill="url(#sx)" clip-path="url(#sk)"/><rect x="34" y="6" width="52" height="14" fill="#ff6a1a" clip-path="url(#sk)"/></svg></div>
+              <h3>Petoskey hexagons</h3>
+              <p class="meta">Socks &middot; Price TBD</p>
+              <button class="btn pocket" type="button" aria-pressed="false" data-design="Petoskey hexagon socks"><span>Pocket it</span></button>
+            </article>
+            <article class="find sunken">
+              <div class="art exp" aria-hidden="true"><span class="tag">Concept</span>
+        <svg viewBox="0 0 330 140"><g font-family="Pixelify Sans" font-weight="700" font-size="56" text-anchor="middle" fill="none" stroke-linejoin="round">
+          <text x="165" y="62" stroke="#7a2410" stroke-width="16">Agate</text><text x="165" y="62" stroke="#efc9a4" stroke-width="11">Agate</text><text x="165" y="62" stroke="#b5401a" stroke-width="6">Agate</text><text x="165" y="62" fill="#fbf3ea" stroke="none">Agate</text>
+          <text x="165" y="122" font-size="38" fill="#ffffff" stroke="none">Expectations</text></g></svg>
+      </div>
+              <h3>Agate Expectations</h3>
+              <p class="meta">Tee &middot; Price TBD</p>
+              <button class="btn pocket" type="button" aria-pressed="false" data-design="Agate Expectations"><span>Pocket it</span></button>
+            </article>
+            <article class="find sunken">
+              <div class="art" aria-hidden="true"><span class="tag">Concept</span><div class="sticker">Will brake for agates<small>Lake Superior shoreline traffic</small></div></div>
+              <h3>Will brake for agates</h3>
+              <p class="meta">Tee &middot; Price TBD</p>
+              <button class="btn pocket" type="button" aria-pressed="false" data-design="Will brake for agates"><span>Pocket it</span></button>
+            </article>
+          </div>
+        </div>
+      </section></div>
+    </div>
+
+    <aside class="side" aria-label="First dibs and about">
+      <section class="win raised dibs" id="dibs" aria-labelledby="dibs-t">
+        <div class="tb"><span>firstdibs.txt</span></div>
+        <div class="body">
+          <h2 id="dibs-t">Get first dibs</h2>
+          <p>Leave your email and you hear first when these go on sale. That's the only email you get unless you ask for more.</p>
+          <p class="picked" data-pocket-list aria-live="polite">Nothing pocketed, so we'll tell you about all five.</p>
+          <form id="signup" novalidate>
+            <label><span class="vh">Email address</span><input type="email" name="email" placeholder="you@example.com" autocomplete="email" required></label>
+            <button class="btn go" type="submit">Get first dibs</button>
+          </form>
+          <p class="note-small" style="margin-top:10px">Prototype: signup isn't connected yet, so nothing you enter is saved.</p>
+          <p class="status-line" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="win raised" aria-labelledby="count-t">
+        <div class="body counter">
+          <h2 id="count-t" style="font-size:20px;margin:0">Designs in your pocket</h2>
+          <span class="odo" aria-hidden="true"><b>0</b><b>0</b><b data-pocket-odo>0</b></span>
+        </div>
+      </section>
+
+      <section class="badges" aria-label="Badges">
+        <span class="b88 b-wet"><b>BEST VIEWED</b><i>WET</i></span>
+        <span class="b88 b-mi"><b>MADE IN</b><i>MICHIGAN</i></span>
+        <span class="b88 b-lie"><b>DRY ROCKS</b><i>LIE</i></span>
+        <span class="b88 b-pop"><b>NO</b><i>POP-UPS</i></span>
+        <span class="b88 b-head"><b>HEAD</b><i>DOWN</i></span>
+        <span class="b88 b-samp"><b>100%</b><i>SAMPLES</i></span>
+      </section>
+
+      <section class="win raised" aria-labelledby="wets-t">
+        <div class="body counter">
+          <h2 id="wets-t" style="font-size:20px;margin:0">Stones you wetted</h2>
+          <span class="odo" aria-hidden="true"><b>0</b><b>0</b><b data-wet-odo>0</b></span>
+        </div>
+      </section>
+
+      <section class="win raised" id="about" aria-labelledby="about-t">
+        <div class="body">
+          <h2 id="about-t" style="font-size:24px">About the webmaster</h2>
+          <p>Brian is a rockhound in Grand Rapids, Michigan. Every design starts with a stone, and each one gets a field note on its page.</p>
+          <p><a href="mailto:hello@heavypocketsco.com">Email the webmaster</a></p>
+        </div>
+      </section>
+    </aside>
+
+    <hr class="hr-pebbles full" aria-hidden="true">
+    <footer class="foot raised full" id="guide">
+      <nav aria-label="Footer">
+        <a href="#shop">Shop</a><a href="#page">Field Guide (coming soon)</a><a href="#about">Our Story</a><a href="#dibs">First dibs</a>
+      </nav>
+      <p class="ring">This site belongs to zero webrings (so far).</p>
+      <p>Heavy Pockets Co. &middot; Last updated Nov 3, 2026 &middot; Best viewed wet.</p>
+      <p class="note-small">Direction sketch. Stones are AI and code-drawn samples, products are concepts, and pixel art is drawn in code.</p>
+    </footer>
+  </main>
+</div>
+
+<script src="../stone.js"></script>
+<script>
+(() => {
+  const cs = getComputedStyle(document.documentElement);
+  document.querySelectorAll('svg[data-seed]').forEach(s => drawStone(s, { seed: +s.dataset.seed, kind: s.dataset.kind || 'agate', dry: !!s.dataset.dry, paper: '#0c1220' }));
+
+  // Wet Stone: hover previews on mouse; tap, click, Enter, or Space toggles and stays
+  const hoverable = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const stone = document.getElementById('stone'), hint = document.querySelector('[data-hint]');
+  const tool = document.querySelector('[data-wet-toggle]');
+  if (hoverable) hint.dataset.off = 'Point at the stone';
+  const show = () => {
+    const on = stone.getAttribute('aria-pressed') === 'true';
+    hint.textContent = (on || stone.classList.contains('hover')) ? hint.dataset.on : hint.dataset.off;
+    tool.setAttribute('aria-pressed', on);
+    tool.querySelector('span').textContent = on ? 'Dry it' : 'Wet it';
+  };
+  show();
+  let wets = 0; const wetOdo = document.querySelector('[data-wet-odo]').parentElement;
+  const countWet = () => { wets++; String(Math.min(wets, 999)).padStart(3, '0').split('').forEach((d, i) => wetOdo.children[i].textContent = d); };
+  stone.addEventListener('click', () => { const on = stone.getAttribute('aria-pressed') !== 'true'; stone.setAttribute('aria-pressed', on); stone.classList.remove('hover'); if (on) countWet(); show(); });
+  stone.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse' && stone.getAttribute('aria-pressed') !== 'true') { stone.classList.add('hover'); show(); } });
+  stone.addEventListener('pointerleave', () => { stone.classList.remove('hover'); show(); });
+  tool.addEventListener('click', () => stone.click());
+
+  // pocket: a wish list, not a cart
+  const pocketed = [];
+  const list = n => n.length < 3 ? n.join(' and ') : n.slice(0, -1).join(', ') + ', and ' + n[n.length - 1];
+  const sync = () => {
+    const n = pocketed.length, pad = String(n).padStart(3, '0').split('');
+    document.querySelectorAll('.odo:has([data-pocket-count]), .odo:has([data-pocket-odo])').forEach(o => o.querySelectorAll('b').forEach((b, i) => b.textContent = pad[i]));
+    document.querySelector('[data-pocket-vh]').textContent = n + (n === 1 ? ' design pocketed' : ' designs pocketed');
+    document.querySelector('[data-pocket-list]').textContent = n ? 'In your pocket: ' + list(pocketed) + '.' : "Nothing pocketed, so we'll tell you about all five.";
+  };
+  document.querySelectorAll('.pocket').forEach(b => b.addEventListener('click', () => {
+    const on = b.getAttribute('aria-pressed') !== 'true', name = b.dataset.design;
+    b.setAttribute('aria-pressed', on);
+    b.querySelector('span').textContent = on ? 'In your pocket' : 'Pocket it';
+    if (on) pocketed.push(name); else pocketed.splice(pocketed.indexOf(name), 1);
+    sync();
+  }));
+
+  const form = document.getElementById('signup'), status = form.parentElement.querySelector('.status-line');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    status.textContent = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email.value.trim())
+      ? "Prototype only: nothing was saved. At launch, this saves your email and your pocket."
+      : 'That email address looks incomplete. Check it and try again.';
+  });
+})();
+</script>
+<script src="../motion.js"></script>
+</body>
+</html>

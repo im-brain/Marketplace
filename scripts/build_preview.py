@@ -5,14 +5,20 @@ local script (<script src="x.js"></script>) so the page opens as one file on
 a phone. Images under assets/ are inlined as data: URIs so they show up too.
 
 Run from the repo root:  python3 scripts/build_preview.py
+Or for another page:     python3 scripts/build_preview.py <page.html> <output.html>
+(relative paths, images in CSS url(...), and ../ paths are resolved from the page's folder)
 """
 import base64
 import mimetypes
 import pathlib
 import re
+import sys
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent / "site" / "prototype"
-html = (ROOT / "index.html").read_text()
+PROTO = pathlib.Path(__file__).resolve().parent.parent / "site" / "prototype"
+SRC = pathlib.Path(sys.argv[1]).resolve() if len(sys.argv) > 2 else PROTO / "index.html"
+OUT = pathlib.Path(sys.argv[2]).resolve() if len(sys.argv) > 2 else PROTO / "preview-single-file.html"
+ROOT = SRC.parent
+html = SRC.read_text()
 
 
 def local(path):
@@ -45,6 +51,7 @@ def asset(m):
 
 html = re.sub(r'<link rel="stylesheet" href="([^"]+)">', css, html)
 html = re.sub(r'<script src="([^"]+)"></script>', js, html)
-html = re.sub(r'((?:src|href)=")(assets/[^"]+)(")', asset, html)
-(ROOT / "preview-single-file.html").write_text(html)
-print("wrote", ROOT / "preview-single-file.html", f"({len(html) // 1024} KB)")
+html = re.sub(r'((?:src|href)=")((?:\.\./)*(?:assets|retro)/[^"]+)(")', asset, html)
+html = re.sub(r'(url\()((?:\.\./)*(?:assets|retro)/[^)]+)(\))', asset, html)
+OUT.write_text(html)
+print("wrote", OUT, f"({len(html) // 1024} KB)")

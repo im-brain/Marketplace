@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Heavy Pockets Co. | Hero agate sample</title>
+<link rel="stylesheet" href="../../tokens.css">
+<style>
+*{box-sizing:border-box}body{margin:0;background:var(--tray);color:var(--on);font:16px/1.5 system-ui,sans-serif;padding:clamp(20px,4vw,56px)}main{max-width:1160px;margin:auto}h1{font-size:clamp(28px,4vw,48px);line-height:1.1;margin:12px 0 18px}p{max-width:68ch;color:var(--on-soft)}.sample{display:inline-block;border:2px solid currentColor;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.08em}.compare{display:block;position:relative;width:min(100%,660px);aspect-ratio:5/4;border:0;padding:0;margin:28px auto 16px;background:var(--well);border-radius:22px;box-shadow:inset 0 12px 20px var(--shade);cursor:pointer}.compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.compare .wet{opacity:0;transition:opacity 700ms ease}.compare[aria-pressed="true"] .wet{opacity:1}.hint{text-align:center;margin:0 auto 32px}.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.pair figure{margin:0;min-width:0}.pair img{display:block;width:100%;height:auto;background:var(--well);border-radius:18px}.pair figcaption{padding:12px 0;font-weight:700}a{color:inherit;display:inline-flex;min-height:44px;align-items:center;margin-top:18px}:focus-visible{outline:3px solid var(--on);outline-offset:4px}@media(max-width:420px){.pair{gap:12px}}@media(prefers-reduced-motion:reduce){.compare .wet{transition:none}}
+</style>
+</head>
+<body>
+<main>
+<span class="sample">AI SAMPLE · REVISION 3</span>
+<h1>One stone, dry and wet.</h1>
+<p>This revision uses Brian's dry references to keep clear color and fine bands while reducing the chalky coating and oversized hollows. It is an AI-generated reference, pending his accuracy check. Please check the dry surface and the shape of the banding.</p>
+<button class="compare" type="button" aria-label="Show the wet agate sample" aria-pressed="false">
+<img src="agate-hero-dry.webp" width="1280" height="1024" alt="" decoding="async">
+<img class="wet" src="agate-hero-wet.webp" width="1280" height="1024" alt="" decoding="async">
+</button>
+<p class="hint" role="status">Tap the stone, or use Enter or Space, to compare.</p>
+<div class="pair">
+<figure><img src="agate-hero-dry.webp" width="1280" height="1024" alt="AI SAMPLE: dry Lake Superior agate" decoding="async"><figcaption>Dry sample</figcaption></figure>
+<figure><img src="agate-hero-wet.webp" width="1280" height="1024" alt="AI SAMPLE: wet Lake Superior agate" decoding="async"><figcaption>Wet sample</figcaption></figure>
+</div>
+<a href="../../index.html">Open the homepage prototype</a>
+</main>
+<script>
+const compare=document.querySelector('.compare');
+compare.addEventListener('click',()=>{
+  const wet=compare.getAttribute('aria-pressed')!=='true';
+  compare.setAttribute('aria-pressed',String(wet));
+  compare.setAttribute('aria-label',wet?'Show the dry agate sample':'Show the wet agate sample');
+  document.querySelector('.hint').textContent=wet?'Wet sample. Tap again to show it dry.':'Dry sample. Tap again to show it wet.';
+});
+</script>
+</body>
+</html>

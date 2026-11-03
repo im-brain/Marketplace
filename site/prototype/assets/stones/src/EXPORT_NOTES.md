@@ -15,3 +15,7 @@ The remaining visual concern is the unusually regular upper angular band path. T
 Index.html and motion.css are unchanged in this revision. When combining task branches, retain the fuller gpt/motion CSS and rebuild the phone preview. Physical iPhone Safari and full WCAG review remain open.
 
 Project source: db0a1e13e30ab10991a3f89af2376f539d703384. Revision parent: 8fbdbbaa11c8d25bbe87e01756a10ed9dfb78939.
+
+## Nov 3, 2026: matte stand-in (Claude)
+
+The dry and wet states read too alike on the page, so `agate-hero-dry.webp` is now made from `agate-hero-dry-matte.png`, which `scripts/matte_dry.py` builds from the revision 3 dry master. The master itself is unchanged. The script mutes color to 84%, flattens contrast, softens highlights, and adds a 6% dusty film, on the stone only. It moves no pixels, and the alpha channel is identical (the script checks this). The wet image is unchanged. This is a stand-in until ChatGPT's Task 1b edit or Brian's own photo pair.

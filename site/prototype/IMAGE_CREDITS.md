@@ -71,3 +71,9 @@ This revision uses Brian's latest two dry references to calibrate visible color,
 | `assets/stones/src/generated/agate-hero-wet.png` | Original ChatGPT image edit for revision 3 | 2026-11-02 | Unmodified 1536 x 1024 wet edit of that dry source. | Keep as provenance; not loaded by the page. |
 
 The 1280 x 1024 WebPs use quality 82: dry 119,840 bytes, wet 114,524 bytes. Alpha channels match exactly. Internal feature residual is median 0.568px and p95 1.414px; exact internal pixel identity is not guaranteed. The upper angular band path remains quite regular, and accuracy still needs Brian's review.
+
+## Hero agate dry, matte stand-in (Nov 3, 2026)
+
+| File | Tool and source | Date | Prompt or process summary | Replace with |
+|---|---|---|---|---|
+| `assets/stones/agate-hero-dry.webp` and `assets/stones/src/agate-hero-dry-matte.png` | Claude, code adjustment with `scripts/matte_dry.py` of ChatGPT's revision 3 dry master (`src/agate-hero-dry.png`, unchanged) | 2026-11-03 | Color muted to 84%, flatter contrast, softened highlights, and a 6% warm gray dusty film, on the stone only. Alpha and geometry are identical to revision 3, so the pair still lines up. | ChatGPT's Task 1b dry edit, or Brian's own photo pair. |

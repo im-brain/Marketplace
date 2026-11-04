@@ -27,7 +27,7 @@ a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .skip:focus{top:8px}
 
 /* 1990s application window */
-.window{max-width:1440px;max-width:clamp(640px,(100vh - 230px)*2,1440px);max-width:clamp(640px,(100svh - 230px)*2,1440px);margin:16px auto;background:var(--navy);border:4px solid var(--sand);box-shadow:8px 8px 0 var(--shadow)}
+.window{max-width:1440px;margin:16px auto;background:var(--navy);border:4px solid var(--sand);box-shadow:8px 8px 0 var(--shadow)}
 .titlebar{display:flex;min-width:0;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px 8px 16px;background:var(--rust);font:700 15px/1.2 var(--mono);letter-spacing:.02em}
 .titlebar>span:first-child{min-width:0;overflow-wrap:anywhere}
 .titlebar .ctrls{display:flex;flex:none;gap:6px}
@@ -50,8 +50,18 @@ a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .button:hover{background:var(--rust-hi)}
 .button:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--shadow)}
 
-.note{max-width:1440px;max-width:clamp(640px,(100vh - 230px)*2,1440px);max-width:clamp(640px,(100svh - 230px)*2,1440px);margin:0 auto 16px;padding:10px 16px;background:var(--sand);color:var(--ink);font-size:14px;font-weight:700}
+.note{max-width:1440px;margin:0 auto 16px;padding:10px 16px;background:var(--sand);color:var(--ink);font-size:14px;font-weight:700}
 
+/* Tall screens (laptops, desktops): shrink the window so the whole art and the
+   shop button fit on one screen. Short screens (landscape phones, heavy zoom)
+   can't fit both, so they use the full width and scroll. */
+@media (min-height:600px){
+  .window,.note{max-width:clamp(640px,(100vh - 230px)*2,1440px);max-width:clamp(640px,(100svh - 230px)*2,1440px)}
+}
+@media (max-height:599px) and (orientation:landscape){
+  .window{margin:0;border-width:0 0 2px;box-shadow:none}
+  .note{margin:0}
+}
 /* Phones (narrow and portrait): the approved vertical composition.
    Keep this query identical to the <source media> attributes below. */
 @media (max-width:680px) and (max-aspect-ratio:1/1){

@@ -27,6 +27,7 @@ import argparse
 import base64
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -40,6 +41,18 @@ MAX_VARIANTS = 100  # Printify rejects products with more enabled variants
 
 REQUIRED_FIELDS = ["title", "description", "blueprint_id", "print_provider_id",
                    "variants", "price", "image", "position"]
+
+# Printify product and image ids are 24 letters and digits (0-9, a-f), like
+# "5d39b411749d0a000f30e0f4". Checking the shape stops a typo or a stray
+# "/" from sending a DELETE to the wrong place.
+ID_PATTERN = re.compile(r"^[0-9a-f]{24}$")
+
+
+def check_id(value, what):
+    if not ID_PATTERN.match(value or ""):
+        sys.exit("'%s' does not look like a Printify %s id (24 characters, 0-9 and a-f)."
+                 % (value, what))
+    return value
 
 
 # ---------------------------------------------------------------------------
@@ -90,6 +103,21 @@ def load_design(path):
     missing = [name for name in REQUIRED_FIELDS if name not in design]
     if missing:
         sys.exit("The design file is missing: " + ", ".join(missing))
+
+    # Catch typos early, before anything is uploaded.
+    for name in ("blueprint_id", "print_provider_id"):
+        if not isinstance(design[name], int) or isinstance(design[name], bool):
+            sys.exit("%s must be a whole number, like 12 (no quotes)." % name)
+    if design["variants"] != "all" and not (
+            isinstance(design["variants"], list)
+            and all(isinstance(i, int) and not isinstance(i, bool) for i in design["variants"])):
+        sys.exit('variants must be "all" or a list of whole numbers, like [18540, 18541].')
+    try:
+        price = float(design["price"])
+    except (TypeError, ValueError):
+        sys.exit("price must be a number of dollars, like 27.99.")
+    if not 0 < price < 1000:
+        sys.exit("price %s looks wrong. Use dollars, like 27.99 (not cents)." % design["price"])
 
     # The image path is relative to the design file, so the file can move.
     folder = os.path.dirname(os.path.abspath(path))
@@ -214,6 +242,7 @@ def create(design_path, dry_run):
     upload = call_api("POST", "/uploads/images.json",
                       {"file_name": os.path.basename(design["image"]), "contents": contents})
     print("Uploaded image: id %s" % upload["id"])
+    print("(If the next step fails, hide this image with: --archive-upload %s)" % upload["id"])
 
     # 3. Create the product. This makes a draft in Printify only.
     product = call_api("POST", "/shops/%d/products.json" % SHOP_ID,
@@ -229,17 +258,35 @@ def create(design_path, dry_run):
     print(json.dumps({"product_id": product["id"], "image_id": upload["id"]}))
 
 
-def delete(product_id, yes):
+def delete(product_id, yes, dry_run=False):
+    """Delete one product, after showing its title so the right one goes."""
+    check_id(product_id, "product")
+    # Look the product up first (a read-only GET) and show what it is.
+    product = call_api("GET", "/shops/%d/products/%s.json" % (SHOP_ID, product_id))
+    print("Product %s: \"%s\"" % (product_id, product.get("title", "?")))
+    if product.get("external"):
+        print("WARNING: this product is connected to a sales channel (it was published).")
+    if dry_run:
+        print("DRY RUN: not deleted.")
+        return
     if not yes:
-        answer = input("Delete Printify product %s? This can't be undone. Type yes: " % product_id)
+        try:
+            answer = input("Delete it? This can't be undone. Type yes: ")
+        except EOFError:  # no keyboard, like when Claude runs the script
+            sys.exit("Not deleted. Nobody could answer the question. Check the title above "
+                     "with Brian, then run again with --yes.")
         if answer.strip().lower() != "yes":
             sys.exit("Not deleted.")
     call_api("DELETE", "/shops/%d/products/%s.json" % (SHOP_ID, product_id))
     print("Deleted product %s" % product_id)
 
 
-def archive_upload(image_id):
+def archive_upload(image_id, dry_run=False):
     """Hide an uploaded image from the Printify media library."""
+    check_id(image_id, "image")
+    if dry_run:
+        print("DRY RUN: would archive uploaded image %s" % image_id)
+        return
     call_api("POST", "/uploads/%s/archive.json" % image_id, {})
     print("Archived uploaded image %s" % image_id)
 
@@ -253,10 +300,15 @@ def main():
     parser.add_argument("--yes", action="store_true", help="skip the 'are you sure' question for --delete")
     args = parser.parse_args()
 
+    # Only one job per run, so a delete never rides along with a create.
+    jobs = [bool(args.design), bool(args.delete), bool(args.archive_upload)]
+    if sum(jobs) > 1:
+        sys.exit("Pick one job: a design file, --delete, or --archive-upload.")
+
     if args.delete:
-        delete(args.delete, args.yes)
+        delete(args.delete, args.yes, args.dry_run)
     elif args.archive_upload:
-        archive_upload(args.archive_upload)
+        archive_upload(args.archive_upload, args.dry_run)
     elif args.design:
         create(args.design, args.dry_run)
     else:

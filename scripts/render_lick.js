@@ -11,6 +11,7 @@ const path = require('path');
     // 850 x 1020 CSS px at 5x = 4250 x 5100 px, which fits the 4500 x 5100 front print area.
     const p = await b.newPage({viewport: {width: 850, height: 1020}, deviceScaleFactor: 5});
     await p.goto(`${file}?seed=${seed}&w=850&ink=${ink}&print=1`, {waitUntil: 'networkidle'});
+    await p.evaluate(() => document.fonts.ready);  // wait for the Google Fonts to finish loading
     await p.waitForTimeout(500);
     const out = path.resolve(__dirname, `../designs/lick/i_lick_rocks_${ink}-ink.png`);
     await p.screenshot({path: out, omitBackground: true});

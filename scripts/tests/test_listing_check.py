@@ -39,6 +39,30 @@ class DashTests(unittest.TestCase):
     def test_plain_hyphen_ok(self):
         self.assertEqual(rules("A wipe-clean, UV-glowing tee."), [])
 
+    def test_em_dash_lookalikes_flagged(self):
+        # Horizontal bar and two-em dash look just like an em dash.
+        self.assertEqual(rules("Head down\u2015pockets full."), ["em-dash"])
+        self.assertEqual(rules("Head down\u2e3apockets full."), ["em-dash"])
+
+    def test_html_dash_codes_flagged(self):
+        # Printify descriptions are HTML, so these show up as real dashes.
+        for code in ("&mdash;", "&ndash;", "&#8212;", "&#x2014;", "&MDASH;"):
+            with self.subTest(code=code):
+                self.assertEqual(rules("Head down %s pockets full." % code), ["em-dash"])
+
+    def test_double_hyphen_lopsided_flagged(self):
+        self.assertEqual(rules("Wet it --then look."), ["double-hyphen"])
+        self.assertEqual(rules("Wet it-- then look."), ["double-hyphen"])
+        self.assertEqual(rules("Wet it---then look."), ["double-hyphen"])
+        self.assertEqual(rules("Wet--it--now."), ["double-hyphen", "double-hyphen"])
+
+    def test_spaced_hyphen_flagged(self):
+        self.assertEqual(rules("TEST DRAFT - DELETE ME"), ["spaced-hyphen"])
+
+    def test_spaced_hyphen_ok_cases(self):
+        self.assertEqual(rules("Sizes 3 - 5 only."), [])
+        self.assertEqual(rules("- Soft cotton\n  - Wipe-clean pocket"), [])
+
     def test_line_numbers(self):
         problems = listing_check.check_text("Fine line.\nBad\u2014line.")
         self.assertEqual((problems[0].line, problems[0].col), (2, 4))
@@ -74,6 +98,18 @@ class OxfordCommaTests(unittest.TestCase):
         self.assertEqual(rules("Rinse it, then look and see."), [])
         self.assertEqual(rules("Wet the stone, and you will see the bands."), [])
         self.assertEqual(rules("Rinse it, wait a second and you will see."), [])
+
+    def test_title_case_and_flagged(self):
+        # Product titles are often Title Case, so "And" must count too.
+        self.assertEqual(rules("Agates, Jasper And Chert Tee"), ["oxford-comma"])
+
+    def test_ampersand_flagged(self):
+        self.assertEqual(rules("Michigan, Wisconsin & Minnesota."), ["oxford-comma"])
+        self.assertEqual(rules("Michigan, Wisconsin, & Minnesota."), [])
+
+    def test_contraction_after_and_not_a_list(self):
+        self.assertEqual(rules("Rinse it, wait a second and you'll see."), [])
+        self.assertEqual(rules("Wet it, look close and it\u2019s there."), [])
 
     def test_lists_in_separate_sentences_ok(self):
         self.assertEqual(rules("Wash cold. Dry low and enjoy."), [])

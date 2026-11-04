@@ -2,7 +2,7 @@
 
 Usage: python3 scripts/examples/make_test_image.py
 Needs Pillow (pip install pillow). The picture is transparent with red
-text that says "TEST - DELETE", so nobody mistakes it for real art.
+text that says "TEST" and "DELETE," so nobody mistakes it for real art.
 """
 import os
 

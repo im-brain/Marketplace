@@ -154,13 +154,17 @@ def render(width, height, cell, seed, colorway, supersample=2):
     for poly in cells:
         if poly is None:
             continue
+        # One seed per cell, shared by all its wrapped copies. If each copy got
+        # its own seed, the lines and eye of an edge cell would not line up
+        # where the left and right (or top and bottom) edges meet.
+        cell_seed = rng.random()
         for dx in (-W, 0, W):
             for dy in (-H, 0, H):
                 shifted = poly + np.array([dx, dy])
                 xs, ys = shifted[:, 0], shifted[:, 1]
                 if xs.max() < 0 or xs.min() > W or ys.max() < 0 or ys.min() > H:
                     continue
-                paint_cell(draw, shifted, colors, random.Random(rng.random()), supersample)
+                paint_cell(draw, shifted, colors, random.Random(cell_seed), supersample)
     return img.resize((width, height), Image.LANCZOS)
 
 

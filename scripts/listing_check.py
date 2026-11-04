@@ -5,7 +5,10 @@ Usage:
     cat listing.txt | python3 scripts/listing_check.py
 
 What it looks for:
-  1. Dashes Brian never uses: em dashes, en dashes used as dashes, and " -- ".
+  1. Dashes Brian never uses: em dashes (and look-alikes such as the
+     horizontal bar), en dashes used as dashes, "--", a lone hyphen with
+     spaces around it (" - "), and HTML codes like "&mdash;" (Printify
+     descriptions are HTML, so "&mdash;" shows up as a real em dash).
   2. A missing Oxford comma, like "red, white and blue" (should be
      "red, white, and blue"). This is a guess based on patterns, so it
      explains each match. It tries hard not to cry wolf.
@@ -27,6 +30,12 @@ Problem = namedtuple("Problem", "line col rule message")
 
 EM_DASH = "\u2014"
 EN_DASH = "\u2013"
+# Characters that look like an em dash: figure dash, horizontal bar, two- and
+# three-em dashes, and the small or vertical em dash forms.
+EM_LOOKALIKES = "\u2012\u2015\u2e3a\u2e3b\ufe58\ufe31\ufe32"
+# HTML codes that a web page or Printify turns into an em or en dash.
+DASH_ENTITY = re.compile(r"&(mdash|ndash|horbar);|&#(8212|8211|8213);|&#x(2014|2013|2015);",
+                         re.IGNORECASE)
 
 # Risky words and phrases. Each entry is (pattern, reason shown to Brian).
 # The patterns ignore upper and lower case. \b means "word edge", so
@@ -76,11 +85,15 @@ MAX_ITEM_WORDS = 4
 
 
 def check_dashes(line, line_no):
-    """Find em dashes, en dashes used as dashes, and double hyphens."""
+    """Find em dashes (and look-alikes), en dashes used as dashes, and double hyphens."""
     problems = []
-    for m in re.finditer(EM_DASH, line):
+    for m in re.finditer("[" + EM_DASH + EM_LOOKALIKES + "]", line):
         problems.append(Problem(line_no, m.start() + 1, "em-dash",
                                 "Em dash found. Use a comma, period, colon, or parentheses."))
+    for m in DASH_ENTITY.finditer(line):
+        problems.append(Problem(line_no, m.start() + 1, "em-dash",
+                                "HTML dash code '%s' shows as a dash. Use a comma, period, or colon."
+                                % m.group()))
     for m in re.finditer(EN_DASH, line):
         before = line[m.start() - 1] if m.start() > 0 else ""
         after = line[m.end()] if m.end() < len(line) else ""
@@ -89,10 +102,19 @@ def check_dashes(line, line_no):
             continue
         problems.append(Problem(line_no, m.start() + 1, "en-dash",
                                 "En dash used as a dash. Use a comma, period, or colon."))
-    for m in re.finditer(r"(\s--\s|\w--\w)", line):
-        col = line.index("--", m.start()) + 1
-        problems.append(Problem(line_no, col, "double-hyphen",
+    # Any run of two or more hyphens, like "wet it--then" or "wet it --then".
+    for m in re.finditer(r"-{2,}", line):
+        problems.append(Problem(line_no, m.start() + 1, "double-hyphen",
                                 "'--' used as a dash. Use a comma, period, or colon."))
+    # A lone hyphen with spaces on both sides, like "Test - delete me". That is
+    # a dash in disguise. "3 - 5" (between numbers) is left alone, like en dashes.
+    # A hyphen at the very start of a line (a bullet point) is also fine.
+    for m in re.finditer(r"(?<=(\S))\s+-\s+(?=(\S))", line):
+        if m.group(1).isdigit() and m.group(2).isdigit():
+            continue
+        col = line.index("-", m.start()) + 1
+        problems.append(Problem(line_no, col, "spaced-hyphen",
+                                "' - ' used as a dash. Use a comma, period, or colon."))
     return problems
 
 
@@ -124,14 +146,19 @@ def check_oxford_comma(line, line_no):
             offset += len(piece) + 1  # +1 for the comma we split on
         for i in range(1, len(pieces)):
             piece = pieces[i]
-            m = re.match(r"^\s*(?P<b>[^,]+?)\s+(?P<conj>and|or)\s+(?P<c>\S+)", piece)
+            # IGNORECASE so Title Case product names ("Red, White And Blue") count.
+            # "&" counts too: "Michigan, Wisconsin & Minnesota" still needs the comma.
+            m = re.match(r"^\s*(?P<b>[^,]+?)\s+(?P<conj>and|or|&)\s+(?P<c>\S+)", piece,
+                         flags=re.IGNORECASE)
             if not m:
                 continue
             item_b = words(m.group("b"))
             item_c = words(m.group("c"))
             if not item_b or not item_c or len(item_b) > MAX_ITEM_WORDS:
                 continue
-            if item_b[0] in CLAUSE_WORDS or item_c[0] in CLAUSE_WORDS:
+            # Drop a contraction ending so "you'll" or "it's" counts as "you" or "it".
+            first_c = re.split(r"['\u2019]", item_c[0])[0]
+            if item_b[0] in CLAUSE_WORDS or first_c in CLAUSE_WORDS:
                 continue
             if i == 1:
                 # Only one piece before this one, so it is either list item A

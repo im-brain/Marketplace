@@ -1,39 +1,33 @@
-# Approved Hero — implementation handoff
-Status: approved visual composition, **not deployed**.
+# Heavy Pockets Co. | Approved homepage hero handoff
+Updated November 4, 2026. Status: visual designs approved; **not deployed**.
 
-This handoff concerns the owner's approved image from November 4, 2026, after correcting the puddingstone's jasper inclusion sizes.
+## Approved artwork
+- **Desktop:** Previously approved wide pixel sunset / realistic shoreline composition. Use `hero-approved-desktop.webp` (1774 × 887) with `hero-approved-desktop.jpg` fallback.
+- **Mobile:** Owner-approved standalone vertical composition, **1086 × 1448**, exported as `hero-approved-mobile.webp` and `hero-approved-mobile.jpg`. It contains the complete logo and tagline above a fully visible pixel sunset, lighthouse, lake, and rocky shoreline.
+- **REJECTED previous mobile crop:** The older 900 × 1200 stacked-crop mobile art obscured the sunset and must never be shipped. Do not reintroduce it.
 
-## Produced assets
-- `hero-approved-desktop.webp`: 1774×887, compressed full approved artwork, with baked-in logo and tagline.
-- `hero-approved-mobile.webp`: 900×1200, deliberate two-panel mobile adaptation using only crops from the approved original. The seam between panels is an intentional framed divider, not a photographic blend; review on real devices.
-- `hero-approved-desktop.jpg`: desktop compatibility backup.
-The generated source master remains in the chat environment.
+The complete image binaries are in the downloadable ChatGPT handoff ZIP. They are **not stored in this GitHub repository yet**. Transfer those exact bytes to `brand/v2/hero-assets/` prior to browser preview or deployment. No rights to reuse the users' third-party geological reference photos are assumed. The approved generated compositions are not literal reference-photo copies.
 
-**Note:** The binary images are packaged as a downloadable archive in the ChatGPT conversation. They have not been uploaded to this GitHub repository because the GitHub text-file connection used for this handoff did not transfer image files. Copy these exact files into `brand/v2/hero-assets/` before using in a deployable page. Never silently substitute the older generated scene, and never claim the assets are already committed.
-
-## Required markup
+## Responsive HTML
 ```html
 <picture class="hero-art">
   <source media="(max-width: 680px)" type="image/webp" srcset="/brand/v2/hero-assets/hero-approved-mobile.webp">
+  <source media="(max-width: 680px)" srcset="/brand/v2/hero-assets/hero-approved-mobile.jpg">
   <source type="image/webp" srcset="/brand/v2/hero-assets/hero-approved-desktop.webp">
   <img src="/brand/v2/hero-assets/hero-approved-desktop.jpg"
-       alt="Heavy Pockets Co. pixel-art lakeshore sunset and realistic Great Lakes stones, including a puddingstone, Petoskey stone, and banded agate."
+       alt="Heavy Pockets Co. pixel-art sunset over a Great Lakes shoreline with realistic stones."
        width="1774" height="887" decoding="async" fetchpriority="high">
 </picture>
 ```
-The brand name and tagline are already **baked into the art**. Do not overlay duplicate logo or heading on top of them. For accessible semantics include a separate visually hidden page h1, and use live HTML for real navigation and CTAs.
+The original logo/tagline are baked into both files. Do not overlay duplicate branding on top of them. Include an actual visually-hidden HTML h1 for accessibility. The image is not a checkout button: place a real accessible shopping CTA immediately below.
 
-## UI behavior
-- Full-bleed image inside a dark navy framed hero, `display:block;width:100%;height:auto`. No `object-fit:cover` crop on desktop.
-- On mobile load the art-directed variant at 680px and below. The mobile version is intentionally taller: keep a visible CTA immediately underneath.
-- The image is decorative branding, not proof of merchandise quality. Continue clear product listings, verified prices, and a working checkout when implemented.
-- Avoid overlay text, fake nav bars embedded in art, animations, filters, saturation boosts, or automatic recoloring.
-- Keep a CSS/SVG fallback for development until binary assets are uploaded and verified.
-- Check at 375px and 390px mobile, 768px tablet, and 1440px desktop. Measure load and CLS after integration; include explicit dimensions appropriate for the selected asset.
-- Do not publish until owner accepts real-device crops and the actual files are included in a PR.
+## Responsive guardrails
+- Preserve the full artwork. On desktop and mobile use `width:100%;height:auto;display:block`, not `object-fit:cover` cropping.
+- Do not cover the mobile sunset with a fixed navbar, overlapping card, clipping container, or floating action button.
+- Reserve appropriate aspect ratio per media choice to avoid layout shift. Desktop ~2:1; mobile 3:4. Test 375px, 390px, 768px, 1440px, and 200% zoom.
+- Test iOS Safari, touch targets, contrast, logo legibility, and load performance. Decorative animation must respect reduced motion.
+- Prices, product images, bestseller badges, and geological claims in earlier concept art are illustrative only.
+- Don't merge, deploy, or push to Claude's working branch until the owner approves the actual implementation.
 
-## Rights / source
-The approved illustration was AI-generated in ChatGPT with geological references. Some reference photos are third-party. This approved scene is an original generated composite, not a direct reproduction request; check commercial suitability and accuracy before final launch. Owner photos are not assumed licensed until classified.
-
-## Claude coordination
-After asset transfer, implement on a separate branch and send screenshots/PR. Do not overwrite `step4-overnight-build` or merge to main automatically.
+## Coordination with Claude
+Claude Code can transfer the ZIP image files, integrate the responsive picture into a separate feature branch, test screenshot layouts, and submit a PR. Preserve `step4-overnight-build`, the live page, and project strategy documents until changes are reviewed.

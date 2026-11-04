@@ -203,6 +203,12 @@ tbody th{font-weight:600;color:var(--ink-2);width:18%}
 .pepper img{width:100%;max-width:340px;height:auto;display:block}
 .socks{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .socks img{width:100%;height:auto;display:block;border-radius:3px}
+.made{padding:96px 0 0}
+.made h2{font:700 clamp(32px,4.6vw,52px)/1.05 var(--chrome);letter-spacing:-.025em;margin-bottom:14px}
+.made .note{color:var(--ink-2);max-width:64ch;margin-bottom:28px}
+.made-grid{display:grid;gap:28px}
+@media (min-width:860px){.made-grid{grid-template-columns:1fr 1fr;gap:40px;align-items:end}}
+.made .mock-cap{color:var(--ink-2)}
 .cmp-cards{display:none}
 @media (max-width:699px){.table-scroll{display:none}.cmp-cards{display:grid;gap:14px}}
 .cmp-card{border-top:1.5px solid var(--ink);padding-top:12px}
@@ -487,7 +493,7 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-size:14px;color
         <p class="chip-hint" style="color:var(--ink-2)">The agate O is now 4 angular, off-center bands, so it survives a 1-inch neck print and embroidery, and never looks like a target.</p>
       </div>
       <div>
-        <h3>Ink colors: the wet shades only</h3>
+        <h3>Ink colors: the wet shades only (tap to see dry)</h3>
         <div class="chips" data-chips="e"></div>
         <p class="chip-hint" style="color:var(--ink-2)">On cotton, use at most 3 inks per shirt. Final picks get matched to real Printify blank colors and samples, not screen colors.</p>
       </div>
@@ -506,20 +512,31 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-size:14px;color
     </div>
 
     <div>
-      <h3>Made tonight, in this direction</h3>
+      <h3>On a shirt, a phone, and a stone</h3>
       <div class="mocks">
-        <figure style="margin:0"><div class="pepper"><img src="lick_web.png" alt="I lick rocks shirt art: a dull dry agate with one glossy wet lick showing red bands" width="425" height="510"></div><figcaption class="mock-cap">"I lick rocks," print-ready at 4250 x 5100. Code-drawn dry agate, one wet lick.</figcaption></figure>
+        <figure style="margin:0"><div data-tee="e"></div><figcaption class="mock-cap">Sand tee, pun print in the narrow black sans, agate O label on the hem.</figcaption></figure>
         <figure style="margin:0"><div class="phone"><div class="screen" data-screen="e"></div></div><figcaption class="mock-cap" style="text-align:center">Product page (sample layout)</figcaption></figure>
-        <figure style="margin:0"><div class="socks"><img src="sock_natural_web.jpg" alt="Petoskey stone sock pattern in natural gray" width="360" height="360"><img src="sock_slate_web.jpg" alt="Petoskey stone sock pattern in slate" width="360" height="360"></div><figcaption class="mock-cap" style="text-align:center">Petoskey sock pattern, natural and slate. Tiles seamlessly.</figcaption></figure>
+        <figure style="margin:0"><div data-stone="a" data-seed="29"></div><figcaption class="mock-cap" style="text-align:center">Stone in this palette</figcaption></figure>
       </div>
     </div>
 
     <div class="verdict">
-      <p><b>Best at</b>Fitting the launch five: one chart, three puns, and socks. Each design gets the look it needs, and the label keeps them one brand.</p>
+      <p><b>Best at</b>Fitting the launch five: one chart, three puns, and socks. Each design gets the type it needs, and the label keeps them one brand.</p>
       <p><b>Honest risk</b>More pieces to keep consistent. The rule that holds it together: every product carries the agate O label, and every color is a wet shade.</p>
       <p><b>Where it came from</b>An outside brand review of A to D. It argued against my first pick, D, and I agree.</p>
     </div>
   </div>
+</section>
+
+<section class="made" aria-labelledby="made-h">
+<div class="wrap">
+  <h2 id="made-h">Art made tonight, for any option</h2>
+  <p class="note">These don't depend on the brand choice. Colors and fonts switch to whichever option you pick.</p>
+  <div class="made-grid">
+    <figure style="margin:0"><div class="pepper"><img src="lick_web.png" alt="I lick rocks shirt art: a dull dry agate with one glossy wet lick showing red bands" width="425" height="510"></div><figcaption class="mock-cap">"I lick rocks," print-ready at 4250 x 5100 for dark and light tees. Code-drawn dry agate, one wet lick.</figcaption></figure>
+    <figure style="margin:0"><div class="socks"><img src="sock_natural_web.jpg" alt="Petoskey stone sock pattern in natural gray" width="360" height="360"><img src="sock_slate_web.jpg" alt="Petoskey stone sock pattern in slate" width="360" height="360"></div><figcaption class="mock-cap">Petoskey sock pattern, natural and slate. Print files are made at Printify's exact sock panel size, and the pattern wraps around the leg without a break.</figcaption></figure>
+  </div>
+</div>
 </section>
 
 <div class="wrap">
@@ -561,10 +578,10 @@ var NS="http://www.w3.org/2000/svg", uid=0;
 
 /* ---------- Palettes: [name, dry, wet] ---------- */
 var P={
-  a:[["Superior slate","#6E7A82","#1F2D38"],["Agate red","#C98A72","#9A2E1A"],["Petoskey gray","#B9B4AA","#5E5A52"],["Sand","#E9E1CF","#C2A576"]],
+  a:[["Superior slate","#66727A","#1F2D38"],["Agate red","#C98A72","#9A2E1A"],["Petoskey gray","#B9B4AA","#5E5A52"],["Sand","#E9E1CF","#C2A576"]],
   b:[["Duck canvas","#C49A62","#7A5530"],["Chore navy","#5A6B82","#1C2A3D"],["Agate red","#D0643F","#A1301B"],["Lake Michigan teal","#76A3A0","#1F5653"],["Sand","#EADCC0","#C7A877"]],
   c:[["Dry stone","#C8C4BC","#5A564F"],["Basalt","#8A8782","#262523"],["Sand","#E4DFD5","#B9A98C"],["Agate red, wet only","#C9AFA5","#8E2414","wet"]],
-  e:[["Cream ink","#F2ECDF","#E9E1CF"],["Agate red ink","#C98A72","#9A2E1A"],["Light slate ink","#9AA6AE","#4E5E6A"],["Superior slate","#6E7A82","#1F2D38"],["Lake teal, socks","#76A3A0","#1F5653"]],
+  e:[["Cream ink","#F2ECDF","#E9E1CF","wet"],["Agate red ink","#C98A72","#9A2E1A","wet"],["Light slate ink","#9AA6AE","#4E5E6A","wet"],["Superior slate ink","#66727A","#1F2D38","wet"],["Lake teal, socks","#76A3A0","#1F5653","wet"]],
   d:[["Shoal blue","#CFE3EE","#5E9BC4"],["Contour slate","#7690A1","#1F3A4F"],["Chart magenta","#DE98C2","#A3176E"],["Land buff","#F3E3B3","#C9A54E"],["Sounding gray","#ADAEAC","#4D4F4F"]]
 };
 /* agate band colors per world: rind, bands..., center */
@@ -698,7 +715,7 @@ function streak(svg,mode){
 /* tee mockups */
 var TEE="M96 22 L58 36 L10 78 L40 116 L64 101 L64 300 L236 300 L236 101 L260 116 L290 78 L242 36 L204 22 C194 44 174 54 150 54 C126 54 106 44 96 22 Z";
 function tee(key){
-  var cfg={a:{c:"#2B3640",ink:"#E9E1CF"},b:{c:"#D9CBAE",ink:"#1C2A3D"},c:{c:"#46443F",ink:"#D6D1C8"},d:{c:"#F6F6F3",ink:"#14202A"}}[key];
+  var cfg={e:{c:"#D9CBAE",ink:"#1C2A3D"},a:{c:"#2B3640",ink:"#E9E1CF"},b:{c:"#D9CBAE",ink:"#1C2A3D"},c:{c:"#46443F",ink:"#D6D1C8"},d:{c:"#F6F6F3",ink:"#14202A"}}[key];
   var id="t"+(++uid);
   var svg=el("svg",{viewBox:"0 0 300 310",class:"tee",role:"img","aria-label":"T-shirt mockup for option "+key.toUpperCase()});
   var d=el("defs",{});var sh=el("filter",{id:id+"s",x:"-10%",y:"-10%",width:"120%",height:"130%"});sh.appendChild(el("feDropShadow",{dx:"0",dy:"8",stdDeviation:"8","flood-opacity":".28"}));d.appendChild(sh);
@@ -718,6 +735,10 @@ function tee(key){
   }else if(key==="c"){
     g.appendChild(lickStone(7,108,74,86));
     var t3=el("text",{x:"150",y:"188","text-anchor":"middle","font-family":"Instrument Serif, serif","font-size":"24",fill:cfg.ink});t3.textContent="i lick rocks";g.appendChild(t3);
+  }else if(key==="e"){
+    var tp=el("text",{x:"150",y:"132","text-anchor":"middle",fill:cfg.ink,style:"font-family:Archivo,sans-serif;font-weight:900;font-stretch:68%;font-size:34px;text-transform:uppercase"});tp.textContent="Will brake";g.appendChild(tp);
+    var tq=el("text",{x:"150",y:"164","text-anchor":"middle",fill:cfg.ink,style:"font-family:Archivo,sans-serif;font-weight:900;font-stretch:68%;font-size:34px;text-transform:uppercase"});tq.textContent="for agates";g.appendChild(tq);
+    var eo=agateO(["#1C2A3D","#9A2E1A","#E9E1CF","#1C2A3D"]);var es=el("svg",{x:"212",y:"268",width:"16",height:"16",viewBox:"0 0 100 100"});while(eo.firstChild)es.appendChild(eo.firstChild);g.appendChild(es);
   }else{
     var cm=contour("d");var cs=el("svg",{x:"104",y:"72",width:"92",height:"92",viewBox:"0 0 200 200"});while(cm.firstChild)cs.appendChild(cm.firstChild);g.appendChild(cs);
     var t4=el("text",{x:"150",y:"184","text-anchor":"middle","font-family":"Bodoni Moda, serif","font-size":"14","letter-spacing":"3",fill:cfg.ink});t4.textContent="HEAVY POCKETS CO.";g.appendChild(t4);
@@ -760,7 +781,8 @@ function screen(node,key){
 
 /* luminance for chip text */
 function lum(h){var c=[1,3,5].map(function(i){var v=parseInt(h.substr(i,2),16)/255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4);});return .2126*c[0]+.7152*c[1]+.0722*c[2];}
-function on(h){var L=lum(h);return (L+.05)/(.0122+.05) >= 1.05/(L+.05) ? "#16191B" : "#F7F4EE";}
+function cr(a,b){var x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05);}
+function on(h){return cr(h,"#16191B")>=cr(h,"#F7F4EE")?"#16191B":"#F7F4EE";}
 
 document.querySelectorAll("[data-chips]").forEach(function(box){
   P[box.dataset.chips].forEach(function(p){
@@ -785,11 +807,11 @@ document.querySelectorAll("[data-screen]").forEach(function(n){screen(n,n.datase
 /* comparison: one data source, a table on wide screens and stacked cards on phones */
 var OPTS=["A · Field Notebook","B · Workwear","C · Minimal","D · Lake Chart","E · Hybrid"];
 var ROWS=[
- ["Stands out",["Medium","High","Low, unless the wet effect is moving","Medium","Medium to high (the puns carry it)"]],
- ["Works small",["Good (the agate O)","Very good (the patch)","Good","Fair (rings need simplifying)","Good (the simplified O)"]],
+ ["Stands out",["Medium","High","Low, unless the wet effect is moving","Medium","Medium to high"]],
+ ["Works small",["Good (the agate O)","Very good (the patch)","Good","Fair (rings need simplifying)","Good"]],
  ["Prints well",["Good","Very good","Fair (thin serif)","Poor (hairlines)","Good"]],
  ["Fits the launch five",["Fair","Good","Fair","Fair (puns fight the chart look)","Very good"]],
- ["Shows the wet/dry idea",["Fair","Fair","Very good","Good","Good (lick shirt and site effect)"]],
+ ["Shows the wet/dry idea",["Fair","Fair","Very good","Good","Good"]],
  ["How original",["Medium","Low","High","Medium (topo merch is common)","Medium to high"]],
  ["Biggest risk",["Forgettable","Generic workwear","Too quiet","Fragile in print, reads boating","More pieces to keep consistent"]]
 ];

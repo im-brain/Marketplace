@@ -24,3 +24,9 @@ Updated: November 4, 2026.
 - Working branch: brand/heavy-pockets-v2 (created from step4-overnight-build).
 - Source/implementation branch: step4-overnight-build.
 - No permission to modify existing source HTML or publish a live update based on this proposal alone.
+
+## Owner approval — November 4, 2026: Refined homepage hero
+- **Approved:** The revised generated homepage hero image featuring a retro pixel-art sunset, shoreline water, and photographic-style Great Lakes rocks, after revising the left foreground puddingstone to include red jasper fragments with natural variation in size.
+- **Asset identification:** ChatGPT generated image from the November 4 conversation, filename `same_scene_as_before_but_the_puddingstone_foregr.png` (local chat artifact). This filename is a handoff reference; the image has **not yet been checked into this repository**.
+- **Scope:** Visual approval of this particular hero composition. It does not authorize deployment, checkout integration, publishing, or changes to the current live site.
+- **Implementation requirement:** Preserve the exact approved composition and puddingstone variation when preparing responsive formats. Test mobile crops and logo legibility. Keep third-party reference photographs out of production unless rights have been verified. Before publication, ensure geological and image-quality QA.

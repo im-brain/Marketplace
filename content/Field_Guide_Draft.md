@@ -2,6 +2,31 @@
 
 *Draft for Brian's review, Nov 4, 2026. Not customer-ready until every [VERIFY] tag and every item in "Claims Brian must check" is cleared.*
 
+## Fact-check log (Nov 4, 2026)
+
+Independent check of about 95 claims. nps.gov and michigan.gov were again blocked from this session (DNS refused), so those pages were checked through search excerpts only. mgs.wmich.edu was not attempted after the block. Ordered by risk, customer-facing legal rules first.
+
+**Changes made**
+1. **Minnesota, Hill Annex exception removed.** The Legislature abolished Hill Annex Mine State Park in 2024 and the DNR closed it in June 2024 for mining, so the "posted exception" no longer exists. Also replaced a `www-dev` DNR link with the public URL.
+2. **Pictured Rocks fine corrected.** Each of the four visitors was fined $500 and banned for one year for carving the cliffs; only one paid an extra $250 for taking rocks. Added the U.S. Attorney's press release.
+3. **Pictured Rocks boundary near Grand Marais made specific.** The lakeshore (Grand Sable Dunes, Au Sable Light) lies just west of Grand Marais, so the Whitefish Point to Grand Marais stretch is mostly outside it. Flag reworded.
+4. **Michigan 25-pound rule and bottomlands.** Michigan Public, WGVU, and CBS Detroit all report the limit covers Great Lakes bottomlands, and DNR seized the 93-pound Petoskey stone pulled from Lake Michigan near Northport in 2015. Kept [VERIFY] because no DNR rule text was read.
+5. **Chlorastrolite year resolved.** The statute is Act 56 of 1972, effective March 30, 1973, which explains the 1972 vs 1973 conflict.
+6. **Chlorastrolite range resolved.** Michigan Tech's Keweenaw Geoheritage page names Keweenaw mine rock dumps (Central, Delaware) as sources, so Keweenaw occurrence stands.
+7. **Leland Blue: removed "Frankfort green."** No source ties the name to Leland slag; Frankfort had its own, separate iron furnace.
+8. **Banded iron formation field note rewritten.** At about 1.87 billion years it formed after the Great Oxidation Event (about 2.4 billion years ago), and Canadian Shield pebbles on the same beaches can be older. Age changed to "nearly 2 billion years" because sources range from 1.87 to 2.11 billion.
+9. **Glowing syenite:** source label no longer says "Michigan Tech testing"; reports split between Michigan Tech and Michigan State.
+10. **Spring ice-out tip:** now cited to Michigan Tech geology outreach.
+
+**Remaining [VERIFY] items, by risk**
+1. Pictured Rocks compendium collecting text (not read directly).
+2. Michigan DNR rule text for the 25-pound limit, bottomlands, and the $500 fine (news sources only, consistent).
+3. Wisconsin NR 45.04 after the 2023 rule change: state park status and any weight caps.
+4. Exact Pictured Rocks east boundary on an NPS map.
+5. Thomsonite Beach access (lodging listings describe it as private).
+6. Shoreline walking rights, tribal land, and each national forest's local rule.
+7. Facts: Petoskey on Lake Huron, unakite outside Lake Superior, jasper distribution, float copper on beaches, BIF on Marquette beaches, glow color, beach glass frosting in fresh water, low-sun tip.
+
 **Notes to Brian before you read**
 
 1. **Yooperlite wording.** This guide says "UV-glowing sodalite-bearing syenite" instead of "Yooperlite." Per CLAUDE.md, the YOOPERLITES registration (5750169) was cancelled Nov 28, 2025, and nothing is live as of Nov 1, 2026, but the original owner still uses the name, may hold unregistered rights in Michigan, and could refile. The descriptive name is always safe. If you want the word for search traffic, re-run `scripts/tm_search.py '"yooperlite"'` first and keep it out of shirt art and product titles either way.
@@ -24,7 +49,7 @@ This guide covers the stones you are actually likely to pick up, how to see them
 - **Wet everything.** Walk the wave line, or carry a spray bottle. A stone that looks dull dry and glows wet is worth a second look. Minnesota DNR notes agates look richest in color when wet. ([MN DNR, Agate Hounds](https://files.dnr.state.mn.us/mcvmagazine/young_naturalists/young-naturalists-article/agate_hounds/agate_hounds.pdf))
 - **Put the sun in front of you.** Translucent stones (agate, beach glass, some quartz) light up when the sun shines through them toward you. Minnesota DNR says sunny days are best for seeing translucence. ([MN DNR, Lake Superior Agate](https://www.dnr.state.mn.us/education/geology/digging/agate.html)) The "low sun, early or late" part is standard hunter advice. [VERIFY: no official source found for low-angle sun specifically]
 - **Go after a storm.** Big waves turn over the gravel and leave fresh stones on top. Michigan EGLE gives the same tip for agates. ([EGLE, agate tips, 2024](https://www.michigan.gov/egle/newsroom/mi-environment/2024/07/01/egle-staffer-offers-tips-for-finding-lake-superior-agates))
-- **Spring ice-out.** Shore ice and spring storms rework the beach, so the first warm weeks after the ice leaves can be good. [VERIFY: widely repeated by hunters; no geological survey source found]
+- **Spring ice-out.** Shore ice and spring storms rework the beach, so the first warm weeks after the ice leaves can be good. Michigan Tech geologists say winter ice pulls stones from deeper water onto the shore. ([Michigan Tech Geology, outreach blog](https://blogs.mtu.edu/geo/category/outreach/page/3/))
 - **Look for the right gravel.** Pick beaches with lots of exposed pebbles, not pure sand. ([EGLE, agate tips, 2024](https://www.michigan.gov/egle/newsroom/mi-environment/2024/07/01/egle-staffer-offers-tips-for-finding-lake-superior-agates))
 - **For the glowing stones, go at night** with a 365 nm UV flashlight, UV-blocking glasses, and a normal flashlight for the walk back. ([EGLE, glowing stone tips, 2023](https://www.michigan.gov/egle/newsroom/mi-environment/2023/06/05/egle-rockhound-offers-tips-to-find-elusive-glowing-yooperlites))
 
@@ -107,7 +132,7 @@ Sources:
 
 **What it is:** Leland Blue is not a rock. It is glassy waste (slag) from an iron smelting furnace that the Leland Lake Superior Iron Company ran in Leland, Michigan, starting in 1870, and the slag was dumped along the Lake Michigan shore.
 
-**Wet vs dry:** Dry, it can look dull blue-gray. Wet, it shows strong blues, purples, grays, and greens (locally called "Frankfort green"), often with swirls. Look for gas bubbles of mixed sizes, glassy breaks, rusty spots, and pale specks: all signs of something that was once molten in a furnace.
+**Wet vs dry:** Dry, it can look dull blue-gray. Wet, it shows strong blues, purples, grays, and greens often with swirls. Look for gas bubbles of mixed sizes, glassy breaks, rusty spots, and pale specks: all signs of something that was once molten in a furnace.
 
 **Where:** Lake Michigan beaches around Leland in Leelanau County.
 
@@ -121,7 +146,7 @@ Sources:
 - [Fishtown Preservation, Leland Blue and the Iron Works history (2024)](https://fishtownmi.org/2024/04/leland-blue-and-the-iron-works-history)
 - [9&10 News, Leland Blue: manmade, not quite on purpose (2023)](https://www.9and10news.com/2023/07/14/leland-blue-manmade-not-quite-on-purpose-and-in-limited-supply/)
 - [Washington University, Glassy and vesicular = slag](https://sites.wustl.edu/meteoritesite/items/slag) (general slag ID)
-- [VERIFY: closing year of the furnace; sources give 1884 and 1885]
+- [VERIFY: closing year of the furnace. Fishtown Preservation says it ran 1870 to 1884; others say it was sold in 1884 and the buyer failed in 1885]
 
 ---
 
@@ -137,12 +162,12 @@ Sources:
 
 **Field note:** A plain gray rock with a secret, revealed only to people who walk the beach at midnight with a flashlight.
 
-*Collecting flag: part of this shoreline is inside Pictured Rocks National Lakeshore, where taking stones is illegal. Know the boundary before you rake.* [VERIFY: confirm the lakeshore boundary near Grand Marais]
+*Collecting flag: Pictured Rocks National Lakeshore begins just west of Grand Marais (the Grand Sable Dunes and Au Sable Light are inside it), and taking stones there is illegal. Know the boundary before you rake.* [VERIFY: confirm the exact east boundary on an NPS map]
 
 Sources:
 - [Michigan EGLE, tips to find glowing sodalite syenite (2023)](https://www.michigan.gov/egle/newsroom/mi-environment/2023/06/05/egle-rockhound-offers-tips-to-find-elusive-glowing-yooperlites)
-- [Mental Floss, Michigan rock hunter discovers glowing stones (2018)](https://mentalfloss.com/article/556551/michigan-rock-hunter-discovers-glowing-yooperlites-lake-superior-beach) (news account of the Michigan Tech testing)
-- [VERIFY: glow color; "orange-yellow" is the common description but I found no survey source stating it]
+- [Mental Floss, Michigan rock hunter discovers glowing stones (2018)](https://mentalfloss.com/article/556551/michigan-rock-hunter-discovers-glowing-yooperlites-lake-superior-beach) (news account of the 2017 find; reports differ on whether Michigan Tech or Michigan State arranged the testing)
+- [VERIFY: glow color; "orange-yellow" matches news and hobby sources, but I found no survey source stating it]
 
 ---
 
@@ -200,8 +225,8 @@ Sources:
 - [NPS Isle Royale, Laws and Policies](https://www.nps.gov/isro/learn/management/lawsandpolicies.htm)
 - [NPS Isle Royale, Geologic Resource Evaluation Report (2008, PDF)](https://www.nps.gov/isro/learn/management/upload/ISRO_Web_Accessible_Geologic_Resource_Evaluation_2008.pdf)
 - [Grand Rapids Public Museum, Michigan's State Gemstone](https://www.grpm.org/blog/michigans-state-gemstone/)
-- [VERIFY: designation year. Most sources say Act 56 of 1972; GRPM and one history site say 1973]
-- [VERIFY: the NPS report says the variety is thought to occur only on Isle Royale, which conflicts with many sources reporting Keweenaw finds. Ask a Michigan Tech or MGS geologist]
+- [Michigan Legislature, Act 56 of 1972 (PDF)](https://legislature.mi.gov/documents/mcl/pdf/MCL-ACT-56-OF-1972.pdf) (act of 1972, effective March 30, 1973, which is why some sources say 1973)
+- [Michigan Tech Keweenaw Geoheritage, Greenstone](https://www.geo.mtu.edu/KeweenawGeoheritage/BeachStones/Greenstone.html) (Keweenaw mine rock dumps such as Central and Delaware)
 
 ---
 
@@ -281,7 +306,7 @@ Sources:
 
 ### 13. Banded iron formation (jaspilite)
 
-**What it is:** Roughly 1.9 billion-year-old sedimentary rock of alternating red jasper and silvery-black hematite layers from Michigan's iron ranges, such as the Negaunee Iron Formation at Jasper Knob in Ishpeming.
+**What it is:** Nearly 2-billion-year-old sedimentary rock of alternating red jasper and silvery-black hematite layers from Michigan's iron ranges, such as the Negaunee Iron Formation at Jasper Knob in Ishpeming.
 
 **Wet vs dry:** Dry, the hematite bands look dull gray-black and the jasper looks brick red. Wet, the jasper goes blood red and the hematite flashes metallic silver, so the stripes look painted.
 
@@ -289,13 +314,13 @@ Sources:
 
 **Lookalike:** Banded agate. Agate bands curve in rings around a center and pass light; iron formation bands run flat and parallel (or tightly folded), are opaque, and the stone feels heavy for its size. Hematite leaves a red-brown streak on unglazed tile.
 
-**Field note:** Rust from before there was much oxygen to rust with. Older than almost anything else on the beach.
+**Field note:** Rust that is roughly 800 million years older than the agates.
 
 Sources:
 - [Grand Valley State University, Jasper's Knob tour stop](https://faculty.gvsu.edu/PETERSVI/MarquetteArea/tour/MQ7.htm)
 - [Michigan State University EES, Banded Iron Formation](https://ees.natsci.msu.edu/about/bif.aspx)
 - [Northwestern University, Negaunee Iron Formation field trip](https://www.earth.northwestern.edu/public/craig/teach/C02-0/jasper.html)
-- [VERIFY: "before much oxygen" field note simplifies a debated topic; consider cutting it]
+- [VERIFY: age. Published dates for the Negaunee range from about 1.87 to 2.11 billion years; the field note assumes about 1.87 to 1.9 billion against about 1.1 billion for the agates]
 
 ---
 
@@ -344,7 +369,7 @@ Rules change. Check the managing agency before you pocket anything. **This secti
 Federal rules (36 CFR 2.1) generally prohibit removing rocks, minerals, and fossils from National Park Service land. That covers:
 
 - **Sleeping Bear Dunes National Lakeshore (MI):** NPS says removing stones from the lakeshore is illegal under federal law. Petoskey stones stay. ([NPS, Peterson Beach](https://www.nps.gov/places/000/peterson-beach.htm); [NPS Sleeping Bear, Beaches](https://www.nps.gov/slbe/learn/nature/beaches.htm))
-- **Pictured Rocks National Lakeshore (MI):** Collecting is prohibited. Visitors who carved the cliffs and took over 100 pounds of rock in 2025 were each fined and banned for a year (reported March 2026). ([NPS Pictured Rocks, Superintendent's Compendium](https://www.nps.gov/piro/learn/management/suptcompendium.htm); [Upper Michigan's Source, Mar 2026](https://uppermichiganssource.com/2026/03/11/people-caught-vandalising-pictured-rocks-national-lakeshore-fined-banished-one-year)) [VERIFY: I could not read the compendium's collecting section directly]
+- **Pictured Rocks National Lakeshore (MI):** Collecting is prohibited. Four visitors who carved the cliffs in 2025 and gathered over 100 pounds of rock were each fined $500 and banned for a year, and one paid another $250 for taking the rocks (announced March 2026). ([NPS Pictured Rocks, Superintendent's Compendium](https://www.nps.gov/piro/learn/management/suptcompendium.htm); [U.S. Attorney, W.D. Mich., Mar 11, 2026](https://www.justice.gov/usao-wdmi/pr/2026_0311_Pictured_Rocks_PR); [Upper Michigan's Source, Mar 2026](https://uppermichiganssource.com/2026/03/11/people-caught-vandalising-pictured-rocks-national-lakeshore-fined-banished-one-year)) [VERIFY: I could not read the compendium's collecting section directly]
 - **Isle Royale National Park (MI):** No collecting of greenstones, agates, datolite, or other minerals, including those in the Lake Superior waters of the park. ([NPS Isle Royale, Laws and Policies](https://www.nps.gov/isro/learn/management/lawsandpolicies.htm))
 - **Apostle Islands National Lakeshore (WI):** Rocks, driftwood, and other natural objects may not be collected. ([NPS Apostle Islands, Laws and Policies](https://www.nps.gov/apis/learn/management/lawsandpolicies.htm))
 - **General NPS policy:** ([NPS, Geology Permits](https://www.nps.gov/subjects/geology/permits.htm); [NPS Rock Hunting Guidance, PDF](https://www.nps.gov/subjects/policy/upload/Rock_Hunting_Guidance.pdf))
@@ -353,12 +378,12 @@ Federal rules (36 CFR 2.1) generally prohibit removing rocks, minerals, and foss
 
 - **Limit: 25 pounds per person per year, total**, of rocks, mineral specimens, and invertebrate fossils (gold-bearing material excluded), for personal, non-commercial use, from state-owned land. It is a yearly total across all trips, not per visit. ([Michigan DNR, Administrative Rules for Parks and Recreation Areas, PDF](https://www.michigan.gov/dnr/-/media/Project/Websites/dnr/Documents/PRD/parks/AdministrativeRules-ParksRecAreas.pdf); [Michigan EGLE, Rock and mineral identification](https://www.michigan.gov/egle/public/learn/geology/rockhounding); [Michigan EGLE, Michigan fossils](https://www.michigan.gov/egle/public/learn/geology/rockhounding/fossils))
 - Local parks and townships can set stricter rules. Read the posted signs.
-- Penalty: a civil fine of up to $500 is widely reported. [VERIFY: secondary sources only]
-- Whether the 25-pound limit covers Great Lakes bottomlands (stones underwater) is reported by Michigan Public but not confirmed from DNR or EGLE text. [VERIFY] ([Michigan Public, 2015](https://michiganpublic.org/offbeat/2015-09-25/petoskey-stone-pulled-out-of-cold-lake-might-land-guy-in-hot-water))
+- Penalty: a civil fine of up to $500 is widely reported. [VERIFY: secondary sources only (Michigan Public, WOOD TV)]
+- The 25-pound limit is reported to cover Great Lakes bottomlands (stones underwater), and the DNR seized a 93-pound Petoskey stone pulled from Lake Michigan near Northport in 2015. [VERIFY: confirm in DNR or EGLE rule text] ([Michigan Public, 2015](https://michiganpublic.org/offbeat/2015-09-25/petoskey-stone-pulled-out-of-cold-lake-might-land-guy-in-hot-water); [CBS Detroit, state confiscates stone](https://cbsnews.com/detroit/news/state-confiscates-huge-petoskey-stone-man-pulled-from-lake))
 
 ### Minnesota
 
-- **No rock collecting in Minnesota state parks, state recreation areas, or Scientific and Natural Areas**, which includes North Shore parks like Gooseberry Falls. Hill Annex Mine State Park has a posted exception. ([MN DNR, Recreational Geology](https://dnr.state.mn.us/geologyrec/index.html); [MN DNR, Geology in state parks](https://www-dev.dnr.state.mn.us/education/geology/digging/stateparks.html))
+- **No rock collecting in Minnesota state parks, state recreation areas, or Scientific and Natural Areas**, which includes North Shore parks like Gooseberry Falls. (The old Hill Annex Mine State Park exception is gone: the park was abolished in 2024 and closed for mining.) ([MN DNR, Recreational Geology](https://dnr.state.mn.us/geologyrec/index.html); [MN DNR, Geology in state parks](https://www.dnr.state.mn.us/education/geology/digging/stateparks.html); [MN DNR, Hill Annex permanently closed, June 2024](https://dnr.state.mn.us/news/2024/06/13/hill-annex-mine-state-park-permanently-closed-allow-mining-resume))
 
 ### Wisconsin
 
@@ -384,15 +409,15 @@ Legal and safety (highest priority, customer-facing):
 - [ ] Michigan 25-pound rule: confirm the current DNR rule text and whether it covers Great Lakes bottomlands.
 - [ ] Michigan $500 fine figure (secondary sources only).
 - [ ] Wisconsin NR 45.04: current status of state parks and any weight limits.
-- [ ] Minnesota DNR: confirm the state park ban still stands, and the Hill Annex exception.
-- [ ] Pictured Rocks boundary near Grand Marais for the glowing syenite entry.
+- [x] Minnesota DNR: state park ban confirmed; Hill Annex exception removed (park abolished 2024).
+- [ ] Pictured Rocks boundary near Grand Marais for the glowing syenite entry (now worded as "begins just west of Grand Marais"; confirm on an NPS map).
 - [ ] Thomsonite Beach access (largely private).
 - [ ] Shoreline walking rights in all three states, and tribal land wording.
 - [ ] National forest rules for each named forest.
 
 Facts and dates:
-- [ ] Chlorastrolite state gem year: 1972 (Act 56) vs 1973.
-- [ ] Chlorastrolite range: Isle Royale only (NPS report) vs Isle Royale plus Keweenaw (most sources).
+- [x] Chlorastrolite state gem year: Act 56 of 1972, effective March 30, 1973. Text says 1972.
+- [x] Chlorastrolite range: Keweenaw confirmed by Michigan Tech Keweenaw Geoheritage (mine rock dumps).
 - [ ] Petoskey age: NPS says about 350 million years; U of M places the Traverse Group at about 393 to 382 million years. I avoided a number in the entry; pick one with a source if you want it.
 - [ ] Species spelling: *Hexagonaria percarinata* (NPS) vs *percarinatum* (U of M page title).
 - [ ] Petoskey stones on Lake Huron near Alpena.
@@ -401,10 +426,10 @@ Facts and dates:
 - [ ] Unakite on Lake Huron and Lake Michigan beaches.
 - [ ] Jasper beach distribution.
 - [ ] Epidote hardness (6 to 7) and chlorite comparison.
-- [ ] Banded iron formation age (about 1.87 to 1.9 billion years) and beach occurrence near Marquette.
+- [ ] Banded iron formation age (sources range from about 1.87 to 2.11 billion years; text now says "nearly 2 billion") and beach occurrence near Marquette.
 - [ ] Float copper on beaches (sources cover glacial deposits, not beaches).
 - [ ] Beach glass frosting in fresh water (main study is ocean glass).
-- [ ] How-to tips: low sun and spring ice-out lack official sources.
+- [ ] How-to tips: low sun lacks an official source (spring ice-out now cited to Michigan Tech).
 
 Brand and IP:
 - [ ] Keep "UV-glowing sodalite-bearing syenite" wording; re-run the trademark check before ever using the Y-word.

@@ -30,3 +30,10 @@ Updated: November 4, 2026.
 - **Asset identification:** ChatGPT generated image from the November 4 conversation, filename `same_scene_as_before_but_the_puddingstone_foregr.png` (local chat artifact). This filename is a handoff reference; the image has **not yet been checked into this repository**.
 - **Scope:** Visual approval of this particular hero composition. It does not authorize deployment, checkout integration, publishing, or changes to the current live site.
 - **Implementation requirement:** Preserve the exact approved composition and puddingstone variation when preparing responsive formats. Test mobile crops and logo legibility. Keep third-party reference photographs out of production unless rights have been verified. Before publication, ensure geological and image-quality QA.
+
+## Owner approval — November 4, 2026: Final mobile hero composition
+- **Approved:** A newly composed *vertical* mobile hero image with the full Heavy Pockets Co. logo and tagline at the top, the sunset fully visible below, and realistic shoreline stones at the bottom.
+- **Supersedes:** The previous mobile image assembled from two stacked crops. That version obscured the sunset and must not be used.
+- **Source asset:** ChatGPT generation `a_vertical_mobile_friendly_version_of_the_heavy_po.png`, 1086 × 1448 pixels. Optimized exports are `hero-approved-mobile.webp` and `hero-approved-mobile.jpg` in the accompanying handoff archive.
+- **Preserve:** The approved desktop hero remains unchanged. Do not substitute a crop of the desktop artwork for the approved mobile composition.
+- **Status:** Visual artwork approved, **not** approval to merge, deploy, or alter the live site. Test final real-device layout before publishing.

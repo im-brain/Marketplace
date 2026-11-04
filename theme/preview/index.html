@@ -635,9 +635,12 @@ function stone(kind){
   if(kind==="agate"){
     g.appendChild(el("rect",{width:"200",height:"180",fill:"#6E3424"}));
     var base=[];for(var i=0;i<8;i++){var th=i/8*Math.PI*2+.4;base.push([Math.cos(th)*(1+(r()-.5)*.3),Math.sin(th)*(1+(r()-.5)*.3)*.86]);}
-    var cols=["#9A2E1A","#EDE3D2","#B5532F","#F1E7DA","#7E2616","#D9B99B","#C46A3E","#EDE3D2","#9A2E1A"];
-    for(var k=0;k<9;k++){var s=.86-k*.085,cx=112+18*(1-s),cy=86-10*(1-s);
-      g.appendChild(el("path",{d:roundPoly(base.map(function(p){return[cx+p[0]*70*s,cy+p[1]*70*s];})),fill:cols[k]}));}
+    /* uneven bands like real fortification agate: thick red bands between clusters of hairline bands */
+    var dk=["#9A2E1A","#B5532F","#7E2616","#C46A3E"],lt=["#EDE3D2","#F1E7DA","#D9B99B"],s=.9,k=0;
+    while(s>.2&&k<60){
+      if(r()<.4){var cx=112+22*(1-s),cy=86-12*(1-s);g.appendChild(el("path",{d:roundPoly(base.map(function(p){return[cx+p[0]*70*s,cy+p[1]*70*s];})),fill:dk[k%4]}));s-=.06+r()*.07;k++;}
+      else{for(var j=0;j<4+Math.floor(r()*4)&&s>.2;j++){var cx2=112+22*(1-s),cy2=86-12*(1-s);g.appendChild(el("path",{d:roundPoly(base.map(function(p){return[cx2+p[0]*70*s,cy2+p[1]*70*s];})),fill:j%2?lt[j%3]:dk[(k+j)%4]}));s-=.012+r()*.012;}k++;}
+    }
     g.appendChild(el("path",{d:roundPoly(base.map(function(p){return[128+p[0]*10,78+p[1]*10];})),fill:"#DCD6CB"}));
   }else if(kind==="petoskey"){
     g.appendChild(el("rect",{width:"200",height:"180",fill:"#A8A194"}));

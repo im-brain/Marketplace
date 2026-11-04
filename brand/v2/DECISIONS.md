@@ -37,3 +37,10 @@ Updated: November 4, 2026.
 - **Source asset:** ChatGPT generation `a_vertical_mobile_friendly_version_of_the_heavy_po.png`, 1086 × 1448 pixels. Optimized exports are `hero-approved-mobile.webp` and `hero-approved-mobile.jpg` in the accompanying handoff archive.
 - **Preserve:** The approved desktop hero remains unchanged. Do not substitute a crop of the desktop artwork for the approved mobile composition.
 - **Status:** Visual artwork approved, **not** approval to merge, deploy, or alter the live site. Test final real-device layout before publishing.
+
+## Implementation, November 4, 2026 (Claude Code): approved hero integrated for review
+- Exact approved WebP and JPEG bytes committed to `brand/v2/hero-assets/` (checksums in its README).
+- `brand/v2/hero-preview/index.html` rebuilt as the responsive homepage hero: full art, no cropping, no overlaid branding, visually hidden h1, real nav and shop button below the art, zero layout shift.
+- Tested at 375, 390, 768, 1440, and 200% zoom (screenshots in `brand/v2/hero-preview/qa/`).
+- `theme/preview/index.html` (Step 11 store preview) left unchanged; nav and button link to it.
+- **Still needs owner approval** before merge or any deployment.

@@ -4,20 +4,18 @@
 
 ## Ground rules for every video
 
-1. **Hands and products only.** One person, one phone, a kitchen table or a beach. An overhead phone clamp or a cheap tripod does most of the work.
+1. **Hands and products only.** A kitchen table or a beach is the whole set, and one person with one phone films it. An overhead phone clamp or a cheap tripod does most of the work.
 2. **Truth first.** Facts come only from the parts of `content/Field_Guide_Draft.md` that are not marked [VERIFY]. If a fact gets a [VERIFY] tag later, pull it from any unposted video.
 3. **The shirt is a print.** Never say or imply a product is made from stone or comes with one. Product videos carry the line "Shirt is a print. Rock not included." (or "Socks are a print") in the caption.
-4. **No invented proof.** No "best," no rankings, no fake reviews, no customer stories, and no "sold out" or "selling fast" claims. There are no customers yet.
+4. **No invented proof.** No superlatives, no rankings, no fake reviews, no customer stories, and no "sold out" claims. There are no customers yet.
 5. **Collecting rules.** Film finds at home, on stones Brian already owns and collected legally. On a beach, film only where keeping stones is allowed, or pick up, film, and put it back. Never film collecting at Sleeping Bear Dunes, Pictured Rocks, Isle Royale, Apostle Islands, or a Minnesota state park, where stones stay. Do not geotag exact spots.
 6. **Wet with water, not your tongue, on camera.** A spray bottle, a dish of water, or a wet paintbrush reads better on camera and avoids showing anyone licking slag (Leland Blue) or metal. The "I lick rocks" joke stays in the art and text.
 7. **Store status.** The store does not open until Step 19. Until then, product videos say "coming soon" and point to the free field guide or a vote, not "shop now." Do not show prices until they are set in Shopify.
 8. **Run the checker** on captions and on-screen text before posting: `python3 scripts/listing_check.py <file>`.
 
-**Kit (about $25 if Brian lacks any of it):** phone, overhead clamp or tripod, spray bottle, shallow white dish, towel, phone flashlight, a 365 nm UV flashlight with UV-blocking glasses (video 14 only), and two backgrounds (a dark slate-colored board and a sand-colored cloth).
+**Kit (about $25 if Brian lacks any of it):** phone, an overhead clamp (a tripod works too), spray bottle, shallow white dish, towel, phone flashlight, a 365 nm UV flashlight with UV-blocking glasses (video 14 only), and two backgrounds (a dark slate-colored board and a sand-colored cloth).
 
 **Needs a sample?** Videos marked "Sample: yes" need printed products from Step 10. Videos marked "Sample: no" can be filmed now, which lets the account grow before launch.
-
----
 
 ## A. Dry vs wet reveals (10)
 
@@ -105,8 +103,6 @@
 - **Caption:** Both are fossil corals from the same Devonian rocks. Petoskey is *Hexagonaria*; Charlevoix is *Favosites*. Look for the dark eye. Smaller apartments, same neighborhood.
 - **Hashtags:** #petoskeystone #fossilhunting #lakemichigan #rockhounding
 
----
-
 ## B. Field guide facts that build trust (4)
 
 ### 11. Michigan's favorite rock is slag
@@ -145,9 +141,7 @@
 - **Hashtags:** #uvrocks #lakesuperior #rockhounding #glowingrocks
 - **Note:** Do not name the glow color in text (still [VERIFY]), and never use the trademarked "Y-word" in text or hashtags. Film at home, not on a beach at night alone.
 
----
-
-## C. Socks (3, plus videos 2 and 10)
+## C. Socks (3 more; videos 2 and 10 also sell socks)
 
 ### 15. Drawn by code
 - **Length:** 15 seconds. **Sells:** Petoskey hexagon socks. **Sample:** no for the screen part, yes for the ending.
@@ -174,8 +168,6 @@
 - **Hashtags:** #rockhoundgift #rockhounding #giftideas #greatlakes
 - **Note:** #giftideas is generic and crowded; post this one in November or before Mother's Day and Father's Day, when it matters.
 
----
-
 ## D. Will brake for agates (1)
 
 ### 18. The dashboard collection
@@ -186,8 +178,6 @@
 - **Caption:** Pull over safely. The gravel will wait. Shirt is a print. Rocks not included.
 - **Hashtags:** #lakesuperioragate #agatehunting #rockhounding #roadtrip
 - **Note:** Film parked, never while driving. Clear the dashboard before driving: loose stones are hazards in a hard stop.
-
----
 
 ## E. Vote on the next design (2)
 
@@ -210,14 +200,12 @@ Run these first, before samples are ordered (Step 10), so the community helps ch
 - **Caption:** Same lick mark, two wordings. Which one goes on the shirt? Comment A or B.
 - **Hashtags:** #rockhound #rockhounding #rocktok #lakesuperioragate
 
----
-
 ## Hashtags: what is actually used
 
 Research on Nov 4, 2026 could only reach third-party hashtag counters (TikTok and Instagram pages are not indexed), so treat the numbers as rough and check each tag in the app before the first post: search it, and look at whether recent posts are rockhounds or something else.
 
 | Tag | Status | Use it for |
-|---|---|---|
+|-|-|-|
 | #rockhounding | Used widely. About 283,000 Instagram posts on one counter ([best-hashtags](https://best-hashtags.com/hashtag/rocktumbling/)), and listed as a top TikTok rock tag ([rockhounding.org](https://rockhounding.org/rockhounding-articles/tiktok-rockhounding-trends-2026)). | Every video. |
 | #rockhound | Used widely; about 4,300 uses in one week on one counter ([top-hashtags](https://top-hashtags.com/hashtag/rockhound/)). | Most videos. |
 | #agates, #agate | About 135,000 Instagram posts for #agates on one counter. Global, not just Great Lakes. | Agate videos. |
@@ -225,15 +213,22 @@ Research on Nov 4, 2026 could only reach third-party hashtag counters (TikTok an
 | #agatehunting | Not measured. Check in the app. | Agate videos. |
 | #petoskeystone | Not measured. Check in the app. | Petoskey and sock videos. |
 | #lelandblue, #puddingstone, #beachglass | Not measured. Narrow, so small but on target. | Their matching videos. |
-| #greatlakes, #lakesuperior, #lakemichigan | Regional and broad (scenery, boating, and travel). | One per video, for location. |
+| #greatlakes / #lakesuperior / #lakemichigan | Regional and broad (scenery, boating, and travel). | One per video, for location. |
 | #puremichigan | Tourism slogan tag. Huge and mostly travel. | Michigan-only stones, sparingly. |
 | #michiganrocks | Not measured; may mix rocks with "Michigan is great" posts. | Test once. |
 | #rocktok | Not measured. Check in the app. | Joke videos. |
 | #rockhoundgift | Not measured; likely small. | Gift video. |
 
-**Too generic or wrong audience (skip):** #fyp and #foryou (no niche signal), #rocks (music and everything else), #nature, #crystaltok and #crystalsoftiktok (crystal-healing crowd, which pulls toward claims the brand never makes), #geodecracking (wrong product), #tshirt and #smallbusiness (millions of unrelated posts), and #lsa (counts look big, but the letters stand for many other things). #geology, #sciencetok, #asmr, and #giftideas are borderline: one-off tests only, noted on the videos that use them.
+**Too generic or wrong audience (skip):**
+- #fyp and #foryou: no niche signal.
+- #rocks: mostly music and memes.
+- #nature: far too broad.
+- #crystaltok and #crystalsoftiktok: the crystal-energy crowd, which pulls toward claims the brand never makes.
+- #geodecracking: wrong product.
+- #tshirt and #smallbusiness: millions of unrelated posts.
+- #lsa: counts look big, but the letters stand for many other things.
 
----
+**Borderline (one-off tests only, noted on the videos that use them):** #geology, #sciencetok, #asmr, and #giftideas.
 
 ## Posting plan
 
@@ -242,7 +237,7 @@ Research on Nov 4, 2026 could only reach third-party hashtag counters (TikTok an
 **Batch order (7 weeks, then repeat the formats that work):**
 
 | Week | Videos | Why |
-|---|---|---|
+|-|-|-|
 | 1 | 19, 20, 3 | Votes first, before samples, plus a no-sample reveal. |
 | 2 | 12, 10, 8 | Teach the "wet" idea; no samples needed. |
 | 3 | 11, 6, 14 | Trust facts; no samples needed. |
@@ -251,7 +246,7 @@ Research on Nov 4, 2026 could only reach third-party hashtag counters (TikTok an
 | 6 | 5, 9, 16 | Chart, agate tee, and socks on the beach. |
 | 7 | 18, 17, and the top performer re-cut | Brake tee and bundle, near launch (Step 19). |
 
-**Each 1-hour batch:** 10 minutes setup (backgrounds, water, and light by a window), 35 minutes filming three videos with two takes each, and 15 minutes trimming and adding text in the free CapCut app or the TikTok editor. Write captions the night before and run the checker on them.
+**Each 1-hour batch:** 10 minutes setup (backgrounds, water, and light by a window), 35 minutes filming three videos with two takes each, and 15 minutes to trim and add text in the free CapCut app or the TikTok editor. Write captions the night before and run the checker on them.
 
 **Times to test (Eastern and Central time cover the three states):** weekday evenings 7 to 9 pm, weekday lunch 12 to 1 pm, and weekend mornings 8 to 10 am. Rotate one slot per post for the first three weeks, then keep the two slots with the highest views in the first 24 hours. Generic "post at X o'clock" charts are not about this audience, so trust your own numbers after about nine posts.
 
@@ -265,14 +260,12 @@ Research on Nov 4, 2026 could only reach third-party hashtag counters (TikTok an
 
 **Simple rule:** after each 3-week block, keep making the two formats with the most saves and shares, and drop the one with the fewest.
 
----
-
 ## Rockhound communities
 
 Facebook group rules can only be read from inside the group, and this session could not open Reddit directly, so rules below come from search excerpts. **Read each group's rules (Facebook "About" and pinned posts, Reddit sidebar) before posting, and ask the moderators first.** Join and comment helpfully for a few weeks before posting anything about the shop.
 
 | Community | Where | Self-promotion rule found | Notes |
-|---|---|---|---|
+|-|-|-|-|
 | r/rockhounds | Reddit | Rule 1: no self-promotion, and no buying, selling, or trading talk in open comments (per search excerpt; check the current sidebar). | ID questions go to r/whatsthisrock instead. Share finds, not the shop. Ask mods by modmail before any poll. |
 | r/whatsthisrock | Reddit | 2022 mod post: no self-promotion or sending people to your storefront. | Good place to help others ID stones and learn. Never promote here. |
 | r/geology | Reddit | Has a rules wiki; self-promotion wording not found. | Science-first crowd. Video 12 might fit if mods allow. |
@@ -303,8 +296,6 @@ If they say yes:
 > Rough sketches are in the photos. No links and nothing for sale here. Also happy to hear what I've got wrong: every label gets checked against references before anything is printed. Thanks, and good hunting.
 
 Reply to every comment, take corrections gracefully, and do not follow up with a sales post in the same group unless the moderators say that is fine.
-
----
 
 ## Checks before any of this posts
 

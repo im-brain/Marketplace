@@ -488,7 +488,7 @@ footer{padding:40px 0 56px;font-size:15px;color:var(--ink-2)}
         <h3>Leland Blue</h3>
         <dl>
           <dt>Dry</dt><dd>A dull blue-gray lump.</dd>
-          <dt>Wet</dt><dd>Strong blues, purples, grays, and greens, often with swirls and gas bubbles.</dd>
+          <dt>Wet</dt><dd>Strong blues, purples, grays, and greens. Often swirled, with gas bubbles.</dd>
         </dl>
         <p class="aside">Not a natural stone: it is slag from a 19th-century iron furnace in Leland, Michigan.</p>
       </li>
@@ -628,7 +628,7 @@ document.querySelectorAll("[data-tee]").forEach(function(n){n.appendChild(tee(n.
 /* ---------- code-drawn stones for the field guide ---------- */
 function stone(kind){
   var id="s"+(uid++),r=rng({agate:23,petoskey:58,leland:91}[kind]);
-  var svg=el("svg",{viewBox:"0 0 200 180",role:"img","aria-label":{agate:"Code-drawn Lake Superior agate with red and cream bands",petoskey:"Code-drawn Petoskey stone with six-sided cells, each with a dark center",leland:"Code-drawn Leland Blue slag with blue, purple, and green swirls and small bubbles"}[kind]});
+  var svg=el("svg",{viewBox:"0 0 200 180",role:"img","aria-label":{agate:"Code-drawn Lake Superior agate with red and cream bands",petoskey:"Code-drawn Petoskey stone with six-sided cells, each with a dark center",leland:"Code-drawn Leland Blue slag in swirled blue, purple, and green, with small bubbles"}[kind]});
   var out=pebble(r,100,92,80,9);
   var defs=el("defs",{}),cp=el("clipPath",{id:id+"c"});cp.appendChild(el("path",{d:out}));defs.appendChild(cp);svg.appendChild(defs);
   var g=el("g",{"clip-path":"url(#"+id+"c)"});

@@ -19,13 +19,18 @@ Independent check of about 95 claims. nps.gov and michigan.gov were again blocke
 10. **Spring ice-out tip:** now cited to Michigan Tech geology outreach.
 
 **Remaining [VERIFY] items, by risk**
-1. Pictured Rocks compendium collecting text (not read directly).
-2. Michigan DNR rule text for the 25-pound limit, bottomlands, and the $500 fine (news sources only, consistent).
+1. (Cleared Nov 4, 2026, see addendum.) Pictured Rocks compendium collecting text.
+2. Michigan bottomlands coverage of the 25-pound limit (rule text and $500 fine now confirmed, see addendum).
 3. Wisconsin NR 45.04 after the 2023 rule change: state park status and any weight caps.
 4. Exact Pictured Rocks east boundary on an NPS map.
 5. Thomsonite Beach access (lodging listings describe it as private).
 6. Shoreline walking rights, tribal land, and each national forest's local rule.
 7. Facts: Petoskey on Lake Huron, unakite outside Lake Superior, jasper distribution, float copper on beaches, BIF on Marquette beaches, glow color, beach glass frosting in fresh water, low-sun tip.
+
+**Addendum, Nov 4, 2026 (collecting rules only, official pages read directly)**
+- Confirmed: Isle Royale collecting ban, including Lake Superior waters (nps.gov/isro); Apostle Islands ban, wording now matches "rocks, wildflowers, and driftwood" (nps.gov/apis); Pictured Rocks compendium allows gathering only listed fruits, nuts, berries, and mushrooms, and rocks are not listed (nps.gov/piro), [VERIFY] removed; Michigan 25-pound yearly limit in R 299.922(hh), and the $500 civil fine in MCL 324.504, both in the DNR rules PDF, [VERIFY] removed; Minnesota state park and recreation area ban (dnr.state.mn.us); Wisconsin DNR gathering page wording (written permission from the property manager, banned at Havenwoods and on state trails).
+- Changed: Michigan bottomlands line now quotes EGLE's "state-owned and public trust lands" wording.
+- Still not verified: bottomlands named outright in official text, and the 2015 Northport seizure (news only); Wisconsin NR 45.04 (docs.legis.wisconsin.gov reset the connection, tried once); Pictured Rocks east boundary map; shoreline walking rights, tribal land, and national forest local rules (not in scope of this pass).
 
 **Notes to Brian before you read**
 
@@ -369,17 +374,17 @@ Rules change. Check the managing agency before you pocket anything. **This secti
 Federal rules (36 CFR 2.1) generally prohibit removing rocks, minerals, and fossils from National Park Service land. That covers:
 
 - **Sleeping Bear Dunes National Lakeshore (MI):** NPS says removing stones from the lakeshore is illegal under federal law. Petoskey stones stay. ([NPS, Peterson Beach](https://www.nps.gov/places/000/peterson-beach.htm); [NPS Sleeping Bear, Beaches](https://www.nps.gov/slbe/learn/nature/beaches.htm))
-- **Pictured Rocks National Lakeshore (MI):** Collecting is prohibited. Four visitors who carved the cliffs in 2025 and gathered over 100 pounds of rock were each fined $500 and banned for a year, and one paid another $250 for taking the rocks (announced March 2026). ([NPS Pictured Rocks, Superintendent's Compendium](https://www.nps.gov/piro/learn/management/suptcompendium.htm); [U.S. Attorney, W.D. Mich., Mar 11, 2026](https://www.justice.gov/usao-wdmi/pr/2026_0311_Pictured_Rocks_PR); [Upper Michigan's Source, Mar 2026](https://uppermichiganssource.com/2026/03/11/people-caught-vandalising-pictured-rocks-national-lakeshore-fined-banished-one-year)) [VERIFY: I could not read the compendium's collecting section directly]
+- **Pictured Rocks National Lakeshore (MI):** Collecting is prohibited. Four visitors who carved the cliffs in 2025 and gathered over 100 pounds of rock were each fined $500 and banned for a year, and one paid another $250 for taking the rocks (announced March 2026). The compendium's 36 CFR 2.1 section allows gathering only listed fruits, nuts, berries, and mushrooms, plus dead wood for campfires; rocks are not on the list, so the federal ban applies. ([NPS Pictured Rocks, Superintendent's Compendium](https://www.nps.gov/piro/learn/management/suptcompendium.htm); [U.S. Attorney, W.D. Mich., Mar 11, 2026](https://www.justice.gov/usao-wdmi/pr/2026_0311_Pictured_Rocks_PR); [Upper Michigan's Source, Mar 2026](https://uppermichiganssource.com/2026/03/11/people-caught-vandalising-pictured-rocks-national-lakeshore-fined-banished-one-year))
 - **Isle Royale National Park (MI):** No collecting of greenstones, agates, datolite, or other minerals, including those in the Lake Superior waters of the park. ([NPS Isle Royale, Laws and Policies](https://www.nps.gov/isro/learn/management/lawsandpolicies.htm))
-- **Apostle Islands National Lakeshore (WI):** Rocks, driftwood, and other natural objects may not be collected. ([NPS Apostle Islands, Laws and Policies](https://www.nps.gov/apis/learn/management/lawsandpolicies.htm))
+- **Apostle Islands National Lakeshore (WI):** Rocks, wildflowers, driftwood, and other natural objects may not be collected. ([NPS Apostle Islands, Laws and Policies](https://www.nps.gov/apis/learn/management/lawsandpolicies.htm))
 - **General NPS policy:** ([NPS, Geology Permits](https://www.nps.gov/subjects/geology/permits.htm); [NPS Rock Hunting Guidance, PDF](https://www.nps.gov/subjects/policy/upload/Rock_Hunting_Guidance.pdf))
 
 ### Michigan state land, including state parks and Great Lakes shoreline
 
 - **Limit: 25 pounds per person per year, total**, of rocks, mineral specimens, and invertebrate fossils (gold-bearing material excluded), for personal, non-commercial use, from state-owned land. It is a yearly total across all trips, not per visit. ([Michigan DNR, Administrative Rules for Parks and Recreation Areas, PDF](https://www.michigan.gov/dnr/-/media/Project/Websites/dnr/Documents/PRD/parks/AdministrativeRules-ParksRecAreas.pdf); [Michigan EGLE, Rock and mineral identification](https://www.michigan.gov/egle/public/learn/geology/rockhounding); [Michigan EGLE, Michigan fossils](https://www.michigan.gov/egle/public/learn/geology/rockhounding/fossils))
 - Local parks and townships can set stricter rules. Read the posted signs.
-- Penalty: a civil fine of up to $500 is widely reported. [VERIFY: secondary sources only (Michigan Public, WOOD TV)]
-- The 25-pound limit is reported to cover Great Lakes bottomlands (stones underwater), and the DNR seized a 93-pound Petoskey stone pulled from Lake Michigan near Northport in 2015. [VERIFY: confirm in DNR or EGLE rule text] ([Michigan Public, 2015](https://michiganpublic.org/offbeat/2015-09-25/petoskey-stone-pulled-out-of-cold-lake-might-land-guy-in-hot-water); [CBS Detroit, state confiscates stone](https://cbsnews.com/detroit/news/state-confiscates-huge-petoskey-stone-man-pulled-from-lake))
+- Penalty: violating a DNR land rule is a state civil infraction with a fine of up to $500 (MCL 324.504, quoted in the same DNR rules PDF above).
+- EGLE says the 25-pound limit applies on "state-owned and public trust lands" ([Michigan EGLE, Michigan fossils](https://www.michigan.gov/egle/public/learn/geology/rockhounding/fossils)). News reports say it covers Great Lakes bottomlands (stones underwater), and the DNR seized a 93-pound Petoskey stone pulled from Lake Michigan near Northport in 2015. [VERIFY: no official page read says "bottomlands" outright, and the 2015 seizure is from news only] ([Michigan Public, 2015](https://michiganpublic.org/offbeat/2015-09-25/petoskey-stone-pulled-out-of-cold-lake-might-land-guy-in-hot-water); [CBS Detroit, state confiscates stone](https://cbsnews.com/detroit/news/state-confiscates-huge-petoskey-stone-man-pulled-from-lake))
 
 ### Minnesota
 
@@ -405,9 +410,9 @@ Federal rules (36 CFR 2.1) generally prohibit removing rocks, minerals, and foss
 ## Claims Brian must check
 
 Legal and safety (highest priority, customer-facing):
-- [ ] Pictured Rocks compendium: confirm the exact collecting language (I only saw it via search, not the page).
-- [ ] Michigan 25-pound rule: confirm the current DNR rule text and whether it covers Great Lakes bottomlands.
-- [ ] Michigan $500 fine figure (secondary sources only).
+- [x] Pictured Rocks compendium: read Nov 4, 2026; rocks are not on its allowed-gathering list.
+- [ ] Michigan 25-pound rule: DNR rule text confirmed (R 299.922(hh)); bottomlands coverage still from news, plus EGLE's "public trust lands" wording.
+- [x] Michigan $500 fine figure: confirmed in the DNR rules PDF (MCL 324.504).
 - [ ] Wisconsin NR 45.04: current status of state parks and any weight limits.
 - [x] Minnesota DNR: state park ban confirmed; Hill Annex exception removed (park abolished 2024).
 - [ ] Pictured Rocks boundary near Grand Marais for the glowing syenite entry (now worded as "begins just west of Grand Marais"; confirm on an NPS map).

@@ -76,12 +76,12 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 3. **(Done Nov 1, 2026: all accounts created and tested.) Accounts, in this order** (checklist: `brand/Step3_Accounts_Checklist.md`): (a) create the store Gmail and turn on 2-step verification, (b) create a Cloudflare account with that Gmail and buy heavypocketsco.com through Cloudflare Registrar, not Shopify, (c) claim @heavypocketsco on Instagram and TikTok (plus @wetthumbco as a placeholder), (d) create the free Printify account with the Gmail and save the token as an environment secret named `PRINTIFY_API_TOKEN`, never in the repo, and (e) set up free email forwarding from hello@heavypocketsco.com to the Gmail, plus Gmail "Send mail as" so replies come from the domain. The Gmail comes first because the Cloudflare account that owns the domain should belong to it. *Test:* an email sent to hello@ arrives in the Gmail, and Claude can read the Printify account with the token.
 
 **Phase 1: Brand**
-4. Brand kit: colors (the lake palette: Superior slate, agate red, Petoskey gray, and sand), fonts, a simple wordmark, and a one-page brand guide (.docx). *Test:* Brian approves it.
+4. **(In progress Nov 4, 2026: round 1 page ready at `brand/kit/index.html`, waiting on Brian's pick.)** Brand kit: colors (the lake palette: Superior slate, agate red, Petoskey gray, and sand), fonts, a simple wordmark, and a one-page brand guide (.docx). *Test:* Brian approves it.
 
 **Phase 2: Designs**
-5. Design tracker `.xlsx` with all 13 designs, plus columns for art source and license, accuracy check, trademark check, and launch priority. It follows his spreadsheet formatting rules. *Test:* it opens in Excel and Brian marks the launch 5.
+5. **(Built Nov 4, 2026: `tracker/Design_Tracker.xlsx`, launch 5 pre-marked for Brian to confirm.)** Design tracker `.xlsx` with all 13 designs, plus columns for art source and license, accuracy check, trademark check, and launch priority. It follows his spreadsheet formatting rules. *Test:* it opens in Excel and Brian marks the launch 5.
 6. Launch 5: the Great Lakes beach stone chart, "Agate Expectations," "Will brake for agates," Petoskey hexagon socks, and "I lick rocks" (a dull stone with one glossy lick mark where the true color shows).
-7. The code-drawn Petoskey sock pattern, made to Printify's exact sock template size. *Test:* Brian views the PNG and it passes Printify's upload preview.
+7. **(Drafted Nov 4, 2026: `scripts/sock_petoskey.py`, print panels in `designs/socks/print/`, waiting on brand colors and a Printify upload preview.)** The code-drawn Petoskey sock pattern, made to Printify's exact sock template size. *Test:* Brian views the PNG and it passes Printify's upload preview.
 8. The other three designs at print size, all from Brian's photos, his edits, or properly licensed sources. *Test:* Brian approves each one, and the accuracy and trademark boxes are checked.
 
 **Phase 3: Products and samples in Printify (no store yet)**
@@ -96,8 +96,8 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 15. The store password stays on until launch. *Test:* only Brian can see the store.
 
 **Phase 5: Automation**
-16. Script `publish_design.py`: takes a tracker row and creates the Printify product. This part can be built and tested before Shopify exists. After Step 12, it also publishes to Shopify as a draft. *Test:* run it on one design, then check the product in Printify (and later the draft in Shopify).
-17. Listing writer plus a checker that blocks em dashes, missing Oxford commas, and flagged claims. *Test:* a draft listing passes the checker, and Brian reads it.
+16. **(Built and live-tested Nov 4, 2026, Printify part only.)** Script `publish_design.py`: takes a tracker row and creates the Printify product. This part can be built and tested before Shopify exists. After Step 12, it also publishes to Shopify as a draft. *Test:* run it on one design, then check the product in Printify (and later the draft in Shopify).
+17. **(Checker built Nov 4, 2026: `scripts/listing_check.py`; listing writer not yet.)** Listing writer plus a checker that blocks em dashes, missing Oxford commas, and flagged claims. *Test:* a draft listing passes the checker, and Brian reads it.
 18. Weekly scheduled task: an orders and profit summary, 3 product-only video ideas and captions, and reminders, such as samples to order and trademarks to re-check. *Test:* the first report arrives on schedule.
 
 **Phase 6: Launch**
@@ -119,4 +119,5 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 
 ## Open items (not blocking)
 - Final store name (Step 3).
-- Real Printify sample costs to replace the yellow assumption cells.
+- Real Printify catalog costs are in the model (Nov 4, 2026). Still to confirm with real samples at Step 10.
+- Two live HEAVY POCKETS filings (Class 16 and 41, found Nov 4, 2026); consider a Class 25 filing with an attorney.

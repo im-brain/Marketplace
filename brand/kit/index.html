@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heavy Pockets Brand Kit</title>
+<meta name="description" content="Four brand directions for Heavy Pockets Co. Every color has a dry shade and a wet shade. Tap to wet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Barlow+Semi+Condensed:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..700&family=Courier+Prime:wght@400;700&family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400..800&family=Yellowtail&family=Young+Serif&display=swap" rel="stylesheet">
+<style>
+:root{
+  --page:#E6E3DC; --page-2:#D9D5CC; --ink:#1F2D38; --ink-2:#47535C; --rule:#B8B3A8; --focus:#9A2E1A;
+  --chrome:"Schibsted Grotesk", system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --page:#141A1F; --page-2:#1C242A; --ink:#E6E2D9; --ink-2:#A8B0B6; --rule:#38434B; --focus:#E8846A; color-scheme:dark; }
+}
+:root[data-theme="dark"]{ --page:#141A1F; --page-2:#1C242A; --ink:#E6E2D9; --ink-2:#A8B0B6; --rule:#38434B; --focus:#E8846A; color-scheme:dark; }
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--ink);font:400 17px/1.55 var(--chrome);}
+::selection{background:var(--ink);color:var(--page)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+@media (min-width:700px){.wrap{padding:0 32px}}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
+
+/* ---------- Top ---------- */
+.top{padding:28px 0 12px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.top .meta{font-size:14px;color:var(--ink-2)}
+.btn{font:600 15px/1 var(--chrome);color:var(--ink);background:transparent;border:1.5px solid currentColor;border-radius:999px;padding:11px 18px;cursor:pointer;min-height:44px}
+.btn[aria-pressed="true"]{background:var(--ink);color:var(--page)}
+.btn:hover{background:color-mix(in srgb,var(--ink) 10%,transparent)}
+.btn[aria-pressed="true"]:hover{background:var(--ink)}
+.intro{display:grid;gap:32px;align-items:center;padding:24px 0 72px}
+@media (min-width:860px){.intro{grid-template-columns:1.15fr .85fr;gap:56px;padding:40px 0 96px}}
+.intro h1{font:700 clamp(40px,7vw,80px)/.98 var(--chrome);letter-spacing:-.03em}
+.intro .lead{font-size:clamp(18px,2vw,21px);margin-top:20px;max-width:38ch;color:var(--ink-2)}
+.intro .lead strong{color:var(--ink);font-weight:600}
+.intro .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-stone{justify-self:center;width:min(100%,420px)}
+.hero-stone figcaption{font-size:14px;color:var(--ink-2);text-align:center;margin-top:10px}
+.jump{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px;font-size:15px}
+.jump a{padding:8px 14px;border-radius:999px;background:var(--page-2);text-decoration:none;min-height:40px;display:inline-flex;align-items:center}
+.jump a:hover{background:color-mix(in srgb,var(--ink) 14%,var(--page-2))}
+
+/* ---------- Wet mechanics (the one authored moment) ---------- */
+.stone{display:block;width:100%;height:auto;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.stone:focus:not(:focus-visible){outline:none}
+.stone .body{filter:saturate(.32) brightness(1.13) contrast(.78);transition:filter .9s cubic-bezier(.16,1,.3,1)}
+.stone .dust{opacity:.55;transition:opacity .9s cubic-bezier(.16,1,.3,1)}
+.stone .gloss{opacity:0;transform:translate(-18px,14px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform 1.1s cubic-bezier(.16,1,.3,1)}
+.is-wet .stone .body,.stone.wet .body{filter:saturate(1.08) contrast(1.04)}
+.is-wet .stone .dust,.stone.wet .dust{opacity:0}
+.is-wet .stone .gloss,.stone.wet .gloss{opacity:1;transform:none}
+@media (hover:hover){.stone:hover .body{filter:saturate(1.08) contrast(1.04)}.stone:hover .dust{opacity:0}.stone:hover .gloss{opacity:1;transform:none}}
+
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.chip{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:132px;padding:12px;border:0;border-radius:var(--chip-r,10px);background:var(--dry);color:var(--on-dry);font:500 14px/1.3 var(--chrome);text-align:left;cursor:pointer;transition:background-color .9s cubic-bezier(.16,1,.3,1),color .9s cubic-bezier(.16,1,.3,1)}
+.chip::after{content:"";position:absolute;inset:-20% -60%;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.42) 50%,transparent 58%);transform:translateX(-70%);pointer-events:none}
+.chip .n{font-weight:700;font-size:15px}
+.chip .h{font-variant-numeric:tabular-nums;opacity:.9}
+.chip .h .w{display:none}
+.chip.wet,.is-wet .chip{background:var(--wet);color:var(--on-wet)}
+.chip.wet .h .d,.is-wet .chip .h .d{display:none}
+.chip.wet .h .w,.is-wet .chip .h .w{display:inline}
+.chip.wet::after,.is-wet .chip::after{transform:translateX(70%);transition:transform 1.1s cubic-bezier(.16,1,.3,1)}
+.chip-hint{font-size:14px;margin-top:10px;opacity:.85}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important}}
+
+/* ---------- Option worlds ---------- */
+.opt{background:var(--g);color:var(--ink);padding:72px 0 88px;--chrome-ink:var(--ink)}
+@media (min-width:860px){.opt{padding:112px 0 120px}}
+.opt ::selection{background:var(--acc);color:var(--g)}
+.opt .wrap{display:grid;gap:56px}
+.opt-head{display:grid;gap:18px;max-width:760px}
+.opt-head h2{font-family:var(--display);font-weight:var(--display-w,400);font-size:clamp(40px,6.4vw,76px);line-height:1;letter-spacing:var(--display-track,-.02em)}
+.opt-head .letter{display:inline-block;margin-right:.35em;opacity:.55}
+.opt-head .thesis{font-family:var(--body);font-size:clamp(18px,2vw,21px);line-height:1.5;color:var(--ink-2);max-width:60ch}
+.opt h3{font-family:var(--chrome);font-size:15px;font-weight:700;letter-spacing:.02em;color:var(--ink-2);margin-bottom:16px}
+.pair{display:grid;gap:40px}
+@media (min-width:900px){.pair{grid-template-columns:1fr 1fr;gap:48px}}
+.panel{background:var(--s);border-radius:var(--panel-r,14px);padding:clamp(20px,3vw,32px)}
+.wm-stage{display:grid;place-items:center;min-height:220px;padding:28px 12px}
+.wm-variants{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.wm-variants>div{border-radius:var(--panel-r,14px);display:grid;place-items:center;min-height:120px;padding:14px;text-align:center}
+.wm-variants .cap{font:500 13px/1.3 var(--chrome);margin-top:8px;opacity:.85}
+.type-spec{display:grid;gap:22px}
+.type-spec .big{font-family:var(--display);font-weight:var(--display-w,400);font-size:clamp(44px,7vw,88px);line-height:1;letter-spacing:var(--display-track,-.02em)}
+.type-spec .body-sample{font-family:var(--body);font-size:18px;line-height:1.6;max-width:62ch}
+.type-spec .label-sample{font-family:var(--label);font-size:15px;line-height:1.5;color:var(--ink-2)}
+.font-list{display:grid;gap:10px;align-content:start;font-size:15px;color:var(--ink-2);font-family:var(--chrome)}
+.font-list b{color:var(--ink)}
+.mocks{display:grid;gap:28px;align-items:end}
+@media (min-width:900px){.mocks{grid-template-columns:1.25fr .9fr .75fr}}
+.mock-cap{font:500 14px/1.4 var(--chrome);color:var(--ink-2);margin-top:10px}
+.tee{width:100%;height:auto;display:block}
+.phone{width:min(100%,290px);margin:0 auto;border-radius:34px;padding:10px;background:#0E0F10;box-shadow:0 18px 40px -18px rgba(0,0,0,.55)}
+.screen{border-radius:26px;overflow:hidden;background:var(--g);color:var(--ink);min-height:520px;display:flex;flex-direction:column}
+.screen .bar{display:flex;justify-content:space-between;align-items:center;padding:16px 16px 10px;font:600 12px var(--chrome)}
+.screen .shot{margin:6px 14px;border-radius:var(--panel-r,14px);background:var(--s);padding:18px}
+.screen .pt{font-family:var(--display);font-weight:var(--display-w,400);font-size:24px;line-height:1.1;padding:14px 16px 4px;letter-spacing:var(--display-track,-.01em)}
+.screen .pp{font:500 15px var(--body);padding:0 16px;color:var(--ink-2)}
+.screen .fn{font:14px/1.45 var(--label);padding:10px 16px 0;color:var(--ink-2)}
+.screen .cta{margin:auto 14px 16px;padding:14px;border-radius:var(--btn-r,10px);background:var(--acc);color:var(--on-acc);font:700 15px var(--chrome);text-align:center}
+.verdict{display:grid;gap:22px}
+@media (min-width:860px){.verdict{grid-template-columns:1fr 1fr 1fr}}
+.verdict p{font-family:var(--body);font-size:17px;line-height:1.55}
+.verdict b{display:block;font-family:var(--chrome);font-size:15px;margin-bottom:6px}
+
+/* Option A: Field Notebook (specimen label) */
+.opt-a{--g:#D8D5CD;--s:#F2EFE7;--ink:#1F2D38;--ink-2:#46525B;--acc:#9A2E1A;--on-acc:#FBF6EF;
+  --display:"Young Serif",Georgia,serif;--body:"Schibsted Grotesk",system-ui,sans-serif;--label:"Courier Prime","Courier New",monospace;--panel-r:4px;--btn-r:3px;--chip-r:3px}
+/* Option B: Lakeshore Workwear */
+.opt-b{--g:#C49A62;--s:#EADCC0;--ink:#1D1812;--ink-2:#3F3122;--acc:#1C2A3D;--on-acc:#F1E6D0;
+  --display:"Archivo",system-ui,sans-serif;--display-w:900;--display-track:-.01em;--body:"Archivo",system-ui,sans-serif;--label:"Archivo",system-ui,sans-serif;--panel-r:18px;--btn-r:999px;--chip-r:16px}
+.opt-b .opt-head h2,.opt-b .type-spec .big,.opt-b .screen .pt{font-stretch:112%;text-transform:uppercase}
+.opt-b .type-spec .label-sample{font-stretch:75%;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+/* Option C: Wet Stone Minimal */
+.opt-c{--g:#CFCBC3;--s:#DDDAD3;--ink:#262523;--ink-2:#4B4843;--acc:#8E2414;--on-acc:#F6EFEA;
+  --display:"Instrument Serif",Georgia,serif;--display-track:-.015em;--body:"Schibsted Grotesk",system-ui,sans-serif;--label:"Schibsted Grotesk",system-ui,sans-serif;--panel-r:2px;--btn-r:2px;--chip-r:2px}
+/* Option D: Lake Chart */
+.opt-d{--g:#FBFBF8;--s:#E2EEF5;--ink:#14202A;--ink-2:#3A4B58;--acc:#A3176E;--on-acc:#FFF6FB;
+  --display:"Bodoni Moda",Georgia,serif;--display-w:500;--display-track:.01em;--body:"Barlow Semi Condensed",system-ui,sans-serif;--label:"Barlow Semi Condensed",system-ui,sans-serif;--panel-r:0px;--btn-r:0px;--chip-r:0px}
+.opt-d .type-spec .label-sample,.opt-d .screen .fn{font-style:italic}
+.opt-d .opt-head .thesis,.opt-d .verdict p,.opt-d .type-spec .body-sample{font-size:19px}
+.opt-d .panel{border:1px solid #9DBBD0}
+
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .opt-a{--g:#192026;--s:#232C33;--ink:#E8E4DA;--ink-2:#AEB6BC;--acc:#E07A5F;--on-acc:#1A1210}
+  :root:not([data-theme="light"]) .opt-b{--g:#35261A;--s:#45331F;--ink:#F3E8D3;--ink-2:#D6C3A1;--acc:#EADCC0;--on-acc:#1C2A3D}
+  :root:not([data-theme="light"]) .opt-c{--g:#1C1B19;--s:#262522;--ink:#ECE8E1;--ink-2:#ADA89F;--acc:#E0573D;--on-acc:#1C0E0A}
+  :root:not([data-theme="light"]) .opt-d{--g:#0D1721;--s:#13283B;--ink:#DCE6EE;--ink-2:#9AACBB;--acc:#F27DC2;--on-acc:#22071A}
+  :root:not([data-theme="light"]) .opt-d .panel{border-color:#24425C}
+}
+:root[data-theme="dark"] .opt-a{--g:#192026;--s:#232C33;--ink:#E8E4DA;--ink-2:#AEB6BC;--acc:#E07A5F;--on-acc:#1A1210}
+:root[data-theme="dark"] .opt-b{--g:#35261A;--s:#45331F;--ink:#F3E8D3;--ink-2:#D6C3A1;--acc:#EADCC0;--on-acc:#1C2A3D}
+:root[data-theme="dark"] .opt-c{--g:#1C1B19;--s:#262522;--ink:#ECE8E1;--ink-2:#ADA89F;--acc:#E0573D;--on-acc:#1C0E0A}
+:root[data-theme="dark"] .opt-d{--g:#0D1721;--s:#13283B;--ink:#DCE6EE;--ink-2:#9AACBB;--acc:#F27DC2;--on-acc:#22071A}
+:root[data-theme="dark"] .opt-d .panel{border-color:#24425C}
+
+/* ---------- Wordmarks ---------- */
+.wm-a{font-family:"Young Serif",Georgia,serif;color:var(--ink);display:inline-flex;align-items:baseline;flex-wrap:wrap;justify-content:center;gap:0 .28em;line-height:1}
+.wm-a .w{font-size:var(--wm,58px);letter-spacing:-.01em;display:inline-flex;align-items:baseline}
+.wm-a .o{width:.74em;height:.74em;display:inline-block;margin:0 .02em;transform:translateY(.02em)}
+.wm-a .co{font-size:calc(var(--wm,58px)*.42);letter-spacing:.08em}
+.tag-a{display:inline-block;margin-top:14px;font:700 14px/1 "Courier Prime",monospace;color:#9A2E1A;background:#F7F4EC;border:1px solid #CFC8B8;padding:6px 8px;border-radius:2px;letter-spacing:.06em}
+.label-card{font-family:"Courier Prime",monospace;font-size:14px;line-height:1.5;color:#1F2D38;background:#F7F4EC;border:1px solid #BDB6A6;padding:12px 14px;max-width:320px;text-align:left;box-shadow:0 6px 14px -8px rgba(31,45,56,.35)}
+.label-card .lt{font-family:"Young Serif",serif;font-size:16px;border-bottom:1px solid #1F2D38;padding-bottom:6px;margin-bottom:6px;display:flex;justify-content:space-between}
+.label-card .lt span:last-child{color:#9A2E1A;font-family:"Courier Prime",monospace;font-weight:700;font-size:13px}
+
+.wm-b-block{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:125%;line-height:.88;text-transform:uppercase;text-align:center;color:var(--ink);font-size:var(--wm,46px)}
+.wm-b-block small{display:block;font-stretch:75%;font-weight:700;font-size:.3em;letter-spacing:.16em;margin-top:.7em}
+
+.wm-c{position:relative;display:inline-block;font-family:"Instrument Serif",serif;font-size:var(--wm,74px);line-height:1;color:var(--ink);letter-spacing:-.015em;padding:.08em .1em}
+.wm-c .streak{position:absolute;left:43%;top:-2%;width:.62em;height:1.12em;pointer-events:none;opacity:.88}
+.wm-c .t{position:relative}
+
+.wm-d{display:inline-flex;align-items:center;gap:16px;color:var(--ink);flex-wrap:wrap;justify-content:center}
+@media (max-width:560px){.wm-d .title{font-size:min(var(--wm,28px),21px)}}
+.opt .wrap>*,.pair>*{min-width:0}
+.wm-d .title{font-family:"Bodoni Moda",serif;font-weight:500;font-size:var(--wm,28px);letter-spacing:.12em;white-space:nowrap;line-height:1.1;text-transform:uppercase}
+.wm-d .sub{font-family:"Barlow Semi Condensed",sans-serif;font-style:italic;font-size:calc(var(--wm,30px)*.48);letter-spacing:.08em;color:var(--ink-2);margin-top:6px}
+
+/* ---------- Compare + close ---------- */
+.compare{padding:96px 0 40px}
+.compare h2,.close h2{font:700 clamp(32px,4.6vw,52px)/1.05 var(--chrome);letter-spacing:-.025em;margin-bottom:22px}
+.compare p.note{color:var(--ink-2);max-width:64ch;margin-bottom:28px}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:1.5px solid var(--ink)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:14px 12px;border-bottom:1px solid var(--rule)}
+thead th{font-weight:700}
+tbody th{font-weight:600;color:var(--ink-2);width:18%}
+.close{padding:56px 0 120px}
+.close .cols{display:grid;gap:36px}
+@media (min-width:860px){.close .cols{grid-template-columns:1.2fr 1fr;gap:64px}}
+.close p,.close li{max-width:62ch}
+.close p+p{margin-top:14px}
+.close ol{padding-left:1.2em;margin:0;display:grid;gap:10px}
+.close .pick{font-size:clamp(20px,2.3vw,24px);line-height:1.45}
+footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-size:14px;color:var(--ink-2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="meta">Heavy Pockets Co. · Step 4 · Round 1 · Nov 4, 2026</span>
+    <button class="btn" id="theme" type="button" aria-label="Switch color theme">Theme: system</button>
+  </div>
+
+  <section class="intro" aria-labelledby="t">
+    <div>
+      <h1 id="t">Four ways to wear a wet stone.</h1>
+      <p class="lead">Every option shares one idea: <strong>every color comes in a dry shade and a wet shade</strong>, the way a beach stone looks before and after you dunk it. Tap any stone or swatch to wet it.</p>
+      <div class="actions">
+        <button class="btn" id="wetall" type="button" aria-pressed="false">Wet the whole page</button>
+      </div>
+      <nav class="jump" aria-label="Jump to an option">
+        <a href="#a">A · Field Notebook</a><a href="#b">B · Lakeshore Workwear</a><a href="#c">C · Wet Stone Minimal</a><a href="#d">D · Lake Chart</a><a href="#compare">Compare</a>
+      </nav>
+    </div>
+    <figure class="hero-stone" style="margin:0">
+      <div data-stone="hero" data-seed="11"></div>
+      <figcaption>A code-drawn agate, not a photo. Tap it.</figcaption>
+    </figure>
+  </section>
+</div>
+
+<!-- ================= A ================= -->
+<section class="opt opt-a" id="a" aria-labelledby="a-h">
+  <div class="wrap">
+    <header class="opt-head">
+      <h2 id="a-h"><span class="letter">A</span>Field Notebook</h2>
+      <p class="thesis">The museum specimen label. Collectors write the find, the place, and the date on a small card, and museums paint a catalog number right on the rock. Calm, credible, and made for the ID chart shirts.</p>
+    </header>
+
+    <div class="pair">
+      <div>
+        <h3>Wordmark</h3>
+        <div class="panel wm-stage">
+          <div style="text-align:center">
+            <div class="wm-a"><span class="w">Heavy</span><span class="w">P<span class="o" data-agate-o="a"></span>ckets</span><span class="co">CO.</span></div>
+            <div><span class="tag-a">HP · 001</span></div>
+          </div>
+        </div>
+        <div class="wm-variants">
+          <div style="background:#1F2D38;color:#E9E1CF"><div><div class="wm-a" style="--wm:26px;color:#E9E1CF"><span class="w">Heavy</span><span class="w">P<span class="o" data-agate-o="a1"></span>ckets</span></div><div class="cap">One color, on a slate tee</div></div></div>
+          <div style="background:#E9E5DB"><div><div class="label-card"><div class="lt"><span>Heavy Pockets Co.</span><span>HP-001</span></div>Specimen: Lake Superior agate<br>Locality: north shore, wet<br>Collector: head down</div><div class="cap"><span style="color:#1F2D38">Hang tag and field note card</span></div></div></div>
+        </div>
+      </div>
+      <div>
+        <h3>Palette: tap a swatch to wet it</h3>
+        <div class="chips" data-chips="a"></div>
+        <p class="chip-hint" style="color:var(--ink-2)">Dry shades are for backgrounds and big fields. Wet shades are for text, buttons, and the moment something gets your attention.</p>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="type-spec">
+        <h3>Type</h3>
+        <div class="big">Dry rocks lie.</div>
+        <p class="body-sample">Lake Superior agates hide in plain sight. Dry, they look like any other pebble. Wet, the bands show up, and the rest of the beach goes quiet.</p>
+        <p class="label-sample">No. HP-014 · Agate, fortification · Found Nov 2026</p>
+      </div>
+      <div class="font-list">
+        <h3>Fonts (free for commercial use)</h3>
+        <span><b>Young Serif</b> for headlines and the wordmark. Sturdy, slightly old-fashioned, like a label printed in 1950.</span>
+        <span><b>Schibsted Grotesk</b> for reading text and buttons.</span>
+        <span><b>Courier Prime</b> only for specimen labels and catalog numbers, because those really were typed.</span>
+      </div>
+    </div>
+
+    <div>
+      <h3>On a shirt, a phone, and a stone</h3>
+      <div class="mocks">
+        <figure style="margin:0"><div data-tee="a"></div><figcaption class="mock-cap">Slate tee, chest print. The agate O and a typed label line.</figcaption></figure>
+        <figure style="margin:0"><div class="phone"><div class="screen" data-screen="a"></div></div><figcaption class="mock-cap" style="text-align:center">Product page (sample layout)</figcaption></figure>
+        <figure style="margin:0"><div data-stone="a" data-seed="23"></div><figcaption class="mock-cap" style="text-align:center">Stone in this palette</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <p><b>Best at</b>Trust. The chart shirts and the field guide look like they came from someone who checks their facts.</p>
+      <p><b>Honest risk</b>Calm can mean forgettable in a fast TikTok feed. It needs the real stones and shirts to bring the energy.</p>
+      <p><b>Changed from the first sketch</b>I swapped Fraunces and IBM Plex for less common fonts, and the specimen label replaced the generic "journal" look.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= B ================= -->
+<section class="opt opt-b" id="b" aria-labelledby="b-h">
+  <div class="wrap">
+    <header class="opt-head">
+      <h2 id="b-h"><span class="letter">B</span>Lakeshore Workwear</h2>
+      <p class="thesis">A chore coat with a sewn-on name patch. Duck canvas, chain stitch, and big blunt letters. Wet canvas darkens just like a wet stone, so dark mode is literally the canvas after a wave hits it.</p>
+    </header>
+
+    <div class="pair">
+      <div>
+        <h3>Wordmark</h3>
+        <div class="panel wm-stage" data-patch="b"></div>
+        <div class="wm-variants">
+          <div style="background:#1C2A3D"><div><div class="wm-b-block" style="--wm:28px;color:#EADCC0">Heavy<br>Pockets<small>Co. · Head down. Pockets full.</small></div><div class="cap" style="color:#EADCC0">Stacked, for big back prints</div></div></div>
+          <div style="background:#EADCC0"><div><div data-patch="b-small" style="width:120px;margin:0 auto"></div><div class="cap" style="color:#1D1812">One color, at 1.5 inches</div></div></div>
+        </div>
+      </div>
+      <div>
+        <h3>Palette: tap a swatch to wet it</h3>
+        <div class="chips" data-chips="b"></div>
+        <p class="chip-hint" style="color:var(--ink-2)">Adds Lake Michigan teal as a fifth color, mostly for socks.</p>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="type-spec">
+        <h3>Type</h3>
+        <div class="big">Dry rocks lie.</div>
+        <p class="body-sample">Lake Superior agates hide in plain sight. Dry, they look like any other pebble. Wet, the bands show up, and the rest of the beach goes quiet.</p>
+        <p class="label-sample">Heavyweight cotton · Printed in the USA to order</p>
+      </div>
+      <div class="font-list">
+        <h3>Fonts (free for commercial use)</h3>
+        <span><b>Archivo</b>, one family stretched three ways: extra wide and black for headlines, normal for reading, and narrow for labels.</span>
+        <span><b>Yellowtail</b> only inside the name patch, like a chain-stitched work shirt.</span>
+      </div>
+    </div>
+
+    <div>
+      <h3>On a shirt, a phone, and a stone</h3>
+      <div class="mocks">
+        <figure style="margin:0"><div data-tee="b"></div><figcaption class="mock-cap">Sand tee, left-chest patch. The big stacked mark goes on the back.</figcaption></figure>
+        <figure style="margin:0"><div class="phone"><div class="screen" data-screen="b"></div></div><figcaption class="mock-cap" style="text-align:center">Product page (sample layout)</figcaption></figure>
+        <figure style="margin:0"><div data-stone="b" data-seed="37"></div><figcaption class="mock-cap" style="text-align:center">Stone in this palette</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <p><b>Best at</b>Selling shirts. It reads as a real apparel brand from across a room, and the patch works on hats, totes, and the future pocket liner.</p>
+      <p><b>Honest risk</b>Workwear brands are a crowded look. The rock story has to come from the designs, because the logo alone says "clothing company," not "rockhound."</p>
+      <p><b>Changed from the first sketch</b>I dropped Space Mono, a very common font, and the badge became an oval name patch instead of a generic square one.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= C ================= -->
+<section class="opt opt-c" id="c" aria-labelledby="c-h">
+  <div class="wrap">
+    <header class="opt-head">
+      <h2 id="c-h"><span class="letter">C</span>Wet Stone Minimal</h2>
+      <p class="thesis">Almost everything is dull, dry gray. One thing is wet. The logo carries a single glossy lick mark, the same gesture as the "I lick rocks" shirt, so the brand idea fits in one stroke.</p>
+    </header>
+
+    <div class="pair">
+      <div>
+        <h3>Wordmark</h3>
+        <div class="panel wm-stage"><div class="wm-c"><svg class="streak" data-streak="c" viewBox="0 0 60 116" aria-hidden="true"></svg><span class="t">heavy pockets</span></div></div>
+        <div class="wm-variants">
+          <div style="background:#262523"><div><div class="wm-c" style="--wm:34px;color:#ECE8E1"><svg class="streak" data-streak="c1" viewBox="0 0 60 116" aria-hidden="true"></svg><span class="t">heavy pockets</span></div><div class="cap" style="color:#ECE8E1">On a pepper tee</div></div></div>
+          <div style="background:#DDDAD3"><div><div class="wm-c" style="--wm:34px;color:#262523"><svg class="streak" data-streak="mono" viewBox="0 0 60 116" aria-hidden="true"></svg><span class="t">heavy pockets</span></div><div class="cap" style="color:#262523">One color</div></div></div>
+        </div>
+      </div>
+      <div>
+        <h3>Palette: tap a swatch to wet it</h3>
+        <div class="chips" data-chips="c"></div>
+        <p class="chip-hint" style="color:var(--ink-2)">The rule: agate red only ever appears wet. If it shows up, it is the thing to look at.</p>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="type-spec">
+        <h3>Type</h3>
+        <div class="big">Dry rocks lie.</div>
+        <p class="body-sample">Lake Superior agates hide in plain sight. Dry, they look like any other pebble. Wet, the bands show up, and the rest of the beach goes quiet.</p>
+        <p class="label-sample">Field note · Agate, Grand Marais, Michigan</p>
+      </div>
+      <div class="font-list">
+        <h3>Fonts (free for commercial use)</h3>
+        <span><b>Instrument Serif</b> for headlines and the wordmark. Narrow, elegant, and quiet.</span>
+        <span><b>Schibsted Grotesk</b> for everything else.</span>
+      </div>
+    </div>
+
+    <div>
+      <h3>On a shirt, a phone, and a stone</h3>
+      <div class="mocks">
+        <figure style="margin:0"><div data-tee="c"></div><figcaption class="mock-cap">Pepper tee. A dull stone with one wet streak, the "I lick rocks" idea as the brand mark.</figcaption></figure>
+        <figure style="margin:0"><div class="phone"><div class="screen" data-screen="c"></div></div><figcaption class="mock-cap" style="text-align:center">Product page (sample layout)</figcaption></figure>
+        <figure style="margin:0"><div data-stone="c" data-seed="5"></div><figcaption class="mock-cap" style="text-align:center">Stone in this palette</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <p><b>Best at</b>Originality. Nobody else in rock merch looks like this, and the wet effect on the site becomes the whole show.</p>
+      <p><b>Honest risk</b>Quiet logos vanish on a busy feed and on a dark shirt from across a parking lot. Lowercase serif can read "candle shop."</p>
+      <p><b>Changed from the first sketch</b>I swapped DM Sans, a very common font, for Schibsted Grotesk.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= D ================= -->
+<section class="opt opt-d" id="d" aria-labelledby="d-h">
+  <div class="wrap">
+    <header class="opt-head">
+      <h2 id="d-h"><span class="letter">D</span>Lake Chart</h2>
+      <p class="thesis">The wildcard. Great Lakes navigation charts draw depth as rings of contour lines, and agate bands look almost exactly like them. Water names are italic and land names are upright, the way real charts do it. The shoreline is where dry meets wet.</p>
+    </header>
+
+    <div class="pair">
+      <div>
+        <h3>Wordmark</h3>
+        <div class="panel wm-stage"><div class="wm-d"><div data-contour="d" style="width:clamp(84px,14vw,128px);flex:none"></div><div><div class="title">Heavy Pockets Co.</div><div class="sub">Soundings in pounds</div></div></div></div>
+        <div class="wm-variants">
+          <div style="background:#14202A"><div><div data-contour="d-dark" style="width:86px;margin:0 auto"></div><div class="cap" style="color:#DCE6EE">The ring mark alone, on a navy tee</div></div></div>
+          <div style="background:#E2EEF5"><div><div class="wm-d" style="--wm:15px;gap:8px;color:#14202A"><div data-contour="d-mono" style="width:40px"></div><div class="title">Heavy Pockets Co.</div></div><div class="cap" style="color:#14202A">One color, small</div></div></div>
+        </div>
+      </div>
+      <div>
+        <h3>Palette: tap a swatch to wet it</h3>
+        <div class="chips" data-chips="d"></div>
+        <p class="chip-hint" style="color:var(--ink-2)">Agate red becomes chart magenta, the color real charts use for lights and buoys. Sand becomes the buff of charted land.</p>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="type-spec">
+        <h3>Type</h3>
+        <div class="big"><em style="font-style:italic">Dry rocks lie.</em></div>
+        <p class="body-sample">Lake Superior agates hide in plain sight. Dry, they look like any other pebble. Wet, the bands show up, and the rest of the beach goes quiet.</p>
+        <p class="label-sample">Agate · 46°40′N · Grand Marais shoreline</p>
+      </div>
+      <div class="font-list">
+        <h3>Fonts (free for commercial use)</h3>
+        <span><b>Bodoni Moda</b> for titles, after the engraved lettering on 1800s lake survey charts.</span>
+        <span><b>Barlow Semi Condensed</b> for reading text and labels: upright for land, italic for water.</span>
+      </div>
+    </div>
+
+    <div>
+      <h3>On a shirt, a phone, and a stone</h3>
+      <div class="mocks">
+        <figure style="margin:0"><div data-tee="d"></div><figcaption class="mock-cap">White tee. An agate drawn as a depth chart, with soundings and a light.</figcaption></figure>
+        <figure style="margin:0"><div class="phone"><div class="screen" data-screen="d"></div></div><figcaption class="mock-cap" style="text-align:center">Product page (sample layout)</figcaption></figure>
+        <figure style="margin:0"><div data-stone="d" data-seed="61"></div><figcaption class="mock-cap" style="text-align:center">Stone in this palette</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <p><b>Best at</b>A world, not just a logo. Charts, field guide maps, beach locations, and the stone chart shirt all speak one language that only the Great Lakes have.</p>
+      <p><b>Honest risk</b>It can read "boating" before "rocks." Fine contour lines also need care at small sizes and on socks.</p>
+      <p><b>Where it came from</b>Not in your three. The design skill's roll pushed me past my obvious picks, and this one held up. Ignore it freely.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="compare" id="compare" aria-labelledby="cmp-h">
+    <h2 id="cmp-h">Side by side</h2>
+    <p class="note">Plain words instead of scores. "Stands out" means in a fast scroll on a phone; "small" means a 1-inch neck tag or an embroidered hat.</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col"></th><th scope="col">A · Field Notebook</th><th scope="col">B · Workwear</th><th scope="col">C · Minimal</th><th scope="col">D · Lake Chart</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Stands out</th><td>Medium</td><td>High</td><td>Low, unless the wet effect is moving</td><td>Medium to high</td></tr>
+          <tr><th scope="row">Works small</th><td>Good (the agate O)</td><td>Very good (the patch)</td><td>Good</td><td>Fair (rings need simplifying)</td></tr>
+          <tr><th scope="row">Fits chart shirts</th><td>Very good</td><td>Fair</td><td>Good</td><td>Very good</td></tr>
+          <tr><th scope="row">Fits pun shirts</th><td>Fair</td><td>Very good</td><td>Good</td><td>Fair</td></tr>
+          <tr><th scope="row">How original</th><td>Medium</td><td>Low to medium</td><td>High</td><td>High</td></tr>
+          <tr><th scope="row">Biggest risk</th><td>Forgettable</td><td>Generic workwear</td><td>Too quiet</td><td>Reads "boating"</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="close" aria-labelledby="pick-h">
+    <div class="cols">
+      <div>
+        <h2 id="pick-h">My pick, and why</h2>
+        <p class="pick"><b>D, Lake Chart</b>, with A's agate O as a fallback.</p>
+        <p>D is the only option where the logo, the chart shirts, the field guide, and the site all come from one idea that belongs to the Great Lakes. The agate-as-depth-chart mark is something no other rock shop can copy without copying you.</p>
+        <p>If D feels too nautical when you see it on your phone, A is the safe, credible choice. B sells best but says the least about rocks. C is the most original logo, but it needs the website's motion to land.</p>
+        <p>Mixing is allowed: for example, D's world with B's oval patch as a hat and tag badge.</p>
+      </div>
+      <div>
+        <h2 style="font-size:clamp(24px,3vw,32px)">What happens next</h2>
+        <ol>
+          <li>Reply with a letter (or a mix) and anything you hate.</li>
+          <li>I finish that one: final colors, logo files as SVG and PNG, and the one-page brand guide.</li>
+          <li>The sock pattern, the "I lick rocks" art, and the store preview switch to the chosen colors and fonts.</li>
+        </ol>
+        <p style="margin-top:18px;color:var(--ink-2)">Color on screens is not color on cotton. Final colors get checked against real Printify samples at Step 10.</p>
+      </div>
+    </div>
+  </section>
+</div>
+<footer><div class="wrap">All stones, marks, and mockups on this page are drawn by code. Prices and product details in the phone mockups are placeholders. Fonts are Google Fonts under the SIL Open Font License, which allows use on products.</div></footer>
+
+<script>
+(function(){
+"use strict";
+var NS="http://www.w3.org/2000/svg", uid=0;
+
+/* ---------- Palettes: [name, dry, wet] ---------- */
+var P={
+  a:[["Superior slate","#6E7A82","#1F2D38"],["Agate red","#C98A72","#9A2E1A"],["Petoskey gray","#B9B4AA","#5E5A52"],["Sand","#E9E1CF","#C2A576"]],
+  b:[["Duck canvas","#C49A62","#7A5530"],["Chore navy","#5A6B82","#1C2A3D"],["Agate red","#D0643F","#A1301B"],["Lake Michigan teal","#76A3A0","#1F5653"],["Sand","#EADCC0","#C7A877"]],
+  c:[["Dry stone","#C8C4BC","#5A564F"],["Basalt","#8A8782","#262523"],["Sand","#E4DFD5","#B9A98C"],["Agate red, wet only","#C9AFA5","#8E2414"]],
+  d:[["Shoal blue","#CFE3EE","#5E9BC4"],["Contour slate","#7690A1","#1F3A4F"],["Chart magenta","#DE98C2","#A3176E"],["Land buff","#F3E3B3","#C9A54E"],["Sounding gray","#ADAEAC","#4D4F4F"]]
+};
+/* agate band colors per world: rind, bands..., center */
+var BANDS={
+  hero:{rind:"#4A2A1E",b:["#9A2E1A","#E8D9C6","#B5532F","#F1E7DA","#7E2616","#D9B99B","#C46A3E"],core:"#DCD6CB"},
+  a:{rind:"#3A2C26",b:["#9A2E1A","#EDE3D2","#C2A576","#F4EEE3","#1F2D38","#C98A72"],core:"#E2DDD3"},
+  b:{rind:"#4A3420",b:["#A1301B","#EADCC0","#1F5653","#F3EAD8","#C7A877","#7A5530"],core:"#E4DAC6"},
+  c:{rind:"#2F2D2A",b:["#5A564F","#DAD6CE","#8E2414","#E6E2DA","#8A8782","#B9A98C"],core:"#D6D2CA"},
+  d:{rind:"#1F3A4F",b:["#A3176E","#EEF5F9","#5E9BC4","#F8FBFC","#1F3A4F","#C9A54E"],core:"#E7F0F5"}
+};
+
+function rng(s){return function(){s|=0;s=s+0x6D2B79F5|0;var t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
+
+/* closed wobbly outline at a given scale, shared harmonics so bands follow the rind */
+function ring(cx,cy,R,H,scale,jit,r){
+  var N=140,pts=[];
+  for(var i=0;i<N;i++){
+    var th=i/N*Math.PI*2,m=1;
+    for(var k=0;k<H.length;k++)m+=Math.min(H[k][0]*Math.pow(scale,H[k][2]),.13)*Math.sin(H[k][1]*th+H[k][3]);
+    var rr=R*scale*m+(r()-.5)*jit;
+    pts.push([cx+Math.cos(th)*rr,cy+Math.sin(th)*rr*.92]);
+  }
+  /* light smoothing */
+  var sm=pts.map(function(p,i){var a=pts[(i+N-1)%N],b=pts[(i+1)%N];return[(a[0]+2*p[0]+b[0])/4,(a[1]+2*p[1]+b[1])/4];});
+  return "M"+sm.map(function(p){return p[0].toFixed(1)+" "+p[1].toFixed(1);}).join("L")+"Z";
+}
+function harmonics(r){return[[.07+r()*.05,2,.6,r()*6.3],[.05+r()*.04,3,.9,r()*6.3],[.025,5,1.6,r()*6.3],[.012,8,2.4,r()*6.3]];}
+
+function stone(seed,key,size){
+  var r=rng(seed*7919),B=BANDS[key]||BANDS.hero,id="s"+(++uid),H=harmonics(r);
+  var svg=el("svg",{viewBox:"0 0 200 200",class:"stone",role:"button",tabindex:"0","aria-label":"Code-drawn agate. Press to wet it.","aria-pressed":"false"});
+  if(size)svg.style.maxWidth=size;
+  var defs=el("defs",{});
+  var cp=el("clipPath",{id:id+"c"});var outline=ring(100,100,86,H,1,0,r);cp.appendChild(el("path",{d:outline}));defs.appendChild(cp);
+  var f=el("filter",{id:id+"n",x:"0",y:"0",width:"100%",height:"100%"});
+  f.appendChild(el("feTurbulence",{type:"fractalNoise",baseFrequency:"1.6",numOctaves:"2",seed:String(seed)}));
+  f.appendChild(el("feColorMatrix",{values:"0 0 0 0 .93  0 0 0 0 .91  0 0 0 0 .87  0 0 0 2.2 -1.15"}));
+  defs.appendChild(f);
+  var gb=el("filter",{id:id+"g",x:"-30%",y:"-30%",width:"160%",height:"160%"});gb.appendChild(el("feGaussianBlur",{stdDeviation:"5"}));defs.appendChild(gb);
+  var sh=el("filter",{id:id+"sh",x:"-20%",y:"-20%",width:"140%",height:"150%"});sh.appendChild(el("feGaussianBlur",{stdDeviation:"4"}));defs.appendChild(sh);
+  svg.appendChild(defs);
+  svg.appendChild(el("ellipse",{cx:"104",cy:"178",rx:"70",ry:"9",fill:"rgba(0,0,0,.22)",filter:"url(#"+id+"sh)"}));
+  var body=el("g",{class:"body","clip-path":"url(#"+id+"c)"});
+  body.appendChild(el("path",{d:outline,fill:B.rind}));
+  /* fortification bands: clusters of hairlines between a few thick bands, growing more angular inward */
+  var HA=H.concat([[.05,4,-.55,r()*6.3],[.035,6,-.7,r()*6.3]]);
+  var s=.95,ox=(r()-.5)*22,oy=(r()-.5)*16,bi=0,guard=0;
+  var dark=B.b.filter(function(c,i){return i%2===0;}),light=B.b.filter(function(c,i){return i%2===1;});
+  while(s>.24&&guard++<80){
+    var thick=r()<.38,w;
+    if(thick){w=.045+r()*.07;body.appendChild(el("path",{d:ring(100+ox*(1-s),100+oy*(1-s),86,HA,s,1.2,r),fill:dark[bi++%dark.length]}));s-=w;}
+    else{var lines=4+Math.floor(r()*6);for(var j=0;j<lines&&s>.24;j++){body.appendChild(el("path",{d:ring(100+ox*(1-s),100+oy*(1-s),86,HA,s,.9,r),fill:j%2?light[(bi+j)%light.length]:dark[(bi+j)%dark.length]}));s-=.009+r()*.012;}}
+    if(r()<.3){body.appendChild(el("path",{d:ring(100+ox*(1-s),100+oy*(1-s),86,HA,s,1,r),fill:light[bi%light.length]}));s-=.02+r()*.03;}
+  }
+  body.appendChild(el("path",{d:ring(100+ox*.8,100+oy*.8,86,HA,Math.max(s,.16),2.6,r),fill:B.core}));
+  svg.appendChild(body);
+  var dust=el("g",{class:"dust","clip-path":"url(#"+id+"c)"});dust.appendChild(el("rect",{x:"0",y:"0",width:"200",height:"200",filter:"url(#"+id+"n)"}));
+  svg.appendChild(dust);
+  var gl=el("g",{class:"gloss","clip-path":"url(#"+id+"c)"});
+  gl.appendChild(el("ellipse",{cx:"72",cy:"62",rx:"38",ry:"20",fill:"rgba(255,255,255,.55)",transform:"rotate(-28 72 62)",filter:"url(#"+id+"g)"}));
+  gl.appendChild(el("path",{d:"M48 92 C56 64 78 46 106 40",stroke:"rgba(255,255,255,.75)","stroke-width":"3","stroke-linecap":"round",fill:"none"}));
+  gl.appendChild(el("path",{d:outline,fill:"none",stroke:"rgba(255,255,255,.18)","stroke-width":"3"}));
+  svg.appendChild(gl);
+  function toggle(){var w=svg.classList.toggle("wet");svg.setAttribute("aria-pressed",w?"true":"false");}
+  svg.addEventListener("click",toggle);
+  svg.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle();}});
+  return svg;
+}
+
+/* agate "O" for option A: simple concentric rounded bands, flat */
+function agateO(colors){
+  var r=rng(97),H=[[.05,2,.6,1.1],[.03,3,.9,2.2]];
+  var svg=el("svg",{viewBox:"0 0 100 100","aria-hidden":"true",width:"100%",height:"100%"});
+  var s=1,i=0;
+  while(s>.18){svg.appendChild(el("path",{d:ring(50,50,48,H,s,0,r),fill:colors[i%colors.length]}));s-=.12;i++;}
+  return svg;
+}
+
+/* contour mark for option D */
+function contour(mode){
+  var r=rng(404),H=harmonics(rng(404));
+  var dark=mode==="d-dark",mono=mode==="d-mono";
+  var line=dark?"#9CC3E0":(mono?"currentColor":"#2F6E9C"),mag=dark?"#F27DC2":(mono?"currentColor":"#A3176E"),txt=dark?"#DCE6EE":(mono?"currentColor":"#14202A");
+  var svg=el("svg",{viewBox:"0 0 200 200","aria-hidden":"true",width:"100%"});
+  if(!mono){svg.appendChild(el("path",{d:ring(100,100,90,H,1,0,r),fill:dark?"#13283B":"#E2EEF5"}));}
+  var scales=mono?[1,.74,.5,.28]:[1,.86,.72,.6,.48,.37,.27,.18];
+  scales.forEach(function(s,i){svg.appendChild(el("path",{d:ring(100+6*(1-s),100-4*(1-s),90,H,s,0,r),fill:"none",stroke:line,"stroke-width":mono?6:(i===0?3.2:1.6),"stroke-dasharray":(!mono&&i===3)?"6 4":"none"}));});
+  if(!mono){
+    [["3",40,96],["7",150,70],["12",120,140],["18",86,58]].forEach(function(t){var x=el("text",{x:t[1],y:t[2],"font-family":"Barlow Semi Condensed, sans-serif","font-style":"italic","font-size":"15",fill:txt,"text-anchor":"middle"});x.textContent=t[0];svg.appendChild(x);});
+  }
+  /* light symbol: magenta flare */
+  /* chart light symbol at the shoreline: a dot with a teardrop flare */
+  svg.appendChild(el("path",{d:"M170 52 L190 30 C193 27 197 31 194 34 Z",fill:mag}));
+  svg.appendChild(el("circle",{cx:"170",cy:"52",r:mono?7:5,fill:mag}));
+  return svg;
+}
+
+/* oval chain-stitch patch for option B */
+function patch(small){
+  var svg=el("svg",{viewBox:"0 0 360 170",width:"100%","aria-label":small?"":"Heavy Pockets Co. oval name patch",role:"img"});
+  if(small){svg.style.maxWidth="120px";}
+  else svg.style.maxWidth="380px";
+  var fill=small?"#1D1812":"#1C2A3D",thread=small?"#EADCC0":"#EADCC0";
+  svg.appendChild(el("ellipse",{cx:"180",cy:"85",rx:"172",ry:"78",fill:fill}));
+  svg.appendChild(el("ellipse",{cx:"180",cy:"85",rx:"160",ry:"67",fill:"none",stroke:thread,"stroke-width":"3","stroke-dasharray":"7 5"}));
+  var t=el("text",{x:"180",y:"100","text-anchor":"middle","font-family":"Yellowtail, cursive","font-size":"62",fill:thread});t.textContent="Heavy Pockets";svg.appendChild(t);
+  var c=el("text",{x:"180",y:"136","text-anchor":"middle","font-family":"Archivo, sans-serif","font-weight":"800","font-size":"15","letter-spacing":"5",fill:thread});c.textContent="CO.";
+  c.setAttribute("style","font-stretch:110%");svg.appendChild(c);
+  return svg;
+}
+
+/* the lick streak for option C */
+function streak(svg,mode){
+  var red=mode==="mono"?"#262523":(mode==="c1"?"#E0573D":"#8E2414");
+  svg.appendChild(el("path",{d:"M30 6 C46 6 54 22 52 46 C50 72 44 96 30 110 C16 96 8 72 8 46 C6 22 14 6 30 6 Z",fill:red,opacity:mode==="mono"?".22":".55",transform:"rotate(14 30 58)"}));
+  if(mode!=="mono")svg.appendChild(el("path",{d:"M22 22 C18 40 18 62 24 82",stroke:"rgba(255,255,255,.7)","stroke-width":"4","stroke-linecap":"round",fill:"none",transform:"rotate(14 30 58)"}));
+}
+
+/* tee mockups */
+var TEE="M96 22 L58 36 L10 78 L40 116 L64 101 L64 300 L236 300 L236 101 L260 116 L290 78 L242 36 L204 22 C194 44 174 54 150 54 C126 54 106 44 96 22 Z";
+function tee(key){
+  var cfg={a:{c:"#2B3640",ink:"#E9E1CF"},b:{c:"#D9CBAE",ink:"#1C2A3D"},c:{c:"#46443F",ink:"#D6D1C8"},d:{c:"#F6F6F3",ink:"#14202A"}}[key];
+  var id="t"+(++uid);
+  var svg=el("svg",{viewBox:"0 0 300 310",class:"tee",role:"img","aria-label":"T-shirt mockup for option "+key.toUpperCase()});
+  var d=el("defs",{});var sh=el("filter",{id:id+"s",x:"-10%",y:"-10%",width:"120%",height:"130%"});sh.appendChild(el("feDropShadow",{dx:"0",dy:"8",stdDeviation:"8","flood-opacity":".28"}));d.appendChild(sh);
+  var lg=el("linearGradient",{id:id+"l",x1:"0",x2:"1"});lg.appendChild(el("stop",{offset:"0","stop-color":"#000","stop-opacity":".10"}));lg.appendChild(el("stop",{offset:".5","stop-color":"#fff","stop-opacity":".05"}));lg.appendChild(el("stop",{offset:"1","stop-color":"#000","stop-opacity":".12"}));d.appendChild(lg);
+  svg.appendChild(d);
+  svg.appendChild(el("path",{d:TEE,fill:cfg.c,filter:"url(#"+id+"s)",stroke:"rgba(0,0,0,.18)","stroke-width":"1"}));
+  svg.appendChild(el("path",{d:TEE,fill:"url(#"+id+"l)"}));
+  svg.appendChild(el("path",{d:"M96 22 C106 44 126 54 150 54 C174 54 194 44 204 22",fill:"none",stroke:"rgba(0,0,0,.25)","stroke-width":"5"}));
+  svg.appendChild(el("path",{d:"M64 101 L64 120 M236 101 L236 120",stroke:"rgba(0,0,0,.12)","stroke-width":"1.5"}));
+  var g=el("g",{});
+  if(key==="a"){
+    var o=agateO(["#E9E1CF","#C98A72","#E9E1CF","#2B3640","#C2A576"]);var fo=el("svg",{x:"128",y:"80",width:"44",height:"44",viewBox:"0 0 100 100"});while(o.firstChild)fo.appendChild(o.firstChild);g.appendChild(fo);
+    var t1=el("text",{x:"150",y:"150","text-anchor":"middle","font-family":"Young Serif, serif","font-size":"23",fill:cfg.ink});t1.textContent="Heavy Pockets";g.appendChild(t1);
+    var t2=el("text",{x:"150",y:"172","text-anchor":"middle","font-family":"Courier Prime, monospace","font-size":"10",fill:cfg.ink,"letter-spacing":"2"});t2.textContent="NO. HP-001";g.appendChild(t2);
+  }else if(key==="b"){
+    var p=patch(false);p.setAttribute("x","178");p.setAttribute("y","80");p.setAttribute("width","46");p.setAttribute("height","22");p.removeAttribute("style");g.appendChild(p);
+  }else if(key==="c"){
+    g.appendChild(lickStone(7,108,74,86));
+    var t3=el("text",{x:"150",y:"188","text-anchor":"middle","font-family":"Instrument Serif, serif","font-size":"24",fill:cfg.ink});t3.textContent="i lick rocks";g.appendChild(t3);
+  }else{
+    var cm=contour("d");var cs=el("svg",{x:"104",y:"72",width:"92",height:"92",viewBox:"0 0 200 200"});while(cm.firstChild)cs.appendChild(cm.firstChild);g.appendChild(cs);
+    var t4=el("text",{x:"150",y:"184","text-anchor":"middle","font-family":"Bodoni Moda, serif","font-size":"14","letter-spacing":"3",fill:cfg.ink});t4.textContent="HEAVY POCKETS CO.";g.appendChild(t4);
+    var t5=el("text",{x:"150",y:"200","text-anchor":"middle","font-family":"Barlow Semi Condensed, sans-serif","font-style":"italic","font-size":"10",fill:"#3A4B58","letter-spacing":"1"});t5.textContent="Lake Superior · soundings in pounds";g.appendChild(t5);
+  }
+  svg.appendChild(g);
+  return svg;
+}
+
+/* "I lick rocks": the whole stone dry, one lick-shaped streak wet */
+function lickStone(seed,x,y,w){
+  var dry=stone(seed,"hero"),wet=stone(seed,"hero"),id="l"+(++uid);
+  var outer=el("svg",{x:x,y:y,width:w,height:w,viewBox:"0 0 200 200"});
+  var cp=el("clipPath",{id:id});cp.appendChild(el("path",{d:"M92 34 C118 30 132 52 128 84 C124 118 116 150 100 172 C86 150 80 118 80 86 C80 58 78 38 92 34 Z",transform:"rotate(12 104 100)"}));
+  var defs=el("defs",{});defs.appendChild(cp);outer.appendChild(defs);
+  var gd=el("g",{});while(dry.firstChild)gd.appendChild(dry.firstChild);
+  gd.querySelector(".body").setAttribute("style","filter:saturate(.25) brightness(1.15) contrast(.75)");
+  gd.querySelector(".gloss").setAttribute("style","opacity:0");
+  var gw=el("g",{"clip-path":"url(#"+id+")"});while(wet.firstChild)gw.appendChild(wet.firstChild);
+  gw.querySelector(".body").setAttribute("style","filter:saturate(1.1) contrast(1.06)");
+  gw.querySelector(".dust").setAttribute("style","opacity:0");
+  gw.querySelector(".gloss").setAttribute("style","opacity:1;transform:none");
+  outer.appendChild(gd);outer.appendChild(gw);
+  return outer;
+}
+
+/* phone screen */
+var SCREENS={
+  a:{brand:'<span style="font-family:Young Serif,serif;font-size:15px">Heavy Pockets Co.</span>',title:"Beach Stone Chart Tee",fn:"No. HP-014 · Drawn from an agate found on the Keweenaw. Dry rocks lie."},
+  b:{brand:'<span style="font:900 13px Archivo;font-stretch:120%;text-transform:uppercase">Heavy Pockets</span>',title:"Will Brake for Agates",fn:"Heavyweight tee with the sewn-look patch."},
+  c:{brand:'<span style="font-family:Instrument Serif,serif;font-size:19px">heavy pockets</span>',title:"I lick rocks",fn:"Field note: the only way to see the color is to wet it."},
+  d:{brand:'<span style="font:500 12px Bodoni Moda,serif;letter-spacing:.14em">HEAVY POCKETS CO.</span>',title:"Great Lakes Stone Chart",fn:"Twelve beach stones, charted like a shoreline."}
+};
+function screen(node,key){
+  var s=SCREENS[key];
+  node.innerHTML='<div class="bar">'+s.brand+'<span aria-hidden="true">Cart</span></div><div class="shot"></div><div class="pt">'+s.title+'</div><div class="pp">$27.99 · sample price</div><div class="fn">'+s.fn+'</div><div class="cta">Add to cart</div>';
+  node.querySelector(".shot").appendChild(stone({a:23,b:37,c:5,d:61}[key]+100,key));
+}
+
+/* luminance for chip text */
+function lum(h){var c=[1,3,5].map(function(i){var v=parseInt(h.substr(i,2),16)/255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4);});return .2126*c[0]+.7152*c[1]+.0722*c[2];}
+function on(h){return lum(h)>.22?"#16191B":"#F7F4EE";}
+
+document.querySelectorAll("[data-chips]").forEach(function(box){
+  P[box.dataset.chips].forEach(function(p){
+    var b=document.createElement("button");b.type="button";b.className="chip";b.setAttribute("aria-pressed","false");
+    b.style.setProperty("--dry",p[1]);b.style.setProperty("--wet",p[2]);b.style.setProperty("--on-dry",on(p[1]));b.style.setProperty("--on-wet",on(p[2]));
+    b.innerHTML='<span class="n">'+p[0]+'</span><span class="h"><span class="d">Dry '+p[1]+'</span><span class="w">Wet '+p[2]+'</span></span>';
+    b.setAttribute("aria-label",p[0]+", dry "+p[1]+", wet "+p[2]+". Press to wet.");
+    b.addEventListener("click",function(){var w=b.classList.toggle("wet");b.setAttribute("aria-pressed",w?"true":"false");});
+    box.appendChild(b);
+  });
+});
+document.querySelectorAll("[data-stone]").forEach(function(n){n.appendChild(stone(+n.dataset.seed,n.dataset.stone));});
+document.querySelectorAll("[data-agate-o]").forEach(function(n){
+  var k=n.dataset.agateO;n.appendChild(agateO(k==="a1"?["#E9E1CF","#C98A72","#E9E1CF","#1F2D38","#C2A576"]:["#1F2D38","#C2A576","#9A2E1A","#EDE3D2","#1F2D38","#C98A72"]));
+});
+document.querySelectorAll("[data-patch]").forEach(function(n){n.appendChild(patch(n.dataset.patch==="b-small"));});
+document.querySelectorAll("[data-streak]").forEach(function(n){streak(n,n.dataset.streak);});
+document.querySelectorAll("[data-contour]").forEach(function(n){n.appendChild(contour(n.dataset.contour));});
+document.querySelectorAll("[data-tee]").forEach(function(n){n.appendChild(tee(n.dataset.tee));});
+document.querySelectorAll("[data-screen]").forEach(function(n){screen(n,n.dataset.screen);});
+
+/* wet the whole page */
+var wa=document.getElementById("wetall");
+wa.addEventListener("click",function(){var w=document.body.classList.toggle("is-wet");wa.setAttribute("aria-pressed",w?"true":"false");wa.textContent=w?"Dry it off":"Wet the whole page";});
+
+/* theme: system, light, dark */
+var tb=document.getElementById("theme"),modes=["system","light","dark"],cur="system";
+try{cur=localStorage.getItem("hp-theme")||"system";}catch(e){}
+function apply(m){cur=m;if(m==="system")document.documentElement.removeAttribute("data-theme");else document.documentElement.setAttribute("data-theme",m);tb.textContent="Theme: "+m;try{localStorage.setItem("hp-theme",m);}catch(e){}}
+apply(cur);
+tb.addEventListener("click",function(){apply(modes[(modes.indexOf(cur)+1)%3]);});
+})();
+</script>
+</body>
+</html>

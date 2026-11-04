@@ -44,9 +44,10 @@ p{margin:0}
 .intro .lead strong{color:var(--ink);font-weight:600}
 .intro .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 .hero-stone{justify-self:center;width:min(100%,420px)}
+@media (max-width:859px){.hero-stone{order:-1;width:min(70vw,300px)}.intro{padding-top:8px}}
 .hero-stone figcaption{font-size:14px;color:var(--ink-2);text-align:center;margin-top:10px}
 .jump{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px;font-size:15px}
-.jump a{padding:8px 14px;border-radius:999px;background:var(--page-2);text-decoration:none;min-height:40px;display:inline-flex;align-items:center}
+.jump a{padding:8px 14px;border-radius:999px;background:var(--page-2);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
 .jump a:hover{background:color-mix(in srgb,var(--ink) 14%,var(--page-2))}
 
 /* ---------- Wet mechanics (the one authored moment) ---------- */
@@ -64,7 +65,7 @@ p{margin:0}
 .chip{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:132px;padding:12px;border:0;border-radius:var(--chip-r,10px);background:var(--dry);color:var(--on-dry);font:500 14px/1.3 var(--chrome);text-align:left;cursor:pointer;transition:background-color .9s cubic-bezier(.16,1,.3,1),color .9s cubic-bezier(.16,1,.3,1)}
 .chip::after{content:"";position:absolute;inset:-20% -60%;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.42) 50%,transparent 58%);transform:translateX(-70%);pointer-events:none}
 .chip .n{font-weight:700;font-size:15px}
-.chip .h{font-variant-numeric:tabular-nums;opacity:.9}
+.chip .h{font-variant-numeric:tabular-nums}
 .chip .h .w{display:none}
 .chip.wet,.is-wet .chip{background:var(--wet);color:var(--on-wet)}
 .chip.wet .h .d,.is-wet .chip .h .d{display:none}
@@ -134,13 +135,13 @@ p{margin:0}
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]) .opt-a{--g:#192026;--s:#232C33;--ink:#E8E4DA;--ink-2:#AEB6BC;--acc:#E07A5F;--on-acc:#1A1210}
   :root:not([data-theme="light"]) .opt-b{--g:#35261A;--s:#45331F;--ink:#F3E8D3;--ink-2:#D6C3A1;--acc:#EADCC0;--on-acc:#1C2A3D}
-  :root:not([data-theme="light"]) .opt-c{--g:#1C1B19;--s:#262522;--ink:#ECE8E1;--ink-2:#ADA89F;--acc:#E0573D;--on-acc:#1C0E0A}
+  :root:not([data-theme="light"]) .opt-c{--g:#1C1B19;--s:#262522;--ink:#ECE8E1;--ink-2:#ADA89F;--acc:#EC6A4E;--on-acc:#1C0E0A}
   :root:not([data-theme="light"]) .opt-d{--g:#0D1721;--s:#13283B;--ink:#DCE6EE;--ink-2:#9AACBB;--acc:#F27DC2;--on-acc:#22071A}
   :root:not([data-theme="light"]) .opt-d .panel{border-color:#24425C}
 }
 :root[data-theme="dark"] .opt-a{--g:#192026;--s:#232C33;--ink:#E8E4DA;--ink-2:#AEB6BC;--acc:#E07A5F;--on-acc:#1A1210}
 :root[data-theme="dark"] .opt-b{--g:#35261A;--s:#45331F;--ink:#F3E8D3;--ink-2:#D6C3A1;--acc:#EADCC0;--on-acc:#1C2A3D}
-:root[data-theme="dark"] .opt-c{--g:#1C1B19;--s:#262522;--ink:#ECE8E1;--ink-2:#ADA89F;--acc:#E0573D;--on-acc:#1C0E0A}
+:root[data-theme="dark"] .opt-c{--g:#1C1B19;--s:#262522;--ink:#ECE8E1;--ink-2:#ADA89F;--acc:#EC6A4E;--on-acc:#1C0E0A}
 :root[data-theme="dark"] .opt-d{--g:#0D1721;--s:#13283B;--ink:#DCE6EE;--ink-2:#9AACBB;--acc:#F27DC2;--on-acc:#22071A}
 :root[data-theme="dark"] .opt-d .panel{border-color:#24425C}
 
@@ -150,15 +151,20 @@ p{margin:0}
 .wm-a .o{width:.74em;height:.74em;display:inline-block;margin:0 .02em;transform:translateY(.02em)}
 .wm-a .co{font-size:calc(var(--wm,58px)*.42);letter-spacing:.08em}
 .tag-a{display:inline-block;margin-top:14px;font:700 14px/1 "Courier Prime",monospace;color:#9A2E1A;background:#F7F4EC;border:1px solid #CFC8B8;padding:6px 8px;border-radius:2px;letter-spacing:.06em}
-.label-card{font-family:"Courier Prime",monospace;font-size:14px;line-height:1.5;color:#1F2D38;background:#F7F4EC;border:1px solid #BDB6A6;padding:12px 14px;max-width:320px;text-align:left;box-shadow:0 6px 14px -8px rgba(31,45,56,.35)}
+.label-card{font-family:"Courier Prime",monospace;font-weight:700;font-size:14px;line-height:1.5;color:#1F2D38;background:#F7F4EC;border:1px solid #BDB6A6;padding:12px 14px;max-width:320px;text-align:left;box-shadow:0 6px 14px -8px rgba(31,45,56,.35)}
 .label-card .lt{font-family:"Young Serif",serif;font-size:16px;border-bottom:1px solid #1F2D38;padding-bottom:6px;margin-bottom:6px;display:flex;justify-content:space-between}
-.label-card .lt span:last-child{color:#9A2E1A;font-family:"Courier Prime",monospace;font-weight:700;font-size:13px}
+.label-card .lt span:last-child{white-space:nowrap;color:#9A2E1A;font-family:"Courier Prime",monospace;font-weight:700;font-size:13px}
 
+.patch-ring{stroke-opacity:0}
+:root[data-theme="dark"] .patch-ring{stroke-opacity:1}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .patch-ring{stroke-opacity:1}}
 .wm-b-block{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:125%;line-height:.88;text-transform:uppercase;text-align:center;color:var(--ink);font-size:var(--wm,46px)}
 .wm-b-block small{display:block;font-stretch:75%;font-weight:700;font-size:.3em;letter-spacing:.16em;margin-top:.7em}
 
 .wm-c{position:relative;display:inline-block;font-family:"Instrument Serif",serif;font-size:var(--wm,74px);line-height:1;color:var(--ink);letter-spacing:-.015em;padding:.08em .1em}
-.wm-c .streak{position:absolute;left:43%;top:-2%;width:.62em;height:1.12em;pointer-events:none;opacity:.88}
+.wm-c{white-space:nowrap}
+.wet-o{position:relative;color:var(--acc)}
+.wet-o::after{content:"";position:absolute;left:.12em;top:.36em;width:.07em;height:.2em;border-radius:1em;background:rgba(255,255,255,.75);transform:rotate(18deg)}
 .wm-c .t{position:relative}
 
 .wm-d{display:inline-flex;align-items:center;gap:16px;color:var(--ink);flex-wrap:wrap;justify-content:center}
@@ -172,7 +178,7 @@ p{margin:0}
 .compare h2,.close h2{font:700 clamp(32px,4.6vw,52px)/1.05 var(--chrome);letter-spacing:-.025em;margin-bottom:22px}
 .compare p.note{color:var(--ink-2);max-width:64ch;margin-bottom:28px}
 .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:1.5px solid var(--ink)}
-table{border-collapse:collapse;width:100%;min-width:720px;font-size:15px}
+table{border-collapse:collapse;width:100%;min-width:860px;font-size:15px}
 th,td{text-align:left;vertical-align:top;padding:14px 12px;border-bottom:1px solid var(--rule)}
 thead th{font-weight:700}
 tbody th{font-weight:600;color:var(--ink-2);width:18%}
@@ -183,25 +189,47 @@ tbody th{font-weight:600;color:var(--ink-2);width:18%}
 .close p+p{margin-top:14px}
 .close ol{padding-left:1.2em;margin:0;display:grid;gap:10px}
 .close .pick{font-size:clamp(20px,2.3vw,24px);line-height:1.45}
+
+/* Option E */
+.opt-e{--g:#CFD3D2}
+.opt-e .label-sample{font-family:var(--body)}
+:root[data-theme="dark"] .opt-e{--g:#1E262B}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .opt-e{--g:#1E262B}}
+.neck{display:inline-flex;gap:10px;align-items:center;background:#2B3640;color:#E9E1CF;font:700 13px/1.35 "Courier Prime",monospace;padding:10px 14px;border-radius:3px;text-align:left}
+.neck .o{width:30px;height:30px;display:inline-block;flex:none}
+.pun{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:68%;text-transform:uppercase;font-size:clamp(52px,8vw,96px);line-height:.88;letter-spacing:-.005em}
+.series{font-family:"Young Serif",serif;font-size:clamp(30px,4vw,42px);line-height:1}
+.pepper{background:#3D3E3B;border-radius:4px;padding:18px;display:grid;place-items:center}
+.pepper img{width:100%;max-width:340px;height:auto;display:block}
+.socks{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.socks img{width:100%;height:auto;display:block;border-radius:3px}
+.cmp-cards{display:none}
+@media (max-width:699px){.table-scroll{display:none}.cmp-cards{display:grid;gap:14px}}
+.cmp-card{border-top:1.5px solid var(--ink);padding-top:12px}
+.cmp-card h3{font:700 19px/1.2 var(--chrome);margin-bottom:8px}
+.cmp-card dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:15px}
+.cmp-card dt{color:var(--ink-2)}
+.cmp-card dd{margin:0}
+.table-scroll{padding-top:4px}
 footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-size:14px;color:var(--ink-2)}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="top">
-    <span class="meta">Heavy Pockets Co. · Step 4 · Round 1 · Nov 4, 2026</span>
+    <span class="meta">Heavy Pockets Co. · Step 4 · Round 1, revised after review · Nov 4, 2026</span>
     <button class="btn" id="theme" type="button" aria-label="Switch color theme">Theme: system</button>
   </div>
 
   <section class="intro" aria-labelledby="t">
     <div>
-      <h1 id="t">Four ways to wear a wet stone.</h1>
-      <p class="lead">Every option shares one idea: <strong>every color comes in a dry shade and a wet shade</strong>, the way a beach stone looks before and after you dunk it. Tap any stone or swatch to wet it.</p>
+      <h1 id="t">Five ways to wear a wet stone.</h1>
+      <p class="lead">Your three options, plus two of mine. They all share one idea: <strong>every color comes in a dry shade and a wet shade</strong>, the way a beach stone looks before and after you dunk it. Tap any stone or swatch to wet it.</p>
       <div class="actions">
         <button class="btn" id="wetall" type="button" aria-pressed="false">Wet the whole page</button>
       </div>
       <nav class="jump" aria-label="Jump to an option">
-        <a href="#a">A · Field Notebook</a><a href="#b">B · Lakeshore Workwear</a><a href="#c">C · Wet Stone Minimal</a><a href="#d">D · Lake Chart</a><a href="#compare">Compare</a>
+        <a href="#a">A · Field Notebook</a><a href="#b">B · Lakeshore Workwear</a><a href="#c">C · Wet Stone Minimal</a><a href="#d">D · Lake Chart</a><a href="#e">E · The hybrid</a><a href="#compare">Compare</a>
       </nav>
     </div>
     <figure class="hero-stone" style="margin:0">
@@ -332,16 +360,16 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-size:14px;color
   <div class="wrap">
     <header class="opt-head">
       <h2 id="c-h"><span class="letter">C</span>Wet Stone Minimal</h2>
-      <p class="thesis">Almost everything is dull, dry gray. One thing is wet. The logo carries a single glossy lick mark, the same gesture as the "I lick rocks" shirt, so the brand idea fits in one stroke.</p>
+      <p class="thesis">Almost everything is dull, dry gray. One thing is wet. In the logo it is a single letter, the O, glossy agate red as if someone just licked it. The brand idea fits in one character.</p>
     </header>
 
     <div class="pair">
       <div>
         <h3>Wordmark</h3>
-        <div class="panel wm-stage"><div class="wm-c"><svg class="streak" data-streak="c" viewBox="0 0 60 116" aria-hidden="true"></svg><span class="t">heavy pockets</span></div></div>
+        <div class="panel wm-stage"><div class="wm-c" style="--wm:clamp(44px,12vw,80px)"><span class="t">heavy p<span class="wet-o">o</span>ckets</span></div></div>
         <div class="wm-variants">
-          <div style="background:#262523"><div><div class="wm-c" style="--wm:34px;color:#ECE8E1"><svg class="streak" data-streak="c1" viewBox="0 0 60 116" aria-hidden="true"></svg><span class="t">heavy pockets</span></div><div class="cap" style="color:#ECE8E1">On a pepper tee</div></div></div>
-          <div style="background:#DDDAD3"><div><div class="wm-c" style="--wm:34px;color:#262523"><svg class="streak" data-streak="mono" viewBox="0 0 60 116" aria-hidden="true"></svg><span class="t">heavy pockets</span></div><div class="cap" style="color:#262523">One color</div></div></div>
+          <div style="background:#262523"><div><div class="wm-c" style="--wm:clamp(22px,6.5vw,34px);color:#ECE8E1;--acc:#EC6A4E"><span class="t">heavy p<span class="wet-o">o</span>ckets</span></div><div class="cap" style="color:#ECE8E1">On a pepper tee</div></div></div>
+          <div style="background:#DDDAD3"><div><div class="wm-c" style="--wm:clamp(22px,6.5vw,34px);color:#262523"><span class="t">heavy p<span class="wet-o" style="color:inherit;font-style:italic">o</span>ckets</span></div><div class="cap" style="color:#262523">One color</div></div></div>
         </div>
       </div>
       <div>
@@ -377,7 +405,7 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-size:14px;color
     <div class="verdict">
       <p><b>Best at</b>Originality. Nobody else in rock merch looks like this, and the wet effect on the site becomes the whole show.</p>
       <p><b>Honest risk</b>Quiet logos vanish on a busy feed and on a dark shirt from across a parking lot. Lowercase serif can read "candle shop."</p>
-      <p><b>Changed from the first sketch</b>I swapped DM Sans, a very common font, for Schibsted Grotesk.</p>
+      <p><b>Changed after review</b>The lick streak read as a smudge, so the wet moment moved into one letter. DM Sans became Schibsted Grotesk.</p>
     </div>
   </div>
 </section>
@@ -431,8 +459,65 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-size:14px;color
 
     <div class="verdict">
       <p><b>Best at</b>A world, not just a logo. Charts, field guide maps, beach locations, and the stone chart shirt all speak one language that only the Great Lakes have.</p>
-      <p><b>Honest risk</b>It can read "boating" before "rocks." Fine contour lines also need care at small sizes and on socks.</p>
+      <p><b>Honest risk</b>The outside review was blunt: hairline type and fine contours break up in shirt printing, topographic merch is common on Etsy, and magenta reads "pickleball." Better as a product series than as the brand.</p>
       <p><b>Where it came from</b>Not in your three. The design skill's roll pushed me past my obvious picks, and this one held up. Ignore it freely.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= E ================= -->
+<section class="opt opt-a opt-e" id="e" aria-labelledby="e-h">
+  <div class="wrap">
+    <header class="opt-head">
+      <h2 id="e-h"><span class="letter">E</span>The hybrid</h2>
+      <p class="thesis">A as the brand, the others as tools. Field Notebook becomes the maker's mark on every label. A heavy condensed sans sets the pun shirts so the jokes read at arm's length. Lake Chart becomes a named series for the chart shirt and the field guide. The lick becomes its own shirt and the site's tap-to-wet effect.</p>
+    </header>
+
+    <div class="pair">
+      <div>
+        <h3>Maker's mark and neck label</h3>
+        <div class="panel wm-stage">
+          <div style="text-align:center">
+            <div class="wm-a"><span class="w">Heavy</span><span class="w">P<span class="o" data-agate-o="a"></span>ckets</span><span class="co">CO.</span></div>
+            <div style="display:flex;gap:14px;justify-content:center;align-items:center;margin-top:22px;flex-wrap:wrap">
+              <div class="neck"><span class="o" data-agate-o="a1"></span><span>Heavy Pockets Co.<br>No. 001 · Size L</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="chip-hint" style="color:var(--ink-2)">The agate O is now 4 angular, off-center bands, so it survives a 1-inch neck print and embroidery, and never looks like a target.</p>
+      </div>
+      <div>
+        <h3>Ink colors: the wet shades only</h3>
+        <div class="chips" data-chips="e"></div>
+        <p class="chip-hint" style="color:var(--ink-2)">On cotton, use at most 3 inks per shirt. Final picks get matched to real Printify blank colors and samples, not screen colors.</p>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="type-spec">
+        <h3>Pun shirts</h3>
+        <div class="pun">Will brake<br>for agates</div>
+        <p class="label-sample">Archivo, narrow and black. Big, blunt, and readable from across a parking lot.</p>
+      </div>
+      <div class="type-spec">
+        <h3>The Lake Chart series</h3>
+        <div style="display:flex;gap:18px;align-items:center"><div data-contour="d-thick" style="width:110px;flex:none"></div><div><div class="series">Lake Chart</div><p class="label-sample" style="margin-top:6px">Great Lakes Beach Stone Chart, the field guide, and maps of where to look. Thicker lines, no magenta.</p></div></div>
+      </div>
+    </div>
+
+    <div>
+      <h3>Made tonight, in this direction</h3>
+      <div class="mocks">
+        <figure style="margin:0"><div class="pepper"><img src="lick_web.png" alt="I lick rocks shirt art: a dull dry agate with one glossy wet lick showing red bands" width="425" height="510"></div><figcaption class="mock-cap">"I lick rocks," print-ready at 4250 x 5100. Code-drawn dry agate, one wet lick.</figcaption></figure>
+        <figure style="margin:0"><div class="phone"><div class="screen" data-screen="e"></div></div><figcaption class="mock-cap" style="text-align:center">Product page (sample layout)</figcaption></figure>
+        <figure style="margin:0"><div class="socks"><img src="sock_natural_web.jpg" alt="Petoskey stone sock pattern in natural gray" width="360" height="360"><img src="sock_slate_web.jpg" alt="Petoskey stone sock pattern in slate" width="360" height="360"></div><figcaption class="mock-cap" style="text-align:center">Petoskey sock pattern, natural and slate. Tiles seamlessly.</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="verdict">
+      <p><b>Best at</b>Fitting the launch five: one chart, three puns, and socks. Each design gets the look it needs, and the label keeps them one brand.</p>
+      <p><b>Honest risk</b>More pieces to keep consistent. The rule that holds it together: every product carries the agate O label, and every color is a wet shade.</p>
+      <p><b>Where it came from</b>An outside brand review of A to D. It argued against my first pick, D, and I agree.</p>
     </div>
   </div>
 </section>
@@ -440,37 +525,27 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-size:14px;color
 <div class="wrap">
   <section class="compare" id="compare" aria-labelledby="cmp-h">
     <h2 id="cmp-h">Side by side</h2>
-    <p class="note">Plain words instead of scores. "Stands out" means in a fast scroll on a phone; "small" means a 1-inch neck tag or an embroidered hat.</p>
-    <div class="table-scroll">
-      <table>
-        <thead><tr><th scope="col"></th><th scope="col">A · Field Notebook</th><th scope="col">B · Workwear</th><th scope="col">C · Minimal</th><th scope="col">D · Lake Chart</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Stands out</th><td>Medium</td><td>High</td><td>Low, unless the wet effect is moving</td><td>Medium to high</td></tr>
-          <tr><th scope="row">Works small</th><td>Good (the agate O)</td><td>Very good (the patch)</td><td>Good</td><td>Fair (rings need simplifying)</td></tr>
-          <tr><th scope="row">Fits chart shirts</th><td>Very good</td><td>Fair</td><td>Good</td><td>Very good</td></tr>
-          <tr><th scope="row">Fits pun shirts</th><td>Fair</td><td>Very good</td><td>Good</td><td>Fair</td></tr>
-          <tr><th scope="row">How original</th><td>Medium</td><td>Low to medium</td><td>High</td><td>High</td></tr>
-          <tr><th scope="row">Biggest risk</th><td>Forgettable</td><td>Generic workwear</td><td>Too quiet</td><td>Reads "boating"</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <p class="note">Plain words instead of scores. "Stands out" means in a fast scroll on a phone. "Works small" means a 1-inch neck print or an embroidered hat. "The launch five" are 1 chart, 3 puns, and socks.</p>
+    <div class="table-scroll" data-compare-table></div>
+    <div class="cmp-cards" data-compare-cards></div>
   </section>
 
   <section class="close" aria-labelledby="pick-h">
     <div class="cols">
       <div>
         <h2 id="pick-h">My pick, and why</h2>
-        <p class="pick"><b>D, Lake Chart</b>, with A's agate O as a fallback.</p>
-        <p>D is the only option where the logo, the chart shirts, the field guide, and the site all come from one idea that belongs to the Great Lakes. The agate-as-depth-chart mark is something no other rock shop can copy without copying you.</p>
-        <p>If D feels too nautical when you see it on your phone, A is the safe, credible choice. B sells best but says the least about rocks. C is the most original logo, but it needs the website's motion to land.</p>
-        <p>Mixing is allowed: for example, D's world with B's oval patch as a hat and tag badge.</p>
+        <p class="pick"><b>E, the hybrid.</b> If you want one clean look instead, pick A.</p>
+        <p>Your three came first. D and E are my additions, so weigh them that way.</p>
+        <p>My first pick was D. An outside brand review talked me out of it: its fine lines break up in shirt printing, topographic merch is already common, and it works better as a series than as the brand. That review rated A the most sellable identity, B the most generic, and C the best idea with the weakest logo. E keeps the best part of each.</p>
+        <p>The logo sells less than you'd think. The designs and the videos do the selling. So the review's advice: pick this week, in one round, and spend the saved time on the five designs.</p>
       </div>
       <div>
         <h2 style="font-size:clamp(24px,3vw,32px)">What happens next</h2>
         <ol>
           <li>Reply with a letter (or a mix) and anything you hate.</li>
-          <li>I finish that one: final colors, logo files as SVG and PNG, and the one-page brand guide.</li>
+          <li>I finish that one: final colors matched to Printify blanks, logo files as SVG and PNG, and the one-page brand guide.</li>
           <li>The sock pattern, the "I lick rocks" art, and the store preview switch to the chosen colors and fonts.</li>
+          <li>Before paying for samples: post the mockups to rockhound groups and let people vote.</li>
         </ol>
         <p style="margin-top:18px;color:var(--ink-2)">Color on screens is not color on cotton. Final colors get checked against real Printify samples at Step 10.</p>
       </div>
@@ -488,7 +563,8 @@ var NS="http://www.w3.org/2000/svg", uid=0;
 var P={
   a:[["Superior slate","#6E7A82","#1F2D38"],["Agate red","#C98A72","#9A2E1A"],["Petoskey gray","#B9B4AA","#5E5A52"],["Sand","#E9E1CF","#C2A576"]],
   b:[["Duck canvas","#C49A62","#7A5530"],["Chore navy","#5A6B82","#1C2A3D"],["Agate red","#D0643F","#A1301B"],["Lake Michigan teal","#76A3A0","#1F5653"],["Sand","#EADCC0","#C7A877"]],
-  c:[["Dry stone","#C8C4BC","#5A564F"],["Basalt","#8A8782","#262523"],["Sand","#E4DFD5","#B9A98C"],["Agate red, wet only","#C9AFA5","#8E2414"]],
+  c:[["Dry stone","#C8C4BC","#5A564F"],["Basalt","#8A8782","#262523"],["Sand","#E4DFD5","#B9A98C"],["Agate red, wet only","#C9AFA5","#8E2414","wet"]],
+  e:[["Cream ink","#F2ECDF","#E9E1CF"],["Agate red ink","#C98A72","#9A2E1A"],["Light slate ink","#9AA6AE","#4E5E6A"],["Superior slate","#6E7A82","#1F2D38"],["Lake teal, socks","#76A3A0","#1F5653"]],
   d:[["Shoal blue","#CFE3EE","#5E9BC4"],["Contour slate","#7690A1","#1F3A4F"],["Chart magenta","#DE98C2","#A3176E"],["Land buff","#F3E3B3","#C9A54E"],["Sounding gray","#ADAEAC","#4D4F4F"]]
 };
 /* agate band colors per world: rind, bands..., center */
@@ -560,24 +636,35 @@ function stone(seed,key,size){
 }
 
 /* agate "O" for option A: simple concentric rounded bands, flat */
+/* angular, off-center fortification bands: survives a 1-inch print and embroidery */
+function roundPoly(pts){
+  var n=pts.length,m=function(a,b){return[(a[0]+b[0])/2,(a[1]+b[1])/2];},d="",st=m(pts[n-1],pts[0]);
+  d="M"+st[0].toFixed(1)+" "+st[1].toFixed(1);
+  for(var i=0;i<n;i++){var v=pts[i],e=m(pts[i],pts[(i+1)%n]);d+="Q"+v[0].toFixed(1)+" "+v[1].toFixed(1)+" "+e[0].toFixed(1)+" "+e[1].toFixed(1);}
+  return d+"Z";
+}
 function agateO(colors){
-  var r=rng(97),H=[[.05,2,.6,1.1],[.03,3,.9,2.2]];
+  /* fortification agate in 4 bands: one shared angular outline, bands crowded toward the upper right, wide at lower left */
+  var r=rng(41),nv=7,base=[];
+  for(var i=0;i<nv;i++){var th=i/nv*Math.PI*2+.3;base.push([Math.cos(th)*(1+(r()-.5)*.22),Math.sin(th)*(1+(r()-.5)*.22)]);}
   var svg=el("svg",{viewBox:"0 0 100 100","aria-hidden":"true",width:"100%",height:"100%"});
-  var s=1,i=0;
-  while(s>.18){svg.appendChild(el("path",{d:ring(50,50,48,H,s,0,r),fill:colors[i%colors.length]}));s-=.12;i++;}
+  [[1,0],[.8,1],[.6,2],[.34,3]].forEach(function(b){
+    var s=b[0],cx=50+20*(1-s),cy=50-16*(1-s);
+    svg.appendChild(el("path",{d:roundPoly(base.map(function(p){return[cx+p[0]*48*s,cy+p[1]*48*s];})),fill:colors[b[1]%colors.length]}));
+  });
   return svg;
 }
 
 /* contour mark for option D */
 function contour(mode){
   var r=rng(404),H=harmonics(rng(404));
-  var dark=mode==="d-dark",mono=mode==="d-mono";
-  var line=dark?"#9CC3E0":(mono?"currentColor":"#2F6E9C"),mag=dark?"#F27DC2":(mono?"currentColor":"#A3176E"),txt=dark?"#DCE6EE":(mono?"currentColor":"#14202A");
+  var dark=mode==="d-dark",mono=mode==="d-mono",thick=mode==="d-thick";
+  var line=dark?"#9CC3E0":(mono?"currentColor":(thick?"currentColor":"#2F6E9C")),mag=dark?"#F27DC2":(mono?"currentColor":(thick?"#9A2E1A":"#A3176E")),txt=dark?"#DCE6EE":(mono?"currentColor":"#14202A");
   var svg=el("svg",{viewBox:"0 0 200 200","aria-hidden":"true",width:"100%"});
-  if(!mono){svg.appendChild(el("path",{d:ring(100,100,90,H,1,0,r),fill:dark?"#13283B":"#E2EEF5"}));}
+  if(!mono&&!thick){svg.appendChild(el("rect",{x:"4",y:"4",width:"192",height:"192",rx:"20",fill:dark?"#3B3420":"#F3E3B3"}));svg.appendChild(el("path",{d:ring(100,100,90,H,1,0,r),fill:dark?"#13283B":"#E2EEF5"}));}
   var scales=mono?[1,.74,.5,.28]:[1,.86,.72,.6,.48,.37,.27,.18];
-  scales.forEach(function(s,i){svg.appendChild(el("path",{d:ring(100+6*(1-s),100-4*(1-s),90,H,s,0,r),fill:"none",stroke:line,"stroke-width":mono?6:(i===0?3.2:1.6),"stroke-dasharray":(!mono&&i===3)?"6 4":"none"}));});
-  if(!mono){
+  scales.forEach(function(s,i){svg.appendChild(el("path",{d:ring(100+6*(1-s),100-4*(1-s),90,H,s,0,r),fill:"none",stroke:line,"stroke-width":mono?6:(thick?(i===0?6:3.4):(i===0?3.2:1.6)),"stroke-dasharray":(!mono&&!thick&&i===3)?"6 4":"none"}));});
+  if(!mono&&!thick){
     [["3",40,96],["7",150,70],["12",120,140],["18",86,58]].forEach(function(t){var x=el("text",{x:t[1],y:t[2],"font-family":"Barlow Semi Condensed, sans-serif","font-style":"italic","font-size":"15",fill:txt,"text-anchor":"middle"});x.textContent=t[0];svg.appendChild(x);});
   }
   /* light symbol: magenta flare */
@@ -593,7 +680,7 @@ function patch(small){
   if(small){svg.style.maxWidth="120px";}
   else svg.style.maxWidth="380px";
   var fill=small?"#1D1812":"#1C2A3D",thread=small?"#EADCC0":"#EADCC0";
-  svg.appendChild(el("ellipse",{cx:"180",cy:"85",rx:"172",ry:"78",fill:fill}));
+  svg.appendChild(el("ellipse",{cx:"180",cy:"85",rx:"172",ry:"78",fill:fill,stroke:"#EADCC0","stroke-width":small?"0":"3",class:"patch-ring"}));
   svg.appendChild(el("ellipse",{cx:"180",cy:"85",rx:"160",ry:"67",fill:"none",stroke:thread,"stroke-width":"3","stroke-dasharray":"7 5"}));
   var t=el("text",{x:"180",y:"100","text-anchor":"middle","font-family":"Yellowtail, cursive","font-size":"62",fill:thread});t.textContent="Heavy Pockets";svg.appendChild(t);
   var c=el("text",{x:"180",y:"136","text-anchor":"middle","font-family":"Archivo, sans-serif","font-weight":"800","font-size":"15","letter-spacing":"5",fill:thread});c.textContent="CO.";
@@ -603,7 +690,7 @@ function patch(small){
 
 /* the lick streak for option C */
 function streak(svg,mode){
-  var red=mode==="mono"?"#262523":(mode==="c1"?"#E0573D":"#8E2414");
+  var red=mode==="mono"?"#262523":(mode==="c1"?"#EC6A4E":"#8E2414");
   svg.appendChild(el("path",{d:"M30 6 C46 6 54 22 52 46 C50 72 44 96 30 110 C16 96 8 72 8 46 C6 22 14 6 30 6 Z",fill:red,opacity:mode==="mono"?".22":".55",transform:"rotate(14 30 58)"}));
   if(mode!=="mono")svg.appendChild(el("path",{d:"M22 22 C18 40 18 62 24 82",stroke:"rgba(255,255,255,.7)","stroke-width":"4","stroke-linecap":"round",fill:"none",transform:"rotate(14 30 58)"}));
 }
@@ -623,9 +710,9 @@ function tee(key){
   svg.appendChild(el("path",{d:"M64 101 L64 120 M236 101 L236 120",stroke:"rgba(0,0,0,.12)","stroke-width":"1.5"}));
   var g=el("g",{});
   if(key==="a"){
-    var o=agateO(["#E9E1CF","#C98A72","#E9E1CF","#2B3640","#C2A576"]);var fo=el("svg",{x:"128",y:"80",width:"44",height:"44",viewBox:"0 0 100 100"});while(o.firstChild)fo.appendChild(o.firstChild);g.appendChild(fo);
+    var o=agateO(["#E9E1CF","#D9846A","#2B3640","#E9E1CF"]);var fo=el("svg",{x:"128",y:"80",width:"44",height:"44",viewBox:"0 0 100 100"});while(o.firstChild)fo.appendChild(o.firstChild);g.appendChild(fo);
     var t1=el("text",{x:"150",y:"150","text-anchor":"middle","font-family":"Young Serif, serif","font-size":"23",fill:cfg.ink});t1.textContent="Heavy Pockets";g.appendChild(t1);
-    var t2=el("text",{x:"150",y:"172","text-anchor":"middle","font-family":"Courier Prime, monospace","font-size":"10",fill:cfg.ink,"letter-spacing":"2"});t2.textContent="NO. HP-001";g.appendChild(t2);
+    var t2=el("text",{x:"150",y:"172","text-anchor":"middle","font-family":"Courier Prime, monospace","font-weight":"700","font-size":"10",fill:cfg.ink,"letter-spacing":"2"});t2.textContent="NO. HP-001";g.appendChild(t2);
   }else if(key==="b"){
     var p=patch(false);p.setAttribute("x","178");p.setAttribute("y","80");p.setAttribute("width","46");p.setAttribute("height","22");p.removeAttribute("style");g.appendChild(p);
   }else if(key==="c"){
@@ -662,17 +749,18 @@ var SCREENS={
   a:{brand:'<span style="font-family:Young Serif,serif;font-size:15px">Heavy Pockets Co.</span>',title:"Beach Stone Chart Tee",fn:"No. HP-014 · Drawn from an agate found on the Keweenaw. Dry rocks lie."},
   b:{brand:'<span style="font:900 13px Archivo;font-stretch:120%;text-transform:uppercase">Heavy Pockets</span>',title:"Will Brake for Agates",fn:"Heavyweight tee with the sewn-look patch."},
   c:{brand:'<span style="font-family:Instrument Serif,serif;font-size:19px">heavy pockets</span>',title:"I lick rocks",fn:"Field note: the only way to see the color is to wet it."},
-  d:{brand:'<span style="font:500 12px Bodoni Moda,serif;letter-spacing:.14em">HEAVY POCKETS CO.</span>',title:"Great Lakes Stone Chart",fn:"Twelve beach stones, charted like a shoreline."}
+  d:{brand:'<span style="font:500 12px Bodoni Moda,serif;letter-spacing:.14em">HEAVY POCKETS CO.</span>',title:"Great Lakes Stone Chart",fn:"Twelve beach stones, charted like a shoreline."},
+  e:{brand:'<span style="font-family:Young Serif,serif;font-size:15px">Heavy Pockets Co.</span>',title:"I lick rocks",fn:"No. HP-007 · The only way to see the color is to wet it. Tap the stone."}
 };
 function screen(node,key){
   var s=SCREENS[key];
   node.innerHTML='<div class="bar">'+s.brand+'<span aria-hidden="true">Cart</span></div><div class="shot"></div><div class="pt">'+s.title+'</div><div class="pp">$27.99 · sample price</div><div class="fn">'+s.fn+'</div><div class="cta">Add to cart</div>';
-  node.querySelector(".shot").appendChild(stone({a:23,b:37,c:5,d:61}[key]+100,key));
+  node.querySelector(".shot").appendChild(stone({a:23,b:37,c:5,d:61,e:23}[key]+100,key==="e"?"a":key));
 }
 
 /* luminance for chip text */
 function lum(h){var c=[1,3,5].map(function(i){var v=parseInt(h.substr(i,2),16)/255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4);});return .2126*c[0]+.7152*c[1]+.0722*c[2];}
-function on(h){return lum(h)>.22?"#16191B":"#F7F4EE";}
+function on(h){var L=lum(h);return (L+.05)/(.0122+.05) >= 1.05/(L+.05) ? "#16191B" : "#F7F4EE";}
 
 document.querySelectorAll("[data-chips]").forEach(function(box){
   P[box.dataset.chips].forEach(function(p){
@@ -681,18 +769,36 @@ document.querySelectorAll("[data-chips]").forEach(function(box){
     b.innerHTML='<span class="n">'+p[0]+'</span><span class="h"><span class="d">Dry '+p[1]+'</span><span class="w">Wet '+p[2]+'</span></span>';
     b.setAttribute("aria-label",p[0]+", dry "+p[1]+", wet "+p[2]+". Press to wet.");
     b.addEventListener("click",function(){var w=b.classList.toggle("wet");b.setAttribute("aria-pressed",w?"true":"false");});
+    if(p[3]==="wet"){b.classList.add("wet");b.setAttribute("aria-pressed","true");}
     box.appendChild(b);
   });
 });
 document.querySelectorAll("[data-stone]").forEach(function(n){n.appendChild(stone(+n.dataset.seed,n.dataset.stone));});
 document.querySelectorAll("[data-agate-o]").forEach(function(n){
-  var k=n.dataset.agateO;n.appendChild(agateO(k==="a1"?["#E9E1CF","#C98A72","#E9E1CF","#1F2D38","#C2A576"]:["#1F2D38","#C2A576","#9A2E1A","#EDE3D2","#1F2D38","#C98A72"]));
+  var k=n.dataset.agateO;n.appendChild(agateO(k==="a1"?["#E9E1CF","#D9846A","#2B3640","#E9E1CF"]:["#1F2D38","#9A2E1A","#E9E1CF","#C2A576"]));
 });
 document.querySelectorAll("[data-patch]").forEach(function(n){n.appendChild(patch(n.dataset.patch==="b-small"));});
-document.querySelectorAll("[data-streak]").forEach(function(n){streak(n,n.dataset.streak);});
 document.querySelectorAll("[data-contour]").forEach(function(n){n.appendChild(contour(n.dataset.contour));});
 document.querySelectorAll("[data-tee]").forEach(function(n){n.appendChild(tee(n.dataset.tee));});
 document.querySelectorAll("[data-screen]").forEach(function(n){screen(n,n.dataset.screen);});
+
+/* comparison: one data source, a table on wide screens and stacked cards on phones */
+var OPTS=["A · Field Notebook","B · Workwear","C · Minimal","D · Lake Chart","E · Hybrid"];
+var ROWS=[
+ ["Stands out",["Medium","High","Low, unless the wet effect is moving","Medium","Medium to high (the puns carry it)"]],
+ ["Works small",["Good (the agate O)","Very good (the patch)","Good","Fair (rings need simplifying)","Good (the simplified O)"]],
+ ["Prints well",["Good","Very good","Fair (thin serif)","Poor (hairlines)","Good"]],
+ ["Fits the launch five",["Fair","Good","Fair","Fair (puns fight the chart look)","Very good"]],
+ ["Shows the wet/dry idea",["Fair","Fair","Very good","Good","Good (lick shirt and site effect)"]],
+ ["How original",["Medium","Low","High","Medium (topo merch is common)","Medium to high"]],
+ ["Biggest risk",["Forgettable","Generic workwear","Too quiet","Fragile in print, reads boating","More pieces to keep consistent"]]
+];
+(function(){
+  var t='<table><thead><tr><th scope="col"></th>'+OPTS.map(function(o){return '<th scope="col">'+o+'</th>';}).join("")+'</tr></thead><tbody>'+
+    ROWS.map(function(r){return '<tr><th scope="row">'+r[0]+'</th>'+r[1].map(function(c){return '<td>'+c+'</td>';}).join("")+'</tr>';}).join("")+'</tbody></table>';
+  document.querySelector("[data-compare-table]").innerHTML=t;
+  document.querySelector("[data-compare-cards]").innerHTML=OPTS.map(function(o,i){return '<div class="cmp-card"><h3>'+o+'</h3><dl>'+ROWS.map(function(r){return '<dt>'+r[0]+'</dt><dd>'+r[1][i]+'</dd>';}).join("")+'</dl></div>';}).join("");
+})();
 
 /* wet the whole page */
 var wa=document.getElementById("wetall");

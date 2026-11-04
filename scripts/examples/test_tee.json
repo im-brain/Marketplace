@@ -1,0 +1,11 @@
+{
+  "title": "TEST DRAFT - DELETE ME (Claude script test)",
+  "description": "Test product made by publish_design.py. Not for sale. Delete it if you see it.",
+  "tags": ["test"],
+  "blueprint_id": 12,
+  "print_provider_id": 29,
+  "variants": [18540, 18541, 18542, 18543],
+  "price": 27.99,
+  "image": "test_delete.png",
+  "position": "front"
+}

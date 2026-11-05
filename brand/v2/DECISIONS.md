@@ -44,3 +44,8 @@ Updated: November 4, 2026.
 - Tested at 375, 390, 768, 1440, and 200% zoom (screenshots in `brand/v2/hero-preview/qa/`).
 - `theme/preview/index.html` (Step 11 store preview) left unchanged; nav and button link to it.
 - **Still needs owner approval** before merge or any deployment.
+
+## Owner approval, November 5, 2026: hero implementation
+- **Approved:** the integrated hero (`brand/v2/hero-preview/index.html`), after checking it on a real phone in portrait and landscape.
+- **Accepted as is:** the art's accuracy flags (very uniform Petoskey cells, a bright banded agate, and snow-capped peaks in the logo). The owner chose not to change them.
+- **Merged** into `step4-overnight-build`. Not deployed to heavypocketsco.com.

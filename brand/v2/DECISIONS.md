@@ -59,3 +59,12 @@ Updated: November 4, 2026.
 - **Metadata:** platform monospace, no third downloaded font.
 - Color roles, accessibility pairings, and usage rules are defined in `BRAND_SYSTEM_LOCK.md`, `DESIGN_TOKENS.json`, and `brand-tokens.css`.
 - **Status:** creative direction locked for a reviewable storefront preview; not permission to alter live website, merge to main, or deploy. Final logo vector and mascot remain open separately.
+
+## Implementation, November 5, 2026 (Claude Code): full storefront preview v2
+- Branch `storefront/v2-retro-integration` (from `step4-overnight-build` plus PR #2). Page: `theme/v2/index.html`.
+- Uses the locked tokens (`brand-tokens.css`) and the approved hero files unchanged. No logo or tagline overlaid; real nav and CTA outside the art.
+- New retro button system (raised, 3px press, 70ms stepped), applied to CTAs, size and color options, tabs, and small actions. Details in `theme/v2/README.md`.
+- Sections: header, hero, launch five, product viewer, wet test (same-specimen filter change), field notes, about, footer, preview cart.
+- Code-drawn Petoskey cells redrawn as irregular, flush cells to follow IMAGE_STANDARDS.md. Stones remain labeled stand-ins.
+- Tested with Playwright at 320 to 1440 px, landscape, 200% zoom, touch, keyboard, and reduced motion; text contrast measured. Results in `theme/v2/qa/`.
+- **Still needs owner approval** before merge or any deployment. `theme/preview/` left unchanged.

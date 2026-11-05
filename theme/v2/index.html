@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#102849">
+<meta name="description" content="Store preview for Heavy Pockets Co.: original tees and socks for Great Lakes rockhounds. Preview only, not a live store.">
+<title>Heavy Pockets Co. | Store preview</title>
+<!-- Storefront preview v2 (Nov 5, 2026). Built on the locked brand system in brand/v2/
+     (BRAND_SYSTEM_LOCK.md, brand-tokens.css) and the owner-approved hero art in
+     brand/v2/hero-assets/. The logo and tagline are baked into the hero images:
+     never overlay text on them. Fonts: Press Start 2P and Atkinson Hyperlegible Next,
+     both SIL Open Font License 1.1, served by Google Fonts (no font files in the repo). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700;800&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="../../brand/v2/brand-tokens.css">
+<link rel="stylesheet" href="storefront.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="banner"><p>Store preview for review. Not a live shop: nothing is for sale yet, and prices are planned, not final.</p></div>
+
+<!-- ================= APP WINDOW: header + approved hero ================= -->
+<div class="win app">
+  <div class="bar"><span>HEAVY_POCKETS.EXE</span><span class="ctrls" aria-hidden="true"><i></i><i></i></span></div>
+  <header>
+    <nav class="site-nav" aria-label="Main">
+      <a class="home" href="#main">Heavy Pockets Co.</a>
+      <ul>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#field-notes">Field Notes</a></li>
+        <li><a href="#about">About</a></li>
+        <li><button class="icon-btn" id="cart-open" type="button" aria-haspopup="dialog" aria-label="Cart, 0 items">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="miter"><path d="M5 8h14l-1.4 12H6.4z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg>
+          <span class="count" id="cart-count" aria-hidden="true">0</span>
+        </button></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <h1 class="visually-hidden">Heavy Pockets Co.: Head down. Pockets full.</h1>
+    <figure class="hero">
+      <picture>
+        <source media="(max-width: 680px) and (max-aspect-ratio: 1/1)" type="image/webp" srcset="../../brand/v2/hero-assets/hero-approved-mobile.webp" width="1086" height="1448">
+        <source media="(max-width: 680px) and (max-aspect-ratio: 1/1)" type="image/jpeg" srcset="../../brand/v2/hero-assets/hero-approved-mobile.jpg" width="1086" height="1448">
+        <source type="image/webp" srcset="../../brand/v2/hero-assets/hero-approved-desktop.webp" width="1774" height="887">
+        <img src="../../brand/v2/hero-assets/hero-approved-desktop.jpg" width="1774" height="887" fetchpriority="high" decoding="async"
+             alt="Heavy Pockets Co. logo and the tagline Head down. Pockets full., over a pixel-art Great Lakes sunset with a lighthouse on a wooded point, giving way to realistic wet beach stones along the shoreline.">
+      </picture>
+    </figure>
+    <section class="hero-cta" aria-label="Start shopping">
+      <p>Original tees and socks for Great Lakes rockhounds, lake lovers, and anyone who comes home with clanking pockets.</p>
+      <div class="row">
+        <a class="btn" href="#shop">Explore the Collection
+          <svg viewBox="0 0 20 20" aria-hidden="true" fill="currentColor" shape-rendering="crispEdges"><path d="M8 3h4v8h3l-5 6-5-6h3z"/></svg>
+        </a>
+        <a class="btn btn--secondary" href="#wet-test">Try the wet test</a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ================= SHOP ================= -->
+<section class="win shop" id="shop" aria-labelledby="shop-h">
+  <div class="bar"><span>SHOP / LAUNCH_FIVE</span><span class="ctrls" aria-hidden="true"><i></i><i></i></span></div>
+  <div class="shop__head">
+    <span class="kicker">Preview collection</span>
+    <h2 class="px px-h" id="shop-h">The launch five</h2>
+    <p>Two designs have finished art. Three are still on the drawing table, shown as plain stand-ins. Tap any shirt to wet it.</p>
+  </div>
+  <div class="toolbar">
+    <div class="tabs" role="group" aria-label="Filter products">
+      <button class="tab" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="tab" type="button" data-filter="tee" aria-pressed="false">Tees</button>
+      <button class="tab" type="button" data-filter="socks" aria-pressed="false">Socks</button>
+    </div>
+  </div>
+  <div class="pane">
+    <div class="grid" id="grid">
+      <article class="item" data-kind="tee" data-id="lick">
+        <div class="item__bar"><span class="mono">HP-007.TEE</span><span class="ctrls" aria-hidden="true"><i></i></span></div>
+        <div class="item__well">
+          <span class="chip chip--ready">READY</span>
+          <button class="wet hoverable" type="button" aria-pressed="false" aria-label="Wet the I lick rocks shirt mockup">
+            <span class="wet-media panel" data-tee="lick"></span>
+            <span class="wet-hint" aria-hidden="true"><span class="is-dry">Tap to wet</span><span class="is-wet">Wet</span></span>
+          </button>
+        </div>
+        <div class="item__body">
+          <h3>I lick rocks</h3>
+          <dl class="stats">
+            <div><dt>TYPE</dt><dd>Tee</dd></div>
+            <div><dt>COLOR</dt><dd>Pepper</dd></div>
+            <div><dt>ART</dt><dd>Ready</dd></div>
+          </dl>
+          <div class="item__foot">
+            <p class="price">$27.99 <small>planned</small></p>
+            <a class="btn btn--small" href="#product" data-view="lick">View<span class="visually-hidden"> I lick rocks</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="item" data-kind="tee" data-id="chart">
+        <div class="item__bar"><span class="mono">HP-002.TEE</span><span class="ctrls" aria-hidden="true"><i></i></span></div>
+        <div class="item__well">
+          <span class="chip">STAND-IN</span>
+          <button class="wet hoverable" type="button" aria-pressed="false" aria-label="Wet the Great Lakes Beach Stone Chart stand-in">
+            <span class="wet-media panel" data-tee="chart"></span>
+            <span class="wet-hint" aria-hidden="true"><span class="is-dry">Tap to wet</span><span class="is-wet">Wet</span></span>
+          </button>
+        </div>
+        <div class="item__body">
+          <h3>Great Lakes Beach Stone Chart</h3>
+          <dl class="stats">
+            <div><dt>TYPE</dt><dd>Tee</dd></div>
+            <div><dt>COLOR</dt><dd>Slate</dd></div>
+            <div><dt>ART</dt><dd>Stand-in</dd></div>
+          </dl>
+          <div class="item__foot">
+            <p class="price">$27.99 <small>planned</small></p>
+            <a class="btn btn--small" href="#product" data-view="chart">View<span class="visually-hidden"> Great Lakes Beach Stone Chart</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="item" data-kind="tee" data-id="expect">
+        <div class="item__bar"><span class="mono">HP-006.TEE</span><span class="ctrls" aria-hidden="true"><i></i></span></div>
+        <div class="item__well">
+          <span class="chip">STAND-IN</span>
+          <button class="wet hoverable" type="button" aria-pressed="false" aria-label="Wet the Agate Expectations stand-in">
+            <span class="wet-media panel" data-tee="expect"></span>
+            <span class="wet-hint" aria-hidden="true"><span class="is-dry">Tap to wet</span><span class="is-wet">Wet</span></span>
+          </button>
+        </div>
+        <div class="item__body">
+          <h3>Agate Expectations</h3>
+          <dl class="stats">
+            <div><dt>TYPE</dt><dd>Tee</dd></div>
+            <div><dt>COLOR</dt><dd>Natural</dd></div>
+            <div><dt>ART</dt><dd>Stand-in</dd></div>
+          </dl>
+          <div class="item__foot">
+            <p class="price">$27.99 <small>planned</small></p>
+            <a class="btn btn--small" href="#product" data-view="expect">View<span class="visually-hidden"> Agate Expectations</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="item" data-kind="tee" data-id="brake">
+        <div class="item__bar"><span class="mono">HP-009.TEE</span><span class="ctrls" aria-hidden="true"><i></i></span></div>
+        <div class="item__well">
+          <span class="chip">STAND-IN</span>
+          <button class="wet hoverable" type="button" aria-pressed="false" aria-label="Wet the Will brake for agates stand-in">
+            <span class="wet-media panel" data-tee="brake"></span>
+            <span class="wet-hint" aria-hidden="true"><span class="is-dry">Tap to wet</span><span class="is-wet">Wet</span></span>
+          </button>
+        </div>
+        <div class="item__body">
+          <h3>Will brake for agates</h3>
+          <dl class="stats">
+            <div><dt>TYPE</dt><dd>Tee</dd></div>
+            <div><dt>COLOR</dt><dd>Lake teal</dd></div>
+            <div><dt>ART</dt><dd>Stand-in</dd></div>
+          </dl>
+          <div class="item__foot">
+            <p class="price">$27.99 <small>planned</small></p>
+            <a class="btn btn--small" href="#product" data-view="brake">View<span class="visually-hidden"> Will brake for agates</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="item" data-kind="socks" data-id="socks">
+        <div class="item__bar"><span class="mono">HP-011.SOX</span><span class="ctrls" aria-hidden="true"><i></i></span></div>
+        <div class="item__well">
+          <span class="chip chip--concept">CONCEPT</span>
+          <span class="concept"><img src="img/petoskey-sock-concept.webp" alt="Concept image of a cream ribbed crew sock with two olive stripes and a band of Petoskey stone pattern" width="1060" height="1484" loading="lazy"></span>
+        </div>
+        <div class="item__body">
+          <h3>Petoskey hexagon socks</h3>
+          <dl class="stats">
+            <div><dt>TYPE</dt><dd>Crew socks</dd></div>
+            <div><dt>COLOR</dt><dd>Natural, slate</dd></div>
+            <div><dt>ART</dt><dd>Concept</dd></div>
+          </dl>
+          <div class="item__foot">
+            <p class="price">$18.99 <small>planned</small></p>
+            <a class="btn btn--small" href="#product" data-view="socks">View<span class="visually-hidden"> Petoskey hexagon socks</span></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="statusbar">
+    <p class="cell" role="status" aria-live="polite" id="filter-status">5 items</p>
+    <p class="cell">2 ready, 3 stand-ins</p>
+    <p class="cell cell--wide">Planned prices: tees $27.99, socks $18.99. Final prices set after samples.</p>
+  </div>
+</section>
+
+<!-- ================= PRODUCT VIEWER ================= -->
+<section class="win win--light" id="product" aria-labelledby="pv-name" tabindex="-1">
+  <div class="bar"><span id="pv-bar">PRODUCT / HP-007.TXT</span><span class="ctrls" aria-hidden="true"><i></i><i></i></span></div>
+  <div class="win__body viewer">
+    <div>
+      <div class="viewer__media" id="pv-media">
+        <button class="wet hoverable" type="button" aria-pressed="false" aria-label="Wet the I lick rocks shirt mockup">
+          <span class="wet-media panel" data-tee="lick"></span>
+          <span class="wet-hint" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor" shape-rendering="crispEdges"><path d="M7 1h2v2h1v2h1v2h1v5h-1v1h-1v1H6v-1H5v-1H4V7h1V5h1V3h1z"/></svg><span class="is-dry">Tap to wet</span><span class="is-wet">Wet. Tap to dry.</span></span>
+        </button>
+      </div>
+      <p class="note-line" id="pv-media-note">Drawn mockup. Real photos come from the samples.</p>
+    </div>
+    <div>
+      <span class="kicker mono" id="pv-spec">No. HP-007</span>
+      <h2 id="pv-name">I lick rocks</h2>
+      <p class="price" id="pv-price">$27.99 <span class="sub">Planned price. Final price set after samples. 2XL and 3XL may cost more.</span></p>
+      <form id="buy" novalidate>
+        <fieldset class="opts" id="pv-colors">
+          <legend>Color: <span id="pv-color-name">Pepper</span></legend>
+          <label class="opt"><input type="radio" name="color" value="Pepper" checked><span>Pepper</span></label>
+        </fieldset>
+        <fieldset class="opts" id="pv-sizes">
+          <legend>Size</legend>
+          <label class="opt"><input type="radio" name="size" value="S"><span>S</span></label>
+          <label class="opt"><input type="radio" name="size" value="M"><span>M</span></label>
+          <label class="opt"><input type="radio" name="size" value="L"><span>L</span></label>
+          <label class="opt"><input type="radio" name="size" value="XL"><span>XL</span></label>
+          <label class="opt"><input type="radio" name="size" value="2XL"><span>2XL</span></label>
+          <label class="opt"><input type="radio" name="size" value="3XL"><span>3XL</span></label>
+        </fieldset>
+        <div>
+          <button class="btn btn--block" id="add" type="submit">Add to cart</button>
+          <p class="form-msg" id="buy-msg" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+      <aside class="field-note" aria-label="Field note">
+        <div class="top"><span>FIELD NOTE</span><span id="pv-note-no">HP-007</span></div>
+        <p id="pv-note">A dull, dry agate with one licked streak where the red bands show through. Everybody does the lick test. Few admit it.</p>
+        <span class="draft">Draft field note</span>
+      </aside>
+      <ul class="details" id="pv-details">
+        <li>Printed in the US when you order, so nothing sits in a warehouse.</li>
+        <li>The art: a code-drawn dry agate with one wet lick, in cream, red, and gray inks.</li>
+        <li>Blank, fabric, and fit details get filled in once samples arrive.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WET TEST ================= -->
+<section class="win win--teal" id="wet-test" aria-labelledby="wet-h">
+  <div class="bar"><span>WET_TEST.EXE</span><span class="ctrls" aria-hidden="true"><i></i><i></i></span></div>
+  <div class="win__body">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">Field test</span>
+        <h2 class="px px-h" id="wet-h">Dry rocks lie.</h2>
+      </div>
+      <p>Water fills the tiny scratches on a stone's skin, so light goes in instead of bouncing off. Pick a specimen and splash it.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Specimens">
+      <button class="tab" role="tab" type="button" id="tab-agate" aria-controls="lab-panel" aria-selected="true" data-stone-tab="agate">Agate</button>
+      <button class="tab" role="tab" type="button" id="tab-jasper" aria-controls="lab-panel" aria-selected="false" tabindex="-1" data-stone-tab="jasper">Jasper</button>
+      <button class="tab" role="tab" type="button" id="tab-petoskey" aria-controls="lab-panel" aria-selected="false" tabindex="-1" data-stone-tab="petoskey">Petoskey</button>
+      <button class="tab" role="tab" type="button" id="tab-leland" aria-controls="lab-panel" aria-selected="false" tabindex="-1" data-stone-tab="leland">Leland Blue</button>
+    </div>
+    <div class="lab" id="lab-panel" role="tabpanel" aria-labelledby="tab-agate">
+      <div>
+        <div class="tray">
+          <button class="wet is-photo" id="lab-stone" type="button" aria-pressed="false" aria-label="Wet the Lake Superior agate drawing">
+            <span class="wet-media" id="lab-media"></span>
+            <span class="wet-hint" aria-hidden="true"><span class="is-dry">Tap to wet</span><span class="is-wet">Wet</span></span>
+          </button>
+        </div>
+        <p class="standin" id="lab-credit">AI sample made in ChatGPT, not a photo of a real find. The wet image is an edit of the dry one, so the stone does not change.</p>
+      </div>
+      <div>
+        <h3 id="lab-name">Lake Superior agate</h3>
+        <dl>
+          <dt>DRY</dt><dd id="lab-dry">A dull, waxy, often pitted red-brown pebble that hides in plain sight.</dd>
+          <dt>WET</dt><dd id="lab-wet">Glossy and a little see-through at the edges, sometimes with thin bands on a broken face.</dd>
+        </dl>
+        <p class="aside" id="lab-aside">Hold it up to the sun. The only red rock on the beach that lets a little daylight through.</p>
+        <div class="lab-actions">
+          <button class="btn" id="lab-splash" type="button" aria-controls="lab-stone">Splash it</button>
+          <span class="log" aria-live="polite"><span id="lab-count">Specimens wetted: 0 of 4</span><span class="pips" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span>
+        </div>
+        <p class="lab-done" id="lab-done" hidden>Field test complete. You lick rocks too, don't you? <a href="#product" data-view="lick">There's a shirt for that.</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FIELD NOTES ================= -->
+<section class="win" id="field-notes" aria-labelledby="notes-h">
+  <div class="bar"><span>FIELD_NOTES/</span><span class="ctrls" aria-hidden="true"><i></i><i></i></span></div>
+  <div class="win__body">
+    <div class="sec-head">
+      <div>
+        <span class="kicker">From the free field guide (draft)</span>
+        <h2 class="px px-h" id="notes-h">Field notes</h2>
+      </div>
+      <p>Short, checked facts about what you are actually likely to pick up. Every note is a draft until Brian confirms it against the sources listed.</p>
+    </div>
+    <div class="notes">
+      <article class="note">
+        <div class="bar"><span>FIELD_NOTE_001.TXT</span><span class="ctrls" aria-hidden="true"><i></i></span></div>
+        <div class="note__body">
+          <h3>Lake Superior agate</h3>
+          <p class="quip">The only red rock on the beach that will let a little daylight through.</p>
+          <ul>
+            <li>Banded chalcedony that filled gas bubbles in lava about 1.1 billion years ago.</li>
+            <li>Iron gives the reds, oranges, and yellows.</li>
+            <li>Minnesota's state gemstone since 1969.</li>
+            <li>Lookalikes: red jasper and chert are opaque and have no bands.</li>
+          </ul>
+          <p class="src">Sources: Minnesota DNR; Minnesota Secretary of State. <a href="#product" data-view="expect">Agate Expectations tee</a></p>
+        </div>
+      </article>
+      <article class="note">
+        <div class="bar"><span>FIELD_NOTE_002.TXT</span><span class="ctrls" aria-hidden="true"><i></i></span></div>
+        <div class="note__body">
+          <h3>Petoskey or Charlevoix?</h3>
+          <p class="quip">Same reef, same sea, smaller apartments.</p>
+          <ul>
+            <li>Petoskey: the coral <i>Hexagonaria</i>. Larger cells, each with a dark eye and lines radiating out.</li>
+            <li>Charlevoix: the coral <i>Favosites</i>. Smaller, finer cells, usually no center dot.</li>
+            <li>Both come from Devonian rocks. Michigan made the Petoskey its state stone in 1965.</li>
+          </ul>
+          <p class="src">Sources: University of Michigan Museum of Paleontology; Michigan Legislature. <a href="#product" data-view="socks">Petoskey socks</a></p>
+        </div>
+      </article>
+      <article class="note">
+        <div class="bar"><span>FIELD_NOTE_003.TXT</span><span class="ctrls" aria-hidden="true"><i></i></span></div>
+        <div class="note__body">
+          <h3>Leland Blue is slag</h3>
+          <p class="quip">Michigan's most beloved rock is a 150-year-old industrial accident.</p>
+          <ul>
+            <li>Glassy waste from an iron furnace in Leland, Michigan, that started in 1870.</li>
+            <li>Look for mixed-size gas bubbles, glassy breaks, and rusty spots.</li>
+            <li>Blue beach glass is even in color and thickness. Leland Blue is lumpy and streaky.</li>
+          </ul>
+          <p class="src">Sources: Fishtown Preservation; 9&amp;10 News.</p>
+        </div>
+      </article>
+      <article class="note">
+        <div class="bar"><span>FIELD_NOTE_004.TXT</span><span class="ctrls" aria-hidden="true"><i></i></span></div>
+        <div class="note__body">
+          <h3>How to look</h3>
+          <p class="quip">Head down. Sun in front. Thumb wet.</p>
+          <ul>
+            <li>Walk the wave line, or carry a spray bottle.</li>
+            <li>Face the sun: translucent stones light up when it shines through them toward you.</li>
+            <li>Go after a storm, when big waves turn over the gravel.</li>
+            <li>Pick beaches with lots of pebbles, not pure sand.</li>
+          </ul>
+          <p class="src">Sources: Minnesota DNR; Michigan EGLE. <a href="#product" data-view="brake">Will brake for agates tee</a></p>
+        </div>
+      </article>
+    </div>
+    <div class="guide-cta">
+      <p><b>The free field guide is still being written.</b> It covers more stones, how to spot them, and where you are allowed to keep them.</p>
+      <a class="btn btn--secondary" href="#product" data-view="chart">See the Beach Stone Chart tee</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="win win--graphite" id="about" aria-labelledby="about-h">
+  <div class="bar"><span>ABOUT.TXT</span><span class="ctrls" aria-hidden="true"><i></i><i></i></span></div>
+  <div class="win__body about">
+    <div>
+      <h2 class="px px-h" id="about-h">Pockets, explained</h2>
+      <p style="margin-top:18px">Heavy Pockets Co. makes tees and socks for people who walk the Great Lakes shoreline looking down. If you have ever wet a pebble with your thumb to check it, said "one more minute" an hour ago, or heard your jacket clank on the way to the car, we draw for you.</p>
+      <p>It is run by Brian, a rockhound in Grand Rapids, Michigan. Every design starts with a real stone, a real field fact, or a joke you only get if you have done it. Charts get checked against reliable references before they are printed.</p>
+    </div>
+    <ul class="facts">
+      <li><b>MADE</b><span>Printed in the US when you order. No warehouse, no leftover stock.</span></li>
+      <li><b>ART</b><span>Original drawings, code-drawn patterns, and Brian's own photos. Nothing traced.</span></li>
+      <li><b>RULE</b><span>Dry rocks lie. Wet them before you decide.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-foot">
+  <div class="foot-grid">
+    <div>
+      <h2>Heavy Pockets Co.</h2>
+      <p>Head down. Pockets full.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#field-notes">Field Notes</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <div>
+      <ul>
+        <li><a href="mailto:hello@heavypocketsco.com">hello@heavypocketsco.com</a></li>
+        <li>@heavypocketsco on Instagram and TikTok</li>
+      </ul>
+    </div>
+  </div>
+  <small>Store preview, November 2026. Not a live store. Shipping, returns, and privacy policies will be written before launch.</small>
+</footer>
+
+<!-- ================= CART (preview) ================= -->
+<dialog class="cart" id="cart" aria-labelledby="cart-h">
+  <div class="bar"><span id="cart-h">CART.EXE</span><button class="icon-btn" id="cart-close" type="button" aria-label="Close cart">X</button></div>
+  <div class="cart__body">
+    <ul id="cart-list"></ul>
+    <p id="cart-empty">Your cart is empty.</p>
+    <p class="note-line">Preview only. Checkout opens when the store launches, and nothing is charged here.</p>
+    <button class="btn btn--block" type="button" disabled>Checkout opens at launch</button>
+  </div>
+</dialog>
+
+<script src="storefront.js"></script>
+</body>
+</html>

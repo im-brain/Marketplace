@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Heavy Pockets Co. | Brand v2 concept prototype</title>
+<meta name="description" content="Unapproved brand v2 storefront concept, no checkout or live products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#102849;--ink:#101D2C;--teal:#164745;--blue:#376C9B;--cream:#F3E8D2;--sand:#D9B98B;--rust:#A7472D;--gold:#E8B954;--graphite:#272C34;--pixel:"Press Start 2P",monospace;--body:"Nunito Sans",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);color:var(--cream);font:17px/1.55 var(--body)}
+button,a{touch-action:manipulation}a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.frame{max-width:1240px;margin:24px auto;background:var(--teal);border:4px solid var(--ink);box-shadow:8px 8px 0 #050b13,0 0 0 2px var(--sand)}
+.windowbar{background:var(--rust);color:#fff5e6;padding:10px 15px;border-bottom:3px solid var(--ink);display:flex;align-items:center;justify-content:space-between;gap:10px;font:12px/1.4 var(--pixel)}
+.controls{display:flex;gap:6px}.controls span{background:var(--cream);width:21px;height:21px;border:2px solid var(--ink);color:var(--ink);text-align:center;font:14px/17px monospace}
+.nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;background:var(--ink);padding:18px 28px}.nav strong{font:clamp(15px,2vw,23px)/1.5 var(--pixel)}.nav ul{display:flex;gap:24px;flex-wrap:wrap;list-style:none;padding:0;margin:0}.nav a{text-decoration:none;font-weight:800}.nav a:hover{text-decoration:underline}
+.hero{background:var(--navy);display:grid;grid-template-columns:1.15fr .85fr;min-height:340px;border-bottom:6px solid var(--sand)}
+.hero-copy{padding:46px 35px}.eyebrow{color:var(--gold);font:11px/1.7 var(--pixel)}h1,h2,h3,p{margin-top:0}h1{font:clamp(24px,4vw,46px)/1.5 var(--pixel);letter-spacing:-.02em;margin:20px 0 16px}h2{font:clamp(17px,2.5vw,25px)/1.5 var(--pixel)}
+.hero-copy p{max-width:47ch;font-size:19px}.cta{display:inline-flex;min-height:48px;align-items:center;justify-content:center;background:var(--rust);border:2px solid var(--ink);box-shadow:4px 4px 0 var(--sand);text-decoration:none;font-weight:900;padding:9px 21px;color:white}.cta:hover{background:#84351f}
+.scenery{position:relative;overflow:hidden;background:#102849 url("pixel-sunset.svg") center center/cover no-repeat;display:grid;place-items:center}
+
+
+.scenery span{position:relative;z-index:2;font:12px/2 var(--pixel);color:#fff;text-align:center;text-shadow:3px 3px var(--ink);padding:16px}
+.section{padding:28px}.sectionbar{background:var(--rust);padding:10px 12px;border:3px solid var(--ink);font:12px/1.6 var(--pixel);margin-bottom:16px}
+.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.product{background:var(--cream);color:var(--ink);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--sand)}
+.product-art{height:230px;display:grid;place-items:center;position:relative;overflow:hidden}.art-tee{background:#c4a27d}.art-sock{background:#7a807a}.art-field{background:#8fa5a4}
+.shirt{width:150px;height:150px;clip-path:polygon(23% 0,39% 9%,61% 9%,77% 0,100% 20%,85% 40%,77% 33%,77% 100%,23% 100%,23% 33%,15% 40%,0 20%);background:var(--navy);display:grid;place-items:center;color:var(--cream);text-align:center;font:10px/2 var(--pixel);padding:32px 18px}
+.sock{width:83px;height:174px;background:repeating-linear-gradient(45deg,#b7b1a2 0 14px,#666e6a 14px 28px);border:11px solid #343b3c;border-top:17px solid #343b3c;border-radius:3px 3px 36px 8px;transform:rotate(-10deg)}
+.stone{width:145px;height:111px;background:#9f9c91;border-radius:46% 54% 55% 45% / 43% 47% 53% 57%;box-shadow:inset 17px 12px 18px #ffffff65,inset -13px -12px 20px #28333d77,5px 9px 0 #0003}
+.product-info{padding:16px;min-height:125px}.product h3{font:800 19px/1.3 var(--body);margin-bottom:8px}.product p{font-size:14px;margin:0}
+.lower{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:0 28px 28px}.panel{background:var(--cream);color:var(--ink);border:3px solid var(--ink)}.panel .sectionbar{margin:0}.panel-body{padding:22px}.panel p{margin:0 0 12px}.chip{font:12px/1.5 var(--pixel);background:var(--sand);padding:5px 8px;display:inline-block;margin-bottom:13px}
+.specimens{display:flex;gap:20px;align-items:center;flex-wrap:wrap}.pebble{width:105px;height:85px;border-radius:50% 45% 53% 47%;background:radial-gradient(ellipse at 30% 25%,#c5c1b7,#8e8b83 70%,#79776e);box-shadow:5px 5px 0 #0002}.pebble.wet{background:radial-gradient(ellipse at 25% 20%,#d8c4a5,#807468 55%,#50443c)}
+.swatches{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}.swatches span{width:45px;height:45px;border:2px solid var(--ink)}footer{background:var(--ink);padding:18px 28px;font-size:14px}
+.notice{background:#fff0bb;color:#282116;padding:12px 18px;text-align:center;font-weight:800}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.scenery{min-height:185px}.products{grid-template-columns:repeat(2,minmax(0,1fr))}.lower{grid-template-columns:1fr}.frame{margin:8px}.hero-copy{padding:28px 20px}}
+@media(max-width:520px){.products{grid-template-columns:1fr}.nav{padding:18px}.nav ul{gap:12px;font-size:15px}.section{padding:15px}.lower{padding:0 15px 15px}.windowbar{font-size:9px}.hero-copy p{font-size:17px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head>
+<body>
+<div class="notice">DESIGN CONCEPT ONLY. Not a live store. All products and visuals below are placeholders.</div>
+<div class="frame">
+ <div class="windowbar"><span>Heavy Pockets Co. / COLLECTION.exe</span><div class="controls" aria-hidden="true"><span>−</span><span>□</span><span>×</span></div></div>
+ <nav class="nav" aria-label="Main navigation"><strong>HEAVY<br>POCKETS CO.</strong><ul><li><a href="#shop">Shop</a></li><li><a href="#notes">Field Notes</a></li><li><a href="#wet">Wet Stone</a></li></ul></nav>
+ <header class="hero"><div class="hero-copy"><div class="eyebrow">GREAT LAKES GOODS / EST. 2026</div><h1>HEAD DOWN.<br>POCKETS FULL.</h1><p>Original tees, socks, and finds for rockhounds, lake lovers, and people who never leave the beach empty-handed.</p><a class="cta" href="#shop">Explore the collection →</a></div><div class="scenery" role="img" aria-label="Great Lakes pixel sunset illustration with low sun, lake waves, and forest shoreline"><span>LAKE SUPERIOR<br>ADVENTURE AWAITS</span></div></header>
+ <main>
+  <section class="section" id="shop"><div class="sectionbar">✦ FEATURED FINDS <small> / PRODUCT CONCEPTS ONLY</small></div><div class="products">
+   <article class="product"><div class="product-art art-tee"><div class="shirt">HEAD<br>DOWN.<br>POCKETS<br>FULL.</div></div><div class="product-info"><h3>Rockhound Tee</h3><p>Illustrative garment concept. Artwork pending.</p></div></article>
+   <article class="product"><div class="product-art art-sock"><div class="sock" aria-hidden="true"></div></div><div class="product-info"><h3>Petoskey Socks</h3><p>Pattern placeholder. Final knit/print proof pending.</p></div></article>
+   <article class="product"><div class="product-art art-field"><div class="stone" aria-hidden="true"></div></div><div class="product-info"><h3>Great Lakes Field Guide Tee</h3><p>Specimen illustration placeholder, not scientific artwork.</p></div></article>
+  </div></section>
+  <div class="lower">
+   <section class="panel" id="notes"><div class="sectionbar">▤ FIELD_NOTES.txt</div><div class="panel-body"><span class="chip">COLLECTOR'S LOG / DRAFT</span><h2>EVERY ROCK HAS A STORY.</h2><p>Learn the difference between agates, Petoskey stones, and the ordinary pebbles that become somebody's favorite find. The field guide will be verified before publication.</p></div></section>
+   <section class="panel" id="wet"><div class="sectionbar">◈ WET_STONE.exe</div><div class="panel-body"><span class="chip">A SIGNATURE INTERACTION</span><h2>DRY ROCKS LIE.</h2><div class="specimens"><div class="pebble" role="img" aria-label="Abstract dry stone placeholder"></div><span aria-hidden="true">→</span><div class="pebble wet" role="img" aria-label="Abstract wet stone placeholder"></div></div><p>Dry and wet visuals must be photographs of the same specimen. These CSS shapes are not production imagery.</p></div></section>
+  </div>
+ </main>
+ <footer>Heavy Pockets Co. · Proposed visual direction · Not connected to checkout</footer>
+</div>
+</body></html>

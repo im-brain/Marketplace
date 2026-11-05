@@ -10,12 +10,14 @@ The full step-by-step plan is in `PLAN.md`.
 
 ## Current status
 
-- **Store name (decided Nov 1, 2026): Heavy Pockets Co.** Domain heavypocketsco.com, handles @heavypocketsco, email hello@heavypocketsco.com (forwarded to a private Gmail). Tagline "Head down. Pockets full." Secondary line "Dry rocks lie." Fallback: Wet Thumb Co. (wetthumbco.com, @wetthumbco), used only if Heavy Pockets runs into trouble. Checks were a first screen, not legal clearance. Background: heavypockets.com and @heavypockets belong to an old, apparently dead streetwear brand; the 2013 HEAVY POCKETS clothing filing (serial 85912472) was abandoned in 2014.
-- **Current step:** Steps 1, 2, and 3 done (Nov 1, 2026). **Next: Step 4, the brand kit** (colors, fonts, simple wordmark, and a one-page brand guide).
-- **Waiting on Brian:** nothing. Claude starts Step 4.
-- **Branch:** all work so far was merged into `main` on Nov 1, 2026. Start new work from `main`.
+- **Store name (decided Nov 1, 2026): Heavy Pockets Co.** Domain heavypocketsco.com, handles @heavypocketsco, email hello@heavypocketsco.com (forwarded to a private Gmail). Tagline "Head down. Pockets full." Secondary line "Dry rocks lie." Fallback: Wet Thumb Co. (wetthumbco.com, @wetthumbco), used only if Heavy Pockets runs into trouble. Checks were a first screen, not legal clearance. Background: heavypockets.com and @heavypockets belong to an old, apparently dead streetwear brand; the 2013 HEAVY POCKETS clothing filing (serial 85912472) was abandoned in 2014. **New, found Nov 4, 2026:** two LIVE filings by one owner (Marques Zahir): HEAVY POCKETS, serial 50027960, Class 16 (financial education books, filed Aug 3, 2026), and MUN-E HEAVY POCKETS, serial 99146373, Class 41 (podcasts). Neither covers clothing (Class 25), so not blocking, but if that owner adds merch, conflict is possible. Suggested: Brian talks to a trademark attorney about filing HEAVY POCKETS CO. in Class 25.
+- **Current step:** Step 4 (brand kit) round 1 is ready for Brian's pick (Nov 4, 2026). Five directions: A Field Notebook, B Lakeshore Workwear, C Wet Stone Minimal (Brian's three), D Lake Chart, and E the hybrid (Claude's additions). Claude recommends **E** (A's maker's mark with an angular agate O, narrow black Archivo for puns, Lake Chart as a named series, and the lick as its own shirt); A is the clean alternative. Page: `brand/kit/index.html`, published privately at https://claude.ai/artifact/B4dgDZnUoNUVETSLkhx4AU. After the pick: final colors matched to Printify blanks, logo files (SVG and PNG), and the one-page brand guide.
+- **Waiting on Brian:** (1) pick a brand option (letter or mix); (2) check the field guide's remaining [VERIFY] items (collecting rules were confirmed against official NPS, Michigan, Minnesota, and Wisconsin DNR pages on Nov 4, 2026, except Wisconsin NR 45.04 and the bottomlands wording); (3) decide on a trademark attorney consult for Class 25 (see the store name note above). (4) Store preview (Step 11 draft, direction E): https://claude.ai/artifact/SD6rLi6iisiMKrDTuQgeQY. Open question: products load "dry" (faded) and wet on tap; decide whether the first view should be dry or wet. (5) `listing_check.py` blocks on every warning, including Oxford comma guesses that can be wrong; decide whether to add an override flag. (6) `content/Video_Content_Bank.md`: 20 product-only video ideas; ask group moderators before posting in rockhound communities.
+- **Storefront preview v2 (Nov 5, 2026):** full retro-desktop storefront built on the locked brand system (ChatGPT as creative director locked colors and fonts in PR #2: navy, cream, rust, and sandstone; Press Start 2P for short headings, Atkinson Hyperlegible Next for everything shoppers read). Branch `storefront/v2-retro-integration`, page `theme/v2/index.html`, notes in `theme/v2/README.md`, draft PR #3 (into `step4-overnight-build`), published privately at https://claude.ai/artifact/RH4GTe1qE3NzeQUymJyPm6. Brian approved it; merged into `step4-overnight-build` and then `main` (Nov 5, 2026). Not deployed. The brand kit pick (A to E) above is superseded by the v2 brand system.
+- **Overnight build (Nov 3 to 4, 2026), built on branch `step4-overnight-build`, merged into `main` Nov 5, 2026:** brand kit page; real Printify costs in the profit model; design tracker with a trademark re-check; Petoskey sock pattern generator plus print panels; "I lick rocks" print art; field guide draft (fact-checked once); listing checker and Printify publish script (live-tested by creating and deleting one draft product); store preview page (Step 11 draft); 20-video content bank. Reviewed by separate agents: a design finish reviewer, an apparel brand strategist, a geology fact-checker, and a code reviewer (who fixed an unsafe delete and a sock seam bug; 43 tests pass).
+- **Branch:** `step4-overnight-build` (overnight build, v2 brand system, approved hero, and storefront preview v2) was merged into `main` on Nov 5, 2026, at Brian's request. Start new work from `main`. Merging into `main` deploys nothing: the live coming-soon page is a Cloudflare Worker published separately.
 - **USPTO rate limit:** the search API returns 403 or 429 after many quick queries. Space searches out, and don't loop retries.
-- **Network access:** all needed hosts are allowed as of Nov 1, 2026: rdap.verisign.com, api.printify.com, images-api.printify.com, tmsearch.uspto.gov, tsdr.uspto.gov, api.cloudflare.com, fonts.googleapis.com, fonts.gstatic.com, accounts.google.com, and pypi.org. Shopify's `<store>.myshopify.com` gets added at Step 12.
+- **Network access:** blocked as of Nov 4, 2026: impeccable.style (the design skill's direction roll ran without its catalog), nps.gov, and michigan.gov (fact-checks used search excerpts). Allowed as of Nov 1, 2026: rdap.verisign.com, api.printify.com, images-api.printify.com, tmsearch.uspto.gov, tsdr.uspto.gov, api.cloudflare.com, fonts.googleapis.com, fonts.gstatic.com, accounts.google.com, and pypi.org. Shopify's `<store>.myshopify.com` gets added at Step 12.
 - **Impeccable skill:** its setup step runs `scripts/impeccable`, which downloads a helper program from GitHub releases (checksum-verified). GitHub release downloads aren't on the allowed host list yet, so that step may fail. The design guides in `reference/` work without it. To enable the helper, allow github.com and its release download host. Brian plans to use it mainly once the website gets built.
 - **Tools Claude can run:** .com availability via `https://rdap.verisign.com/com/v1/domain/<name>.com` (200 means taken, 404 means open). Trademark knockout search via `python3 scripts/tm_search.py '"phrase"'` (POSTs to `tmsearch.uspto.gov/prod-stage-v1-0-0/tmsearch`; classes look like "IC 025"). Filing history via `tmsearch.uspto.gov/tsdr-api-v1-0-0/tsdr-api?serialNumber=<n>`. Social and Etsy conflicts via web search limited to those domains. Handle availability can't be confirmed automatically; Brian checks by hand.
 - **Accounts (all created Nov 1, 2026):**
@@ -47,16 +49,19 @@ The full step-by-step plan is in `PLAN.md`.
 
 ## Unit economics (US POD, from models/POD_Profit_Model.xlsx)
 
-| Profit per order, middle price | Printify |
-|---|---|
-| Tee at $27.99 | $12.43 |
-| Socks at $18.99 | $5.02 |
-| Bundle at $39.99 | $11.17 |
+| Profit per order, middle price | Printify (real quotes, Nov 4, 2026) | Old guess |
+|---|---|---|
+| Tee at $27.99 | $9.78 | $12.43 |
+| Socks at $18.99 | $5.59 | $5.02 |
+| Bundle at $39.99 | $9.09 | $11.17 |
+
+- Recommended providers: tees, Bella+Canvas 3001 from Monster Digital (Columbus, OH), $11.77 base, $4.49 shipping first item; socks, SPOKE Custom Products (Norcross, GA), blueprint 376, $7.39 base, $4.59 shipping. Bundles ship as two packages from two printers. Details: `research/Printify_Catalog_Findings.md`.
+- Print sizes: tee front 4500 x 5100 px (L to 3XL); sock panels 1348 x 5657 px (size M), 4 panels per pair.
 
 - Free shipping is built into the price. Shopify Payments is 2.9% + $0.30, with a 3% returns reserve and no ads.
 - Tees drive profit. Socks are add-ons and go in bundles.
 - Fixed costs are about $60/month in the old model (Shopify $39, domain, and a $20 AI placeholder). The AI bill is confirmed at about $20 (yellow fill removed from Inputs!B26).
-- 2 to 4 orders a month cover the AI bill, and about 6 cover all fixed costs.
+- About 3 tees, 4 socks, or 3 bundles a month cover the AI bill.
 - Biggest risk: paid ads at $5 to $15 per customer would wipe out sock profit.
 - Yellow cells in the spreadsheets are assumptions. Replace them with real sample quotes.
 
@@ -109,7 +114,16 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - `scripts/tm_search.py`: USPTO trademark knockout search.
 - `brand/Naming_Brainstorm_Prompt.md`: the prompt for the separate naming session.
 - `.claude/skills/impeccable/`: the Impeccable design skill (v4.8.0, Apache 2.0, from github.com/pbakaus/impeccable), installed Nov 1, 2026. It loads in every session (`/impeccable`). License in `.claude/skills/LICENSE-impeccable`.
-- Planned: `designs/` (art files), `tracker/Design_Tracker.xlsx`, `scripts/` (Python automation), `theme/` (Shopify custom sections).
+- `PRODUCT.md`: product record for the Impeccable design skill (some lines marked [inferred] for Brian to confirm). `.impeccable/`: its surface briefs and review screenshots.
+- `brand/kit/index.html`: Step 4 brand kit comparison page.
+- `tracker/Design_Tracker.xlsx` and `tracker/TM_Recheck_2026-11-04.md`: all 13 designs, trademark log.
+- `research/Printify_Catalog_Findings.md`: real costs, providers, and print sizes.
+- `content/Field_Guide_Draft.md`: field guide draft with a fact-check log and [VERIFY] tags.
+- `designs/lick/`: "I lick rocks" art (HTML source and print PNGs). `designs/socks/`: Petoskey previews and `print/` panels.
+- `scripts/`: `stone_pairs.py` (prepares dry/wet stone image pairs), `tm_search.py`, `listing_check.py` (no em dashes, Oxford comma, flagged claims), `publish_design.py` (creates unpublished Printify products), `sock_petoskey.py`, `render_lick.js`, tests in `scripts/tests/`, and `README.md`.
+- `theme/preview/`: Step 11 store preview (draft, built in direction E).
+- `brand/v2/`: v2 brand system (locked tokens, decisions, approved hero art). `theme/v2/`: storefront preview v2 with QA screenshots and test scripts.
+- `content/Video_Content_Bank.md`: 20 video ideas, posting plan, and community notes.
 
 ## Session log
 
@@ -126,3 +140,11 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - **2026-11-01 (later):** Brian chose **Heavy Pockets Co.** (fallback Wet Thumb Co.); both .coms re-checked open. Reordered Step 3 so the Gmail comes first (Cloudflare needs an account email). Wrote the Step 3 checklist.
 - **2026-11-01 (later):** Step 3 done. Gmail heavypocketsco@gmail.com, domain heavypocketsco.com (Cloudflare), handles claimed, Printify connected (network secret, shop 29566047), and hello@ forwarding plus send-as working with SPF. Next: Step 4, brand kit.
 - **2026-11-01 (later):** Installed the Impeccable design skill into `.claude/skills/` (Claude Code copy only; the other copies in that repo are the same skill for other tools). Its launcher downloads a helper binary; flagged. Best fit is the web pieces (brand guide page, store preview), not shirt art. Next: Step 4, brand kit.
+- **2026-11-03 to 04 (overnight):** Brian asked Claude to use up the week's usage on useful work, with reviewer agents. Built everything listed under "Overnight build" above on branch `step4-overnight-build`. Found two live HEAVY POCKETS filings (Class 16 and 41). Real tee cost is higher than guessed ($9.78 profit per tee, not $12.43). Next: Brian picks a brand option; then finish the brand kit and brand guide.
+- **2026-11-04 (late):** Integrated the owner-approved v2 hero (ChatGPT art) on branch `brand/heavy-pockets-v2` (draft PR #1): exact image bytes in `brand/v2/hero-assets/`, responsive page `brand/v2/hero-preview/index.html`, screenshots in `brand/v2/hero-preview/qa/`, published privately at https://claude.ai/artifact/6TLtSLo9w8ZGqoWY29VQnD. Store preview, plan, and business decisions unchanged. Landscape fix added after Brian tested on his phone.
+- **2026-11-05:** Brian approved the hero and accepted the art accuracy flags as is. PR #1 merged into `step4-overnight-build` (not `main`, not deployed).
+- **2026-11-05 (later):** Merged PR #2 (locked palette and fonts) into a new branch `storefront/v2-retro-integration` and built the full storefront preview in `theme/v2/` with the retro button system. 45 browser checks and a contrast check pass. Old preview untouched. Next: Brian reviews on his phone and iPad.
+- **2026-11-05 (later):** Brian asked for the shop to match the retro style (products stay placeholders). Reworked it as one 90s file window: toolbar with filters, sunken pane, each product as a small window (title bar turns rust when active) with a stats box, and a live status bar. Product viewer image got the same sunken frame. 45 browser checks pass (an earlier note said 45 when it was 44; one check was added).
+- **2026-11-05 (later):** Brian asked to use ChatGPT's images. Copied the ChatGPT agate dry/wet AI sample pair and the Petoskey sock concept into `theme/v2/img/` (credits in `img/CREDITS.md`). Agate in the wet test now cross-fades the pair; socks card and viewer show the concept with a CONCEPT label. Tees, Petoskey, and Leland stones stay as before (no ChatGPT images for them in the repo).
+- **2026-11-05 (later):** Brian sent ChatGPT dry/wet stone images in chat. Added red jasper, Petoskey, and Leland Blue pairs to the wet test (now 4 stones: agate, jasper, Petoskey, Leland Blue). `scripts/stone_pairs.py` gives each pair one shared outline, which also removes the glow halo the generator baked in. Raw files in `theme/v2/img/src/`. A gray basalt and a pale tan stone came without wet versions, so they are unused.
+- **2026-11-05 (later):** Brian approved the storefront preview v2. PR #3 merged into `step4-overnight-build`, then `step4-overnight-build` merged into `main` (Nov 5, 2026). Not deployed. Next: real photos of Brian's own finds to replace the AI sample stones, then the remaining launch art.

@@ -7,6 +7,8 @@ and it does not find unregistered (common-law) use.
 """
 import json
 import sys
+import time
+import urllib.error
 import urllib.request
 
 URL = "https://tmsearch.uspto.gov/prod-stage-v1-0-0/tmsearch"
@@ -24,8 +26,22 @@ def owner(s):
     return o if isinstance(o, str) else (o or [""])[0]
 
 
-for term in sys.argv[1:]:
-    data = search(term)
+def main(terms):
+    for term in terms:
+        try:
+            data = search(term)
+        except urllib.error.HTTPError as e:
+            if e.code in (403, 429):
+                sys.exit("USPTO is rate limiting (%s). Wait a few minutes before searching "
+                         "again. Do not retry in a loop." % e.code)
+            sys.exit("USPTO search failed for %s: %s %s" % (term, e.code, e.reason))
+        except urllib.error.URLError as e:
+            sys.exit("Could not reach USPTO: %s" % e.reason)
+        report(term, data)
+        time.sleep(2)  # space searches out so USPTO does not block us
+
+
+def report(term, data):
     hits = [h["source"] for h in data["hits"]["hits"]]
     live = [s for s in hits if s.get("alive")]
     flagged = [s for s in live if any(c.strip() in WATCH for c in s.get("internationalClass") or [])]
@@ -33,3 +49,7 @@ for term in sys.argv[1:]:
     for s in flagged:
         classes = ", ".join(s.get("internationalClass") or [])
         print(f"   {s.get('wordmark')} | {classes} | serial {s.get('id')} | {owner(s)}")
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])

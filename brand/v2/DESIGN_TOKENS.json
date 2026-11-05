@@ -1,0 +1,110 @@
+{
+  "version": "2.1",
+  "status": "creative-direction-locked-for-implementation",
+  "decisionDate": "2026-11-04",
+  "colors": {
+    "navy": "#102849",
+    "ink": "#101D2C",
+    "teal": "#164745",
+    "lakeBlue": "#376C9B",
+    "cream": "#F3E8D2",
+    "sand": "#D9B98B",
+    "rust": "#A7472D",
+    "gold": "#E8B954",
+    "graphite": "#272C34",
+    "white": "#FFFFFF"
+  },
+  "roles": {
+    "pageBackground": "ink",
+    "brandPanel": "navy",
+    "panelDark": "graphite",
+    "panelLight": "cream",
+    "titleBar": "rust",
+    "primaryTextOnDark": "cream",
+    "primaryTextOnLight": "ink",
+    "borderWarm": "sand",
+    "waveAccent": "lakeBlue",
+    "primaryCta": "rust",
+    "primaryCtaText": "white",
+    "secondaryCta": "cream",
+    "secondaryCtaText": "ink",
+    "highlight": "gold",
+    "interactiveFocus": "gold",
+    "mutedSurface": "teal"
+  },
+  "type": {
+    "display": {
+      "family": "Press Start 2P",
+      "fallback": "monospace",
+      "weight": 400,
+      "uses": "short retro headings, small chrome accents; not navigation or full product titles",
+      "minimumPx": 16
+    },
+    "body": {
+      "family": "Atkinson Hyperlegible Next",
+      "fallback": "system-ui, sans-serif",
+      "weights": [
+        400,
+        500,
+        600,
+        700,
+        800
+      ],
+      "uses": "navigation, all commerce, product titles, body, forms, policies",
+      "minimumBodyPx": 16
+    },
+    "metadata": {
+      "family": "ui-monospace",
+      "fallback": "monospace",
+      "uses": "field-note IDs, file paths, window-title details"
+    }
+  },
+  "usage": {
+    "core": [
+      "navy",
+      "cream",
+      "rust",
+      "sand"
+    ],
+    "supporting": [
+      "ink",
+      "teal",
+      "lakeBlue"
+    ],
+    "rare": [
+      "gold",
+      "graphite",
+      "white"
+    ],
+    "cssVariablesPrefix": "hp",
+    "pixelBorders": "2px solid var(--hp-ink)",
+    "focusOutline": "3px solid var(--hp-gold)",
+    "spacing": "4px multiples preferred",
+    "tapTargetMinPx": 44
+  },
+  "contrastRatios": {
+    "creamOnNavy": 12.16,
+    "whiteOnRust": 5.86,
+    "creamOnRust": 4.82,
+    "inkOnCream": 14,
+    "inkOnSand": 9.13,
+    "creamOnTeal": 8.55,
+    "creamOnLakeBlue": 4.57,
+    "goldOnNavy": 8.09,
+    "sandOnRust": 3.14
+  },
+  "forbiddenTextPairings": [
+    "sand on rust",
+    "rust on sand for small text without testing",
+    "lakeBlue on navy for body text"
+  ],
+  "fontLicenses": {
+    "display": "SIL OFL 1.1; https://github.com/google/fonts/tree/main/ofl/pressstart2p",
+    "body": "SIL OFL 1.1; https://github.com/googlefonts/atkinson-hyperlegible-next/blob/main/OFL.txt",
+    "note": "Include license notices when bundling/self-hosting fonts. No font files are committed here."
+  },
+  "motion": {
+    "reducedMotion": "disable decorative transitions",
+    "wetEffect": "same-specimen transition only"
+  }
+}

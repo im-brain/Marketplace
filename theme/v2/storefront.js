@@ -91,72 +91,37 @@ function tee(kind){
   return svg;
 }
 
-/* ---------- 4. Field-guide stones (code-drawn stand-ins, flagged as such) ----------
-   Petoskey cells are irregular on purpose (IMAGE_STANDARDS.md: varied, incomplete,
-   flush cells, never stamped identical hexagons). Wetting only changes filters
-   and dust, so wet and dry are always the same specimen. */
+/* ---------- 4. Wet-test stones ----------
+   Every stone is a ChatGPT AI sample pair. Each pair shares ONE outline
+   (scripts/stone_pairs.py, alpha channels identical), so wetting only changes
+   the surface, never the stone. */
 var STONES={
-  agate:{name:"Lake Superior agate",label:"Code-drawn Lake Superior agate: a red-brown pebble with uneven red and cream bands",
+  agate:{name:"Lake Superior agate",img:"agate-hero",
+    alt:"AI sample of a dry Lake Superior agate: a dusty, muted rust-red pebble with faint bands",
+    credit:"AI sample made in ChatGPT, not a photo of a real find. The wet image is an edit of the dry one, so the stone does not change.",
     dry:"A dull, waxy, often pitted red-brown pebble that hides in plain sight.",
     wet:"Glossy and a little see-through at the edges, sometimes with thin bands on a broken face.",
     aside:"Hold it up to the sun. The only red rock on the beach that lets a little daylight through."},
-  petoskey:{name:"Petoskey stone",label:"Code-drawn Petoskey stone: gray limestone with irregular, roughly six-sided coral cells, each with a dark center",
+  jasper:{name:"Red jasper",img:"jasper",
+    alt:"AI sample of a dry red jasper pebble: opaque brick red with a thin pale vein",
+    credit:"AI sample made in ChatGPT, not a photo of a real find. Dry and wet share one outline, so the stone does not change.",
+    dry:"A dull brick-red pebble, sometimes with a thin pale vein.",
+    wet:"A deeper, glossier red, but still opaque: no light passes through, and no bands.",
+    aside:"A classic agate lookalike. If daylight will not pass through the edges, it is not an agate."},
+  petoskey:{name:"Petoskey stone",img:"petoskey",
+    alt:"AI sample of a dry Petoskey stone: pale gray limestone with faint round coral cells",
+    credit:"AI sample made in ChatGPT, not a photo of a real find. Dry and wet share one outline, so the stone does not change.",
     dry:"A plain gray or tan limestone pebble, maybe faintly mottled.",
-    wet:"Tightly packed, roughly six-sided cells show up, each with a dark eye and thin lines radiating out.",
+    wet:"Tightly packed cells show up, each with a dark eye and thin lines radiating out.",
     aside:"A fossil coral colony from a Devonian sea. Michigan's state stone since 1965."},
-  leland:{name:"Leland Blue",label:"Code-drawn Leland Blue slag: a blue-gray lump with streaks of blue, purple, and green and uneven bubbles",
+  leland:{name:"Leland Blue",img:"leland",
+    alt:"AI sample of a dry Leland Blue: a dull blue-gray lump with small pores of mixed sizes",
+    credit:"AI sample made in ChatGPT, not a photo of a real find. Dry and wet share one outline, so the stone does not change.",
     dry:"A dull blue-gray lump.",
-    wet:"Strong blues, purples, grays, and greens, often streaky, with gas bubbles of mixed sizes.",
+    wet:"Strong blues, grays, and greens, with gas bubbles of mixed sizes.",
     aside:"Not a natural stone: it is slag from a 19th-century iron furnace in Leland, Michigan."}
 };
-function stone(kind){
-  var id="s"+(uid++),r=rng({agate:23,petoskey:58,leland:91}[kind]);
-  var svg=el("svg",{viewBox:"0 0 200 180",role:"img","aria-label":STONES[kind].label});
-  var out=pebble(r,100,92,80,9);
-  var defs=el("defs",{}),cp=el("clipPath",{id:id+"c"});cp.appendChild(el("path",{d:out}));defs.appendChild(cp);svg.appendChild(defs);
-  var g=el("g",{"clip-path":"url(#"+id+"c)"});
-  if(kind==="agate"){
-    g.appendChild(el("rect",{width:"200",height:"180",fill:"#6E3424"}));
-    var base=[];for(var i=0;i<8;i++){var th=i/8*Math.PI*2+.4;base.push([Math.cos(th)*(1+(r()-.5)*.3),Math.sin(th)*(1+(r()-.5)*.3)*.86]);}
-    var dk=["#9A2E1A","#B5532F","#7E2616","#C46A3E"],lt=["#EDE3D2","#F1E7DA","#D9B99B"],s=.9,k=0;
-    while(s>.2&&k<60){
-      if(r()<.4){var cx=112+22*(1-s),cy=86-12*(1-s);g.appendChild(el("path",{d:roundPoly(base.map(function(p){return[cx+p[0]*70*s,cy+p[1]*70*s];})),fill:dk[k%4]}));s-=.06+r()*.07;k++;}
-      else{for(var j=0;j<4+Math.floor(r()*4)&&s>.2;j++){var cx2=112+22*(1-s),cy2=86-12*(1-s);g.appendChild(el("path",{d:roundPoly(base.map(function(p){return[cx2+p[0]*70*s,cy2+p[1]*70*s];})),fill:j%2?lt[j%3]:dk[(k+j)%4]}));s-=.012+r()*.012;}k++;}
-    }
-    g.appendChild(el("path",{d:roundPoly(base.map(function(p){return[128+p[0]*10,78+p[1]*10];})),fill:"#DCD6CB"}));
-    /* outer skin covering part of the stone, as on most real beach agates */
-    g.appendChild(el("path",{d:"M-10 120C30 104 60 150 110 150S180 120 210 140V190H-10Z",fill:"#5E2E22","fill-opacity":".85"}));
-  }else if(kind==="petoskey"){
-    g.appendChild(el("rect",{width:"200",height:"180",fill:"#A8A194"}));
-    /* a hex lattice whose shared corners are each nudged by a fixed random amount:
-       cells stay packed and flush but come out different sizes and shapes */
-    var R=14,w=Math.sqrt(3)*R,J=R*.32;
-    function corner(x,y){var kx=Math.round(x*10),ky=Math.round(y*10);return[x+(hash(kx,ky,1)-.5)*2*J,y+(hash(kx,ky,2)-.5)*2*J];}
-    for(var row=-1;row<11;row++){for(var col=-1;col<10;col++){
-      var x=col*w+(row%2?w/2:0),y=row*R*1.5,pts=[];
-      for(var v=0;v<6;v++){var a=Math.PI/3*v+Math.PI/6;pts.push(corner(x+Math.cos(a)*R,y+Math.sin(a)*R));}
-      var ccx=0,ccy=0;pts.forEach(function(p){ccx+=p[0];ccy+=p[1];});ccx/=6;ccy/=6;
-      var shade=["#BDB5A6","#B3AB9C","#C2BAAA","#AEA697"][Math.floor(r()*4)];
-      g.appendChild(el("polygon",{points:pts.map(function(p){return p[0].toFixed(1)+","+p[1].toFixed(1);}).join(" "),fill:shade,stroke:"#6A6357","stroke-width":(1+r()*.9).toFixed(2)}));
-      var rays=9+Math.floor(r()*6),rot=r()*Math.PI;
-      for(var q=0;q<rays;q++){var b=rot+q/rays*Math.PI*2,len=R*(.45+r()*.3);g.appendChild(el("line",{x1:ccx.toFixed(1),y1:ccy.toFixed(1),x2:(ccx+Math.cos(b)*len).toFixed(1),y2:(ccy+Math.sin(b)*len).toFixed(1),stroke:"#746C60","stroke-width":".7","stroke-opacity":(.5+r()*.4).toFixed(2)}));}
-      g.appendChild(el("ellipse",{cx:(ccx+(r()-.5)*2).toFixed(1),cy:(ccy+(r()-.5)*2).toFixed(1),rx:(2+r()*1.4).toFixed(1),ry:(1.8+r()*1.2).toFixed(1),fill:"#4A443B"}));
-    }}
-    /* worn patch where the pattern fades, like a real tumbled stone */
-    g.appendChild(el("ellipse",{cx:"58",cy:"130",rx:"46",ry:"30",fill:"#A8A194","fill-opacity":".55"}));
-  }else{
-    g.appendChild(el("rect",{width:"200",height:"180",fill:"#3A4A6E"}));
-    [["M-10 64C40 46 80 84 130 66S210 52 220 72","#56679A",16,.7],["M-10 112C50 92 90 128 150 104S210 118 220 112","#64528A",12,.6],["M10 150C60 136 110 156 200 138","#4F7470",10,.6],["M20 34C70 46 120 28 190 40","#7F8EB0",6,.5]].forEach(function(s){g.appendChild(el("path",{d:s[0],stroke:s[1],"stroke-width":s[2],"stroke-opacity":s[3],fill:"none","stroke-linecap":"round"}));});
-    for(var bI=0;bI<22;bI++){var bx=24+r()*152,by=26+r()*128,br=1+r()*r()*6.5;g.appendChild(el("ellipse",{cx:bx.toFixed(1),cy:by.toFixed(1),rx:br.toFixed(1),ry:(br*(.75+r()*.4)).toFixed(1),fill:"#1E2A45",stroke:"#9FB0D6","stroke-width":".8","stroke-opacity":".6"}));}
-    for(var rs=0;rs<4;rs++){g.appendChild(el("circle",{cx:(30+r()*140).toFixed(1),cy:(30+r()*120).toFixed(1),r:(2+r()*3).toFixed(1),fill:"#8A5A3A","fill-opacity":".7"}));}
-  }
-  var nf=el("filter",{id:id+"n",x:"0",y:"0",width:"100%",height:"100%"});nf.appendChild(el("feTurbulence",{type:"fractalNoise",baseFrequency:".9",numOctaves:"2",stitchTiles:"stitch"}));nf.appendChild(el("feColorMatrix",{values:"0 0 0 0 .93 0 0 0 0 .91 0 0 0 0 .86 0 0 0 .7 0"}));defs.appendChild(nf);
-  g.appendChild(el("rect",{width:"200",height:"180",fill:"#E9E4D8","fill-opacity":".18",class:"dust"}));
-  g.appendChild(el("rect",{width:"200",height:"180",filter:"url(#"+id+"n)",class:"dust"}));
-  svg.appendChild(g);
-  svg.appendChild(el("path",{d:out,fill:"none",stroke:"#000","stroke-opacity":".25","stroke-width":"3"}));
-  return svg;
-}
+var STONE_COUNT=Object.keys(STONES).length;
 
 function fillArt(root){
   $$("[data-tee]",root).forEach(function(n){if(!n.firstChild)n.appendChild(tee(n.dataset.tee));});
@@ -303,12 +268,13 @@ cartBtn.addEventListener("click",function(){if(dlg.showModal)dlg.showModal();els
 $("#cart-close").addEventListener("click",function(){if(dlg.close)dlg.close();else dlg.removeAttribute("open");});
 dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close();});
 
-/* the agate dry and wet images share one outline (identical alpha), so swapping
-   them never changes the stone's shape; only the surface goes from dusty to wet */
-function photoPair(){
-  var w=document.createElement("span");w.className="photo-pair";
-  w.innerHTML='<img class="pp-dry" src="'+OWN+'agate-hero-dry.webp" alt="AI sample of a dry Lake Superior agate: a dusty, muted rust-red pebble with faint bands" width="1280" height="1024">'+
-    '<img class="pp-wet" src="'+OWN+'agate-hero-wet.webp" alt="" aria-hidden="true" width="1280" height="1024">';
+/* dry image underneath, wet image fades in on top; both share one outline */
+function photoPair(kind){
+  var s=STONES[kind],w=document.createElement("span");w.className="photo-pair";
+  var dry=document.createElement("img"),wet=document.createElement("img");
+  dry.className="pp-dry";dry.src=OWN+s.img+"-dry.webp";dry.alt=s.alt;dry.width=1280;dry.height=1024;
+  wet.className="pp-wet";wet.src=OWN+s.img+"-wet.webp";wet.alt="";wet.setAttribute("aria-hidden","true");wet.width=1280;wet.height=1024;
+  w.appendChild(dry);w.appendChild(wet);
   return w;
 }
 
@@ -320,15 +286,12 @@ function selectStone(kind,focus){
   tabs.forEach(function(t){var on=t.dataset.stoneTab===kind;t.setAttribute("aria-selected",String(on));t.tabIndex=on?0:-1;if(on&&focus)t.focus();});
   panel.setAttribute("aria-labelledby","tab-"+kind);
   var s=STONES[kind];
-  if(!drawn[kind])drawn[kind]=kind==="agate"?photoPair():stone(kind);
+  if(!drawn[kind])drawn[kind]=photoPair(kind);
   labMedia.innerHTML="";labMedia.appendChild(drawn[kind]);
   labStone.dataset.kind=kind;
-  labStone.classList.toggle("is-photo",kind==="agate");
-  $("#lab-credit").textContent=kind==="agate"?
-    "AI sample made in ChatGPT, not a photo of a real find. The wet image is an edit of the dry one, so the stone does not change.":
-    "Code-drawn stand-in, not a photo. Wet and dry are the same drawing.";
+  $("#lab-credit").textContent=s.credit;
   labStone.setAttribute("aria-pressed","false");
-  labStone.setAttribute("aria-label","Wet the "+s.name+(kind==="agate"?" sample image":" drawing"));
+  labStone.setAttribute("aria-label","Wet the "+s.name+" sample image");
   $("#lab-name").textContent=s.name;$("#lab-dry").textContent=s.dry;$("#lab-wet").textContent=s.wet;$("#lab-aside").textContent=s.aside;
   syncSplash();
 }
@@ -347,10 +310,11 @@ labStone.addEventListener("wetchange",function(){
   if(labStone.getAttribute("aria-pressed")!=="true")return;
   wetted[labStone.dataset.kind]=true;
   var n=Object.keys(wetted).length;
-  $("#lab-count").textContent="Specimens wetted: "+n+" of 3";
+  $("#lab-count").textContent="Specimens wetted: "+n+" of "+STONE_COUNT;
   $$(".pips i").forEach(function(p,i){p.classList.toggle("on",i<n);});
-  if(n===3)$("#lab-done").hidden=false;
+  if(n===STONE_COUNT)$("#lab-done").hidden=false;
 });
 selectStone("agate",false);
+Object.keys(STONES).forEach(function(k){var i=new Image();i.src=OWN+STONES[k].img+"-wet.webp";});
 
 })();

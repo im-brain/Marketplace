@@ -259,13 +259,14 @@
     </div>
     <div class="tabs" role="tablist" aria-label="Specimens">
       <button class="tab" role="tab" type="button" id="tab-agate" aria-controls="lab-panel" aria-selected="true" data-stone-tab="agate">Agate</button>
+      <button class="tab" role="tab" type="button" id="tab-jasper" aria-controls="lab-panel" aria-selected="false" tabindex="-1" data-stone-tab="jasper">Jasper</button>
       <button class="tab" role="tab" type="button" id="tab-petoskey" aria-controls="lab-panel" aria-selected="false" tabindex="-1" data-stone-tab="petoskey">Petoskey</button>
       <button class="tab" role="tab" type="button" id="tab-leland" aria-controls="lab-panel" aria-selected="false" tabindex="-1" data-stone-tab="leland">Leland Blue</button>
     </div>
     <div class="lab" id="lab-panel" role="tabpanel" aria-labelledby="tab-agate">
       <div>
         <div class="tray">
-          <button class="wet" id="lab-stone" type="button" aria-pressed="false" aria-label="Wet the Lake Superior agate drawing">
+          <button class="wet is-photo" id="lab-stone" type="button" aria-pressed="false" aria-label="Wet the Lake Superior agate drawing">
             <span class="wet-media" id="lab-media"></span>
             <span class="wet-hint" aria-hidden="true"><span class="is-dry">Tap to wet</span><span class="is-wet">Wet</span></span>
           </button>
@@ -281,7 +282,7 @@
         <p class="aside" id="lab-aside">Hold it up to the sun. The only red rock on the beach that lets a little daylight through.</p>
         <div class="lab-actions">
           <button class="btn" id="lab-splash" type="button" aria-controls="lab-stone">Splash it</button>
-          <span class="log" aria-live="polite"><span id="lab-count">Specimens wetted: 0 of 3</span><span class="pips" aria-hidden="true"><i></i><i></i><i></i></span></span>
+          <span class="log" aria-live="polite"><span id="lab-count">Specimens wetted: 0 of 4</span><span class="pips" aria-hidden="true"><i></i><i></i><i></i><i></i></span></span>
         </div>
         <p class="lab-done" id="lab-done" hidden>Field test complete. You lick rocks too, don't you? <a href="#product" data-view="lick">There's a shirt for that.</a></p>
       </div>

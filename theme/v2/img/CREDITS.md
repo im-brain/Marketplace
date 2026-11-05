@@ -9,3 +9,13 @@ Copied byte for byte from branch `claude/gifted-clarke-u7rlbp` (`site/prototype/
 | `petoskey-sock-concept.webp` | ChatGPT image generation supplied by Brian (Nov 3, 2026), band glints reduced by Claude's `scripts/matte_band.py`. | Concept only. A printed sock is matte and its stripes are printed. Replace with a Printify sample photo. |
 
 Brian's reference photos guided the agate's look only. They are not copied, traced, or published here.
+
+## Wet-test stone pairs (added Nov 5, 2026)
+
+| Files | Source | Processing | Status |
+|---|---|---|---|
+| `jasper-dry.webp`, `jasper-wet.webp` | ChatGPT image generation, supplied by Brian in chat (Nov 5, 2026). Raw files in `src/`. | `scripts/stone_pairs.py`: one shared outline from both images (removes the baked-in glow halo), identical crop, WebP q82. No pixels inside the stone changed. | AI SAMPLE. Replace with Brian's own photo pair. |
+| `petoskey-dry.webp`, `petoskey-wet.webp` | Same | Same | AI SAMPLE |
+| `leland-dry.webp`, `leland-wet.webp` | Same | Same | AI SAMPLE |
+
+Not used yet (no wet version supplied): a dark gray basalt-like pebble and a pale tan stone.

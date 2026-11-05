@@ -61,10 +61,10 @@ await p.waitForTimeout(700);ok('added message + cart count',(await p.textContent
 await p.click('a[data-view=chart]');await p.waitForTimeout(300);ok('stand-in product: Add disabled',await p.$eval('#add',e=>e.disabled&&e.textContent==='Art in progress'));
 await p.click('#cart-open');ok('cart dialog opens',await p.$eval('#cart',d=>d.open));await p.keyboard.press('Escape');ok('Esc closes cart',!(await p.$eval('#cart',d=>d.open)));
 // wet test
-if((await p.getAttribute('#lab-stone','aria-pressed'))!=='true')await p.click('#lab-splash');await p.click('#tab-petoskey');await p.click('#lab-stone');await p.focus('#tab-petoskey');await p.keyboard.press('ArrowRight');
+if((await p.getAttribute('#lab-stone','aria-pressed'))!=='true')await p.click('#lab-splash');await p.click('#tab-jasper');await p.click('#lab-splash');await p.click('#tab-petoskey');await p.click('#lab-stone');await p.focus('#tab-petoskey');await p.keyboard.press('ArrowRight');
 ok('arrow keys move tabs',(await p.evaluate(()=>document.activeElement.id))==='tab-leland');
 await p.keyboard.press('Tab');await p.keyboard.press('Enter');
-ok('all 3 wetted unlocks message',!(await p.$eval('#lab-done',e=>e.hidden)),await p.textContent('#lab-count'));
+ok('all 4 wetted unlocks message',!(await p.$eval('#lab-done',e=>e.hidden)),await p.textContent('#lab-count'));
 await p.$eval('#wet-test',e=>e.scrollIntoView());await p.waitForTimeout(700);
 await (await p.$('#wet-test')).screenshot({path:`${out}/wet-test-desktop-wet.png`});
 ok('no 4xx/JS errors',bad.length===0,bad.join(','));

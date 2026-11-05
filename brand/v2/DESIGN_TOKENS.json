@@ -1,0 +1,52 @@
+{
+  "version": "2.0-proposal",
+  "status": "unapproved",
+  "source": "Creative exploration informed by coming-soon screenshots and prototype; not measured from source CSS",
+  "colors": {
+    "navy": "#102849",
+    "ink": "#101D2C",
+    "teal": "#164745",
+    "lakeBlue": "#376C9B",
+    "cream": "#F3E8D2",
+    "sand": "#D9B98B",
+    "rust": "#A7472D",
+    "gold": "#E8B954",
+    "graphite": "#272C34",
+    "white": "#FFFFFF"
+  },
+  "roles": {
+    "pageBackground": "ink",
+    "brandPanel": "navy",
+    "panelDark": "graphite",
+    "panelLight": "cream",
+    "titleBar": "rust",
+    "primaryTextOnDark": "cream",
+    "primaryTextOnLight": "ink",
+    "borderWarm": "sand",
+    "waveAccent": "lakeBlue",
+    "primaryCta": "rust",
+    "highlight": "gold"
+  },
+  "typography": {
+    "display": {
+      "candidate": "Press Start 2P",
+      "usage": "logo, limited headings, window chrome"
+    },
+    "body": {
+      "candidate": "Atkinson Hyperlegible or Nunito Sans",
+      "usage": "all long-form and commerce UI"
+    },
+    "metadata": {
+      "candidate": "system monospace",
+      "usage": "specimen codes and filename accents"
+    }
+  },
+  "border": {
+    "pixel": "2px solid #101D2C",
+    "panel": "1px solid #D9B98B"
+  },
+  "motion": {
+    "reducedMotion": "disable decorative transitions",
+    "wetEffect": "same-specimen transition only"
+  }
+}

@@ -68,3 +68,8 @@ Updated: November 4, 2026.
 - Code-drawn Petoskey cells redrawn as irregular, flush cells to follow IMAGE_STANDARDS.md. Stones remain labeled stand-ins.
 - Tested with Playwright at 320 to 1440 px, landscape, 200% zoom, touch, keyboard, and reduced motion; text contrast measured. Results in `theme/v2/qa/`.
 - **Still needs owner approval** before merge or any deployment. `theme/preview/` left unchanged.
+
+## Owner approval, November 5, 2026: storefront preview v2
+- **Approved:** the storefront preview in `theme/v2/` (retro shop window, ChatGPT stone pairs in the wet test, sock concept).
+- **Merged:** PR #3 into `step4-overnight-build`. Not merged to `main`, not deployed to heavypocketsco.com.
+- **Still open:** real photos of Brian's own finds to replace the AI sample stones; final art for the three stand-in tees; final sock design.

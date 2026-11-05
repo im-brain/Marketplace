@@ -5,6 +5,7 @@
 "use strict";
 
 var IMG = "../preview/img/"; // shared with the Step 11 preview (rewritten for the published copy)
+var OWN = "img/";            // images that live in theme/v2/img (ChatGPT concept and AI sample art)
 var NS = "http://www.w3.org/2000/svg";
 var uid = 0;
 function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
@@ -173,9 +174,12 @@ document.addEventListener("click",function(e){
 /* ---------- 6. Shop filter ---------- */
 var filterBtns=$$("[data-filter]"),cards=$$(".item"),fstatus=$("#filter-status"),fcount=fstatus.nextElementSibling;
 function updateStatus(){
-  var shown=cards.filter(function(c){return !c.hidden;}),ready=shown.filter(function(c){return c.querySelector(".chip--ready");}).length;
+  var shown=cards.filter(function(c){return !c.hidden;});
+  function n(sel){return shown.filter(function(c){return c.querySelector(sel);}).length;}
+  var parts=[],r=n(".chip--ready"),k=n(".chip--concept"),s=shown.length-r-k;
+  if(r)parts.push(r+" ready");if(k)parts.push(k+" concept");if(s)parts.push(s+(s===1?" stand-in":" stand-ins"));
   fstatus.textContent=shown.length===cards.length?cards.length+" items":"Showing "+shown.length+" of "+cards.length+" items";
-  fcount.textContent=ready+" ready, "+(shown.length-ready)+(shown.length-ready===1?" stand-in":" stand-ins");
+  fcount.textContent=parts.join(", ");
 }
 filterBtns.forEach(function(btn){
   btn.addEventListener("click",function(){
@@ -207,7 +211,7 @@ var PRODUCTS={
     note:"For the driver who knows every gravel pull-off between here and the lake.",
     details:["Printed in the US when you order.","Art in progress, so it cannot be added to the cart yet."]},
   socks:{no:"HP-011",name:"Petoskey hexagon socks",price:"$18.99",priceNote:"Planned price. Final price set after samples.",
-    colors:["Natural","Slate"],sizes:["S","M","L"],ready:true,media:"socks",mediaNote:"Flat pattern preview. Sock mockups come with the samples.",
+    colors:["Natural","Slate"],sizes:["S","M","L"],ready:true,media:"socks",mediaNote:"Concept image made in ChatGPT. A printed sock is matte, not glossy, and its stripes are printed, not knitted. Real photos come from the Printify sample.",
     note:"An all-over Petoskey cell pattern drawn by code, so no two cells are quite the same.",
     details:["All-over printed crew socks, made in the US to order.","Sized S, M, and L.","Printify notes that side seams can show on dark designs; we will check the sample."]}
 };
@@ -221,7 +225,10 @@ function optHTML(name,value,checked,swatch){
 }
 var SWATCH={Pepper:"#4A4B47",Slate:"#24323D",Natural:"#E2DACA","Lake teal":"#1F5653"};
 function sockMedia(color){
-  var file=color==="Slate"?"socks_slate.jpg":"socks_natural.jpg";
+  if(color!=="Slate"){
+    return '<span class="concept concept--viewer"><img src="'+OWN+'petoskey-sock-concept.webp" alt="Concept image of a cream ribbed crew sock with two olive stripes and a band of Petoskey stone pattern" width="1060" height="1484"></span>';
+  }
+  var file="socks_slate.jpg";
   return '<button class="wet hoverable" type="button" aria-pressed="false" aria-label="Wet the Petoskey sock pattern in '+color.toLowerCase()+'">'+
     '<span class="wet-media socks-one"><img src="'+IMG+file+'" alt="Petoskey hexagon sock pattern in '+color.toLowerCase()+'" width="720" height="720"></span>'+
     '<span class="wet-hint" aria-hidden="true"><span class="is-dry">Tap to wet</span><span class="is-wet">Wet. Tap to dry.</span></span></button>';
@@ -252,7 +259,10 @@ function showProduct(id){
 pv.colors.addEventListener("change",function(e){
   if(e.target.name!=="color")return;
   $("#pv-color-name").textContent=e.target.value;
-  if(PRODUCTS[current].media==="socks"){pv.media.innerHTML=sockMedia(e.target.value);}
+  if(PRODUCTS[current].media==="socks"){
+    pv.media.innerHTML=sockMedia(e.target.value);
+    pv.mediaNote.textContent=e.target.value==="Slate"?"Flat pattern preview in slate. No concept image for this color yet.":PRODUCTS.socks.mediaNote;
+  }
 });
 document.addEventListener("click",function(e){
   var a=e.target.closest&&e.target.closest("[data-view]");
@@ -293,6 +303,15 @@ cartBtn.addEventListener("click",function(){if(dlg.showModal)dlg.showModal();els
 $("#cart-close").addEventListener("click",function(){if(dlg.close)dlg.close();else dlg.removeAttribute("open");});
 dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close();});
 
+/* the agate dry and wet images share one outline (identical alpha), so swapping
+   them never changes the stone's shape; only the surface goes from dusty to wet */
+function photoPair(){
+  var w=document.createElement("span");w.className="photo-pair";
+  w.innerHTML='<img class="pp-dry" src="'+OWN+'agate-hero-dry.webp" alt="AI sample of a dry Lake Superior agate: a dusty, muted rust-red pebble with faint bands" width="1280" height="1024">'+
+    '<img class="pp-wet" src="'+OWN+'agate-hero-wet.webp" alt="" aria-hidden="true" width="1280" height="1024">';
+  return w;
+}
+
 /* ---------- 9. Wet test: tabs, splash button, and a small specimen log ---------- */
 var tabs=$$("[data-stone-tab]"),panel=$("#lab-panel"),labStone=$("#lab-stone"),labMedia=$("#lab-media"),splash=$("#lab-splash");
 var wetted={},drawn={};
@@ -301,11 +320,15 @@ function selectStone(kind,focus){
   tabs.forEach(function(t){var on=t.dataset.stoneTab===kind;t.setAttribute("aria-selected",String(on));t.tabIndex=on?0:-1;if(on&&focus)t.focus();});
   panel.setAttribute("aria-labelledby","tab-"+kind);
   var s=STONES[kind];
-  if(!drawn[kind])drawn[kind]=stone(kind);
+  if(!drawn[kind])drawn[kind]=kind==="agate"?photoPair():stone(kind);
   labMedia.innerHTML="";labMedia.appendChild(drawn[kind]);
   labStone.dataset.kind=kind;
+  labStone.classList.toggle("is-photo",kind==="agate");
+  $("#lab-credit").textContent=kind==="agate"?
+    "AI sample made in ChatGPT, not a photo of a real find. The wet image is an edit of the dry one, so the stone does not change.":
+    "Code-drawn stand-in, not a photo. Wet and dry are the same drawing.";
   labStone.setAttribute("aria-pressed","false");
-  labStone.setAttribute("aria-label","Wet the "+s.name+" drawing");
+  labStone.setAttribute("aria-label","Wet the "+s.name+(kind==="agate"?" sample image":" drawing"));
   $("#lab-name").textContent=s.name;$("#lab-dry").textContent=s.dry;$("#lab-wet").textContent=s.wet;$("#lab-aside").textContent=s.aside;
   syncSplash();
 }

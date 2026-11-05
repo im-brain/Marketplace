@@ -49,3 +49,13 @@ Updated: November 4, 2026.
 - **Approved:** the integrated hero (`brand/v2/hero-preview/index.html`), after checking it on a real phone in portrait and landscape.
 - **Accepted as is:** the art's accuracy flags (very uniform Petoskey cells, a bright banded agate, and snow-capped peaks in the logo). The owner chose not to change them.
 - **Merged** into `step4-overnight-build`. Not deployed to heavypocketsco.com.
+
+## Creative director decision — November 4, 2026: palette and typography finalized for implementation
+- Owner delegated the next brand palette/font decisions to ChatGPT as creative lead.
+- **Core palette:** Lake Navy #102849, Warm Cream #F3E8D2, Rust #A7472D, Sandstone #D9B98B.
+- **Supporting palette:** Ink #101D2C, Deep Teal #164745, Lake Blue #376C9B; rare Gold #E8B954.
+- **Display:** Press Start 2P, short retro headings and window accents only.
+- **Primary text/UI:** Atkinson Hyperlegible Next for all shopping, nav, content and forms.
+- **Metadata:** platform monospace, no third downloaded font.
+- Color roles, accessibility pairings, and usage rules are defined in `BRAND_SYSTEM_LOCK.md`, `DESIGN_TOKENS.json`, and `brand-tokens.css`.
+- **Status:** creative direction locked for a reviewable storefront preview; not permission to alter live website, merge to main, or deploy. Final logo vector and mascot remain open separately.

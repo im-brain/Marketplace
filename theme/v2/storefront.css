@@ -121,7 +121,7 @@ h1,h2,h3{margin:0;line-height:1.25;text-wrap:balance}
 /* variants */
 .btn--secondary{--face:var(--hp-cream);--ink-on:var(--hp-ink);--edge:var(--hp-ink)}
 @media (hover:hover){.btn--secondary:hover{--face:var(--hp-white)}}
-.win--light .btn--secondary,.card .btn--secondary{--drop:var(--hp-ink)}
+.win--light .btn--secondary{--drop:var(--hp-ink)}
 .btn--block{width:100%}
 .btn--small{min-height:44px;padding:8px 14px;font-size:16px}
 
@@ -188,22 +188,46 @@ h1,h2,h3{margin:0;line-height:1.25;text-wrap:balance}
 /* =========================================================
    SHOP
    ========================================================= */
-.shop-tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 20px;margin-bottom:22px}
-.price-note{margin:0;font-size:15px;color:var(--hp-sand)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:22px}
-.card{display:flex;flex-direction:column;background:var(--hp-cream);color:var(--hp-ink);border:2px solid var(--hp-sand);box-shadow:4px 4px 0 var(--hp-shadow-deep)}
-.card[hidden]{display:none}
-.card__media{position:relative;background:var(--well);border-bottom:2px solid var(--hp-sand)}
-.card__body{display:flex;flex-direction:column;gap:6px;flex:1;padding:14px 16px 16px}
-.card h3{font-size:19px;font-weight:700;line-height:1.3}
-.card .meta{margin:0;font-size:15px;color:var(--hp-graphite)}
-.price{font-weight:800;font-size:19px}
+/* The shop is one application window: heading, toolbar, a sunken pane that
+   holds the item windows, and a status bar. Same chrome as the rest of the site. */
+.shop__head{display:grid;gap:6px;padding:clamp(18px,3vw,32px) clamp(18px,3vw,36px) 18px}
+.shop__head p{max-width:62ch;margin:6px 0 0}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:12px clamp(12px,3vw,36px) 14px;background:var(--hp-graphite);border-block:2px solid var(--hp-shadow-deep)}
+/* sunken pane: dark top-left edge, light bottom-right edge, like a 90s list view */
+.pane{margin:clamp(12px,2vw,24px) clamp(12px,3vw,36px);padding:clamp(12px,2vw,24px);background:var(--hp-ink);
+  box-shadow:inset 3px 3px 0 var(--hp-shadow-deep), inset -3px -3px 0 rgba(217,185,139,.35)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:20px}
+
+/* each product is a small window. Inactive title bar is graphite; it turns
+   rust (the active-window color) when you hover it or tab into it. */
+.item{display:flex;flex-direction:column;min-width:0;background:var(--hp-cream);color:var(--hp-ink);border:2px solid var(--hp-sand);box-shadow:4px 4px 0 var(--hp-shadow-deep)}
+.item[hidden]{display:none}
+.item__bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:4px 6px 4px 8px;background:var(--hp-graphite);color:var(--hp-cream);font:700 13px/1.3 var(--hp-font-metadata);letter-spacing:.03em;transition:background-color var(--press) linear}
+.item__bar .ctrls i{width:14px;height:12px;border-width:2px}
+.item:focus-within .item__bar{background:var(--hp-rust);color:var(--hp-white)}
+@media (hover:hover){.item:hover .item__bar{background:var(--hp-rust);color:var(--hp-white)}}
+.item__well{position:relative;margin:8px 8px 0;background:var(--well);
+  box-shadow:inset 3px 3px 0 rgba(16,29,44,.45), inset -3px -3px 0 var(--hp-white)}
+.item__well .wet{padding:3px}
+.chip{position:absolute;z-index:4;left:8px;top:8px;padding:2px 6px;background:var(--hp-ink);color:var(--hp-cream);font:700 12px/1.4 var(--hp-font-metadata);letter-spacing:.04em}
+.chip--ready{background:var(--hp-teal)}
+.item__body{display:flex;flex-direction:column;gap:8px;flex:1;padding:12px 12px 14px}
+.item h3{font-size:18px;font-weight:800;line-height:1.25;min-height:2.5em}
+.stats{display:grid;gap:2px;margin:0;padding:8px 10px;background:var(--hp-white);border:2px solid var(--hp-sand)}
+.stats div{display:flex;justify-content:space-between;gap:8px;min-width:0}
+.stats dt{font:700 12px/1.6 var(--hp-font-metadata);color:var(--hp-graphite);letter-spacing:.04em}
+.stats dd{margin:0;font-size:15px;font-weight:600;text-align:right;min-width:0}
+.item__foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:4px}
+.price{margin:0;font-weight:800;font-size:19px}
 .price small{font-size:14px;font-weight:600;color:var(--hp-graphite)}
-.card .spec{font:600 13px/1.3 var(--hp-font-metadata);color:var(--hp-graphite)}
-.card .btn{margin-top:auto;align-self:flex-start}
-.card__foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:10px}
-.tag{position:absolute;z-index:4;left:10px;top:10px;padding:3px 8px;background:var(--hp-ink);color:var(--hp-cream);font:700 13px/1.3 var(--hp-font-metadata);border:2px solid var(--hp-ink)}
-.tag--ready{background:var(--hp-teal);border-color:var(--hp-teal)}
+.item .btn--small{--drop:var(--hp-ink)}
+
+/* status bar with sunken cells, like the bottom of an old file window */
+.statusbar{display:flex;flex-wrap:wrap;gap:6px;padding:6px 8px;background:var(--hp-graphite);border-top:2px solid var(--hp-shadow-deep)}
+.statusbar .cell{margin:0;padding:3px 10px;font:600 13px/1.5 var(--hp-font-metadata);color:var(--hp-cream);
+  box-shadow:inset 2px 2px 0 var(--hp-shadow-deep), inset -2px -2px 0 rgba(217,185,139,.3)}
+.statusbar .cell--wide{flex:1 1 280px}
+@media (prefers-reduced-motion:reduce){.item__bar{transition:none}}
 
 /* tee and sock media panels */
 .panel{display:block;aspect-ratio:1/1.06}
@@ -240,7 +264,7 @@ h1,h2,h3{margin:0;line-height:1.25;text-wrap:balance}
    ========================================================= */
 .viewer{display:grid;gap:28px}
 @media (min-width:860px){.viewer{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}}
-.viewer__media{background:var(--well);border:2px solid var(--hp-ink);box-shadow:4px 4px 0 var(--hp-ink)}
+.viewer__media{padding:4px;background:var(--well);border:2px solid var(--hp-sand);box-shadow:inset 3px 3px 0 rgba(16,29,44,.45), inset -3px -3px 0 var(--hp-white)}
 .viewer__media .panel,.viewer__media .socks-one{aspect-ratio:1/1}
 .viewer h2{font-size:clamp(26px,2.4vw + 14px,38px);font-weight:800;line-height:1.15}
 .viewer .price{font-size:24px}
@@ -351,17 +375,27 @@ dialog.cart::backdrop{background:rgba(7,16,29,.7)}
   .win:not(.app){width:calc(100% - 24px);margin:20px auto;border-width:2px;box-shadow:4px 4px 0 var(--hp-shadow-deep)}
   .win__body{padding:18px var(--gutter) 22px}
   .bar{font-size:13px}
-  /* two compact cards per row on phones */
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-  .card{box-shadow:3px 3px 0 var(--hp-shadow-deep)}
-  .card__body{padding:10px 10px 12px;gap:4px}
-  .card h3{font-size:16px}
-  .card .meta{font-size:14px}
-  .card__foot{flex-direction:column;align-items:stretch;gap:8px}
-  .card__foot .btn{width:100%}
-  .card .wet-hint{right:6px;bottom:6px;padding:3px 6px;font-size:13px}
-  .tag{left:6px;top:6px;font-size:12px;padding:2px 5px}
+  /* two compact item windows per row on phones */
+  .pane{margin:12px;padding:10px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .item{box-shadow:3px 3px 0 var(--hp-shadow-deep)}
+  .item__well{margin:6px 6px 0}
+  .item__body{padding:8px 8px 10px;gap:6px}
+  .item h3{font-size:16px}
+  .stats{padding:6px}
+  .item h3{min-height:0}
+  .stats div{flex-wrap:wrap;gap:0 6px}
+  .stats dd{font-size:14px}
+  .item:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:minmax(0,9fr) minmax(0,11fr);grid-template-rows:auto 1fr}
+  .item:last-child:nth-child(odd) .item__bar{grid-column:1/-1}
+  .item:last-child:nth-child(odd) .item__well{margin:6px;align-self:start}
+  .item:last-child:nth-child(odd) .item__body{padding:8px 8px 10px 4px}
+  .item__foot{flex-direction:column;align-items:stretch;gap:8px}
+  .item__foot .btn{width:100%}
+  .item .wet-hint{right:6px;bottom:6px;padding:3px 6px;font-size:13px}
+  .chip{left:6px;top:6px;padding:1px 5px}
   .price{font-size:17px}
+  .toolbar{padding:10px 12px}
 }
 /* landscape phones and heavy zoom: full width, scroll */
 @media (max-height:599px) and (orientation:landscape){

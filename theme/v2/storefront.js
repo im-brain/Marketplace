@@ -171,15 +171,21 @@ document.addEventListener("click",function(e){
 });
 
 /* ---------- 6. Shop filter ---------- */
-var filterBtns=$$("[data-filter]"),cards=$$(".card"),fstatus=$("#filter-status");
+var filterBtns=$$("[data-filter]"),cards=$$(".item"),fstatus=$("#filter-status"),fcount=fstatus.nextElementSibling;
+function updateStatus(){
+  var shown=cards.filter(function(c){return !c.hidden;}),ready=shown.filter(function(c){return c.querySelector(".chip--ready");}).length;
+  fstatus.textContent=shown.length===cards.length?cards.length+" items":"Showing "+shown.length+" of "+cards.length+" items";
+  fcount.textContent=ready+" ready, "+(shown.length-ready)+(shown.length-ready===1?" stand-in":" stand-ins");
+}
 filterBtns.forEach(function(btn){
   btn.addEventListener("click",function(){
-    var f=btn.dataset.filter,shown=0;
+    var f=btn.dataset.filter;
     filterBtns.forEach(function(b){b.setAttribute("aria-pressed",String(b===btn));});
-    cards.forEach(function(c){var on=f==="all"||c.dataset.kind===f;c.hidden=!on;if(on)shown++;});
-    fstatus.textContent="Showing "+shown+(shown===1?" product":" products")+".";
+    cards.forEach(function(c){c.hidden=!(f==="all"||c.dataset.kind===f);});
+    updateStatus();
   });
 });
+updateStatus();
 
 /* ---------- 7. Product viewer ---------- */
 var TEE_SIZES=["S","M","L","XL","2XL","3XL"];

@@ -64,120 +64,138 @@
 </div>
 
 <!-- ================= SHOP ================= -->
-<section class="win" id="shop" aria-labelledby="shop-h">
+<section class="win shop" id="shop" aria-labelledby="shop-h">
   <div class="bar"><span>SHOP / LAUNCH_FIVE</span><span class="ctrls" aria-hidden="true"><i></i><i></i></span></div>
-  <div class="win__body">
-    <div class="sec-head">
-      <div>
-        <span class="kicker">Preview collection</span>
-        <h2 class="px px-h" id="shop-h">The launch five</h2>
-      </div>
-      <p>Two designs have finished art. Three are still on the drawing table, shown as plain stand-ins. Tap any shirt to wet it.</p>
+  <div class="shop__head">
+    <span class="kicker">Preview collection</span>
+    <h2 class="px px-h" id="shop-h">The launch five</h2>
+    <p>Two designs have finished art. Three are still on the drawing table, shown as plain stand-ins. Tap any shirt to wet it.</p>
+  </div>
+  <div class="toolbar">
+    <div class="tabs" role="group" aria-label="Filter products">
+      <button class="tab" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="tab" type="button" data-filter="tee" aria-pressed="false">Tees</button>
+      <button class="tab" type="button" data-filter="socks" aria-pressed="false">Socks</button>
     </div>
-    <div class="shop-tools">
-      <div class="tabs" role="group" aria-label="Filter products">
-        <button class="tab" type="button" data-filter="all" aria-pressed="true">All</button>
-        <button class="tab" type="button" data-filter="tee" aria-pressed="false">Tees</button>
-        <button class="tab" type="button" data-filter="socks" aria-pressed="false">Socks</button>
-      </div>
-      <p class="price-note" id="price-note">Planned prices: tees $27.99, socks $18.99. Final prices are set after samples arrive.</p>
-    </div>
-    <p class="visually-hidden" role="status" aria-live="polite" id="filter-status"></p>
+  </div>
+  <div class="pane">
     <div class="grid" id="grid">
-      <!-- cards are listed here so the page works without JavaScript; JS adds the art -->
-      <article class="card" data-kind="tee" data-id="lick">
-        <div class="card__media">
-          <span class="tag tag--ready">Art ready</span>
+      <article class="item" data-kind="tee" data-id="lick">
+        <div class="item__bar"><span class="mono">HP-007.TEE</span><span class="ctrls" aria-hidden="true"><i></i></span></div>
+        <div class="item__well">
+          <span class="chip chip--ready">READY</span>
           <button class="wet hoverable" type="button" aria-pressed="false" aria-label="Wet the I lick rocks shirt mockup">
             <span class="wet-media panel" data-tee="lick"></span>
             <span class="wet-hint" aria-hidden="true"><span class="is-dry">Tap to wet</span><span class="is-wet">Wet</span></span>
           </button>
         </div>
-        <div class="card__body">
-          <span class="spec">No. HP-007</span>
+        <div class="item__body">
           <h3>I lick rocks</h3>
-          <p class="meta">Tee, pepper. Drawn mockup.</p>
-          <div class="card__foot">
-            <span class="price">$27.99 <small>planned</small></span>
+          <dl class="stats">
+            <div><dt>TYPE</dt><dd>Tee</dd></div>
+            <div><dt>COLOR</dt><dd>Pepper</dd></div>
+            <div><dt>ART</dt><dd>Ready</dd></div>
+          </dl>
+          <div class="item__foot">
+            <p class="price">$27.99 <small>planned</small></p>
             <a class="btn btn--small" href="#product" data-view="lick">View<span class="visually-hidden"> I lick rocks</span></a>
           </div>
         </div>
       </article>
-      <article class="card" data-kind="tee" data-id="chart">
-        <div class="card__media">
-          <span class="tag">Art in progress</span>
+      <article class="item" data-kind="tee" data-id="chart">
+        <div class="item__bar"><span class="mono">HP-002.TEE</span><span class="ctrls" aria-hidden="true"><i></i></span></div>
+        <div class="item__well">
+          <span class="chip">STAND-IN</span>
           <button class="wet hoverable" type="button" aria-pressed="false" aria-label="Wet the Great Lakes Beach Stone Chart stand-in">
             <span class="wet-media panel" data-tee="chart"></span>
             <span class="wet-hint" aria-hidden="true"><span class="is-dry">Tap to wet</span><span class="is-wet">Wet</span></span>
           </button>
         </div>
-        <div class="card__body">
-          <span class="spec">No. HP-002</span>
+        <div class="item__body">
           <h3>Great Lakes Beach Stone Chart</h3>
-          <p class="meta">Tee, slate. Stand-in art.</p>
-          <div class="card__foot">
-            <span class="price">$27.99 <small>planned</small></span>
+          <dl class="stats">
+            <div><dt>TYPE</dt><dd>Tee</dd></div>
+            <div><dt>COLOR</dt><dd>Slate</dd></div>
+            <div><dt>ART</dt><dd>Stand-in</dd></div>
+          </dl>
+          <div class="item__foot">
+            <p class="price">$27.99 <small>planned</small></p>
             <a class="btn btn--small" href="#product" data-view="chart">View<span class="visually-hidden"> Great Lakes Beach Stone Chart</span></a>
           </div>
         </div>
       </article>
-      <article class="card" data-kind="tee" data-id="expect">
-        <div class="card__media">
-          <span class="tag">Art in progress</span>
+      <article class="item" data-kind="tee" data-id="expect">
+        <div class="item__bar"><span class="mono">HP-006.TEE</span><span class="ctrls" aria-hidden="true"><i></i></span></div>
+        <div class="item__well">
+          <span class="chip">STAND-IN</span>
           <button class="wet hoverable" type="button" aria-pressed="false" aria-label="Wet the Agate Expectations stand-in">
             <span class="wet-media panel" data-tee="expect"></span>
             <span class="wet-hint" aria-hidden="true"><span class="is-dry">Tap to wet</span><span class="is-wet">Wet</span></span>
           </button>
         </div>
-        <div class="card__body">
-          <span class="spec">No. HP-006</span>
+        <div class="item__body">
           <h3>Agate Expectations</h3>
-          <p class="meta">Tee, natural. Stand-in art.</p>
-          <div class="card__foot">
-            <span class="price">$27.99 <small>planned</small></span>
+          <dl class="stats">
+            <div><dt>TYPE</dt><dd>Tee</dd></div>
+            <div><dt>COLOR</dt><dd>Natural</dd></div>
+            <div><dt>ART</dt><dd>Stand-in</dd></div>
+          </dl>
+          <div class="item__foot">
+            <p class="price">$27.99 <small>planned</small></p>
             <a class="btn btn--small" href="#product" data-view="expect">View<span class="visually-hidden"> Agate Expectations</span></a>
           </div>
         </div>
       </article>
-      <article class="card" data-kind="tee" data-id="brake">
-        <div class="card__media">
-          <span class="tag">Art in progress</span>
+      <article class="item" data-kind="tee" data-id="brake">
+        <div class="item__bar"><span class="mono">HP-009.TEE</span><span class="ctrls" aria-hidden="true"><i></i></span></div>
+        <div class="item__well">
+          <span class="chip">STAND-IN</span>
           <button class="wet hoverable" type="button" aria-pressed="false" aria-label="Wet the Will brake for agates stand-in">
             <span class="wet-media panel" data-tee="brake"></span>
             <span class="wet-hint" aria-hidden="true"><span class="is-dry">Tap to wet</span><span class="is-wet">Wet</span></span>
           </button>
         </div>
-        <div class="card__body">
-          <span class="spec">No. HP-009</span>
+        <div class="item__body">
           <h3>Will brake for agates</h3>
-          <p class="meta">Tee, lake teal. Stand-in art.</p>
-          <div class="card__foot">
-            <span class="price">$27.99 <small>planned</small></span>
+          <dl class="stats">
+            <div><dt>TYPE</dt><dd>Tee</dd></div>
+            <div><dt>COLOR</dt><dd>Lake teal</dd></div>
+            <div><dt>ART</dt><dd>Stand-in</dd></div>
+          </dl>
+          <div class="item__foot">
+            <p class="price">$27.99 <small>planned</small></p>
             <a class="btn btn--small" href="#product" data-view="brake">View<span class="visually-hidden"> Will brake for agates</span></a>
           </div>
         </div>
       </article>
-      <article class="card" data-kind="socks" data-id="socks">
-        <div class="card__media">
-          <span class="tag tag--ready">Pattern ready</span>
+      <article class="item" data-kind="socks" data-id="socks">
+        <div class="item__bar"><span class="mono">HP-011.SOX</span><span class="ctrls" aria-hidden="true"><i></i></span></div>
+        <div class="item__well">
+          <span class="chip chip--ready">READY</span>
           <button class="wet hoverable" type="button" aria-pressed="false" aria-label="Wet the Petoskey hexagon sock pattern">
-            <span class="wet-media socks-one">
-              <img src="../preview/img/socks_natural.jpg" alt="Petoskey hexagon sock pattern in natural gray" width="720" height="720" loading="lazy">
-            </span>
+            <span class="wet-media socks-one"><img src="../preview/img/socks_natural.jpg" alt="Petoskey hexagon sock pattern in natural gray" width="720" height="720" loading="lazy"></span>
             <span class="wet-hint" aria-hidden="true"><span class="is-dry">Tap to wet</span><span class="is-wet">Wet</span></span>
           </button>
         </div>
-        <div class="card__body">
-          <span class="spec">No. HP-011</span>
+        <div class="item__body">
           <h3>Petoskey hexagon socks</h3>
-          <p class="meta">Crew socks, natural or slate. Pattern drawn by code.</p>
-          <div class="card__foot">
-            <span class="price">$18.99 <small>planned</small></span>
+          <dl class="stats">
+            <div><dt>TYPE</dt><dd>Crew socks</dd></div>
+            <div><dt>COLOR</dt><dd>Natural, slate</dd></div>
+            <div><dt>ART</dt><dd>Pattern ready</dd></div>
+          </dl>
+          <div class="item__foot">
+            <p class="price">$18.99 <small>planned</small></p>
             <a class="btn btn--small" href="#product" data-view="socks">View<span class="visually-hidden"> Petoskey hexagon socks</span></a>
           </div>
         </div>
       </article>
     </div>
+  </div>
+  <div class="statusbar">
+    <p class="cell" role="status" aria-live="polite" id="filter-status">5 items</p>
+    <p class="cell">2 ready, 3 stand-ins</p>
+    <p class="cell cell--wide">Planned prices: tees $27.99, socks $18.99. Final prices set after samples.</p>
   </div>
 </section>
 

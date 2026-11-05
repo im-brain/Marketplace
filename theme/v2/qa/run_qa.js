@@ -45,10 +45,10 @@ const kp=await kb.evaluate(e=>e.classList.contains('is-pressed'));await p.keyboa
 const kr=await kb.evaluate(e=>e.classList.contains('is-pressed'));ok(`${key===' '?'Space':'Enter'} on a button shows pressed then releases`,kp&&!kr);}
 await p.click('#tab-agate');
 // filter
-await p.click('[data-filter=socks]');const vis=await p.$$eval('.card',cs=>cs.filter(c=>!c.hidden).length);ok('Socks filter shows 1 card',vis===1);
+await p.click('[data-filter=socks]');const vis=await p.$$eval('.item',cs=>cs.filter(c=>!c.hidden).length);ok('Socks filter shows 1 card',vis===1);ok('status bar updates',(await p.textContent('#filter-status'))==='Showing 1 of 5 items',await p.textContent('#filter-status'));
 await p.click('[data-filter=all]');
 // wet toggle in card
-const w=await p.$('.card .wet');await w.click();await p.waitForTimeout(800);ok('card wet toggles on tap/click',await w.getAttribute('aria-pressed')==='true');
+const w=await p.$('.item .wet');await w.click();await p.waitForTimeout(800);ok('card wet toggles on tap/click',await w.getAttribute('aria-pressed')==='true');
 const filt=await w.evaluate(e=>getComputedStyle(e.querySelector('.wet-media')).filter);ok('wet = filter change only (same media)',filt.includes('saturate(1.12)'),filt);
 // product viewer + cart
 await p.click('a[data-view=socks]');await p.waitForTimeout(600);
@@ -74,7 +74,7 @@ p=await b.newPage({viewport:{width:1440,height:900},reducedMotion:'reduce'});awa
 ok('reduced motion: no button transition',(await p.$eval('.btn',e=>getComputedStyle(e).transitionDuration))==='0s');await p.close();
 // touch (iPhone)
 const ctx=await b.newContext({...devices['iPhone 13']});p=await ctx.newPage();await p.goto(URL,{waitUntil:'networkidle'});
-const t=await p.$('.card .wet');await t.tap();ok('touch tap wets card (iPhone 13 emulation)',(await t.getAttribute('aria-pressed'))==='true');
+const t=await p.$('.item .wet');await t.tap();ok('touch tap wets card (iPhone 13 emulation)',(await t.getAttribute('aria-pressed'))==='true');
 const hero=await p.evaluate(()=>document.querySelector('.hero img').currentSrc.split('/').pop());ok('iPhone portrait gets mobile hero',hero==='hero-approved-mobile.webp',hero);
 const tgt=await p.$$eval('.btn,.tab,.icon-btn,.opt > span,.site-nav a',es=>es.filter(e=>e.offsetParent).map(e=>{const r=e.getBoundingClientRect();return [e.textContent.trim().slice(0,14),Math.round(r.width),Math.round(r.height)]}).filter(x=>x[1]<44||x[2]<44));
 ok('tap targets >= 44px',tgt.length===0,JSON.stringify(tgt));

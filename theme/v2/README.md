@@ -15,6 +15,10 @@ Shared assets are linked, not copied: hero art from `brand/v2/hero-assets/`, the
 
 From the repo root: `python3 -m http.server 8765`, then open `http://localhost:8765/theme/v2/`.
 
+## Shop layout
+
+The shop is one application window: heading, a graphite toolbar with the filter tabs, a sunken pane, and a status bar whose cells update when you filter. Each product is a small window with a filename title bar (for example `HP-007.TEE`). The title bar is graphite when idle and turns rust, the active-window color, on hover or keyboard focus. Inside: a sunken image well with a READY or STAND-IN chip, the name, a TYPE, COLOR, and ART stats box, the planned price, and a View button. Five across on desktop, three across on tablet, and two across on phones, where an odd last item becomes one wide window.
+
 ## Retro buttons
 
 One system covers CTAs (`.btn`), secondary buttons (`.btn--secondary`), size and color options (`.opt`, real radio inputs), tabs and filters (`.tab`), and small actions (`.icon-btn`).

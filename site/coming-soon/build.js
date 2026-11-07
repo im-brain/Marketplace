@@ -79,20 +79,15 @@ fs.writeFileSync(path.join(DIR, 'dist/site.js'), site);
 const dataUri = (p) => 'data:' + files[p].type + ';base64,' + files[p].bytes.toString('base64');
 let preview = page.replace(/(["(])(\/assets\/[^")\s]+)/g, (all, q, p) => (files[p] ? q + dataUri(p) : all));
 preview = preview.replace('<title>Heavy Pockets Co. | Coming soon</title>', '<title>Coming Soon Preview</title>\n<meta name="robots" content="noindex, nofollow">');
-const options = Object.entries(copy.bubble);
+// The speech bubble switcher was removed after Brian picked option A (Nov 7, 2026).
 const bar = `<div class="pv" role="region" aria-label="Preview notes">
-<p><b>Private preview.</b> The signup can't save anything here. It only works on heavypocketsco.com after deploy.</p>
-<fieldset><legend>Speech bubble option</legend>${options.map(([k, o]) =>
-  `<label><input type="radio" name="pv-copy" value="${k}"${k === copy.chosen ? ' checked' : ''} data-line="${esc(o.line)}" data-punch="${esc(o.punch)}"> ${k}</label>`).join('')}</fieldset>
+<p><b>Private preview.</b> The signup can't save anything here. It only works on heavypocketsco.com.</p>
 </div>
-<style>.pv{background:#E8B954;color:#101D2C;padding:8px 16px;font:400 15px/1.4 "Atkinson Hyperlegible Next",system-ui,sans-serif;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;justify-content:center;border-bottom:3px solid #101D2C}
-.pv p{margin:0}.pv fieldset{border:0;margin:0;padding:0;display:flex;gap:4px 12px;align-items:center;flex-wrap:wrap}.pv legend{float:left;font-weight:700;margin-right:8px}
-.pv label{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:700}.pv input{width:20px;height:20px;accent-color:#101D2C}</style>`;
+<style>.pv{background:#E8B954;color:#101D2C;padding:8px 16px;font:400 15px/1.4 "Atkinson Hyperlegible Next",system-ui,sans-serif;text-align:center;border-bottom:3px solid #101D2C}
+.pv p{margin:0}</style>`;
 const pvScript = `<script>
 (() => {
-  // Preview only: show each speech bubble option, and keep the form from trying to send.
-  const line = document.querySelector('[data-bubble-line]'), punch = document.querySelector('[data-bubble-punch]');
-  document.querySelectorAll('input[name="pv-copy"]').forEach(r => r.addEventListener('change', () => { line.textContent = r.dataset.line; punch.textContent = r.dataset.punch; }));
+  // Preview only: keep the form from trying to send.
   window.addEventListener('submit', e => {
     e.preventDefault(); e.stopPropagation();
     const s = document.querySelector('.status-line');

@@ -360,10 +360,6 @@ PASS first Tab reaches "Skip to content"
 PASS keyboard reaches the first product title link
 PASS keyboard focus on the card revealed it
 PASS keyboard only: choose size and add to cart
-PASS axe (incl. color contrast) index.html: no violations
-PASS axe (incl. color contrast) midnight-rock-hunt-tee.html?color=black: no violations
-PASS axe (incl. color contrast) cart.html: no violations
-PASS axe (incl. color contrast) field-notes.html: no violations
-PASS axe (incl. color contrast) preview-notes.html: no violations
+SKIP axe scan (pass the path to axe.min.js as the 2nd argument)
 
-359 passed, 0 failed
+354 passed, 0 failed

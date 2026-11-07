@@ -102,3 +102,7 @@ Updated: November 4, 2026.
 - Shoppers should never see "supplier" or "Printify."
 - Implemented the same day on branch `claude/clever-curie-pxflzz`; 358 browser checks pass.
 
+## Owner approval, November 7, 2026: wordmark v and y
+- **Approved:** the separated "v" and "y" in the option A wordmark, rebuilt from the font's own tops with the "y" and "pockets" moved 6.75 px right (`brand/v3/wordmark/`).
+- **Still open:** production vector cleanup by a designer before garments, embroidery, or print. The rest of the storefront preview is still under review.
+

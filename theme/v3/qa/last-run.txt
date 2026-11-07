@@ -44,11 +44,11 @@ PASS resource img/products/great-lakes-rock-crew-tee/bay-front.webp exists
 PASS resource field-notebook-tee.html exists
 PASS resource img/products/field-notebook-tee/pepper-front.webp exists
 PASS resource pocket-full-of-treasures-tee.html exists
-PASS resource img/products/pocket-full-of-treasures-tee/blue-jean-front.webp exists
+PASS resource img/products/pocket-full-of-treasures-tee/blue-jean-front-close.webp exists
 PASS resource shoreline-hoodie.html exists
 PASS resource img/products/shoreline-hoodie/dark-heather-back.webp exists
 PASS resource floral-butterfly-embroidered-hoodie.html exists
-PASS resource img/products/floral-butterfly-embroidered-hoodie/light-blue-front.webp exists
+PASS resource img/products/floral-butterfly-embroidered-hoodie/light-blue-front-close.webp exists
 PASS resource preview-notes.html exists
 PASS resource assets/catalog.js exists
 PASS resource assets/site.js exists
@@ -75,6 +75,7 @@ PASS resource img/products/field-notebook-tee/pepper-back.webp exists
 PASS resource img/products/field-notebook-tee/pepper-flatlay.webp exists
 PASS resource img/products/field-notebook-tee/pepper-folded.webp exists
 PASS resource img/art/04-field-notebook-front-4200x4800.webp exists
+PASS resource img/products/pocket-full-of-treasures-tee/blue-jean-front.webp exists
 PASS resource img/products/pocket-full-of-treasures-tee/blue-jean-back.webp exists
 PASS resource img/products/pocket-full-of-treasures-tee/blue-jean-flatlay.webp exists
 PASS resource img/products/pocket-full-of-treasures-tee/blue-jean-folded.webp exists
@@ -85,6 +86,7 @@ PASS resource img/products/shoreline-hoodie/dark-heather-folded.webp exists
 PASS resource img/art/shoreline-hoodie-back.webp exists
 PASS resource img/art/shoreline-hoodie-front.webp exists
 PASS resource img/size-chart-hoodie.webp exists
+PASS resource img/products/floral-butterfly-embroidered-hoodie/light-blue-front.webp exists
 PASS resource img/products/floral-butterfly-embroidered-hoodie/light-blue-back.webp exists
 PASS resource img/products/floral-butterfly-embroidered-hoodie/light-blue-back-hood.webp exists
 PASS resource img/products/floral-butterfly-embroidered-hoodie/light-blue-folded.webp exists
@@ -118,6 +120,8 @@ PASS floral-butterfly-embroidered-hoodie: links to its own page
 PASS no Indigo Blue anywhere on the homepage
 PASS desktop grid is 3 columns
 PASS no dev labels (READY, STAND-IN, file names) in the shop
+PASS tagline is never directly under the wordmark (footer)
+PASS prices use one format ($40.00)
 PASS standalone wet-stone lab removed from homepage
 PASS swatch click swaps the card image to that color
 PASS swatch click carries the color to the product link
@@ -222,6 +226,7 @@ PASS Embroidered Light Pink has 5XL but no 4XL
 PASS Embroidered Light Blue offers S to 5XL
 PASS Rock Crew Yam / 4XL disabled (Printify unavailable)
 PASS Pocket Violet / 4XL disabled (Printify unavailable)
+PASS stock wording names the dated check, never "right now"
 PASS Tees stop at 4XL (no 5XL key)
 PASS direct link with color and size preselects both
 PASS larger size shows the "price not set" note
@@ -240,6 +245,9 @@ PASS subtotal: 3x$30 + 2x$30 + 1x$60 = $210.00
 PASS larger size line shows the note
 PASS increase updates qty and subtotal
 PASS focus stays on the increase button after update
+PASS typing a quantity then Tab moves focus on (not stuck)
+PASS typed quantity updates the subtotal in place
+PASS cart has a Keep shopping link
 PASS typed quantity is capped at 10
 PASS remove deletes that line only
 PASS checkout is visibly disabled with an explanation
@@ -257,6 +265,7 @@ PASS image failure: every card shows a readable fallback with a link
 PASS image failure on product page shows a message
 PASS storage blocked: cart explains it only lasts this page
 PASS storage blocked: add still works in memory
+PASS storage blocked: add message warns the cart will not survive
 PASS storage blocked: reveal still works on the page
 PASS no script errors (failure states)
 PASS reduced motion: products are full color immediately, no animation
@@ -273,7 +282,7 @@ PASS phone-320 field-notes.html: no horizontal scroll
 PASS phone-320: hero shows the whole sunset
 PASS phone-320: hero shows the lighthouse
 PASS phone-320: hero image is shorter than before (<= 62% of screen or 460px)
-INFO phone-320: collection starts at 606px (screen height 640)
+INFO phone-320: collection starts at 543px (screen height 640)
 PASS phone-375 index.html: no horizontal scroll
 PASS phone-375 shoreline-hoodie.html: no horizontal scroll
 PASS phone-375 cart.html: no horizontal scroll
@@ -281,7 +290,7 @@ PASS phone-375 field-notes.html: no horizontal scroll
 PASS phone-375: hero shows the whole sunset
 PASS phone-375: hero shows the lighthouse
 PASS phone-375: hero image is shorter than before (<= 62% of screen or 460px)
-INFO phone-375: collection starts at 630px (screen height 667)
+INFO phone-375: collection starts at 567px (screen height 667)
 PASS phone-390 index.html: no horizontal scroll
 PASS phone-390 shoreline-hoodie.html: no horizontal scroll
 PASS phone-390 cart.html: no horizontal scroll
@@ -289,7 +298,7 @@ PASS phone-390 field-notes.html: no horizontal scroll
 PASS phone-390: hero shows the whole sunset
 PASS phone-390: hero shows the lighthouse
 PASS phone-390: hero image is shorter than before (<= 62% of screen or 460px)
-INFO phone-390: collection starts at 630px (screen height 664)
+INFO phone-390: collection starts at 567px (screen height 664)
 PASS phone-landscape-844 index.html: no horizontal scroll
 PASS phone-landscape-844 shoreline-hoodie.html: no horizontal scroll
 PASS phone-landscape-844 cart.html: no horizontal scroll
@@ -305,7 +314,7 @@ PASS tablet-768 field-notes.html: no horizontal scroll
 PASS tablet-768: hero shows the whole sunset
 PASS tablet-768: hero shows the lighthouse
 PASS tablet-768: hero image is shorter than before (<= 62% of screen or 460px)
-INFO tablet-768: collection starts at 788px (screen height 1024)
+INFO tablet-768: collection starts at 487px (screen height 1024)
 PASS tablet-1024 index.html: no horizontal scroll
 PASS tablet-1024 shoreline-hoodie.html: no horizontal scroll
 PASS tablet-1024 cart.html: no horizontal scroll
@@ -340,4 +349,4 @@ PASS axe (incl. color contrast) cart.html: no violations
 PASS axe (incl. color contrast) field-notes.html: no violations
 PASS axe (incl. color contrast) preview-notes.html: no violations
 
-333 passed, 0 failed
+342 passed, 0 failed

@@ -53,6 +53,12 @@ HERO_CROPS = {
     "tall": ("brand/v2/hero-assets/hero-approved-mobile.webp", (0, 492, 1086, 1252)),
 }
 PANEL = 900
+# Closer crops of the same front mockup for products whose art is small on the
+# chest, so the collection card shows the design. Box in 1200 px mockup pixels.
+CLOSE = {
+    "floral-butterfly-embroidered-hoodie": (360, 250, 840, 730),
+    "pocket-full-of-treasures-tee": (420, 200, 960, 740),
+}
 
 
 def get(url, binary=False):
@@ -192,6 +198,12 @@ def build():
                 name = f"{slugify(color)}-{view}.webp"
                 im.save(os.path.join(dest, name), "WEBP", quality=80, method=6)
                 images.setdefault(color, {})[view] = f"img/products/{slug}/{name}"
+        if slug in CLOSE:
+            for color, path in by_cam["front"].items():
+                im = Image.open(path).convert("RGB").crop(CLOSE[slug]).resize((PANEL, PANEL), Image.LANCZOS)
+                name = f"{slugify(color)}-front-close.webp"
+                im.save(os.path.join(dest, name), "WEBP", quality=82, method=6)
+                images[color]["front-close"] = f"img/products/{slug}/{name}"
         sv, sbox = SWATCH_SAMPLE[slug]
         swatches = {c: sample_color(by_cam[sv][c], sbox) for c in by_cam[sv]}
         snap["products"][slug] = {"printify_id": p["id"], "printify_title": p["title"],

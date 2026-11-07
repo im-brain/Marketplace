@@ -4,7 +4,7 @@ Built Nov 7, 2026 from the storefront brief. Status: **ready for Brian's review.
 
 ## What you can open
 
-- **Private preview link:** see the PR description and `CLAUDE.md` (published as a private claude.ai artifact, the same workflow as earlier previews). It opens on a phone. Private by default: only you can see it unless you choose to share it.
+- **Private preview link:** https://claude.ai/artifact/9TVdpea8d1YBc3vfUq11hz (a private claude.ai artifact, the same workflow as earlier previews). It opens on a phone. Private by default: only you can see it unless you choose to share it.
 - **Locally:** `cd theme/v3 && python3 -m http.server 8777`, then open `http://localhost:8777/`.
 - Screenshots: `qa/screens/` (desktop, tablet, phone, landscape, 200% zoom, mid-reveal, loading, and failure states).
 

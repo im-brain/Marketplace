@@ -604,19 +604,22 @@
      "front": "img/products/floral-butterfly-embroidered-hoodie/light-blue-front.webp",
      "back": "img/products/floral-butterfly-embroidered-hoodie/light-blue-back.webp",
      "back-hood": "img/products/floral-butterfly-embroidered-hoodie/light-blue-back-hood.webp",
-     "folded": "img/products/floral-butterfly-embroidered-hoodie/light-blue-folded.webp"
+     "folded": "img/products/floral-butterfly-embroidered-hoodie/light-blue-folded.webp",
+     "front-close": "img/products/floral-butterfly-embroidered-hoodie/light-blue-front-close.webp"
     },
     "Sand": {
      "front": "img/products/floral-butterfly-embroidered-hoodie/sand-front.webp",
      "back": "img/products/floral-butterfly-embroidered-hoodie/sand-back.webp",
      "back-hood": "img/products/floral-butterfly-embroidered-hoodie/sand-back-hood.webp",
-     "folded": "img/products/floral-butterfly-embroidered-hoodie/sand-folded.webp"
+     "folded": "img/products/floral-butterfly-embroidered-hoodie/sand-folded.webp",
+     "front-close": "img/products/floral-butterfly-embroidered-hoodie/sand-front-close.webp"
     },
     "Light Pink": {
      "front": "img/products/floral-butterfly-embroidered-hoodie/light-pink-front.webp",
      "back": "img/products/floral-butterfly-embroidered-hoodie/light-pink-back.webp",
      "back-hood": "img/products/floral-butterfly-embroidered-hoodie/light-pink-back-hood.webp",
-     "folded": "img/products/floral-butterfly-embroidered-hoodie/light-pink-folded.webp"
+     "folded": "img/products/floral-butterfly-embroidered-hoodie/light-pink-folded.webp",
+     "front-close": "img/products/floral-butterfly-embroidered-hoodie/light-pink-front-close.webp"
     }
    },
    "swatches": {
@@ -917,31 +920,36 @@
      "front": "img/products/pocket-full-of-treasures-tee/light-green-front.webp",
      "back": "img/products/pocket-full-of-treasures-tee/light-green-back.webp",
      "folded": "img/products/pocket-full-of-treasures-tee/light-green-folded.webp",
-     "flatlay": "img/products/pocket-full-of-treasures-tee/light-green-flatlay.webp"
+     "flatlay": "img/products/pocket-full-of-treasures-tee/light-green-flatlay.webp",
+     "front-close": "img/products/pocket-full-of-treasures-tee/light-green-front-close.webp"
     },
     "Blue Spruce": {
      "front": "img/products/pocket-full-of-treasures-tee/blue-spruce-front.webp",
      "back": "img/products/pocket-full-of-treasures-tee/blue-spruce-back.webp",
      "folded": "img/products/pocket-full-of-treasures-tee/blue-spruce-folded.webp",
-     "flatlay": "img/products/pocket-full-of-treasures-tee/blue-spruce-flatlay.webp"
+     "flatlay": "img/products/pocket-full-of-treasures-tee/blue-spruce-flatlay.webp",
+     "front-close": "img/products/pocket-full-of-treasures-tee/blue-spruce-front-close.webp"
     },
     "Flo Blue": {
      "front": "img/products/pocket-full-of-treasures-tee/flo-blue-front.webp",
      "back": "img/products/pocket-full-of-treasures-tee/flo-blue-back.webp",
      "folded": "img/products/pocket-full-of-treasures-tee/flo-blue-folded.webp",
-     "flatlay": "img/products/pocket-full-of-treasures-tee/flo-blue-flatlay.webp"
+     "flatlay": "img/products/pocket-full-of-treasures-tee/flo-blue-flatlay.webp",
+     "front-close": "img/products/pocket-full-of-treasures-tee/flo-blue-front-close.webp"
     },
     "Blue Jean": {
      "front": "img/products/pocket-full-of-treasures-tee/blue-jean-front.webp",
      "back": "img/products/pocket-full-of-treasures-tee/blue-jean-back.webp",
      "folded": "img/products/pocket-full-of-treasures-tee/blue-jean-folded.webp",
-     "flatlay": "img/products/pocket-full-of-treasures-tee/blue-jean-flatlay.webp"
+     "flatlay": "img/products/pocket-full-of-treasures-tee/blue-jean-flatlay.webp",
+     "front-close": "img/products/pocket-full-of-treasures-tee/blue-jean-front-close.webp"
     },
     "Violet": {
      "front": "img/products/pocket-full-of-treasures-tee/violet-front.webp",
      "back": "img/products/pocket-full-of-treasures-tee/violet-back.webp",
      "folded": "img/products/pocket-full-of-treasures-tee/violet-folded.webp",
-     "flatlay": "img/products/pocket-full-of-treasures-tee/violet-flatlay.webp"
+     "flatlay": "img/products/pocket-full-of-treasures-tee/violet-flatlay.webp",
+     "front-close": "img/products/pocket-full-of-treasures-tee/violet-front-close.webp"
     }
    },
    "swatches": {

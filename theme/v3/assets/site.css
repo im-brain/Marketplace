@@ -112,17 +112,17 @@ ul{padding-left:1.2em}
 .hero__copy p:not(.kicker-px){font-size:18px;max-width:40ch;margin-bottom:22px}
 /* tablets: art on top, full width, trimmed top and bottom only (whole sunset and lighthouse stay) */
 @media (max-width:900px) and (min-width:701px){
-  .hero{grid-template-columns:1fr;height:auto}
-  .hero__art{order:0;height:clamp(300px,42vw,380px)}
-  .hero__art img{object-position:50% 35%}
-  .hero__copy{border-right:0;border-top:3px solid var(--hp-sand);padding:22px 28px 26px}
+  .hero{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);height:330px}
+  .hero__copy{padding:20px 24px}
+  .hero__sub{display:none}
+  .hero h1{font-size:30px}
 }
 @media (max-width:700px){
   .hero{grid-template-columns:1fr;height:auto;width:100%;margin:0;border-width:0 0 3px;box-shadow:none}
   .hero__art{order:0}
   .hero__art img{height:min(230px,62vw);object-fit:cover;object-position:50% 30%}
   .hero__copy{border-right:0;border-top:3px solid var(--hp-sand);padding:18px var(--gut) 22px}
-  .kicker-px{margin-bottom:8px}
+  .kicker-px{display:none}
   .hero h1{font-size:28px;margin-bottom:8px}
   .hero__sub{display:none}
   .hero h1{margin-bottom:14px}
@@ -165,7 +165,7 @@ ul{padding-left:1.2em}
 .card h3 a:hover{text-decoration:underline}
 .card__blurb{margin:0;font-size:16px;color:var(--hp-graphite)}
 .price{margin:2px 0 0;font-weight:800;font-size:19px}
-.price span{font-size:14px;font-weight:600;color:var(--hp-graphite)}
+.price span{font-size:14px;font-weight:600;color:var(--hp-graphite);white-space:nowrap}
 .swatches{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 0;padding:0;border:0}
 .sw{position:relative;display:block;width:30px;height:30px;cursor:pointer}
 .sw input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
@@ -194,7 +194,7 @@ ul{padding-left:1.2em}
    splash-shaped clip. Only runs when html has .wet-fx (motion allowed and
    clip-path supported); otherwise every image is simply full color. */
 .wet-fx .wet__top{display:block;clip-path:circle(0 at 50% 50%)}
-.wet-fx .wet__base img{filter:saturate(.38) contrast(.9) brightness(1.05)}
+.wet-fx .wet__base img{filter:saturate(.55) contrast(.92) brightness(1.04)}
 .wet-fx .card.is-wet .wet__top{clip-path:none}
 .wet-fx .card.is-wet .wet__base img{filter:none}
 .wet-fx .card.is-splashing .wet__top{will-change:clip-path}
@@ -206,9 +206,9 @@ ul{padding-left:1.2em}
 .wet-btn svg{width:13px;height:13px}
 .wet-btn:active{transform:translate(2px,2px);box-shadow:none}
 .wet-btn__wet{display:none}
-.wet-btn[aria-pressed="true"]{background:var(--hp-teal)}
-.wet-btn[aria-pressed="true"] .wet-btn__dry{display:none}
-.wet-btn[aria-pressed="true"] .wet-btn__wet{display:inline-flex;align-items:center;gap:6px}
+.wet-btn[data-state="wet"]{background:var(--hp-teal)}
+.wet-btn[data-state="wet"] .wet-btn__dry{display:none}
+.wet-btn[data-state="wet"] .wet-btn__wet{display:inline-flex;align-items:center;gap:6px}
 .wet-btn__dry{display:inline-flex;align-items:center;gap:6px}
 /* without the effect there is nothing to wet */
 html:not(.wet-fx) .wet-btn{display:none}
@@ -250,6 +250,9 @@ html:not(.wet-fx) .wet-btn{display:none}
 .photo-ph{display:grid;place-content:center;aspect-ratio:4/5;padding:8px;background:repeating-linear-gradient(45deg,rgba(243,232,210,.08) 0 8px,transparent 8px 16px);border:2px dashed var(--hp-sand);color:var(--hp-sand);font-size:14px;font-weight:700;text-align:center}
 .text-link{display:inline-flex;align-items:center;gap:6px;min-height:44px;color:var(--hp-gold);font-weight:800}
 .text-link svg{width:14px;height:14px}
+.text-link--dark{color:var(--hp-rust)}
+.how-touch{display:none}
+@media (hover:none),(pointer:coarse){.how-fine{display:none}.how-touch{display:inline}}
 @media (max-width:420px){.founder{grid-template-columns:84px minmax(0,1fr);padding:14px;gap:14px}}
 
 /* ---------- signup ---------- */
@@ -272,7 +275,7 @@ html:not(.wet-fx) .wet-btn{display:none}
 .site-foot{margin-top:40px;background:var(--hp-navy);border-top:3px solid var(--hp-sand)}
 .site-foot__in{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));max-width:var(--maxw);margin:0 auto;padding:32px var(--gut) 12px}
 .foot-brand .wordmark{height:30px;color:var(--hp-cream)}
-.foot-brand p{margin-top:10px;color:var(--hp-sand)}
+.fine a{color:var(--hp-sand)}
 .site-foot h2{font-size:17px;font-weight:800;margin-bottom:6px}
 .site-foot ul{margin:0;padding:0;list-style:none}
 .site-foot li a{display:inline-flex;align-items:center;min-height:40px;overflow-wrap:anywhere}
@@ -330,6 +333,7 @@ html:not(.wet-fx) .wet-btn{display:none}
 .qty input{width:64px;min-height:44px;padding:6px;background:var(--hp-white);color:var(--hp-ink);border:2px solid var(--hp-ink);border-radius:0;font:700 18px/1 var(--hp-font-body);text-align:center;-moz-appearance:textfield;appearance:textfield}
 .qty input::-webkit-inner-spin-button,.qty input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
 .buy .form-msg{margin:0}
+.buy .form-msg:empty{min-height:0;margin-top:-22px}
 .buy .form-msg.err{color:var(--hp-rust)}
 .buy .form-msg.ok{color:var(--hp-teal)}
 .buy .form-msg a{color:var(--hp-rust)}

@@ -139,12 +139,12 @@ function footer() {
   const shop = products.map((p) => `<li><a href="${p.slug}.html">${esc(p.name)}</a></li>`).join('');
   return `<footer class="site-foot">
   <div class="site-foot__in">
-    <div class="foot-brand">${WORDMARK}<p>Head down. Pockets full.</p></div>
+    <div class="foot-brand">${WORDMARK}</div>
     <div><h2>Shop</h2><ul>${shop}</ul></div>
-    <div><h2>Explore</h2><ul><li><a href="field-notes.html">Field Notes</a></li><li><a href="index.html#story">About</a></li><li><a href="cart.html">Preview cart</a></li><li><a href="preview-notes.html">Preview notes for Brian</a></li></ul></div>
+    <div><h2>Explore</h2><ul><li><a href="field-notes.html">Field Notes</a></li><li><a href="index.html#story">About</a></li><li><a href="cart.html">Preview cart</a></li></ul></div>
     <div><h2>Say hello</h2><ul><li><a href="mailto:hello@heavypocketsco.com">hello@heavypocketsco.com</a></li><li><a href="https://www.instagram.com/heavypocketsco/" rel="noopener">Instagram @heavypocketsco</a></li><li><a href="https://www.tiktok.com/@heavypocketsco" rel="noopener">TikTok @heavypocketsco</a></li></ul></div>
   </div>
-  <p class="fine">© 2026 Heavy Pockets Co. This is a private preview, not a live store. No orders are taken and nothing is charged.</p>
+  <p class="fine">© 2026 Heavy Pockets Co. This is a private preview, not a live store. No orders are taken and nothing is charged. <a href="preview-notes.html">Preview notes</a></p>
 </footer>`;
 }
 
@@ -181,7 +181,7 @@ ${footer()}
 
 const ph = (text) => `<span class="ph-tag">${esc(text)}</span>`;
 const altFor = (p, c, view) => {
-  const v = { front: 'front', back: 'back', 'back-hood': 'back with the hood up', folded: 'folded', flatlay: 'styled flat lay' }[view];
+  const v = { front: 'front', 'front-close': 'front close-up', back: 'back', 'back-hood': 'back with the hood up', folded: 'folded', flatlay: 'styled flat lay' }[view];
   return `${p.name} in ${c.name}, ${v} view (supplier mockup)`;
 };
 
@@ -204,12 +204,12 @@ function card(p) {
     <span class="media-loader">${LOADER('Loading', false)}</span>
     <span class="img-fail" hidden><span>Photo did not load.</span><a href="${p.slug}.html">See the product page</a></span>
     ${viewTag}
-    <button class="wet-btn" type="button" aria-pressed="false" data-wet-btn><span class="wet-btn__dry">${ICON.drop}Wet it</span><span class="wet-btn__wet">${ICON.check}Wet</span><span class="visually-hidden"> to see ${esc(p.name)} in full color</span></button>
+    <button class="wet-btn" type="button" data-wet-btn><span class="wet-btn__dry">${ICON.drop}Wet it</span><span class="wet-btn__wet">${ICON.check}Wet</span><span class="visually-hidden"> to see ${esc(p.name)} in full color</span></button>
   </div>
   <div class="card__body">
     <h3><a href="${p.slug}.html" data-card-link>${esc(p.name)}</a></h3>
     <p class="card__blurb">${esc(p.blurb)}</p>
-    <p class="price">${moneyShort(p.priceCents)} <span>preview price</span></p>
+    <p class="price">${money(p.priceCents)} <span>preview price</span></p>
     ${swatchFieldset(p, 'c-' + p.slug, 'swatches')}
     <p class="sw-name"><span class="visually-hidden">Selected color: </span><span data-color-name>${esc(c.name)}</span>, ${p.colors.length} colors</p>
     <a class="more" href="${p.slug}.html" data-card-link>See details<span class="visually-hidden"> for ${esc(p.name)}</span>${ICON.arrow}</a>
@@ -221,7 +221,7 @@ const wetSel = (suffix) => products.map((p) =>
   `html[data-wet~="${p.slug}"] [data-product="${p.slug}"] ${suffix}`).join(',\n');
 
 const home = layout({
-  title: 'heavy pockets | Great Lakes tees and hoodies (preview)',
+  title: 'Heavy Pockets Storefront',
   desc: 'Warm, vintage nature illustration tees and hoodies for rockhounds, beachcombers, and lake lovers. Private preview.',
   page: 'home',
   head: `<style>/* products already revealed this visit: full color before first paint */
@@ -252,7 +252,7 @@ ${wetSel('.wet__base img')}{filter:none!important}</style>
   <div class="bar"><span>The collection</span><span class="ctrls" aria-hidden="true"><i></i><i></i></span></div>
   <div class="shop__head">
     <h2 id="shop-h">Six designs for beach days</h2>
-    <p>Every shirt starts a little dusty, like a dry stone. Hover, tab, or scroll past one to wet it and see its true colors. Tap a shirt to see it up close.</p>
+    <p>Every piece starts a little dusty, like a dry stone. <span class="how-fine">Point at one, or tab to it, to wet it and see its true colors. Click to see it up close.</span><span class="how-touch">Touch one as you scroll to wet it and see its true colors. Tap to see it up close.</span></p>
   </div>
   <ul class="cards">
 ${products.map(card).join('\n')}
@@ -303,7 +303,7 @@ ${products.map(card).join('\n')}
 
 /* ---------- product pages ---------- */
 function viewLabel(v) {
-  return { front: 'Front', back: 'Back', 'back-hood': 'Back with hood up', folded: 'Folded', flatlay: 'Styled flat lay' }[v];
+  return { front: 'Front', 'front-close': 'Front close-up', back: 'Back', 'back-hood': 'Back with hood up', folded: 'Folded', flatlay: 'Styled flat lay' }[v];
 }
 
 function productPage(p) {

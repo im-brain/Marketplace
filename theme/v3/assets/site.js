@@ -108,7 +108,7 @@
     setTimeout(function () { r.remove(); }, 1050);
   }
   function setWetUI(card) {
-    var b = $('[data-wet-btn]', card); if (b) b.setAttribute('aria-pressed', 'true');
+    var b = $('[data-wet-btn]', card); if (b) b.setAttribute('data-state', 'wet');
   }
   function reveal(card, x, y) {
     var slug = card.getAttribute('data-product');
@@ -200,7 +200,7 @@
     var qty = $('#qty', root);
     var arts = [];
     $$('.thumb[data-art]', root).forEach(function (b) { arts[+b.getAttribute('data-art')] = { src: $('img', b).getAttribute('src'), label: b.getAttribute('aria-label').replace(/^Show /, ''), light: b.classList.contains('thumb--light') }; });
-    var LABEL = { front: 'Front', back: 'Back', 'back-hood': 'Back with hood up', folded: 'Folded', flatlay: 'Styled flat lay' };
+    var LABEL = { front: 'Front', 'front-close': 'Front close-up', back: 'Back', 'back-hood': 'Back with hood up', folded: 'Folded', flatlay: 'Styled flat lay' };
     var state = { color: null, size: null, item: { type: 'view', view: $('.thumb[data-view]', root).getAttribute('data-view') } };
 
     function failMain() { $('.img-fail', well).hidden = false; }
@@ -251,14 +251,14 @@
         r.disabled = !ok;
         var lab = r.parentNode; lab.classList.toggle('is-off', !ok);
         var why = $('.why', lab);
-        if (!ok) { if (!why) { why = document.createElement('span'); why.className = 'visually-hidden why'; lab.appendChild(why); } why.textContent = s ? ', unavailable right now' : ', not made in ' + c.name; }
+        if (!ok) { if (!why) { why = document.createElement('span'); why.className = 'visually-hidden why'; lab.appendChild(why); } why.textContent = s ? ', not available in our ' + C.snapshotDate + ' check' : ', not made in ' + c.name; }
         else if (why) why.remove();
         if (!ok && r.checked) { r.checked = false; lost = r.value; }
       });
       if (lost) state.size = null;
       var offered = c.sizes.map(function (s) { return s.size; });
       var text = c.name + ' comes in ' + offered[0] + ' to ' + offered[offered.length - 1] + '.';
-      if (unavailable.length) text += ' ' + unavailable.join(', ') + (unavailable.length > 1 ? ' are' : ' is') + ' unavailable right now.';
+      if (unavailable.length) text += ' ' + unavailable.join(', ') + (unavailable.length > 1 ? ' were' : ' was') + ' not available in our ' + C.snapshotDate + ' supplier check.';
       help.classList.toggle('err', !!lost);
       help.textContent = lost ? lost + ' is not available in ' + c.name + '. Please pick another size. ' + text : (state.size ? text : 'Pick a size. ' + text);
       $$('.thumb[data-view]', root).forEach(function (b) { var v = b.getAttribute('data-view'); $('img', b).src = SIM.indexOf('noimages') > -1 ? MISSING : c.images[v]; });
@@ -315,7 +315,8 @@
       var r = addToCart({ slug: p.slug, color: c.name, size: state.size, qty: n });
       msg.className = 'form-msg ok';
       msg.innerHTML = 'Added to your preview cart: ' + esc(p.name) + ', ' + esc(c.name) + ', ' + esc(state.size) +
-        '. You have ' + r.line.qty + ' of this one' + (r.capped ? ' (10 is the most per item)' : '') + '. <a href="cart.html">View cart</a>';
+        '. You have ' + r.line.qty + ' of this one' + (r.capped ? ' (10 is the most per item)' : '') + '. ' +
+        (local.ok ? '<a href="cart.html">View cart</a>' : 'Your browser is blocking storage, so this cart empties when you leave this page.');
     });
   }
 
@@ -349,15 +350,31 @@
           '<button type="button" class="link-btn" data-act="remove">Remove<span class="visually-hidden"> ' + label + '</span></button></div></li>';
       }).join('');
       root.innerHTML = '<ul class="lines">' + items + '</ul>' +
-        '<div class="summary"><div class="summary__row"><span>Subtotal (' + count + (count === 1 ? ' item' : ' items') + ')</span><span data-subtotal>' + money(total) + '</span></div>' +
-        '<p>Provisional preview prices, not final. ' + esc(C.shippingNote) + ' Taxes are not calculated in the preview.</p>' +
+        '<div class="summary"><div class="summary__row"><span>Subtotal (<span data-count>' + count + (count === 1 ? ' item' : ' items') + '</span>)</span><span data-subtotal>' + money(total) + '</span></div>' +
+        '<p>Provisional preview prices. ' + esc(C.shippingNote) + ' Taxes are not calculated in the preview.</p>' +
         '<button class="btn btn--block" type="button" aria-disabled="true" aria-describedby="checkout-why" data-checkout>Checkout is off in this preview</button>' +
-        '<p id="checkout-why">Nothing is charged and no order is made. Checkout opens only after the samples are approved and the real store is set up.</p></div>';
+        '<p id="checkout-why">Nothing is charged and no order is made. Checkout opens only after the samples are approved and the real store is set up.</p>' +
+        '<a class="text-link text-link--dark" href="index.html#shop">Keep shopping</a></div>';
       if (focusKey) {
         var li = root.querySelector('.line[data-key="' + focusKey.replace(/"/g, '\\"') + '"]');
         var el = li && li.querySelector('[data-act="' + focusAct + '"]');
         if (el) el.focus();
       }
+    }
+    function refresh() {
+      var total = 0, count = 0;
+      readCart().forEach(function (l) {
+        var p = bySlug[l.slug], li = root.querySelector('.line[data-key="' + key(l).replace(/"/g, '\\"') + '"]');
+        total += p.priceCents * l.qty; count += l.qty;
+        if (!li) return;
+        var inp = li.querySelector('input[data-act=set]');
+        if (inp && String(inp.value) !== String(l.qty)) inp.value = l.qty;
+        li.querySelector('[data-act=dec]').setAttribute('aria-disabled', l.qty <= 1 ? 'true' : 'false');
+        li.querySelector('[data-act=inc]').setAttribute('aria-disabled', l.qty >= MAXQ ? 'true' : 'false');
+        li.querySelector('.line__price').innerHTML = money(p.priceCents * l.qty) + (l.qty > 1 ? '<br><span class="small">' + money(p.priceCents) + ' each</span>' : '');
+      });
+      var sub = root.querySelector('[data-subtotal]'); if (sub) sub.textContent = money(total);
+      var cnt = root.querySelector('[data-count]'); if (cnt) cnt.textContent = count + (count === 1 ? ' item' : ' items');
     }
     function update(k, fn, act) {
       var lines = readCart(), out = [], said = '';
@@ -373,7 +390,7 @@
         render();
         var next = root.querySelector('[data-act="remove"]') || root.querySelector('.empty .btn');
         if (next) next.focus();
-      } else render(k, act);
+      } else refresh();
       live.textContent = said;
     }
     root.addEventListener('click', function (e) {

@@ -11,7 +11,7 @@ The full step-by-step plan is in `PLAN.md`.
 ## Current status
 
 - **Storefront preview v3 (Nov 7, 2026, newest):** complete private shopping preview of the six current products, built from Brian's storefront brief. Branch `claude/clever-curie-pxflzz`, folder `theme/v3/`, handoff in `theme/v3/HANDOFF.md` (tests, limitations, missing assets, next steps). New lowercase wordmark (option A, provisional trace) in `brand/v3/wordmark/`. Private preview link: see "Preview link" below. Not merged, not deployed. Waiting on Brian's review.
-- **Preview link (v3):** PREVIEW_LINK_PLACEHOLDER
+- **Preview link (v3):** https://claude.ai/artifact/9TVdpea8d1YBc3vfUq11hz (private claude.ai artifact, same workflow as earlier previews; republish by running `node theme/v3/build.js` and publishing `theme/v3/index.html` with every page, asset, and image as files).
 - **Current assortment (Nov 7, 2026, supersedes the old launch 5 and socks):** Midnight Rock Hunt Tee, Great Lakes Rock Crew Tee, Field Notebook Tee, Pocket Full of Treasures Tee, Shoreline Hoodie, and Floral Butterfly Embroidered Hoodie. Printify product IDs and approved colors are in `theme/v3/src/products.json` and `theme/v3/HANDOFF.md`. Indigo Blue embroidery was removed on purpose: never restore it. Samples are ordered, not yet physically approved.
 - **Provisional prices (not approved):** $30 front-print tees, $40 Midnight, $60 hoodies, standard U.S. shipping included, larger-size adjustments not set. One file: `theme/v3/src/pricing.json`. Printify costs by size: `theme/v3/src/PRICING_REVIEW.md`.
 

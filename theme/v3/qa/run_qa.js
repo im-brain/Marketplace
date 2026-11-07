@@ -97,6 +97,8 @@ async function scrollAll(page) {
     check('desktop grid is 3 columns', cols === 3, cols);
     const devText = await page.evaluate(() => /STAND-IN|READY|TYPE|\.TEE|HP-0/.test(document.querySelector('#shop').innerText));
     check('no dev labels (READY, STAND-IN, file names) in the shop', !devText);
+    check('tagline is never directly under the wordmark (footer)', !(await page.$eval('.foot-brand', (e) => e.textContent)).includes('Head down'));
+    check('prices use one format ($40.00)', (await page.$$eval('.card .price', (ps) => ps.every((p) => /\$\d+\.\d\d/.test(p.textContent)))));
     check('standalone wet-stone lab removed from homepage', (await page.$$('.lab, .tray, [data-stone]')).length === 0);
     // swatch swaps the image and the link
     const card = page.locator('#p-great-lakes-rock-crew-tee');
@@ -122,19 +124,19 @@ async function scrollAll(page) {
     await wait(300);
     const mid = await page.$eval('#p-midnight-rock-hunt-tee', (c) => ({ splashing: c.classList.contains('is-splashing'), clip: getComputedStyle(c.querySelector('.wet__top')).clipPath }));
     check('hover starts a moving splash (polygon clip mid-animation)', mid.splashing && mid.clip.startsWith('polygon'), mid);
-    await page.screenshot({ path: path.join(OUT, 'wet-reveal-mid-splash.png'), clip: await page.locator('#p-midnight-rock-hunt-tee .card__media').boundingBox() });
-    await wait(900);
-    const after = await page.$eval('#p-midnight-rock-hunt-tee', (c) => ({ wet: c.classList.contains('is-wet'), clip: getComputedStyle(c.querySelector('.wet__top')).clipPath, f: getComputedStyle(c.querySelector('.wet__base img')).filter, btn: c.querySelector('[data-wet-btn]').getAttribute('aria-pressed') }));
-    check('after hover: full color, clip removed, button pressed', after.wet && after.clip === 'none' && after.f === 'none' && after.btn === 'true', after);
+    await page.screenshot({ path: path.join(OUT, 'wet-reveal-mid-splash.jpg'), clip: await page.locator('#p-midnight-rock-hunt-tee .card__media').boundingBox() });
+    await wait(1200);
+    const after = await page.$eval('#p-midnight-rock-hunt-tee', (c) => ({ wet: c.classList.contains('is-wet'), clip: getComputedStyle(c.querySelector('.wet__top')).clipPath, f: getComputedStyle(c.querySelector('.wet__base img')).filter, btn: c.querySelector('[data-wet-btn]').getAttribute('data-state') }));
+    check('after hover: full color, clip removed, button pressed', after.wet && after.clip === 'none' && after.f === 'none' && after.btn === 'wet', after);
     // keyboard focus
     await page.locator('#p-field-notebook-tee h3 a').focus();
-    await wait(1100);
+    await wait(1400);
     check('keyboard focus reveals the card', await page.$eval('#p-field-notebook-tee', (c) => c.classList.contains('is-wet')));
     const ring = await page.$eval('#p-field-notebook-tee h3 a', (a) => getComputedStyle(a).outlineStyle + ' ' + getComputedStyle(a).outlineColor);
     check('focused link shows a visible gold outline', /solid rgb\(232, 185, 84\)/.test(ring), ring);
     // wet it button
     await page.locator('#p-shoreline-hoodie [data-wet-btn]').click();
-    await wait(1100);
+    await wait(1400);
     check('"Wet it" button reveals the card', await page.$eval('#p-shoreline-hoodie', (c) => c.classList.contains('is-wet')));
     // color change keeps it wet
     await page.locator('#p-midnight-rock-hunt-tee .sw:has(input[value="Navy"])').click();
@@ -185,7 +187,7 @@ async function scrollAll(page) {
     await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x, y: y0 }] });
     for (let i = 1; i <= 8; i++) { await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x, y: y0 - i * 25 }] }); await wait(16); }
     await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
-    await wait(1200);
+    await wait(1400);
     const sy2 = await page.evaluate(() => window.scrollY);
     check('touch swipe across a product image scrolls the page natively', sy2 > sy + 50, { before: sy, after: sy2 });
     check('touch swipe does not open the product page', page.url() === url, page.url());
@@ -195,9 +197,9 @@ async function scrollAll(page) {
     const b2 = await page.locator('#p-pocket-full-of-treasures-tee .card__media').boundingBox();
     await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: b2.x + 40, y: b2.y + 40 }] });
     await cdp.send('Input.dispatchTouchEvent', { type: 'touchCancel', touchPoints: [] });
-    await wait(1200);
+    await wait(1400);
     check('touch cancel: card revealed, no navigation, nothing stuck', page.url() === url && await page.$eval('#p-pocket-full-of-treasures-tee', (c) => c.classList.contains('is-wet') && !c.classList.contains('is-splashing')));
-    await page.screenshot({ path: path.join(OUT, 'mobile-390-cards-after-touch.png') });
+    await page.screenshot({ path: path.join(OUT, 'mobile-390-cards-after-touch.jpg') });
     // passive listener: a touchstart default is never prevented
     const prevented = await page.evaluate(() => { const m = document.querySelector('#p-great-lakes-rock-crew-tee .card__media'); const t = new Touch({ identifier: 1, target: m, clientX: 10, clientY: 10 }); const e = new TouchEvent('touchstart', { touches: [t], cancelable: true, bubbles: true }); m.dispatchEvent(e); return e.defaultPrevented; });
     check('touchstart is never preventDefault-ed', prevented === false);
@@ -243,6 +245,7 @@ async function scrollAll(page) {
     check('Embroidered Light Blue offers S to 5XL', (await disabled('floral-butterfly-embroidered-hoodie', 'Light Blue')).length === 0);
     check('Rock Crew Yam / 4XL disabled (Printify unavailable)', JSON.stringify(await disabled('great-lakes-rock-crew-tee', 'Yam')) === '["4XL"]');
     check('Pocket Violet / 4XL disabled (Printify unavailable)', JSON.stringify(await disabled('pocket-full-of-treasures-tee', 'Violet')) === '["4XL"]');
+    check('stock wording names the dated check, never "right now"', /not available in our Nov 7, 2026 supplier check/.test(await page.textContent('[data-size-help]')) && !/right now/.test(await page.content()));
     check('Tees stop at 4XL (no 5XL key)', (await page.$$('input[name=size][value="5XL"]')).length === 0);
     // switching to a color without the chosen size clears it
     await page.goto(`${BASE}/shoreline-hoodie.html?color=black&size=5XL`, { waitUntil: 'networkidle' });
@@ -293,11 +296,16 @@ async function scrollAll(page) {
     const sub = await page.textContent('[data-subtotal]');
     check('subtotal: 3x$30 + 2x$30 + 1x$60 = $210.00', sub === '$210.00', sub);
     check('larger size line shows the note', /Larger-size price not set/.test(await page.textContent('.lines')));
-    await page.screenshot({ path: path.join(OUT, 'cart-1440.png'), fullPage: true });
+    await page.screenshot({ path: path.join(OUT, 'cart-1440.jpg'), fullPage: true });
     const first = page.locator('.line').first();
     await first.locator('[data-act=inc]').click();
     check('increase updates qty and subtotal', (await page.textContent('[data-subtotal]')) === '$240.00');
     check('focus stays on the increase button after update', await page.evaluate(() => document.activeElement.dataset.act === 'inc'));
+    await page.locator('.line').first().locator('input[data-act=set]').fill('3');
+    await page.keyboard.press('Tab');
+    check('typing a quantity then Tab moves focus on (not stuck)', await page.evaluate(() => document.activeElement.dataset.act === 'inc'));
+    check('typed quantity updates the subtotal in place', (await page.textContent('[data-subtotal]')) === '$210.00', await page.textContent('[data-subtotal]'));
+    check('cart has a Keep shopping link', await page.isVisible('.summary a[href="index.html#shop"]'));
     await page.locator('.line').first().locator('input[data-act=set]').fill('25');
     await page.locator('.line').first().locator('input[data-act=set]').press('Enter');
     await page.locator('h1').click();
@@ -350,7 +358,7 @@ async function scrollAll(page) {
     await scrollAll(page);
     const fails = await page.$$eval('.card', (cs) => cs.filter((c) => c.classList.contains('img-failed') && !c.querySelector('.img-fail').hidden).length);
     check('image failure: every card shows a readable fallback with a link', fails === 6, fails);
-    await page.screenshot({ path: path.join(OUT, 'state-images-failed.png') });
+    await page.screenshot({ path: path.join(OUT, 'state-images-failed.jpg') });
     await page.goto(`${BASE}/midnight-rock-hunt-tee.html?simulate=noimages`, { waitUntil: 'networkidle' });
     check('image failure on product page shows a message', await page.isVisible('[data-g-well] .img-fail'));
     await page.goto(`${BASE}/cart.html?simulate=nostorage`, { waitUntil: 'networkidle' });
@@ -359,9 +367,10 @@ async function scrollAll(page) {
     await page.locator('.opt:has(input[value="M"])').click();
     await page.click('.buy-form button[type=submit]');
     check('storage blocked: add still works in memory', (await page.textContent('[data-cart-count]')) === '1');
+    check('storage blocked: add message warns the cart will not survive', /blocking storage/.test(await page.textContent('[data-buy-msg]')));
     await page.goto(`${BASE}/index.html?simulate=nostorage`, { waitUntil: 'networkidle' });
     await page.locator('#p-field-notebook-tee .card__media').hover();
-    await wait(1100);
+    await wait(1400);
     check('storage blocked: reveal still works on the page', await page.$eval('#p-field-notebook-tee', (c) => c.classList.contains('is-wet')));
     check('no script errors (failure states)', ctx.errors.length === 0, ctx.errors);
     await ctx.close();
@@ -385,7 +394,7 @@ async function scrollAll(page) {
     const early = await p4.$eval('[data-g-well] .media-loader', (l) => getComputedStyle(l).opacity);
     await wait(600);
     const mid = await p4.$eval('[data-g-well] .media-loader', (l) => getComputedStyle(l).opacity);
-    await p4.screenshot({ path: path.join(OUT, 'state-loading.png'), clip: await p4.locator('[data-g-well]').boundingBox() });
+    await p4.screenshot({ path: path.join(OUT, 'state-loading.jpg'), clip: await p4.locator('[data-g-well]').boundingBox() });
     await p4.waitForLoadState('networkidle'); await wait(200);
     const gone = await p4.$eval('[data-g-well] .media-loader', (l) => getComputedStyle(l).display);
     check('loader hidden for the first moment (no flash on fast loads)', early === '0', early);
@@ -440,14 +449,14 @@ async function scrollAll(page) {
       check(`${name}: hero image is shorter than before (<= 62% of screen or 460px)`, heroH <= Math.max(460, vh * 0.62) || k === 'tall', heroH);
       const shopTop = await page.$eval('#shop', (e) => e.getBoundingClientRect().top + window.scrollY);
       results.push(`INFO ${name}: collection starts at ${Math.round(shopTop)}px (screen height ${vh})`);
-      await page.screenshot({ path: path.join(OUT, `${name}-home-top.png`) });
+      await page.screenshot({ path: path.join(OUT, `${name}-home-top.jpg`) });
       if (['phone-390', 'desktop-1440', 'tablet-768'].includes(name)) {
         await scrollAll(page);
         await page.evaluate(() => document.querySelector('#shop').scrollIntoView({ behavior: 'instant' }));
         await wait(150);
-        await page.screenshot({ path: path.join(OUT, `${name}-shop.png`) });
+        await page.screenshot({ path: path.join(OUT, `${name}-shop.jpg`) });
         await page.goto(`${BASE}/great-lakes-rock-crew-tee.html?color=yam`, { waitUntil: 'networkidle' });
-        await page.screenshot({ path: path.join(OUT, `${name}-product.png`) });
+        await page.screenshot({ path: path.join(OUT, `${name}-product.jpg`) });
       }
       await ctx.close();
     }

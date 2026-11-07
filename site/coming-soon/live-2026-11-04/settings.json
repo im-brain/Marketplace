@@ -1,0 +1,24 @@
+{
+  "result": {
+    "placement": {},
+    "compatibility_date": "2025-09-01",
+    "compatibility_flags": [],
+    "usage_model": "standard",
+    "tags": [],
+    "tail_consumers": [],
+    "logpush": false,
+    "annotations": {
+      "workers/triggered_by": "upload"
+    },
+    "bindings": [
+      {
+        "name": "DIBS",
+        "namespace_id": "21d60f8208ca4dcda50fbf2a9bf29af9",
+        "type": "kv_namespace"
+      }
+    ]
+  },
+  "success": true,
+  "errors": [],
+  "messages": []
+}

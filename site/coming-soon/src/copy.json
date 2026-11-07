@@ -1,0 +1,9 @@
+{
+  "_note": "Speech bubble options for Brian. 'chosen' is what build.js puts on the live page. Plain text, no em dashes.",
+  "chosen": "A",
+  "bubble": {
+    "A": { "line": "Something magnifico is in the tumbler.", "punch": "It'll rock." },
+    "B": { "line": "Four tees and two hoodies are in the tumbler.", "punch": "Almost polished." },
+    "C": { "line": "Six new pieces, still tumbling.", "punch": "Worth the wait." }
+  }
+}

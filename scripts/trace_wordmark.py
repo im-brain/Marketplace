@@ -24,7 +24,7 @@ import sys
 
 import numpy as np
 import potrace
-from PIL import Image, ImageFilter
+from PIL import Image, ImageDraw, ImageFilter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "brand/v3/wordmark/source/wordmark-comparison-board.png")
@@ -47,57 +47,94 @@ def build_mask():
 
 
 # Brian, Nov 7, 2026: separate the "v" and "y", which touch at the top in the
-# source art. The bridge sits above the notch between them at crop x ~445 (1x).
+# source art. A straight cut left flat-sided ends, so instead the two joined
+# arms are REBUILT from the font's own terminals:
+#   - the y's left arm gets the v's left-arm top (same slant),
+#   - the v's right arm gets the y's right-arm top (same slant),
+# and the "y" plus "pockets" move right just enough that the new gap matches
+# the gap between "a" and "v". Every corner then comes from the source art.
 SPLIT_VY = True
-VY_APEX_X = 445   # 1x crop px; refined to the true notch apex below
-VY_GAP = 9        # 1x px, about the space between the other letters
-ROUND = 7         # 1x px corner rounding for the two new stroke ends
+VY_CUT_BELOW_APEX = 14   # 1x px below the bridge where the arms are clean
+
+
+def _runs(row):
+    d = np.diff(np.concatenate([[0], row.astype(np.int8), [0]]))
+    return list(zip(np.where(d == 1)[0], np.where(d == -1)[0] - 1))
+
+
+def _component(mask, seed):
+    im = Image.fromarray((mask * 255).astype("uint8")).copy()  # fill is ignored on array-backed images
+    ImageDraw.floodfill(im, seed, 128)
+    return np.asarray(im) == 128
 
 
 def split_vy(mask):
-    """Cut the v/y bridge and round the new ends. Returns a new mask."""
-    m = mask.copy()
-    # find the notch apex: the column whose inner gap starts highest
+    """Return (new_mask, info). new_mask may be wider (the kern)."""
+    m = mask
+    H, W = m.shape
+    x0, x1 = 330 * S, 560 * S
+    # notch apex = bottom of the bridge, near crop x 445
     best = None
-    for x in range((VY_APEX_X - 25) * S, (VY_APEX_X + 25) * S):
+    for x in range(420 * S, 470 * S):
         col = m[:, x]
-        ys = np.where(col)[0]
-        if not len(ys):
+        c = np.where(col)[0]
+        if not len(c):
             continue
-        below = np.where(~col[ys[0]:])[0]
+        below = np.where(~col[c[0]:])[0]
         if not len(below):
             continue
-        gap = ys[0] + below[0]
-        if not np.where(col[gap:])[0].size:
-            continue
-        if best is None or gap < best[1]:
-            best = (x, gap)
-    ax, gap = best
-    half = VY_GAP * S // 2
-    # cut down only until the natural notch is already as wide as the gap,
-    # so the cut edges run straight into the existing diagonal edges (no ledge)
-    y_end = gap
-    for y in range(gap, m.shape[0]):
-        row = m[y]
-        l = ax
-        while l > 0 and not row[l - 1]:
-            l -= 1
-        r_ = ax
-        while r_ < m.shape[1] - 1 and not row[r_ + 1]:
-            r_ += 1
-        if r_ - l + 1 >= 2 * half:
-            y_end = y
-            break
-    m[: y_end + 1, ax - half: ax + half] = False
-    # round only the freshly cut corners: blur + threshold inside a small window
-    r = ROUND * S
-    y0, y1 = 0, y_end + 6 * S
-    x0, x1 = ax - half - 3 * r, ax + half + 3 * r
-    win = Image.fromarray((m[y0:y1, x0:x1] * 255).astype("uint8")).filter(ImageFilter.GaussianBlur(r / 2))
-    rounded = np.asarray(win) >= 128
-    # keep the original outline away from the cut; only allow removing ink near it
-    m[y0:y1, x0:x1] &= rounded | (np.abs(np.arange(x0, x1) - ax)[None, :] > half + 2 * r)
-    return m, (ax / S, gap / S)
+        g = c[0] + below[0]
+        if np.where(col[g:])[0].size and (best is None or g < best[1]):
+            best = (x, g)
+    apex = best[1]
+    y_cut = apex + VY_CUT_BELOW_APEX * S
+    first = _runs(m[y_cut, 340 * S: x1])[0]
+    vy = _component(m, (340 * S + int((first[0] + first[1]) / 2), y_cut))
+    y_top = np.where(vy.any(axis=1))[0][0]
+
+    def rr(y):
+        return [(a + x0, b + x0) for a, b in _runs(vy[y, x0:x1])]
+
+    r_cut = rr(y_cut)
+    assert len(r_cut) >= 4, "v and y arms not separate at the cut row"
+    v_right, y_left = r_cut[1], r_cut[2]
+    tA = {y: rr(y)[0] for y in range(y_top, y_cut + 1) if rr(y)}   # v left arm
+    tB = {y: rr(y)[-1] for y in range(y_top, y_cut + 1) if rr(y)}  # y right arm
+    mid = lambda r: (r[0] + r[1]) / 2
+    dA = mid(y_left) - mid(tA[y_cut])
+    dB = mid(v_right) - mid(tB[y_cut])
+    min_gap = min((tA[y][0] + dA) - (tB[y][1] + dB) - 1 for y in tA if y in tB)
+    av = []  # gap between "a" and "v" at their closest, in the same rows
+    for y in range(y_top, y_cut + 1):
+        r2 = _runs(m[y, 230 * S: 345 * S])
+        if len(r2) >= 2:
+            av.append(r2[-1][0] - r2[-2][1] - 1)
+    target = min(av)
+    k = int(max(0, np.ceil(target - min_gap)))
+    # remove the joined arms in the band, then split into v and y
+    m2 = m.copy()
+    for y in range(y_top, y_cut + 1):
+        a, b = tA[y][1] + 1, tB[y][0]
+        m2[y, a:b] &= ~vy[y, a:b]
+    v = _component(m2, (int(mid(tA[y_cut])), y_cut))
+    yy = m2 & vy & ~v
+    rest = m2 & ~vy
+    pockets = rest.copy()
+    pockets[:, :500 * S] = False
+    out = np.zeros((H, W + k), bool)
+    out[:, :W] |= (rest & ~pockets) | v
+    out[:, k:] |= yy | pockets
+    for y in range(y_top, y_cut + 1):
+        a, b = tA[y]
+        out[y, int(round(a + dA + k)): int(round(b + dA + k)) + 1] = True
+        a, b = tB[y]
+        out[y, int(round(a + dB)): int(round(b + dB)) + 1] = True
+    # soften the joins where the rebuilt tops meet the original arms
+    s0, s1 = y_cut - 4 * S, y_cut + 4 * S
+    xa, xb = int(v_right[0] - 6 * S), int(y_left[1] + k + 6 * S)
+    win = Image.fromarray((out[s0:s1, xa:xb] * 255).astype("uint8")).filter(ImageFilter.GaussianBlur(2 * S))
+    out[s0:s1, xa:xb] = np.asarray(win) >= 128
+    return out, {"kern_px": round(k / S, 2), "gap_px": round(target / S, 2)}
 
 
 def trace(mask):
@@ -157,7 +194,7 @@ def main():
             f.write(svg)
     os.makedirs(os.path.join(OUT, "qa"), exist_ok=True)
     Image.fromarray(np.where(mask, 0, 255).astype("uint8")).save(os.path.join(OUT, "qa/trace-mask-4x.png"))
-    info = {"contours": len(curves), "viewBox": [round(w), round(h)], "vy_cut_at": cut,
+    info = {"contours": len(curves), "viewBox": [round(w), round(h)], "vy_split": cut,
             "heavy_contours": sum(1 for x, _ in subpaths if x < split),
             "pockets_contours": sum(1 for x, _ in subpaths if x >= split)}
     print(json.dumps(info))

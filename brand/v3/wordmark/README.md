@@ -23,7 +23,7 @@ Exact text: `heavy pockets`, all lowercase. No "Co.", tagline, flowers, trees, m
 
 - Overlap with the source pixels (before the v/y separation): 98.1% (IoU 0.981 at 1236 px wide). Differences are about one pixel along the edges.
 - Letter count and counters are correct.
-- **The "v" and "y" are separated** (Brian, Nov 7, 2026). In the source art they touch at the top. The script cuts a 9 px gap at the bridge (only down to where the natural gap is already that wide, so there is no ledge) and rounds the two new stroke ends to match the others. Turn it off with `SPLIT_VY = False`.
+- **The "v" and "y" are separated** (Brian, Nov 7, 2026). In the source art they touch at the top. A straight cut looked wrong (flat-sided ends), so the script rebuilds the two joined arms from the font's own tops: the y's left arm gets the v's left-arm top, and the v's right arm gets the y's right-arm top (each pair slants the same way). The "y" and "pockets" then move 6.75 px right, so the new gap matches the gap between "a" and "v" (7.5 px). Every corner comes from the source art. Turn it off with `SPLIT_VY = False`.
 - Readable at 28 px tall (phone header) and 160 px wide.
 
 ## What remains (needs real artwork work)
@@ -31,7 +31,7 @@ Exact text: `heavy pockets`, all lowercase. No "Co.", tagline, flowers, trees, m
 The source is a 1536 px AI-generated raster, so this trace inherits its small wobbles. It is fine for the website preview. Before use on garments, embroidery, signage, or print:
 
 1. A designer redraws or cleans the curves: even stroke weights, consistent terminals and corner radii, and fewer nodes.
-2. Check the new "v" and "y" top ends, which were cut and rounded by script, when the curves are cleaned.
+2. Check the rebuilt "v" and "y" tops and the slightly wider v-to-y spacing when the curves are cleaned.
 3. Check letter spacing optically, and make a small-size version if it will appear under about 20 px tall.
 4. Confirm the final teal and rust values for print (Pantone or thread colors).
 

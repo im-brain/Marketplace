@@ -39,3 +39,7 @@ Implementation note: the mobile art is chosen for narrow **portrait** viewports 
 
 ## Coordination with Claude
 Claude Code can transfer the ZIP image files, integrate the responsive picture into a separate feature branch, test screenshot layouts, and submit a PR. Preserve `step4-overnight-build`, the live page, and project strategy documents until changes are reviewed.
+
+## Clean versions (Nov 7, 2026)
+
+`hero-clean-desktop.*` (1774 x 887) and `hero-clean-mobile.*` (1086 x 1448) are ChatGPT edits of the approved art with the old "HEAVY POCKETS CO." logo, its mountains and trees, the wave line, and the tagline removed. Brian made them from a prompt Claude wrote. Stones, sunset, lighthouse, and waves match the approved art (average pixel difference about 8 out of 255, from re-rendering). The mobile version's top third is now plain navy sky, which the sites do not show. The approved files above stay as the record of what Brian approved. Website crops: see `theme/v3/img/CREDITS.md`.

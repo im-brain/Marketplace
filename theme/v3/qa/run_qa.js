@@ -428,7 +428,7 @@ async function scrollAll(page) {
       ['zoom200-of-1280', { viewport: { width: 640, height: 400 }, deviceScaleFactor: 2 }],
     ];
     // sunset and lighthouse positions inside each crop (source pixels)
-    const KEEP = { wide: { w: 1174, h: 700, sun: [200, 395], light: [850, 905], sunY: [105, 205] }, tall: { w: 1086, h: 760, sun: [255, 430], light: [840, 895], sunY: [165, 270] } };
+    const KEEP = { wide: { w: 1334, h: 887, sun: [360, 555], light: [1010, 1065], sunY: [200, 300] } /* clean art, crop (440, 0, 1774, 887) */, tall: { w: 1086, h: 760, sun: [255, 430], light: [840, 895], sunY: [165, 270] } };
     for (const [name, opts] of sizes) {
       const ctx = await newCtx(b, opts);
       const page = await ctx.newPage();

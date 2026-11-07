@@ -60,7 +60,7 @@ Keep this list current. Items marked provisional are built for review, not appro
 5. Production wordmark vector from a designer, based on option A (current file is a provisional trace).
 6. Brand story, founder intro, and photo in Brian's words; shipping and returns policies.
 7. Live stock check before launch (Shoreline availability unverified).
-8. Email service for the signup form (preview-only until then).
+8. Email service for the signup form. Compared Nov 7, 2026 (`research/Email_Service_Comparison.md`): recommendation is to keep collecting in Cloudflare and use Shopify Email at Step 12 (Kit's free plan if an email is needed sooner). Needs a P.O. box or virtual mailbox address first (CAN-SPAM). Waiting on Brian.
 9. Field Notes: clear remaining [VERIFY] items, add Brian's own finds.
 10. Deferred: the game, the collection keepsake, and receipt integration.
 

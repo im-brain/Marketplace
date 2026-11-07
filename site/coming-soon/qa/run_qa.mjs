@@ -185,8 +185,7 @@ for (const scheme of ['light', 'dark']) {
   const page = await ctx.newPage();
   await page.goto(pathToFileURL(path.join(DIR, '../preview/index.html')).href, { waitUntil: 'networkidle' });
   check('preview: hero art inlined', await page.locator('.hero__art img').evaluate((i) => i.complete && i.naturalWidth > 0));
-  await page.check('input[name=pv-copy][value=B]');
-  check('preview: copy option B shows', /Four tees and two hoodies/.test(await page.textContent('[data-bubble]')));
+  check('preview: no bubble switcher, option A shows', (await page.$$('input[name=pv-copy]')).length === 0 && /magnifico/.test(await page.textContent('[data-bubble]')));
   const before = writes;
   await page.fill('input[name=email]', 'x@example.com');
   await page.click('button[type=submit]');

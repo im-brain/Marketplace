@@ -12,8 +12,10 @@ import { PAGE, FILES } from './site.js';
 const HOST = 'heavypocketsco.com';
 const EMAIL = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
+// Cloudflare Web Analytics (the visitor counter, Brian's OK Nov 7, 2026) adds a script from
+// static.cloudflareinsights.com that reports to cloudflareinsights.com. It sets no cookies.
 const SECURITY = {
-  'content-security-policy': "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
+  'content-security-policy': "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
   'x-content-type-options': 'nosniff',
   'referrer-policy': 'strict-origin-when-cross-origin',
   'permissions-policy': 'camera=(), microphone=(), geolocation=()',

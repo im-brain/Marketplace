@@ -117,3 +117,4 @@ Updated: November 4, 2026.
 - **Choices:** keep the rockhound mascot and the day and night switch; teaser only (no product images or prices); collect the email only (no design picks); keep speech bubble option A ("Something magnifico is in the tumbler. It'll rock.").
 - **Approved and deployed:** Brian said "Deploy" after reviewing the private preview. Deployed Nov 7, 2026, to the Worker `heavypockets-coming-soon` with the same `DIBS` signup list. Existing signups were not touched.
 - **Source:** `site/coming-soon/` (rollback copy in `live-2026-11-04/`).
+- **Follow-up, same day (Brian's OK):** `www.heavypocketsco.com` now redirects to heavypocketsco.com, and the Cloudflare visitor counter (no cookies) is turned on. The footer says so.

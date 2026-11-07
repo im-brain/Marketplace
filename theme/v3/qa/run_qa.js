@@ -95,7 +95,7 @@ async function scrollAll(page) {
       const [name, colors, price] = BRIEF[c.slug];
       check(`${c.slug}: name`, c.name === name, c.name);
       check(`${c.slug}: approved colors only, in order`, JSON.stringify(c.colors) === JSON.stringify(colors), c.colors);
-      check(`${c.slug}: provisional price $${price}, labeled`, c.price.includes('$' + price) && /preview price/.test(c.price), c.price);
+      check(`${c.slug}: approved starting price $${price}`, c.price.includes('From') && c.price.includes('$' + price + '.00'), c.price);
       check(`${c.slug}: links to its own page`, c.href.startsWith(c.slug + '.html'), c.href);
     }
     check('no Indigo Blue anywhere on the homepage', !(await page.content()).includes('Indigo'));
@@ -260,7 +260,8 @@ async function scrollAll(page) {
     // switching to a color without the chosen size clears it
     await page.goto(`${BASE}/shoreline-hoodie.html?color=black&size=5XL`, { waitUntil: 'networkidle' });
     check('direct link with color and size preselects both', await page.isChecked('input[name=size][value="5XL"]') && (await page.textContent('#color-now')) === 'Black');
-    check('larger size shows the "price not set" note', await page.isVisible('[data-size-note]'));
+    check('price updates for the size: Shoreline 5XL is $66.00', (await page.textContent('[data-price]')) === '$66.00', await page.textContent('[data-price]'));
+    check('larger-size price note lists the steps', /2XL \+\$2, 3XL \+\$4, 4XL \+\$6, and 5XL \+\$6/.test(await page.textContent('[data-size-note]')));
     await page.locator('.opt--color:has(input[value="Heather Navy"])').click();
     const help = await page.textContent('[data-size-help]');
     check('switching to Heather Navy clears 5XL and explains why', !(await page.isChecked('input[name=size][value="5XL"]')) && /5XL is not available in Heather Navy/.test(help), help);
@@ -304,17 +305,17 @@ async function scrollAll(page) {
     const n = await page.$$eval('.line', (l) => l.length);
     check('different variants stay separate lines (3 lines)', n === 3, n);
     const sub = await page.textContent('[data-subtotal]');
-    check('subtotal: 3x$30 + 2x$30 + 1x$60 = $210.00', sub === '$210.00', sub);
-    check('larger size line shows the note', /Larger-size price not set/.test(await page.textContent('.lines')));
+    check('subtotal: 3x$30 + 2x$30 + 1x$62 (2XL) = $212.00', sub === '$212.00', sub);
+    check('2XL hoodie line is priced $62.00', /\$62\.00/.test(await page.textContent('.lines')));
     await page.screenshot({ path: path.join(OUT, 'cart-1440.jpg'), fullPage: true });
     const first = page.locator('.line').first();
     await first.locator('[data-act=inc]').click();
-    check('increase updates qty and subtotal', (await page.textContent('[data-subtotal]')) === '$240.00');
+    check('increase updates qty and subtotal', (await page.textContent('[data-subtotal]')) === '$242.00');
     check('focus stays on the increase button after update', await page.evaluate(() => document.activeElement.dataset.act === 'inc'));
     await page.locator('.line').first().locator('input[data-act=set]').fill('3');
     await page.keyboard.press('Tab');
     check('typing a quantity then Tab moves focus on (not stuck)', await page.evaluate(() => document.activeElement.dataset.act === 'inc'));
-    check('typed quantity updates the subtotal in place', (await page.textContent('[data-subtotal]')) === '$210.00', await page.textContent('[data-subtotal]'));
+    check('typed quantity updates the subtotal in place', (await page.textContent('[data-subtotal]')) === '$212.00', await page.textContent('[data-subtotal]'));
     check('cart has a Keep shopping link', await page.isVisible('.summary a[href="index.html#shop"]'));
     await page.locator('.line').first().locator('input[data-act=set]').fill('25');
     await page.locator('.line').first().locator('input[data-act=set]').press('Enter');

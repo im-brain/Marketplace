@@ -104,27 +104,27 @@ PASS no requests to outside hosts except Google Fonts
 PASS six product cards in brief order
 PASS midnight-rock-hunt-tee: name
 PASS midnight-rock-hunt-tee: approved colors only, in order
-PASS midnight-rock-hunt-tee: provisional price $40, labeled
+PASS midnight-rock-hunt-tee: approved starting price $40
 PASS midnight-rock-hunt-tee: links to its own page
 PASS great-lakes-rock-crew-tee: name
 PASS great-lakes-rock-crew-tee: approved colors only, in order
-PASS great-lakes-rock-crew-tee: provisional price $30, labeled
+PASS great-lakes-rock-crew-tee: approved starting price $30
 PASS great-lakes-rock-crew-tee: links to its own page
 PASS field-notebook-tee: name
 PASS field-notebook-tee: approved colors only, in order
-PASS field-notebook-tee: provisional price $30, labeled
+PASS field-notebook-tee: approved starting price $30
 PASS field-notebook-tee: links to its own page
 PASS pocket-full-of-treasures-tee: name
 PASS pocket-full-of-treasures-tee: approved colors only, in order
-PASS pocket-full-of-treasures-tee: provisional price $30, labeled
+PASS pocket-full-of-treasures-tee: approved starting price $30
 PASS pocket-full-of-treasures-tee: links to its own page
 PASS shoreline-hoodie: name
 PASS shoreline-hoodie: approved colors only, in order
-PASS shoreline-hoodie: provisional price $60, labeled
+PASS shoreline-hoodie: approved starting price $60
 PASS shoreline-hoodie: links to its own page
 PASS floral-butterfly-embroidered-hoodie: name
 PASS floral-butterfly-embroidered-hoodie: approved colors only, in order
-PASS floral-butterfly-embroidered-hoodie: provisional price $60, labeled
+PASS floral-butterfly-embroidered-hoodie: approved starting price $60
 PASS floral-butterfly-embroidered-hoodie: links to its own page
 PASS no Indigo Blue anywhere on the homepage
 PASS desktop grid is 3 columns
@@ -242,7 +242,8 @@ PASS no size-range text under the size keys (keys show it)
 PASS unavailable key is labeled for screen readers
 PASS Tees stop at 4XL (no 5XL key)
 PASS direct link with color and size preselects both
-PASS larger size shows the "price not set" note
+PASS price updates for the size: Shoreline 5XL is $66.00
+PASS larger-size price note lists the steps
 PASS switching to Heather Navy clears 5XL and explains why
 PASS invalid size in a direct link is ignored
 PASS photo placeholder is a clear, honest tile
@@ -254,8 +255,8 @@ PASS header cart count updates to 1
 PASS same variant merges into one line (qty 3)
 PASS cart count persists across pages
 PASS different variants stay separate lines (3 lines)
-PASS subtotal: 3x$30 + 2x$30 + 1x$60 = $210.00
-PASS larger size line shows the note
+PASS subtotal: 3x$30 + 2x$30 + 1x$62 (2XL) = $212.00
+PASS 2XL hoodie line is priced $62.00
 PASS increase updates qty and subtotal
 PASS focus stays on the increase button after update
 PASS typing a quantity then Tab moves focus on (not stuck)
@@ -365,4 +366,4 @@ PASS axe (incl. color contrast) cart.html: no violations
 PASS axe (incl. color contrast) field-notes.html: no violations
 PASS axe (incl. color contrast) preview-notes.html: no violations
 
-358 passed, 0 failed
+359 passed, 0 failed

@@ -10,6 +10,8 @@
   var bySlug = {};
   C.products.forEach(function (p) { bySlug[p.slug] = p; });
   var LARGE = C.largeSizes;
+  // approved prices: base price plus the size adjustment for 2XL and up
+  function unitCents(p, size) { return p.priceCents + ((C.sizeAdjustCents && C.sizeAdjustCents[size]) || 0); }
   var MAXQ = 10;
 
   function money(c) { return '$' + (c / 100).toFixed(2); }
@@ -238,7 +240,8 @@
       var q = '?color=' + c.slug + (state.size ? '&size=' + encodeURIComponent(state.size) : '');
       try { history.replaceState(history.state, '', location.pathname + q + location.hash); } catch (e) { /* file:// or sandbox */ }
     }
-    function sizeNote() { note.hidden = !(state.size && LARGE.indexOf(state.size) > -1); }
+    var priceEl = $('[data-price]', root);
+    function sizeNote() { priceEl.textContent = money(unitCents(p, state.size)); }
     function applyColor(name) {
       var c = colorOf(p, name); if (!c) return;
       state.color = c.name;
@@ -332,14 +335,14 @@
       var total = 0, count = 0;
       var items = lines.map(function (l) {
         var p = bySlug[l.slug], c = colorOf(p, l.color);
-        var lineTotal = p.priceCents * l.qty; total += lineTotal; count += l.qty;
+        var unit = unitCents(p, l.size), lineTotal = unit * l.qty; total += lineTotal; count += l.qty;
         var label = esc(p.name + ', ' + l.color + ', ' + l.size);
-        var big = LARGE.indexOf(l.size) > -1 ? '<p class="line__note">Larger-size price not set yet. Base price shown.</p>' : '';
+        var big = '';
         return '<li class="line" data-key="' + esc(key(l)) + '">' +
           '<a class="line__img" href="' + p.slug + '.html?color=' + c.slug + '&amp;size=' + encodeURIComponent(l.size) + '" tabindex="-1" aria-hidden="true"><img src="' + c.images[p.cardView] + '" alt="" width="900" height="900"></a>' +
           '<div><h2><a href="' + p.slug + '.html?color=' + c.slug + '&amp;size=' + encodeURIComponent(l.size) + '">' + esc(p.name) + '</a></h2>' +
           '<p class="line__meta">Color: ' + esc(l.color) + '. Size: ' + esc(l.size) + '.</p>' + big + '</div>' +
-          '<p class="line__price">' + money(lineTotal) + (l.qty > 1 ? '<br><span class="small">' + money(p.priceCents) + ' each</span>' : '') + '</p>' +
+          '<p class="line__price">' + money(lineTotal) + (l.qty > 1 ? '<br><span class="small">' + money(unit) + ' each</span>' : '') + '</p>' +
           '<div class="line__ctrls"><div class="qty">' +
           '<button type="button" class="icon-btn" data-act="dec" aria-label="Decrease quantity of ' + label + '"' + (l.qty <= 1 ? ' aria-disabled="true"' : '') + '>−</button>' +
           '<input type="number" inputmode="numeric" min="1" max="' + MAXQ + '" value="' + l.qty + '" data-act="set" aria-label="Quantity of ' + label + '">' +
@@ -348,7 +351,7 @@
       }).join('');
       root.innerHTML = '<ul class="lines">' + items + '</ul>' +
         '<div class="summary"><div class="summary__row"><span>Subtotal (<span data-count>' + count + (count === 1 ? ' item' : ' items') + '</span>)</span><span data-subtotal>' + money(total) + '</span></div>' +
-        '<p>Provisional preview prices. ' + esc(C.shippingNote) + ' Taxes are not calculated in the preview.</p>' +
+        '<p>' + esc(C.shippingNote) + ' Taxes are not calculated in the preview.</p>' +
         '<button class="btn btn--block" type="button" aria-disabled="true" aria-describedby="checkout-why" data-checkout>Checkout is off in this preview</button>' +
         '<p id="checkout-why">Nothing is charged and no order is made. Checkout opens only after the samples are approved and the real store is set up.</p>' +
         '<a class="text-link text-link--dark" href="index.html#shop">Keep shopping</a></div>';
@@ -362,13 +365,13 @@
       var total = 0, count = 0;
       readCart().forEach(function (l) {
         var p = bySlug[l.slug], li = root.querySelector('.line[data-key="' + key(l).replace(/"/g, '\\"') + '"]');
-        total += p.priceCents * l.qty; count += l.qty;
+        var unit = unitCents(p, l.size); total += unit * l.qty; count += l.qty;
         if (!li) return;
         var inp = li.querySelector('input[data-act=set]');
         if (inp && String(inp.value) !== String(l.qty)) inp.value = l.qty;
         li.querySelector('[data-act=dec]').setAttribute('aria-disabled', l.qty <= 1 ? 'true' : 'false');
         li.querySelector('[data-act=inc]').setAttribute('aria-disabled', l.qty >= MAXQ ? 'true' : 'false');
-        li.querySelector('.line__price').innerHTML = money(p.priceCents * l.qty) + (l.qty > 1 ? '<br><span class="small">' + money(p.priceCents) + ' each</span>' : '');
+        li.querySelector('.line__price').innerHTML = money(unit * l.qty) + (l.qty > 1 ? '<br><span class="small">' + money(unit) + ' each</span>' : '');
       });
       var sub = root.querySelector('[data-subtotal]'); if (sub) sub.textContent = money(total);
       var cnt = root.querySelector('[data-count]'); if (cnt) cnt.textContent = count + (count === 1 ? ' item' : ' items');

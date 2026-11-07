@@ -106,3 +106,9 @@ Updated: November 4, 2026.
 - **Approved:** the separated "v" and "y" in the option A wordmark, rebuilt from the font's own tops with the "y" and "pockets" moved 6.75 px right (`brand/v3/wordmark/`).
 - **Still open:** production vector cleanup by a designer before garments, embroidery, or print. The rest of the storefront preview is still under review.
 
+## Owner approval, November 7, 2026: storefront preview v3 and prices
+- **Approved:** the whole v3 storefront preview (`theme/v3/`), including the pebble loading icon and the hero review crops as the current treatment.
+- **Prices approved:** 30 dollars front-print tees, 40 Midnight Rock Hunt Tee, 60 hoodies, standard U.S. shipping included. Larger sizes on every product: 2XL plus 2, 3XL plus 4, 4XL and 5XL plus 6 (Brian picked even steps over exact cost matching).
+- **Still open:** sample approval, sample and lifestyle photos, production wordmark vector, story and policy copy, live stock check, email service, and Field Notes fact checks.
+- **Not authorized yet:** merging PR #5, deployment, or Shopify (Step 12 waits for sample approval).
+

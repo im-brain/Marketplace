@@ -71,7 +71,8 @@ const catalog = {
   snapshotDate: SNAP_DATE,
   sizeOrder: SIZE_ORDER,
   largeSizes: [...LARGE],
-  pricingStatus: 'provisional',
+  pricingStatus: 'approved',
+  sizeAdjustCents: PRICING.larger_size_adjustment.cents_by_size,
   shippingNote: PRICING.shipping_note,
   products: products.map((p) => ({
     slug: p.slug, name: p.name, kind: p.kind, priceCents: p.priceCents, cardView: p.cardView,
@@ -125,7 +126,7 @@ function header(page) {
     `<li><a href="${href}"${k === page ? ' aria-current="page"' : ''}>${label}</a></li>`).join('');
   return `<a class="skip" href="#main">Skip to content</a>
 <header class="site-head">
-  <p class="banner"><span class="banner__long">Private preview. Nothing is for sale yet, prices are provisional, and checkout is off.</span><span class="banner__short">Private preview. Checkout is off.</span></p>
+  <p class="banner"><span class="banner__long">Private preview. Nothing is for sale yet, and checkout is off.</span><span class="banner__short">Private preview. Checkout is off.</span></p>
   <div class="site-head__in">
     <a class="brand" href="index.html" aria-label="heavy pockets, home">${WORDMARK}</a>
     <nav class="site-nav" aria-label="Main">
@@ -209,7 +210,7 @@ function card(p) {
   <div class="card__body">
     <h3><a href="${p.slug}.html" data-card-link>${esc(p.name)}</a></h3>
     <p class="card__blurb">${esc(p.blurb)}</p>
-    <p class="price">${money(p.priceCents)} <span>preview price</span></p>
+    <p class="price"><span>From</span> ${money(p.priceCents)}</p>
     ${swatchFieldset(p, 'c-' + p.slug, 'swatches')}
     <p class="sw-name"><span class="visually-hidden">Selected color: </span><span data-color-name>${esc(c.name)}</span></p>
     <a class="more" href="${p.slug}.html" data-card-link>See details<span class="visually-hidden"> for ${esc(p.name)}</span>${ICON.arrow}</a>
@@ -257,7 +258,7 @@ ${wetSel('.wet__base img')}{filter:none!important}</style>
   <ul class="cards">
 ${products.map(card).join('\n')}
   </ul>
-  <p class="shop__note">Prices are provisional preview prices. Final prices are not approved yet. Photos are mockups until the finished pieces are photographed.</p>
+  <p class="shop__note">Standard U.S. shipping is included. Sizes 2XL and up cost a little more. Photos are mockups until the finished pieces are photographed.</p>
 </section>
 
 <section class="win win--teal story" id="story" aria-labelledby="story-h">
@@ -307,6 +308,9 @@ function viewLabel(v) {
 }
 
 function productPage(p) {
+  const adj = PRICING.larger_size_adjustment.cents_by_size;
+  const bigs = p.sizesOffered.filter((s) => adj[s]);
+  const sizeLine = bigs.length ? 'Larger sizes cost a little more: ' + bigs.map((s) => `${s} +${moneyShort(adj[s])}`).join(', ').replace(/, ([^,]*)$/, bigs.length > 2 ? ', and $1' : ' and $1') + '.' : '';
   const c = p.colors[0];
   const first = p.cardView; // open on the view that shows the main artwork
   const views = [first, ...p.views.filter((v) => v !== first)].filter((v) => c.images[v]);
@@ -348,9 +352,9 @@ function productPage(p) {
     <div class="buy">
       <h1 id="pdp-h">${esc(p.name)}</h1>
       <p class="pdp__blurb">${esc(p.blurb)}</p>
-      <p class="price price--lg"><span data-price>${money(p.priceCents)}</span> <span class="prov-tag">Provisional</span></p>
-      <p class="price-sub">Preview price, not final. The proposal includes standard U.S. shipping.</p>
-      <p class="price-sub price-sub--warn" data-size-note hidden>Price for larger sizes is not set yet. The preview uses the base price.</p>
+      <p class="price price--lg"><span data-price>${money(p.priceCents)}</span></p>
+      <p class="price-sub">Standard U.S. shipping included.</p>
+      <p class="price-sub" data-size-note>${esc(sizeLine)}</p>
 
       <form class="buy-form" novalidate data-buy>
         <fieldset class="opts" aria-describedby="color-now">
@@ -506,7 +510,7 @@ const previewNotes = layout({
   <div class="bar"><span>Preview notes</span><span class="ctrls" aria-hidden="true"><i></i><i></i></span></div>
   <div class="review__in">
     <h1 id="rev-h">Preview notes for Brian</h1>
-    <p class="lede">What is real, what is provisional, and what still needs a decision. Shoppers will never see this page.</p>
+    <p class="lede">What is approved, what is provisional, and what still needs a decision. Shoppers will never see this page.</p>
 
     <h2>New wordmark (option A)</h2>
     <div class="marks">
@@ -514,21 +518,21 @@ const previewNotes = layout({
       <figure class="mark mark--light">${WORDMARK}<figcaption>Primary: deep teal on light</figcaption></figure>
       <figure class="mark mark--light mark--duo"><img src="assets/wordmark-teal-rust.svg" alt="heavy pockets wordmark in teal and rust"><figcaption>Secondary: teal and rust</figcaption></figure>
     </div>
-    <p><strong>Status: provisional.</strong> Traced from option A of the comparison board (a 1536 px raster), with the "v" and "y" separated at your request. The trace matches the source pixels closely (98% overlap), but it is not finished production art. A designer should clean the curves, even out stroke weights, and check spacing before use on garments, signage, or embroidery.</p>
+    <p><strong>Status: approved for the website (Nov 7, 2026).</strong> Traced from option A of the comparison board (a 1536 px raster), with the "v" and "y" separated at your request. The trace matches the source pixels closely (98% overlap), but it is not finished production art. A designer should clean the curves, even out stroke weights, and check spacing before use on garments, signage, or embroidery.</p>
 
-    <h2>Loading icon (provisional)</h2>
+    <h2>Loading icon (approved Nov 7, 2026)</h2>
     <div class="loader-demo">
       <div>${LOADER('Loading', false)}<p class="small">Animated: three pebbles get wet one at a time.</p></div>
       <div class="loader-static">${LOADER('Loading', false)}<p class="small">Reduced motion: still, no animation.</p></div>
     </div>
-    <p>Shown only while something is actually loading (product photos, the gallery, the cart), and only after a short delay, so fast pages never flash it. Not an approved mascot or final illustration.</p>
+    <p>Shown only while something is actually loading (product photos, the gallery, the cart), and only after a short delay, so fast pages never flash it.</p>
 
     <h2>Hero</h2>
     <p>The approved desktop and mobile masters still have the old logo and tagline baked in. This preview uses <strong>review crops</strong> that leave the old branding out and keep the sunset, lighthouse, and featured stones. The masters are untouched. For final use, ask for clean, logo-free versions of both images from the original art source.</p>
 
-    <h2>Provisional prices</h2>
+    <h2>Prices (approved Nov 7, 2026)</h2>
     <table class="tbl"><thead><tr><th>Tier</th><th>Preview price</th></tr></thead><tbody>${priceRows}</tbody></table>
-    <p>${esc(PRICING.shipping_note)} Larger-size adjustments (2XL and up) are not set, so the preview charges the base price for every size and says so.</p>
+    <p>${esc(PRICING.shipping_note)} Larger sizes: 2XL +$2, 3XL +$4, 4XL and 5XL +$6, on every product.</p>
 
     <h2>Availability</h2>
     <p>Size and color combinations come from Printify product data captured ${SNAP_DATE}. Printify marked Yam / 4XL (Great Lakes Rock Crew) and Violet / 4XL (Pocket Full of Treasures) unavailable, so the preview disables them. Earlier Shoreline Hoodie stock exceptions did not show in this data, so treat Shoreline availability as unverified. Nothing here is live stock.</p>

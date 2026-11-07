@@ -1,0 +1,343 @@
+PASS page index.html loads (200)
+PASS page index.html: no broken images
+PASS page index.html: every link has an href
+PASS page cart.html loads (200)
+PASS page cart.html: no broken images
+PASS page cart.html: every link has an href
+PASS page field-notes.html loads (200)
+PASS page field-notes.html: no broken images
+PASS page field-notes.html: every link has an href
+PASS page preview-notes.html loads (200)
+PASS page preview-notes.html: no broken images
+PASS page preview-notes.html: every link has an href
+PASS page midnight-rock-hunt-tee.html loads (200)
+PASS page midnight-rock-hunt-tee.html: no broken images
+PASS page midnight-rock-hunt-tee.html: every link has an href
+PASS page great-lakes-rock-crew-tee.html loads (200)
+PASS page great-lakes-rock-crew-tee.html: no broken images
+PASS page great-lakes-rock-crew-tee.html: every link has an href
+PASS page field-notebook-tee.html loads (200)
+PASS page field-notebook-tee.html: no broken images
+PASS page field-notebook-tee.html: every link has an href
+PASS page pocket-full-of-treasures-tee.html loads (200)
+PASS page pocket-full-of-treasures-tee.html: no broken images
+PASS page pocket-full-of-treasures-tee.html: every link has an href
+PASS page shoreline-hoodie.html loads (200)
+PASS page shoreline-hoodie.html: no broken images
+PASS page shoreline-hoodie.html: every link has an href
+PASS page floral-butterfly-embroidered-hoodie.html loads (200)
+PASS page floral-butterfly-embroidered-hoodie.html: no broken images
+PASS page floral-butterfly-embroidered-hoodie.html: every link has an href
+PASS resource assets/brand-tokens.css exists
+PASS resource assets/site.css exists
+PASS resource img/hero/shore-wide.webp exists
+PASS resource img/hero/shore-tall.webp exists
+PASS resource index.html exists
+PASS resource field-notes.html exists
+PASS resource cart.html exists
+PASS resource img/hero/shore-tall.jpg exists
+PASS resource img/hero/shore-wide.jpg exists
+PASS resource midnight-rock-hunt-tee.html exists
+PASS resource img/products/midnight-rock-hunt-tee/graphite-back.webp exists
+PASS resource great-lakes-rock-crew-tee.html exists
+PASS resource img/products/great-lakes-rock-crew-tee/bay-front.webp exists
+PASS resource field-notebook-tee.html exists
+PASS resource img/products/field-notebook-tee/pepper-front.webp exists
+PASS resource pocket-full-of-treasures-tee.html exists
+PASS resource img/products/pocket-full-of-treasures-tee/blue-jean-front.webp exists
+PASS resource shoreline-hoodie.html exists
+PASS resource img/products/shoreline-hoodie/dark-heather-back.webp exists
+PASS resource floral-butterfly-embroidered-hoodie.html exists
+PASS resource img/products/floral-butterfly-embroidered-hoodie/light-blue-front.webp exists
+PASS resource preview-notes.html exists
+PASS resource assets/catalog.js exists
+PASS resource assets/site.js exists
+PASS resource img/stones/petoskey-dry.webp exists
+PASS resource img/stones/petoskey-wet.webp exists
+PASS resource img/stones/agate-hero-dry.webp exists
+PASS resource img/stones/agate-hero-wet.webp exists
+PASS resource img/stones/jasper-dry.webp exists
+PASS resource img/stones/jasper-wet.webp exists
+PASS resource img/stones/leland-dry.webp exists
+PASS resource img/stones/leland-wet.webp exists
+PASS resource assets/wordmark-teal-rust.svg exists
+PASS resource img/products/midnight-rock-hunt-tee/graphite-front.webp exists
+PASS resource img/products/midnight-rock-hunt-tee/graphite-flatlay.webp exists
+PASS resource img/products/midnight-rock-hunt-tee/graphite-folded.webp exists
+PASS resource img/art/02-midnight-back-4200x4800.webp exists
+PASS resource img/art/01-midnight-front-4200x4800.webp exists
+PASS resource img/size-chart-tee.webp exists
+PASS resource img/products/great-lakes-rock-crew-tee/bay-back.webp exists
+PASS resource img/products/great-lakes-rock-crew-tee/bay-flatlay.webp exists
+PASS resource img/products/great-lakes-rock-crew-tee/bay-folded.webp exists
+PASS resource img/art/03-rock-crew-front-4200x4800.webp exists
+PASS resource img/products/field-notebook-tee/pepper-back.webp exists
+PASS resource img/products/field-notebook-tee/pepper-flatlay.webp exists
+PASS resource img/products/field-notebook-tee/pepper-folded.webp exists
+PASS resource img/art/04-field-notebook-front-4200x4800.webp exists
+PASS resource img/products/pocket-full-of-treasures-tee/blue-jean-back.webp exists
+PASS resource img/products/pocket-full-of-treasures-tee/blue-jean-flatlay.webp exists
+PASS resource img/products/pocket-full-of-treasures-tee/blue-jean-folded.webp exists
+PASS resource img/art/05-pocket-front-4200x4800.webp exists
+PASS resource img/products/shoreline-hoodie/dark-heather-front.webp exists
+PASS resource img/products/shoreline-hoodie/dark-heather-back-hood.webp exists
+PASS resource img/products/shoreline-hoodie/dark-heather-folded.webp exists
+PASS resource img/art/shoreline-hoodie-back.webp exists
+PASS resource img/art/shoreline-hoodie-front.webp exists
+PASS resource img/size-chart-hoodie.webp exists
+PASS resource img/products/floral-butterfly-embroidered-hoodie/light-blue-back.webp exists
+PASS resource img/products/floral-butterfly-embroidered-hoodie/light-blue-back-hood.webp exists
+PASS resource img/products/floral-butterfly-embroidered-hoodie/light-blue-folded.webp exists
+PASS resource img/art/embroidery.webp exists
+PASS no requests to outside hosts except Google Fonts
+PASS six product cards in brief order
+PASS midnight-rock-hunt-tee: name
+PASS midnight-rock-hunt-tee: approved colors only, in order
+PASS midnight-rock-hunt-tee: provisional price $40, labeled
+PASS midnight-rock-hunt-tee: links to its own page
+PASS great-lakes-rock-crew-tee: name
+PASS great-lakes-rock-crew-tee: approved colors only, in order
+PASS great-lakes-rock-crew-tee: provisional price $30, labeled
+PASS great-lakes-rock-crew-tee: links to its own page
+PASS field-notebook-tee: name
+PASS field-notebook-tee: approved colors only, in order
+PASS field-notebook-tee: provisional price $30, labeled
+PASS field-notebook-tee: links to its own page
+PASS pocket-full-of-treasures-tee: name
+PASS pocket-full-of-treasures-tee: approved colors only, in order
+PASS pocket-full-of-treasures-tee: provisional price $30, labeled
+PASS pocket-full-of-treasures-tee: links to its own page
+PASS shoreline-hoodie: name
+PASS shoreline-hoodie: approved colors only, in order
+PASS shoreline-hoodie: provisional price $60, labeled
+PASS shoreline-hoodie: links to its own page
+PASS floral-butterfly-embroidered-hoodie: name
+PASS floral-butterfly-embroidered-hoodie: approved colors only, in order
+PASS floral-butterfly-embroidered-hoodie: provisional price $60, labeled
+PASS floral-butterfly-embroidered-hoodie: links to its own page
+PASS no Indigo Blue anywhere on the homepage
+PASS desktop grid is 3 columns
+PASS no dev labels (READY, STAND-IN, file names) in the shop
+PASS standalone wet-stone lab removed from homepage
+PASS swatch click swaps the card image to that color
+PASS swatch click carries the color to the product link
+PASS both wet layers use the same image (no altered art)
+PASS resting card is gently muted (saturate filter)
+PASS hover starts a moving splash (polygon clip mid-animation)
+PASS after hover: full color, clip removed, button pressed
+PASS keyboard focus reveals the card
+PASS focused link shows a visible gold outline
+PASS "Wet it" button reveals the card
+PASS changing color on a wet card keeps it in full color
+PASS reveal stored per product for this visit (sessionStorage)
+PASS image click opens the product page with the chosen color
+PASS product page image is true full color immediately (no filter)
+PASS product page opens with the chosen color
+PASS browser Back: revealed card is still full color
+PASS reload: revealed card is full color before scripts run
+PASS reload: untouched card is still muted
+PASS a new visit starts muted again (session only)
+PASS no script errors (desktop reveal)
+PASS phone grid is 2 columns
+PASS touch swipe across a product image scrolls the page natively
+PASS touch swipe does not open the product page
+PASS touch contact during the scroll reveals the card
+PASS touch cancel: card revealed, no navigation, nothing stuck
+PASS touchstart is never preventDefault-ed
+PASS a deliberate tap on the image opens the product page
+PASS phone Back: card tapped earlier is full color
+PASS no script errors (phone)
+PASS midnight-rock-hunt-tee: h1
+PASS midnight-rock-hunt-tee/Graphite: gallery images all match the color
+PASS midnight-rock-hunt-tee/Graphite: URL keeps the color
+PASS midnight-rock-hunt-tee/Black: gallery images all match the color
+PASS midnight-rock-hunt-tee/Black: URL keeps the color
+PASS midnight-rock-hunt-tee/Navy: gallery images all match the color
+PASS midnight-rock-hunt-tee/Navy: URL keeps the color
+PASS midnight-rock-hunt-tee: front and back views present
+PASS midnight-rock-hunt-tee: artwork close-up present
+PASS great-lakes-rock-crew-tee: h1
+PASS great-lakes-rock-crew-tee/Bay: gallery images all match the color
+PASS great-lakes-rock-crew-tee/Bay: URL keeps the color
+PASS great-lakes-rock-crew-tee/Blue Jean: gallery images all match the color
+PASS great-lakes-rock-crew-tee/Blue Jean: URL keeps the color
+PASS great-lakes-rock-crew-tee/Moss: gallery images all match the color
+PASS great-lakes-rock-crew-tee/Moss: URL keeps the color
+PASS great-lakes-rock-crew-tee/Yam: gallery images all match the color
+PASS great-lakes-rock-crew-tee/Yam: URL keeps the color
+PASS great-lakes-rock-crew-tee/Watermelon: gallery images all match the color
+PASS great-lakes-rock-crew-tee/Watermelon: URL keeps the color
+PASS great-lakes-rock-crew-tee: front and back views present
+PASS great-lakes-rock-crew-tee: artwork close-up present
+PASS field-notebook-tee: h1
+PASS field-notebook-tee/Pepper: gallery images all match the color
+PASS field-notebook-tee/Pepper: URL keeps the color
+PASS field-notebook-tee/Graphite: gallery images all match the color
+PASS field-notebook-tee/Graphite: URL keeps the color
+PASS field-notebook-tee/Navy: gallery images all match the color
+PASS field-notebook-tee/Navy: URL keeps the color
+PASS field-notebook-tee: front and back views present
+PASS field-notebook-tee: artwork close-up present
+PASS pocket-full-of-treasures-tee: h1
+PASS pocket-full-of-treasures-tee/Blue Jean: gallery images all match the color
+PASS pocket-full-of-treasures-tee/Blue Jean: URL keeps the color
+PASS pocket-full-of-treasures-tee/Light Green: gallery images all match the color
+PASS pocket-full-of-treasures-tee/Light Green: URL keeps the color
+PASS pocket-full-of-treasures-tee/Blue Spruce: gallery images all match the color
+PASS pocket-full-of-treasures-tee/Blue Spruce: URL keeps the color
+PASS pocket-full-of-treasures-tee/Flo Blue: gallery images all match the color
+PASS pocket-full-of-treasures-tee/Flo Blue: URL keeps the color
+PASS pocket-full-of-treasures-tee/Violet: gallery images all match the color
+PASS pocket-full-of-treasures-tee/Violet: URL keeps the color
+PASS pocket-full-of-treasures-tee: front and back views present
+PASS pocket-full-of-treasures-tee: artwork close-up present
+PASS shoreline-hoodie: h1
+PASS shoreline-hoodie/Dark Heather: gallery images all match the color
+PASS shoreline-hoodie/Dark Heather: URL keeps the color
+PASS shoreline-hoodie/Heather Navy: gallery images all match the color
+PASS shoreline-hoodie/Heather Navy: URL keeps the color
+PASS shoreline-hoodie/Charcoal: gallery images all match the color
+PASS shoreline-hoodie/Charcoal: URL keeps the color
+PASS shoreline-hoodie/Black: gallery images all match the color
+PASS shoreline-hoodie/Black: URL keeps the color
+PASS shoreline-hoodie/Navy: gallery images all match the color
+PASS shoreline-hoodie/Navy: URL keeps the color
+PASS shoreline-hoodie/Purple: gallery images all match the color
+PASS shoreline-hoodie/Purple: URL keeps the color
+PASS shoreline-hoodie: front and back views present
+PASS shoreline-hoodie: artwork close-up present
+PASS floral-butterfly-embroidered-hoodie: h1
+PASS floral-butterfly-embroidered-hoodie/Light Blue: gallery images all match the color
+PASS floral-butterfly-embroidered-hoodie/Light Blue: URL keeps the color
+PASS floral-butterfly-embroidered-hoodie/Sand: gallery images all match the color
+PASS floral-butterfly-embroidered-hoodie/Sand: URL keeps the color
+PASS floral-butterfly-embroidered-hoodie/Light Pink: gallery images all match the color
+PASS floral-butterfly-embroidered-hoodie/Light Pink: URL keeps the color
+PASS floral-butterfly-embroidered-hoodie: front and back views present
+PASS floral-butterfly-embroidered-hoodie: artwork close-up present
+PASS Shoreline Heather Navy stops at 3XL
+PASS Shoreline Black offers S to 5XL
+PASS Embroidered Sand stops at 3XL
+PASS Embroidered Light Pink has 5XL but no 4XL
+PASS Embroidered Light Blue offers S to 5XL
+PASS Rock Crew Yam / 4XL disabled (Printify unavailable)
+PASS Pocket Violet / 4XL disabled (Printify unavailable)
+PASS Tees stop at 4XL (no 5XL key)
+PASS direct link with color and size preselects both
+PASS larger size shows the "price not set" note
+PASS switching to Heather Navy clears 5XL and explains why
+PASS invalid size in a direct link is ignored
+PASS photo placeholder is a clear, honest tile
+PASS artwork close-up opens in the main viewer
+PASS "Back to the collection" returns to that card
+PASS no add without a size: clear error
+PASS add: confirmation names the variant
+PASS header cart count updates to 1
+PASS same variant merges into one line (qty 3)
+PASS cart count persists across pages
+PASS different variants stay separate lines (3 lines)
+PASS subtotal: 3x$30 + 2x$30 + 1x$60 = $210.00
+PASS larger size line shows the note
+PASS increase updates qty and subtotal
+PASS focus stays on the increase button after update
+PASS typed quantity is capped at 10
+PASS remove deletes that line only
+PASS checkout is visibly disabled with an explanation
+PASS clicking checkout goes nowhere
+PASS empty state with a way back to the shop
+PASS header count is 0 when empty
+PASS invalid stored lines are dropped, qty clamped
+PASS no script errors (cart)
+PASS signup: empty email shows an error
+PASS signup: invalid email shows an error
+PASS signup: valid email gets an honest preview message, not "subscribed"
+PASS signup: no network request sent
+PASS signup: nothing saved in storage
+PASS image failure: every card shows a readable fallback with a link
+PASS image failure on product page shows a message
+PASS storage blocked: cart explains it only lasts this page
+PASS storage blocked: add still works in memory
+PASS storage blocked: reveal still works on the page
+PASS no script errors (failure states)
+PASS reduced motion: products are full color immediately, no animation
+PASS reduced motion: "Wet it" button hidden (nothing to do)
+PASS reduced motion: loader is static
+PASS loader hidden for the first moment (no flash on fast loads)
+PASS loader visible while a slow image loads
+PASS loader removed once the image loads
+PASS loader has status text for screen readers
+PASS phone-320 index.html: no horizontal scroll
+PASS phone-320 shoreline-hoodie.html: no horizontal scroll
+PASS phone-320 cart.html: no horizontal scroll
+PASS phone-320 field-notes.html: no horizontal scroll
+PASS phone-320: hero shows the whole sunset
+PASS phone-320: hero shows the lighthouse
+PASS phone-320: hero image is shorter than before (<= 62% of screen or 460px)
+INFO phone-320: collection starts at 606px (screen height 640)
+PASS phone-375 index.html: no horizontal scroll
+PASS phone-375 shoreline-hoodie.html: no horizontal scroll
+PASS phone-375 cart.html: no horizontal scroll
+PASS phone-375 field-notes.html: no horizontal scroll
+PASS phone-375: hero shows the whole sunset
+PASS phone-375: hero shows the lighthouse
+PASS phone-375: hero image is shorter than before (<= 62% of screen or 460px)
+INFO phone-375: collection starts at 630px (screen height 667)
+PASS phone-390 index.html: no horizontal scroll
+PASS phone-390 shoreline-hoodie.html: no horizontal scroll
+PASS phone-390 cart.html: no horizontal scroll
+PASS phone-390 field-notes.html: no horizontal scroll
+PASS phone-390: hero shows the whole sunset
+PASS phone-390: hero shows the lighthouse
+PASS phone-390: hero image is shorter than before (<= 62% of screen or 460px)
+INFO phone-390: collection starts at 630px (screen height 664)
+PASS phone-landscape-844 index.html: no horizontal scroll
+PASS phone-landscape-844 shoreline-hoodie.html: no horizontal scroll
+PASS phone-landscape-844 cart.html: no horizontal scroll
+PASS phone-landscape-844 field-notes.html: no horizontal scroll
+PASS phone-landscape-844: hero shows the whole sunset
+PASS phone-landscape-844: hero shows the lighthouse
+PASS phone-landscape-844: hero image is shorter than before (<= 62% of screen or 460px)
+INFO phone-landscape-844: collection starts at 423px (screen height 342)
+PASS tablet-768 index.html: no horizontal scroll
+PASS tablet-768 shoreline-hoodie.html: no horizontal scroll
+PASS tablet-768 cart.html: no horizontal scroll
+PASS tablet-768 field-notes.html: no horizontal scroll
+PASS tablet-768: hero shows the whole sunset
+PASS tablet-768: hero shows the lighthouse
+PASS tablet-768: hero image is shorter than before (<= 62% of screen or 460px)
+INFO tablet-768: collection starts at 788px (screen height 1024)
+PASS tablet-1024 index.html: no horizontal scroll
+PASS tablet-1024 shoreline-hoodie.html: no horizontal scroll
+PASS tablet-1024 cart.html: no horizontal scroll
+PASS tablet-1024 field-notes.html: no horizontal scroll
+PASS tablet-1024: hero shows the whole sunset
+PASS tablet-1024: hero shows the lighthouse
+PASS tablet-1024: hero image is shorter than before (<= 62% of screen or 460px)
+INFO tablet-1024: collection starts at 541px (screen height 768)
+PASS desktop-1440 index.html: no horizontal scroll
+PASS desktop-1440 shoreline-hoodie.html: no horizontal scroll
+PASS desktop-1440 cart.html: no horizontal scroll
+PASS desktop-1440 field-notes.html: no horizontal scroll
+PASS desktop-1440: hero shows the whole sunset
+PASS desktop-1440: hero shows the lighthouse
+PASS desktop-1440: hero image is shorter than before (<= 62% of screen or 460px)
+INFO desktop-1440: collection starts at 607px (screen height 900)
+PASS zoom200-of-1280 index.html: no horizontal scroll
+PASS zoom200-of-1280 shoreline-hoodie.html: no horizontal scroll
+PASS zoom200-of-1280 cart.html: no horizontal scroll
+PASS zoom200-of-1280 field-notes.html: no horizontal scroll
+PASS zoom200-of-1280: hero shows the whole sunset
+PASS zoom200-of-1280: hero shows the lighthouse
+PASS zoom200-of-1280: hero image is shorter than before (<= 62% of screen or 460px)
+INFO zoom200-of-1280: collection starts at 479px (screen height 400)
+PASS first Tab reaches "Skip to content"
+PASS keyboard reaches the first product title link
+PASS keyboard focus on the card revealed it
+PASS keyboard only: choose size and add to cart
+PASS axe (incl. color contrast) index.html: no violations
+PASS axe (incl. color contrast) midnight-rock-hunt-tee.html?color=black: no violations
+PASS axe (incl. color contrast) cart.html: no violations
+PASS axe (incl. color contrast) field-notes.html: no violations
+PASS axe (incl. color contrast) preview-notes.html: no violations
+
+333 passed, 0 failed

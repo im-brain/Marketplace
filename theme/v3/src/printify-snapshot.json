@@ -1,0 +1,1713 @@
+{
+ "source": "Printify shop 29566047, read-only GET",
+ "captured": "2026-11-07",
+ "products": {
+  "shoreline-hoodie": {
+   "printify_id": "6aed5b31258438e5f0070465",
+   "printify_title": "Heavy Pockets \u2014 Shoreline Hoodie",
+   "blueprint_id": 77,
+   "print_provider_id": 29,
+   "variants": [
+    {
+     "id": 32878,
+     "color": "Dark Heather",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 32879,
+     "color": "Dark Heather",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 32880,
+     "color": "Dark Heather",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 32881,
+     "color": "Dark Heather",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 32882,
+     "color": "Dark Heather",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 3304,
+     "printify_price_cents": 5507
+    },
+    {
+     "id": 32883,
+     "color": "Dark Heather",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 3432,
+     "printify_price_cents": 5720
+    },
+    {
+     "id": 32884,
+     "color": "Dark Heather",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 3487,
+     "printify_price_cents": 5812
+    },
+    {
+     "id": 32885,
+     "color": "Dark Heather",
+     "size": "5XL",
+     "printify_available": true,
+     "cost_cents": 3487,
+     "printify_price_cents": 5812
+    },
+    {
+     "id": 32894,
+     "color": "Navy",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 32895,
+     "color": "Navy",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 32896,
+     "color": "Navy",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 32897,
+     "color": "Navy",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 32898,
+     "color": "Navy",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 3304,
+     "printify_price_cents": 5507
+    },
+    {
+     "id": 32899,
+     "color": "Navy",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 3432,
+     "printify_price_cents": 5720
+    },
+    {
+     "id": 32900,
+     "color": "Navy",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 3487,
+     "printify_price_cents": 5812
+    },
+    {
+     "id": 32901,
+     "color": "Navy",
+     "size": "5XL",
+     "printify_available": true,
+     "cost_cents": 3487,
+     "printify_price_cents": 5812
+    },
+    {
+     "id": 32918,
+     "color": "Black",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 32919,
+     "color": "Black",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 32920,
+     "color": "Black",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 32921,
+     "color": "Black",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 32922,
+     "color": "Black",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 3304,
+     "printify_price_cents": 5507
+    },
+    {
+     "id": 32923,
+     "color": "Black",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 3432,
+     "printify_price_cents": 5720
+    },
+    {
+     "id": 32924,
+     "color": "Black",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 3487,
+     "printify_price_cents": 5812
+    },
+    {
+     "id": 32925,
+     "color": "Black",
+     "size": "5XL",
+     "printify_available": true,
+     "cost_cents": 3487,
+     "printify_price_cents": 5812
+    },
+    {
+     "id": 33377,
+     "color": "Purple",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 33378,
+     "color": "Purple",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 33379,
+     "color": "Purple",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 33380,
+     "color": "Purple",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 33381,
+     "color": "Purple",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 3304,
+     "printify_price_cents": 5507
+    },
+    {
+     "id": 33382,
+     "color": "Purple",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 3432,
+     "printify_price_cents": 5720
+    },
+    {
+     "id": 33383,
+     "color": "Purple",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 3487,
+     "printify_price_cents": 5812
+    },
+    {
+     "id": 33384,
+     "color": "Purple",
+     "size": "5XL",
+     "printify_available": true,
+     "cost_cents": 3487,
+     "printify_price_cents": 5812
+    },
+    {
+     "id": 42211,
+     "color": "Charcoal",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 42212,
+     "color": "Charcoal",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 42213,
+     "color": "Charcoal",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 42214,
+     "color": "Charcoal",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 42215,
+     "color": "Charcoal",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 3304,
+     "printify_price_cents": 5507
+    },
+    {
+     "id": 42216,
+     "color": "Charcoal",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 3432,
+     "printify_price_cents": 5720
+    },
+    {
+     "id": 42217,
+     "color": "Charcoal",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 3487,
+     "printify_price_cents": 5812
+    },
+    {
+     "id": 42218,
+     "color": "Charcoal",
+     "size": "5XL",
+     "printify_available": true,
+     "cost_cents": 3487,
+     "printify_price_cents": 5812
+    },
+    {
+     "id": 66363,
+     "color": "Heather Navy",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 66364,
+     "color": "Heather Navy",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 66365,
+     "color": "Heather Navy",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 66366,
+     "color": "Heather Navy",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 3079,
+     "printify_price_cents": 5132
+    },
+    {
+     "id": 66367,
+     "color": "Heather Navy",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 3304,
+     "printify_price_cents": 5507
+    },
+    {
+     "id": 66368,
+     "color": "Heather Navy",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 3432,
+     "printify_price_cents": 5720
+    }
+   ],
+   "images": {
+    "Charcoal": {
+     "front": "img/products/shoreline-hoodie/charcoal-front.webp",
+     "back": "img/products/shoreline-hoodie/charcoal-back.webp",
+     "back-hood": "img/products/shoreline-hoodie/charcoal-back-hood.webp",
+     "folded": "img/products/shoreline-hoodie/charcoal-folded.webp"
+    },
+    "Black": {
+     "front": "img/products/shoreline-hoodie/black-front.webp",
+     "back": "img/products/shoreline-hoodie/black-back.webp",
+     "back-hood": "img/products/shoreline-hoodie/black-back-hood.webp",
+     "folded": "img/products/shoreline-hoodie/black-folded.webp"
+    },
+    "Dark Heather": {
+     "front": "img/products/shoreline-hoodie/dark-heather-front.webp",
+     "back": "img/products/shoreline-hoodie/dark-heather-back.webp",
+     "back-hood": "img/products/shoreline-hoodie/dark-heather-back-hood.webp",
+     "folded": "img/products/shoreline-hoodie/dark-heather-folded.webp"
+    },
+    "Navy": {
+     "front": "img/products/shoreline-hoodie/navy-front.webp",
+     "back": "img/products/shoreline-hoodie/navy-back.webp",
+     "back-hood": "img/products/shoreline-hoodie/navy-back-hood.webp",
+     "folded": "img/products/shoreline-hoodie/navy-folded.webp"
+    },
+    "Heather Navy": {
+     "front": "img/products/shoreline-hoodie/heather-navy-front.webp",
+     "back": "img/products/shoreline-hoodie/heather-navy-back.webp",
+     "back-hood": "img/products/shoreline-hoodie/heather-navy-back-hood.webp",
+     "folded": "img/products/shoreline-hoodie/heather-navy-folded.webp"
+    },
+    "Purple": {
+     "front": "img/products/shoreline-hoodie/purple-front.webp",
+     "back": "img/products/shoreline-hoodie/purple-back.webp",
+     "back-hood": "img/products/shoreline-hoodie/purple-back-hood.webp",
+     "folded": "img/products/shoreline-hoodie/purple-folded.webp"
+    }
+   },
+   "swatches": {
+    "Charcoal": "#535154",
+    "Black": "#202020",
+    "Dark Heather": "#414141",
+    "Navy": "#20273A",
+    "Heather Navy": "#5D5F74",
+    "Purple": "#3D244C"
+   }
+  },
+  "floral-butterfly-embroidered-hoodie": {
+   "printify_id": "6aed59eda33f458524013eb9",
+   "printify_title": "Heavy Pockets \u2014 Floral Butterfly Embroidered Hoodie",
+   "blueprint_id": 77,
+   "print_provider_id": 410,
+   "variants": [
+    {
+     "id": 42148,
+     "color": "Light Pink",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 3029,
+     "printify_price_cents": 5048
+    },
+    {
+     "id": 42149,
+     "color": "Light Pink",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 3029,
+     "printify_price_cents": 5048
+    },
+    {
+     "id": 42150,
+     "color": "Light Pink",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 3029,
+     "printify_price_cents": 5048
+    },
+    {
+     "id": 42151,
+     "color": "Light Pink",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 3029,
+     "printify_price_cents": 5048
+    },
+    {
+     "id": 42152,
+     "color": "Light Pink",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 3251,
+     "printify_price_cents": 5418
+    },
+    {
+     "id": 42153,
+     "color": "Light Pink",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 3474,
+     "printify_price_cents": 5790
+    },
+    {
+     "id": 42155,
+     "color": "Light Pink",
+     "size": "5XL",
+     "printify_available": true,
+     "cost_cents": 3920,
+     "printify_price_cents": 6533
+    },
+    {
+     "id": 42164,
+     "color": "Sand",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 3029,
+     "printify_price_cents": 5048
+    },
+    {
+     "id": 42165,
+     "color": "Sand",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 3029,
+     "printify_price_cents": 5048
+    },
+    {
+     "id": 42166,
+     "color": "Sand",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 3029,
+     "printify_price_cents": 5048
+    },
+    {
+     "id": 42167,
+     "color": "Sand",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 3029,
+     "printify_price_cents": 5048
+    },
+    {
+     "id": 42168,
+     "color": "Sand",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 3251,
+     "printify_price_cents": 5418
+    },
+    {
+     "id": 42169,
+     "color": "Sand",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 3474,
+     "printify_price_cents": 5790
+    },
+    {
+     "id": 42235,
+     "color": "Light Blue",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 3029,
+     "printify_price_cents": 5048
+    },
+    {
+     "id": 42236,
+     "color": "Light Blue",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 3029,
+     "printify_price_cents": 5048
+    },
+    {
+     "id": 42237,
+     "color": "Light Blue",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 3029,
+     "printify_price_cents": 5048
+    },
+    {
+     "id": 42238,
+     "color": "Light Blue",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 3029,
+     "printify_price_cents": 5048
+    },
+    {
+     "id": 42239,
+     "color": "Light Blue",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 3251,
+     "printify_price_cents": 5418
+    },
+    {
+     "id": 42240,
+     "color": "Light Blue",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 3474,
+     "printify_price_cents": 5790
+    },
+    {
+     "id": 42241,
+     "color": "Light Blue",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 3698,
+     "printify_price_cents": 6163
+    },
+    {
+     "id": 42242,
+     "color": "Light Blue",
+     "size": "5XL",
+     "printify_available": true,
+     "cost_cents": 3920,
+     "printify_price_cents": 6533
+    }
+   ],
+   "images": {
+    "Light Blue": {
+     "front": "img/products/floral-butterfly-embroidered-hoodie/light-blue-front.webp",
+     "back": "img/products/floral-butterfly-embroidered-hoodie/light-blue-back.webp",
+     "back-hood": "img/products/floral-butterfly-embroidered-hoodie/light-blue-back-hood.webp",
+     "folded": "img/products/floral-butterfly-embroidered-hoodie/light-blue-folded.webp"
+    },
+    "Sand": {
+     "front": "img/products/floral-butterfly-embroidered-hoodie/sand-front.webp",
+     "back": "img/products/floral-butterfly-embroidered-hoodie/sand-back.webp",
+     "back-hood": "img/products/floral-butterfly-embroidered-hoodie/sand-back-hood.webp",
+     "folded": "img/products/floral-butterfly-embroidered-hoodie/sand-folded.webp"
+    },
+    "Light Pink": {
+     "front": "img/products/floral-butterfly-embroidered-hoodie/light-pink-front.webp",
+     "back": "img/products/floral-butterfly-embroidered-hoodie/light-pink-back.webp",
+     "back-hood": "img/products/floral-butterfly-embroidered-hoodie/light-pink-back-hood.webp",
+     "folded": "img/products/floral-butterfly-embroidered-hoodie/light-pink-folded.webp"
+    }
+   },
+   "swatches": {
+    "Light Blue": "#CBDCEC",
+    "Sand": "#D3C8B4",
+    "Light Pink": "#F3D5DF"
+   }
+  },
+  "pocket-full-of-treasures-tee": {
+   "printify_id": "6aed172ca1cc08ceee0d84e8",
+   "printify_title": "Heavy Pockets \u2014 Pocket Full of Treasures Tee",
+   "blueprint_id": 706,
+   "print_provider_id": 29,
+   "variants": [
+    {
+     "id": 78891,
+     "color": "Blue Jean",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78892,
+     "color": "Blue Jean",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78893,
+     "color": "Blue Jean",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78894,
+     "color": "Blue Jean",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78895,
+     "color": "Blue Jean",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 1428,
+     "printify_price_cents": 2380
+    },
+    {
+     "id": 78896,
+     "color": "Blue Spruce",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78897,
+     "color": "Blue Spruce",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78898,
+     "color": "Blue Spruce",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78899,
+     "color": "Blue Spruce",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78900,
+     "color": "Blue Spruce",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 1428,
+     "printify_price_cents": 2380
+    },
+    {
+     "id": 79006,
+     "color": "Light Green",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79007,
+     "color": "Light Green",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79008,
+     "color": "Light Green",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79009,
+     "color": "Light Green",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79010,
+     "color": "Light Green",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 1428,
+     "printify_price_cents": 2380
+    },
+    {
+     "id": 79066,
+     "color": "Flo Blue",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79067,
+     "color": "Flo Blue",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79068,
+     "color": "Flo Blue",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79069,
+     "color": "Flo Blue",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79070,
+     "color": "Flo Blue",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 1428,
+     "printify_price_cents": 2380
+    },
+    {
+     "id": 79091,
+     "color": "Violet",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79092,
+     "color": "Violet",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79093,
+     "color": "Violet",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79094,
+     "color": "Violet",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79095,
+     "color": "Violet",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 1428,
+     "printify_price_cents": 2380
+    },
+    {
+     "id": 79116,
+     "color": "Blue Jean",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 1644,
+     "printify_price_cents": 2740
+    },
+    {
+     "id": 79117,
+     "color": "Blue Spruce",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 1644,
+     "printify_price_cents": 2740
+    },
+    {
+     "id": 79146,
+     "color": "Light Green",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 1644,
+     "printify_price_cents": 2740
+    },
+    {
+     "id": 79160,
+     "color": "Flo Blue",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 1644,
+     "printify_price_cents": 2740
+    },
+    {
+     "id": 79166,
+     "color": "Violet",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 1644,
+     "printify_price_cents": 2740
+    },
+    {
+     "id": 101425,
+     "color": "Blue Jean",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 2140,
+     "printify_price_cents": 3567
+    },
+    {
+     "id": 101426,
+     "color": "Blue Spruce",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 2140,
+     "printify_price_cents": 3567
+    },
+    {
+     "id": 101440,
+     "color": "Flo Blue",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 2140,
+     "printify_price_cents": 3567
+    },
+    {
+     "id": 101454,
+     "color": "Light Green",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 2140,
+     "printify_price_cents": 3567
+    },
+    {
+     "id": 101473,
+     "color": "Violet",
+     "size": "4XL",
+     "printify_available": false,
+     "cost_cents": 2140,
+     "printify_price_cents": 3567
+    }
+   ],
+   "images": {
+    "Light Green": {
+     "front": "img/products/pocket-full-of-treasures-tee/light-green-front.webp",
+     "back": "img/products/pocket-full-of-treasures-tee/light-green-back.webp",
+     "folded": "img/products/pocket-full-of-treasures-tee/light-green-folded.webp",
+     "flatlay": "img/products/pocket-full-of-treasures-tee/light-green-flatlay.webp"
+    },
+    "Blue Spruce": {
+     "front": "img/products/pocket-full-of-treasures-tee/blue-spruce-front.webp",
+     "back": "img/products/pocket-full-of-treasures-tee/blue-spruce-back.webp",
+     "folded": "img/products/pocket-full-of-treasures-tee/blue-spruce-folded.webp",
+     "flatlay": "img/products/pocket-full-of-treasures-tee/blue-spruce-flatlay.webp"
+    },
+    "Flo Blue": {
+     "front": "img/products/pocket-full-of-treasures-tee/flo-blue-front.webp",
+     "back": "img/products/pocket-full-of-treasures-tee/flo-blue-back.webp",
+     "folded": "img/products/pocket-full-of-treasures-tee/flo-blue-folded.webp",
+     "flatlay": "img/products/pocket-full-of-treasures-tee/flo-blue-flatlay.webp"
+    },
+    "Blue Jean": {
+     "front": "img/products/pocket-full-of-treasures-tee/blue-jean-front.webp",
+     "back": "img/products/pocket-full-of-treasures-tee/blue-jean-back.webp",
+     "folded": "img/products/pocket-full-of-treasures-tee/blue-jean-folded.webp",
+     "flatlay": "img/products/pocket-full-of-treasures-tee/blue-jean-flatlay.webp"
+    },
+    "Violet": {
+     "front": "img/products/pocket-full-of-treasures-tee/violet-front.webp",
+     "back": "img/products/pocket-full-of-treasures-tee/violet-back.webp",
+     "folded": "img/products/pocket-full-of-treasures-tee/violet-folded.webp",
+     "flatlay": "img/products/pocket-full-of-treasures-tee/violet-flatlay.webp"
+    }
+   },
+   "swatches": {
+    "Light Green": "#708974",
+    "Blue Spruce": "#576D61",
+    "Flo Blue": "#8290D1",
+    "Blue Jean": "#7B8795",
+    "Violet": "#978AD0"
+   }
+  },
+  "field-notebook-tee": {
+   "printify_id": "6aed16a023aa5c82ac0ec3fa",
+   "printify_title": "Heavy Pockets \u2014 Field Notebook Tee",
+   "blueprint_id": 706,
+   "print_provider_id": 29,
+   "variants": [
+    {
+     "id": 73197,
+     "color": "Navy",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 73201,
+     "color": "Navy",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 73205,
+     "color": "Navy",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 73209,
+     "color": "Navy",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 73213,
+     "color": "Navy",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 1428,
+     "printify_price_cents": 2380
+    },
+    {
+     "id": 78961,
+     "color": "Graphite",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78962,
+     "color": "Graphite",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78963,
+     "color": "Graphite",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78964,
+     "color": "Graphite",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78965,
+     "color": "Graphite",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 1428,
+     "printify_price_cents": 2380
+    },
+    {
+     "id": 79046,
+     "color": "Pepper",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79047,
+     "color": "Pepper",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79048,
+     "color": "Pepper",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79049,
+     "color": "Pepper",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79050,
+     "color": "Pepper",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 1428,
+     "printify_price_cents": 2380
+    },
+    {
+     "id": 79135,
+     "color": "Graphite",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 1644,
+     "printify_price_cents": 2740
+    },
+    {
+     "id": 79152,
+     "color": "Navy",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 1644,
+     "printify_price_cents": 2740
+    },
+    {
+     "id": 79155,
+     "color": "Pepper",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 1644,
+     "printify_price_cents": 2740
+    },
+    {
+     "id": 101443,
+     "color": "Graphite",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 2140,
+     "printify_price_cents": 3567
+    },
+    {
+     "id": 101460,
+     "color": "Navy",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 2140,
+     "printify_price_cents": 3567
+    },
+    {
+     "id": 101463,
+     "color": "Pepper",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 2140,
+     "printify_price_cents": 3567
+    }
+   ],
+   "images": {
+    "Pepper": {
+     "front": "img/products/field-notebook-tee/pepper-front.webp",
+     "back": "img/products/field-notebook-tee/pepper-back.webp",
+     "folded": "img/products/field-notebook-tee/pepper-folded.webp",
+     "flatlay": "img/products/field-notebook-tee/pepper-flatlay.webp"
+    },
+    "Graphite": {
+     "front": "img/products/field-notebook-tee/graphite-front.webp",
+     "back": "img/products/field-notebook-tee/graphite-back.webp",
+     "folded": "img/products/field-notebook-tee/graphite-folded.webp",
+     "flatlay": "img/products/field-notebook-tee/graphite-flatlay.webp"
+    },
+    "Navy": {
+     "front": "img/products/field-notebook-tee/navy-front.webp",
+     "back": "img/products/field-notebook-tee/navy-back.webp",
+     "folded": "img/products/field-notebook-tee/navy-folded.webp",
+     "flatlay": "img/products/field-notebook-tee/navy-flatlay.webp"
+    }
+   },
+   "swatches": {
+    "Pepper": "#585856",
+    "Graphite": "#4E4C4D",
+    "Navy": "#4D4D59"
+   }
+  },
+  "great-lakes-rock-crew-tee": {
+   "printify_id": "6aed15a703c89fadbb06417b",
+   "printify_title": "Heavy Pockets \u2014 Great Lakes Rock Crew Tee",
+   "blueprint_id": 706,
+   "print_provider_id": 29,
+   "variants": [
+    {
+     "id": 78876,
+     "color": "Bay",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78877,
+     "color": "Bay",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78878,
+     "color": "Bay",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78879,
+     "color": "Bay",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78880,
+     "color": "Bay",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 1428,
+     "printify_price_cents": 2380
+    },
+    {
+     "id": 78891,
+     "color": "Blue Jean",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78892,
+     "color": "Blue Jean",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78893,
+     "color": "Blue Jean",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78894,
+     "color": "Blue Jean",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 78895,
+     "color": "Blue Jean",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 1428,
+     "printify_price_cents": 2380
+    },
+    {
+     "id": 79021,
+     "color": "Moss",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79022,
+     "color": "Moss",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79023,
+     "color": "Moss",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79024,
+     "color": "Moss",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79025,
+     "color": "Moss",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 1428,
+     "printify_price_cents": 2380
+    },
+    {
+     "id": 79101,
+     "color": "Watermelon",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79102,
+     "color": "Watermelon",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79103,
+     "color": "Watermelon",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79104,
+     "color": "Watermelon",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79105,
+     "color": "Watermelon",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 1428,
+     "printify_price_cents": 2380
+    },
+    {
+     "id": 79106,
+     "color": "Yam",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79107,
+     "color": "Yam",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79108,
+     "color": "Yam",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79109,
+     "color": "Yam",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 1304,
+     "printify_price_cents": 2173
+    },
+    {
+     "id": 79110,
+     "color": "Yam",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 1428,
+     "printify_price_cents": 2380
+    },
+    {
+     "id": 79112,
+     "color": "Bay",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 1644,
+     "printify_price_cents": 2740
+    },
+    {
+     "id": 79116,
+     "color": "Blue Jean",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 1644,
+     "printify_price_cents": 2740
+    },
+    {
+     "id": 79149,
+     "color": "Moss",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 1644,
+     "printify_price_cents": 2740
+    },
+    {
+     "id": 79168,
+     "color": "Watermelon",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 1644,
+     "printify_price_cents": 2740
+    },
+    {
+     "id": 79170,
+     "color": "Yam",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 1644,
+     "printify_price_cents": 2740
+    },
+    {
+     "id": 101421,
+     "color": "Bay",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 2140,
+     "printify_price_cents": 3567
+    },
+    {
+     "id": 101425,
+     "color": "Blue Jean",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 2140,
+     "printify_price_cents": 3567
+    },
+    {
+     "id": 101457,
+     "color": "Moss",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 2140,
+     "printify_price_cents": 3567
+    },
+    {
+     "id": 101475,
+     "color": "Watermelon",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 2140,
+     "printify_price_cents": 3567
+    },
+    {
+     "id": 101477,
+     "color": "Yam",
+     "size": "4XL",
+     "printify_available": false,
+     "cost_cents": 2140,
+     "printify_price_cents": 3567
+    }
+   ],
+   "images": {
+    "Bay": {
+     "front": "img/products/great-lakes-rock-crew-tee/bay-front.webp",
+     "back": "img/products/great-lakes-rock-crew-tee/bay-back.webp",
+     "folded": "img/products/great-lakes-rock-crew-tee/bay-folded.webp",
+     "flatlay": "img/products/great-lakes-rock-crew-tee/bay-flatlay.webp"
+    },
+    "Yam": {
+     "front": "img/products/great-lakes-rock-crew-tee/yam-front.webp",
+     "back": "img/products/great-lakes-rock-crew-tee/yam-back.webp",
+     "folded": "img/products/great-lakes-rock-crew-tee/yam-folded.webp",
+     "flatlay": "img/products/great-lakes-rock-crew-tee/yam-flatlay.webp"
+    },
+    "Moss": {
+     "front": "img/products/great-lakes-rock-crew-tee/moss-front.webp",
+     "back": "img/products/great-lakes-rock-crew-tee/moss-back.webp",
+     "folded": "img/products/great-lakes-rock-crew-tee/moss-folded.webp",
+     "flatlay": "img/products/great-lakes-rock-crew-tee/moss-flatlay.webp"
+    },
+    "Blue Jean": {
+     "front": "img/products/great-lakes-rock-crew-tee/blue-jean-front.webp",
+     "back": "img/products/great-lakes-rock-crew-tee/blue-jean-back.webp",
+     "folded": "img/products/great-lakes-rock-crew-tee/blue-jean-folded.webp",
+     "flatlay": "img/products/great-lakes-rock-crew-tee/blue-jean-flatlay.webp"
+    },
+    "Watermelon": {
+     "front": "img/products/great-lakes-rock-crew-tee/watermelon-front.webp",
+     "back": "img/products/great-lakes-rock-crew-tee/watermelon-back.webp",
+     "folded": "img/products/great-lakes-rock-crew-tee/watermelon-folded.webp",
+     "flatlay": "img/products/great-lakes-rock-crew-tee/watermelon-flatlay.webp"
+    }
+   },
+   "swatches": {
+    "Bay": "#A7B4A2",
+    "Yam": "#BE7349",
+    "Moss": "#6B7262",
+    "Blue Jean": "#7B8795",
+    "Watermelon": "#D37075"
+   }
+  },
+  "midnight-rock-hunt-tee": {
+   "printify_id": "6aed148a25c13f11c005d795",
+   "printify_title": "Heavy Pockets \u2014 Midnight Rock Hunt Tee",
+   "blueprint_id": 706,
+   "print_provider_id": 29,
+   "variants": [
+    {
+     "id": 73196,
+     "color": "Black",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 1973,
+     "printify_price_cents": 3288
+    },
+    {
+     "id": 73197,
+     "color": "Navy",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 1973,
+     "printify_price_cents": 3288
+    },
+    {
+     "id": 73200,
+     "color": "Black",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 1973,
+     "printify_price_cents": 3288
+    },
+    {
+     "id": 73201,
+     "color": "Navy",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 1973,
+     "printify_price_cents": 3288
+    },
+    {
+     "id": 73204,
+     "color": "Black",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 1973,
+     "printify_price_cents": 3288
+    },
+    {
+     "id": 73205,
+     "color": "Navy",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 1973,
+     "printify_price_cents": 3288
+    },
+    {
+     "id": 73208,
+     "color": "Black",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 1973,
+     "printify_price_cents": 3288
+    },
+    {
+     "id": 73209,
+     "color": "Navy",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 1973,
+     "printify_price_cents": 3288
+    },
+    {
+     "id": 73212,
+     "color": "Black",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 2097,
+     "printify_price_cents": 3495
+    },
+    {
+     "id": 73213,
+     "color": "Navy",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 2097,
+     "printify_price_cents": 3495
+    },
+    {
+     "id": 78961,
+     "color": "Graphite",
+     "size": "S",
+     "printify_available": true,
+     "cost_cents": 1973,
+     "printify_price_cents": 3288
+    },
+    {
+     "id": 78962,
+     "color": "Graphite",
+     "size": "M",
+     "printify_available": true,
+     "cost_cents": 1973,
+     "printify_price_cents": 3288
+    },
+    {
+     "id": 78963,
+     "color": "Graphite",
+     "size": "L",
+     "printify_available": true,
+     "cost_cents": 1973,
+     "printify_price_cents": 3288
+    },
+    {
+     "id": 78964,
+     "color": "Graphite",
+     "size": "XL",
+     "printify_available": true,
+     "cost_cents": 1973,
+     "printify_price_cents": 3288
+    },
+    {
+     "id": 78965,
+     "color": "Graphite",
+     "size": "2XL",
+     "printify_available": true,
+     "cost_cents": 2097,
+     "printify_price_cents": 3495
+    },
+    {
+     "id": 79114,
+     "color": "Black",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 2313,
+     "printify_price_cents": 3855
+    },
+    {
+     "id": 79135,
+     "color": "Graphite",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 2313,
+     "printify_price_cents": 3855
+    },
+    {
+     "id": 79152,
+     "color": "Navy",
+     "size": "3XL",
+     "printify_available": true,
+     "cost_cents": 2313,
+     "printify_price_cents": 3855
+    },
+    {
+     "id": 101423,
+     "color": "Black",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 2809,
+     "printify_price_cents": 4682
+    },
+    {
+     "id": 101443,
+     "color": "Graphite",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 2809,
+     "printify_price_cents": 4682
+    },
+    {
+     "id": 101460,
+     "color": "Navy",
+     "size": "4XL",
+     "printify_available": true,
+     "cost_cents": 2809,
+     "printify_price_cents": 4682
+    }
+   ],
+   "images": {
+    "Graphite": {
+     "front": "img/products/midnight-rock-hunt-tee/graphite-front.webp",
+     "back": "img/products/midnight-rock-hunt-tee/graphite-back.webp",
+     "folded": "img/products/midnight-rock-hunt-tee/graphite-folded.webp",
+     "flatlay": "img/products/midnight-rock-hunt-tee/graphite-flatlay.webp"
+    },
+    "Black": {
+     "front": "img/products/midnight-rock-hunt-tee/black-front.webp",
+     "back": "img/products/midnight-rock-hunt-tee/black-back.webp",
+     "folded": "img/products/midnight-rock-hunt-tee/black-folded.webp",
+     "flatlay": "img/products/midnight-rock-hunt-tee/black-flatlay.webp"
+    },
+    "Navy": {
+     "front": "img/products/midnight-rock-hunt-tee/navy-front.webp",
+     "back": "img/products/midnight-rock-hunt-tee/navy-back.webp",
+     "folded": "img/products/midnight-rock-hunt-tee/navy-folded.webp",
+     "flatlay": "img/products/midnight-rock-hunt-tee/navy-flatlay.webp"
+    }
+   },
+   "swatches": {
+    "Graphite": "#4A4849",
+    "Black": "#1D1D1D",
+    "Navy": "#494955"
+   }
+  }
+ },
+ "hero_crops": {
+  "wide": {
+   "master": "brand/v2/hero-assets/hero-approved-desktop.webp",
+   "box": [
+    600,
+    95,
+    1774,
+    795
+   ],
+   "size": [
+    1174,
+    700
+   ]
+  },
+  "tall": {
+   "master": "brand/v2/hero-assets/hero-approved-mobile.webp",
+   "box": [
+    0,
+    492,
+    1086,
+    1252
+   ],
+   "size": [
+    1086,
+    760
+   ]
+  }
+ }
+}

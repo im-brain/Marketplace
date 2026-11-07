@@ -1,0 +1,121 @@
+{
+  "_note": "Hand-written product records for the storefront preview. Printify IDs are Printify product IDs, not Shopify variant IDs. Variants, availability, images, and swatch colors come from printify-snapshot.json (read-only, Nov 7, 2026). Approved colors are checked against that snapshot by build.js.",
+  "blanks": {
+    "cc1717": {
+      "name": "Comfort Colors 1717 garment-dyed tee",
+      "provider": "Monster Digital",
+      "fit": "Relaxed, unisex fit.",
+      "fabric": ["100% ring-spun U.S. cotton, pre-shrunk", "Heavyweight 6.1 oz/yd² fabric", "Garment-dyed for a soft, lived-in color", "Double-needle stitching, no side seams"],
+      "care": ["Machine wash cold (max 30°C or 90°F)", "Do not bleach", "Tumble dry low", "Iron, steam, or dry on low heat", "Do not dry clean"],
+      "chart": "img/size-chart-tee.webp"
+    },
+    "g18500": {
+      "name": "Gildan 18500 Heavy Blend hooded sweatshirt",
+      "fit": "Classic, unisex fit.",
+      "fabric": ["50% cotton, 50% polyester", "Medium-heavy 8.0 oz/yd² fabric", "Double-lined hood with matching drawcord", "Front pouch pocket, ribbed cuffs and hem"],
+      "care_dtg": ["Machine wash cold", "Non-chlorine bleach as needed", "Tumble dry medium", "Iron on low heat, avoiding the artwork", "Do not dry clean"],
+      "care_embroidery": ["Machine wash cold", "Non-chlorine bleach as needed", "Tumble dry medium", "Iron on low heat, avoiding the embroidery", "Do not dry clean"],
+      "chart": "img/size-chart-hoodie.webp"
+    }
+  },
+  "products": [
+    {
+      "slug": "midnight-rock-hunt-tee",
+      "printify_id": "6aed148a25c13f11c005d795",
+      "name": "Midnight Rock Hunt Tee",
+      "kind": "Tee",
+      "tier": "midnight-tee",
+      "blank": "cc1717",
+      "provider": "Monster Digital",
+      "colors": ["Graphite", "Black", "Navy"],
+      "card_view": "back",
+      "decoration": "Direct-to-garment (DTG) print on the left chest and the back.",
+      "blurb": "A small emblem up front and a whole moonlit shoreline on the back.",
+      "story": "The left chest carries a small Heavy Pockets emblem with a Petoskey stone and wildflowers. The back is a big moonlit rocky-shore scene: pines, lake waves, wildflowers, and familiar beach stones.",
+      "art": [
+        { "src": "img/art/02-midnight-back-4200x4800.webp", "label": "Back artwork", "bg": "dark" },
+        { "src": "img/art/01-midnight-front-4200x4800.webp", "label": "Left-chest artwork", "bg": "dark" }
+      ]
+    },
+    {
+      "slug": "great-lakes-rock-crew-tee",
+      "printify_id": "6aed15a703c89fadbb06417b",
+      "name": "Great Lakes Rock Crew Tee",
+      "kind": "Tee",
+      "tier": "front-print-tee",
+      "blank": "cc1717",
+      "provider": "Monster Digital",
+      "colors": ["Bay", "Blue Jean", "Moss", "Yam", "Watermelon"],
+      "card_view": "front",
+      "decoration": "Direct-to-garment (DTG) print on the front.",
+      "blurb": "Four friendly finds, ready for a beach day.",
+      "story": "A Petoskey stone, a Lake Superior agate, a puddingstone, and a Leland Blue walk across the front together, each with a little face.",
+      "art": [ { "src": "img/art/03-rock-crew-front-4200x4800.webp", "label": "Front artwork", "bg": "light" } ]
+    },
+    {
+      "slug": "field-notebook-tee",
+      "printify_id": "6aed16a023aa5c82ac0ec3fa",
+      "name": "Field Notebook Tee",
+      "kind": "Tee",
+      "tier": "front-print-tee",
+      "blank": "cc1717",
+      "provider": "Monster Digital",
+      "colors": ["Pepper", "Graphite", "Navy"],
+      "card_view": "front",
+      "decoration": "Direct-to-garment (DTG) print on the front.",
+      "blurb": "A page from a rock hunter's notebook.",
+      "story": "Fine line drawings of crystals, beach stones, a rock hammer, a flashlight, plants, and a box turtle, laid out like a page from a field notebook.",
+      "art": [ { "src": "img/art/04-field-notebook-front-4200x4800.webp", "label": "Front artwork", "bg": "dark" } ]
+    },
+    {
+      "slug": "pocket-full-of-treasures-tee",
+      "printify_id": "6aed172ca1cc08ceee0d84e8",
+      "name": "Pocket Full of Treasures Tee",
+      "kind": "Tee",
+      "tier": "front-print-tee",
+      "blank": "cc1717",
+      "provider": "Monster Digital",
+      "colors": ["Blue Jean", "Light Green", "Blue Spruce", "Flo Blue", "Violet"],
+      "card_view": "front",
+      "decoration": "Printed left-chest artwork. The pocket is part of the print, not a sewn pocket.",
+      "blurb": "A printed pocket, already full.",
+      "story": "A small printed pocket on the left chest, stuffed with a Petoskey stone, an agate, a puddingstone, a Leland Blue, and wildflowers.",
+      "art": [ { "src": "img/art/05-pocket-front-4200x4800.webp", "label": "Left-chest artwork", "bg": "light" } ]
+    },
+    {
+      "slug": "shoreline-hoodie",
+      "printify_id": "6aed5b31258438e5f0070465",
+      "name": "Shoreline Hoodie",
+      "kind": "Hoodie",
+      "tier": "hoodie",
+      "blank": "g18500",
+      "provider": "Monster Digital",
+      "colors": ["Dark Heather", "Heather Navy", "Charcoal", "Black", "Navy", "Purple"],
+      "card_view": "back",
+      "decoration": "Direct-to-garment (DTG) print on the left chest and the back.",
+      "care": "care_dtg",
+      "blurb": "For slow walks along the shore.",
+      "story": "A small floral Petoskey-stone emblem sits on the left chest. The back carries a large moonlit rocky-shore scene with pines, wildflowers, lake waves, and familiar beach stones.",
+      "art": [
+        { "src": "img/art/shoreline-hoodie-back.webp", "label": "Back artwork", "bg": "dark" },
+        { "src": "img/art/shoreline-hoodie-front.webp", "label": "Left-chest artwork", "bg": "dark" }
+      ]
+    },
+    {
+      "slug": "floral-butterfly-embroidered-hoodie",
+      "printify_id": "6aed59eda33f458524013eb9",
+      "name": "Floral Butterfly Embroidered Hoodie",
+      "kind": "Hoodie",
+      "tier": "hoodie",
+      "blank": "g18500",
+      "provider": "Printful",
+      "colors": ["Light Blue", "Sand", "Light Pink"],
+      "card_view": "front",
+      "decoration": "Embroidery, centered on the chest. Plain back.",
+      "care": "care_embroidery",
+      "blurb": "Small stitched details for everyday wandering.",
+      "story": "A two-tone embroidered heavy pockets wordmark with two flowers and a tiny butterfly landing beside the yellow bloom. The back is plain.",
+      "art": [ { "src": "img/art/embroidery.webp", "label": "Embroidery design file", "bg": "light" } ]
+    }
+  ]
+}

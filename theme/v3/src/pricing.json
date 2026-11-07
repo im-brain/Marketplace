@@ -1,0 +1,15 @@
+{
+  "_status": "PROVISIONAL. Not approved retail prices. These are the suggested prices discussed with Brian (storefront brief, Nov 7, 2026). Change them here, then run `node theme/v3/build.js`. Nothing else holds a price.",
+  "currency": "USD",
+  "shipping_note": "Proposal: standard U.S. shipping included in the price. Not final.",
+  "tiers": {
+    "front-print-tee": { "label": "Front-print tee", "base_cents": 3000 },
+    "midnight-tee": { "label": "Midnight Rock Hunt Tee (front and back print)", "base_cents": 4000 },
+    "hoodie": { "label": "Hoodie", "base_cents": 6000 }
+  },
+  "larger_size_adjustment": {
+    "_status": "NOT SET. Brian has not chosen 2XL and up adjustments. The preview charges the base price for every size and says so on the page.",
+    "applies_from": "2XL",
+    "cents_by_size": null
+  }
+}

@@ -80,16 +80,16 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 
 **Phase 2: Designs**
 5. **(Built Nov 4, 2026: `tracker/Design_Tracker.xlsx`, launch 5 pre-marked for Brian to confirm.)** Design tracker `.xlsx` with all 13 designs, plus columns for art source and license, accuracy check, trademark check, and launch priority. It follows his spreadsheet formatting rules. *Test:* it opens in Excel and Brian marks the launch 5.
-6. Launch 5: the Great Lakes beach stone chart, "Agate Expectations," "Will brake for agates," Petoskey hexagon socks, and "I lick rocks" (a dull stone with one glossy lick mark where the true color shows).
+6. **(Superseded Nov 7, 2026: the launch assortment is now six products, four tees and two hoodies, listed in `theme/v3/HANDOFF.md`. No socks at launch.)** Old launch 5: the Great Lakes beach stone chart, "Agate Expectations," "Will brake for agates," Petoskey hexagon socks, and "I lick rocks" (a dull stone with one glossy lick mark where the true color shows).
 7. **(Drafted Nov 4, 2026: `scripts/sock_petoskey.py`, print panels in `designs/socks/print/`, waiting on brand colors and a Printify upload preview.)** The code-drawn Petoskey sock pattern, made to Printify's exact sock template size. *Test:* Brian views the PNG and it passes Printify's upload preview.
 8. The other three designs at print size, all from Brian's photos, his edits, or properly licensed sources. *Test:* Brian approves each one, and the accuracy and trademark boxes are checked.
 
 **Phase 3: Products and samples in Printify (no store yet)**
-9. Brian and Claude create the launch 5 in Printify by hand, saving them as products that aren't published. *Test:* the mockups look right in Printify.
-10. Order samples of the launch 5 straight from Printify. *Test:* samples arrive and Brian approves print quality and color.
+9. **(Done for the six current products, Printify IDs in `theme/v3/src/products.json`.)** Brian and Claude create the launch products in Printify by hand, saving them as products that aren't published. *Test:* the mockups look right in Printify.
+10. **(Samples ordered per Brian, Nov 2026. Not yet physically approved.)** Order samples of the launch products straight from Printify. *Test:* samples arrive and Brian approves print quality and color.
 
 **Phase 4: Build the store look for free, then open Shopify**
-11. Build the theme pieces as a **preview page in the repo** (the wet-stone effect, product page layout, field notes, and field guide pages) that Brian can open in a browser. All the design work happens here at no cost. *Test:* Brian approves the preview on phone and desktop, in light and dark mode.
+11. **(Storefront preview v3 built Nov 7, 2026 in `theme/v3/`, waiting on Brian's review. See `theme/v3/HANDOFF.md`.)** Build the theme pieces as a **preview page in the repo** (the wet-stone effect, product page layout, field notes, and field guide pages) that Brian can open in a browser. All the design work happens here at no cost. *Test:* Brian approves the preview on phone and desktop, in light and dark mode.
 12. **Open Shopify now**, signed up with the store Gmail. Choose a plan and start the trial only once the samples are approved and the preview is signed off. If Shopify offers a low intro price for the first months, this is when it pays off. Connect Printify, connect the domain, and publish the launch 5 from Printify. *Test:* the 5 products appear in the Shopify admin.
 13. Install a free Shopify theme and paste in the approved pieces from Step 11, including field notes (Shopify metafields). *Test:* the live store preview matches the approved preview.
 14. Field guide pages, plus the About, shipping, and returns pages and policies. *Test:* Brian checks every label, and Shopify's launch checklist has no missing items.

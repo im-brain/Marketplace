@@ -1,0 +1,39 @@
+<title>Heavy Pockets Storefront</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  /* Single committed look: the locked brand navy, cream, rust, and sand. */
+  :root{--navy:#102849;--ink:#101D2C;--cream:#F3E8D2;--sand:#D9B98B;--rust:#A7472D;--gold:#E8B954;--shadow:#07101D;color-scheme:dark}
+  body{background:var(--ink);color:var(--cream);font:400 17px/1.55 "Atkinson Hyperlegible Next",system-ui,sans-serif}
+  .wrap{max-width:560px;margin:0 auto;padding-block:48px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+  .win{background:var(--navy);border:3px solid var(--sand);box-shadow:6px 6px 0 var(--shadow)}
+  .bar{padding:5px 12px;background:var(--rust);color:#fff;font:700 14px/1.3 ui-monospace,Menlo,Consolas,monospace}
+  .in{display:grid;gap:14px;padding:28px 24px}
+  h1{margin:0;font-size:28px;line-height:1.15}
+  p{margin:0}
+  a.btn{display:inline-flex;justify-content:center;min-height:48px;align-items:center;padding:11px 22px;background:var(--rust);color:#fff;border:2px solid var(--sand);box-shadow:inset -3px -3px 0 rgba(0,0,0,.28),inset 3px 3px 0 rgba(255,255,255,.22),4px 4px 0 var(--shadow);font-weight:800;text-decoration:none}
+  a.btn:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+  ul{margin:0;padding-left:1.2em}
+  li a{color:var(--gold);font-weight:700}
+  .note{font-size:15px;color:var(--sand)}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700;800&display=swap">
+<div class="wrap">
+  <div class="win">
+    <div class="bar">heavy pockets: private preview</div>
+    <div class="in">
+      <h1>Heavy Pockets storefront preview</h1>
+      <p>The full shop: six products, product pages, a working preview cart, and Field Notes. Nothing is for sale and checkout is off.</p>
+      <p><a class="btn" id="open" href="index.html">Open the storefront</a></p>
+      <ul>
+        <li><a href="cart.html">Preview cart</a></li>
+        <li><a href="field-notes.html">Field Notes</a></li>
+        <li><a href="preview-notes.html">Preview notes for Brian</a></li>
+      </ul>
+      <p class="note">Best on a phone held upright and on a desktop browser. Prices are provisional.</p>
+    </div>
+  </div>
+</div>
+<script>
+  // Go straight into the shop; the button above stays as the fallback.
+  try { location.replace('index.html'); } catch (e) { /* stay on this page */ }
+</script>

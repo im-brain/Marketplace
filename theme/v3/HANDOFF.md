@@ -1,6 +1,6 @@
 # Storefront preview v3: handoff for Brian
 
-Built Nov 7, 2026 from the storefront brief. Status: **approved by Brian, Nov 7, 2026** ("Everything is approved"). **Not merged, not deployed.** The live coming-soon site is untouched. No Shopify, no subscriptions, no purchases, no emails, and no Printify changes (Printify was only read).
+Built Nov 7, 2026 from the storefront brief. Status: **approved by Brian, Nov 7, 2026** ("Everything is approved"). **Merged into `main` Nov 7, 2026. Not deployed.** The live coming-soon site is untouched. No Shopify, no subscriptions, no purchases, no emails, and no Printify changes (Printify was only read).
 
 ## What you can open
 
@@ -77,10 +77,9 @@ Automated: `qa/run_qa.js`, 359 checks, all passing, plus an axe accessibility sc
 
 ## Next steps
 
-1. Merge this PR when you want the approved preview on `main` (merging deploys nothing).
-2. When samples arrive and pass, swap supplier mockups for sample photos (`img/products/`, or add gallery items in `build.js`).
-3. Replace placeholder copy in `build.js` (search for `ph(`). Layouts stay the same.
-4. Get clean hero art and the production wordmark, then retire the review crops.
-5. Only after samples are approved and this preview is signed off: Step 12 (open Shopify, connect Printify and the domain), then move these pages into a Shopify theme with real checkout. Not before.
+1. When samples arrive and pass, swap supplier mockups for sample photos (`img/products/`, or add gallery items in `build.js`).
+2. Replace placeholder copy in `build.js` (search for `ph(`). Layouts stay the same.
+3. Get clean hero art and the production wordmark, then retire the review crops.
+4. Only after samples are approved and this preview is signed off: Step 12 (open Shopify, connect Printify and the domain), then move these pages into a Shopify theme with real checkout. Not before.
 
 The game, the collection keepsake, and receipt integration remain deferred.

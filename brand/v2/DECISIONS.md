@@ -110,5 +110,5 @@ Updated: November 4, 2026.
 - **Approved:** the whole v3 storefront preview (`theme/v3/`), including the pebble loading icon and the hero review crops as the current treatment.
 - **Prices approved:** 30 dollars front-print tees, 40 Midnight Rock Hunt Tee, 60 hoodies, standard U.S. shipping included. Larger sizes on every product: 2XL plus 2, 3XL plus 4, 4XL and 5XL plus 6 (Brian picked even steps over exact cost matching).
 - **Still open:** sample approval, sample and lifestyle photos, production wordmark vector, story and policy copy, live stock check, email service, and Field Notes fact checks.
-- **Not authorized yet:** merging PR #5, deployment, or Shopify (Step 12 waits for sample approval).
+- **Merged:** PR #5 into `main` at Brian's request (Nov 7, 2026). **Not authorized yet:** deployment or Shopify (Step 12 waits for sample approval).
 

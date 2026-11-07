@@ -112,3 +112,8 @@ Updated: November 4, 2026.
 - **Still open:** sample approval, sample and lifestyle photos, production wordmark vector, story and policy copy, live stock check, email service, and Field Notes fact checks.
 - **Merged:** PR #5 into `main` at Brian's request (Nov 7, 2026). **Not authorized yet:** deployment or Shopify (Step 12 waits for sample approval).
 
+
+## Owner approval, November 7, 2026: live coming-soon page in the v3 brand
+- **Choices:** keep the rockhound mascot and the day and night switch; teaser only (no product images or prices); collect the email only (no design picks); keep speech bubble option A ("Something magnifico is in the tumbler. It'll rock.").
+- **Approved and deployed:** Brian said "Deploy" after reviewing the private preview. Deployed Nov 7, 2026, to the Worker `heavypockets-coming-soon` with the same `DIBS` signup list. Existing signups were not touched.
+- **Source:** `site/coming-soon/` (rollback copy in `live-2026-11-04/`).

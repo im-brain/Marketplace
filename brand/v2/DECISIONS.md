@@ -73,3 +73,42 @@ Updated: November 4, 2026.
 - **Approved:** the storefront preview in `theme/v2/` (retro shop window, ChatGPT stone pairs in the wet test, sock concept).
 - **Merged:** PR #3 into `step4-overnight-build`. Not merged to `main`, not deployed to heavypocketsco.com.
 - **Still open:** real photos of Brian's own finds to replace the AI sample stones; final art for the three stand-in tees; final sock design.
+
+## Owner decisions, November 7, 2026 (storefront brief)
+- **Assortment:** six products replace the old launch 5 and socks: Midnight Rock Hunt Tee, Great Lakes Rock Crew Tee, Field Notebook Tee, Pocket Full of Treasures Tee, Shoreline Hoodie, and Floral Butterfly Embroidered Hoodie. Indigo Blue embroidery removed; do not restore.
+- **Wordmark:** option A ("Warm & human") from the wordmark comparison: lowercase "heavy pockets," single color (cream on dark, deep teal on light), optional teal and rust secondary. No "Co.," tagline, or scenery with it. Garment artwork unchanged.
+- **Homepage:** header, shorter sunset hero, all six products, short story, small signup, footer. Navigation: Shop, Field Notes, About, Cart.
+- **Wet reveal** on homepage clothing images only (hover, focus, touch while scrolling, "Wet it" button), remembered for the visit. Product pages show full color immediately. The standalone wet-stone lab leaves the homepage.
+- **Photography:** clean consistent images for browsing; lifestyle and detail shots on product pages. Supplier mockups now, sample photos later.
+- **Story:** shared feeling of finding things first, then a short intro to Brian. Field Notes gets its own page.
+- **Custom loading icon** added to the website to-do list.
+- **Not authorized:** merging, public deployment, replacing the live coming-soon site, Shopify, subscriptions, purchases, or real emails.
+
+## Implementation, November 7, 2026 (Claude Code): storefront preview v3
+- `theme/v3/`, branch `claude/clever-curie-pxflzz`. Handoff: `theme/v3/HANDOFF.md`.
+- Wordmark: provisional trace of option A in `brand/v3/wordmark/` (designer cleanup still needed for production).
+- Hero: review crops of the approved masters that exclude the baked-in old logo and tagline; masters unchanged; clean logo-free art requested.
+- Loading icon: provisional (three pebbles wetting in turn). Not an approved illustration.
+- Prices provisional in `theme/v3/src/pricing.json`.
+- **Still needs owner approval** before merge or any deployment.
+
+## Owner feedback, November 7, 2026 (iPad review of the v3 preview)
+- Wordmark: separate the "v" and "y" (they touched in option A's source art).
+- Resting "dry" state 15% drier, so the reveal reads clearly.
+- Remove the "Wet it" and "Wet" buttons; use a small see-through "Show" in the image corner. This replaces the brief's "Wet it" button. The shop intro text explains the effect.
+- Phone hero must show the rocks.
+- Pages must open at the top.
+- Remove the size-range text and the color counts.
+- Shoppers should never see "supplier" or "Printify."
+- Implemented the same day on branch `claude/clever-curie-pxflzz`; 358 browser checks pass.
+
+## Owner approval, November 7, 2026: wordmark v and y
+- **Approved:** the separated "v" and "y" in the option A wordmark, rebuilt from the font's own tops with the "y" and "pockets" moved 6.75 px right (`brand/v3/wordmark/`).
+- **Still open:** production vector cleanup by a designer before garments, embroidery, or print. The rest of the storefront preview is still under review.
+
+## Owner approval, November 7, 2026: storefront preview v3 and prices
+- **Approved:** the whole v3 storefront preview (`theme/v3/`), including the pebble loading icon and the hero review crops as the current treatment.
+- **Prices approved:** 30 dollars front-print tees, 40 Midnight Rock Hunt Tee, 60 hoodies, standard U.S. shipping included. Larger sizes on every product: 2XL plus 2, 3XL plus 4, 4XL and 5XL plus 6 (Brian picked even steps over exact cost matching).
+- **Still open:** sample approval, sample and lifestyle photos, production wordmark vector, story and policy copy, live stock check, email service, and Field Notes fact checks.
+- **Merged:** PR #5 into `main` at Brian's request (Nov 7, 2026). **Not authorized yet:** deployment or Shopify (Step 12 waits for sample approval).
+

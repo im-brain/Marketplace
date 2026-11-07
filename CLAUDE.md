@@ -4,11 +4,16 @@ Read this first in every new conversation. Update the "Current status" and "Sess
 
 ## What this project is
 
-A print-on-demand store for Great Lakes rockhounds (Michigan, Wisconsin, and Minnesota collectors), selling tees and socks. Owner: Brian, a rockhound in Grand Rapids, Michigan. It is a personal side project with no connection to his day job. The goal is profit greater than his monthly AI bill (about $20).
+A print-on-demand store for Great Lakes rockhounds (Michigan, Wisconsin, and Minnesota collectors), beachcombers, and lake lovers. The launch assortment is now six products: four tees and two hoodies (Nov 7, 2026). Socks are no longer in the launch set. Owner: Brian, a rockhound in Grand Rapids, Michigan. It is a personal side project with no connection to his day job. The goal is profit greater than his monthly AI bill (about $20).
 
 The full step-by-step plan is in `PLAN.md`.
 
 ## Current status
+
+- **Storefront preview v3 (Nov 7, 2026, newest):** complete private shopping preview of the six current products, built from Brian's storefront brief. Branch `claude/clever-curie-pxflzz`, folder `theme/v3/`, handoff in `theme/v3/HANDOFF.md` (tests, limitations, missing assets, next steps). New lowercase wordmark (option A, provisional trace) in `brand/v3/wordmark/`. Private preview link: see "Preview link" below. **Approved by Brian, Nov 7, 2026** ("Everything is approved"). Merged into `main` via PR #5 on Nov 7, 2026, at Brian's request. Not deployed: merging changes nothing live.
+- **Preview link (v3):** https://claude.ai/artifact/9TVdpea8d1YBc3vfUq11hz (private claude.ai artifact, same workflow as earlier previews; republish by running `node theme/v3/build.js` and publishing `theme/v3/index.html` with every page, asset, and image as files).
+- **Current assortment (Nov 7, 2026, supersedes the old launch 5 and socks):** Midnight Rock Hunt Tee, Great Lakes Rock Crew Tee, Field Notebook Tee, Pocket Full of Treasures Tee, Shoreline Hoodie, and Floral Butterfly Embroidered Hoodie. Printify product IDs and approved colors are in `theme/v3/src/products.json` and `theme/v3/HANDOFF.md`. Indigo Blue embroidery was removed on purpose: never restore it. Samples are ordered, not yet physically approved.
+- **Prices (approved by Brian, Nov 7, 2026):** $30 front-print tees, $40 Midnight, $60 hoodies, standard U.S. shipping included. Larger sizes on every product: 2XL +$2, 3XL +$4, 4XL and 5XL +$6. One file: `theme/v3/src/pricing.json`. Costs and margin notes: `theme/v3/src/PRICING_REVIEW.md` (4XL tees and the 5XL embroidered hoodie earn about $2.36 and $2.91 less than S to XL).
 
 - **Store name (decided Nov 1, 2026): Heavy Pockets Co.** Domain heavypocketsco.com, handles @heavypocketsco, email hello@heavypocketsco.com (forwarded to a private Gmail). Tagline "Head down. Pockets full." Secondary line "Dry rocks lie." Fallback: Wet Thumb Co. (wetthumbco.com, @wetthumbco), used only if Heavy Pockets runs into trouble. Checks were a first screen, not legal clearance. Background: heavypockets.com and @heavypockets belong to an old, apparently dead streetwear brand; the 2013 HEAVY POCKETS clothing filing (serial 85912472) was abandoned in 2014. **New, found Nov 4, 2026:** two LIVE filings by one owner (Marques Zahir): HEAVY POCKETS, serial 50027960, Class 16 (financial education books, filed Aug 3, 2026), and MUN-E HEAVY POCKETS, serial 99146373, Class 41 (podcasts). Neither covers clothing (Class 25), so not blocking, but if that owner adds merch, conflict is possible. Suggested: Brian talks to a trademark attorney about filing HEAVY POCKETS CO. in Class 25.
 - **Current step:** Step 4 (brand kit) round 1 is ready for Brian's pick (Nov 4, 2026). Five directions: A Field Notebook, B Lakeshore Workwear, C Wet Stone Minimal (Brian's three), D Lake Chart, and E the hybrid (Claude's additions). Claude recommends **E** (A's maker's mark with an angular agate O, narrow black Archivo for puns, Lake Chart as a named series, and the lick as its own shirt); A is the clean alternative. Page: `brand/kit/index.html`, published privately at https://claude.ai/artifact/B4dgDZnUoNUVETSLkhx4AU. After the pick: final colors matched to Printify blanks, logo files (SVG and PNG), and the one-page brand guide.
@@ -40,8 +45,23 @@ The full step-by-step plan is in `PLAN.md`.
 7. Art sources: Brian's own photos, his edits of AI art, code-generated patterns, and images whose license explicitly allows commercial use. Public photos are only for checking accuracy and are never printed or traced.
 8. Brand: **Heavy Pockets Co.** (name decided Nov 1, 2026). Concept underneath: **"Wet Stone."** Rockhounds wet a stone to see its true color; "Dry rocks lie" is the secondary line.
 9. Signature site features: the "wet" hover and tap effect, a field note on each design, a free field guide that links to the chart shirts, and code-drawn sock patterns.
-10. Launch with 5 designs: the Great Lakes beach stone chart, "Agate Expectations," "Will brake for agates," Petoskey hexagon socks, and **"I lick rocks"** (or "Will lick rocks"), Brian's idea from Nov 1, 2026. The phrase alone is common on Etsy, so the art carries it: a dull, dry stone with one glossy lick-shaped streak where the true color shows through. It's the brand idea in one picture. Nov 1, 2026: no USPTO filings for "I lick rocks," "Will lick rocks," or "lick rocks." Re-check before printing.
+10. **(Superseded Nov 7, 2026 by the six-product assortment above; kept for history.)** Launch with 5 designs: the Great Lakes beach stone chart, "Agate Expectations," "Will brake for agates," Petoskey hexagon socks, and **"I lick rocks"** (or "Will lick rocks"), Brian's idea from Nov 1, 2026. The phrase alone is common on Etsy, so the art carries it: a dull, dry stone with one glossy lick-shaped streak where the true color shows through. It's the brand idea in one picture. Nov 1, 2026: no USPTO filings for "I lick rocks," "Will lick rocks," or "lick rocks." Re-check before printing.
 11. Accounts: a dedicated **store Gmail** (created first in Step 3) owns every store account (domain, Printify, Shopify, TikTok, and Instagram). Customers see `hello@` the domain, forwarded free to the Gmail by Cloudflare Email Routing. The name is picked first so the Gmail can match it.
+
+## Website to-do
+
+Keep this list current. Items marked provisional are built for review, not approved.
+
+1. **Create a custom loading icon** (Brian's request). Status: **done, approved Nov 7, 2026** as part of "Everything is approved" (three pebbles that get wet one at a time, `theme/v3/assets/site.css`, shown on `theme/v3/preview-notes.html`).
+2. ~~Approve prices and larger-size adjustments.~~ Done Nov 7, 2026 (see Current status).
+3. Sample approval, then real sample photos and lifestyle photos for every product page.
+4. Clean, logo-free hero art (desktop and mobile) to replace the review crops.
+5. Production wordmark vector from a designer, based on option A (current file is a provisional trace).
+6. Brand story, founder intro, and photo in Brian's words; shipping and returns policies.
+7. Live stock check before launch (Shoreline availability unverified).
+8. Email service for the signup form (preview-only until then).
+9. Field Notes: clear remaining [VERIFY] items, add Brian's own finds.
+10. Deferred: the game, the collection keepsake, and receipt integration.
 
 ## Future product ideas
 
@@ -124,6 +144,9 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - `theme/preview/`: Step 11 store preview (draft, built in direction E).
 - `brand/v2/`: v2 brand system (locked tokens, decisions, approved hero art). `theme/v2/`: storefront preview v2 with QA screenshots and test scripts.
 - `content/Video_Content_Bank.md`: 20 video ideas, posting plan, and community notes.
+- `theme/v3/`: storefront preview v3 (generated by `node theme/v3/build.js`; sources in `src/`; tests in `qa/run_qa.js`; `HANDOFF.md` for Brian).
+- `brand/v3/wordmark/`: new lowercase wordmark (option A), provisional SVGs, source board, and trace QA. Made by `scripts/trace_wordmark.py`.
+- `scripts/storefront_assets.py`: read-only Printify snapshot and web images for v3.
 
 ## Session log
 
@@ -148,3 +171,9 @@ Fact idea: Leland Blue is slag from a 19th-century iron smelter in Leland, Michi
 - **2026-11-05 (later):** Brian asked to use ChatGPT's images. Copied the ChatGPT agate dry/wet AI sample pair and the Petoskey sock concept into `theme/v2/img/` (credits in `img/CREDITS.md`). Agate in the wet test now cross-fades the pair; socks card and viewer show the concept with a CONCEPT label. Tees, Petoskey, and Leland stones stay as before (no ChatGPT images for them in the repo).
 - **2026-11-05 (later):** Brian sent ChatGPT dry/wet stone images in chat. Added red jasper, Petoskey, and Leland Blue pairs to the wet test (now 4 stones: agate, jasper, Petoskey, Leland Blue). `scripts/stone_pairs.py` gives each pair one shared outline, which also removes the glow halo the generator baked in. Raw files in `theme/v2/img/src/`. A gray basalt and a pale tan stone came without wet versions, so they are unused.
 - **2026-11-05 (later):** Brian approved the storefront preview v2. PR #3 merged into `step4-overnight-build`, then `step4-overnight-build` merged into `main` (Nov 5, 2026). Not deployed. Next: real photos of Brian's own finds to replace the AI sample stones, then the remaining launch art.
+- **2026-11-07:** Built storefront preview v3 from Brian's storefront brief on branch `claude/clever-curie-pxflzz`: new option A wordmark (provisional trace, 98% pixel overlap), shorter hero using review crops that leave out the old baked-in logo, all six current products with mockups read from Printify (read-only), signature wet reveal on homepage cards (hover, focus, touch while scrolling, "Wet it" button; lasts for the visit), six product pages, preview cart, honest preview-only signup, Field Notes page, provisional loading icon, and preview notes. 333 browser checks and an axe scan passed then (358 after the later fixes; Chromium emulation only, not a real iPhone). Independent review pass done and fixes applied. PR opened, not merged, not deployed. Next: Brian reviews on his phone and decides prices.
+- **2026-11-07 (later):** Brian reviewed v3 on his iPad. Applied his changes: wordmark "v" and "y" separated (`SPLIT_VY` in `scripts/trace_wordmark.py`), resting state 15 points drier, "Wet it" and "Wet" buttons replaced by a small see-through "Show," full hero with rocks on phones, pages open at the top in the iPad viewer (frame-stretch fix in `site.js`, tested with `qa/frame-harness.html`), size-range text and color counts removed, and no "supplier" or "Printify" anywhere shoppers can read. 358 checks pass. Preview republished at the same link.
+- **2026-11-07 (later):** Brian said the straight v/y cut was too noticeable. `scripts/trace_wordmark.py` now rebuilds the two joined arms from the font's own tops (y's left arm gets the v's left-arm top; v's right arm gets the y's right-arm top) and moves "y" and "pockets" 6.75 px right so the v-to-y gap matches a-to-v. Republished; 358 checks pass.
+- **2026-11-07 (later):** Brian approved the rebuilt v and y ("Looks great"). Recorded in `brand/v2/DECISIONS.md`. Production vector cleanup is still a to-do; the rest of the v3 preview is still under review.
+- **2026-11-07 (later):** Brian approved the whole v3 preview ("Everything is approved"), the base prices, and that 2XL and up cost a little more; he chose even steps (2XL +2, 3XL +4, 4XL and 5XL +6 dollars). Prices now update by size on product pages and in the cart; "Provisional" labels removed; cards show "From" prices. Loading icon marked approved. 359 checks pass. Republished at the same link. PR #5 stays a draft until Brian asks to merge.
+- **2026-11-07 (later):** Brian asked to merge. PR #5 merged into `main`. Nothing deployed. Start new work from `main`.

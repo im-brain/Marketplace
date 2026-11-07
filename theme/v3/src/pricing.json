@@ -1,0 +1,14 @@
+{
+  "_status": "APPROVED by Brian, Nov 7, 2026 (\"Everything is approved. I think the prices are probably good.\"). Change prices here, then run `node theme/v3/build.js`. Nothing else holds a price.",
+  "currency": "USD",
+  "shipping_note": "Standard U.S. shipping included.",
+  "tiers": {
+    "front-print-tee": { "label": "Front-print tee", "base_cents": 3000 },
+    "midnight-tee": { "label": "Midnight Rock Hunt Tee (front and back print)", "base_cents": 4000 },
+    "hoodie": { "label": "Hoodie", "base_cents": 6000 }
+  },
+  "larger_size_adjustment": {
+    "_status": "APPROVED by Brian, Nov 7, 2026: +$2 for 2XL, +$4 for 3XL, +$6 for 4XL and 5XL, the same for every product.",
+    "cents_by_size": { "2XL": 200, "3XL": 400, "4XL": 600, "5XL": 600 }
+  }
+}

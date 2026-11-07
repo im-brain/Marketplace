@@ -91,6 +91,15 @@ PASS resource img/products/floral-butterfly-embroidered-hoodie/light-blue-back.w
 PASS resource img/products/floral-butterfly-embroidered-hoodie/light-blue-back-hood.webp exists
 PASS resource img/products/floral-butterfly-embroidered-hoodie/light-blue-folded.webp exists
 PASS resource img/art/embroidery.webp exists
+PASS index.html: customers never see "supplier" or "Printify"
+PASS cart.html: customers never see "supplier" or "Printify"
+PASS field-notes.html: customers never see "supplier" or "Printify"
+PASS midnight-rock-hunt-tee.html: customers never see "supplier" or "Printify"
+PASS great-lakes-rock-crew-tee.html: customers never see "supplier" or "Printify"
+PASS field-notebook-tee.html: customers never see "supplier" or "Printify"
+PASS pocket-full-of-treasures-tee.html: customers never see "supplier" or "Printify"
+PASS shoreline-hoodie.html: customers never see "supplier" or "Printify"
+PASS floral-butterfly-embroidered-hoodie.html: customers never see "supplier" or "Printify"
 PASS no requests to outside hosts except Google Fonts
 PASS six product cards in brief order
 PASS midnight-rock-hunt-tee: name
@@ -120,6 +129,8 @@ PASS floral-butterfly-embroidered-hoodie: links to its own page
 PASS no Indigo Blue anywhere on the homepage
 PASS desktop grid is 3 columns
 PASS no dev labels (READY, STAND-IN, file names) in the shop
+PASS no color count next to the color name
+PASS "Show" control is a small see-through label, not a "Wet it" button
 PASS tagline is never directly under the wordmark (footer)
 PASS prices use one format ($40.00)
 PASS standalone wet-stone lab removed from homepage
@@ -131,7 +142,8 @@ PASS hover starts a moving splash (polygon clip mid-animation)
 PASS after hover: full color, clip removed, button pressed
 PASS keyboard focus reveals the card
 PASS focused link shows a visible gold outline
-PASS "Wet it" button reveals the card
+PASS "Show" reveals the card
+PASS "Show" disappears once the piece is revealed
 PASS changing color on a wet card keeps it in full color
 PASS reveal stored per product for this visit (sessionStorage)
 PASS image click opens the product page with the chosen color
@@ -226,7 +238,8 @@ PASS Embroidered Light Pink has 5XL but no 4XL
 PASS Embroidered Light Blue offers S to 5XL
 PASS Rock Crew Yam / 4XL disabled (Printify unavailable)
 PASS Pocket Violet / 4XL disabled (Printify unavailable)
-PASS stock wording names the dated check, never "right now"
+PASS no size-range text under the size keys (keys show it)
+PASS unavailable key is labeled for screen readers
 PASS Tees stop at 4XL (no 5XL key)
 PASS direct link with color and size preselects both
 PASS larger size shows the "price not set" note
@@ -269,7 +282,7 @@ PASS storage blocked: add message warns the cart will not survive
 PASS storage blocked: reveal still works on the page
 PASS no script errors (failure states)
 PASS reduced motion: products are full color immediately, no animation
-PASS reduced motion: "Wet it" button hidden (nothing to do)
+PASS reduced motion: "Show" hidden (nothing to do)
 PASS reduced motion: loader is static
 PASS loader hidden for the first moment (no flash on fast loads)
 PASS loader visible while a slow image loads
@@ -282,7 +295,7 @@ PASS phone-320 field-notes.html: no horizontal scroll
 PASS phone-320: hero shows the whole sunset
 PASS phone-320: hero shows the lighthouse
 PASS phone-320: hero image is shorter than before (<= 62% of screen or 460px)
-INFO phone-320: collection starts at 543px (screen height 640)
+INFO phone-320: collection starts at 568px (screen height 640)
 PASS phone-375 index.html: no horizontal scroll
 PASS phone-375 shoreline-hoodie.html: no horizontal scroll
 PASS phone-375 cart.html: no horizontal scroll
@@ -290,7 +303,7 @@ PASS phone-375 field-notes.html: no horizontal scroll
 PASS phone-375: hero shows the whole sunset
 PASS phone-375: hero shows the lighthouse
 PASS phone-375: hero image is shorter than before (<= 62% of screen or 460px)
-INFO phone-375: collection starts at 567px (screen height 667)
+INFO phone-375: collection starts at 599px (screen height 667)
 PASS phone-390 index.html: no horizontal scroll
 PASS phone-390 shoreline-hoodie.html: no horizontal scroll
 PASS phone-390 cart.html: no horizontal scroll
@@ -298,7 +311,7 @@ PASS phone-390 field-notes.html: no horizontal scroll
 PASS phone-390: hero shows the whole sunset
 PASS phone-390: hero shows the lighthouse
 PASS phone-390: hero image is shorter than before (<= 62% of screen or 460px)
-INFO phone-390: collection starts at 567px (screen height 664)
+INFO phone-390: collection starts at 610px (screen height 664)
 PASS phone-landscape-844 index.html: no horizontal scroll
 PASS phone-landscape-844 shoreline-hoodie.html: no horizontal scroll
 PASS phone-landscape-844 cart.html: no horizontal scroll
@@ -339,6 +352,9 @@ PASS zoom200-of-1280: hero shows the whole sunset
 PASS zoom200-of-1280: hero shows the lighthouse
 PASS zoom200-of-1280: hero image is shorter than before (<= 62% of screen or 460px)
 INFO zoom200-of-1280: collection starts at 479px (screen height 400)
+PASS harness: outer page really is scrolled down before the click
+PASS stretched frame: product page opens at its top, not the bottom
+PASS stretched frame: "Back to the collection" lands on that card
 PASS first Tab reaches "Skip to content"
 PASS keyboard reaches the first product title link
 PASS keyboard focus on the card revealed it
@@ -349,4 +365,4 @@ PASS axe (incl. color contrast) cart.html: no violations
 PASS axe (incl. color contrast) field-notes.html: no violations
 PASS axe (incl. color contrast) preview-notes.html: no violations
 
-342 passed, 0 failed
+358 passed, 0 failed

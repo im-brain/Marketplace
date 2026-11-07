@@ -1,0 +1,13 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Frame harness</title>
+<!-- QA only, not published. Mimics a viewer that stretches the page frame to its
+     full height (like the claude.ai viewer on iPad), so the OUTER page scrolls. -->
+<style>body{margin:0}iframe{display:block;width:100%;border:0}</style>
+<iframe id="f" src="../index.html" scrolling="no"></iframe>
+<script>
+  var f = document.getElementById('f');
+  function fit() { try { f.style.height = f.contentDocument.documentElement.scrollHeight + 'px'; } catch (e) {} }
+  f.addEventListener('load', function () { fit(); setTimeout(fit, 300); setTimeout(fit, 1000); });
+  setInterval(fit, 500);
+</script>

@@ -120,7 +120,7 @@ ul{padding-left:1.2em}
 @media (max-width:700px){
   .hero{grid-template-columns:1fr;height:auto;width:100%;margin:0;border-width:0 0 3px;box-shadow:none}
   .hero__art{order:0}
-  .hero__art img{height:min(230px,62vw);object-fit:cover;object-position:50% 30%}
+  .hero__art img{height:auto;aspect-ratio:1086/760;object-fit:fill}
   .hero__copy{border-right:0;border-top:3px solid var(--hp-sand);padding:18px var(--gut) 22px}
   .kicker-px{display:none}
   .hero h1{font-size:28px;margin-bottom:8px}
@@ -194,7 +194,7 @@ ul{padding-left:1.2em}
    splash-shaped clip. Only runs when html has .wet-fx (motion allowed and
    clip-path supported); otherwise every image is simply full color. */
 .wet-fx .wet__top{display:block;clip-path:circle(0 at 50% 50%)}
-.wet-fx .wet__base img{filter:saturate(.55) contrast(.92) brightness(1.04)}
+.wet-fx .wet__base img{filter:saturate(.40) contrast(.88) brightness(1.06)}
 .wet-fx .card.is-wet .wet__top{clip-path:none}
 .wet-fx .card.is-wet .wet__base img{filter:none}
 .wet-fx .card.is-splashing .wet__top{will-change:clip-path}
@@ -202,17 +202,14 @@ ul{padding-left:1.2em}
 @keyframes ripple{from{transform:scale(.4);opacity:.9}to{transform:scale(9);opacity:0}}
 .card.img-failed .wet__base img,.card.img-failed .wet__top,.card.img-failed .wet-btn,.card.img-failed .view-tag{display:none}
 
-.wet-btn{position:absolute;z-index:4;right:8px;bottom:8px;display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:4px 10px;background:var(--hp-ink);color:var(--hp-cream);border:2px solid var(--hp-sand);box-shadow:2px 2px 0 var(--hp-shadow-deep);font:700 14px/1.2 var(--hp-font-body);cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
-.wet-btn svg{width:13px;height:13px}
-.wet-btn:active{transform:translate(2px,2px);box-shadow:none}
-.wet-btn__wet{display:none}
-.wet-btn[data-state="wet"]{background:var(--hp-teal)}
-.wet-btn[data-state="wet"] .wet-btn__dry{display:none}
-.wet-btn[data-state="wet"] .wet-btn__wet{display:inline-flex;align-items:center;gap:6px}
-.wet-btn__dry{display:inline-flex;align-items:center;gap:6px}
-/* without the effect there is nothing to wet */
+/* "Show": small see-through control for touch screens; disappears once the piece is revealed */
+.wet-btn{position:absolute;z-index:4;right:8px;bottom:8px;min-height:32px;padding:3px 12px;background:rgba(16,29,44,.62);color:var(--hp-white);border:1px solid rgba(255,255,255,.6);border-radius:2px;font:700 14px/1.2 var(--hp-font-body);letter-spacing:.02em;cursor:pointer;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);-webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:opacity .4s ease-out}
+.wet-btn:active{background:rgba(16,29,44,.78)}
+.wet-btn[data-state="wet"]{opacity:0;pointer-events:none;visibility:hidden;transition:opacity .4s ease-out,visibility 0s linear .4s}
+/* without the effect there is nothing to show */
 html:not(.wet-fx) .wet-btn{display:none}
-@media (max-width:640px){.wet-btn{right:5px;bottom:5px;min-height:30px;padding:2px 8px;font-size:14px}}
+@media (max-width:640px){.wet-btn{right:5px;bottom:5px;min-height:30px;padding:2px 9px}}
+@media (prefers-reduced-motion:reduce){.wet-btn{transition:none}}
 
 /* ---------- loader (provisional): three pebbles get wet one at a time ---------- */
 .hp-loader{display:inline-flex;flex-direction:column;align-items:center;gap:8px;color:var(--hp-graphite);font:700 14px/1.2 var(--hp-font-body)}
@@ -316,6 +313,7 @@ html:not(.wet-fx) .wet-btn{display:none}
 .opts legend span{font-weight:600}
 .opts__row{display:flex;flex-wrap:wrap;gap:10px 12px}
 .opts__help{margin:10px 0 0;font-size:15px;color:var(--hp-graphite)}
+.opts__help:empty{display:none}
 .opts__help.err{color:var(--hp-rust);font-weight:700}
 .opt{position:relative;display:inline-flex}
 .opt input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;z-index:1}

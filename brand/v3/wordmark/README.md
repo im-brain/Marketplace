@@ -17,12 +17,13 @@ Exact text: `heavy pockets`, all lowercase. No "Co.", tagline, flowers, trees, m
 
 ## How it was made
 
-`python3 scripts/trace_wordmark.py` crops option A, upscales it 4x, separates teal ink from cream paper, smooths away the paper texture, and fits curves with potrace (`pip install potracer`). It produced 16 contours: 6 for "heavy" (the "v" and "y" touch in the source art, so they are one shape) and 10 for "pockets".
+`python3 scripts/trace_wordmark.py` crops option A, upscales it 4x, separates teal ink from cream paper, smooths away the paper texture, and fits curves with potrace (`pip install potracer`). It produces 17 contours: 7 for "heavy" and 10 for "pockets."
 
 ## What was checked
 
-- Overlap with the source pixels: 98.1% (IoU 0.981 at 1236 px wide). Differences are about one pixel along the edges.
-- Letter count and counters are correct. The "vy" join is in the original art, not a trace artifact.
+- Overlap with the source pixels (before the v/y separation): 98.1% (IoU 0.981 at 1236 px wide). Differences are about one pixel along the edges.
+- Letter count and counters are correct.
+- **The "v" and "y" are separated** (Brian, Nov 7, 2026). In the source art they touch at the top. The script cuts a 9 px gap at the bridge (only down to where the natural gap is already that wide, so there is no ledge) and rounds the two new stroke ends to match the others. Turn it off with `SPLIT_VY = False`.
 - Readable at 28 px tall (phone header) and 160 px wide.
 
 ## What remains (needs real artwork work)
@@ -30,7 +31,7 @@ Exact text: `heavy pockets`, all lowercase. No "Co.", tagline, flowers, trees, m
 The source is a 1536 px AI-generated raster, so this trace inherits its small wobbles. It is fine for the website preview. Before use on garments, embroidery, signage, or print:
 
 1. A designer redraws or cleans the curves: even stroke weights, consistent terminals and corner radii, and fewer nodes.
-2. Decide whether the "vy" join stays.
+2. Check the new "v" and "y" top ends, which were cut and rounded by script, when the curves are cleaned.
 3. Check letter spacing optically, and make a small-size version if it will appear under about 20 px tall.
 4. Confirm the final teal and rust values for print (Pantone or thread colors).
 

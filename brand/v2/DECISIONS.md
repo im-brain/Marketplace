@@ -92,3 +92,13 @@ Updated: November 4, 2026.
 - Prices provisional in `theme/v3/src/pricing.json`.
 - **Still needs owner approval** before merge or any deployment.
 
+## Owner feedback, November 7, 2026 (iPad review of the v3 preview)
+- Wordmark: separate the "v" and "y" (they touched in option A's source art).
+- Resting "dry" state 15% drier, so the reveal reads clearly.
+- Remove the "Wet it" and "Wet" buttons; use a small see-through "Show" in the image corner. This replaces the brief's "Wet it" button. The shop intro text explains the effect.
+- Phone hero must show the rocks.
+- Pages must open at the top.
+- Remove the size-range text and the color counts.
+- Shoppers should never see "supplier" or "Printify."
+- Implemented the same day on branch `claude/clever-curie-pxflzz`; 358 browser checks pass.
+

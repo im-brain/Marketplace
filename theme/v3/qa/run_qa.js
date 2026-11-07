@@ -70,6 +70,12 @@ async function scrollAll(page) {
       const r = await page.request.get(`${BASE}/${ref}`);
       check(`resource ${ref} exists`, r.status() === 200, r.status());
     }
+    for (const pg of ['index.html', 'cart.html', 'field-notes.html', ...SLUGS.map((s) => s + '.html')]) {
+      await page.goto(`${BASE}/${pg}`, { waitUntil: 'networkidle' });
+      await page.selectOption && 0;
+      const leak = await page.evaluate(() => { const t = document.body.innerText + ' ' + [...document.querySelectorAll('img[alt]')].map((i) => i.alt).join(' '); return (t.match(/supplier|printify/gi) || []); });
+      check(`${pg}: customers never see "supplier" or "Printify"`, leak.length === 0, leak);
+    }
     check('no requests to outside hosts except Google Fonts', external.length === 0, external.slice(0, 5));
     await ctx.close();
   }
@@ -97,6 +103,8 @@ async function scrollAll(page) {
     check('desktop grid is 3 columns', cols === 3, cols);
     const devText = await page.evaluate(() => /STAND-IN|READY|TYPE|\.TEE|HP-0/.test(document.querySelector('#shop').innerText));
     check('no dev labels (READY, STAND-IN, file names) in the shop', !devText);
+    check('no color count next to the color name', !(await page.$$eval('.sw-name', (ps) => ps.some((p) => /colors?$/.test(p.textContent.trim())))));
+    check('"Show" control is a small see-through label, not a "Wet it" button', !(await page.content()).includes('Wet it') && (await page.$$eval('[data-wet-btn]', (bs) => bs.every((b) => b.textContent.trim() === 'Show' && /rgba/.test(getComputedStyle(b).backgroundColor)))));
     check('tagline is never directly under the wordmark (footer)', !(await page.$eval('.foot-brand', (e) => e.textContent)).includes('Head down'));
     check('prices use one format ($40.00)', (await page.$$eval('.card .price', (ps) => ps.every((p) => /\$\d+\.\d\d/.test(p.textContent)))));
     check('standalone wet-stone lab removed from homepage', (await page.$$('.lab, .tray, [data-stone]')).length === 0);
@@ -135,9 +143,10 @@ async function scrollAll(page) {
     const ring = await page.$eval('#p-field-notebook-tee h3 a', (a) => getComputedStyle(a).outlineStyle + ' ' + getComputedStyle(a).outlineColor);
     check('focused link shows a visible gold outline', /solid rgb\(232, 185, 84\)/.test(ring), ring);
     // wet it button
-    await page.locator('#p-shoreline-hoodie [data-wet-btn]').click();
+    await page.locator('#p-shoreline-hoodie [data-wet-btn]').dispatchEvent('click');
     await wait(1400);
-    check('"Wet it" button reveals the card', await page.$eval('#p-shoreline-hoodie', (c) => c.classList.contains('is-wet')));
+    check('"Show" reveals the card', await page.$eval('#p-shoreline-hoodie', (c) => c.classList.contains('is-wet')));
+    check('"Show" disappears once the piece is revealed', await page.$eval('#p-shoreline-hoodie [data-wet-btn]', (b) => getComputedStyle(b).visibility === 'hidden'));
     // color change keeps it wet
     await page.locator('#p-midnight-rock-hunt-tee .sw:has(input[value="Navy"])').click();
     await wait(200);
@@ -245,7 +254,8 @@ async function scrollAll(page) {
     check('Embroidered Light Blue offers S to 5XL', (await disabled('floral-butterfly-embroidered-hoodie', 'Light Blue')).length === 0);
     check('Rock Crew Yam / 4XL disabled (Printify unavailable)', JSON.stringify(await disabled('great-lakes-rock-crew-tee', 'Yam')) === '["4XL"]');
     check('Pocket Violet / 4XL disabled (Printify unavailable)', JSON.stringify(await disabled('pocket-full-of-treasures-tee', 'Violet')) === '["4XL"]');
-    check('stock wording names the dated check, never "right now"', /not available in our Nov 7, 2026 supplier check/.test(await page.textContent('[data-size-help]')) && !/right now/.test(await page.content()));
+    check('no size-range text under the size keys (keys show it)', (await page.textContent('[data-size-help]')).trim() === '' && !/comes in/.test(await page.content()));
+    check('unavailable key is labeled for screen readers', /not available in Violet/.test(await page.textContent('label.opt:has(input[value="4XL"])')));
     check('Tees stop at 4XL (no 5XL key)', (await page.$$('input[name=size][value="5XL"]')).length === 0);
     // switching to a color without the chosen size clears it
     await page.goto(`${BASE}/shoreline-hoodie.html?color=black&size=5XL`, { waitUntil: 'networkidle' });
@@ -380,7 +390,7 @@ async function scrollAll(page) {
     await p3.goto(`${BASE}/index.html`, { waitUntil: 'networkidle' });
     const f = await p3.$eval('#p-midnight-rock-hunt-tee .wet__base img', (i) => getComputedStyle(i).filter);
     check('reduced motion: products are full color immediately, no animation', f === 'none' && !(await p3.evaluate(() => document.documentElement.classList.contains('wet-fx'))));
-    check('reduced motion: "Wet it" button hidden (nothing to do)', !(await p3.isVisible('[data-wet-btn]')));
+    check('reduced motion: "Show" hidden (nothing to do)', !(await p3.isVisible('[data-wet-btn]')));
     const anim = await p3.evaluate(() => { const d = document.createElement('div'); d.innerHTML = '<span class="hp-loader"><span class="hp-loader__stones"><i></i></span></span>'; document.body.appendChild(d); return getComputedStyle(d.querySelector('i')).animationName; });
     check('reduced motion: loader is static', anim === 'none', anim);
     await rm.close();
@@ -460,6 +470,33 @@ async function scrollAll(page) {
       }
       await ctx.close();
     }
+  }
+
+  /* 9b. inside a stretched frame (like the iPad viewer) new pages open at the top */
+  {
+    const ctx = await newCtx(b, { viewport: { width: 820, height: 1000 } });
+    const page = await ctx.newPage();
+    await page.goto(`${BASE}/qa/frame-harness.html`, { waitUntil: 'networkidle' });
+    await wait(1200);
+    const frame = page.frame({ url: /index\.html/ });
+    const top = async () => page.evaluate(() => document.getElementById('f').getBoundingClientRect().top);
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+    await wait(200);
+    const link = await frame.$('#p-field-notebook-tee h3 a');
+    await link.evaluate((a) => a.scrollIntoView({ block: 'center' }));
+    await wait(200);
+    check('harness: outer page really is scrolled down before the click', (await top()) < -500, await top());
+    await link.click();
+    await page.waitForTimeout(1500);
+    const t = await top();
+    check('stretched frame: product page opens at its top, not the bottom', t > -5 && t < 5, t);
+    const back = await page.frame({ url: /field-notebook-tee/ }).$('.crumbs a');
+    await back.click();
+    await page.waitForTimeout(1500);
+    const card = await page.frame({ url: /index\.html/ }).$eval('#p-field-notebook-tee', (c) => c.getBoundingClientRect().top);
+    const ft = await top();
+    check('stretched frame: "Back to the collection" lands on that card', Math.abs(ft + card) < 40, { frameTop: ft, cardTop: card });
+    await ctx.close();
   }
 
   /* 10. keyboard-only path and accessibility scan */

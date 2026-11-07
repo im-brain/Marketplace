@@ -46,6 +46,60 @@ def build_mask():
     return np.asarray(g) < 128  # True = ink
 
 
+# Brian, Nov 7, 2026: separate the "v" and "y", which touch at the top in the
+# source art. The bridge sits above the notch between them at crop x ~445 (1x).
+SPLIT_VY = True
+VY_APEX_X = 445   # 1x crop px; refined to the true notch apex below
+VY_GAP = 9        # 1x px, about the space between the other letters
+ROUND = 7         # 1x px corner rounding for the two new stroke ends
+
+
+def split_vy(mask):
+    """Cut the v/y bridge and round the new ends. Returns a new mask."""
+    m = mask.copy()
+    # find the notch apex: the column whose inner gap starts highest
+    best = None
+    for x in range((VY_APEX_X - 25) * S, (VY_APEX_X + 25) * S):
+        col = m[:, x]
+        ys = np.where(col)[0]
+        if not len(ys):
+            continue
+        below = np.where(~col[ys[0]:])[0]
+        if not len(below):
+            continue
+        gap = ys[0] + below[0]
+        if not np.where(col[gap:])[0].size:
+            continue
+        if best is None or gap < best[1]:
+            best = (x, gap)
+    ax, gap = best
+    half = VY_GAP * S // 2
+    # cut down only until the natural notch is already as wide as the gap,
+    # so the cut edges run straight into the existing diagonal edges (no ledge)
+    y_end = gap
+    for y in range(gap, m.shape[0]):
+        row = m[y]
+        l = ax
+        while l > 0 and not row[l - 1]:
+            l -= 1
+        r_ = ax
+        while r_ < m.shape[1] - 1 and not row[r_ + 1]:
+            r_ += 1
+        if r_ - l + 1 >= 2 * half:
+            y_end = y
+            break
+    m[: y_end + 1, ax - half: ax + half] = False
+    # round only the freshly cut corners: blur + threshold inside a small window
+    r = ROUND * S
+    y0, y1 = 0, y_end + 6 * S
+    x0, x1 = ax - half - 3 * r, ax + half + 3 * r
+    win = Image.fromarray((m[y0:y1, x0:x1] * 255).astype("uint8")).filter(ImageFilter.GaussianBlur(r / 2))
+    rounded = np.asarray(win) >= 128
+    # keep the original outline away from the cut; only allow removing ink near it
+    m[y0:y1, x0:x1] &= rounded | (np.abs(np.arange(x0, x1) - ax)[None, :] > half + 2 * r)
+    return m, (ax / S, gap / S)
+
+
 def trace(mask):
     # potracer traces values below blacklevel, so pass ink as 0
     bm = potrace.Bitmap(~mask)
@@ -55,6 +109,9 @@ def trace(mask):
 
 def main():
     mask = build_mask()
+    cut = None
+    if SPLIT_VY:
+        mask, cut = split_vy(mask)
     curves = trace(mask)
     ys, xs = np.where(mask)
     pad = 8 * S
@@ -100,7 +157,7 @@ def main():
             f.write(svg)
     os.makedirs(os.path.join(OUT, "qa"), exist_ok=True)
     Image.fromarray(np.where(mask, 0, 255).astype("uint8")).save(os.path.join(OUT, "qa/trace-mask-4x.png"))
-    info = {"contours": len(curves), "viewBox": [round(w), round(h)],
+    info = {"contours": len(curves), "viewBox": [round(w), round(h)], "vy_cut_at": cut,
             "heavy_contours": sum(1 for x, _ in subpaths if x < split),
             "pockets_contours": sum(1 for x, _ in subpaths if x >= split)}
     print(json.dumps(info))

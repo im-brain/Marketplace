@@ -185,7 +185,7 @@
         var pt = pointPct(media, t.clientX, t.clientY); reveal(card, pt[0], pt[1]);
       }, { passive: true });
       btn.addEventListener('click', function () {
-        if (!reveal(card, 50, 50) && FX) ripple(media, 50, 50);
+        reveal(card, 50, 50);
       });
     });
   }
@@ -213,8 +213,8 @@
       main.hidden = item.type === 'ph';
       if (item.type === 'view') {
         main.src = SIM.indexOf('noimages') > -1 ? MISSING : c.images[item.view];
-        main.alt = p.name + ' in ' + c.name + ', ' + LABEL[item.view].toLowerCase() + ' view (supplier mockup)';
-        cap.textContent = LABEL[item.view] + ', ' + c.name + '. Supplier mockup.';
+        main.alt = p.name + ' in ' + c.name + ', ' + LABEL[item.view].toLowerCase() + ' view';
+        cap.textContent = LABEL[item.view] + ', ' + c.name + '.';
         watchImg(main, well, failMain);
       } else if (item.type === 'art') {
         var a = arts[item.i];
@@ -251,16 +251,14 @@
         r.disabled = !ok;
         var lab = r.parentNode; lab.classList.toggle('is-off', !ok);
         var why = $('.why', lab);
-        if (!ok) { if (!why) { why = document.createElement('span'); why.className = 'visually-hidden why'; lab.appendChild(why); } why.textContent = s ? ', not available in our ' + C.snapshotDate + ' check' : ', not made in ' + c.name; }
+        if (!ok) { if (!why) { why = document.createElement('span'); why.className = 'visually-hidden why'; lab.appendChild(why); } why.textContent = ', not available in ' + c.name; }
         else if (why) why.remove();
         if (!ok && r.checked) { r.checked = false; lost = r.value; }
       });
       if (lost) state.size = null;
-      var offered = c.sizes.map(function (s) { return s.size; });
-      var text = c.name + ' comes in ' + offered[0] + ' to ' + offered[offered.length - 1] + '.';
-      if (unavailable.length) text += ' ' + unavailable.join(', ') + (unavailable.length > 1 ? ' were' : ' was') + ' not available in our ' + C.snapshotDate + ' supplier check.';
+      // the size keys show what is available; text appears only to explain a change
       help.classList.toggle('err', !!lost);
-      help.textContent = lost ? lost + ' is not available in ' + c.name + '. Please pick another size. ' + text : (state.size ? text : 'Pick a size. ' + text);
+      help.textContent = lost ? lost + ' is not available in ' + c.name + '. Please pick another size.' : '';
       $$('.thumb[data-view]', root).forEach(function (b) { var v = b.getAttribute('data-view'); $('img', b).src = SIM.indexOf('noimages') > -1 ? MISSING : c.images[v]; });
       if (state.item.type === 'view') showItem(state.item);
       sizeNote(); syncUrl();
@@ -271,8 +269,7 @@
       state.size = size;
       $$('input[name=size]', form).forEach(function (r) { r.checked = r.value === size; });
       help.classList.remove('err');
-      var offered = c.sizes.map(function (x) { return x.size; });
-      help.textContent = c.name + ' comes in ' + offered[0] + ' to ' + offered[offered.length - 1] + '.';
+      help.textContent = '';
       msg.textContent = ''; msg.className = 'form-msg';
       sizeNote(); syncUrl();
     }
@@ -447,12 +444,35 @@
     $$('.hero img, .thumb img, .art-fig img, .chart img, .line__img img').forEach(function (im) { im.src = MISSING; });
     $$('.hero source').forEach(function (s) { s.remove(); });
   }
+  function scrollToStart() {
+    var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+    if (nav && nav.type === 'back_forward') return; // Back keeps its place
+    var id = location.hash.slice(1);
+    var target = (id && document.getElementById(id)) || document.body;
+    try { target.scrollIntoView({ block: 'start', behavior: 'instant' }); } catch (e) { target.scrollIntoView(true); }
+    if (target === document.body) { try { window.scrollTo({ top: 0, behavior: 'instant' }); } catch (e) { window.scrollTo(0, 0); } }
+  }
+  // same-page links (#shop, #story) scroll with scrollIntoView too, for the same reason
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    var url = new URL(a.getAttribute('href'), location.href);
+    if (url.pathname === location.pathname && url.search === location.search && url.hash) {
+      var el = document.getElementById(url.hash.slice(1));
+      if (!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ block: 'start', behavior: html.classList.contains('wet-fx') ? 'smooth' : 'auto' });
+      try { history.pushState(null, '', url.hash); } catch (err) { location.hash = url.hash; }
+    }
+  });
+
   renderCount(false);
   initCards();
   initProduct();
   initCartPage();
   initSignup();
   initStones();
+  if (document.readyState === 'complete') scrollToStart(); else window.addEventListener('load', scrollToStart, { once: true });
   window.addEventListener('pageshow', function (e) { if (e.persisted) renderCount(false); });
   window.HP_DEBUG = { readCart: readCart, storageOk: { local: local.ok, session: session.ok } };
 })();

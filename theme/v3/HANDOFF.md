@@ -23,14 +23,16 @@ These are Printify product IDs, not Shopify variant IDs. Printify's enabled colo
 
 ## What was tested (Nov 7, 2026)
 
-Automated: `qa/run_qa.js`, 333 checks, all passing, plus an axe accessibility scan (including color contrast) on five pages with no violations. Full list in `qa/last-run.txt`. Highlights:
+Automated: `qa/run_qa.js`, 358 checks, all passing, plus an axe accessibility scan (including color contrast) on five pages with no violations. Full list in `qa/last-run.txt`. Highlights:
 
 - All six cards, in order, with only the approved colors and labeled preview prices. Each links to its own page.
 - Every page, image, and internal link returns 200. No requests leave the site except Google Fonts.
 - Direct links, reload, browser Back, and "Back to the collection." `?color=` and `?size=` survive reloads. Invalid sizes in a link are ignored.
 - Gallery images match the chosen color for every color of every product. Front and back views and artwork close-ups present.
 - Size rules: Shoreline Heather Navy stops at 3XL; Embroidered Sand stops at 3XL; Light Pink has 5XL but no 4XL; Yam / 4XL and Violet / 4XL disabled (Printify marked them unavailable). Switching to a color that lacks your size clears it and says why.
-- Wet reveal: hover, keyboard focus, the "Wet it" button, and touch. A touch swipe across a product image scrolls the page natively, reveals the card, and does not open the product. A deliberate tap opens it. Touch cancel leaves nothing stuck. The touch listener never blocks scrolling. Reveal lasts for the visit (Back and reload), color changes keep it, and a new visit starts muted.
+- Wet reveal: hover, keyboard focus, the see-through "Show" label, and touch. A touch swipe across a product image scrolls the page natively, reveals the card, and does not open the product. A deliberate tap opens it. Touch cancel leaves nothing stuck. The touch listener never blocks scrolling. Reveal lasts for the visit (Back and reload), color changes keep it, and a new visit starts muted.
+- Pages open at the top, including inside a stretched frame like the iPad viewer, and "Back to the collection" lands on the card.
+- Customers never see "supplier" or "Printify" on any shopper page (text or image descriptions).
 - Product pages show the true full-color image immediately.
 - Cart: no add without a size, add, merge of the same variant, separate lines for different variants, quantity up, typed quantity capped at 10, remove, subtotal, empty state, persistence across pages, and cleanup of bad stored data. Checkout is disabled and explains why.
 - Signup: empty and invalid errors; a valid address gets an honest preview message. No network request and nothing saved.
@@ -39,6 +41,17 @@ Automated: `qa/run_qa.js`, 333 checks, all passing, plus an axe accessibility sc
 - Keyboard only: skip link, reaching a card, opening it, choosing a size, and adding to the cart. Visible gold focus outline.
 
 **Limits of this testing:** Chromium only, with phone and touch *emulation*. Not tested on a real iPhone, iPad, or Safari. Please try the link on your phone and iPad, upright and sideways.
+
+## Changes from your iPad review (Nov 7, 2026)
+
+1. Wordmark: the "v" and "y" no longer touch.
+2. Resting state is 15 points drier (saturation 0.55 to 0.40, a little lighter and flatter), so the reveal is more obvious.
+3. "Wet it" and "Wet" buttons removed. A small see-through "Show" sits in the image corner and fades away after the reveal.
+4. Phone hero shows the whole scene again, rocks included.
+5. Pages now open at the top instead of where the last page was scrolled.
+6. Size-range text removed (the size keys show it).
+7. "Supplier" and "Printify" removed from everything shoppers see.
+8. Color counts removed from the product cards.
 
 ## Provisional items (need your review)
 

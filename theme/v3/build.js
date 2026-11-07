@@ -182,7 +182,7 @@ ${footer()}
 const ph = (text) => `<span class="ph-tag">${esc(text)}</span>`;
 const altFor = (p, c, view) => {
   const v = { front: 'front', 'front-close': 'front close-up', back: 'back', 'back-hood': 'back with the hood up', folded: 'folded', flatlay: 'styled flat lay' }[view];
-  return `${p.name} in ${c.name}, ${v} view (supplier mockup)`;
+  return `${p.name} in ${c.name}, ${v} view`;
 };
 
 /* ---------- homepage ---------- */
@@ -204,14 +204,14 @@ function card(p) {
     <span class="media-loader">${LOADER('Loading', false)}</span>
     <span class="img-fail" hidden><span>Photo did not load.</span><a href="${p.slug}.html">See the product page</a></span>
     ${viewTag}
-    <button class="wet-btn" type="button" data-wet-btn><span class="wet-btn__dry">${ICON.drop}Wet it</span><span class="wet-btn__wet">${ICON.check}Wet</span><span class="visually-hidden"> to see ${esc(p.name)} in full color</span></button>
+    <button class="wet-btn" type="button" tabindex="-1" aria-hidden="true" data-wet-btn>Show</button>
   </div>
   <div class="card__body">
     <h3><a href="${p.slug}.html" data-card-link>${esc(p.name)}</a></h3>
     <p class="card__blurb">${esc(p.blurb)}</p>
     <p class="price">${money(p.priceCents)} <span>preview price</span></p>
     ${swatchFieldset(p, 'c-' + p.slug, 'swatches')}
-    <p class="sw-name"><span class="visually-hidden">Selected color: </span><span data-color-name>${esc(c.name)}</span>, ${p.colors.length} colors</p>
+    <p class="sw-name"><span class="visually-hidden">Selected color: </span><span data-color-name>${esc(c.name)}</span></p>
     <a class="more" href="${p.slug}.html" data-card-link>See details<span class="visually-hidden"> for ${esc(p.name)}</span>${ICON.arrow}</a>
   </div>
 </li>`;
@@ -257,7 +257,7 @@ ${wetSel('.wet__base img')}{filter:none!important}</style>
   <ul class="cards">
 ${products.map(card).join('\n')}
   </ul>
-  <p class="shop__note">Prices are provisional preview prices. Final prices are not approved yet. Photos are supplier mockups until real samples are photographed.</p>
+  <p class="shop__note">Prices are provisional preview prices. Final prices are not approved yet. Photos are mockups until the finished pieces are photographed.</p>
 </section>
 
 <section class="win win--teal story" id="story" aria-labelledby="story-h">
@@ -315,7 +315,6 @@ function productPage(p) {
     p.art.map((a, i) =>
       `<li><button type="button" class="thumb thumb--art thumb--${a.bg}" data-art="${i}" aria-pressed="false" aria-label="Show ${esc(a.label.toLowerCase())}"><img src="${a.src}" alt="" loading="lazy" decoding="async"></button></li>`).join('') +
     `<li><button type="button" class="thumb thumb--ph" data-ph="1" aria-pressed="false" aria-label="Sample and lifestyle photos, coming later"><span>Photos soon</span></button></li>`;
-  const viewLines = views.map((v) => viewLabel(v).toLowerCase()).join(', ');
   const sizeKeys = p.sizesOffered.map((s) => {
     const cs = c.sizes.find((x) => x.size === s);
     const off = !cs || !cs.ok;
@@ -324,9 +323,7 @@ function productPage(p) {
   const colorKeys = p.colors.map((x, i) =>
     `<label class="opt opt--color"><input type="radio" name="color" value="${esc(x.name)}"${i === 0 ? ' checked' : ''}><span><i class="sw__dot" style="--c:${x.hex}"></i>${esc(x.name)}</span></label>`).join('');
   const artFigs = p.art.map((a) => `<figure class="art-fig art-fig--${a.bg}"><img src="${a.src}" alt="${esc(p.name)}: ${esc(a.label.toLowerCase())}, shown as the design file" loading="lazy" decoding="async"><figcaption>${esc(a.label)}. Design file preview, not a photo of a printed shirt.</figcaption></figure>`).join('');
-  const sizeRange = (x) => { const ok = x.sizes.map((s) => s.size); return ok[0] + ' to ' + ok[ok.length - 1]; };
-  const rangeLines = p.colors.map((x) => `${x.name}: ${sizeRange(x)}`).join('; ');
-  return layout({
+      return layout({
     title: `${p.name} | heavy pockets (preview)`,
     desc: `${p.name}: ${p.blurb} Private preview.`,
     page: 'product',
@@ -339,11 +336,11 @@ function productPage(p) {
       <figure class="gallery__main">
         <div class="well well--lg" data-g-well>
           <img src="${c.images[first]}" alt="${esc(altFor(p, c, first))}" width="900" height="900" decoding="async" fetchpriority="high" data-g-img>
-          <div class="g-ph" hidden data-g-ph><strong>Sample and lifestyle photos are coming.</strong><span>Real photos of the printed ${p.kind.toLowerCase()} go here after the ordered samples arrive and are approved.</span></div>
+          <div class="g-ph" hidden data-g-ph><strong>Sample and lifestyle photos are coming.</strong><span>Photos of the finished ${p.kind.toLowerCase()} are coming soon.</span></div>
           <span class="media-loader">${LOADER('Loading image', true)}</span>
           <span class="img-fail" hidden>This image did not load. Try another view.</span>
         </div>
-        <figcaption data-g-cap>${viewLabel(first)}, ${esc(c.name)}. Supplier mockup.</figcaption>
+        <figcaption data-g-cap>${viewLabel(first)}, ${esc(c.name)}.</figcaption>
       </figure>
       <ul class="thumbs" role="list">${thumbs}</ul>
     </div>
@@ -363,7 +360,7 @@ function productPage(p) {
         <fieldset class="opts" aria-describedby="size-help">
           <legend>Size</legend>
           <div class="opts__row">${sizeKeys}</div>
-          <p id="size-help" class="opts__help" data-size-help>Pick a size. ${esc(c.name)} comes in ${sizeRange(c)}.</p>
+          <p id="size-help" class="opts__help" data-size-help aria-live="polite"></p>
         </fieldset>
         <div class="qty-row">
           <label for="qty">Quantity</label>
@@ -373,7 +370,6 @@ function productPage(p) {
         <p class="form-msg" role="status" aria-live="polite" data-buy-msg></p>
       </form>
       <p class="checkout-note">This is a preview cart. Checkout is off, so nothing is charged and no order is made.</p>
-      <p class="stock-note">Size availability comes from Printify product data captured ${SNAP_DATE}. It is not live stock.</p>
     </div>
   </div>
 
@@ -382,12 +378,12 @@ function productPage(p) {
       <h2>The design</h2>
       <p>${esc(p.story)}</p>
       <div class="art-figs">${artFigs}</div>
-      <p class="small">Gallery views: ${esc(viewLines)}. All garment images are supplier mockups. Sample photos and lifestyle shots come later.</p>
+      <p class="small">Images are mockups. Photos of the finished pieces are coming.</p>
     </section>
     <section class="info__block">
       <h2>Fit and sizing</h2>
-      <p>${esc(p.blank.fit)} Sizes by color: ${esc(rangeLines)}.</p>
-      <figure class="chart"><img src="${p.blank.chart}" alt="Supplier size chart for the ${esc(p.blank.name)}, with body width, length, and sleeve length by size in inches and centimeters." loading="lazy" decoding="async"><figcaption>Supplier size chart. Measure a shirt you like and compare.</figcaption></figure>
+      <p>${esc(p.blank.fit)}</p>
+      <figure class="chart"><img src="${p.blank.chart}" alt="Size chart for the ${esc(p.blank.name)}, with body width, length, and sleeve length by size in inches and centimeters." loading="lazy" decoding="async"><figcaption>Size chart. Measure a shirt you like and compare.</figcaption></figure>
     </section>
     <section class="info__block">
       <h2>Fabric</h2>
@@ -397,12 +393,11 @@ function productPage(p) {
     <section class="info__block">
       <h2>Decoration</h2>
       <p>${esc(p.decoration)}</p>
-      <p>Made to order by ${esc(p.provider)} through Printify.</p>
+      <p>Made to order for you.</p>
     </section>
     <section class="info__block">
       <h2>Care</h2>
       <ul>${p.care.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>
-      <p class="small">From the supplier's listing. Confirm against the sample's label.</p>
     </section>
     <section class="info__block">
       <h2>Shipping and returns</h2>
@@ -519,7 +514,7 @@ const previewNotes = layout({
       <figure class="mark mark--light">${WORDMARK}<figcaption>Primary: deep teal on light</figcaption></figure>
       <figure class="mark mark--light mark--duo"><img src="assets/wordmark-teal-rust.svg" alt="heavy pockets wordmark in teal and rust"><figcaption>Secondary: teal and rust</figcaption></figure>
     </div>
-    <p><strong>Status: provisional.</strong> Traced from option A of the comparison board (a 1536 px raster). The trace matches the source pixels closely (98% overlap), but it is not finished production art. A designer should clean the curves, even out stroke weights, and check spacing before use on garments, signage, or embroidery.</p>
+    <p><strong>Status: provisional.</strong> Traced from option A of the comparison board (a 1536 px raster), with the "v" and "y" separated at your request. The trace matches the source pixels closely (98% overlap), but it is not finished production art. A designer should clean the curves, even out stroke weights, and check spacing before use on garments, signage, or embroidery.</p>
 
     <h2>Loading icon (provisional)</h2>
     <div class="loader-demo">

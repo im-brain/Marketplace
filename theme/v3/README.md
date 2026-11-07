@@ -26,13 +26,21 @@ All pages are generated. Edit the sources, then run `node theme/v3/build.js` (no
 
 ## The wet reveal (homepage cards only)
 
-- Resting: the real supplier mockup with a gentle CSS filter (lower saturation, slightly lighter). Nothing is moved, warped, or recolored.
+- Resting: the real supplier mockup with a CSS filter (`saturate(.40) contrast(.88) brightness(1.06)`, made 15 points drier at Brian's request on Nov 7). Nothing is moved, warped, or recolored.
 - Reveal: an identical full-color copy sits on top and is uncovered by a splash-shaped clip that grows from where you touched or hovered, with a faint ripple ring. About 1.1 seconds.
-- Triggers: mouse hover, keyboard focus anywhere in the card, any touch on the image (including the start of a scroll), and the small "Wet it" button.
+- Triggers: mouse hover, keyboard focus anywhere in the card, any touch on the image (including the start of a scroll), and a small see-through "Show" label in the corner for touch screens. "Show" fades away once the piece is revealed (no "Wet" or "Wet it" buttons, per Brian, Nov 7).
 - Phones: the touch listener is passive and never calls `preventDefault`, so scrolling stays native. Links open on a real tap only; a scroll never fires a click.
 - Memory: revealed products are stored by product slug in `sessionStorage` (`hp.wet`), so they stay full color for the rest of the visit, including after Back or a reload. A new visit starts muted. Changing colors keeps the reveal.
 - Fallbacks: with reduced motion, no `clip-path` support, no JavaScript, or a failed image, every image is shown in full color right away.
 - Product pages never use the effect: they show the true full-color mockups immediately.
+
+## Customer-facing wording
+
+Shoppers never see "supplier" or "Printify" (the test suite checks text and image descriptions). Images are described as mockups. Size keys alone show what is available: no "comes in S to 4XL" text; a message appears only when a color change clears your size. Supplier, availability, and sample notes for Brian live on `preview-notes.html` and in `HANDOFF.md`.
+
+## Pages open at the top
+
+In the claude.ai viewer on iPad and iPhone the page frame grows to its full height and the outer view scrolls, so a new page could open where the last one was scrolled to. `site.js` scrolls each newly opened page to its top (or to its `#anchor`, such as "Back to the collection") on load, and leaves Back alone so it keeps its place. `qa/frame-harness.html` reproduces that stretched frame for the tests.
 
 ## Loader (provisional)
 
@@ -45,7 +53,7 @@ cd theme/v3 && python3 -m http.server 8777 &
 node theme/v3/qa/run_qa.js http://localhost:8777 /path/to/axe-core/axe.min.js
 ```
 
-333 browser checks (Playwright Chromium, desktop and touch emulation), plus an axe accessibility scan when the axe path is given (`npm install axe-core` anywhere). Results go to `qa/last-run.txt`, screenshots to `qa/screens/`. Test switches: `?simulate=noimages` and `?simulate=nostorage`.
+358 browser checks (Playwright Chromium, desktop and touch emulation), plus an axe accessibility scan when the axe path is given (`npm install axe-core` anywhere). Results go to `qa/last-run.txt`, screenshots to `qa/screens/`. Test switches: `?simulate=noimages` and `?simulate=nostorage`.
 
 ## Fonts
 

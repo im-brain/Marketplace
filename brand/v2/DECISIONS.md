@@ -73,3 +73,22 @@ Updated: November 4, 2026.
 - **Approved:** the storefront preview in `theme/v2/` (retro shop window, ChatGPT stone pairs in the wet test, sock concept).
 - **Merged:** PR #3 into `step4-overnight-build`. Not merged to `main`, not deployed to heavypocketsco.com.
 - **Still open:** real photos of Brian's own finds to replace the AI sample stones; final art for the three stand-in tees; final sock design.
+
+## Owner decisions, November 7, 2026 (storefront brief)
+- **Assortment:** six products replace the old launch 5 and socks: Midnight Rock Hunt Tee, Great Lakes Rock Crew Tee, Field Notebook Tee, Pocket Full of Treasures Tee, Shoreline Hoodie, and Floral Butterfly Embroidered Hoodie. Indigo Blue embroidery removed; do not restore.
+- **Wordmark:** option A ("Warm & human") from the wordmark comparison: lowercase "heavy pockets," single color (cream on dark, deep teal on light), optional teal and rust secondary. No "Co.," tagline, or scenery with it. Garment artwork unchanged.
+- **Homepage:** header, shorter sunset hero, all six products, short story, small signup, footer. Navigation: Shop, Field Notes, About, Cart.
+- **Wet reveal** on homepage clothing images only (hover, focus, touch while scrolling, "Wet it" button), remembered for the visit. Product pages show full color immediately. The standalone wet-stone lab leaves the homepage.
+- **Photography:** clean consistent images for browsing; lifestyle and detail shots on product pages. Supplier mockups now, sample photos later.
+- **Story:** shared feeling of finding things first, then a short intro to Brian. Field Notes gets its own page.
+- **Custom loading icon** added to the website to-do list.
+- **Not authorized:** merging, public deployment, replacing the live coming-soon site, Shopify, subscriptions, purchases, or real emails.
+
+## Implementation, November 7, 2026 (Claude Code): storefront preview v3
+- `theme/v3/`, branch `claude/clever-curie-pxflzz`. Handoff: `theme/v3/HANDOFF.md`.
+- Wordmark: provisional trace of option A in `brand/v3/wordmark/` (designer cleanup still needed for production).
+- Hero: review crops of the approved masters that exclude the baked-in old logo and tagline; masters unchanged; clean logo-free art requested.
+- Loading icon: provisional (three pebbles wetting in turn). Not an approved illustration.
+- Prices provisional in `theme/v3/src/pricing.json`.
+- **Still needs owner approval** before merge or any deployment.
+

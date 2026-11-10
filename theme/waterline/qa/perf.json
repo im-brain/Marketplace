@@ -1,0 +1,199 @@
+{
+  "note": "Chromium emulation only. Not a real iPhone, and not Safari.",
+  "sizes": {
+    "assets/waterline.js": {
+      "bytes": 4335,
+      "gzip": 1697,
+      "minifiedGzip": 1069
+    },
+    "assets/core.js": {
+      "bytes": 8556,
+      "gzip": 3175,
+      "minifiedGzip": 1824
+    },
+    "assets/water.js": {
+      "bytes": 14804,
+      "gzip": 5157,
+      "minifiedGzip": 2883
+    },
+    "assets/waterline.css": {
+      "bytes": 4310,
+      "gzip": 1883
+    }
+  },
+  "load": {},
+  "phases": {
+    "iphone13-emulated-cpu-4x-slower": {
+      "cpuSlowdown": 4,
+      "phases": {
+        "rubbing": {
+          "name": "rubbing",
+          "effectFrames": 232,
+          "workPerFrameMs": 0.66,
+          "worstFrameWorkMs": 6.3,
+          "frameGapMedianMs": 16.7,
+          "frameGap95Ms": 16.8,
+          "framesOver25Ms": 10,
+          "framesSeen": 233
+        },
+        "drying": {
+          "name": "drying",
+          "effectFrames": 240,
+          "workPerFrameMs": 0.2,
+          "worstFrameWorkMs": 3.2,
+          "frameGapMedianMs": 16.7,
+          "frameGap95Ms": 16.8,
+          "framesOver25Ms": 0,
+          "framesSeen": 239
+        },
+        "dunk": {
+          "name": "dunk",
+          "effectFrames": 32,
+          "workPerFrameMs": 2.46,
+          "worstFrameWorkMs": 5.3,
+          "frameGapMedianMs": 16.7,
+          "frameGap95Ms": 33.4,
+          "framesOver25Ms": 17,
+          "framesSeen": 63
+        },
+        "dryingOff": {
+          "name": "dryingOff",
+          "effectFrames": 127,
+          "workPerFrameMs": 1.65,
+          "worstFrameWorkMs": 5.3,
+          "frameGapMedianMs": 16.7,
+          "frameGap95Ms": 33.3,
+          "framesOver25Ms": 26,
+          "framesSeen": 246
+        }
+      },
+      "coverageAfterRub": 0.29336873638344224,
+      "heldWetFrames": 0,
+      "dryAfterDryingOff": true,
+      "dryFrames": 0,
+      "slowTasksWhilePageLoads": [],
+      "slowTasksGettingReady": [],
+      "slowTasksFromFirstTouch": [],
+      "layoutShift": 0,
+      "domReadyMs": 161,
+      "loadMs": 262,
+      "canvas": "676 x 541",
+      "dpr": 3
+    },
+    "iphone13-emulated-full-speed": {
+      "cpuSlowdown": 1,
+      "phases": {
+        "rubbing": {
+          "name": "rubbing",
+          "effectFrames": 241,
+          "workPerFrameMs": 0.2,
+          "worstFrameWorkMs": 2.4,
+          "frameGapMedianMs": 16.7,
+          "frameGap95Ms": 16.7,
+          "framesOver25Ms": 0,
+          "framesSeen": 241
+        },
+        "drying": {
+          "name": "drying",
+          "effectFrames": 241,
+          "workPerFrameMs": 0.05,
+          "worstFrameWorkMs": 1.1,
+          "frameGapMedianMs": 16.7,
+          "frameGap95Ms": 16.7,
+          "framesOver25Ms": 0,
+          "framesSeen": 481
+        },
+        "dunk": {
+          "name": "dunk",
+          "effectFrames": 44,
+          "workPerFrameMs": 0.48,
+          "worstFrameWorkMs": 1.2,
+          "frameGapMedianMs": 16.7,
+          "frameGap95Ms": 16.7,
+          "framesOver25Ms": 0,
+          "framesSeen": 236
+        },
+        "dryingOff": {
+          "name": "dryingOff",
+          "effectFrames": 153,
+          "workPerFrameMs": 0.45,
+          "worstFrameWorkMs": 1.2,
+          "frameGapMedianMs": 16.7,
+          "frameGap95Ms": 16.7,
+          "framesOver25Ms": 0,
+          "framesSeen": 271
+        }
+      },
+      "coverageAfterRub": 0.29697712418300654,
+      "heldWetFrames": 0,
+      "dryAfterDryingOff": true,
+      "dryFrames": 0,
+      "slowTasksWhilePageLoads": [],
+      "slowTasksGettingReady": [],
+      "slowTasksFromFirstTouch": [],
+      "layoutShift": 0,
+      "domReadyMs": 370,
+      "loadMs": 667,
+      "canvas": "676 x 541",
+      "dpr": 3
+    },
+    "desktop-1440-full-speed": {
+      "cpuSlowdown": 1,
+      "phases": {
+        "rubbing": {
+          "name": "rubbing",
+          "effectFrames": 241,
+          "workPerFrameMs": 0.24,
+          "worstFrameWorkMs": 2,
+          "frameGapMedianMs": 16.7,
+          "frameGap95Ms": 16.7,
+          "framesOver25Ms": 0,
+          "framesSeen": 241
+        },
+        "drying": {
+          "name": "drying",
+          "effectFrames": 240,
+          "workPerFrameMs": 0.07,
+          "worstFrameWorkMs": 1.2,
+          "frameGapMedianMs": 16.7,
+          "frameGap95Ms": 16.8,
+          "framesOver25Ms": 0,
+          "framesSeen": 479
+        },
+        "dunk": {
+          "name": "dunk",
+          "effectFrames": 43,
+          "workPerFrameMs": 0.59,
+          "worstFrameWorkMs": 1,
+          "frameGapMedianMs": 16.7,
+          "frameGap95Ms": 16.8,
+          "framesOver25Ms": 0,
+          "framesSeen": 78
+        },
+        "dryingOff": {
+          "name": "dryingOff",
+          "effectFrames": 153,
+          "workPerFrameMs": 0.44,
+          "worstFrameWorkMs": 1.6,
+          "frameGapMedianMs": 16.7,
+          "frameGap95Ms": 16.7,
+          "framesOver25Ms": 0,
+          "framesSeen": 271
+        }
+      },
+      "coverageAfterRub": 0.18604572510822512,
+      "heldWetFrames": 0,
+      "dryAfterDryingOff": true,
+      "dryFrames": 0,
+      "slowTasksWhilePageLoads": [],
+      "slowTasksGettingReady": [],
+      "slowTasksFromFirstTouch": [],
+      "layoutShift": 0.0001,
+      "domReadyMs": 409,
+      "loadMs": 692,
+      "canvas": "571 x 457",
+      "dpr": 1
+    }
+  },
+  "dryingSeconds": 15.5
+}

@@ -1,0 +1,158 @@
+Waterline proof of concept: automated checks
+Run: 2026-11-10T03:14:28.681Z
+Browser: Playwright Chromium (headless), with phone and touch EMULATION.
+Not tested here: a real iPhone, a real iPad, or Safari.
+131 passed, 0 failed
+
+PASS eight stone files are present
+PASS stone agate-hero-dry.webp matches the approved original byte for byte
+PASS stone agate-hero-wet.webp matches the approved original byte for byte
+PASS stone jasper-dry.webp matches the approved original byte for byte
+PASS stone jasper-wet.webp matches the approved original byte for byte
+PASS stone leland-dry.webp matches the approved original byte for byte
+PASS stone leland-wet.webp matches the approved original byte for byte
+PASS stone petoskey-dry.webp matches the approved original byte for byte
+PASS stone petoskey-wet.webp matches the approved original byte for byte
+PASS brand tokens are a byte copy of the approved file
+PASS no em dashes in any Waterline file
+NOTE starter script as written: 4335 bytes, 1697 compressed, 1069 minified and compressed
+NOTE effect code as written (core + water): 8332 compressed, 4707 minified and compressed
+NOTE as written, with comments, the scripts are over the 1.5 KB and 6 KB targets. The targets are met only when minified.
+PASS size guard: scripts have not ballooned (starter under 2.5 KB and effect under 10 KB compressed, as written)
+PASS starter script meets the 1.5 KB target when minified
+PASS effect code meets the 6 KB target when minified
+PASS no outside libraries: scripts import only each other
+PASS page loads (200)
+PASS at page load the only script fetched is the starter
+PASS at page load no wet image is fetched
+PASS at page load only the first stone is fetched
+PASS the effect loads by itself once the page is idle
+PASS effect code and the wet image arrive after load
+PASS stones that are not shown fetch nothing
+PASS no outside requests except Google Fonts
+PASS no broken images
+PASS a dry page does no work: the frame clock never started
+PASS only the stone on screen is made ready. Hidden stones hold no canvas and no memory
+PASS hint is shown before the first touch
+PASS no script errors on load
+PASS far below the screen: no effect code and no wet image
+PASS scrolled near: effect code and wet image load
+PASS mouse stroke: only part of the picture is wet
+PASS mouse stroke: state says wet where touched
+PASS mouse stroke: hint goes away after the first water
+PASS reveal is local: wet on the stroke, untouched away from it
+PASS rule 1 (stroke): every solid pixel equals the approved wet image
+PASS rule 1 (stroke): water never spills past the stone outline
+PASS drying: the streak is thinner after 9 seconds
+PASS drying: the streak is gone within about 20 seconds (under 25)
+NOTE a pressed mouse streak took 15.5 seconds to dry completely
+PASS after drying: nothing is wet and the frame clock has stopped
+PASS mouse hover (no button) also leaves a trail
+PASS dunk: the whole picture is wet
+PASS dunk: button now says Dry it off, and the status says so
+PASS rule 1 (dunked): every solid pixel equals the approved wet image
+PASS dunk: stays wet, with the frame clock stopped
+PASS dry it off: state says drying, button says Dunk it again
+PASS dry it off: dry within a few seconds
+NOTE dry it off took 2.4 seconds
+PASS keyboard: the first Tab stop is the Dunk it button, with a visible outline
+PASS keyboard: Enter dunks the stone
+PASS keyboard: Space dries it off
+PASS screen readers: status region, described dry image, and the decorative copy is hidden
+PASS no script errors (desktop run)
+PASS picker: only the picked stone is shown
+PASS picker: the picked stone loads its pair and goes live
+PASS picker: unpicked stones still fetch nothing
+PASS second stone works the same (dunk, rule 1)
+PASS a hidden stone stops working (its water waits, no clock task)
+PASS phone first view: the whole stone and its button are on screen
+PASS phone: button is at least 44 px tall
+PASS phone: the stone allows up and down scrolling and pinch zoom
+PASS tap: leaves a wet fingerprint
+PASS sideways rub: leaves a streak
+PASS sideways rub: the page does not move
+PASS rule 1 (touch): solid pixels equal the wet image, and only on the streak
+PASS up and down swipe on the stone scrolls the page
+PASS no listener ever blocked scrolling
+PASS after a scroll, the next rub still works
+PASS off screen: the frame clock stops and the water waits
+PASS back on screen: drying picks up again
+PASS phone: tapping Dunk it wets the whole stone
+PASS phone: tapping Dry it off dries it
+PASS dry and off screen: canvas and water grid are released
+PASS no script errors (phone run)
+PASS no JavaScript (desktop): dry and wet stills sit side by side
+PASS no JavaScript (desktop): stills are captioned Dry and Wet
+PASS no JavaScript (desktop): the button and hint are not shown
+PASS no JavaScript: the stone picker still works
+PASS no JavaScript (phone): dry and wet stills sit side by side
+PASS no JavaScript (phone): stills are captioned Dry and Wet
+PASS no JavaScript (phone): the button and hint are not shown
+PASS reduced motion (desktop): effect code is never fetched
+PASS reduced motion (desktop): no hint, since there is nothing to rub
+PASS reduced motion (desktop): the button shows the whole wet stone at once
+PASS dunked effect looks the same as the approved wet still (average difference under 1 of 255 levels)
+NOTE dunked effect against the wet still: average difference 0.463 of 255, largest 21, share of pixels differing by more than 16 levels 0.001%
+PASS after drying, the stone is pixel for pixel the approved dry still again (no residue)
+PASS reduced motion (desktop): a tap on the stone swaps it back to dry
+PASS reduced motion (desktop): no animation clock exists
+PASS reduced motion (desktop): no script errors
+PASS reduced motion (phone): effect code is never fetched
+PASS reduced motion (phone): no hint, since there is nothing to rub
+PASS reduced motion (phone): the button shows the whole wet stone at once
+PASS reduced motion (phone): a tap on the stone swaps it back to dry
+PASS reduced motion (phone): no animation clock exists
+PASS reduced motion (phone): no script errors
+PASS effect file blocked: the page stays on the simple swap
+PASS effect file blocked: the button still wets the stone
+PASS effect file blocked: no script errors
+PASS wet image missing: the stone is marked and says so
+PASS wet image missing: the button is hidden and the dry stone still shows
+PASS wet image missing: rubbing does nothing and nothing breaks
+PASS motion turned off mid-visit: the effect steps aside and the stone rests dry
+PASS motion turned off mid-visit: the simple swap takes over
+PASS motion turned back on: the effect returns and keeps the stone wet
+PASS motion switch: no script errors
+PASS early press: the simple swap answers at once
+PASS early press: the effect arrives later and keeps the stone wet
+PASS layout 320: no sideways scrolling and nothing sticks out
+PASS layout 320: no text under 13 px
+PASS layout 375: no sideways scrolling and nothing sticks out
+PASS layout 375: no text under 13 px
+PASS layout phone-390: no sideways scrolling and nothing sticks out
+PASS layout phone-390: no text under 13 px
+PASS layout phone-landscape-844: no sideways scrolling and nothing sticks out
+PASS layout phone-landscape-844: no text under 13 px
+PASS layout tablet-768: no sideways scrolling and nothing sticks out
+PASS layout tablet-768: no text under 13 px
+PASS layout tablet-1024: no sideways scrolling and nothing sticks out
+PASS layout tablet-1024: no text under 13 px
+PASS layout desktop-1440: no sideways scrolling and nothing sticks out
+PASS layout desktop-1440: no text under 13 px
+PASS layout zoom-200-of-1280: no sideways scrolling and nothing sticks out
+PASS layout zoom-200-of-1280: no text under 13 px
+PASS light system setting: text contrast is at least 4.5 to 1 everywhere checked
+PASS dark system setting: text contrast is at least 4.5 to 1 everywhere checked
+PASS light and dark system settings give the same readable dark page
+NOTE speed (CPU slowed 4x) rubbing: 0.66 ms of work per frame on average, 6.3 ms worst, over 232 frames. Frame gap 16.7 ms median, 16.8 ms at the 95th percentile.
+NOTE speed (CPU slowed 4x) drying: 0.2 ms of work per frame on average, 3.2 ms worst, over 240 frames. Frame gap 16.7 ms median, 16.8 ms at the 95th percentile.
+NOTE speed (CPU slowed 4x) dunk: 2.46 ms of work per frame on average, 5.3 ms worst, over 32 frames. Frame gap 16.7 ms median, 33.4 ms at the 95th percentile.
+NOTE speed (CPU slowed 4x) dryingOff: 1.65 ms of work per frame on average, 5.3 ms worst, over 127 frames. Frame gap 16.7 ms median, 33.3 ms at the 95th percentile.
+NOTE speed (CPU slowed 4x): tasks over 50 ms from the first touch on [], while getting ready at idle [], while the page itself loads []. Layout shift 0, canvas 676 x 541, frames while held wet 0, frames while dry 0
+NOTE speed (full speed) rubbing: 0.2 ms of work per frame on average, 2.4 ms worst, over 241 frames. Frame gap 16.7 ms median, 16.7 ms at the 95th percentile.
+NOTE speed (full speed) drying: 0.05 ms of work per frame on average, 1.1 ms worst, over 241 frames. Frame gap 16.7 ms median, 16.7 ms at the 95th percentile.
+NOTE speed (full speed) dunk: 0.48 ms of work per frame on average, 1.2 ms worst, over 44 frames. Frame gap 16.7 ms median, 16.7 ms at the 95th percentile.
+NOTE speed (full speed) dryingOff: 0.45 ms of work per frame on average, 1.2 ms worst, over 153 frames. Frame gap 16.7 ms median, 16.7 ms at the 95th percentile.
+NOTE speed (full speed): tasks over 50 ms from the first touch on [], while getting ready at idle [], while the page itself loads []. Layout shift 0, canvas 676 x 541, frames while held wet 0, frames while dry 0
+NOTE speed (desktop) rubbing: 0.24 ms of work per frame on average, 2 ms worst, over 241 frames. Frame gap 16.7 ms median, 16.7 ms at the 95th percentile.
+NOTE speed (desktop) drying: 0.07 ms of work per frame on average, 1.2 ms worst, over 240 frames. Frame gap 16.7 ms median, 16.8 ms at the 95th percentile.
+NOTE speed (desktop) dunk: 0.59 ms of work per frame on average, 1 ms worst, over 43 frames. Frame gap 16.7 ms median, 16.8 ms at the 95th percentile.
+NOTE speed (desktop) dryingOff: 0.44 ms of work per frame on average, 1.6 ms worst, over 153 frames. Frame gap 16.7 ms median, 16.7 ms at the 95th percentile.
+NOTE speed (desktop): tasks over 50 ms from the first touch on [], while getting ready at idle [], while the page itself loads []. Layout shift 0.0001, canvas 571 x 457, frames while held wet 0, frames while dry 0
+PASS speed: rubbing really wet the stone during the measurement, and drying off finished
+PASS speed target: average work per frame under 4 ms with the CPU slowed 4x (every phase)
+PASS speed target: no task over 50 ms from the first touch on, with the CPU slowed 4x
+PASS getting ready at idle never blocks for long (no task over 100 ms, CPU slowed 4x)
+PASS speed target: zero frames of work while held wet and while dry
+PASS speed target: no layout shift
+PASS canvas detail is capped at 2x, even on a 3x phone screen

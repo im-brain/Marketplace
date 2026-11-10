@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Heavy Pockets Waterline</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Private proof of concept: the Heavy Pockets water reveal on the approved stone pairs.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#101D2C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23102849'/%3E%3Cellipse cx='16' cy='18' rx='10' ry='8' fill='%23A7472D'/%3E%3Cellipse cx='13' cy='15' rx='3' ry='2' fill='%23F3E8D2' opacity='.6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700;800&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="assets/brand-tokens.css">
+<link rel="stylesheet" href="assets/waterline.css">
+<link rel="stylesheet" href="assets/poc.css">
+<script>document.documentElement.classList.add('js');</script>
+<script defer src="assets/waterline.js"></script>
+</head>
+<body>
+<div class="page">
+
+<header class="top">
+  <p>Heavy Pockets Co. <span aria-hidden="true">/</span> Waterline</p>
+  <p class="top__tag">Private preview</p>
+</header>
+
+<main id="main">
+
+<section class="intro" aria-labelledby="intro-h">
+  <p class="px">Dry rocks lie.</p>
+  <h1 id="intro-h">Wet it and see.</h1>
+  <p class="lede">Rub the stone. Water shows its real color right where you touched it. Then it dries, and the stone lies again.</p>
+</section>
+
+<section class="lab" aria-labelledby="lab-h">
+  <h2 id="lab-h" class="visually-hidden">The stone</h2>
+
+  <article class="specimen" data-specimen="petoskey" aria-labelledby="sp-petoskey">
+    <div class="win">
+      <p class="win__bar"><span>specimen_01</span><span>petoskey</span></p>
+      <hp-wet-stone class="win__body" data-waterline data-effect="assets/water.js" gesture="inline" data-state="dry">
+        <div class="wl-view">
+          <div class="wl-stage" data-wl-stage>
+            <img data-wl-dry src="img/stones/petoskey-dry.webp" width="1280" height="1024" decoding="async" fetchpriority="high" alt="AI sample of a dry Petoskey stone: pale gray limestone with faint round coral cells.">
+            <img class="wl-wet" data-wl-wet data-src="img/stones/petoskey-wet.webp" width="1280" height="1024" decoding="async" alt="" aria-hidden="true">
+            <span class="wl-cap">Dry</span>
+            <span class="wl-hint" aria-hidden="true"><span class="wl-hint__touch">Rub to wet</span><span class="wl-hint__mouse">Brush across to wet</span></span>
+          </div>
+          <noscript><div class="wl-stage"><img src="img/stones/petoskey-wet.webp" width="1280" height="1024" loading="lazy" alt="The same AI sample, wet: the coral cells are darker and easier to see."><span class="wl-cap">Wet</span></div></noscript>
+        </div>
+        <div class="wl-bar">
+          <button type="button" class="hp-button-primary wl-btn" id="dunk-petoskey" data-wl-dunk>Dunk it</button>
+          <p class="wl-status" data-wl-status role="status">Dry.</p>
+        </div>
+      </hp-wet-stone>
+    </div>
+    <div class="card">
+      <h3 id="sp-petoskey">Petoskey stone</h3>
+      <dl>
+        <div><dt>Dry</dt><dd>A plain gray or tan limestone pebble, maybe faintly mottled.</dd></div>
+        <div><dt>Wet</dt><dd>Tightly packed cells show up, each with a dark eye and thin lines radiating out.</dd></div>
+        <div><dt>Field note</dt><dd>A fossil coral colony from a Devonian sea. Michigan's state stone since 1965.</dd></div>
+      </dl>
+      <p class="card__label">AI sample image, not a real find. A photo of one of Brian's own stones will replace it.</p>
+    </div>
+  </article>
+
+  <article class="specimen" data-specimen="agate" aria-labelledby="sp-agate">
+    <div class="win">
+      <p class="win__bar"><span>specimen_02</span><span>agate</span></p>
+      <hp-wet-stone class="win__body" data-waterline data-effect="assets/water.js" gesture="inline" data-state="dry">
+        <div class="wl-view">
+          <div class="wl-stage" data-wl-stage>
+            <img data-wl-dry src="img/stones/agate-hero-dry.webp" width="1280" height="1024" decoding="async" loading="lazy" alt="AI sample of a dry Lake Superior agate: a dusty, muted rust-red pebble with faint bands.">
+            <img class="wl-wet" data-wl-wet data-src="img/stones/agate-hero-wet.webp" width="1280" height="1024" decoding="async" alt="" aria-hidden="true">
+            <span class="wl-cap">Dry</span>
+            <span class="wl-hint" aria-hidden="true"><span class="wl-hint__touch">Rub to wet</span><span class="wl-hint__mouse">Brush across to wet</span></span>
+          </div>
+          <noscript><div class="wl-stage"><img src="img/stones/agate-hero-wet.webp" width="1280" height="1024" loading="lazy" alt="The same AI sample, wet: deeper red, with the bands easier to see."><span class="wl-cap">Wet</span></div></noscript>
+        </div>
+        <div class="wl-bar">
+          <button type="button" class="hp-button-primary wl-btn" id="dunk-agate" data-wl-dunk>Dunk it</button>
+          <p class="wl-status" data-wl-status role="status">Dry.</p>
+        </div>
+      </hp-wet-stone>
+    </div>
+    <div class="card">
+      <h3 id="sp-agate">Lake Superior agate</h3>
+      <dl>
+        <div><dt>Dry</dt><dd>A dull, waxy, often pitted red-brown pebble that hides in plain sight.</dd></div>
+        <div><dt>Wet</dt><dd>Glossy and a little see-through at the edges, sometimes with thin bands on a broken face.</dd></div>
+        <div><dt>Field note</dt><dd>Hold a wet one up to the sun and a little light gets through. Minnesota's state gemstone.</dd></div>
+      </dl>
+      <p class="card__label">AI sample image, not a real find. A photo of one of Brian's own stones will replace it.</p>
+    </div>
+  </article>
+
+  <article class="specimen" data-specimen="jasper" aria-labelledby="sp-jasper">
+    <div class="win">
+      <p class="win__bar"><span>specimen_03</span><span>jasper</span></p>
+      <hp-wet-stone class="win__body" data-waterline data-effect="assets/water.js" gesture="inline" data-state="dry">
+        <div class="wl-view">
+          <div class="wl-stage" data-wl-stage>
+            <img data-wl-dry src="img/stones/jasper-dry.webp" width="1280" height="1024" decoding="async" loading="lazy" alt="AI sample of a dry red jasper pebble: opaque brick red with a thin pale vein.">
+            <img class="wl-wet" data-wl-wet data-src="img/stones/jasper-wet.webp" width="1280" height="1024" decoding="async" alt="" aria-hidden="true">
+            <span class="wl-cap">Dry</span>
+            <span class="wl-hint" aria-hidden="true"><span class="wl-hint__touch">Rub to wet</span><span class="wl-hint__mouse">Brush across to wet</span></span>
+          </div>
+          <noscript><div class="wl-stage"><img src="img/stones/jasper-wet.webp" width="1280" height="1024" loading="lazy" alt="The same AI sample, wet: a deeper, glossier red that is still opaque."><span class="wl-cap">Wet</span></div></noscript>
+        </div>
+        <div class="wl-bar">
+          <button type="button" class="hp-button-primary wl-btn" id="dunk-jasper" data-wl-dunk>Dunk it</button>
+          <p class="wl-status" data-wl-status role="status">Dry.</p>
+        </div>
+      </hp-wet-stone>
+    </div>
+    <div class="card">
+      <h3 id="sp-jasper">Red jasper</h3>
+      <dl>
+        <div><dt>Dry</dt><dd>A dull brick-red pebble, sometimes with a thin pale vein.</dd></div>
+        <div><dt>Wet</dt><dd>A deeper, glossier red, but still opaque: no light passes through, and no bands.</dd></div>
+        <div><dt>Field note</dt><dd>A classic agate lookalike. If daylight will not pass through the edges, it is not an agate.</dd></div>
+      </dl>
+      <p class="card__label">AI sample image, not a real find. A photo of one of Brian's own stones will replace it.</p>
+    </div>
+  </article>
+
+  <article class="specimen" data-specimen="leland" aria-labelledby="sp-leland">
+    <div class="win">
+      <p class="win__bar"><span>specimen_04</span><span>leland_blue</span></p>
+      <hp-wet-stone class="win__body" data-waterline data-effect="assets/water.js" gesture="inline" data-state="dry">
+        <div class="wl-view">
+          <div class="wl-stage" data-wl-stage>
+            <img data-wl-dry src="img/stones/leland-dry.webp" width="1280" height="1024" decoding="async" loading="lazy" alt="AI sample of a dry Leland Blue: a dull blue-gray lump with small pores of mixed sizes.">
+            <img class="wl-wet" data-wl-wet data-src="img/stones/leland-wet.webp" width="1280" height="1024" decoding="async" alt="" aria-hidden="true">
+            <span class="wl-cap">Dry</span>
+            <span class="wl-hint" aria-hidden="true"><span class="wl-hint__touch">Rub to wet</span><span class="wl-hint__mouse">Brush across to wet</span></span>
+          </div>
+          <noscript><div class="wl-stage"><img src="img/stones/leland-wet.webp" width="1280" height="1024" loading="lazy" alt="The same AI sample, wet: stronger blues, grays, and greens."><span class="wl-cap">Wet</span></div></noscript>
+        </div>
+        <div class="wl-bar">
+          <button type="button" class="hp-button-primary wl-btn" id="dunk-leland" data-wl-dunk>Dunk it</button>
+          <p class="wl-status" data-wl-status role="status">Dry.</p>
+        </div>
+      </hp-wet-stone>
+    </div>
+    <div class="card">
+      <h3 id="sp-leland">Leland Blue</h3>
+      <dl>
+        <div><dt>Dry</dt><dd>A dull blue-gray lump.</dd></div>
+        <div><dt>Wet</dt><dd>Strong blues, grays, and greens, with gas bubbles of mixed sizes.</dd></div>
+        <div><dt>Field note</dt><dd>Not a natural stone: it is slag from a 19th-century iron furnace in Leland, Michigan.</dd></div>
+      </dl>
+      <p class="card__label">AI sample image, not a real find. A photo of one of Brian's own stones will replace it.</p>
+    </div>
+  </article>
+
+  <fieldset class="picker">
+    <legend>Try another stone</legend>
+    <label class="chip"><input type="radio" name="stone" id="pick-petoskey" value="petoskey" checked><span>Petoskey stone</span></label>
+    <label class="chip"><input type="radio" name="stone" id="pick-agate" value="agate"><span>Lake Superior agate</span></label>
+    <label class="chip"><input type="radio" name="stone" id="pick-jasper" value="jasper"><span>Red jasper</span></label>
+    <label class="chip"><input type="radio" name="stone" id="pick-leland" value="leland"><span>Leland Blue</span></label>
+  </fieldset>
+</section>
+
+<section class="notes" aria-label="About this proof of concept">
+  <article class="note">
+    <h2>Try it on your phone</h2>
+    <ol>
+      <li>Tap the stone once. It leaves a wet fingerprint.</li>
+      <li>Rub the stone side to side. A wet streak follows your finger.</li>
+      <li>Swipe up or down across the stone. The page should scroll, the same as anywhere else.</li>
+      <li>Wait. After a few seconds the water dries from its edges, and the stone goes dull again.</li>
+      <li>Press Dunk it. Water climbs the whole stone and stays until you press Dry it off.</li>
+    </ol>
+  </article>
+
+  <article class="note">
+    <h2>The five rules</h2>
+    <ol>
+      <li>Never invent pixels. You only ever see the approved dry picture, the approved wet picture, or a blend of the two. No added shine, glow, or droplets.</li>
+      <li>Water arrives fast and leaves slow.</li>
+      <li>Two worlds, two ways of moving. Pixel things move in steps. Stones, water, and paper move smoothly.</li>
+      <li>You cause it. Nothing moves to grab your attention.</li>
+      <li>Every effect has a still version for people who turn motion off.</li>
+    </ol>
+  </article>
+
+  <article class="note">
+    <h2>What is real here</h2>
+    <p>This is a private proof of concept. It is not the store, and nothing here is live.</p>
+    <p>The four stones are AI sample images, the same matched pairs already approved in the storefront preview. The stone notes are drafts, fact-checked once on Nov 4, 2026.</p>
+    <p>The readout shows how hard your phone is working while the stone is wet.</p>
+    <button type="button" class="plain-btn" id="readout-btn" data-readout>Show the speed readout</button>
+  </article>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p>Heavy Pockets Co. Waterline proof 01. Private preview, not deployed.</p>
+</footer>
+
+</div>
+<script>
+(function () {
+  var btn = document.querySelector('[data-readout]');
+  function show() {
+    if (show.done) return;
+    show.done = true;
+    var s = document.createElement('script');
+    s.type = 'module';
+    s.src = 'assets/debug.js';
+    document.head.appendChild(s);
+    if (btn) { btn.disabled = true; btn.textContent = 'Speed readout is on'; }
+  }
+  if (btn) btn.addEventListener('click', show);
+  if (location.hash === '#debug') show();
+})();
+</script>
+</body>
+</html>

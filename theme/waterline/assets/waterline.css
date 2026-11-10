@@ -1,0 +1,97 @@
+/* Waterline: the Heavy Pockets interaction system.
+   Tokens and the specimen stage. Uses the locked brand tokens
+   (brand-tokens.css) and adds no colors of its own.
+
+   The five rules every Waterline interaction follows:
+   1. Never invent pixels. Show the approved dry image, the approved wet
+      image, or a blend of the two. Nothing else.
+   2. Water arrives fast and leaves slow.
+   3. Two worlds, two ways of moving. Pixel things move in steps. Real
+      things (stones, water, paper) move smoothly.
+   4. The shopper causes it. Nothing loops to grab attention.
+   5. Every effect has a designed still version. */
+
+:root{
+  /* rule 2 */
+  --wl-in:150ms;      /* a control or hint answering a touch */
+  --wl-rise:700ms;    /* dunk: the waterline climbing the stone */
+  --wl-rest:2.5s;     /* how long touch water sits before it starts to dry */
+  --wl-dry:9s;        /* drying time for a typical spot. The slowest spots take twice as long,
+                         so a streak is gone about 20 seconds after the last touch. */
+  --wl-wipe:2s;       /* "Dry it off" */
+  /* rule 3 */
+  --wl-ease-real:cubic-bezier(.16,1,.3,1);
+  --wl-ease-pixel:steps(2,end);
+  --wl-press:90ms;
+  /* brush sizes, in CSS pixels (read by water.js) */
+  --wl-finger:34;
+  --wl-brush:24;
+}
+
+/* ---------- specimen stage ---------- */
+hp-wet-stone{display:block;min-width:0}
+.wl-stage{
+  position:relative;display:block;max-width:100%;overflow:hidden;
+  aspect-ratio:var(--wl-ratio,1280/1024);
+  /* Up and down swipes always scroll the page. Taps and sideways rubs are ours. */
+  touch-action:pan-y pinch-zoom;
+  -webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;
+  -webkit-user-select:none;user-select:none;
+}
+/* Inspection view (later): page scroll is locked there, so the stone takes every direction. */
+hp-wet-stone[gesture="inspect"] .wl-stage{touch-action:none}
+.wl-stage img{
+  position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;
+  pointer-events:none;-webkit-user-drag:none;
+}
+.wl-layer{position:absolute;inset:0;display:block;width:100%;height:100%;pointer-events:none}
+
+/* Baseline (no effect code): the approved wet image simply replaces the dry one. */
+.wl-wet{opacity:0}
+hp-wet-stone:not([live])[data-state="wet"] .wl-wet{opacity:1}
+
+/* Hint: only while the effect is live, and only until the first water lands. */
+.wl-hint{
+  position:absolute;right:8px;bottom:8px;z-index:2;padding:3px 10px;
+  background:rgba(16,29,44,.66);color:var(--hp-white);
+  border:1px solid rgba(255,255,255,.6);border-radius:2px;
+  font:700 14px/1.3 var(--hp-font-body);letter-spacing:.02em;pointer-events:none;
+  transition:opacity var(--wl-in) linear;
+}
+hp-wet-stone:not([live]) .wl-hint,
+hp-wet-stone[data-wet-failed] .wl-hint{display:none}
+hp-wet-stone[data-touched] .wl-hint{opacity:0}
+.wl-hint__mouse{display:none}
+@media (hover:hover) and (pointer:fine){
+  .wl-hint__touch{display:none}
+  .wl-hint__mouse{display:inline}
+}
+
+/* ---------- control and status ---------- */
+.wl-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:12px}
+.wl-btn{
+  flex:none;min-width:9.5em;cursor:pointer;border-radius:0;
+  box-shadow:3px 3px 0 var(--hp-ink);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation;
+  transition:transform var(--wl-press) var(--wl-ease-pixel),box-shadow var(--wl-press) var(--wl-ease-pixel);
+}
+.wl-btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--hp-ink)}
+/* Two lines are always reserved, so a longer message never moves the page. */
+.wl-status{display:flex;align-items:center;flex:1 1 14ch;min-width:0;min-height:2.8em;margin:0;font:600 16px/1.4 var(--hp-font-body)}
+hp-wet-stone[data-wet-failed] .wl-btn{display:none}
+
+/* ---------- no JavaScript: both approved stills, side by side ---------- */
+.wl-cap{display:none}
+html:not(.js) .wl-view{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+html:not(.js) .wl-cap{
+  display:block;position:absolute;left:6px;top:6px;padding:1px 7px;
+  background:var(--hp-ink);color:var(--hp-cream);
+  font:700 13px/1.5 var(--hp-font-metadata);letter-spacing:.04em;
+}
+html:not(.js) .wl-bar,
+html:not(.js) .wl-hint{display:none}
+
+/* ---------- rule 5: still version ---------- */
+@media (prefers-reduced-motion:reduce){
+  .wl-btn,.wl-hint{transition:none}
+}

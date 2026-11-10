@@ -1,0 +1,114 @@
+/* Styles for the proof-of-concept page only. Not part of the system.
+   Layout: a field bench. The specimen sits in a retro file window (top on
+   phones, left on wide screens), its paper field card sits beside it, and
+   plain notebook notes follow. One dark look on purpose (brand ink and
+   navy), so it reads the same in light and dark system settings. */
+
+:root{
+  color-scheme:dark;
+  padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px);
+  --page:var(--hp-ink);
+  --text:var(--hp-cream);
+  --quiet:var(--hp-sand);
+  --paper:var(--hp-cream);
+  --paper-text:var(--hp-ink);
+  --gap:clamp(20px,5vw,48px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--text);font:400 18px/1.55 var(--hp-font-body)}
+h1,h2,h3,p,ol,dl,dd,fieldset,figure{margin:0}
+h1,h2,h3{text-wrap:balance}
+img{max-width:100%}
+:focus-visible{outline:var(--hp-focus);outline-offset:3px}
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.page,main{display:flex;flex-direction:column;gap:var(--gap)}
+.page{
+  max-width:1120px;margin-inline:auto;padding-block:18px 56px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+
+/* ---------- top line ---------- */
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;padding-bottom:10px;border-bottom:2px solid var(--hp-teal)}
+.top p{font:700 13px/1.5 var(--hp-font-metadata);letter-spacing:.06em;text-transform:uppercase;color:var(--quiet)}
+.top span{color:var(--hp-rust)}
+.top .top__tag{color:var(--hp-gold)}
+
+/* ---------- intro ---------- */
+.intro{display:flex;flex-direction:column;gap:10px;max-width:40em}
+.px{font:400 16px/1.6 var(--hp-font-display);color:var(--hp-gold)}
+h1{font-size:clamp(34px,6vw + 10px,58px);font-weight:800;line-height:1.05;letter-spacing:-.01em}
+.lede{max-width:34em;font-size:clamp(18px,1vw + 15px,21px)}
+
+/* ---------- lab: picker and specimen ---------- */
+.lab{display:flex;flex-direction:column;gap:16px}
+.picker{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;padding:0;border:0;min-width:0}
+.picker legend{padding:0;margin-bottom:8px;font:700 13px/1.5 var(--hp-font-metadata);letter-spacing:.06em;text-transform:uppercase;color:var(--quiet)}
+.chip{position:relative;display:block;cursor:pointer}
+.chip input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.chip span{display:flex;align-items:center;min-height:44px;padding:8px 14px;border:2px solid var(--quiet);color:var(--text);font-weight:700;font-size:16px;line-height:1.2}
+.chip input:checked + span{background:var(--paper);border-color:var(--paper);color:var(--paper-text)}
+.chip input:focus-visible + span{outline:var(--hp-focus);outline-offset:3px}
+
+.specimen{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;align-items:start}
+@media (min-width:880px){.specimen{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px}}
+
+/* A phone held sideways is short: size the stone to the height, so the whole
+   stone and its button fit on one screen, with the card beside it. */
+@media (orientation:landscape) and (max-height:520px){
+  .specimen{grid-template-columns:auto minmax(0,1fr)}
+  .win{width:calc((100vh - 122px) * 1.25);width:calc((100svh - 122px) * 1.25);max-width:100%}
+  .win__body{padding:8px}
+  h1{font-size:30px}
+}
+
+/* One stone at a time where the browser can do it without script. */
+@supports selector(:has(*)){
+  .lab .specimen{display:none}
+  .lab:has(#pick-petoskey:checked) .specimen[data-specimen="petoskey"],
+  .lab:has(#pick-agate:checked) .specimen[data-specimen="agate"],
+  .lab:has(#pick-jasper:checked) .specimen[data-specimen="jasper"],
+  .lab:has(#pick-leland:checked) .specimen[data-specimen="leland"]{display:grid}
+}
+@supports not selector(:has(*)){
+  .picker{display:none}
+  .lab{gap:32px}
+}
+
+/* retro file window */
+.win{min-width:0;background:var(--hp-navy);border:2px solid var(--hp-sand);box-shadow:5px 5px 0 var(--hp-teal)}
+.win__bar{display:flex;justify-content:space-between;gap:12px;padding:5px 10px;background:var(--hp-rust);color:var(--hp-white);border-bottom:2px solid var(--hp-sand);font:700 13px/1.5 var(--hp-font-metadata);letter-spacing:.04em}
+.win__body{padding:12px}
+@media (max-width:480px){.win__body{padding:8px}}
+.win .wl-stage{background:var(--hp-ink);box-shadow:inset 2px 2px 0 rgba(0,0,0,.55),inset -2px -2px 0 rgba(255,255,255,.07)}
+
+/* paper field card */
+.card{display:flex;flex-direction:column;gap:14px;min-width:0;padding:18px 20px 20px;background:var(--paper);color:var(--paper-text);border:2px solid var(--hp-sand);box-shadow:5px 5px 0 var(--hp-navy)}
+.card h3{font-size:26px;font-weight:800;line-height:1.15}
+.card dl{display:grid;gap:12px}
+.card dt{font:700 13px/1.5 var(--hp-font-metadata);letter-spacing:.08em;text-transform:uppercase;color:var(--hp-rust)}
+.card dd{font-size:17px;line-height:1.45}
+.card__label{padding-top:12px;border-top:2px dashed var(--hp-sand);font-size:15px;line-height:1.4;color:var(--hp-graphite)}
+
+/* ---------- notes ---------- */
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px 32px}
+.note{display:flex;flex-direction:column;gap:12px;min-width:0;padding-top:16px;border-top:2px solid var(--hp-teal)}
+.note h2{font-size:24px;font-weight:800;line-height:1.2}
+.note ol{display:grid;gap:10px;padding-left:1.4em}
+.note li::marker{font-weight:800;color:var(--hp-gold)}
+.note p,.note li{max-width:36em}
+.plain-btn{align-self:flex-start;min-height:44px;padding:8px 16px;background:var(--paper);color:var(--paper-text);border:2px solid var(--hp-sand);border-radius:0;font:700 16px/1.3 var(--hp-font-body);cursor:pointer}
+.plain-btn:disabled{opacity:.7;cursor:default}
+
+.foot{padding-top:14px;border-top:2px solid var(--hp-teal);font-size:15px;color:var(--quiet)}
+
+/* ---------- speed readout (testing aid) ---------- */
+.readout{
+  position:fixed;z-index:20;margin:0;padding:8px 10px;pointer-events:none;
+  left:max(8px,env(safe-area-inset-left,0px));
+  bottom:calc(8px + env(safe-area-inset-bottom,0px));
+  background:var(--hp-ink);color:var(--hp-cream);border:2px solid var(--hp-gold);
+  font:700 13px/1.45 var(--hp-font-metadata);white-space:pre;
+}

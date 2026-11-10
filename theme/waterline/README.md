@@ -1,5 +1,7 @@
 # Waterline: the Heavy Pockets interaction system
 
+**Shelved by Brian on Nov 10, 2026. Kept for reference.**
+
 Proof of concept 01: the water reveal. Built Nov 9 to 10, 2026 on branch `claude/great-newton-wtguk0`.
 
 **Status:** private proof of concept. Not deployed, not merged, and not approved. Nothing in the storefront preview (`theme/v3/`), the live coming-soon page, or `main` was changed. "Waterline" is a working name.

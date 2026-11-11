@@ -34,7 +34,7 @@ What makes it something new:
 
 | Tool | Job | Cost |
 |---|---|---|
-| Shopify Basic | The store: checkout, taxes, payments, and pages. No servers to run. Opened at Step 12, not before, because the trial is only 3 days. | $39/mo, or about $29 billed yearly |
+| Shopify Basic | The store: checkout, taxes, payments, and pages. No servers to run. Opened early (moved up Nov 11, 2026) on the intro offer: 3 days free, then $1/mo for 3 months, while the theme is built behind a password. | $1/mo for the first 3 months, then $39/mo, or about $29 billed yearly |
 | Printify (free plan) | Prints and ships each order. Connects to Shopify, so orders flow automatically. | $0 |
 | Domain | The store's web address. | About $1-2/mo |
 | Store Gmail | The private login and inbox that owns every store account. | $0 |
@@ -44,7 +44,7 @@ What makes it something new:
 | Python scripts | Small programs that call the Printify and Shopify APIs. Claude writes and runs them, so Brian never has to type code. | $0 |
 | Meta Business Suite and TikTok's desktop scheduler | Post the week's videos in one batch. | $0 |
 
-Total is about $45/mo, under the $75 cap. Until Step 12 it is about $1-2/mo, because only the domain costs money.
+Total is about $45/mo, under the $75 cap. During Shopify's 3-month intro offer it is about $2-3/mo (domain plus $1 Shopify). The full $39 starts after those 3 months.
 
 ## How it runs itself
 
@@ -88,12 +88,14 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 9. **(Done for the six current products, Printify IDs in `theme/v3/src/products.json`.)** Brian and Claude create the launch products in Printify by hand, saving them as products that aren't published. *Test:* the mockups look right in Printify.
 10. **(Samples ordered per Brian, Nov 2026. Not yet physically approved.)** Order samples of the launch products straight from Printify. *Test:* samples arrive and Brian approves print quality and color.
 
-**Phase 4: Build the store look for free, then open Shopify**
-11. **(Storefront preview v3 built Nov 7, 2026 in `theme/v3/`, waiting on Brian's review. See `theme/v3/HANDOFF.md`.)** Build the theme pieces as a **preview page in the repo** (the wet-stone effect, product page layout, field notes, and field guide pages) that Brian can open in a browser. All the design work happens here at no cost. *Test:* Brian approves the preview on phone and desktop, in light and dark mode.
-12. **Open Shopify now**, signed up with the store Gmail. Choose a plan and start the trial only once the samples are approved and the preview is signed off. If Shopify offers a low intro price for the first months, this is when it pays off. Connect Printify, connect the domain, and publish the launch 5 from Printify. *Test:* the 5 products appear in the Shopify admin.
-13. Install a free Shopify theme and paste in the approved pieces from Step 11, including field notes (Shopify metafields). *Test:* the live store preview matches the approved preview.
+**Phase 4: Open Shopify early and rebuild the approved preview as a Shopify theme**
+
+*Changed Nov 11, 2026:* Shopify used to open only after samples were approved, because the free trial is 3 days. Brian realized the approved preview has to be rebuilt as a Shopify theme (Liquid templates fed by Shopify's products, prices, and cart), so that work should start now. Shopify's current intro offer (3 days free, then $1/mo for 3 months on the plan picked at signup) makes opening early cost about $3. The store stays password-protected the whole time. **Sample approval now gates launch (Step 19), not opening Shopify.**
+11. **(Done: storefront preview v3 approved by Brian Nov 7, 2026, in `theme/v3/`. See `theme/v3/HANDOFF.md`. It is now the blueprint for the Shopify theme.)** Build the theme pieces as a **preview page in the repo** (the wet-stone effect, product page layout, field notes, and field guide pages) that Brian can open in a browser. All the design work happens here at no cost. *Test:* Brian approves the preview on phone and desktop, in light and dark mode.
+12. **Open Shopify now, on the $1 intro offer** (checklist: `brand/Step12_Shopify_Checklist.md`). Brian signs up with the store Gmail and picks **Basic** (the $1 price only applies to the plan chosen at signup). Confirm the offer on Shopify's pricing screen before entering a card. Keep the store password on. Connect Printify (shop 29566047) and publish the six current products from Printify to Shopify. **Do not connect heavypocketsco.com yet:** the coming-soon page on Cloudflare stays live until launch. Note the date the 3 intro months end. *Test:* the six products, with their sizes and larger-size prices, appear in the Shopify admin, and the storefront asks for a password.
+13. **Rebuild the v3 preview as a Shopify theme.** Start from Shopify's free Dawn theme and rebuild the approved pages from Step 11 as Liquid templates. What carries over almost as is: `site.css` (colors, fonts, layout), `site.js` (wet reveal, Show toggle, loading pebbles), the wordmark, hero art, images, and all wording. What changes: one product template replaces the six hand-built product pages; products, sizes, and prices come from Printify through Shopify (so `products.json` and `pricing.json` stop being the source); Shopify's real cart and checkout replace the preview cart (Basic allows only logo and colors on checkout); field notes become product metafields; the signup form can use Shopify's built-in customer email list (may settle website to-do 8). Shopify-hosted product photos replace the preview's local copies. *Test:* the password-protected Shopify store matches the approved preview on phone and desktop, in light and dark mode, and a test order goes through Shopify's test mode (no real charge).
 14. Field guide pages, plus the About, shipping, and returns pages and policies. *Test:* Brian checks every label, and Shopify's launch checklist has no missing items.
-15. The store password stays on until launch. *Test:* only Brian can see the store.
+15. The store password stays on until launch, and the coming-soon page stays on heavypocketsco.com. Before the 3 intro months end, decide: launch, keep paying $39/mo (or switch to yearly), or pause. *Test:* only Brian can see the store, and the end-of-offer date is on his calendar.
 
 **Phase 5: Automation**
 16. **(Built and live-tested Nov 4, 2026, Printify part only.)** Script `publish_design.py`: takes a tracker row and creates the Printify product. This part can be built and tested before Shopify exists. After Step 12, it also publishes to Shopify as a draft. *Test:* run it on one design, then check the product in Printify (and later the draft in Shopify).
@@ -101,7 +103,7 @@ Brian adds a design (PNG or SVG) + fills a tracker row
 18. Weekly scheduled task: an orders and profit summary, 3 product-only video ideas and captions, and reminders, such as samples to order and trademarks to re-check. *Test:* the first report arrives on schedule.
 
 **Phase 6: Launch**
-19. Remove the store password and publish the launch 5. Post the first video batch. *Test:* place a real order and watch it reach Printify.
+19. **Launch gate: samples physically approved (Step 10).** Then point heavypocketsco.com at Shopify (keeping the Cloudflare coming-soon backup for rollback), remove the store password, and publish the launch products. Email the dibs list. Post the first video batch. *Test:* place a real order and watch it reach Printify.
 20. After 30 days: review the numbers, decide on designs 5 to 8, and decide whether to add Etsy.
 
 ## Future products (not in the launch plan)

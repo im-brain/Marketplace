@@ -1,6 +1,6 @@
 # Living Shoreline: plan and handoff
 
-Written Nov 11, 2026 (planning session). Status: **plan only, nothing built, waiting on Brian's answers to the open decisions below.**
+Written Nov 11, 2026 (planning session). Status: **PAUSED by Brian on Nov 11, 2026. Plan only, nothing built. Do not start unless Brian asks to restart it.** When restarted, begin at Step 0 (the open decisions below).
 
 Read this file first, then `CLAUDE.md`. Each numbered step below is sized for one work session. Update the "Progress log" at the bottom at the end of every session.
 
@@ -147,3 +147,4 @@ The shoreline is beautiful when untouched. Motion is calm and natural. The light
 ## Progress log
 
 - **2026-11-11:** Planning session. Inspected the repo, hero art, and stone pairs. Wrote this plan. Nothing built. Next: Step 0, Brian answers D1 to D6.
+- **2026-11-11 (later):** Brian paused the project. No work until he restarts it.

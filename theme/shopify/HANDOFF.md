@@ -4,7 +4,7 @@ Read `CLAUDE.md` first (project rules: no em dashes, Oxford comma, plain languag
 
 ## Where things stand
 
-- **Branch:** `claude/zealous-clarke-t4tpr4`, pushed. **Not merged into `main`, and no PR opened** (Brian has not asked). Start from this branch, not `main`, or the theme and plan changes will be missing.
+- **Branch:** all of this was merged into `main` on Nov 12, 2026, at Brian's request. Start new work from `main`. Merging deploys nothing: the store theme is uploaded separately with the Shopify CLI.
 - **Shopify store:** `rjrxi5-ji.myshopify.com`, Basic plan on the $1 intro offer (opened Nov 12, 2026). Password protection on. Store name is still "My Store" (Brian to rename).
 - **Printify:** connected to Shopify. All six products published to Shopify with approved prices ($30 tees, $40 Midnight, $60 hoodies; 2XL +$2, 3XL +$4, 4XL and 5XL +$6) and plain titles (no em dashes).
 - **Theme:** `theme/shopify/` uploaded as an **unpublished** theme named "Heavy Pockets," id **131897917498**. The live theme is still Shopify's default (Horizon). **Publishing is Brian's decision.** Do not publish without his clear go-ahead.

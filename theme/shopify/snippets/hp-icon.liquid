@@ -1,0 +1,7 @@
+{%- comment -%} Small inline icons. Usage: {% render 'hp-icon', name: 'arrow' %} {%- endcomment -%}
+{%- case name -%}
+{%- when 'check' -%}<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" d="m3 8.5 3 3 7-7"/></svg>
+{%- when 'back' -%}<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" d="M10 3 5 8l5 5"/></svg>
+{%- when 'arrow' -%}<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2.4" d="m6 3 5 5-5 5"/></svg>
+{%- when 'cart' -%}<svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 3h2.5l2 10h9l2-7H6"/><circle cx="8" cy="16.5" r="1.5" fill="currentColor"/><circle cx="15" cy="16.5" r="1.5" fill="currentColor"/></svg>
+{%- endcase -%}

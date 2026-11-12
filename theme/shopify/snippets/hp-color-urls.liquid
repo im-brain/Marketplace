@@ -1,0 +1,31 @@
+{%- comment -%}
+  Outputs a pipe list of image URLs for one color of a product, in Printify's
+  mockup order (front, back, then the rest), at most `count` images.
+  Printify links each color's first mockup to that color's variants, and the
+  mockups that follow (back, folded) belong to the same color until the next
+  linked image. So: walk the images in order and carry the last linked color.
+  Usage: {% render 'hp-color-urls', product: p, color: 'Navy', count: 4, width: 900 %}
+{%- endcomment -%}
+{%- liquid
+  assign ci = 0
+  for opt in product.options_with_values
+    assign n = opt.name | downcase
+    if n contains 'color' or n contains 'colour'
+      assign ci = forloop.index0
+    endif
+  endfor
+  assign current = ''
+  assign urls = ''
+  assign k = 0
+  for image in product.images
+    if image.variants.size > 0
+      assign current = image.variants.first.options[ci]
+    endif
+    if current == color and k < count
+      assign u = image | image_url: width: width
+      assign urls = urls | append: u | append: '|'
+      assign k = k | plus: 1
+    endif
+  endfor
+  echo urls
+-%}

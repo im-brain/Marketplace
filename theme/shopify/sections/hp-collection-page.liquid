@@ -1,0 +1,16 @@
+<section class="win win--paper shop" id="shop" aria-labelledby="col-h">
+  <div class="bar"><span>{{ collection.title | default: 'Shop' | escape }}</span><span class="ctrls" aria-hidden="true"><i></i><i></i></span></div>
+  <div class="shop__head">
+    <h1 id="col-h">{{ collection.title | escape }}</h1>
+    {%- if collection.description != blank %}<div class="rte">{{ collection.description }}</div>{% endif %}
+  </div>
+  {%- paginate collection.products by 24 -%}
+  <ul class="cards">
+    {%- for p in collection.products -%}{% render 'hp-card', product: p %}{%- else -%}<li><p>Nothing here yet.</p></li>{%- endfor -%}
+  </ul>
+  {%- if paginate.pages > 1 %}<nav class="shop__note" aria-label="Pages">{{ paginate | default_pagination }}</nav>{% endif -%}
+  {%- endpaginate -%}
+</section>
+{% schema %}
+{ "name": "Collection page", "settings": [] }
+{% endschema %}

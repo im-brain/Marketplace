@@ -1,0 +1,2 @@
+{%- comment -%} The approved pebble loader. Usage: {% render 'hp-loader', text: 'Loading', live: true %} {%- endcomment -%}
+<span class="hp-loader"{% if live %} role="status"{% else %} aria-hidden="true"{% endif %}><span class="hp-loader__stones"><i></i><i></i><i></i></span><span class="hp-loader__text">{{ text | default: 'Loading' }}</span></span>

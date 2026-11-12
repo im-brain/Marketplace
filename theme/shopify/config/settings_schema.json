@@ -1,0 +1,16 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Heavy Pockets",
+    "theme_version": "0.1.0",
+    "theme_author": "Heavy Pockets Co.",
+    "theme_documentation_url": "https://heavypocketsco.com",
+    "theme_support_email": "hello@heavypocketsco.com"
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      { "type": "image_picker", "id": "favicon", "label": "Favicon", "info": "Leave empty to use the built-in pebble icon." }
+    ]
+  }
+]

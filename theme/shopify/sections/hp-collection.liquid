@@ -1,0 +1,38 @@
+{%- liquid
+  capture handles
+    render 'hp-extras', field: 'handles'
+  endcapture
+  assign handle_list = handles | strip | split: '|'
+  assign source = section.settings.collection | default: collections.all
+-%}
+<section class="win win--paper shop" id="shop" aria-labelledby="shop-h">
+  <div class="bar"><span>{{ section.settings.bar | escape }}</span><span class="ctrls" aria-hidden="true"><i></i><i></i></span></div>
+  <div class="shop__head">
+    <h2 id="shop-h">{{ section.settings.heading | escape }}</h2>
+    <p>Every piece starts a little dusty, like a dry stone. <span class="how-fine">Point at one, or tab to it, to wet it and see its true colors. Click to see it up close.</span><span class="how-touch">Touch one as you scroll to wet it and see its true colors. Tap to see it up close.</span></p>
+  </div>
+  <ul class="cards">
+    {%- comment -%} The approved order first, then anything new in the collection. {%- endcomment -%}
+    {%- for h in handle_list -%}
+      {%- assign p = all_products[h] -%}
+      {%- if p != blank and p.available -%}{% render 'hp-card', product: p %}{%- endif -%}
+    {%- endfor -%}
+    {%- for p in source.products limit: 24 -%}
+      {%- unless handle_list contains p.handle -%}{% render 'hp-card', product: p %}{%- endunless -%}
+    {%- endfor -%}
+  </ul>
+  {%- if section.settings.note != blank %}<p class="shop__note">{{ section.settings.note | escape }}</p>{% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Collection",
+  "settings": [
+    { "type": "text", "id": "bar", "label": "Window title", "default": "The collection" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Six designs for beach days" },
+    { "type": "collection", "id": "collection", "label": "Extra products from", "info": "The six launch products always show first, in the approved order. New products from this collection (or all products) follow." },
+    { "type": "textarea", "id": "note", "label": "Note under the grid", "default": "Standard U.S. shipping is included. Sizes 2XL and up cost a little more. Photos are mockups until the finished pieces are photographed." }
+  ],
+  "presets": [{ "name": "Collection" }]
+}
+{% endschema %}

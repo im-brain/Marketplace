@@ -1,0 +1,63 @@
+<section class="win win--paper notes-page" aria-labelledby="notes-h">
+  <div class="bar"><span>Field Notes</span><span class="ctrls" aria-hidden="true"><i></i><i></i></span></div>
+  <div class="notes__in">
+    <h1 id="notes-h">Notes from the waterline</h1>
+    <p class="lede">Short notes about the stones on our shirts, how to spot them, and why rockhounds keep licking rocks. No expertise needed. Real stories from Brian's walks come later.</p>
+    <p class="draft-banner"><strong>Drafts.</strong> These notes were fact-checked once (Nov 4, 2026) and are not final. Sources are linked under each one.</p>
+
+    <section class="wet-lab" aria-labelledby="lab-h">
+      <h2 id="lab-h">Try it: dry rock, wet rock</h2>
+      <p>Water fills the tiny scratches on a stone's skin, so light goes in instead of bouncing off. Press a stone to wet it.</p>
+      <ul class="stones">
+        <li><button type="button" class="stone" aria-pressed="false" data-stone><span class="stone__pair"><img src="{{ 'stone-petoskey-dry.webp' | asset_url }}" width="1280" height="1024" alt="" loading="lazy" decoding="async"><img class="stone__wet" src="{{ 'stone-petoskey-wet.webp' | asset_url }}" width="1280" height="1024" alt="" loading="lazy" decoding="async"></span><span class="stone__name">Petoskey stone</span><span class="stone__state" data-stone-state>Dry</span></button></li>
+        <li><button type="button" class="stone" aria-pressed="false" data-stone><span class="stone__pair"><img src="{{ 'stone-agate-hero-dry.webp' | asset_url }}" width="1280" height="1024" alt="" loading="lazy" decoding="async"><img class="stone__wet" src="{{ 'stone-agate-hero-wet.webp' | asset_url }}" width="1280" height="1024" alt="" loading="lazy" decoding="async"></span><span class="stone__name">Lake Superior agate</span><span class="stone__state" data-stone-state>Dry</span></button></li>
+        <li><button type="button" class="stone" aria-pressed="false" data-stone><span class="stone__pair"><img src="{{ 'stone-jasper-dry.webp' | asset_url }}" width="1280" height="1024" alt="" loading="lazy" decoding="async"><img class="stone__wet" src="{{ 'stone-jasper-wet.webp' | asset_url }}" width="1280" height="1024" alt="" loading="lazy" decoding="async"></span><span class="stone__name">Red jasper</span><span class="stone__state" data-stone-state>Dry</span></button></li>
+        <li><button type="button" class="stone" aria-pressed="false" data-stone><span class="stone__pair"><img src="{{ 'stone-leland-dry.webp' | asset_url }}" width="1280" height="1024" alt="" loading="lazy" decoding="async"><img class="stone__wet" src="{{ 'stone-leland-wet.webp' | asset_url }}" width="1280" height="1024" alt="" loading="lazy" decoding="async"></span><span class="stone__name">Leland Blue</span><span class="stone__state" data-stone-state>Dry</span></button></li>
+      </ul>
+      <p class="small">AI sample images, not real finds. They will be replaced with photos of Brian's own stones.</p>
+    </section>
+
+    <div class="notes">
+      <article class="note">
+        <span class="draft">Draft</span>
+        <h2>Dry rocks lie</h2>
+        <p>Most beach stones look like the same tan gravel when they are dry. Wet them and the real color, banding, and pattern show up. That is why you see people at the waterline dunking, spraying, and yes, licking rocks.</p>
+        <p class="src">Source: <a href="https://www.dnr.state.mn.us/education/geology/digging/agate.html" rel="noopener">Minnesota DNR, Lake Superior agate</a></p>
+      </article>
+      <article class="note">
+        <span class="draft">Draft</span>
+        <h2>Petoskey stone</h2>
+        <p>A fossil colony of the coral <i>Hexagonaria percarinata</i> from a warm Devonian sea. Dry, it can pass for plain gray limestone. Wet, the six-sided cells, each with a dark center, jump out. It is Michigan's state stone.</p>
+        <p>On the <a href="/products/great-lakes-rock-crew-tee">Great Lakes Rock Crew Tee</a> and the <a href="/products/pocket-full-of-treasures-tee">Pocket Full of Treasures Tee</a>.</p>
+        <p class="src">Source: Michigan EGLE and Michigan Act 89 of 1965, per the project field guide draft.</p>
+      </article>
+      <article class="note">
+        <span class="draft">Draft</span>
+        <h2>Lake Superior agate</h2>
+        <p>Banded chalcedony that filled gas bubbles in lava about 1.1 billion years ago, colored by iron. Dry, it is a dull, waxy, red-brown pebble. Hold a wet one up to the sun and a little light gets through. It is Minnesota's state gemstone.</p>
+        <p class="src">Source: <a href="https://www.dnr.state.mn.us/education/geology/digging/agate.html" rel="noopener">Minnesota DNR, Lake Superior agate</a></p>
+      </article>
+      <article class="note">
+        <span class="draft">Draft</span>
+        <h2>Leland Blue</h2>
+        <p>Not a natural stone at all. It is slag, glassy waste from an iron furnace that ran in Leland, Michigan, starting in 1870. Look for bubbles, glassy breaks, and blue, purple, and gray streaks. We love it anyway.</p>
+        <p class="src">Source: project field guide draft, Leland Blue section.</p>
+      </article>
+      <article class="note">
+        <span class="draft">Draft</span>
+        <h2>Before it goes in your pocket</h2>
+        <p>Rules depend on where you stand. Michigan allows up to 25 pounds of rocks and minerals per person per year from state-owned land, for personal use. Collecting is not allowed at Isle Royale, Apostle Islands, or Pictured Rocks. When in doubt, ask, or take a photo instead.</p>
+        <p class="src">Sources: <a href="https://www.michigan.gov/egle/public/learn/geology/rockhounding" rel="noopener">Michigan EGLE, rockhounding</a>; National Park Service pages for each park (checked Nov 4, 2026).</p>
+      </article>
+      <article class="note note--ph">
+        {% render 'hp-ph', text: 'Placeholder', show: true %}
+        <h2>Coming later: Brian's finds</h2>
+        <p>Short stories from real walks, with photos of the stones that came home. This space keeps its layout when the stories arrive.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Field Notes", "settings": [], "presets": [{ "name": "Field Notes" }] }
+{% endschema %}

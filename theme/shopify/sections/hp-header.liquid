@@ -1,0 +1,30 @@
+{%- liquid
+  assign t = template.name
+  assign field_notes_url = section.settings.field_notes_url | default: '/pages/field-notes'
+-%}
+<header class="site-head">
+  {%- if section.settings.banner != blank -%}
+  <p class="banner">{{ section.settings.banner | escape }}</p>
+  {%- endif -%}
+  <div class="site-head__in">
+    <a class="brand" href="{{ routes.root_url }}" aria-label="heavy pockets, home">{% render 'hp-wordmark' %}</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="{{ routes.root_url }}#shop">Shop</a></li>
+        <li><a href="{{ field_notes_url }}"{% if request.path == field_notes_url %} aria-current="page"{% endif %}>Field Notes</a></li>
+        <li><a href="{{ routes.root_url }}#story">About</a></li>
+        <li><a class="cart-link" href="{{ routes.cart_url }}"{% if t == 'cart' %} aria-current="page"{% endif %} data-cart-link>{% render 'hp-icon', name: 'cart' %}<span>Cart</span> <span class="count" data-cart-count aria-hidden="true">{{ cart.item_count }}</span><span class="visually-hidden" data-cart-sr>, {{ cart.item_count }} {% if cart.item_count == 1 %}item{% else %}items{% endif %}</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    { "type": "text", "id": "banner", "label": "Announcement bar", "info": "Leave empty to hide it." },
+    { "type": "url", "id": "field_notes_url", "label": "Field Notes page link", "info": "Defaults to /pages/field-notes." }
+  ]
+}
+{% endschema %}

@@ -93,7 +93,7 @@ Heavy Pockets Co. ("we," "us") runs heavypocketsco.com. This page explains what 
 
 **Your choices**
 - Unsubscribe from any email with the link at the bottom.
-- Email hello@heavypocketsco.com to see, correct, or delete the information we hold about you. We'll reply within [30 days]. We may need to keep order records for tax and legal reasons.
+- Email hello@heavypocketsco.com to see, correct, or delete the information we hold about you. We'll reply within 30 days. We may need to keep order records for tax and legal reasons.
 - You can block cookies in your browser, but the cart and checkout may not work.
 
 **Children:** The store isn't meant for children under 13, and we don't knowingly collect their information.

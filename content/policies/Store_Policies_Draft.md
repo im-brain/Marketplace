@@ -8,7 +8,7 @@ Rules applied: no em dashes, Oxford comma.
 
 ## Return and refund policy
 
-Every Heavy Pockets Co. item is printed after you order it, just for you. Because of that, we can't take returns for a change of mind or a wrong size. We do fix problems that are our fault.
+Every Heavy Pockets Co. item is crafted to order, just for you. Because of that, we can't take returns for a change of mind or a wrong size. We do fix problems that are our fault.
 
 **We will replace or refund your order if, when it arrives:**
 - **The print is flawed.** This means the print is missing, cut off, badly misaligned, smeared, or clearly faded or blotchy right out of the package. Small differences in print placement (a fraction of an inch) and slight color differences from your screen are normal and are not flaws.
@@ -18,22 +18,22 @@ Every Heavy Pockets Co. item is printed after you order it, just for you. Becaus
 **What is not covered:**
 - Wear, fading, shrinking, or damage that happens after you wash or wear the item. Follow the care label.
 - A size that fits differently than you expected, or a change of mind.
-- A problem you report more than [14 days] after the delivery date.
+- A problem you report more than 7 days after the delivery date.
 - Packages tracked as delivered to the address you gave us (see the shipping policy).
 
 **How to ask:**
-1. Email hello@heavypocketsco.com within [14 days] of the delivery date, from the email address on your order.
+1. Email hello@heavypocketsco.com within 7 days of the delivery date, from the email address on your order.
 2. Include your order number and clear photos. Show the whole item, a close-up of the problem, and the size label. For a wrong item, show the label and the design.
-3. We review it within [2 business days]. We may ask for more photos or for you to send the item back at our cost.
+3. We review it within 2 business days. We may ask for more photos or for you to send the item back at our cost.
 4. If approved, we send a replacement or refund the item, our choice.
 
 **To keep this fair for everyone:** We allow one claim per order. If your replacement also arrives with a problem, email us and we'll refund you instead. We may refuse claims that look misleading, repeated, or made from photos that don't match the order. If we ask you to send the item back, we will send your replacement or refund after it arrives.
 
 **Sizing:** Each product page lists the sizes. Please check them before you order. If you order the wrong size, we can't exchange it, but email us anyway. We'll see if we can help.
 
-**Refunds** go back to your original payment method. Your bank may take [5 to 10 business days] to show them.
+**Refunds** go back to your original payment method. Your bank may take 5 to 10 business days to show them.
 
-**Cancellations and address changes:** Orders go to print quickly, usually within [24 hours]. Email us as soon as you can and we'll try, but we can't promise a change after printing starts.
+**Cancellations and address changes:** Orders go into production quickly, often within 24 hours. Email us as soon as you can and we'll try to cancel or change it, but we can't promise a change once production starts.
 
 ---
 
@@ -44,9 +44,9 @@ Every Heavy Pockets Co. item is printed after you order it, just for you. Becaus
 **Cost:** Standard U.S. shipping is included in the price. There is no shipping charge at checkout.
 
 **How long it takes:**
-- Production: about [2 to 5 business days] while your item is printed.
-- Delivery: about [3 to 7 business days] after it ships.
-- Plan on roughly [1 to 2 weeks] in total. Busy seasons can add a few days.
+- Production: about 2 to 7 business days while your item is made.
+- Delivery: about 2 to 5 business days after it ships.
+- Plan on roughly 1 to 2 weeks in total. Holidays and busy seasons can add several days.
 
 **Orders with more than one item** may ship in separate packages from different print locations, so they can arrive on different days. You won't pay extra for this.
 
@@ -56,8 +56,8 @@ Every Heavy Pockets Co. item is printed after you order it, just for you. Becaus
 
 **Delivered, lost, or damaged in transit:**
 - **Tracking says delivered:** We can't replace or refund it. Please check around your door, with neighbors and household members, and with your local post office. Carriers sometimes mark a package delivered a day early.
-- **Package damaged in transit:** Email us within [14 days] of delivery with photos of the box and the item. See the return and refund policy.
-- **Package seems lost:** If tracking shows no movement for [14 days], or your order hasn't arrived [30 days] after you ordered, email us. We'll open a claim with the carrier and our print partner. If they confirm the package was lost, we'll replace or refund the order. We can't promise a replacement while the carrier is still investigating, and we can't cover packages sent to an incorrect address.
+- **Package damaged in transit:** Email us within 7 days of delivery with photos of the box and the item. See the return and refund policy.
+- **Package seems lost:** If tracking shows no movement for 7 days, or your order hasn't arrived 30 days after you ordered, email us. We'll open a claim with the carrier and our print partner. If they confirm the package was lost, we'll replace or refund the order. We can't promise a replacement while the carrier is still investigating, and we can't cover packages sent to an incorrect address.
 
 **Customs, duties, and taxes:** [Not applicable while we ship within the U.S.]
 
@@ -106,7 +106,7 @@ Heavy Pockets Co. ("we," "us") runs heavypocketsco.com. This page explains what 
 
 ## Open items for Brian
 
-1. Confirm every [BRACKETED] number. They are typical for Printify orders, but the real times depend on the print partners. Check the first sample orders and edit.
+1. Return, damage, lost, and review windows are set by Brian (7 days, 2 business days, 30 days). Shipping times come from Printify's help center (2 to 7 business days of production, 2 to 5 days standard delivery). Check the real times on the sample orders and edit.
 2. Confirm U.S.-only shipping. International orders would need duty and tax wording.
 3. The no-returns-for-wrong-size rule and the 14-day window are business choices. A card dispute (chargeback) can still override any policy, so keep every email and photo. Lost packages: Printify generally does not pay for these, so the policy only promises a replacement after the carrier confirms the loss.
 4. Once Shopify Payments is set up, name the processor in the privacy policy if you use a different one.

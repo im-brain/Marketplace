@@ -8,7 +8,7 @@ Rules applied: no em dashes, Oxford comma.
 
 ## Return and refund policy
 
-Every Heavy Pockets Co. item is crafted to order, just for you. Because of that, we can't take returns for a change of mind or a wrong size. We do fix problems that are our fault.
+Every Heavy Pockets Co. item is made to order, just for you. Because of that, we can't take returns for a change of mind or a wrong size. We do fix problems that are our fault.
 
 **We will replace or refund your order if, when it arrives:**
 - **The print is flawed.** This means the print is missing, cut off, badly misaligned, smeared, or clearly faded or blotchy right out of the package. Small differences in print placement (a fraction of an inch) and slight color differences from your screen are normal and are not flaws.
@@ -39,7 +39,7 @@ Every Heavy Pockets Co. item is crafted to order, just for you. Because of that,
 
 ## Shipping policy
 
-**Where we ship:** [Within the United States only, for now.]
+**Where we ship:** Within the United States only, for now.
 
 **Cost:** Standard U.S. shipping is included in the price. There is no shipping charge at checkout.
 
@@ -59,7 +59,7 @@ Every Heavy Pockets Co. item is crafted to order, just for you. Because of that,
 - **Package damaged in transit:** Email us within 7 days of delivery with photos of the box and the item. See the return and refund policy.
 - **Package seems lost:** If tracking shows no movement for 7 days, or your order hasn't arrived 30 days after you ordered, email us. We'll open a claim with the carrier and our print partner. If they confirm the package was lost, we'll replace or refund the order. We can't promise a replacement while the carrier is still investigating, and we can't cover packages sent to an incorrect address.
 
-**Customs, duties, and taxes:** [Not applicable while we ship within the U.S.]
+**Customs, duties, and taxes:** Not applicable while we ship within the United States.
 
 ---
 

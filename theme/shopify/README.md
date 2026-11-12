@@ -46,7 +46,7 @@ node theme/shopify/qa/mock_render.js <dir-with-pf-json> <mock-out-dir> <node_mod
 node theme/shopify/qa/run_qa.js <mock-out-dir>
 ```
 
-`mock_render.js` renders the pages with fake Shopify data built from the Printify JSON. It assumes the worst case for photos: Printify links only each color's first mockup to that color, and the rest follow in order. `run_qa.js` clicks through the home page, all six product pages, the cart, and Field Notes on desktop and a phone size, plus a JavaScript-off check. Last run: 293 checks passed (`qa/last-run.txt`). Shopify's own Theme Check: 0 errors (6 warnings, all for the Google Fonts links, same as v3).
+`mock_render.js` renders the pages with fake Shopify data built from the Printify JSON. It lays out photos the way Printify really publishes them (see below). `run_qa.js` clicks through the home page, all six product pages, the cart, and Field Notes on desktop and a phone size, plus a JavaScript-off check. Last run: 317 checks passed (`qa/last-run.txt`). Shopify's own Theme Check: 0 errors (6 warnings, all for the Google Fonts links, same as v3).
 
 This is a stand-in for Shopify, so the real test is the unpublished theme on the store:
 

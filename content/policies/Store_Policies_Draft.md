@@ -13,7 +13,7 @@ Every Heavy Pockets Co. item is printed after you order it, just for you. Becaus
 **We will replace or refund your order if, when it arrives:**
 - **The print is flawed.** This means the print is missing, cut off, badly misaligned, smeared, or clearly faded or blotchy right out of the package. Small differences in print placement (a fraction of an inch) and slight color differences from your screen are normal and are not flaws.
 - **The item arrives damaged,** such as torn, stained, or with a hole.
-- **You received the wrong item, size, or color.** The size label and the design must not match your order.
+- **You received the wrong item, size, or color.** The size, color, or design is different from what you ordered.
 
 **What is not covered:**
 - Wear, fading, shrinking, or damage that happens after you wash or wear the item. Follow the care label.

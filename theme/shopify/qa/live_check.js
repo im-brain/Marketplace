@@ -78,7 +78,7 @@ const check = (n, ok, info) => { out.push((ok ? 'PASS ' : 'FAIL ') + n + (ok ? '
   const left = await p.evaluate(async () => (await (await fetch('/cart.js')).json()).item_count);
   check('cart: emptied after the test', left === 0, left);
 
-  await p.goto(S + '/pages/field-notes?view=field-notes&' + T, { waitUntil: 'networkidle' });
+  await p.goto(S + '/pages/field-notes?' + T, { waitUntil: 'networkidle' });
   check('Field Notes page exists in Shopify', !!(await p.$('[data-stone]')), p.url());
   check('no script errors from theme.js', errs.length === 0, errs);
   const report = out.join('\n') + `\n\n${pass} passed, ${fail} failed\nFailed network requests (often Shopify's own trackers): ${JSON.stringify([...new Set(failed)].slice(0, 8))}\n`;

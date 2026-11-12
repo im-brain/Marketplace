@@ -53,8 +53,9 @@
     assign first_img = product.featured_image | image_url: width: 900
   endif
   assign json = json | remove_last: ','
+  assign json = '{' | append: json | append: '}'
 -%}
-<li class="card" id="p-{{ product.handle }}" data-product="{{ product.handle }}" data-images='{{ '{' }}{{ json }}{{ '}' }}' data-url="{{ product.url }}">
+<li class="card" id="p-{{ product.handle }}" data-product="{{ product.handle }}" data-images='{{ json }}' data-url="{{ product.url }}">
   <div class="card__media well">
     <a class="card__img" href="{{ product.url }}" tabindex="-1" aria-hidden="true" data-card-link>
       <span class="wet__base"><img src="{{ first_img }}" alt="" width="900" height="900" loading="lazy" decoding="async" data-card-img></span>

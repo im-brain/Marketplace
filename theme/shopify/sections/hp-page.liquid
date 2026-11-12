@@ -1,0 +1,10 @@
+<section class="win win--paper review" aria-labelledby="page-h">
+  <div class="bar"><span>{{ page.title | escape }}</span><span class="ctrls" aria-hidden="true"><i></i><i></i></span></div>
+  <div class="review__in rte">
+    <h1 id="page-h">{{ page.title | escape }}</h1>
+    {{ page.content }}
+  </div>
+</section>
+{% schema %}
+{ "name": "Page", "settings": [] }
+{% endschema %}

@@ -1,0 +1,211 @@
+{%- liquid
+  assign h = product.handle
+  capture kind
+    render 'hp-extras', handle: h, field: 'kind'
+  endcapture
+  capture blurb
+    render 'hp-extras', handle: h, field: 'blurb'
+  endcapture
+  capture colors
+    render 'hp-extras', handle: h, field: 'colors'
+  endcapture
+  capture hexes
+    render 'hp-extras', handle: h, field: 'hexes'
+  endcapture
+  capture views
+    render 'hp-extras', handle: h, field: 'views'
+  endcapture
+  capture card_index
+    render 'hp-extras', handle: h, field: 'card_index'
+  endcapture
+  capture info
+    render 'hp-extras', handle: h, field: 'info'
+  endcapture
+  assign kind = kind | strip | default: 'Product'
+  assign blurb = blurb | strip
+  assign info = info | strip
+  assign view_list = views | strip | split: '|'
+  assign hex_list = hexes | strip | split: '|'
+  assign ci = card_index | strip | plus: 0
+  assign nviews = view_list.size
+
+  assign color_pos = -1
+  assign size_pos = -1
+  for opt in product.options_with_values
+    assign n = opt.name | downcase
+    if n contains 'color' or n contains 'colour'
+      assign color_pos = forloop.index0
+      assign color_opt = opt
+    elsif n contains 'size'
+      assign size_pos = forloop.index0
+      assign size_opt = opt
+    endif
+  endfor
+
+  # Colors: the approved order, limited to what Shopify has. Products without
+  # extras fall back to Shopify's own option order.
+  assign color_list = colors | strip | split: '|'
+  if color_list.size == 0 and color_opt
+    assign color_list = color_opt.values
+  endif
+  if nviews == 0
+    assign nviews = 6
+  endif
+
+  assign sel = product.selected_or_first_available_variant
+
+  # Start on the first approved color, unless the link named a variant (?variant=).
+  assign start_color = ''
+  for c in color_list
+    if color_opt.values contains c
+      assign start_color = c
+      break
+    endif
+  endfor
+  if product.selected_variant and color_pos >= 0
+    assign start_color = product.selected_variant.options[color_pos]
+  endif
+
+  # Sizes in the usual order, whatever order Shopify stored them in.
+  assign size_order = 'XXS|XS|S|M|L|XL|2XL|XXL|3XL|XXXL|4XL|5XL|6XL' | split: '|'
+  assign size_list = ''
+  if size_opt
+    for s in size_order
+      if size_opt.values contains s
+        assign size_list = size_list | append: s | append: '|'
+      endif
+    endfor
+    for s in size_opt.values
+      unless size_order contains s
+        assign size_list = size_list | append: s | append: '|'
+      endunless
+    endfor
+  endif
+  assign size_list = size_list | split: '|'
+-%}
+<nav class="crumbs" aria-label="Breadcrumb"><a href="{{ routes.root_url }}#p-{{ h }}" data-back-to-shop>{% render 'hp-icon', name: 'back' %}Back to the collection</a></nav>
+<article class="win win--paper pdp" data-product="{{ h }}" aria-labelledby="pdp-h">
+  <div class="bar"><span>{{ kind | escape }}</span><span class="ctrls" aria-hidden="true"><i></i><i></i></span></div>
+  <div class="pdp__grid">
+    <div class="gallery" aria-label="Product images">
+      <figure class="gallery__main">
+        <div class="well well--lg" data-g-well>
+          {%- assign main_img = sel.featured_image | default: product.featured_image -%}
+          <img src="{{ main_img | image_url: width: 1200 }}" alt="{{ product.title | escape }}" width="900" height="900" decoding="async" fetchpriority="high" data-g-img>
+          <div class="g-ph" hidden data-g-ph><strong>Sample and lifestyle photos are coming.</strong><span>Photos of the finished {{ kind | downcase }} are coming soon.</span></div>
+          <span class="media-loader">{% render 'hp-loader', text: 'Loading image', live: true %}</span>
+          <span class="img-fail" hidden>This image did not load. Try another view.</span>
+        </div>
+        <figcaption data-g-cap>{{ product.title | escape }}.</figcaption>
+      </figure>
+      <ul class="thumbs" role="list" data-thumbs></ul>
+    </div>
+
+    <div class="buy">
+      <h1 id="pdp-h">{{ product.title | escape }}</h1>
+      {%- if blurb != blank %}<p class="pdp__blurb">{{ blurb }}</p>{% endif %}
+      <p class="price price--lg"><span data-price>{{ sel.price | money }}</span></p>
+      <p class="price-sub">Standard U.S. shipping included.</p>
+      <p class="price-sub" data-size-note></p>
+
+      {%- form 'product', product, class: 'buy-form', novalidate: 'novalidate', data-buy: '' -%}
+        {%- comment -%} Without JavaScript, shoppers pick from this list. theme.js swaps it for color and size keys. {%- endcomment -%}
+        <div class="opts no-js-only">
+          <label for="variant-{{ section.id }}">Color and size</label>
+          <select id="variant-{{ section.id }}" name="id" data-variant-select>
+            {%- for v in product.variants -%}
+              <option value="{{ v.id }}"{% if v.id == sel.id %} selected{% endif %}{% unless v.available %} disabled{% endunless %}>{{ v.title | escape }}, {{ v.price | money }}{% unless v.available %} (sold out){% endunless %}</option>
+            {%- endfor -%}
+          </select>
+        </div>
+        <div class="js-only" data-keys>
+          {%- if color_pos >= 0 -%}
+          <fieldset class="opts" aria-describedby="color-now">
+            <legend>Color: <span id="color-now" data-color-name></span></legend>
+            <div class="opts__row">
+              {%- for c in color_list -%}
+                {%- if color_opt.values contains c -%}
+                <label class="opt opt--color"><input type="radio" name="hp-color" value="{{ c | escape }}"{% if start_color == c %} checked{% endif %}><span><i class="sw__dot" style="--c:{{ hex_list[forloop.index0] | default: '#cccccc' }}"></i>{{ c | escape }}</span></label>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </fieldset>
+          {%- endif -%}
+          {%- if size_pos >= 0 -%}
+          <fieldset class="opts" aria-describedby="size-help">
+            <legend>Size</legend>
+            <div class="opts__row">
+              {%- for s in size_list -%}
+                <label class="opt"><input type="radio" name="hp-size" value="{{ s | escape }}"><span>{{ s | escape }}</span></label>
+              {%- endfor -%}
+            </div>
+            <p id="size-help" class="opts__help" data-size-help aria-live="polite"></p>
+          </fieldset>
+          {%- endif -%}
+        </div>
+        <div class="qty-row">
+          <label for="qty">Quantity</label>
+          <div class="qty"><button type="button" class="icon-btn js-only" data-step="-1" aria-label="Decrease quantity">&minus;</button><input id="qty" name="quantity" type="number" inputmode="numeric" min="1" max="10" value="1"><button type="button" class="icon-btn js-only" data-step="1" aria-label="Increase quantity">+</button></div>
+        </div>
+        <button class="btn btn--block" type="submit"{% unless product.available %} disabled{% endunless %}>{% if product.available %}Add to cart{% else %}Sold out{% endif %}</button>
+        <p class="form-msg" role="status" aria-live="polite" data-buy-msg></p>
+      {%- endform -%}
+    </div>
+  </div>
+
+  <div class="info">
+    {%- if info != blank -%}
+      {{ info }}
+    {%- else -%}
+      <section class="info__block info__block--wide"><h2>The design</h2>{{ product.description }}</section>
+    {%- endif -%}
+    <section class="info__block">
+      <h2>Shipping and returns</h2>
+      {%- if shop.shipping_policy or shop.refund_policy -%}
+        <p>Standard U.S. shipping is included in the price.</p>
+        <ul>
+          {%- if shop.shipping_policy %}<li><a href="{{ shop.shipping_policy.url }}">Shipping policy</a></li>{% endif -%}
+          {%- if shop.refund_policy %}<li><a href="{{ shop.refund_policy.url }}">Return policy</a></li>{% endif -%}
+        </ul>
+      {%- else -%}
+        {% render 'hp-ph', text: 'Placeholder', show: true %}
+        <p>Shipping and return policies are not written yet. Standard U.S. shipping is included in the price. Questions: <a href="mailto:hello@heavypocketsco.com">hello@heavypocketsco.com</a>.</p>
+      {%- endif -%}
+    </section>
+  </div>
+  <p class="pdp__back"><a class="btn btn--secondary" href="{{ routes.root_url }}#p-{{ h }}" data-back-to-shop>{% render 'hp-icon', name: 'back' %}Back to the collection</a></p>
+</article>
+
+{%- comment -%} Data for theme.js: variants, prices, and each color's mockups in order. {%- endcomment -%}
+<script type="application/json" data-product-json>
+{
+  "handle": {{ h | json }},
+  "title": {{ product.title | json }},
+  "kind": {{ kind | json }},
+  "colorPos": {{ color_pos }},
+  "sizePos": {{ size_pos }},
+  "cardIndex": {{ ci }},
+  "views": {{ view_list | json }},
+  "moneyFormat": {{ shop.money_format | json }},
+  "colors": [
+    {%- assign first = true -%}
+    {%- for c in color_list -%}
+      {%- if color_pos < 0 or color_opt.values contains c -%}
+        {%- capture urls -%}{% render 'hp-color-urls', product: product, color: c, count: nviews, width: 1200 %}{%- endcapture -%}
+        {%- capture thumbs -%}{% render 'hp-color-urls', product: product, color: c, count: nviews, width: 300 %}{%- endcapture -%}
+        {%- unless first %},{% endunless -%}{%- assign first = false -%}
+        {"name": {{ c | json }}, "hex": {{ hex_list[forloop.index0] | default: '#cccccc' | json }}, "images": {{ urls | split: '|' | json }}, "thumbs": {{ thumbs | split: '|' | json }}}
+      {%- endif -%}
+    {%- endfor -%}
+  ],
+  "variants": [
+    {%- for v in product.variants -%}
+      {"id": {{ v.id }}, "price": {{ v.price }}, "available": {{ v.available }}, "options": {{ v.options | json }}}{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+</script>
+
+{% schema %}
+{ "name": "Product", "settings": [] }
+{% endschema %}

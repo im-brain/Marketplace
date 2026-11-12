@@ -1,0 +1,319 @@
+PASS desktop home: six cards in the approved order
+PASS desktop home: card images load
+PASS desktop home: no sideways scroll
+PASS desktop home: no Printify or supplier words
+PASS desktop home: no template code showing
+PASS desktop home: no preview-only wording
+PASS desktop home midnight-rock-hunt-tee: swatches match approved colors
+PASS desktop home great-lakes-rock-crew-tee: swatches match approved colors
+PASS desktop home field-notebook-tee: swatches match approved colors
+PASS desktop home pocket-full-of-treasures-tee: swatches match approved colors
+PASS desktop home shoreline-hoodie: swatches match approved colors
+PASS desktop home floral-butterfly-embroidered-hoodie: swatches match approved colors
+PASS desktop home: swatch swaps the card image
+PASS desktop home: card link carries the color
+PASS desktop home: wet reveal runs
+PASS desktop home: revealed card stays wet after reload
+PASS desktop home: every card has its blurb
+PASS desktop home: From prices are the approved prices
+PASS desktop midnight-rock-hunt-tee: starting price $40
+PASS desktop midnight-rock-hunt-tee: color keys in approved order
+PASS desktop midnight-rock-hunt-tee: plain variant list removed when JS runs
+PASS desktop midnight-rock-hunt-tee: 4 mockups + art + photos-soon thumbs
+PASS desktop midnight-rock-hunt-tee: gallery opens on the back
+PASS desktop midnight-rock-hunt-tee: every thumbnail loads
+PASS desktop midnight-rock-hunt-tee: main photo loads
+PASS desktop midnight-rock-hunt-tee: larger-size note
+PASS desktop midnight-rock-hunt-tee: asks for a size first
+PASS desktop midnight-rock-hunt-tee: 2XL costs $2 more
+PASS desktop midnight-rock-hunt-tee: URL keeps color and size
+PASS desktop midnight-rock-hunt-tee: gallery follows the color
+PASS desktop midnight-rock-hunt-tee: every photo is filed under its own color
+PASS desktop midnight-rock-hunt-tee: four mockups per color
+PASS desktop midnight-rock-hunt-tee: chosen variant matches color and size
+PASS desktop midnight-rock-hunt-tee: add to cart works
+PASS desktop midnight-rock-hunt-tee: cart count updates
+PASS desktop midnight-rock-hunt-tee: no sideways scroll
+PASS desktop midnight-rock-hunt-tee: no Printify or supplier words
+PASS desktop midnight-rock-hunt-tee: no template code showing
+PASS desktop midnight-rock-hunt-tee: info sections present
+PASS desktop midnight-rock-hunt-tee: ?color= link opens that color
+PASS desktop great-lakes-rock-crew-tee: starting price $30
+PASS desktop great-lakes-rock-crew-tee: color keys in approved order
+PASS desktop great-lakes-rock-crew-tee: plain variant list removed when JS runs
+PASS desktop great-lakes-rock-crew-tee: 4 mockups + art + photos-soon thumbs
+PASS desktop great-lakes-rock-crew-tee: gallery opens on the front
+PASS desktop great-lakes-rock-crew-tee: every thumbnail loads
+PASS desktop great-lakes-rock-crew-tee: main photo loads
+PASS desktop great-lakes-rock-crew-tee: larger-size note
+PASS desktop great-lakes-rock-crew-tee: asks for a size first
+PASS desktop great-lakes-rock-crew-tee: 2XL costs $2 more
+PASS desktop great-lakes-rock-crew-tee: URL keeps color and size
+PASS desktop great-lakes-rock-crew-tee: gallery follows the color
+PASS desktop great-lakes-rock-crew-tee: every photo is filed under its own color
+PASS desktop great-lakes-rock-crew-tee: four mockups per color
+PASS desktop great-lakes-rock-crew-tee: chosen variant matches color and size
+PASS desktop great-lakes-rock-crew-tee: add to cart works
+PASS desktop great-lakes-rock-crew-tee: cart count updates
+PASS desktop great-lakes-rock-crew-tee: no sideways scroll
+PASS desktop great-lakes-rock-crew-tee: no Printify or supplier words
+PASS desktop great-lakes-rock-crew-tee: no template code showing
+PASS desktop great-lakes-rock-crew-tee: info sections present
+PASS desktop great-lakes-rock-crew-tee: ?color= link opens that color
+PASS desktop field-notebook-tee: starting price $30
+PASS desktop field-notebook-tee: color keys in approved order
+PASS desktop field-notebook-tee: plain variant list removed when JS runs
+PASS desktop field-notebook-tee: 4 mockups + art + photos-soon thumbs
+PASS desktop field-notebook-tee: gallery opens on the front
+PASS desktop field-notebook-tee: every thumbnail loads
+PASS desktop field-notebook-tee: main photo loads
+PASS desktop field-notebook-tee: larger-size note
+PASS desktop field-notebook-tee: asks for a size first
+PASS desktop field-notebook-tee: 2XL costs $2 more
+PASS desktop field-notebook-tee: URL keeps color and size
+PASS desktop field-notebook-tee: gallery follows the color
+PASS desktop field-notebook-tee: every photo is filed under its own color
+PASS desktop field-notebook-tee: four mockups per color
+PASS desktop field-notebook-tee: chosen variant matches color and size
+PASS desktop field-notebook-tee: add to cart works
+PASS desktop field-notebook-tee: cart count updates
+PASS desktop field-notebook-tee: no sideways scroll
+PASS desktop field-notebook-tee: no Printify or supplier words
+PASS desktop field-notebook-tee: no template code showing
+PASS desktop field-notebook-tee: info sections present
+PASS desktop field-notebook-tee: ?color= link opens that color
+PASS desktop pocket-full-of-treasures-tee: starting price $30
+PASS desktop pocket-full-of-treasures-tee: color keys in approved order
+PASS desktop pocket-full-of-treasures-tee: plain variant list removed when JS runs
+PASS desktop pocket-full-of-treasures-tee: 4 mockups + art + photos-soon thumbs
+PASS desktop pocket-full-of-treasures-tee: gallery opens on the front
+PASS desktop pocket-full-of-treasures-tee: every thumbnail loads
+PASS desktop pocket-full-of-treasures-tee: main photo loads
+PASS desktop pocket-full-of-treasures-tee: larger-size note
+PASS desktop pocket-full-of-treasures-tee: asks for a size first
+PASS desktop pocket-full-of-treasures-tee: 2XL costs $2 more
+PASS desktop pocket-full-of-treasures-tee: URL keeps color and size
+PASS desktop pocket-full-of-treasures-tee: gallery follows the color
+PASS desktop pocket-full-of-treasures-tee: every photo is filed under its own color
+PASS desktop pocket-full-of-treasures-tee: four mockups per color
+PASS desktop pocket-full-of-treasures-tee: chosen variant matches color and size
+PASS desktop pocket-full-of-treasures-tee: add to cart works
+PASS desktop pocket-full-of-treasures-tee: cart count updates
+PASS desktop pocket-full-of-treasures-tee: no sideways scroll
+PASS desktop pocket-full-of-treasures-tee: no Printify or supplier words
+PASS desktop pocket-full-of-treasures-tee: no template code showing
+PASS desktop pocket-full-of-treasures-tee: info sections present
+PASS desktop pocket-full-of-treasures-tee: ?color= link opens that color
+PASS desktop shoreline-hoodie: starting price $60
+PASS desktop shoreline-hoodie: color keys in approved order
+PASS desktop shoreline-hoodie: plain variant list removed when JS runs
+PASS desktop shoreline-hoodie: 4 mockups + art + photos-soon thumbs
+PASS desktop shoreline-hoodie: gallery opens on the back
+PASS desktop shoreline-hoodie: every thumbnail loads
+PASS desktop shoreline-hoodie: main photo loads
+PASS desktop shoreline-hoodie: larger-size note
+PASS desktop shoreline-hoodie: asks for a size first
+PASS desktop shoreline-hoodie: 2XL costs $2 more
+PASS desktop shoreline-hoodie: URL keeps color and size
+PASS desktop shoreline-hoodie: gallery follows the color
+PASS desktop shoreline-hoodie: every photo is filed under its own color
+PASS desktop shoreline-hoodie: four mockups per color
+PASS desktop shoreline-hoodie: chosen variant matches color and size
+PASS desktop shoreline-hoodie: add to cart works
+PASS desktop shoreline-hoodie: cart count updates
+PASS desktop shoreline-hoodie: no sideways scroll
+PASS desktop shoreline-hoodie: no Printify or supplier words
+PASS desktop shoreline-hoodie: no template code showing
+PASS desktop shoreline-hoodie: info sections present
+PASS desktop shoreline-hoodie: ?color= link opens that color
+PASS desktop floral-butterfly-embroidered-hoodie: starting price $60
+PASS desktop floral-butterfly-embroidered-hoodie: color keys in approved order
+PASS desktop floral-butterfly-embroidered-hoodie: plain variant list removed when JS runs
+PASS desktop floral-butterfly-embroidered-hoodie: 4 mockups + art + photos-soon thumbs
+PASS desktop floral-butterfly-embroidered-hoodie: gallery opens on the front
+PASS desktop floral-butterfly-embroidered-hoodie: every thumbnail loads
+PASS desktop floral-butterfly-embroidered-hoodie: main photo loads
+PASS desktop floral-butterfly-embroidered-hoodie: larger-size note
+PASS desktop floral-butterfly-embroidered-hoodie: asks for a size first
+PASS desktop floral-butterfly-embroidered-hoodie: 2XL costs $2 more
+PASS desktop floral-butterfly-embroidered-hoodie: URL keeps color and size
+PASS desktop floral-butterfly-embroidered-hoodie: gallery follows the color
+PASS desktop floral-butterfly-embroidered-hoodie: every photo is filed under its own color
+PASS desktop floral-butterfly-embroidered-hoodie: four mockups per color
+PASS desktop floral-butterfly-embroidered-hoodie: chosen variant matches color and size
+PASS desktop floral-butterfly-embroidered-hoodie: add to cart works
+PASS desktop floral-butterfly-embroidered-hoodie: cart count updates
+PASS desktop floral-butterfly-embroidered-hoodie: no sideways scroll
+PASS desktop floral-butterfly-embroidered-hoodie: no Printify or supplier words
+PASS desktop floral-butterfly-embroidered-hoodie: no template code showing
+PASS desktop floral-butterfly-embroidered-hoodie: info sections present
+PASS desktop floral-butterfly-embroidered-hoodie: ?color= link opens that color
+PASS desktop cart: shows the line
+PASS desktop cart: real checkout button
+PASS desktop cart: + submits the Shopify cart form
+PASS desktop cart: empty state
+PASS desktop field notes: stone wets
+PASS desktop field notes: product links point at Shopify product pages
+PASS desktop: no script errors
+PASS phone home: six cards in the approved order
+PASS phone home: card images load
+PASS phone home: no sideways scroll
+PASS phone home: no Printify or supplier words
+PASS phone home: no template code showing
+PASS phone home: no preview-only wording
+PASS phone home midnight-rock-hunt-tee: swatches match approved colors
+PASS phone home great-lakes-rock-crew-tee: swatches match approved colors
+PASS phone home field-notebook-tee: swatches match approved colors
+PASS phone home pocket-full-of-treasures-tee: swatches match approved colors
+PASS phone home shoreline-hoodie: swatches match approved colors
+PASS phone home floral-butterfly-embroidered-hoodie: swatches match approved colors
+PASS phone home: swatch swaps the card image
+PASS phone home: card link carries the color
+PASS phone home: wet reveal runs
+PASS phone home: revealed card stays wet after reload
+PASS phone home: every card has its blurb
+PASS phone home: From prices are the approved prices
+PASS phone midnight-rock-hunt-tee: starting price $40
+PASS phone midnight-rock-hunt-tee: color keys in approved order
+PASS phone midnight-rock-hunt-tee: plain variant list removed when JS runs
+PASS phone midnight-rock-hunt-tee: 4 mockups + art + photos-soon thumbs
+PASS phone midnight-rock-hunt-tee: gallery opens on the back
+PASS phone midnight-rock-hunt-tee: every thumbnail loads
+PASS phone midnight-rock-hunt-tee: main photo loads
+PASS phone midnight-rock-hunt-tee: larger-size note
+PASS phone midnight-rock-hunt-tee: asks for a size first
+PASS phone midnight-rock-hunt-tee: 2XL costs $2 more
+PASS phone midnight-rock-hunt-tee: URL keeps color and size
+PASS phone midnight-rock-hunt-tee: gallery follows the color
+PASS phone midnight-rock-hunt-tee: every photo is filed under its own color
+PASS phone midnight-rock-hunt-tee: four mockups per color
+PASS phone midnight-rock-hunt-tee: chosen variant matches color and size
+PASS phone midnight-rock-hunt-tee: add to cart works
+PASS phone midnight-rock-hunt-tee: cart count updates
+PASS phone midnight-rock-hunt-tee: no sideways scroll
+PASS phone midnight-rock-hunt-tee: no Printify or supplier words
+PASS phone midnight-rock-hunt-tee: no template code showing
+PASS phone midnight-rock-hunt-tee: info sections present
+PASS phone midnight-rock-hunt-tee: ?color= link opens that color
+PASS phone great-lakes-rock-crew-tee: starting price $30
+PASS phone great-lakes-rock-crew-tee: color keys in approved order
+PASS phone great-lakes-rock-crew-tee: plain variant list removed when JS runs
+PASS phone great-lakes-rock-crew-tee: 4 mockups + art + photos-soon thumbs
+PASS phone great-lakes-rock-crew-tee: gallery opens on the front
+PASS phone great-lakes-rock-crew-tee: every thumbnail loads
+PASS phone great-lakes-rock-crew-tee: main photo loads
+PASS phone great-lakes-rock-crew-tee: larger-size note
+PASS phone great-lakes-rock-crew-tee: asks for a size first
+PASS phone great-lakes-rock-crew-tee: 2XL costs $2 more
+PASS phone great-lakes-rock-crew-tee: URL keeps color and size
+PASS phone great-lakes-rock-crew-tee: gallery follows the color
+PASS phone great-lakes-rock-crew-tee: every photo is filed under its own color
+PASS phone great-lakes-rock-crew-tee: four mockups per color
+PASS phone great-lakes-rock-crew-tee: chosen variant matches color and size
+PASS phone great-lakes-rock-crew-tee: add to cart works
+PASS phone great-lakes-rock-crew-tee: cart count updates
+PASS phone great-lakes-rock-crew-tee: no sideways scroll
+PASS phone great-lakes-rock-crew-tee: no Printify or supplier words
+PASS phone great-lakes-rock-crew-tee: no template code showing
+PASS phone great-lakes-rock-crew-tee: info sections present
+PASS phone great-lakes-rock-crew-tee: ?color= link opens that color
+PASS phone field-notebook-tee: starting price $30
+PASS phone field-notebook-tee: color keys in approved order
+PASS phone field-notebook-tee: plain variant list removed when JS runs
+PASS phone field-notebook-tee: 4 mockups + art + photos-soon thumbs
+PASS phone field-notebook-tee: gallery opens on the front
+PASS phone field-notebook-tee: every thumbnail loads
+PASS phone field-notebook-tee: main photo loads
+PASS phone field-notebook-tee: larger-size note
+PASS phone field-notebook-tee: asks for a size first
+PASS phone field-notebook-tee: 2XL costs $2 more
+PASS phone field-notebook-tee: URL keeps color and size
+PASS phone field-notebook-tee: gallery follows the color
+PASS phone field-notebook-tee: every photo is filed under its own color
+PASS phone field-notebook-tee: four mockups per color
+PASS phone field-notebook-tee: chosen variant matches color and size
+PASS phone field-notebook-tee: add to cart works
+PASS phone field-notebook-tee: cart count updates
+PASS phone field-notebook-tee: no sideways scroll
+PASS phone field-notebook-tee: no Printify or supplier words
+PASS phone field-notebook-tee: no template code showing
+PASS phone field-notebook-tee: info sections present
+PASS phone field-notebook-tee: ?color= link opens that color
+PASS phone pocket-full-of-treasures-tee: starting price $30
+PASS phone pocket-full-of-treasures-tee: color keys in approved order
+PASS phone pocket-full-of-treasures-tee: plain variant list removed when JS runs
+PASS phone pocket-full-of-treasures-tee: 4 mockups + art + photos-soon thumbs
+PASS phone pocket-full-of-treasures-tee: gallery opens on the front
+PASS phone pocket-full-of-treasures-tee: every thumbnail loads
+PASS phone pocket-full-of-treasures-tee: main photo loads
+PASS phone pocket-full-of-treasures-tee: larger-size note
+PASS phone pocket-full-of-treasures-tee: asks for a size first
+PASS phone pocket-full-of-treasures-tee: 2XL costs $2 more
+PASS phone pocket-full-of-treasures-tee: URL keeps color and size
+PASS phone pocket-full-of-treasures-tee: gallery follows the color
+PASS phone pocket-full-of-treasures-tee: every photo is filed under its own color
+PASS phone pocket-full-of-treasures-tee: four mockups per color
+PASS phone pocket-full-of-treasures-tee: chosen variant matches color and size
+PASS phone pocket-full-of-treasures-tee: add to cart works
+PASS phone pocket-full-of-treasures-tee: cart count updates
+PASS phone pocket-full-of-treasures-tee: no sideways scroll
+PASS phone pocket-full-of-treasures-tee: no Printify or supplier words
+PASS phone pocket-full-of-treasures-tee: no template code showing
+PASS phone pocket-full-of-treasures-tee: info sections present
+PASS phone pocket-full-of-treasures-tee: ?color= link opens that color
+PASS phone shoreline-hoodie: starting price $60
+PASS phone shoreline-hoodie: color keys in approved order
+PASS phone shoreline-hoodie: plain variant list removed when JS runs
+PASS phone shoreline-hoodie: 4 mockups + art + photos-soon thumbs
+PASS phone shoreline-hoodie: gallery opens on the back
+PASS phone shoreline-hoodie: every thumbnail loads
+PASS phone shoreline-hoodie: main photo loads
+PASS phone shoreline-hoodie: larger-size note
+PASS phone shoreline-hoodie: asks for a size first
+PASS phone shoreline-hoodie: 2XL costs $2 more
+PASS phone shoreline-hoodie: URL keeps color and size
+PASS phone shoreline-hoodie: gallery follows the color
+PASS phone shoreline-hoodie: every photo is filed under its own color
+PASS phone shoreline-hoodie: four mockups per color
+PASS phone shoreline-hoodie: chosen variant matches color and size
+PASS phone shoreline-hoodie: add to cart works
+PASS phone shoreline-hoodie: cart count updates
+PASS phone shoreline-hoodie: no sideways scroll
+PASS phone shoreline-hoodie: no Printify or supplier words
+PASS phone shoreline-hoodie: no template code showing
+PASS phone shoreline-hoodie: info sections present
+PASS phone shoreline-hoodie: ?color= link opens that color
+PASS phone floral-butterfly-embroidered-hoodie: starting price $60
+PASS phone floral-butterfly-embroidered-hoodie: color keys in approved order
+PASS phone floral-butterfly-embroidered-hoodie: plain variant list removed when JS runs
+PASS phone floral-butterfly-embroidered-hoodie: 4 mockups + art + photos-soon thumbs
+PASS phone floral-butterfly-embroidered-hoodie: gallery opens on the front
+PASS phone floral-butterfly-embroidered-hoodie: every thumbnail loads
+PASS phone floral-butterfly-embroidered-hoodie: main photo loads
+PASS phone floral-butterfly-embroidered-hoodie: larger-size note
+PASS phone floral-butterfly-embroidered-hoodie: asks for a size first
+PASS phone floral-butterfly-embroidered-hoodie: 2XL costs $2 more
+PASS phone floral-butterfly-embroidered-hoodie: URL keeps color and size
+PASS phone floral-butterfly-embroidered-hoodie: gallery follows the color
+PASS phone floral-butterfly-embroidered-hoodie: every photo is filed under its own color
+PASS phone floral-butterfly-embroidered-hoodie: four mockups per color
+PASS phone floral-butterfly-embroidered-hoodie: chosen variant matches color and size
+PASS phone floral-butterfly-embroidered-hoodie: add to cart works
+PASS phone floral-butterfly-embroidered-hoodie: cart count updates
+PASS phone floral-butterfly-embroidered-hoodie: no sideways scroll
+PASS phone floral-butterfly-embroidered-hoodie: no Printify or supplier words
+PASS phone floral-butterfly-embroidered-hoodie: no template code showing
+PASS phone floral-butterfly-embroidered-hoodie: info sections present
+PASS phone floral-butterfly-embroidered-hoodie: ?color= link opens that color
+PASS phone cart: shows the line
+PASS phone cart: real checkout button
+PASS phone cart: + submits the Shopify cart form
+PASS phone cart: empty state
+PASS phone field notes: stone wets
+PASS phone field notes: product links point at Shopify product pages
+PASS phone: no script errors
+PASS no-js product: variant list is shown
+PASS no-js product: JS-only color keys are hidden
+PASS no-js product: every variant listed
+
+317 passed, 0 failed

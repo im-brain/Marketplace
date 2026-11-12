@@ -1,0 +1,85 @@
+{%- comment -%} Homepage product card with the signature wet reveal. Usage: {% render 'hp-card', product: p %} {%- endcomment -%}
+{%- liquid
+  capture colors
+    render 'hp-extras', handle: product.handle, field: 'colors'
+  endcapture
+  capture hexes
+    render 'hp-extras', handle: product.handle, field: 'hexes'
+  endcapture
+  capture card_index
+    render 'hp-extras', handle: product.handle, field: 'card_index'
+  endcapture
+  capture blurb
+    render 'hp-extras', handle: product.handle, field: 'blurb'
+  endcapture
+  assign color_list = colors | strip | split: '|'
+  assign hex_list = hexes | strip | split: '|'
+  assign ci = card_index | strip | plus: 0
+  assign want = ci | plus: 1
+
+  assign color_opt = nil
+  for opt in product.options_with_values
+    assign n = opt.name | downcase
+    if n contains 'color' or n contains 'colour'
+      assign color_opt = opt
+    endif
+  endfor
+
+  # Offered colors: the approved order first, limited to colors Shopify has.
+  assign shown = ''
+  assign json = ''
+  for c in color_list
+    if color_opt == nil or color_opt.values contains c
+      capture urls
+        render 'hp-color-urls', product: product, color: c, count: want, width: 900
+      endcapture
+      assign url_list = urls | split: '|'
+      assign img = url_list[ci] | default: url_list.first
+      if img != blank
+        assign shown = shown | append: forloop.index0 | append: ','
+        assign json = json | append: '"' | append: c | append: '":"' | append: img | append: '",'
+      endif
+    endif
+  endfor
+  assign idx = shown | split: ','
+  assign first_i = idx.first | plus: 0
+  assign first_color = color_list[first_i]
+  capture urls
+    render 'hp-color-urls', product: product, color: first_color, count: want, width: 900
+  endcapture
+  assign url_list = urls | split: '|'
+  assign first_img = url_list[ci] | default: url_list.first
+  if first_img == blank and product.featured_image
+    assign first_img = product.featured_image | image_url: width: 900
+  endif
+  assign json = json | remove_last: ','
+  assign json = '{' | append: json | append: '}'
+-%}
+<li class="card" id="p-{{ product.handle }}" data-product="{{ product.handle }}" data-images='{{ json }}' data-url="{{ product.url }}">
+  <div class="card__media well">
+    <a class="card__img" href="{{ product.url }}" tabindex="-1" aria-hidden="true" data-card-link>
+      <span class="wet__base"><img src="{{ first_img }}" alt="" width="900" height="900" loading="lazy" decoding="async" data-card-img></span>
+      <span class="wet__top"><img src="{{ first_img }}" alt="" width="900" height="900" loading="lazy" decoding="async" data-card-img></span>
+    </a>
+    <span class="media-loader">{% render 'hp-loader', text: 'Loading' %}</span>
+    <span class="img-fail" hidden><span>Photo did not load.</span><a href="{{ product.url }}">See the product page</a></span>
+    {%- if ci == 1 %}<span class="view-tag">Back</span>{% endif %}
+    <button class="wet-btn" type="button" tabindex="-1" aria-hidden="true" data-wet-btn>Show</button>
+  </div>
+  <div class="card__body">
+    <h3><a href="{{ product.url }}" data-card-link>{{ product.title | escape }}</a></h3>
+    {%- assign b = blurb | strip -%}
+    {%- if b != blank %}<p class="card__blurb">{{ b }}</p>{% endif %}
+    <p class="price">{% if product.price_varies %}<span>From</span> {% endif %}{{ product.price_min | money }}</p>
+    {%- if idx.size > 1 -%}
+    <fieldset class="swatches"><legend class="visually-hidden">Color for {{ product.title | escape }}</legend>
+      {%- for i in idx -%}
+        {%- assign n = i | plus: 0 -%}
+        <label class="sw" title="{{ color_list[n] | escape }}"><input type="radio" name="c-{{ product.handle }}" value="{{ color_list[n] | escape }}"{% if forloop.first %} checked{% endif %}><span class="sw__dot" style="--c:{{ hex_list[n] }}"></span><span class="visually-hidden">{{ color_list[n] | escape }}</span></label>
+      {%- endfor -%}
+    </fieldset>
+    {%- endif -%}
+    <p class="sw-name"><span class="visually-hidden">Selected color: </span><span data-color-name>{{ first_color | escape }}</span></p>
+    <a class="more" href="{{ product.url }}" data-card-link>See details<span class="visually-hidden"> for {{ product.title | escape }}</span>{% render 'hp-icon', name: 'arrow' %}</a>
+  </div>
+</li>

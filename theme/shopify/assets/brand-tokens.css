@@ -1,0 +1,16 @@
+/* Heavy Pockets Co. Brand v2.1: approved creative-direction tokens. */
+:root{
+  --hp-navy:#102849;--hp-ink:#101D2C;--hp-teal:#164745;--hp-lake-blue:#376C9B;
+  --hp-cream:#F3E8D2;--hp-sand:#D9B98B;--hp-rust:#A7472D;--hp-gold:#E8B954;
+  --hp-graphite:#272C34;--hp-white:#FFFFFF;
+  --hp-font-display:"Press Start 2P",monospace;
+  --hp-font-body:"Atkinson Hyperlegible Next",system-ui,sans-serif;
+  --hp-font-metadata:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --hp-focus:3px solid var(--hp-gold);
+}
+.hp-surface-dark{background:var(--hp-navy);color:var(--hp-cream)}
+.hp-surface-light{background:var(--hp-cream);color:var(--hp-ink)}
+.hp-button-primary{background:var(--hp-rust);color:var(--hp-white);border:2px solid var(--hp-sand);font:700 1rem/1.4 var(--hp-font-body);min-height:44px;padding:10px 18px}
+.hp-button-primary:focus-visible{outline:var(--hp-focus);outline-offset:3px}
+.hp-display{font:400 1rem/1.6 var(--hp-font-display)}
+.hp-body{font:400 1rem/1.5 var(--hp-font-body)}

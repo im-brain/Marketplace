@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "hero": { "type": "hp-hero", "settings": {} },
+    "shop": { "type": "hp-collection", "settings": {} },
+    "story": { "type": "hp-story", "settings": {} },
+    "signup": { "type": "hp-signup", "settings": {} }
+  },
+  "order": ["hero", "shop", "story", "signup"]
+}

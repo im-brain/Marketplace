@@ -1,0 +1,15 @@
+/* Shopify-only rules for the Heavy Pockets theme. The approved look lives in site.css (copied from theme/v3). */
+.js .no-js-only{display:none!important}
+.no-js .js-only{display:none!important}
+.no-js-only select{display:block;width:100%;min-height:48px;margin-top:6px;padding:8px 10px;font:inherit;background:var(--hp-white);color:var(--hp-ink);border:2px solid var(--hp-ink)}
+.no-js-only label{font-weight:700}
+.founder__photo{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border:2px solid var(--hp-sand)}
+.rte p,.rte ul,.rte ol{margin:0 0 1em}
+.rte img{max-width:100%;height:auto}
+.summary .btn--block + .btn--block{margin-top:0}
+.line__img:empty{background:var(--hp-sand)}
+.buy .btn[disabled]{opacity:.55;cursor:not-allowed}
+.shop__head h1{font-size:clamp(28px,1.6vw + 18px,38px);font-weight:800;margin-bottom:8px}
+.hero__copy .brand{display:inline-block;margin-bottom:14px}
+.hero__copy .brand .wordmark{width:min(320px,70vw);height:auto}
+.art-fig img,.chart img{height:auto}

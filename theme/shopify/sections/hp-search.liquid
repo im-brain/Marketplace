@@ -1,0 +1,20 @@
+<section class="win win--paper shop" aria-labelledby="search-h">
+  <div class="bar"><span>Search</span><span class="ctrls" aria-hidden="true"><i></i><i></i></span></div>
+  <div class="shop__head">
+    <h1 id="search-h">Search</h1>
+    <form action="{{ routes.search_url }}" method="get" role="search" class="signup__row">
+      <label class="visually-hidden" for="q">Search the shop</label>
+      <input id="q" type="search" name="q" value="{{ search.terms | escape }}">
+      <input type="hidden" name="type" value="product">
+      <button class="btn" type="submit">Search</button>
+    </form>
+  </div>
+  {%- if search.performed -%}
+  <ul class="cards">
+    {%- for item in search.results -%}{% if item.object_type == 'product' %}{% render 'hp-card', product: item %}{% endif %}{%- else -%}<li><p>No matches. Try a stone name, like agate.</p></li>{%- endfor -%}
+  </ul>
+  {%- endif -%}
+</section>
+{% schema %}
+{ "name": "Search", "settings": [] }
+{% endschema %}

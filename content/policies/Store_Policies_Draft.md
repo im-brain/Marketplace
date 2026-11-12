@@ -27,7 +27,7 @@ Every Heavy Pockets Co. item is printed after you order it, just for you. Becaus
 3. We review it within [2 business days]. We may ask for more photos or for you to send the item back at our cost.
 4. If approved, we send a replacement or refund the item, our choice.
 
-**To keep this fair for everyone:** We allow one replacement or refund claim per order. We may refuse claims that look misleading, repeated, or made from photos that don't match the order. If we ask you to send the item back, we will send your replacement or refund after it arrives.
+**To keep this fair for everyone:** We allow one claim per order. If your replacement also arrives with a problem, email us and we'll refund you instead. We may refuse claims that look misleading, repeated, or made from photos that don't match the order. If we ask you to send the item back, we will send your replacement or refund after it arrives.
 
 **Sizing:** Each product page lists the sizes. Please check them before you order. If you order the wrong size, we can't exchange it, but email us anyway. We'll see if we can help.
 

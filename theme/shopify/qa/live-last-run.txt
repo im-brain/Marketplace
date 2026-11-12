@@ -29,8 +29,8 @@ PASS product: 2XL price is $32
 PASS product: add to cart works on the real store
 PASS cart: shows the item with color, size, and price
 PASS cart: emptied after the test
-FAIL Field Notes page exists in Shopify -> "https://rjrxi5-ji.myshopify.com/pages/field-notes"
+PASS Field Notes page exists in Shopify
 PASS no script errors from theme.js
 
-32 passed, 1 failed
-Failed network requests (often Shopify's own trackers): ["https://otlp-http-production.shopifysvc.com/v1/metrics","https://shop.app/pay/hop?analytics_trace_id=ac0e6094-9f79-4149-8914-455a39cff920&target_origin=https","https://rjrxi5-ji.myshopify.com/api/collect","https://rjrxi5-ji.myshopify.com/.well-known/shopify/monorail/unstable/produce_batch","https://otlp-http-production.shopifysvc.com/v1/logs","https://error-analytics-sessions-production.shopifysvc.com/","https://shopify-assets.shopifycdn.com/shopifycloud/admin-ui-foundations/experimental/c565d.svg","https://shopify-assets.shopifycdn.com/shopifycloud/admin-ui-foundations/icons/bef77.svg"]
+33 passed, 0 failed
+Failed network requests (often Shopify's own trackers): ["https://otlp-http-production.shopifysvc.com/v1/metrics","https://rjrxi5-ji.myshopify.com/api/collect","https://shop.app/pay/hop?analytics_trace_id=eb3ff336-371d-4f4a-9844-a410febd00df&target_origin=https","https://rjrxi5-ji.myshopify.com/.well-known/shopify/monorail/unstable/produce_batch","https://otlp-http-production.shopifysvc.com/v1/logs","https://error-analytics-sessions-production.shopifysvc.com/","https://shopify-assets.shopifycdn.com/shopifycloud/admin-ui-foundations/experimental/c565d.svg","https://rjrxi5-ji.myshopify.com/cdn/shop/files/10360887279668319477_2048.jpg?v=1794443278&width=1200"]

@@ -48,4 +48,12 @@ node theme/shopify/qa/run_qa.js <mock-out-dir>
 
 `mock_render.js` renders the pages with fake Shopify data built from the Printify JSON. It assumes the worst case for photos: Printify links only each color's first mockup to that color, and the rest follow in order. `run_qa.js` clicks through the home page, all six product pages, the cart, and Field Notes on desktop and a phone size, plus a JavaScript-off check. Last run: 293 checks passed (`qa/last-run.txt`). Shopify's own Theme Check: 0 errors (6 warnings, all for the Google Fonts links, same as v3).
 
-This is a stand-in for Shopify, so the real test is the unpublished theme on the store.
+This is a stand-in for Shopify, so the real test is the unpublished theme on the store:
+
+```
+node theme/shopify/qa/live_check.js <storefront-password>
+```
+
+It logs in with the store password, checks every product and color on the uploaded theme, adds one item to a test cart, empties it, and never checks out. Last run (Nov 12, 2026): 32 passed, 1 failed (the Field Notes page is not created in Shopify yet). Results: `qa/live-last-run.txt`.
+
+**How Printify's photos land in Shopify** (found on the real store, Nov 12, 2026): one front photo per color first, each linked to that color's variants; then every color's other views as a group, in the same color order; then the size chart. `snippets/hp-color-urls.liquid` relies on this. If Printify ever changes it, `live_check.js` will catch it ("each color starts with its own front photo," "four photos per color").

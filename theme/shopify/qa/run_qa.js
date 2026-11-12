@@ -148,6 +148,10 @@ async function visibleText(page) { return page.evaluate(() => document.body.inne
       const vid = await page.$eval('[data-buy] input[name=id]', (i) => i.value);
       const pdata = await page.$eval('[data-product-json]', (s) => JSON.parse(s.textContent));
       const v = pdata.variants.find((x) => String(x.id) === vid);
+      const wrong = pdata.colors.flatMap((c) => c.images.filter((u) => !u.includes('/' + c.name.replace(/\W+/g, '-') + '-')).map((u) => c.name + ': ' + u));
+      check(`${mode} ${p.slug}: every photo is filed under its own color`, wrong.length === 0, wrong.slice(0, 3));
+      const counts = pdata.colors.map((c) => c.images.length);
+      check(`${mode} ${p.slug}: four mockups per color`, counts.every((n) => n === 4), counts);
       check(`${mode} ${p.slug}: chosen variant matches color and size`, v && v.options[pdata.colorPos] === p.colors[1] && v.options[pdata.sizePos] === '2XL', v);
       await page.click('[data-buy] button[type=submit]');
       await page.waitForTimeout(300);

@@ -1,9 +1,13 @@
 {%- comment -%}
   Outputs a pipe list of image URLs for one color of a product, in Printify's
   mockup order (front, back, then the rest), at most `count` images.
-  Printify links each color's first mockup to that color's variants, and the
-  mockups that follow (back, folded) belong to the same color until the next
-  linked image. So: walk the images in order and carry the last linked color.
+
+  How Printify publishes mockups to Shopify (checked on the real store, Nov 12, 2026):
+    1. First, one front mockup per color. Each is linked to that color's variants.
+    2. Then every color's other views as one group per color, in the same color
+       order as step 1 (count - 1 images each), with no variant link.
+    3. Last, the size chart (ignored here).
+  So a color's images are its linked front plus its slice of the unlinked images.
   Usage: {% render 'hp-color-urls', product: p, color: 'Navy', count: 4, width: 900 %}
 {%- endcomment -%}
 {%- liquid
@@ -14,18 +18,43 @@
       assign ci = forloop.index0
     endif
   endfor
-  assign current = ''
-  assign urls = ''
-  assign k = 0
+
+  assign seen = '|'
+  assign k = -1
+  assign nl = 0
+  assign front = nil
   for image in product.images
     if image.variants.size > 0
-      assign current = image.variants.first.options[ci]
-    endif
-    if current == color and k < count
-      assign u = image | image_url: width: width
-      assign urls = urls | append: u | append: '|'
-      assign k = k | plus: 1
+      assign c = image.variants.first.options[ci]
+      assign key = '|' | append: c | append: '|'
+      unless seen contains key
+        if c == color
+          assign k = nl
+          assign front = image
+        endif
+        assign nl = nl | plus: 1
+        assign seen = seen | append: c | append: '|'
+      endunless
     endif
   endfor
+
+  assign urls = ''
+  if front
+    assign u = front | image_url: width: width
+    assign urls = u | append: '|'
+    assign per = count | minus: 1
+    assign start = k | times: per
+    assign stop = start | plus: per
+    assign j = 0
+    for image in product.images
+      if image.variants.size == 0
+        if j >= start and j < stop
+          assign u = image | image_url: width: width
+          assign urls = urls | append: u | append: '|'
+        endif
+        assign j = j | plus: 1
+      endif
+    endfor
+  endif
   echo urls
 -%}

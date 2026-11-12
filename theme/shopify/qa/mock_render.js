@@ -31,16 +31,24 @@ function toShopify(pf, handle) {
     return { id: v.id, title: v.title, price: v.price, available: v.is_available !== false, options: opts };
   });
   const byId = Object.fromEntries(variants.map((v) => [v.id, v]));
-  // Worst case: Printify links only each color's first mockup to that color's variants.
-  const seen = new Set();
-  const images = pf.images.filter((im) => im.is_selected_for_publishing).map((im) => {
+  // The real layout (checked on the store, Nov 12, 2026): one linked front per color
+  // first, then each color's other views as a group in the same color order, then
+  // the size chart, which has no variant link.
+  const ci = names.indexOf('Color');
+  const all = pf.images.filter((im) => im.is_selected_for_publishing).map((im) => {
     const vs = im.variant_ids.map((i) => byId[i]).filter(Boolean);
-    const color = vs[0] && vs[0].options[names.indexOf('Color')];
-    const linked = color && !seen.has(color) && im.is_default;
-    if (linked) seen.add(color);
     const cam = (/camera_label=([a-z0-9-]+)/.exec(im.src) || [])[1] || 'x';
-    return { src: `https://cdn.example/${handle}/${String(color || 'none').replace(/\W+/g, '-')}-${cam}.png`, variants: linked ? vs : [], alt: '' };
+    const color = cam === 'size-chart' ? null : vs[0] && vs[0].options[ci];
+    return { cam, color, vs, src: `https://cdn.example/${handle}/${String(color || 'none').replace(/\W+/g, '-')}-${cam}.png`, alt: '' };
   });
+  const fronts = all.filter((im) => im.cam === 'front' && im.color);
+  const rest = all.filter((im) => im.cam !== 'front' && im.cam !== 'size-chart');
+  const charts = all.filter((im) => im.cam === 'size-chart');
+  const images = [
+    ...fronts.map((im) => ({ src: im.src, alt: '', variants: im.vs })),
+    ...fronts.flatMap((f) => rest.filter((im) => im.color === f.color)).map((im) => ({ src: im.src, alt: '', variants: [] })),
+    ...charts.map((im) => ({ src: im.src, alt: '', variants: [] })),
+  ];
   variants.forEach((v) => { v.featured_image = images.find((im) => im.variants.includes(v)) || null; });
   const prices = variants.map((v) => v.price);
   return {
